@@ -9,45 +9,23 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `requestId` | `?string` | Optional | - | getRequestId(): ?string | setRequestId(?string requestId): void |
-| `status` | `?string` | Optional | - | getStatus(): ?string | setStatus(?string status): void |
-| `data` | [`?SearchAccountLimitResponseData`](../../doc/models/search-account-limit-response-data.md) | Optional | - | getData(): ?SearchAccountLimitResponseData | setData(?SearchAccountLimitResponseData data): void |
+| `requestId` | `?string` | Optional | Request Id of the API call | getRequestId(): ?string | setRequestId(?string requestId): void |
+| `accountId` | `?int` | Optional | Account ID of the customer. | getAccountId(): ?int | setAccountId(?int accountId): void |
+| `accountNumber` | `?string` | Optional | Account Number<br>Example: GB99215176 | getAccountNumber(): ?string | setAccountNumber(?string accountNumber): void |
+| `referenceProduct` | `?string` | Optional | 3 digit Shell global fuel product code, if already set up.<br>Example: 021 | getReferenceProduct(): ?string | setReferenceProduct(?string referenceProduct): void |
+| `restrictionCondition` | `?string` | Optional | The restriction condition code.<br>Example: DECLINE_ALERT | getRestrictionCondition(): ?string | setRestrictionCondition(?string restrictionCondition): void |
+| `velocityLimits` | [`?(AccountVelocityLimit[])`](../../doc/models/account-velocity-limit.md) | Optional | - | getVelocityLimits(): ?array | setVelocityLimits(?array velocityLimits): void |
+| `error` | [`?ErrorStatus`](../../doc/models/error-status.md) | Optional | - | getError(): ?ErrorStatus | setError(?ErrorStatus error): void |
 
 ## Example (as JSON)
 
 ```json
 {
-  "RequestId": "RequestId0",
-  "Status": "Status6",
-  "Data": {
-    "AccountId": 62,
-    "AccountNumber": "AccountNumber8",
-    "ReferenceProduct": "ReferenceProduct8",
-    "RestrictionCondition": "RestrictionCondition4",
-    "VelocityLimits": [
-      {
-        "Type": "Type0",
-        "Period": "Period2",
-        "Limit": 24.94,
-        "Accumulation": 132.24,
-        "Balance": 189.6
-      },
-      {
-        "Type": "Type0",
-        "Period": "Period2",
-        "Limit": 24.94,
-        "Accumulation": 132.24,
-        "Balance": 189.6
-      },
-      {
-        "Type": "Type0",
-        "Period": "Period2",
-        "Limit": 24.94,
-        "Accumulation": 132.24,
-        "Balance": 189.6
-      }
-    ]
-  }
+  "RequestId": "2ace3991-5d03-4a68-ac68-ca9119b25101",
+  "AccountId": 114,
+  "AccountNumber": "AccountNumber2",
+  "ReferenceProduct": "ReferenceProduct2",
+  "RestrictionCondition": "RestrictionCondition0"
 }
 ```
 

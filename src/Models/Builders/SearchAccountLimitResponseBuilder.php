@@ -11,8 +11,8 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\SearchAccountLimitResponse;
-use ShellCardManagementAPIsLib\Models\SearchAccountLimitResponseData;
 
 /**
  * Builder for model SearchAccountLimitResponse
@@ -49,20 +49,65 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Unsets request id field.
      */
-    public function status(?string $value): self
+    public function unsetRequestId(): self
     {
-        $this->instance->setStatus($value);
+        $this->instance->unsetRequestId();
         return $this;
     }
 
     /**
-     * Sets data field.
+     * Sets account id field.
      */
-    public function data(?SearchAccountLimitResponseData $value): self
+    public function accountId(?int $value): self
     {
-        $this->instance->setData($value);
+        $this->instance->setAccountId($value);
+        return $this;
+    }
+
+    /**
+     * Sets account number field.
+     */
+    public function accountNumber(?string $value): self
+    {
+        $this->instance->setAccountNumber($value);
+        return $this;
+    }
+
+    /**
+     * Sets reference product field.
+     */
+    public function referenceProduct(?string $value): self
+    {
+        $this->instance->setReferenceProduct($value);
+        return $this;
+    }
+
+    /**
+     * Sets restriction condition field.
+     */
+    public function restrictionCondition(?string $value): self
+    {
+        $this->instance->setRestrictionCondition($value);
+        return $this;
+    }
+
+    /**
+     * Sets velocity limits field.
+     */
+    public function velocityLimits(?array $value): self
+    {
+        $this->instance->setVelocityLimits($value);
+        return $this;
+    }
+
+    /**
+     * Sets error field.
+     */
+    public function error(?ErrorStatus $value): self
+    {
+        $this->instance->setError($value);
         return $this;
     }
 

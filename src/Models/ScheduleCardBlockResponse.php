@@ -37,7 +37,6 @@ class ScheduleCardBlockResponse implements \JsonSerializable
     /**
      * Returns Main Reference.
      * Reference number for tracking the execution of the request.
-     *
      * Note: Reference will be empty for status 9006 and 9012 i.e., request for all the cards failed.
      */
     public function getMainReference(): ?int
@@ -48,7 +47,6 @@ class ScheduleCardBlockResponse implements \JsonSerializable
     /**
      * Sets Main Reference.
      * Reference number for tracking the execution of the request.
-     *
      * Note: Reference will be empty for status 9006 and 9012 i.e., request for all the cards failed.
      *
      * @maps MainReference

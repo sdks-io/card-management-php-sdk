@@ -11,10 +11,10 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\CardDeliveryAddress;
 use ShellCardManagementAPIsLib\Models\CardDetailsResponse;
-use ShellCardManagementAPIsLib\Models\CardDetailsResponseCardDeliveryAddress;
-use ShellCardManagementAPIsLib\Models\CardDetailsResponsePINDeliveryAddress;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
+use ShellCardManagementAPIsLib\Models\PINDeliveryAddress;
 
 /**
  * Builder for model CardDetailsResponse
@@ -314,18 +314,9 @@ class CardDetailsResponseBuilder
     /**
      * Sets reissue setting field.
      */
-    public function reissueSetting(?string $value): self
+    public function reissueSetting(?array $value): self
     {
         $this->instance->setReissueSetting($value);
-        return $this;
-    }
-
-    /**
-     * Unsets reissue setting field.
-     */
-    public function unsetReissueSetting(): self
-    {
-        $this->instance->unsetReissueSetting();
         return $this;
     }
 
@@ -917,7 +908,7 @@ class CardDetailsResponseBuilder
     /**
      * Sets card delivery address field.
      */
-    public function cardDeliveryAddress(?CardDetailsResponseCardDeliveryAddress $value): self
+    public function cardDeliveryAddress(?CardDeliveryAddress $value): self
     {
         $this->instance->setCardDeliveryAddress($value);
         return $this;
@@ -926,7 +917,7 @@ class CardDetailsResponseBuilder
     /**
      * Sets pindelivery address field.
      */
-    public function pINDeliveryAddress(?CardDetailsResponsePINDeliveryAddress $value): self
+    public function pINDeliveryAddress(?PINDeliveryAddress $value): self
     {
         $this->instance->setPINDeliveryAddress($value);
         return $this;

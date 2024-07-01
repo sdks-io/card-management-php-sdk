@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Authentication;
 
 use Core\Authentication\CoreAuth;
+use ShellCardManagementAPIsLib\ConfigurationDefaults;
 use Core\Request\Parameters\HeaderParam;
 use Core\Utils\CoreHelper;
 
@@ -19,24 +20,18 @@ use Core\Utils\CoreHelper;
  */
 class BasicAuthManager extends CoreAuth implements BasicAuthCredentials
 {
-    private $username;
-
-    private $password;
-
     /**
-     * Returns an instance of this class.
-     *
-     * @param string $username The username to use with basic authentication
-     * @param string $password The password to use with basic authentication
+     * @var array
      */
-    public function __construct(string $username, string $password)
+    private $config;
+
+    public function __construct(array $config)
     {
-        parent::__construct(
-            HeaderParam::init('Authorization', CoreHelper::getBasicAuthEncodedString($username, $password))
-                ->requiredNonEmpty()
-        );
-        $this->username = $username;
-        $this->password = $password;
+        $this->config = $config;
+        parent::__construct(HeaderParam::init(
+            'Authorization',
+            CoreHelper::getBasicAuthEncodedString($this->getUsername(), $this->getPassword())
+        )->requiredNonEmpty());
     }
 
     /**
@@ -44,7 +39,7 @@ class BasicAuthManager extends CoreAuth implements BasicAuthCredentials
      */
     public function getUsername(): string
     {
-        return $this->username;
+        return $this->config['username'] ?? ConfigurationDefaults::USERNAME;
     }
 
     /**
@@ -52,7 +47,7 @@ class BasicAuthManager extends CoreAuth implements BasicAuthCredentials
      */
     public function getPassword(): string
     {
-        return $this->password;
+        return $this->config['password'] ?? ConfigurationDefaults::PASSWORD;
     }
 
     /**
@@ -63,7 +58,7 @@ class BasicAuthManager extends CoreAuth implements BasicAuthCredentials
      */
     public function equals(string $username, string $password): bool
     {
-        return $username == $this->username &&
-            $password == $this->password;
+        return $username == $this->getUsername() &&
+            $password == $this->getPassword();
     }
 }

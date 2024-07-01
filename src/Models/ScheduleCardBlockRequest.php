@@ -27,9 +27,7 @@ class ScheduleCardBlockRequest implements \JsonSerializable
     /**
      * Returns Is Time Supported.
      * Default: False
-     *
      * True – It supports both date & time.
-     *
      * False – It supports only date. Time will be ignored if it is provided in the request.
      */
     public function getIsTimeSupported(): ?bool
@@ -40,9 +38,7 @@ class ScheduleCardBlockRequest implements \JsonSerializable
     /**
      * Sets Is Time Supported.
      * Default: False
-     *
      * True – It supports both date & time.
-     *
      * False – It supports only date. Time will be ignored if it is provided in the request.
      *
      * @maps IsTimeSupported

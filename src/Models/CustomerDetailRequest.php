@@ -162,9 +162,7 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id (i.e., Customer Id of the Payment Customer in H3 Cards Platform) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -178,9 +176,7 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id (i.e., Customer Id of the Payment Customer in H3 Cards Platform) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -193,9 +189,7 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id (i.e., Customer Id of the Payment Customer in H3 Cards Platform) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -206,9 +200,7 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -222,9 +214,7 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -237,9 +227,7 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function unsetPayerNumber(): void
@@ -250,7 +238,6 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed else Mandatory.
      */
     public function getAccountId(): ?int
@@ -264,7 +251,6 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed else Mandatory.
      *
      * @maps AccountId
@@ -277,7 +263,6 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed else Mandatory.
      */
     public function unsetAccountId(): void
@@ -288,7 +273,6 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed else Mandatory.
      */
     public function getAccountNumber(): ?string
@@ -302,7 +286,6 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed else Mandatory.
      *
      * @maps AccountNumber
@@ -315,7 +298,6 @@ class CustomerDetailRequest implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed else Mandatory.
      */
     public function unsetAccountNumber(): void

@@ -12,52 +12,67 @@ $cardController = $client->getCardController();
 
 ## Methods
 
-* [Search Card](../../doc/controllers/card.md#search-card)
-* [Card Summary](../../doc/controllers/card.md#card-summary)
-* [Order Card](../../doc/controllers/card.md#order-card)
-* [Order Card Enquiry](../../doc/controllers/card.md#order-card-enquiry)
-* [Card Cancel](../../doc/controllers/card.md#card-cancel)
-* [Card Update Status](../../doc/controllers/card.md#card-update-status)
+* [Searchcard](../../doc/controllers/card.md#searchcard)
+* [Cardsummary](../../doc/controllers/card.md#cardsummary)
+* [Cardordercard](../../doc/controllers/card.md#cardordercard)
+* [Cardordercardenquiry](../../doc/controllers/card.md#cardordercardenquiry)
+* [Cardcancel](../../doc/controllers/card.md#cardcancel)
+* [Cardupdatestatus](../../doc/controllers/card.md#cardupdatestatus)
 * [Purchase Category](../../doc/controllers/card.md#purchase-category)
-* [Card Details](../../doc/controllers/card.md#card-details)
+* [Carddetails](../../doc/controllers/card.md#carddetails)
 * [Card Move](../../doc/controllers/card.md#card-move)
-* [Card Pin Reminder](../../doc/controllers/card.md#card-pin-reminder)
+* [Cardpinreminder](../../doc/controllers/card.md#cardpinreminder)
 * [Schedule Card Block](../../doc/controllers/card.md#schedule-card-block)
-* [Auto Renew](../../doc/controllers/card.md#auto-renew)
-* [Update Mobile Payment Registration Status](../../doc/controllers/card.md#update-mobile-payment-registration-status)
-* [Get Key](../../doc/controllers/card.md#get-key)
-* [Delivery Address Update](../../doc/controllers/card.md#delivery-address-update)
+* [Autorenew](../../doc/controllers/card.md#autorenew)
+* [Updatemobilepaymentregistrationstatus](../../doc/controllers/card.md#updatemobilepaymentregistrationstatus)
+* [Getkey](../../doc/controllers/card.md#getkey)
+* [Deliveryaddressupdate](../../doc/controllers/card.md#deliveryaddressupdate)
 
 
-# Search Card
+# Searchcard
 
 This API allows to search for Shell Cards in the Shell Card Platform. It provides flexible search criteria and supports paging.
 
 #### New version updates
 
 * Oauth authentication to access the API
+
 * New parameters have been added in the response. Below are the list of parameters added
+  
   * IsEMVContact
+  
   * IsEMVContactless
+  
   * IsRFID
+  
   * RFIDUID
+  
   * EMAID
+  
   * EVPrintedNumber
+  
   * CardMediaCode
 
 #### Supported operations
 
 * Search cards by card id or PAN
+
 * Search cards by card status
+
 * Search cards by excluding card status
+
 * Search cards by date fields
+
 * Search cards by embossed fields
+
 * Search cards by card configuration fields
+
 * Search cards by included/excluded list of cards
+
 * Search cards by excluding card bundle Id
 
 ```php
-function searchCard(string $requestId, ?SearchCardRequest $body = null): CardSearchResponse
+function searchcard(string $requestId, ?SearchCardRequest $body = null): CardSearchResponse
 ```
 
 ## Parameters
@@ -78,7 +93,7 @@ $requestId = 'RequestId8';
 
 $body = SearchCardRequestBuilder::init()
     ->filters(
-        SearchRequestBuilder::init(
+        FiltersBuilder::init(
             [
                 'ACTIVE',
                 'BLOCKED'
@@ -152,7 +167,7 @@ $body = SearchCardRequestBuilder::init()
     ->page('1')
     ->build();
 
-$result = $cardController->searchCard(
+$result = $cardController->searchcard(
     $requestId,
     $body
 );
@@ -243,7 +258,7 @@ $result = $cardController->searchCard(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
-# Card Summary
+# Cardsummary
 
 This API allows to search for fuel cards in the Shell Card Platform and returns a high-level summary count. It provides flexible search criteria.
 
@@ -263,7 +278,7 @@ This API allows to search for fuel cards in the Shell Card Platform and returns 
 * Search cards by included/excluded list of cards
 
 ```php
-function cardSummary(string $requestId, ?CardSummaryRequest $body = null): CardSummaryResponse
+function cardsummary(string $requestId, ?CardSummaryRequest $body = null): CardSummaryResponse
 ```
 
 ## Parameters
@@ -284,7 +299,7 @@ $requestId = 'RequestId8';
 
 $body = CardSummaryRequestBuilder::init()
     ->filters(
-        SummaryRequestBuilder::init()
+        Filters1Builder::init()
             ->accountId(1223)
             ->accountNumber('CZ00000923')
             ->colCoCode(32)
@@ -351,7 +366,7 @@ $body = CardSummaryRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->cardSummary(
+$result = $cardController->cardsummary(
     $requestId,
     $body
 );
@@ -365,18 +380,18 @@ $result = $cardController->cardSummary(
   "Status": "SUCCESS",
   "Data": [
     {
-      "ActiveCards": 0,
-      "BlockedCards": 0,
-      "CancelledCards": 0,
-      "ExpiredCards": 0,
-      "ExpiringCards": 0,
+      "ActiveCards": 10,
+      "BlockedCards": 5,
+      "CancelledCards": 2,
+      "ExpiredCards": 5,
+      "ExpiringCards": 2,
       "FraudCards": 0,
       "NewCards": 0,
       "RenewalPendingCards": 0,
       "ReplacedCards": 0,
       "TemporaryBlockByCustomer": 0,
       "TemporaryBlockByShell": 0,
-      "TotalCards": 0
+      "TotalCards": 24
     }
   ]
 }
@@ -387,13 +402,13 @@ $result = $cardController->cardSummary(
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
 | 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | Forbidden | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
-# Order Card
+# Cardordercard
 
 This API allows ordering one or more fuel cards (up to 50). If the API call succeeds, the API will return a reference number and queue the request for asynchronous processing.
 
@@ -431,7 +446,7 @@ This API allows ordering one or more fuel cards (up to 50). If the API call succ
 * Individual reference numbers (**OrderCardReference**) for each new card
 
 ```php
-function orderCard(string $requestId, ?OrderCardRequest $body = null): OrderCardResponse
+function cardordercard(string $requestId, ?CardManagementV1OrdercardRequest $body = null): OrderCardResponse
 ```
 
 ## Parameters
@@ -439,7 +454,7 @@ function orderCard(string $requestId, ?OrderCardRequest $body = null): OrderCard
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
-| `body` | [`?OrderCardRequest`](../../doc/models/order-card-request.md) | Body, Optional | Order card request body |
+| `body` | [`?CardManagementV1OrdercardRequest`](../../doc/models/card-management-v1-ordercard-request.md) | Body, Optional | Order card request body |
 
 ## Response Type
 
@@ -450,7 +465,7 @@ function orderCard(string $requestId, ?OrderCardRequest $body = null): OrderCard
 ```php
 $requestId = 'RequestId8';
 
-$body = OrderCardRequestBuilder::init()
+$body = CardManagementV1OrdercardRequestBuilder::init()
     ->cardDetails(
         [
             CardDetailBuilder::init()
@@ -477,7 +492,7 @@ $body = OrderCardRequestBuilder::init()
                 ->embossCardGroup(false)
                 ->cardDeliveryType(1)
                 ->cardContact(
-                    CardDeliveryContactBuilder::init()
+                    CardContactBuilder::init()
                         ->deliveryContactTitle('Mr.')
                         ->deliveryContactName('Robert')
                         ->deliveryCompanyName('WILTON AUFDERHAR')
@@ -497,7 +512,7 @@ $body = OrderCardRequestBuilder::init()
                 ->pINDeliveryAddressType(1)
                 ->pINAdviceType(1)
                 ->pINContact(
-                    PINDeliveryContactBuilder::init()
+                    PINContactBuilder::init()
                         ->deliveryContactTitle('Mr.')
                         ->deliveryContactName('Robert')
                         ->deliveryCompanyName('WILTON AUFDERHAR')
@@ -541,7 +556,7 @@ $body = OrderCardRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->orderCard(
+$result = $cardController->cardordercard(
     $requestId,
     $body
 );
@@ -551,15 +566,15 @@ $result = $cardController->orderCard(
 
 ```json
 {
-  "RequestId": "string",
-  "Status": "string",
+  "RequestId": "b88525fd-6340-404e-9313-12e702c33cb7",
+  "Status": "SUCCESS",
   "Data": [
     {
-      "DriverAndVRN": "Robert:MV65YLH",
+      "DriverAndVRN": "ROBERT:MV65YLH",
       "OrderCardReference": 488351
     }
   ],
-  "MainReference": 0
+  "MainReference": 488453
 }
 ```
 
@@ -567,30 +582,36 @@ $result = $cardController->orderCard(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | Forbidden | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Order Card Enquiry
+# Cardordercardenquiry
 
 This API retrieves the card order status from the Shell Card Platform based on the given reference numbers.
 
 #### New version updates
 
     * Oauth authentication to access the API
+    
     * Minor change in response structure with addition of Status parameter
 
 #### Supported operations
 
     * Get order status by Bulk Card Order Reference
+    
     * Get order status by Order Reference (main reference for the order)
+    
     * Get order status by Card Reference (individual card reference belonging to an order reference)
 
 ```php
-function orderCardEnquiry(string $requestId, ?OrderCardEnquiryRequest $body = null): OrderCardEnquiryResponse
+function cardordercardenquiry(
+    string $requestId,
+    ?OrderCardEnquiryRequest $body = null
+): OrderCardEnquiryResponse
 ```
 
 ## Parameters
@@ -611,7 +632,7 @@ $requestId = 'RequestId8';
 
 $body = OrderCardEnquiryRequestBuilder::init()
     ->filters(
-        OrderCardEnquiryReqBuilder::init()
+        Filters2Builder::init()
             ->accountId(70)
             ->accountNumber('NL00000063')
             ->colCoCode(18)
@@ -628,7 +649,7 @@ $body = OrderCardEnquiryRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->orderCardEnquiry(
+$result = $cardController->cardordercardenquiry(
     $requestId,
     $body
 );
@@ -638,45 +659,44 @@ $result = $cardController->orderCardEnquiry(
 
 ```json
 {
-  "RequestId": "string",
-  "Status": "string",
+  "RequestId": "6fb81ffe-bf1b-44b0-94f8-d6711afde392",
+  "Status": "SUCCESS",
   "Data": [
     {
-      "AccountId": 0,
-      "AccountNumber": "string",
+      "AccountId": 70,
+      "AccountNumber": "NL00000063",
       "BCOReference": 0,
       "BCORowNumber": 0,
       "CardGroupId": 0,
-      "CardGroupName": "string",
-      "CardId": 0,
-      "CardPAN": "string",
-      "CardTypeCode": "string",
-      "CardTypeId": 0,
-      "CardTypeName": "string",
-      "DriverName": "string",
-      "ErrorCode": "string",
-      "ErrorDescription": "string",
-      "GatewaySyncErrorCode": "string",
-      "GatewaySyncErrorDescription": "string",
-      "GatewaySyncStatus": "string",
-      "MainReference": 0,
-      "OrderCardReference": 0,
-      "OrderStatus": "string",
-      "PayerId": 0,
-      "PayerNumber": "string",
-      "ProcessedDate": "string",
-      "PurchaseCategoryCode": "string",
-      "PurchaseCategoryId": 0,
-      "PurchaseCategoryName": "string",
-      "SubmittedDate": "string",
-      "SyncProcessedDate": "string",
-      "SyncRequestedDate": "string",
-      "VRN": "string",
-      "OrderRequestId": "string",
-      "ExpiryDate": "string",
-      "ClientReferenceId": "string",
-      "StatusDescription": "string",
-      "ColCoId": 0
+      "CardGroupName": "null",
+      "CardId": 41008,
+      "CardPAN": "7077187910757000712",
+      "CardTypeCode": "7077187",
+      "CardTypeId": 704,
+      "CardTypeName": "NL CRT Nat. Shell + partnernetwerk",
+      "DriverName": "DAVE ROUSE TEST",
+      "ErrorCode": "0000",
+      "ErrorDescription": "null",
+      "GatewaySyncErrorCode": "0000",
+      "GatewaySyncErrorDescription": "Success",
+      "GatewaySyncStatus": "S",
+      "MainReference": 512164,
+      "OrderCardReference": 714069,
+      "OrderStatus": "S",
+      "PayerId": 70,
+      "PayerNumber": "NL00000063",
+      "ProcessedDate": "20231219 10:12:21",
+      "PurchaseCategoryCode": "3",
+      "PurchaseCategoryId": 139,
+      "PurchaseCategoryName": "3 - No Restriction",
+      "SubmittedDate": "20231219 10:11:16",
+      "SyncProcessedDate": "20231219 10:15:44",
+      "SyncRequestedDate": "null",
+      "VRN": "null",
+      "OrderRequestId": "ee625150-8d84-496c-b824-a4c47b482ae3",
+      "ExpiryDate": "20271231 00:00:00",
+      "ClientReferenceId": "9073ab4e-c1f5-4f2d-947f-753ead176c3d",
+      "StatusDescription": "Success"
     }
   ]
 }
@@ -686,14 +706,14 @@ $result = $cardController->orderCardEnquiry(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | Forbidden | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Card Cancel
+# Cardcancel
 
 This API allows cancelling one or multiple cards (up to 500) within a single API call. This API allows updating of
 the card to the following status-
@@ -729,7 +749,7 @@ A permanent block (cancelled) request for the card will be queued in Shell Card 
 When a card is requested to be Blocked permanently (cancelled) for which a request has already been submitted to report as Damaged and the damaged card active period is not yet completed, the damaged card request will be marked as superseded and the new Block (cancelled) request will be processed.
 
 ```php
-function cardCancel(string $requestId, ?CancelCardRequest $body = null): CancelCardResponse
+function cardcancel(string $requestId, ?CardManagementV1CancelRequest $body = null): CancelCardResponse
 ```
 
 ## Parameters
@@ -737,7 +757,7 @@ function cardCancel(string $requestId, ?CancelCardRequest $body = null): CancelC
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
-| `body` | [`?CancelCardRequest`](../../doc/models/cancel-card-request.md) | Body, Optional | Update status request body |
+| `body` | [`?CardManagementV1CancelRequest`](../../doc/models/card-management-v1-cancel-request.md) | Body, Optional | Update status request body |
 
 ## Response Type
 
@@ -748,7 +768,7 @@ function cardCancel(string $requestId, ?CancelCardRequest $body = null): CancelC
 ```php
 $requestId = 'RequestId8';
 
-$body = CancelCardRequestBuilder::init(
+$body = CardManagementV1CancelRequestBuilder::init(
     [
         UpdateCardBuilder::init()
             ->caller('NextGenUI')
@@ -757,7 +777,7 @@ $body = CancelCardRequestBuilder::init(
             ->notifyCallerOnSync(false)
             ->orderCardReplacement(true)
             ->cardSettings(
-                ReplaceCardSettingsBuilder::init()
+                CardSettingsBuilder::init()
                     ->selfSelectedEncryptedPIN('0hCx7wfFp3z8QkW8dElhHiMwCwC1')
                     ->selfSelectedPINKeyID('123aaa33198dc8f3s4k77dsc78')
                     ->selfSelectedPINSessionKey('WoWB+8UEd71+8QXwuE75flkAQ /4Q6gDFSn027oJ/0ne6LmzVIxJ87yoeqKS /C+OIBJ7bTvasLH+xvDSZtzoOZHr 7wfFmpfSyet8KnKjnagSicrUgpGk 7qFyOw3iA9/Qd6Oy9djYR3C3cDWEpj /YREZ1lBGReb9fqdSpoKx8mnGuPAw7')
@@ -812,7 +832,7 @@ $body = CancelCardRequestBuilder::init(
     ->reasonText('Lost')
     ->build();
 
-$result = $cardController->cardCancel(
+$result = $cardController->cardcancel(
     $requestId,
     $body
 );
@@ -849,13 +869,13 @@ $result = $cardController->cardCancel(
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
 | 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | Forbidden | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Card Update Status
+# Cardupdatestatus
 
 This API allows updating of the card status for one or more cards (up to 500) within a single API call.  If the API call succeeds, the API will return a reference number and queue the request for asynchronous processing.
 
@@ -904,7 +924,10 @@ This API allows updating of the card status for one or more cards (up to 500) wi
   * If during the damage card active period another request is made to set the card to Temporarily Blocked or Blocked permanently (cancelled), then the damaged card request will be marked as superseded and the new Temporary Block or Block (cancelled) will be processed.
 
 ```php
-function cardUpdateStatus(string $requestId, ?UpdateCardStatusRequest $body = null): UpdateCardStatusResponse
+function cardupdatestatus(
+    string $requestId,
+    ?CardManagementV1UpdatestatusRequest $body = null
+): UpdateCardStatusResponse
 ```
 
 ## Parameters
@@ -912,7 +935,7 @@ function cardUpdateStatus(string $requestId, ?UpdateCardStatusRequest $body = nu
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
-| `body` | [`?UpdateCardStatusRequest`](../../doc/models/update-card-status-request.md) | Body, Optional | Update status request body |
+| `body` | [`?CardManagementV1UpdatestatusRequest`](../../doc/models/card-management-v1-updatestatus-request.md) | Body, Optional | Update status request body |
 
 ## Response Type
 
@@ -923,7 +946,7 @@ function cardUpdateStatus(string $requestId, ?UpdateCardStatusRequest $body = nu
 ```php
 $requestId = 'RequestId8';
 
-$body = UpdateCardStatusRequestBuilder::init(
+$body = CardManagementV1UpdatestatusRequestBuilder::init(
     [
         UpdateCardBuilder::init()
             ->caller('Motix')
@@ -932,7 +955,7 @@ $body = UpdateCardStatusRequestBuilder::init(
             ->notifyCallerOnSync(false)
             ->orderCardReplacement(true)
             ->cardSettings(
-                ReplaceCardSettingsBuilder::init()
+                CardSettingsBuilder::init()
                     ->selfSelectedEncryptedPIN('0hCx7wfFp3z8QkW8dElhHiMwCwC1')
                     ->selfSelectedPINKeyID('123aaa33198dc8f3s4k77dsc78')
                     ->selfSelectedPINSessionKey('WoWB+8UEd71+8QXwuE75flkAQ /4Q6gDFSn027oJ/0ne6LmzVIxJ87yoeqKS /C+OIBJ7bTvasLH+xvDSZtzoOZHr 7wfFmpfSyet8KnKjnagSicrUgpGk 7qFyOw3iA9/Qd6Oy9djYR3C3cDWEpj /YREZ1lBGReb9fqdSpoKx8mnGuPAw7')
@@ -989,7 +1012,7 @@ $body = UpdateCardStatusRequestBuilder::init(
     ->reasonText('Unblock')
     ->build();
 
-$result = $cardController->cardUpdateStatus(
+$result = $cardController->cardupdatestatus(
     $requestId,
     $body
 );
@@ -1025,11 +1048,11 @@ $result = $cardController->cardUpdateStatus(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | Forbidden | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
 # Purchase Category
@@ -1129,14 +1152,14 @@ $result = $cardController->purchaseCategory(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | The server understood the request but refuses to authorize it. | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Card Details
+# Carddetails
 
 This API allows to fetch details of a single fuel card from the Shell Card Platform. If a **CardId** request parameter is provided, this will return a single card.  If a **PAN** request parameter is provided, this may result in multiple fuel cards matching the search criteria. The card details of the most recently issued card will be returned.
 
@@ -1145,7 +1168,7 @@ This API allows to fetch details of a single fuel card from the Shell Card Platf
 * Get card by card id or PAN
 
 ```php
-function cardDetails(string $apikey, string $requestId, ?CardDetailsRequest $body = null): CardDetailsResponse
+function carddetails(string $apikey, string $requestId, ?CardDetailsRequest $body = null): CardDetailsResponse
 ```
 
 ## Parameters
@@ -1187,7 +1210,7 @@ $body = CardDetailsRequestBuilder::init()
     ->includeScheduledCardBlocks(false)
     ->build();
 
-$result = $cardController->cardDetails(
+$result = $cardController->carddetails(
     $apikey,
     $requestId,
     $body
@@ -1328,11 +1351,11 @@ $result = $cardController->cardDetails(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | The server understood the request but refuses to authorize it. | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
 # Card Move
@@ -1451,14 +1474,14 @@ $result = $cardController->cardMove(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | The server understood the request but refuses to authorize it. | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Card Pin Reminder
+# Cardpinreminder
 
 This API allows requesting a PIN reminder for a fuel card. If the API call succeeds, the API will return a reference number and queue the request for asynchronous processing.
 
@@ -1485,7 +1508,10 @@ This API allows requesting a PIN reminder for a fuel card. If the API call succe
 * A PIN reminder request has not been successfully processed in the last 48 hours for the card
 
 ```php
-function cardPinReminder(string $requestId, ?PINReminderRequest $body = null): PINReminderResponse
+function cardpinreminder(
+    string $requestId,
+    ?CardManagementV1PinreminderRequest $body = null
+): PINReminderResponse
 ```
 
 ## Parameters
@@ -1493,7 +1519,7 @@ function cardPinReminder(string $requestId, ?PINReminderRequest $body = null): P
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
-| `body` | [`?PINReminderRequest`](../../doc/models/pin-reminder-request.md) | Body, Optional | PIN reminder request body |
+| `body` | [`?CardManagementV1PinreminderRequest`](../../doc/models/card-management-v1-pinreminder-request.md) | Body, Optional | PIN reminder request body |
 
 ## Response Type
 
@@ -1504,7 +1530,7 @@ function cardPinReminder(string $requestId, ?PINReminderRequest $body = null): P
 ```php
 $requestId = 'RequestId8';
 
-$body = PINReminderRequestBuilder::init()
+$body = CardManagementV1PinreminderRequestBuilder::init()
     ->accountNumber('CZ00000927')
     ->colCoCode(32)
     ->payerNumber('CZ00000927')
@@ -1518,7 +1544,7 @@ $body = PINReminderRequestBuilder::init()
                 ->cardExpiryDate('20241031')
                 ->pINContactType(4)
                 ->pINDeliverTo(
-                    PINDeliveryDetailsBuilder::init(
+                    PINDeliverToBuilder::init(
                         'CGI',
                         'Address1',
                         'City1'
@@ -1538,7 +1564,7 @@ $body = PINReminderRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->cardPinReminder(
+$result = $cardController->cardpinreminder(
     $requestId,
     $body
 );
@@ -1680,14 +1706,14 @@ $result = $cardController->scheduleCardBlock(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | Forbidden | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Auto Renew
+# Autorenew
 
 This API allows to update the reissue indicator of a single card. If the API call succeeds, the API will return a reference number for tracking purposes and queue the request for asynchronous processing.
 
@@ -1710,7 +1736,7 @@ This API allows to update the reissue indicator of a single card. If the API cal
 * Providing a **PAN** request paramter may result in multiple fuel cards being located in the Shell Card Platform. The card details of the most recently issued card will be considered.
 
 ```php
-function autoRenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoRenewCardResponse
+function autorenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoRenewCardResponse
 ```
 
 ## Parameters
@@ -1748,7 +1774,7 @@ $body = AutoRenewCardRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->autoRenew(
+$result = $cardController->autorenew(
     $requestId,
     $body
 );
@@ -1774,14 +1800,14 @@ $result = $cardController->autoRenew(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | Forbidden | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Update Mobile Payment Registration Status
+# Updatemobilepaymentregistrationstatus
 
 This operation allows  update the approval status of Mobile Payment Registration requests requiring for Fleet Manager approval.
 If the approval status is:
@@ -1790,7 +1816,7 @@ If the approval status is:
 * “Rejected” then status will be updated to “CI” (Failed) with appropriate error message.
 
 ```php
-function updateMobilePaymentRegistrationStatus(
+function updatemobilepaymentregistrationstatus(
     string $requestId,
     ?UpdateMPayRegStatusRequest $body = null
 ): UpdateMPayRegStatusResponse
@@ -1830,7 +1856,7 @@ $body = UpdateMPayRegStatusRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->updateMobilePaymentRegistrationStatus(
+$result = $cardController->updatemobilepaymentregistrationstatus(
     $requestId,
     $body
 );
@@ -1850,18 +1876,18 @@ $result = $cardController->updateMobilePaymentRegistrationStatus(
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
 | 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 403 | Forbidden | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | Forbidden | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Get Key
+# Getkey
 
 Get a new public key that will be used to encrypt data for selected PIN process when ordering new Shell Card. This encrypted data is used for further processing.
 
 ```php
-function getKey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
+function getkey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
 ```
 
 ## Parameters
@@ -1880,7 +1906,7 @@ function getKey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
 ```php
 $requestId = 'RequestId8';
 
-$result = $cardController->getKey($requestId);
+$result = $cardController->getkey($requestId);
 ```
 
 ## Example Response *(as JSON)*
@@ -1896,14 +1922,14 @@ $result = $cardController->getKey($requestId);
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | The server understood the request but refuses to authorize it. | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Delivery Address Update
+# Deliveryaddressupdate
 
 This API allows users to update the card’s delivery addresses (card delivery address used for card re-issue and PIN delivery address used when PIN reminder is requested)
 
@@ -1912,7 +1938,7 @@ This API allows users to update the card’s delivery addresses (card delivery a
 * card delivery address update
 
 ```php
-function deliveryAddressUpdate(
+function deliveryaddressupdate(
     string $apikey,
     ?DeliveryAddressUpdateRequest $body = null
 ): DeliveryAddressUpdateResponse
@@ -1941,21 +1967,68 @@ $body = DeliveryAddressUpdateRequestBuilder::init()
     ->payerNumber('GB000000123')
     ->accountId(12356)
     ->accountNumber('GB000000124')
+    ->deliveryAddressUpdates(
+        [
+            DeliveryAddressUpdateBuilder::init(
+                true
+            )
+                ->cardId(123)
+                ->pAN('7002051006629889654')
+                ->cardExpiryDate('20170930')
+                ->updateCardRenewalAddress(
+                    UpdateCardRenewalAddress2Builder::init(
+                        'Jack',
+                        'Travel Transport',
+                        'Elm Street 11',
+                        '1023EA',
+                        8
+                    )
+                        ->contactTitle('Mr')
+                        ->city('London')
+                        ->regionID(2)
+                        ->emailAddress('testmail@gmail.com')
+                        ->phoneNumber('+99999999999')
+                        ->build()
+                )
+                ->build()
+        ]
+    )
     ->build();
 
-$result = $cardController->deliveryAddressUpdate(
+$result = $cardController->deliveryaddressupdate(
     $apikey,
     $body
 );
+```
+
+## Example Response *(as JSON)*
+
+```json
+{
+  "RequestId": "eb621f45-a543-4d9a-a934-2f223b263c42",
+  "ServiceReference": 123456,
+  "DeliveryAddressUpdateReferences": {
+    "CardId": 12345,
+    "CardPAN": "7002051006629889654",
+    "AccountId": 12356,
+    "AccountNumber": "GB000000124",
+    "ReferenceId": 573567,
+    "ErrorInfo": "null"
+  },
+  "Error": {
+    "Code": "0000",
+    "Description": "Success"
+  }
+}
 ```
 
 ## Errors
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `ApiException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `ApiException` |
+| 403 | The server understood the request but refuses to authorize it. | `ApiException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `ApiException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 

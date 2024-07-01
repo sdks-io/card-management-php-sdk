@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Models\PINDeliveryDetails;
+use ShellCardManagementAPIsLib\Models\PINDeliverTo;
 use ShellCardManagementAPIsLib\Models\PINReminderCardDetails;
 
 /**
@@ -96,7 +96,7 @@ class PINReminderCardDetailsBuilder
     /**
      * Sets pindeliver to field.
      */
-    public function pINDeliverTo(?PINDeliveryDetails $value): self
+    public function pINDeliverTo(?PINDeliverTo $value): self
     {
         $this->instance->setPINDeliverTo($value);
         return $this;

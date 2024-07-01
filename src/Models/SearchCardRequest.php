@@ -15,7 +15,7 @@ use stdClass;
 class SearchCardRequest implements \JsonSerializable
 {
     /**
-     * @var SearchRequest|null
+     * @var Filters|null
      */
     private $filters;
 
@@ -31,20 +31,18 @@ class SearchCardRequest implements \JsonSerializable
 
     /**
      * Returns Filters.
-     * Encapsulate the Search details request.
      */
-    public function getFilters(): ?SearchRequest
+    public function getFilters(): ?Filters
     {
         return $this->filters;
     }
 
     /**
      * Sets Filters.
-     * Encapsulate the Search details request.
      *
      * @maps Filters
      */
-    public function setFilters(?SearchRequest $filters): void
+    public function setFilters(?Filters $filters): void
     {
         $this->filters = $filters;
     }
@@ -52,9 +50,7 @@ class SearchCardRequest implements \JsonSerializable
     /**
      * Returns Page Size.
      * Page Size – Number of records to show on a page
-     *
      * Optional
-     *
      * Default value 50
      */
     public function getPageSize(): ?string
@@ -65,9 +61,7 @@ class SearchCardRequest implements \JsonSerializable
     /**
      * Sets Page Size.
      * Page Size – Number of records to show on a page
-     *
      * Optional
-     *
      * Default value 50
      *
      * @maps PageSize

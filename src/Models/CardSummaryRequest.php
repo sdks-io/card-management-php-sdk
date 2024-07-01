@@ -15,30 +15,24 @@ use stdClass;
 class CardSummaryRequest implements \JsonSerializable
 {
     /**
-     * @var SummaryRequest|null
+     * @var Filters1|null
      */
     private $filters;
 
     /**
      * Returns Filters.
-     * Encapsulates the details of a Summary Request.
-     *
-     * Summary Request fields are same as the Search Request base class and no new fields are required.
      */
-    public function getFilters(): ?SummaryRequest
+    public function getFilters(): ?Filters1
     {
         return $this->filters;
     }
 
     /**
      * Sets Filters.
-     * Encapsulates the details of a Summary Request.
-     *
-     * Summary Request fields are same as the Search Request base class and no new fields are required.
      *
      * @maps Filters
      */
-    public function setFilters(?SummaryRequest $filters): void
+    public function setFilters(?Filters1 $filters): void
     {
         $this->filters = $filters;
     }

@@ -116,7 +116,6 @@ class UpdateMPayRegStatusRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id  of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
      */
     public function getPayerId(): ?int
@@ -127,7 +126,6 @@ class UpdateMPayRegStatusRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id  of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
      *
      * @maps PayerId
@@ -140,7 +138,6 @@ class UpdateMPayRegStatusRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number (Ex: GB000000123) of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function getPayerNumber(): ?string
@@ -151,7 +148,6 @@ class UpdateMPayRegStatusRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number (Ex: GB000000123) of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      *
      * @maps PayerNumber
@@ -164,9 +160,7 @@ class UpdateMPayRegStatusRequest implements \JsonSerializable
     /**
      * Returns M Pay Requests.
      * List of MPay Request to be updated for Fleet Manager approval status.
-     *
      * Mandatory
-     *
      * Maximum number of requests that can be submitted are 50
      *
      * @return UpdateMPayRegStatusRequestMPayRequestsItems[]|null
@@ -179,9 +173,7 @@ class UpdateMPayRegStatusRequest implements \JsonSerializable
     /**
      * Sets M Pay Requests.
      * List of MPay Request to be updated for Fleet Manager approval status.
-     *
      * Mandatory
-     *
      * Maximum number of requests that can be submitted are 50
      *
      * @maps MPayRequests

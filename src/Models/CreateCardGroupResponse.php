@@ -48,7 +48,6 @@ class CreateCardGroupResponse implements \JsonSerializable
      * Returns Main Reference.
      * Reference number for tracking the execution of the requests – new Card Group creation and to move
      * the cards to the new card group.
-     *
      * Reference number will be null when the validations of new card group parameters fail.
      */
     public function getMainReference(): ?int
@@ -60,7 +59,6 @@ class CreateCardGroupResponse implements \JsonSerializable
      * Sets Main Reference.
      * Reference number for tracking the execution of the requests – new Card Group creation and to move
      * the cards to the new card group.
-     *
      * Reference number will be null when the validations of new card group parameters fail.
      *
      * @maps MainReference
@@ -121,9 +119,7 @@ class CreateCardGroupResponse implements \JsonSerializable
     /**
      * Returns Error Cards.
      * List of cards that failed validation and not submitted for processing.
-     *
      * Entity: FailedCardReference
-     *
      * This list will be empty when the validations of new card group parameters fail.
      *
      * @return CreateCardGroupResponseErrorCardsItems[]|null
@@ -136,9 +132,7 @@ class CreateCardGroupResponse implements \JsonSerializable
     /**
      * Sets Error Cards.
      * List of cards that failed validation and not submitted for processing.
-     *
      * Entity: FailedCardReference
-     *
      * This list will be empty when the validations of new card group parameters fail.
      *
      * @maps ErrorCards

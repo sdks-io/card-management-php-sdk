@@ -92,23 +92,14 @@ class AccountRequest implements \JsonSerializable
     /**
      * Returns Status.
      * Account Status.
-     *
      * Optional if StatusList is passed, else mandatory.
-     *
      * Ignored if StatusList is passed.
-     *
      * Allowed values:
-     *
      * • ALL
-     *
      * • ACTIVE
-     *
      * • BLOCKED
-     *
      * • CANCELLED
-     *
      * • CREDITLOCK
-     *
      * • DELINQUENCYLOCK
      */
     public function getStatus(): ?string
@@ -122,23 +113,14 @@ class AccountRequest implements \JsonSerializable
     /**
      * Sets Status.
      * Account Status.
-     *
      * Optional if StatusList is passed, else mandatory.
-     *
      * Ignored if StatusList is passed.
-     *
      * Allowed values:
-     *
      * • ALL
-     *
      * • ACTIVE
-     *
      * • BLOCKED
-     *
      * • CANCELLED
-     *
      * • CREDITLOCK
-     *
      * • DELINQUENCYLOCK
      *
      * @maps Status
@@ -151,23 +133,14 @@ class AccountRequest implements \JsonSerializable
     /**
      * Unsets Status.
      * Account Status.
-     *
      * Optional if StatusList is passed, else mandatory.
-     *
      * Ignored if StatusList is passed.
-     *
      * Allowed values:
-     *
      * • ALL
-     *
      * • ACTIVE
-     *
      * • BLOCKED
-     *
      * • CANCELLED
-     *
      * • CREDITLOCK
-     *
      * • DELINQUENCYLOCK
      */
     public function unsetStatus(): void
@@ -180,9 +153,7 @@ class AccountRequest implements \JsonSerializable
      * Include card summary details in the response.
      *
      *
-     *
      * When passed as false, the card summary related parameters on response will be set to null.
-     *
      *
      *
      * Optional – default value: true.
@@ -197,9 +168,7 @@ class AccountRequest implements \JsonSerializable
      * Include card summary details in the response.
      *
      *
-     *
      * When passed as false, the card summary related parameters on response will be set to null.
-     *
      *
      *
      * Optional – default value: true.
@@ -214,7 +183,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer id of the customer.
-     *
      * Optional if PayerNumber is passed, else Mandatory.
      */
     public function getPayerId(): ?int
@@ -228,7 +196,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer id of the customer.
-     *
      * Optional if PayerNumber is passed, else Mandatory.
      *
      * @maps PayerId
@@ -241,7 +208,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer id of the customer.
-     *
      * Optional if PayerNumber is passed, else Mandatory.
      */
     public function unsetPayerId(): void
@@ -252,7 +218,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * PayerNumber of the customer.
-     *
      * Optional if PayerId is passed, else Mandatory.
      */
     public function getPayerNumber(): ?string
@@ -266,7 +231,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * PayerNumber of the customer.
-     *
      * Optional if PayerId is passed, else Mandatory.
      *
      * @maps PayerNumber
@@ -279,7 +243,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * PayerNumber of the customer.
-     *
      * Optional if PayerId is passed, else Mandatory.
      */
     public function unsetPayerNumber(): void
@@ -290,9 +253,7 @@ class AccountRequest implements \JsonSerializable
     /**
      * Returns Page Size.
      * Page Size – Number of records to show on a page.
-     *
      * Optional
-     *
      * Default value 50
      */
     public function getPageSize(): ?int
@@ -306,9 +267,7 @@ class AccountRequest implements \JsonSerializable
     /**
      * Sets Page Size.
      * Page Size – Number of records to show on a page.
-     *
      * Optional
-     *
      * Default value 50
      *
      * @maps PageSize
@@ -321,9 +280,7 @@ class AccountRequest implements \JsonSerializable
     /**
      * Unsets Page Size.
      * Page Size – Number of records to show on a page.
-     *
      * Optional
-     *
      * Default value 50
      */
     public function unsetPageSize(): void
@@ -407,7 +364,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Returns Col Co Country Code.
      * The 2-character ISO Code for the customer and card owning country.
-     *
      * ColCoCode or ColCoCountryCode  is Mandatory for serviced OUs such as Romania, Latvia, Lithuania,
      * Estonia, Ukraine etc. It is optional for other countries if ColCoID is provided.
      */
@@ -422,7 +378,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Sets Col Co Country Code.
      * The 2-character ISO Code for the customer and card owning country.
-     *
      * ColCoCode or ColCoCountryCode  is Mandatory for serviced OUs such as Romania, Latvia, Lithuania,
      * Estonia, Ukraine etc. It is optional for other countries if ColCoID is provided.
      *
@@ -436,7 +391,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Unsets Col Co Country Code.
      * The 2-character ISO Code for the customer and card owning country.
-     *
      * ColCoCode or ColCoCountryCode  is Mandatory for serviced OUs such as Romania, Latvia, Lithuania,
      * Estonia, Ukraine etc. It is optional for other countries if ColCoID is provided.
      */
@@ -448,9 +402,7 @@ class AccountRequest implements \JsonSerializable
     /**
      * Returns Current Page.
      * Page Number (as shown to the users)
-     *
      * Optional
-     *
      * Default value 1
      */
     public function getCurrentPage(): ?int
@@ -464,9 +416,7 @@ class AccountRequest implements \JsonSerializable
     /**
      * Sets Current Page.
      * Page Number (as shown to the users)
-     *
      * Optional
-     *
      * Default value 1
      *
      * @maps CurrentPage
@@ -479,9 +429,7 @@ class AccountRequest implements \JsonSerializable
     /**
      * Unsets Current Page.
      * Page Number (as shown to the users)
-     *
      * Optional
-     *
      * Default value 1
      */
     public function unsetCurrentPage(): void
@@ -492,7 +440,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Returns Invoice Points Only.
      * Optional – default value: false.
-     *
      * When passed as true, the API will return accounts that are configured as Invoice Point only.
      */
     public function getInvoicePointsOnly(): ?bool
@@ -506,7 +453,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Sets Invoice Points Only.
      * Optional – default value: false.
-     *
      * When passed as true, the API will return accounts that are configured as Invoice Point only.
      *
      * @maps InvoicePointsOnly
@@ -519,7 +465,6 @@ class AccountRequest implements \JsonSerializable
     /**
      * Unsets Invoice Points Only.
      * Optional – default value: false.
-     *
      * When passed as true, the API will return accounts that are configured as Invoice Point only.
      */
     public function unsetInvoicePointsOnly(): void

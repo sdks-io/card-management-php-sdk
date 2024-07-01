@@ -15,72 +15,202 @@ use stdClass;
 class SearchAccountLimitResponse implements \JsonSerializable
 {
     /**
-     * @var string|null
+     * @var array
      */
-    private $requestId;
+    private $requestId = [];
+
+    /**
+     * @var int|null
+     */
+    private $accountId;
 
     /**
      * @var string|null
      */
-    private $status;
+    private $accountNumber;
 
     /**
-     * @var SearchAccountLimitResponseData|null
+     * @var string|null
      */
-    private $data;
+    private $referenceProduct;
+
+    /**
+     * @var string|null
+     */
+    private $restrictionCondition;
+
+    /**
+     * @var AccountVelocityLimit[]|null
+     */
+    private $velocityLimits;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $error;
 
     /**
      * Returns Request Id.
+     * Request Id of the API call
      */
     public function getRequestId(): ?string
     {
-        return $this->requestId;
+        if (count($this->requestId) == 0) {
+            return null;
+        }
+        return $this->requestId['value'];
     }
 
     /**
      * Sets Request Id.
+     * Request Id of the API call
      *
      * @maps RequestId
      */
     public function setRequestId(?string $requestId): void
     {
-        $this->requestId = $requestId;
+        $this->requestId['value'] = $requestId;
     }
 
     /**
-     * Returns Status.
+     * Unsets Request Id.
+     * Request Id of the API call
      */
-    public function getStatus(): ?string
+    public function unsetRequestId(): void
     {
-        return $this->status;
+        $this->requestId = [];
     }
 
     /**
-     * Sets Status.
+     * Returns Account Id.
+     * Account ID of the customer.
+     */
+    public function getAccountId(): ?int
+    {
+        return $this->accountId;
+    }
+
+    /**
+     * Sets Account Id.
+     * Account ID of the customer.
      *
-     * @maps Status
+     * @maps AccountId
      */
-    public function setStatus(?string $status): void
+    public function setAccountId(?int $accountId): void
     {
-        $this->status = $status;
+        $this->accountId = $accountId;
     }
 
     /**
-     * Returns Data.
-     */
-    public function getData(): ?SearchAccountLimitResponseData
-    {
-        return $this->data;
-    }
-
-    /**
-     * Sets Data.
+     * Returns Account Number.
+     * Account Number
      *
-     * @maps Data
+     * Example: GB99215176
      */
-    public function setData(?SearchAccountLimitResponseData $data): void
+    public function getAccountNumber(): ?string
     {
-        $this->data = $data;
+        return $this->accountNumber;
+    }
+
+    /**
+     * Sets Account Number.
+     * Account Number
+     *
+     * Example: GB99215176
+     *
+     * @maps AccountNumber
+     */
+    public function setAccountNumber(?string $accountNumber): void
+    {
+        $this->accountNumber = $accountNumber;
+    }
+
+    /**
+     * Returns Reference Product.
+     * 3 digit Shell global fuel product code, if already set up.
+     *
+     * Example: 021
+     */
+    public function getReferenceProduct(): ?string
+    {
+        return $this->referenceProduct;
+    }
+
+    /**
+     * Sets Reference Product.
+     * 3 digit Shell global fuel product code, if already set up.
+     *
+     * Example: 021
+     *
+     * @maps ReferenceProduct
+     */
+    public function setReferenceProduct(?string $referenceProduct): void
+    {
+        $this->referenceProduct = $referenceProduct;
+    }
+
+    /**
+     * Returns Restriction Condition.
+     * The restriction condition code.
+     *
+     * Example: DECLINE_ALERT
+     */
+    public function getRestrictionCondition(): ?string
+    {
+        return $this->restrictionCondition;
+    }
+
+    /**
+     * Sets Restriction Condition.
+     * The restriction condition code.
+     *
+     * Example: DECLINE_ALERT
+     *
+     * @maps RestrictionCondition
+     */
+    public function setRestrictionCondition(?string $restrictionCondition): void
+    {
+        $this->restrictionCondition = $restrictionCondition;
+    }
+
+    /**
+     * Returns Velocity Limits.
+     *
+     * @return AccountVelocityLimit[]|null
+     */
+    public function getVelocityLimits(): ?array
+    {
+        return $this->velocityLimits;
+    }
+
+    /**
+     * Sets Velocity Limits.
+     *
+     * @maps VelocityLimits
+     *
+     * @param AccountVelocityLimit[]|null $velocityLimits
+     */
+    public function setVelocityLimits(?array $velocityLimits): void
+    {
+        $this->velocityLimits = $velocityLimits;
+    }
+
+    /**
+     * Returns Error.
+     */
+    public function getError(): ?ErrorStatus
+    {
+        return $this->error;
+    }
+
+    /**
+     * Sets Error.
+     *
+     * @maps Error
+     */
+    public function setError(?ErrorStatus $error): void
+    {
+        $this->error = $error;
     }
 
     /**
@@ -95,14 +225,26 @@ class SearchAccountLimitResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->requestId)) {
-            $json['RequestId'] = $this->requestId;
+        if (!empty($this->requestId)) {
+            $json['RequestId']            = $this->requestId['value'];
         }
-        if (isset($this->status)) {
-            $json['Status']    = $this->status;
+        if (isset($this->accountId)) {
+            $json['AccountId']            = $this->accountId;
         }
-        if (isset($this->data)) {
-            $json['Data']      = $this->data;
+        if (isset($this->accountNumber)) {
+            $json['AccountNumber']        = $this->accountNumber;
+        }
+        if (isset($this->referenceProduct)) {
+            $json['ReferenceProduct']     = $this->referenceProduct;
+        }
+        if (isset($this->restrictionCondition)) {
+            $json['RestrictionCondition'] = $this->restrictionCondition;
+        }
+        if (isset($this->velocityLimits)) {
+            $json['VelocityLimits']       = $this->velocityLimits;
+        }
+        if (isset($this->error)) {
+            $json['Error']                = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

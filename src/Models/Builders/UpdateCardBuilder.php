@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Models\ReplaceCardSettings;
+use ShellCardManagementAPIsLib\Models\CardSettings;
 use ShellCardManagementAPIsLib\Models\UpdateCard;
 
 /**
@@ -96,7 +96,7 @@ class UpdateCardBuilder
     /**
      * Sets card settings field.
      */
-    public function cardSettings(?ReplaceCardSettings $value): self
+    public function cardSettings(?CardSettings $value): self
     {
         $this->instance->setCardSettings($value);
         return $this;

@@ -11,8 +11,8 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\Filters;
 use ShellCardManagementAPIsLib\Models\SearchCardRequest;
-use ShellCardManagementAPIsLib\Models\SearchRequest;
 
 /**
  * Builder for model SearchCardRequest
@@ -42,7 +42,7 @@ class SearchCardRequestBuilder
     /**
      * Sets filters field.
      */
-    public function filters(?SearchRequest $value): self
+    public function filters(?Filters $value): self
     {
         $this->instance->setFilters($value);
         return $this;

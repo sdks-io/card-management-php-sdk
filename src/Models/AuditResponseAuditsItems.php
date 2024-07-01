@@ -172,7 +172,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account id of the customer.
-     *
      * It will be the source account id in case of “Fund Transfer
      */
     public function getAccountId(): ?int
@@ -186,7 +185,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account id of the customer.
-     *
      * It will be the source account id in case of “Fund Transfer
      *
      * @maps AccountId
@@ -199,7 +197,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account id of the customer.
-     *
      * It will be the source account id in case of “Fund Transfer
      */
     public function unsetAccountId(): void
@@ -210,7 +207,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account number of the customer.
-     *
      * It will be the source account number in case of “Fund Transfer”
      */
     public function getAccountNumber(): ?string
@@ -224,7 +220,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account number of the customer.
-     *
      * It will be the source account number in case of “Fund Transfer”
      *
      * @maps AccountNumber
@@ -237,7 +232,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account number of the customer.
-     *
      * It will be the source account number in case of “Fund Transfer”
      */
     public function unsetAccountNumber(): void
@@ -780,7 +774,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Returns P AN.
      * PAN in the request.
-     *
      * If Mask PAN is enabled at Microservices configuration then all digits of the PAN, except the last 6
      * digits, will be masked.
      */
@@ -795,7 +788,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Sets P AN.
      * PAN in the request.
-     *
      * If Mask PAN is enabled at Microservices configuration then all digits of the PAN, except the last 6
      * digits, will be masked.
      *
@@ -809,7 +801,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Unsets P AN.
      * PAN in the request.
-     *
      * If Mask PAN is enabled at Microservices configuration then all digits of the PAN, except the last 6
      * digits, will be masked.
      */
@@ -923,7 +914,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Returns Requested By.
      * vUUID of the user who submitted this request.
-     *
      * It will be the UUID of the Driver in the case of “MobilePaymentRegistration”
      */
     public function getRequestedBy(): ?string
@@ -937,7 +927,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Sets Requested By.
      * vUUID of the user who submitted this request.
-     *
      * It will be the UUID of the Driver in the case of “MobilePaymentRegistration”
      *
      * @maps RequestedBy
@@ -950,7 +939,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Unsets Requested By.
      * vUUID of the user who submitted this request.
-     *
      * It will be the UUID of the Driver in the case of “MobilePaymentRegistration”
      */
     public function unsetRequestedBy(): void
@@ -1273,21 +1261,13 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Returns Status.
      * Status of the request.
-     *
      * Possible values:
-     *
      * • Success
-     *
      * • Failed
-     *
      * • InProgress
-     *
      * • Submitted
-     *
      * • Rejected
-     *
      * • PendingApproval
-     *
      * • MailedToCSC
      */
     public function getStatus(): ?string
@@ -1301,21 +1281,13 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Sets Status.
      * Status of the request.
-     *
      * Possible values:
-     *
      * • Success
-     *
      * • Failed
-     *
      * • InProgress
-     *
      * • Submitted
-     *
      * • Rejected
-     *
      * • PendingApproval
-     *
      * • MailedToCSC
      *
      * @maps Status
@@ -1328,21 +1300,13 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Unsets Status.
      * Status of the request.
-     *
      * Possible values:
-     *
      * • Success
-     *
      * • Failed
-     *
      * • InProgress
-     *
      * • Submitted
-     *
      * • Rejected
-     *
      * • PendingApproval
-     *
      * • MailedToCSC
      */
     public function unsetStatus(): void
@@ -1423,7 +1387,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Returns User Display Name.
      * Display name of the user who submitted this request.
-     *
      * It will be the Display Name of the Driver in the case of “MobilePaymentRegistration” in the below
      * format:
      */
@@ -1438,7 +1401,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Sets User Display Name.
      * Display name of the user who submitted this request.
-     *
      * It will be the Display Name of the Driver in the case of “MobilePaymentRegistration” in the below
      * format:
      *
@@ -1452,7 +1414,6 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Unsets User Display Name.
      * Display name of the user who submitted this request.
-     *
      * It will be the Display Name of the Driver in the case of “MobilePaymentRegistration” in the below
      * format:
      */

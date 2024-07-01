@@ -22,42 +22,12 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * @var array
      */
-    private $payerId = [];
-
-    /**
-     * @var array
-     */
-    private $accountId = [];
-
-    /**
-     * @var string
-     */
-    private $bundleId;
-
-    /**
-     * @var string|null
-     */
-    private $requestAction;
-
-    /**
-     * @var string[]|null
-     */
-    private $cards;
-
-    /**
-     * @var string|null
-     */
-    private $usageRestrictionAction;
-
-    /**
-     * @var BundleRestriction|null
-     */
-    private $restrictions;
-
-    /**
-     * @var array
-     */
     private $colCoCode = [];
+
+    /**
+     * @var array
+     */
+    private $payerId = [];
 
     /**
      * @var array
@@ -67,19 +37,49 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * @var array
      */
+    private $accountId = [];
+
+    /**
+     * @var array
+     */
     private $accountNumber = [];
 
     /**
-     * @param string $bundleId
+     * @var string|null
      */
-    public function __construct(string $bundleId)
+    private $bundleId;
+
+    /**
+     * @var string|null
+     */
+    private $requestAction;
+
+    /**
+     * @var string[]
+     */
+    private $cards;
+
+    /**
+     * @var string|null
+     */
+    private $usageRestrictionAction;
+
+    /**
+     * @var BundleRestrictionUpdate|null
+     */
+    private $restrictions;
+
+    /**
+     * @param string[] $cards
+     */
+    public function __construct(array $cards)
     {
-        $this->bundleId = $bundleId;
+        $this->cards = $cards;
     }
 
     /**
      * Returns Col Co Id.
-     * Collecting Company Id of the selected payer.
+     * Collecting Company Id  of the selected payer.
      *
      * Optional if ColCoCode is passed else Mandatory.
      *
@@ -99,7 +99,7 @@ class UpdateBundleRequest implements \JsonSerializable
 
     /**
      * Sets Col Co Id.
-     * Collecting Company Id of the selected payer.
+     * Collecting Company Id  of the selected payer.
      *
      * Optional if ColCoCode is passed else Mandatory.
      *
@@ -118,7 +118,7 @@ class UpdateBundleRequest implements \JsonSerializable
 
     /**
      * Unsets Col Co Id.
-     * Collecting Company Id of the selected payer.
+     * Collecting Company Id  of the selected payer.
      *
      * Optional if ColCoCode is passed else Mandatory.
      *
@@ -134,6 +134,65 @@ class UpdateBundleRequest implements \JsonSerializable
     }
 
     /**
+     * Returns Col Co Code.
+     * Collecting Company Code  of the selected payer.
+     *
+     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
+     * for other countries if ColCoID is provided.
+     *
+     * Example:
+     *
+     * 86 for Philippines
+     *
+     * 5 for UK
+     */
+    public function getColCoCode(): ?int
+    {
+        if (count($this->colCoCode) == 0) {
+            return null;
+        }
+        return $this->colCoCode['value'];
+    }
+
+    /**
+     * Sets Col Co Code.
+     * Collecting Company Code  of the selected payer.
+     *
+     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
+     * for other countries if ColCoID is provided.
+     *
+     * Example:
+     *
+     * 86 for Philippines
+     *
+     * 5 for UK
+     *
+     * @maps ColCoCode
+     */
+    public function setColCoCode(?int $colCoCode): void
+    {
+        $this->colCoCode['value'] = $colCoCode;
+    }
+
+    /**
+     * Unsets Col Co Code.
+     * Collecting Company Code  of the selected payer.
+     *
+     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
+     * for other countries if ColCoID is provided.
+     *
+     * Example:
+     *
+     * 86 for Philippines
+     *
+     * 5 for UK
+     */
+    public function unsetColCoCode(): void
+    {
+        $this->colCoCode = [];
+    }
+
+    /**
      * Returns Payer Id.
      * Payer Id of the selected payer.
      *
@@ -141,7 +200,7 @@ class UpdateBundleRequest implements \JsonSerializable
      *
      * Example: 123456
      */
-    public function getPayerId(): ?int
+    public function getPayerId(): ?string
     {
         if (count($this->payerId) == 0) {
             return null;
@@ -159,7 +218,7 @@ class UpdateBundleRequest implements \JsonSerializable
      *
      * @maps PayerId
      */
-    public function setPayerId(?int $payerId): void
+    public function setPayerId(?string $payerId): void
     {
         $this->payerId['value'] = $payerId;
     }
@@ -175,6 +234,50 @@ class UpdateBundleRequest implements \JsonSerializable
     public function unsetPayerId(): void
     {
         $this->payerId = [];
+    }
+
+    /**
+     * Returns Payer Number.
+     * Payer Number of the selected payer.
+     *
+     * Either PayerId or PayerNumber or both must be passed.
+     *
+     * Example: GB000000123
+     */
+    public function getPayerNumber(): ?string
+    {
+        if (count($this->payerNumber) == 0) {
+            return null;
+        }
+        return $this->payerNumber['value'];
+    }
+
+    /**
+     * Sets Payer Number.
+     * Payer Number of the selected payer.
+     *
+     * Either PayerId or PayerNumber or both must be passed.
+     *
+     * Example: GB000000123
+     *
+     * @maps PayerNumber
+     */
+    public function setPayerNumber(?string $payerNumber): void
+    {
+        $this->payerNumber['value'] = $payerNumber;
+    }
+
+    /**
+     * Unsets Payer Number.
+     * Payer Number of the selected payer.
+     *
+     * Either PayerId or PayerNumber or both must be passed.
+     *
+     * Example: GB000000123
+     */
+    public function unsetPayerNumber(): void
+    {
+        $this->payerNumber = [];
     }
 
     /**
@@ -222,12 +325,56 @@ class UpdateBundleRequest implements \JsonSerializable
     }
 
     /**
+     * Returns Account Number.
+     * Account Number of the customer.
+     *
+     * Either AccountId or AccountNumber or both must be passed.
+     *
+     * Example: GB000000123
+     */
+    public function getAccountNumber(): ?string
+    {
+        if (count($this->accountNumber) == 0) {
+            return null;
+        }
+        return $this->accountNumber['value'];
+    }
+
+    /**
+     * Sets Account Number.
+     * Account Number of the customer.
+     *
+     * Either AccountId or AccountNumber or both must be passed.
+     *
+     * Example: GB000000123
+     *
+     * @maps AccountNumber
+     */
+    public function setAccountNumber(?string $accountNumber): void
+    {
+        $this->accountNumber['value'] = $accountNumber;
+    }
+
+    /**
+     * Unsets Account Number.
+     * Account Number of the customer.
+     *
+     * Either AccountId or AccountNumber or both must be passed.
+     *
+     * Example: GB000000123
+     */
+    public function unsetAccountNumber(): void
+    {
+        $this->accountNumber = [];
+    }
+
+    /**
      * Returns Bundle Id.
      * Identifier of the bundle in Gateway.
      *
      * Mandatory
      */
-    public function getBundleId(): string
+    public function getBundleId(): ?string
     {
         return $this->bundleId;
     }
@@ -238,10 +385,9 @@ class UpdateBundleRequest implements \JsonSerializable
      *
      * Mandatory
      *
-     * @required
      * @maps BundleId
      */
-    public function setBundleId(string $bundleId): void
+    public function setBundleId(?string $bundleId): void
     {
         $this->bundleId = $bundleId;
     }
@@ -294,11 +440,11 @@ class UpdateBundleRequest implements \JsonSerializable
      *
      * Example: 7002051006629890645
      *
-     * When PAN matches with multiple cards, the restriction will be applied on the latest issued card
+     * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
      *
-     * @return string[]|null
+     * @return string[]
      */
-    public function getCards(): ?array
+    public function getCards(): array
     {
         return $this->cards;
     }
@@ -311,13 +457,14 @@ class UpdateBundleRequest implements \JsonSerializable
      *
      * Example: 7002051006629890645
      *
-     * When PAN matches with multiple cards, the restriction will be applied on the latest issued card
+     * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
      *
+     * @required
      * @maps Cards
      *
-     * @param string[]|null $cards
+     * @param string[] $cards
      */
-    public function setCards(?array $cards): void
+    public function setCards(array $cards): void
     {
         $this->cards = $cards;
     }
@@ -363,7 +510,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Returns Restrictions.
      */
-    public function getRestrictions(): ?BundleRestriction
+    public function getRestrictions(): ?BundleRestrictionUpdate
     {
         return $this->restrictions;
     }
@@ -373,156 +520,9 @@ class UpdateBundleRequest implements \JsonSerializable
      *
      * @maps Restrictions
      */
-    public function setRestrictions(?BundleRestriction $restrictions): void
+    public function setRestrictions(?BundleRestrictionUpdate $restrictions): void
     {
         $this->restrictions = $restrictions;
-    }
-
-    /**
-     * Returns Col Co Code.
-     * Collecting Company Code (Shell Code) of the selected payer.
-     *
-     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
-     * for other countries if ColCoID is provided.
-     *
-     * Example:
-     *
-     * 86 for Philippines
-     *
-     * 5 for UK
-     */
-    public function getColCoCode(): ?int
-    {
-        if (count($this->colCoCode) == 0) {
-            return null;
-        }
-        return $this->colCoCode['value'];
-    }
-
-    /**
-     * Sets Col Co Code.
-     * Collecting Company Code (Shell Code) of the selected payer.
-     *
-     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
-     * for other countries if ColCoID is provided.
-     *
-     * Example:
-     *
-     * 86 for Philippines
-     *
-     * 5 for UK
-     *
-     * @maps ColCoCode
-     */
-    public function setColCoCode(?int $colCoCode): void
-    {
-        $this->colCoCode['value'] = $colCoCode;
-    }
-
-    /**
-     * Unsets Col Co Code.
-     * Collecting Company Code (Shell Code) of the selected payer.
-     *
-     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
-     * for other countries if ColCoID is provided.
-     *
-     * Example:
-     *
-     * 86 for Philippines
-     *
-     * 5 for UK
-     */
-    public function unsetColCoCode(): void
-    {
-        $this->colCoCode = [];
-    }
-
-    /**
-     * Returns Payer Number.
-     * Payer Number of the selected payer.
-     *
-     * Either PayerId or PayerNumber or both must be passed.
-     *
-     * Example: GB000000123
-     */
-    public function getPayerNumber(): ?string
-    {
-        if (count($this->payerNumber) == 0) {
-            return null;
-        }
-        return $this->payerNumber['value'];
-    }
-
-    /**
-     * Sets Payer Number.
-     * Payer Number of the selected payer.
-     *
-     * Either PayerId or PayerNumber or both must be passed.
-     *
-     * Example: GB000000123
-     *
-     * @maps PayerNumber
-     */
-    public function setPayerNumber(?string $payerNumber): void
-    {
-        $this->payerNumber['value'] = $payerNumber;
-    }
-
-    /**
-     * Unsets Payer Number.
-     * Payer Number of the selected payer.
-     *
-     * Either PayerId or PayerNumber or both must be passed.
-     *
-     * Example: GB000000123
-     */
-    public function unsetPayerNumber(): void
-    {
-        $this->payerNumber = [];
-    }
-
-    /**
-     * Returns Account Number.
-     * Account Number of the customer.
-     *
-     * Either AccountId or AccountNumber or both must be passed.
-     *
-     * Example: GB000000123
-     */
-    public function getAccountNumber(): ?string
-    {
-        if (count($this->accountNumber) == 0) {
-            return null;
-        }
-        return $this->accountNumber['value'];
-    }
-
-    /**
-     * Sets Account Number.
-     * Account Number of the customer.
-     *
-     * Either AccountId or AccountNumber or both must be passed.
-     *
-     * Example: GB000000123
-     *
-     * @maps AccountNumber
-     */
-    public function setAccountNumber(?string $accountNumber): void
-    {
-        $this->accountNumber['value'] = $accountNumber;
-    }
-
-    /**
-     * Unsets Account Number.
-     * Account Number of the customer.
-     *
-     * Either AccountId or AccountNumber or both must be passed.
-     *
-     * Example: GB000000123
-     */
-    public function unsetAccountNumber(): void
-    {
-        $this->accountNumber = [];
     }
 
     /**
@@ -538,33 +538,29 @@ class UpdateBundleRequest implements \JsonSerializable
     {
         $json = [];
         if (!empty($this->colCoId)) {
-            $json['ColCoId']                = $this->colCoId['value'];
-        }
-        if (!empty($this->payerId)) {
-            $json['PayerId']                = $this->payerId['value'];
-        }
-        if (!empty($this->accountId)) {
-            $json['AccountId']              = $this->accountId['value'];
-        }
-        $json['BundleId']                   = $this->bundleId;
-        $json['RequestAction']              = $this->requestAction;
-        if (isset($this->cards)) {
-            $json['Cards']                  = $this->cards;
-        }
-        if (isset($this->usageRestrictionAction)) {
-            $json['UsageRestrictionAction'] = $this->usageRestrictionAction;
-        }
-        if (isset($this->restrictions)) {
-            $json['Restrictions']           = $this->restrictions;
+            $json['ColCoId']            = $this->colCoId['value'];
         }
         if (!empty($this->colCoCode)) {
-            $json['ColCoCode']              = $this->colCoCode['value'];
+            $json['ColCoCode']          = $this->colCoCode['value'];
+        }
+        if (!empty($this->payerId)) {
+            $json['PayerId']            = $this->payerId['value'];
         }
         if (!empty($this->payerNumber)) {
-            $json['PayerNumber']            = $this->payerNumber['value'];
+            $json['PayerNumber']        = $this->payerNumber['value'];
+        }
+        if (!empty($this->accountId)) {
+            $json['AccountId']          = $this->accountId['value'];
         }
         if (!empty($this->accountNumber)) {
-            $json['AccountNumber']          = $this->accountNumber['value'];
+            $json['AccountNumber']      = $this->accountNumber['value'];
+        }
+        $json['BundleId']               = $this->bundleId;
+        $json['RequestAction']          = $this->requestAction;
+        $json['Cards']                  = $this->cards;
+        $json['UsageRestrictionAction'] = $this->usageRestrictionAction;
+        if (isset($this->restrictions)) {
+            $json['Restrictions']       = $this->restrictions;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

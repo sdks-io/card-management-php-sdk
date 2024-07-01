@@ -12,7 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\Address;
-use ShellCardManagementAPIsLib\Models\FinanceCurrency;
+use ShellCardManagementAPIsLib\Models\FinanceCurrency2;
 use ShellCardManagementAPIsLib\Models\PayerDetails;
 
 /**
@@ -1717,7 +1717,7 @@ class PayerDetailsBuilder
     /**
      * Sets finance currency field.
      */
-    public function financeCurrency(?FinanceCurrency $value): self
+    public function financeCurrency(?FinanceCurrency2 $value): self
     {
         $this->instance->setFinanceCurrency($value);
         return $this;

@@ -11,7 +11,9 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\BundleCardRestrictionStatus;
 use ShellCardManagementAPIsLib\Models\CreateBundleResponse;
+use ShellCardManagementAPIsLib\Models\ErrorStatus;
 
 /**
  * Builder for model CreateBundleResponse
@@ -48,29 +50,101 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Unsets request id field.
      */
-    public function status(?string $value): self
+    public function unsetRequestId(): self
     {
-        $this->instance->setStatus($value);
+        $this->instance->unsetRequestId();
         return $this;
     }
 
     /**
-     * Sets data field.
+     * Sets bundle creation status field.
      */
-    public function data(?array $value): self
+    public function bundleCreationStatus(?ErrorStatus $value): self
     {
-        $this->instance->setData($value);
+        $this->instance->setBundleCreationStatus($value);
         return $this;
     }
 
     /**
-     * Sets errors field.
+     * Sets bundle id field.
      */
-    public function errors(?array $value): self
+    public function bundleId(?string $value): self
     {
-        $this->instance->setErrors($value);
+        $this->instance->setBundleId($value);
+        return $this;
+    }
+
+    /**
+     * Sets day time restriction status field.
+     */
+    public function dayTimeRestrictionStatus(?ErrorStatus $value): self
+    {
+        $this->instance->setDayTimeRestrictionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets day time restriction profile id field.
+     */
+    public function dayTimeRestrictionProfileId(?string $value): self
+    {
+        $this->instance->setDayTimeRestrictionProfileId($value);
+        return $this;
+    }
+
+    /**
+     * Sets location restriction status field.
+     */
+    public function locationRestrictionStatus(?ErrorStatus $value): self
+    {
+        $this->instance->setLocationRestrictionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets location restriction profile id field.
+     */
+    public function locationRestrictionProfileId(?string $value): self
+    {
+        $this->instance->setLocationRestrictionProfileId($value);
+        return $this;
+    }
+
+    /**
+     * Sets usage restriction status field.
+     */
+    public function usageRestrictionStatus(?ErrorStatus $value): self
+    {
+        $this->instance->setUsageRestrictionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets product restriction status field.
+     */
+    public function productRestrictionStatus(?ErrorStatus $value): self
+    {
+        $this->instance->setProductRestrictionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets cards field.
+     */
+    public function cards(?BundleCardRestrictionStatus $value): self
+    {
+        $this->instance->setCards($value);
+        return $this;
+    }
+
+    /**
+     * Sets error field.
+     */
+    public function error(?ErrorStatus $value): self
+    {
+        $this->instance->setError($value);
         return $this;
     }
 

@@ -165,9 +165,7 @@ class PurchaseCategoryRequest implements \JsonSerializable
     /**
      * Returns Purchase Category Id.
      * Purchase category Id
-     *
      * Optional.
-     *
      * Example: 123, 124, etc.,
      */
     public function getPurchaseCategoryId(): ?int
@@ -178,9 +176,7 @@ class PurchaseCategoryRequest implements \JsonSerializable
     /**
      * Sets Purchase Category Id.
      * Purchase category Id
-     *
      * Optional.
-     *
      * Example: 123, 124, etc.,
      *
      * @maps PurchaseCategoryId

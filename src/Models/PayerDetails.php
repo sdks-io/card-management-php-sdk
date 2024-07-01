@@ -520,7 +520,7 @@ class PayerDetails implements \JsonSerializable
     private $hasActiveVolBasedAssociationBonus;
 
     /**
-     * @var FinanceCurrency|null
+     * @var FinanceCurrency2|null
      */
     private $financeCurrency;
 
@@ -958,7 +958,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Unallocated Payment.
      * Unallocated payment.
-     *
      * When negative, indicates overdue amount from the last SOA.
      */
     public function getUnallocatedPayment(): ?float
@@ -972,7 +971,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Unallocated Payment.
      * Unallocated payment.
-     *
      * When negative, indicates overdue amount from the last SOA.
      *
      * @maps UnallocatedPayment
@@ -985,7 +983,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Unsets Unallocated Payment.
      * Unallocated payment.
-     *
      * When negative, indicates overdue amount from the last SOA.
      */
     public function unsetUnallocatedPayment(): void
@@ -1541,7 +1538,6 @@ class PayerDetails implements \JsonSerializable
      * Returns Billing Frequency Type Id.
      * Billing/Invoice frequency Identifier. Indicates the frequency in which the transactions will be
      * considered for invoicing in a bulling run
-     *
      * E.g.: 1, 2, 3, etc.
      */
     public function getBillingFrequencyTypeId(): ?int
@@ -1556,7 +1552,6 @@ class PayerDetails implements \JsonSerializable
      * Sets Billing Frequency Type Id.
      * Billing/Invoice frequency Identifier. Indicates the frequency in which the transactions will be
      * considered for invoicing in a bulling run
-     *
      * E.g.: 1, 2, 3, etc.
      *
      * @maps BillingFrequencyTypeId
@@ -1570,7 +1565,6 @@ class PayerDetails implements \JsonSerializable
      * Unsets Billing Frequency Type Id.
      * Billing/Invoice frequency Identifier. Indicates the frequency in which the transactions will be
      * considered for invoicing in a bulling run
-     *
      * E.g.: 1, 2, 3, etc.
      */
     public function unsetBillingFrequencyTypeId(): void
@@ -1652,7 +1646,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Billing Run Frequency Type Id.
      * Frequency at which the billing process is triggered.
-     *
      * E.g.: 1, 2, 3, etc.
      */
     public function getBillingRunFrequencyTypeId(): ?int
@@ -1666,7 +1659,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Billing Run Frequency Type Id.
      * Frequency at which the billing process is triggered.
-     *
      * E.g.: 1, 2, 3, etc.
      *
      * @maps BillingRunFrequencyTypeId
@@ -1679,7 +1671,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Unsets Billing Run Frequency Type Id.
      * Frequency at which the billing process is triggered.
-     *
      * E.g.: 1, 2, 3, etc.
      */
     public function unsetBillingRunFrequencyTypeId(): void
@@ -1914,11 +1905,8 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Output Type.
      * Invoice output type (Id-Description)
-     *
      * E.g.:
-     *
      * 1-PDF
-     *
      * 6-Print
      */
     public function getOutputType(): ?string
@@ -1932,11 +1920,8 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Output Type.
      * Invoice output type (Id-Description)
-     *
      * E.g.:
-     *
      * 1-PDF
-     *
      * 6-Print
      *
      * @maps OutputType
@@ -1949,11 +1934,8 @@ class PayerDetails implements \JsonSerializable
     /**
      * Unsets Output Type.
      * Invoice output type (Id-Description)
-     *
      * E.g.:
-     *
      * 1-PDF
-     *
      * 6-Print
      */
     public function unsetOutputType(): void
@@ -2880,7 +2862,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Print Credit Limit.
      * Is Credit Limit printed on the statement of account: True/False
-     *
      * If True Credit Limit is printed on invoice/SOA
      */
     public function getPrintCreditLimit(): ?bool
@@ -2891,7 +2872,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Print Credit Limit.
      * Is Credit Limit printed on the statement of account: True/False
-     *
      * If True Credit Limit is printed on invoice/SOA
      *
      * @maps PrintCreditLimit
@@ -2904,13 +2884,9 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Card Group Type.
      * Card Group Type configured for Payer
-     *
      * e.g. (Id – Description):
-     *
      * 1-Horizontal only
-     *
      * 2-Vertical only
-     *
      * 3-Both
      */
     public function getCardGroupType(): ?string
@@ -2924,13 +2900,9 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Card Group Type.
      * Card Group Type configured for Payer
-     *
      * e.g. (Id – Description):
-     *
      * 1-Horizontal only
-     *
      * 2-Vertical only
-     *
      * 3-Both
      *
      * @maps CardGroupType
@@ -2943,13 +2915,9 @@ class PayerDetails implements \JsonSerializable
     /**
      * Unsets Card Group Type.
      * Card Group Type configured for Payer
-     *
      * e.g. (Id – Description):
-     *
      * 1-Horizontal only
-     *
      * 2-Vertical only
-     *
      * 3-Both
      */
     public function unsetCardGroupType(): void
@@ -3232,7 +3200,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Available Credit.
      * The available credit for the payer.
-     *
      * This is the credit limit minus the outstanding debt.
      */
     public function getAvailableCredit(): ?float
@@ -3246,7 +3213,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Available Credit.
      * The available credit for the payer.
-     *
      * This is the credit limit minus the outstanding debt.
      *
      * @maps AvailableCredit
@@ -3259,7 +3225,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Unsets Available Credit.
      * The available credit for the payer.
-     *
      * This is the credit limit minus the outstanding debt.
      */
     public function unsetAvailableCredit(): void
@@ -3270,15 +3235,10 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Band.
      * Band Id and Description of the Payer in Card Platform.
-     *
      * e.g. (Id – Description):
-     *
      * 1-Platinum
-     *
      * 2-Gold
-     *
      * 3-Silver
-     *
      * 4-Bronze
      */
     public function getBand(): ?string
@@ -3292,15 +3252,10 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Band.
      * Band Id and Description of the Payer in Card Platform.
-     *
      * e.g. (Id – Description):
-     *
      * 1-Platinum
-     *
      * 2-Gold
-     *
      * 3-Silver
-     *
      * 4-Bronze
      *
      * @maps Band
@@ -3313,15 +3268,10 @@ class PayerDetails implements \JsonSerializable
     /**
      * Unsets Band.
      * Band Id and Description of the Payer in Card Platform.
-     *
      * e.g. (Id – Description):
-     *
      * 1-Platinum
-     *
      * 2-Gold
-     *
      * 3-Silver
-     *
      * 4-Bronze
      */
     public function unsetBand(): void
@@ -3396,7 +3346,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Credit Limit in Customer Currency.
      * Credit limit in Customer currency.
-     *
      * Note: For currency details refer the parameters CurrencyCode & CurrencySymbol in the PayerDetail
      * response.
      */
@@ -3411,7 +3360,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Credit Limit in Customer Currency.
      * Credit limit in Customer currency.
-     *
      * Note: For currency details refer the parameters CurrencyCode & CurrencySymbol in the PayerDetail
      * response.
      *
@@ -3425,7 +3373,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Unsets Credit Limit in Customer Currency.
      * Credit limit in Customer currency.
-     *
      * Note: For currency details refer the parameters CurrencyCode & CurrencySymbol in the PayerDetail
      * response.
      */
@@ -3741,7 +3688,6 @@ class PayerDetails implements \JsonSerializable
      * True, if the payer is setup for volume-based pricing and is active on the current date, else false.
      *
      *
-     *
      * This field is returned only when IncludeBonusParameters is set to True in the request. Else set to
      * null.
      */
@@ -3753,7 +3699,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Has Active Vol Based Pricing.
      * True, if the payer is setup for volume-based pricing and is active on the current date, else false.
-     *
      *
      *
      * This field is returned only when IncludeBonusParameters is set to True in the request. Else set to
@@ -3769,7 +3714,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Has Active Vol Based Bonus.
      * True, if the payer is setup for volume-based bonus and is active on the current date, else false.
-     *
      * This field is returned only when IncludeBonusParameters is set to True in the request. Else set to
      * null.
      */
@@ -3781,7 +3725,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Has Active Vol Based Bonus.
      * True, if the payer is setup for volume-based bonus and is active on the current date, else false.
-     *
      * This field is returned only when IncludeBonusParameters is set to True in the request. Else set to
      * null.
      *
@@ -3796,7 +3739,6 @@ class PayerDetails implements \JsonSerializable
      * Returns Has Active Vol Based Association Bonus.
      * True, if the payer is setup for volume-based association bonus and is active on the current date,
      * else false.
-     *
      * This field is returned only when IncludeBonusParameters is set to True in the request. Else set to
      * null.
      */
@@ -3809,7 +3751,6 @@ class PayerDetails implements \JsonSerializable
      * Sets Has Active Vol Based Association Bonus.
      * True, if the payer is setup for volume-based association bonus and is active on the current date,
      * else false.
-     *
      * This field is returned only when IncludeBonusParameters is set to True in the request. Else set to
      * null.
      *
@@ -3822,22 +3763,18 @@ class PayerDetails implements \JsonSerializable
 
     /**
      * Returns Finance Currency.
-     * This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the request
-     * is ‘false’
      */
-    public function getFinanceCurrency(): ?FinanceCurrency
+    public function getFinanceCurrency(): ?FinanceCurrency2
     {
         return $this->financeCurrency;
     }
 
     /**
      * Sets Finance Currency.
-     * This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the request
-     * is ‘false’
      *
      * @maps FinanceCurrency
      */
-    public function setFinanceCurrency(?FinanceCurrency $financeCurrency): void
+    public function setFinanceCurrency(?FinanceCurrency2 $financeCurrency): void
     {
         $this->financeCurrency = $financeCurrency;
     }
@@ -3845,7 +3782,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Tolls Customer Id.
      * Customer id in e-TM system
-     *
      * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to
      * null or empty.
      */
@@ -3860,7 +3796,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Tolls Customer Id.
      * Customer id in e-TM system
-     *
      * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to
      * null or empty.
      *
@@ -3874,7 +3809,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Unsets Tolls Customer Id.
      * Customer id in e-TM system
-     *
      * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to
      * null or empty.
      */
@@ -3886,7 +3820,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Returns Tolls Colco Country Type Id.
      * String Colco country type id in e-TM system
-     *
      * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to
      * null or empty.
      */
@@ -3901,7 +3834,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Sets Tolls Colco Country Type Id.
      * String Colco country type id in e-TM system
-     *
      * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to
      * null or empty.
      *
@@ -3915,7 +3847,6 @@ class PayerDetails implements \JsonSerializable
     /**
      * Unsets Tolls Colco Country Type Id.
      * String Colco country type id in e-TM system
-     *
      * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to
      * null or empty.
      */

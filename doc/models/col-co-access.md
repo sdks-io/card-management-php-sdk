@@ -12,7 +12,7 @@
 | `colCoId` | `?string` | Optional | Collecting company ID. | getColCoId(): ?string | setColCoId(?string colCoId): void |
 | `colCoCode` | `?string` | Optional | Collecting company code. | getColCoCode(): ?string | setColCoCode(?string colCoCode): void |
 | `colCoCountryName` | `?string` | Optional | Collecting company’s Country name. ex: United Kingdom | getColCoCountryName(): ?string | setColCoCountryName(?string colCoCountryName): void |
-| `issuingCountryNumber` | `?string` | Optional | Issuing Country Number.<br>ex: 032 - Czech Republic | getIssuingCountryNumber(): ?string | setIssuingCountryNumber(?string issuingCountryNumber): void |
+| `issuingCountryNumber` | `?string` | Optional | Issuing Country Number.<br><br>ex: 032 - Czech Republic | getIssuingCountryNumber(): ?string | setIssuingCountryNumber(?string issuingCountryNumber): void |
 
 ## Example (as JSON)
 

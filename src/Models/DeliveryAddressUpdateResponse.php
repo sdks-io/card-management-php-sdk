@@ -25,7 +25,7 @@ class DeliveryAddressUpdateResponse implements \JsonSerializable
     private $serviceReference;
 
     /**
-     * @var DeliveryAddressUpdateReferences[]|null
+     * @var DeliveryAddressUpdateReferences2|null
      */
     private $deliveryAddressUpdateReferences;
 
@@ -76,10 +76,8 @@ class DeliveryAddressUpdateResponse implements \JsonSerializable
 
     /**
      * Returns Delivery Address Update References.
-     *
-     * @return DeliveryAddressUpdateReferences[]|null
      */
-    public function getDeliveryAddressUpdateReferences(): ?array
+    public function getDeliveryAddressUpdateReferences(): ?DeliveryAddressUpdateReferences2
     {
         return $this->deliveryAddressUpdateReferences;
     }
@@ -88,11 +86,10 @@ class DeliveryAddressUpdateResponse implements \JsonSerializable
      * Sets Delivery Address Update References.
      *
      * @maps DeliveryAddressUpdateReferences
-     *
-     * @param DeliveryAddressUpdateReferences[]|null $deliveryAddressUpdateReferences
      */
-    public function setDeliveryAddressUpdateReferences(?array $deliveryAddressUpdateReferences): void
-    {
+    public function setDeliveryAddressUpdateReferences(
+        ?DeliveryAddressUpdateReferences2 $deliveryAddressUpdateReferences
+    ): void {
         $this->deliveryAddressUpdateReferences = $deliveryAddressUpdateReferences;
     }
 

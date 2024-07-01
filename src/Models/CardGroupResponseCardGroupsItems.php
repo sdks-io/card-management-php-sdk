@@ -543,9 +543,7 @@ class CardGroupResponseCardGroupsItems implements \JsonSerializable
     /**
      * Returns Expiry Date.
      * Expiry date of the card.
-     *
      * Format: yyyyMMdd
-     *
      * Note: Clients to convert this to appropriate DateTime type.
      */
     public function getExpiryDate(): ?string
@@ -559,9 +557,7 @@ class CardGroupResponseCardGroupsItems implements \JsonSerializable
     /**
      * Sets Expiry Date.
      * Expiry date of the card.
-     *
      * Format: yyyyMMdd
-     *
      * Note: Clients to convert this to appropriate DateTime type.
      *
      * @maps ExpiryDate
@@ -574,9 +570,7 @@ class CardGroupResponseCardGroupsItems implements \JsonSerializable
     /**
      * Unsets Expiry Date.
      * Expiry date of the card.
-     *
      * Format: yyyyMMdd
-     *
      * Note: Clients to convert this to appropriate DateTime type.
      */
     public function unsetExpiryDate(): void

@@ -48,29 +48,11 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Unsets type field.
-     */
-    public function unsetType(): self
-    {
-        $this->instance->unsetType();
-        return $this;
-    }
-
-    /**
      * Sets period field.
      */
     public function period(?string $value): self
     {
         $this->instance->setPeriod($value);
-        return $this;
-    }
-
-    /**
-     * Unsets period field.
-     */
-    public function unsetPeriod(): self
-    {
-        $this->instance->unsetPeriod();
         return $this;
     }
 
@@ -84,29 +66,11 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Unsets limit field.
-     */
-    public function unsetLimit(): self
-    {
-        $this->instance->unsetLimit();
-        return $this;
-    }
-
-    /**
      * Sets accumulation field.
      */
     public function accumulation(?float $value): self
     {
         $this->instance->setAccumulation($value);
-        return $this;
-    }
-
-    /**
-     * Unsets accumulation field.
-     */
-    public function unsetAccumulation(): self
-    {
-        $this->instance->unsetAccumulation();
         return $this;
     }
 
@@ -120,29 +84,11 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Unsets balance field.
-     */
-    public function unsetBalance(): self
-    {
-        $this->instance->unsetBalance();
-        return $this;
-    }
-
-    /**
      * Sets override field.
      */
     public function override(?bool $value): self
     {
         $this->instance->setOverride($value);
-        return $this;
-    }
-
-    /**
-     * Unsets override field.
-     */
-    public function unsetOverride(): self
-    {
-        $this->instance->unsetOverride();
         return $this;
     }
 
@@ -156,29 +102,11 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Unsets product group field.
-     */
-    public function unsetProductGroup(): self
-    {
-        $this->instance->unsetProductGroup();
-        return $this;
-    }
-
-    /**
      * Sets threshold field.
      */
     public function threshold(?float $value): self
     {
         $this->instance->setThreshold($value);
-        return $this;
-    }
-
-    /**
-     * Unsets threshold field.
-     */
-    public function unsetThreshold(): self
-    {
-        $this->instance->unsetThreshold();
         return $this;
     }
 

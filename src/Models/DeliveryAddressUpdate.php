@@ -39,7 +39,7 @@ class DeliveryAddressUpdate implements \JsonSerializable
     private $useCustomerDefaultAddress;
 
     /**
-     * @var UpdateCardRenewalAddress|null
+     * @var UpdateCardRenewalAddress2|null
      */
     private $updateCardRenewalAddress;
 
@@ -54,7 +54,6 @@ class DeliveryAddressUpdate implements \JsonSerializable
     /**
      * Returns Card Id.
      * Card Id of the card.
-     *
      * Optional if  PAN is passed, else Mandatory.
      */
     public function getCardId(): ?int
@@ -65,7 +64,6 @@ class DeliveryAddressUpdate implements \JsonSerializable
     /**
      * Sets Card Id.
      * Card Id of the card.
-     *
      * Optional if  PAN is passed, else Mandatory.
      *
      * @maps CardId
@@ -114,9 +112,7 @@ class DeliveryAddressUpdate implements \JsonSerializable
     /**
      * Returns Card Expiry Date.
      * Expiry date of the card.
-     *
      * Mandatory if PAN is passed, else optional.
-     *
      * Format: yyyyMMdd
      */
     public function getCardExpiryDate(): ?string
@@ -127,9 +123,7 @@ class DeliveryAddressUpdate implements \JsonSerializable
     /**
      * Sets Card Expiry Date.
      * Expiry date of the card.
-     *
      * Mandatory if PAN is passed, else optional.
-     *
      * Format: yyyyMMdd
      *
      * @maps CardExpiryDate
@@ -143,11 +137,8 @@ class DeliveryAddressUpdate implements \JsonSerializable
      * Returns Use Customer Default Address.
      * Whether to use the default delivery address configured at customer (or card group) level as the
      * delivery address for this card.
-     *
      * Mandatory
-     *
      * Note: If value is false then ‘UpdateCardRenewalAddress’ is mandatory. If value set to ‘True’ then
-     *
      * ‘UpdateCardRenewalAddress’ may be null/empty. It will be ignored if provided.
      */
     public function getUseCustomerDefaultAddress(): bool
@@ -159,11 +150,8 @@ class DeliveryAddressUpdate implements \JsonSerializable
      * Sets Use Customer Default Address.
      * Whether to use the default delivery address configured at customer (or card group) level as the
      * delivery address for this card.
-     *
      * Mandatory
-     *
      * Note: If value is false then ‘UpdateCardRenewalAddress’ is mandatory. If value set to ‘True’ then
-     *
      * ‘UpdateCardRenewalAddress’ may be null/empty. It will be ignored if provided.
      *
      * @required
@@ -176,24 +164,18 @@ class DeliveryAddressUpdate implements \JsonSerializable
 
     /**
      * Returns Update Card Renewal Address.
-     * Delivery address of card. This address will be used for card reissue and PIN reminders in future.
-     *
-     * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
      */
-    public function getUpdateCardRenewalAddress(): ?UpdateCardRenewalAddress
+    public function getUpdateCardRenewalAddress(): ?UpdateCardRenewalAddress2
     {
         return $this->updateCardRenewalAddress;
     }
 
     /**
      * Sets Update Card Renewal Address.
-     * Delivery address of card. This address will be used for card reissue and PIN reminders in future.
-     *
-     * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
      *
      * @maps UpdateCardRenewalAddress
      */
-    public function setUpdateCardRenewalAddress(?UpdateCardRenewalAddress $updateCardRenewalAddress): void
+    public function setUpdateCardRenewalAddress(?UpdateCardRenewalAddress2 $updateCardRenewalAddress): void
     {
         $this->updateCardRenewalAddress = $updateCardRenewalAddress;
     }

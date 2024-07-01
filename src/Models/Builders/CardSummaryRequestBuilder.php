@@ -12,7 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardSummaryRequest;
-use ShellCardManagementAPIsLib\Models\SummaryRequest;
+use ShellCardManagementAPIsLib\Models\Filters1;
 
 /**
  * Builder for model CardSummaryRequest
@@ -42,7 +42,7 @@ class CardSummaryRequestBuilder
     /**
      * Sets filters field.
      */
-    public function filters(?SummaryRequest $value): self
+    public function filters(?Filters1 $value): self
     {
         $this->instance->setFilters($value);
         return $this;

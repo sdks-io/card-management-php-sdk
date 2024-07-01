@@ -43,7 +43,7 @@ class UpdateCard implements \JsonSerializable
     private $orderCardReplacement;
 
     /**
-     * @var ReplaceCardSettings|null
+     * @var CardSettings|null
      */
     private $cardSettings;
 
@@ -110,23 +110,15 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Caller.
      * The caller to be notified with the status of the update card status request. <br />
-     *
      * The caller will also be notified with the status of the replacement card order request, if any.<br
      * />
-     *
      * Mandatory, if NotifyCaller is true. <br />
-     *
      * Maximum field length: 20<br />
-     *
      * Allowed values:<br />
-     *
      * - NextGenUI: This value to be used by next gen UI application.<br />
-     *
      * - Motix: This value to be used by MOTiX application.<br />
-     *
      * - FleetHubUILifeTime: This value to be used by Fleet Hub UI application for life time restriction
      * cards.<br />
-     *
      * Note: The values passed in this field are case insensitive.
      */
     public function getCaller(): ?string
@@ -140,23 +132,15 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Caller.
      * The caller to be notified with the status of the update card status request. <br />
-     *
      * The caller will also be notified with the status of the replacement card order request, if any.<br
      * />
-     *
      * Mandatory, if NotifyCaller is true. <br />
-     *
      * Maximum field length: 20<br />
-     *
      * Allowed values:<br />
-     *
      * - NextGenUI: This value to be used by next gen UI application.<br />
-     *
      * - Motix: This value to be used by MOTiX application.<br />
-     *
      * - FleetHubUILifeTime: This value to be used by Fleet Hub UI application for life time restriction
      * cards.<br />
-     *
      * Note: The values passed in this field are case insensitive.
      *
      * @maps Caller
@@ -169,23 +153,15 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Caller.
      * The caller to be notified with the status of the update card status request. <br />
-     *
      * The caller will also be notified with the status of the replacement card order request, if any.<br
      * />
-     *
      * Mandatory, if NotifyCaller is true. <br />
-     *
      * Maximum field length: 20<br />
-     *
      * Allowed values:<br />
-     *
      * - NextGenUI: This value to be used by next gen UI application.<br />
-     *
      * - Motix: This value to be used by MOTiX application.<br />
-     *
      * - FleetHubUILifeTime: This value to be used by Fleet Hub UI application for life time restriction
      * cards.<br />
-     *
      * Note: The values passed in this field are case insensitive.
      */
     public function unsetCaller(): void
@@ -196,11 +172,8 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Is Replacement Chargeable.
      * True/False<br />
-     *
      * Optional<br />
-     *
      * When not provided will considered as default value as True.<br />
-     *
      * If passed True, the replacement card will be chargeable, else replacement card will not be charged.
      */
     public function getIsReplacementChargeable(): ?bool
@@ -211,11 +184,8 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Is Replacement Chargeable.
      * True/False<br />
-     *
      * Optional<br />
-     *
      * When not provided will considered as default value as True.<br />
-     *
      * If passed True, the replacement card will be chargeable, else replacement card will not be charged.
      *
      * @maps IsReplacementChargeable
@@ -228,14 +198,10 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Notify Caller.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * If true, the caller would be notified back with the status as success or failure after the update
      * card status request is processed.
-     *
      * Notification API subscription required to use this feature , please refer API documetation for more
      * details
      */
@@ -247,14 +213,10 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Notify Caller.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * If true, the caller would be notified back with the status as success or failure after the update
      * card status request is processed.
-     *
      * Notification API subscription required to use this feature , please refer API documetation for more
      * details
      *
@@ -268,11 +230,8 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Notify Caller on Sync.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * If true, the caller would be notified back with the status as success or failed after the
      * replacement card is synced with Gateway, if a replacement card was requested.
      */
@@ -284,11 +243,8 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Notify Caller on Sync.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * If true, the caller would be notified back with the status as success or failed after the
      * replacement card is synced with Gateway, if a replacement card was requested.
      *
@@ -302,20 +258,14 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Order Card Replacement.
      * True/False.<br />
-     *
      * Pass True if a replacement order card request is to be placed, else False.<br />
-     *
      * Optional.Default value False.<br />
-     *
      * Replacement of a card is only applicable when the target status requested is either permanently
      * Block or Damaged for the existing card.<br />
-     *
      * Request for Replacement card will be placed only when the Block card or Block damaged card request
      * is successfully placed.<br />
-     *
      * The Replacement card request will be processed only when the permanent Block card request is
      * successfully processed. <br />
-     *
      * In case of damaged card request, the replacement card request will be processed immediately.
      */
     public function getOrderCardReplacement(): ?bool
@@ -326,20 +276,14 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Order Card Replacement.
      * True/False.<br />
-     *
      * Pass True if a replacement order card request is to be placed, else False.<br />
-     *
      * Optional.Default value False.<br />
-     *
      * Replacement of a card is only applicable when the target status requested is either permanently
      * Block or Damaged for the existing card.<br />
-     *
      * Request for Replacement card will be placed only when the Block card or Block damaged card request
      * is successfully placed.<br />
-     *
      * The Replacement card request will be processed only when the permanent Block card request is
      * successfully processed. <br />
-     *
      * In case of damaged card request, the replacement card request will be processed immediately.
      *
      * @maps OrderCardReplacement
@@ -351,20 +295,18 @@ class UpdateCard implements \JsonSerializable
 
     /**
      * Returns Card Settings.
-     * Request entity object for ReplaceCardSettings
      */
-    public function getCardSettings(): ?ReplaceCardSettings
+    public function getCardSettings(): ?CardSettings
     {
         return $this->cardSettings;
     }
 
     /**
      * Sets Card Settings.
-     * Request entity object for ReplaceCardSettings
      *
      * @maps CardSettings
      */
-    public function setCardSettings(?ReplaceCardSettings $cardSettings): void
+    public function setCardSettings(?CardSettings $cardSettings): void
     {
         $this->cardSettings = $cardSettings;
     }
@@ -372,15 +314,10 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Reason Id.
      * Reason id for updating the card status.
-     *
      * Either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’. Else ignored.
-     *
      * Possible values:
-     *
      * 1 (Lost)
-     *
      * 2 (Stolen)
-     *
      * 3 (Card no longer required)
      *
      * <br>When passed, the reason Id will be mapped to allowed reason IDs configured for the card type of
@@ -395,15 +332,10 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Reason Id.
      * Reason id for updating the card status.
-     *
      * Either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’. Else ignored.
-     *
      * Possible values:
-     *
      * 1 (Lost)
-     *
      * 2 (Stolen)
-     *
      * 3 (Card no longer required)
      *
      * <br>When passed, the reason Id will be mapped to allowed reason IDs configured for the card type of
@@ -515,17 +447,11 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Target Status.
      * The list of cards passed in ‘Cards’ parameter will be updated to this status.<br />
-     *
      * Mandatory.<br />
-     *
      * Allowed values –<br />
-     *
      * - TemporaryBlock<br />
-     *
      * - Unblock<br />
-     *
      * - Block<br />
-     *
      * - Damaged<br />
      */
     public function getTargetStatus(): ?int
@@ -539,17 +465,11 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Target Status.
      * The list of cards passed in ‘Cards’ parameter will be updated to this status.<br />
-     *
      * Mandatory.<br />
-     *
      * Allowed values –<br />
-     *
      * - TemporaryBlock<br />
-     *
      * - Unblock<br />
-     *
      * - Block<br />
-     *
      * - Damaged<br />
      *
      * @maps TargetStatus
@@ -562,17 +482,11 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Target Status.
      * The list of cards passed in ‘Cards’ parameter will be updated to this status.<br />
-     *
      * Mandatory.<br />
-     *
      * Allowed values –<br />
-     *
      * - TemporaryBlock<br />
-     *
      * - Unblock<br />
-     *
      * - Block<br />
-     *
      * - Damaged<br />
      */
     public function unsetTargetStatus(): void
@@ -583,7 +497,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      */
     public function getAccountId(): ?int
@@ -597,7 +510,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      *
      * @maps AccountId
@@ -610,7 +522,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account Id of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      */
     public function unsetAccountId(): void
@@ -621,7 +532,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else Mandatory.
      */
     public function getAccountNumber(): ?string
@@ -635,7 +545,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else Mandatory.
      *
      * @maps AccountNumber
@@ -648,7 +557,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else Mandatory.
      */
     public function unsetAccountNumber(): void
@@ -659,9 +567,7 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Card Expiry Date.
      * Expiry date of the card.<br />
-     *
      * Mandatory if PAN is passed, else optional.<br />
-     *
      * Format: yyyyMMdd
      */
     public function getCardExpiryDate(): ?string
@@ -675,9 +581,7 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Card Expiry Date.
      * Expiry date of the card.<br />
-     *
      * Mandatory if PAN is passed, else optional.<br />
-     *
      * Format: yyyyMMdd
      *
      * @maps CardExpiryDate
@@ -690,9 +594,7 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Card Expiry Date.
      * Expiry date of the card.<br />
-     *
      * Mandatory if PAN is passed, else optional.<br />
-     *
      * Format: yyyyMMdd
      */
     public function unsetCardExpiryDate(): void
@@ -703,7 +605,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Card Id.
      * Card Id of the card.<br />
-     *
      * Optional if PAN is passed, else Mandatory.
      */
     public function getCardId(): ?int
@@ -717,7 +618,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Card Id.
      * Card Id of the card.<br />
-     *
      * Optional if PAN is passed, else Mandatory.
      *
      * @maps CardId
@@ -730,7 +630,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Card Id.
      * Card Id of the card.<br />
-     *
      * Optional if PAN is passed, else Mandatory.
      */
     public function unsetCardId(): void
@@ -741,7 +640,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Col Co Code.
      * Collecting company code of the customer. <br />
-     *
      * Optional if ColCoId is passed, else Mandatory.<br />
      */
     public function getColCoCode(): ?int
@@ -755,7 +653,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Col Co Code.
      * Collecting company code of the customer. <br />
-     *
      * Optional if ColCoId is passed, else Mandatory.<br />
      *
      * @maps ColCoCode
@@ -768,7 +665,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Col Co Code.
      * Collecting company code of the customer. <br />
-     *
      * Optional if ColCoId is passed, else Mandatory.<br />
      */
     public function unsetColCoCode(): void
@@ -779,7 +675,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Col Co Id.
      * Collecting company id of the customer. <br />
-     *
      * Optional if ColCoCode is passed, else Mandatory.<br />
      */
     public function getColCoId(): ?int
@@ -793,7 +688,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Col Co Id.
      * Collecting company id of the customer. <br />
-     *
      * Optional if ColCoCode is passed, else Mandatory.<br />
      *
      * @maps ColCoId
@@ -806,7 +700,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Col Co Id.
      * Collecting company id of the customer. <br />
-     *
      * Optional if ColCoCode is passed, else Mandatory.<br />
      */
     public function unsetColCoId(): void
@@ -817,7 +710,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns P AN.
      * PAN of the card.<br />
-     *
      * Optional if CardId is passed, else Mandatory.<br />
      */
     public function getPAN(): ?string
@@ -831,7 +723,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets P AN.
      * PAN of the card.<br />
-     *
      * Optional if CardId is passed, else Mandatory.<br />
      *
      * @maps PAN
@@ -844,7 +735,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets P AN.
      * PAN of the card.<br />
-     *
      * Optional if CardId is passed, else Mandatory.<br />
      */
     public function unsetPAN(): void
@@ -855,7 +745,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer id of the customer.<br />
-     *
      * Optional if PayerNumber is passed, else Mandatory.
      */
     public function getPayerId(): ?int
@@ -869,7 +758,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer id of the customer.<br />
-     *
      * Optional if PayerNumber is passed, else Mandatory.
      *
      * @maps PayerId
@@ -882,7 +770,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer id of the customer.<br />
-     *
      * Optional if PayerNumber is passed, else Mandatory.
      */
     public function unsetPayerId(): void
@@ -893,7 +780,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Returns Payer Number.
      * PayerNumber of the customer.<br />
-     *
      * Optional if PayerId is passed, else Mandatory.
      */
     public function getPayerNumber(): ?string
@@ -907,7 +793,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Sets Payer Number.
      * PayerNumber of the customer.<br />
-     *
      * Optional if PayerId is passed, else Mandatory.
      *
      * @maps PayerNumber
@@ -920,7 +805,6 @@ class UpdateCard implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * PayerNumber of the customer.<br />
-     *
      * Optional if PayerId is passed, else Mandatory.
      */
     public function unsetPayerNumber(): void

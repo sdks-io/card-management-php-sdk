@@ -12,79 +12,224 @@ namespace ShellCardManagementAPIsLib\Models;
 
 use stdClass;
 
-class SummaryOfBundleResponse implements \JsonSerializable
+class SummaryofbundleResponse implements \JsonSerializable
 {
     /**
-     * @var string|null
+     * @var array
      */
-    private $requestId;
+    private $requestId = [];
+
+    /**
+     * @var int|null
+     */
+    private $payerId;
 
     /**
      * @var string|null
      */
-    private $status;
+    private $payerNumber;
 
     /**
-     * @var SummaryOfBundleResponseDataItems[]|null
+     * @var int|null
      */
-    private $data;
+    private $accountId;
+
+    /**
+     * @var string|null
+     */
+    private $accountNumber;
+
+    /**
+     * @var int|null
+     */
+    private $countOfCardsNotInBundle;
+
+    /**
+     * @var CardBundle|null
+     */
+    private $cardBundles;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $error;
 
     /**
      * Returns Request Id.
+     * Request Id of the API call
      */
     public function getRequestId(): ?string
     {
-        return $this->requestId;
+        if (count($this->requestId) == 0) {
+            return null;
+        }
+        return $this->requestId['value'];
     }
 
     /**
      * Sets Request Id.
+     * Request Id of the API call
      *
      * @maps RequestId
      */
     public function setRequestId(?string $requestId): void
     {
-        $this->requestId = $requestId;
+        $this->requestId['value'] = $requestId;
     }
 
     /**
-     * Returns Status.
+     * Unsets Request Id.
+     * Request Id of the API call
      */
-    public function getStatus(): ?string
+    public function unsetRequestId(): void
     {
-        return $this->status;
+        $this->requestId = [];
     }
 
     /**
-     * Sets Status.
+     * Returns Payer Id.
+     * Payer Id of the bundles and cards.
      *
-     * @maps Status
+     * Example: 123456
      */
-    public function setStatus(?string $status): void
+    public function getPayerId(): ?int
     {
-        $this->status = $status;
+        return $this->payerId;
     }
 
     /**
-     * Returns Data.
+     * Sets Payer Id.
+     * Payer Id of the bundles and cards.
      *
-     * @return SummaryOfBundleResponseDataItems[]|null
+     * Example: 123456
+     *
+     * @maps PayerId
      */
-    public function getData(): ?array
+    public function setPayerId(?int $payerId): void
     {
-        return $this->data;
+        $this->payerId = $payerId;
     }
 
     /**
-     * Sets Data.
+     * Returns Payer Number.
+     * Payer Number of the bundles and cards.
      *
-     * @maps Data
-     *
-     * @param SummaryOfBundleResponseDataItems[]|null $data
+     * Example: GB000000123
      */
-    public function setData(?array $data): void
+    public function getPayerNumber(): ?string
     {
-        $this->data = $data;
+        return $this->payerNumber;
+    }
+
+    /**
+     * Sets Payer Number.
+     * Payer Number of the bundles and cards.
+     *
+     * Example: GB000000123
+     *
+     * @maps PayerNumber
+     */
+    public function setPayerNumber(?string $payerNumber): void
+    {
+        $this->payerNumber = $payerNumber;
+    }
+
+    /**
+     * Returns Account Id.
+     */
+    public function getAccountId(): ?int
+    {
+        return $this->accountId;
+    }
+
+    /**
+     * Sets Account Id.
+     *
+     * @maps AccountId
+     */
+    public function setAccountId(?int $accountId): void
+    {
+        $this->accountId = $accountId;
+    }
+
+    /**
+     * Returns Account Number.
+     * Account Number of the bundle.
+     *
+     * Example: GB000000123
+     */
+    public function getAccountNumber(): ?string
+    {
+        return $this->accountNumber;
+    }
+
+    /**
+     * Sets Account Number.
+     * Account Number of the bundle.
+     *
+     * Example: GB000000123
+     *
+     * @maps AccountNumber
+     */
+    public function setAccountNumber(?string $accountNumber): void
+    {
+        $this->accountNumber = $accountNumber;
+    }
+
+    /**
+     * Returns Count of Cards Not in Bundle.
+     * Count of cards that are not part of the bundle in a given account.
+     */
+    public function getCountOfCardsNotInBundle(): ?int
+    {
+        return $this->countOfCardsNotInBundle;
+    }
+
+    /**
+     * Sets Count of Cards Not in Bundle.
+     * Count of cards that are not part of the bundle in a given account.
+     *
+     * @maps CountOfCardsNotInBundle
+     */
+    public function setCountOfCardsNotInBundle(?int $countOfCardsNotInBundle): void
+    {
+        $this->countOfCardsNotInBundle = $countOfCardsNotInBundle;
+    }
+
+    /**
+     * Returns Card Bundles.
+     */
+    public function getCardBundles(): ?CardBundle
+    {
+        return $this->cardBundles;
+    }
+
+    /**
+     * Sets Card Bundles.
+     *
+     * @maps CardBundles
+     */
+    public function setCardBundles(?CardBundle $cardBundles): void
+    {
+        $this->cardBundles = $cardBundles;
+    }
+
+    /**
+     * Returns Error.
+     */
+    public function getError(): ?ErrorStatus
+    {
+        return $this->error;
+    }
+
+    /**
+     * Sets Error.
+     *
+     * @maps Error
+     */
+    public function setError(?ErrorStatus $error): void
+    {
+        $this->error = $error;
     }
 
     /**
@@ -99,14 +244,29 @@ class SummaryOfBundleResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->requestId)) {
-            $json['RequestId'] = $this->requestId;
+        if (!empty($this->requestId)) {
+            $json['RequestId']               = $this->requestId['value'];
         }
-        if (isset($this->status)) {
-            $json['Status']    = $this->status;
+        if (isset($this->payerId)) {
+            $json['PayerId']                 = $this->payerId;
         }
-        if (isset($this->data)) {
-            $json['Data']      = $this->data;
+        if (isset($this->payerNumber)) {
+            $json['PayerNumber']             = $this->payerNumber;
+        }
+        if (isset($this->accountId)) {
+            $json['AccountId']               = $this->accountId;
+        }
+        if (isset($this->accountNumber)) {
+            $json['AccountNumber']           = $this->accountNumber;
+        }
+        if (isset($this->countOfCardsNotInBundle)) {
+            $json['CountOfCardsNotInBundle'] = $this->countOfCardsNotInBundle;
+        }
+        if (isset($this->cardBundles)) {
+            $json['CardBundles']             = $this->cardBundles;
+        }
+        if (isset($this->error)) {
+            $json['Error']                   = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

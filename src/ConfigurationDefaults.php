@@ -33,9 +33,7 @@ class ConfigurationDefaults
 
     public const HTTP_METHODS_TO_RETRY = ['GET', 'PUT'];
 
-    public const ENVIRONMENT = Environment::PRODUCTION;
-
-    public const URL = Models\UrlEnum::ENUM_APITESTSHELLCOMTEST;
+    public const ENVIRONMENT = Environment::SIT;
 
     public const USERNAME = '';
 
@@ -46,6 +44,8 @@ class ConfigurationDefaults
     public const O_AUTH_CLIENT_SECRET = '';
 
     public const O_AUTH_TOKEN = null;
+
+    public const BEARER_TOKEN_CLOCK_SKEW = 0;
 
     /**
      * @var array Associative list of all default configurations
@@ -61,11 +61,13 @@ class ConfigurationDefaults
         'httpStatusCodesToRetry' => self::HTTP_STATUS_CODES_TO_RETRY,
         'httpMethodsToRetry' => self::HTTP_METHODS_TO_RETRY,
         'environment' => self::ENVIRONMENT,
-        'url' => self::URL,
         'username' => self::USERNAME,
         'password' => self::PASSWORD,
         'oAuthClientId' => self::O_AUTH_CLIENT_ID,
         'oAuthClientSecret' => self::O_AUTH_CLIENT_SECRET,
-        'oAuthToken' => self::O_AUTH_TOKEN
+        'oAuthToken' => self::O_AUTH_TOKEN,
+        'BearerToken-ClockSkew' => self::BEARER_TOKEN_CLOCK_SKEW,
+        'BearerToken-TokenProvider' => null,
+        'BearerToken-OnTokenUpdate' => null
     ];
 }

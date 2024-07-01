@@ -87,25 +87,15 @@ class AuditRequest implements \JsonSerializable
     /**
      * Returns Status.
      * Status of requests to be fetched.
-     *
      * • Success
-     *
      * • Failed
-     *
      * • InProgress
-     *
      * • Submitted
-     *
      * • Rejected
-     *
      * • PendingApproval
-     *
      * • All
-     *
      * • MailedToCSC
-     *
      * Optional
-     *
      * If not passed “All” will be considered as the default value.
      */
     public function getStatus(): ?string
@@ -116,25 +106,15 @@ class AuditRequest implements \JsonSerializable
     /**
      * Sets Status.
      * Status of requests to be fetched.
-     *
      * • Success
-     *
      * • Failed
-     *
      * • InProgress
-     *
      * • Submitted
-     *
      * • Rejected
-     *
      * • PendingApproval
-     *
      * • All
-     *
      * • MailedToCSC
-     *
      * Optional
-     *
      * If not passed “All” will be considered as the default value.
      *
      * @maps Status
@@ -147,7 +127,6 @@ class AuditRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function getPayerNumber(): ?string
@@ -161,7 +140,6 @@ class AuditRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      *
      * @maps PayerNumber
@@ -174,7 +152,6 @@ class AuditRequest implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function unsetPayerNumber(): void
@@ -185,9 +162,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id  of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -201,9 +176,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id  of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -216,9 +189,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id  of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -391,9 +362,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Returns Page Size.
      * Page Size – Number of records to show on a page
-     *
      * Optional
-     *
      * Default value 50
      */
     public function getPageSize(): ?int
@@ -404,9 +373,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Sets Page Size.
      * Page Size – Number of records to show on a page
-     *
      * Optional
-     *
      * Default value 50
      *
      * @maps PageSize
@@ -418,17 +385,45 @@ class AuditRequest implements \JsonSerializable
 
     /**
      * Returns Requested Operation.
-     * To search for requests submitted until this date.
+     * Type of requests to be fetched.
      *
      * Optional
      *
-     * Format: yyyyMMdd
+     * Allowed values:
      *
-     * Example: 20200130
+     * • OrderCard
      *
-     * If ToDate is not provided and FromDate is provided, then ToDate will be considered as current date
-     * or 30 days from FromDate, whichever is earlier. However, when both FromDate and ToDate is not
-     * provided then last 30 days will be considered for filtering.
+     * • CreateCardGroup
+     *
+     * • PINReminder
+     *
+     * • MoveCard
+     *
+     * • UpdateCardStatus
+     *
+     * • UpdateCardGroup
+     *
+     * • AutoRenew
+     *
+     * • BulkCardOrder
+     *
+     * • BulkCardBlock
+     *
+     * • BulkCardOrderMultiAccount
+     *
+     * • MobilePaymentRegistration
+     *
+     * • UpdateCompanyInfo
+     *
+     * • BCOSummary
+     *
+     * • BCOMultiAccountSummary
+     *
+     * • BCBSummary
+     *
+     * • FundTransfer
+     *
+     * • DeliveryAddressUpdate
      *
      * @return string[]|null
      */
@@ -439,17 +434,45 @@ class AuditRequest implements \JsonSerializable
 
     /**
      * Sets Requested Operation.
-     * To search for requests submitted until this date.
+     * Type of requests to be fetched.
      *
      * Optional
      *
-     * Format: yyyyMMdd
+     * Allowed values:
      *
-     * Example: 20200130
+     * • OrderCard
      *
-     * If ToDate is not provided and FromDate is provided, then ToDate will be considered as current date
-     * or 30 days from FromDate, whichever is earlier. However, when both FromDate and ToDate is not
-     * provided then last 30 days will be considered for filtering.
+     * • CreateCardGroup
+     *
+     * • PINReminder
+     *
+     * • MoveCard
+     *
+     * • UpdateCardStatus
+     *
+     * • UpdateCardGroup
+     *
+     * • AutoRenew
+     *
+     * • BulkCardOrder
+     *
+     * • BulkCardBlock
+     *
+     * • BulkCardOrderMultiAccount
+     *
+     * • MobilePaymentRegistration
+     *
+     * • UpdateCompanyInfo
+     *
+     * • BCOSummary
+     *
+     * • BCOMultiAccountSummary
+     *
+     * • BCBSummary
+     *
+     * • FundTransfer
+     *
+     * • DeliveryAddressUpdate
      *
      * @maps RequestedOperation
      *
@@ -531,9 +554,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Returns Search Text.
      * Search text used as criteria to filter the requests.
-     *
      * Optional
-     *
      * Minimum length is 4 characters (configurable). Else, an error (0007) will be returned. When valid
      * text is provided, MS will return all the records that contains the Search Text within any of the
      * look up fields
@@ -549,9 +570,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Sets Search Text.
      * Search text used as criteria to filter the requests.
-     *
      * Optional
-     *
      * Minimum length is 4 characters (configurable). Else, an error (0007) will be returned. When valid
      * text is provided, MS will return all the records that contains the Search Text within any of the
      * look up fields
@@ -566,9 +585,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Unsets Search Text.
      * Search text used as criteria to filter the requests.
-     *
      * Optional
-     *
      * Minimum length is 4 characters (configurable). Else, an error (0007) will be returned. When valid
      * text is provided, MS will return all the records that contains the Search Text within any of the
      * look up fields
@@ -581,9 +598,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Returns Current Page.
      * Page Number (as shown to the users)
-     *
      * Optional
-     *
      * Default value 1
      */
     public function getCurrentPage(): ?int
@@ -597,9 +612,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Sets Current Page.
      * Page Number (as shown to the users)
-     *
      * Optional
-     *
      * Default value 1
      *
      * @maps CurrentPage
@@ -612,9 +625,7 @@ class AuditRequest implements \JsonSerializable
     /**
      * Unsets Current Page.
      * Page Number (as shown to the users)
-     *
      * Optional
-     *
      * Default value 1
      */
     public function unsetCurrentPage(): void
@@ -625,16 +636,11 @@ class AuditRequest implements \JsonSerializable
     /**
      * Returns From Date.
      * To search for requests submitted from this date.
-     *
      * Optional
-     *
      * Maximum of X days duration allowed per search. The X value is configurable and initially set to 180
      * days.
-     *
      * Format: yyyyMMdd
-     *
      * Example: 20200101
-     *
      * If FromDate is not provided and ToDate is provided, then FromDate will be considered as 30 days less
      * than ToDate. However, when both FromDate and ToDate is not provided then last 30 days will be
      * considered for filtering.
@@ -650,16 +656,11 @@ class AuditRequest implements \JsonSerializable
     /**
      * Sets From Date.
      * To search for requests submitted from this date.
-     *
      * Optional
-     *
      * Maximum of X days duration allowed per search. The X value is configurable and initially set to 180
      * days.
-     *
      * Format: yyyyMMdd
-     *
      * Example: 20200101
-     *
      * If FromDate is not provided and ToDate is provided, then FromDate will be considered as 30 days less
      * than ToDate. However, when both FromDate and ToDate is not provided then last 30 days will be
      * considered for filtering.
@@ -674,16 +675,11 @@ class AuditRequest implements \JsonSerializable
     /**
      * Unsets From Date.
      * To search for requests submitted from this date.
-     *
      * Optional
-     *
      * Maximum of X days duration allowed per search. The X value is configurable and initially set to 180
      * days.
-     *
      * Format: yyyyMMdd
-     *
      * Example: 20200101
-     *
      * If FromDate is not provided and ToDate is provided, then FromDate will be considered as 30 days less
      * than ToDate. However, when both FromDate and ToDate is not provided then last 30 days will be
      * considered for filtering.

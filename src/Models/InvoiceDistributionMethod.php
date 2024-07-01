@@ -57,17 +57,11 @@ class InvoiceDistributionMethod implements \JsonSerializable
     /**
      * Returns Frequency Type.
      * Frequency type unit Id & description
-     *
      * E.g.:
-     *
      * 1- Daily
-     *
      * 2-Weekly
-     *
      * 3-Monthly
-     *
      * 4-Invoicing
-     *
      * 6-Calendar quarter
      */
     public function getFrequencyType(): ?string
@@ -81,17 +75,11 @@ class InvoiceDistributionMethod implements \JsonSerializable
     /**
      * Sets Frequency Type.
      * Frequency type unit Id & description
-     *
      * E.g.:
-     *
      * 1- Daily
-     *
      * 2-Weekly
-     *
      * 3-Monthly
-     *
      * 4-Invoicing
-     *
      * 6-Calendar quarter
      *
      * @maps FrequencyType
@@ -104,17 +92,11 @@ class InvoiceDistributionMethod implements \JsonSerializable
     /**
      * Unsets Frequency Type.
      * Frequency type unit Id & description
-     *
      * E.g.:
-     *
      * 1- Daily
-     *
      * 2-Weekly
-     *
      * 3-Monthly
-     *
      * 4-Invoicing
-     *
      * 6-Calendar quarter
      */
     public function unsetFrequencyType(): void
@@ -125,21 +107,13 @@ class InvoiceDistributionMethod implements \JsonSerializable
     /**
      * Returns Distribution Method.
      * Invoice Distribution Method (Id-Description)
-     *
      * E.g.:
-     *
      * 1-e-mail
-     *
      * 2-Fax
-     *
      * 3-Courier to Customer
-     *
      * 4-Courier to Client
-     *
      * 5-Print
-     *
      * 6-FTP
-     *
      * 7-SMS
      */
     public function getDistributionMethod(): ?string
@@ -153,21 +127,13 @@ class InvoiceDistributionMethod implements \JsonSerializable
     /**
      * Sets Distribution Method.
      * Invoice Distribution Method (Id-Description)
-     *
      * E.g.:
-     *
      * 1-e-mail
-     *
      * 2-Fax
-     *
      * 3-Courier to Customer
-     *
      * 4-Courier to Client
-     *
      * 5-Print
-     *
      * 6-FTP
-     *
      * 7-SMS
      *
      * @maps DistributionMethod
@@ -180,21 +146,13 @@ class InvoiceDistributionMethod implements \JsonSerializable
     /**
      * Unsets Distribution Method.
      * Invoice Distribution Method (Id-Description)
-     *
      * E.g.:
-     *
      * 1-e-mail
-     *
      * 2-Fax
-     *
      * 3-Courier to Customer
-     *
      * 4-Courier to Client
-     *
      * 5-Print
-     *
      * 6-FTP
-     *
      * 7-SMS
      */
     public function unsetDistributionMethod(): void

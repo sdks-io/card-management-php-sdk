@@ -42,9 +42,7 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Returns Global Request ID.
      * List of MPay Request to be updated for Fleet Manager approval status.
-     *
      * Mandatory
-     *
      * Maximum number of requests that can be submitted are 50
      */
     public function getGlobalRequestID(): ?string
@@ -55,9 +53,7 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Sets Global Request ID.
      * List of MPay Request to be updated for Fleet Manager approval status.
-     *
      * Mandatory
-     *
      * Maximum number of requests that can be submitted are 50
      *
      * @maps GlobalRequestID
@@ -70,13 +66,9 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Returns Status.
      * Status of mobile payment registration request
-     *
      * Mandatory.
-     *
      * Allowed values –
-     *
      * • Approved
-     *
      * •   Rejected
      */
     public function getStatus(): ?string
@@ -87,13 +79,9 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Sets Status.
      * Status of mobile payment registration request
-     *
      * Mandatory.
-     *
      * Allowed values –
-     *
      * • Approved
-     *
      * •   Rejected
      *
      * @maps Status
@@ -106,7 +94,6 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Returns Approver User ID.
      * Approver’s User ID
-     *
      * ApproverUserID is mandatory when Status is Approved else optional
      */
     public function getApproverUserID(): ?string
@@ -117,7 +104,6 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Sets Approver User ID.
      * Approver’s User ID
-     *
      * ApproverUserID is mandatory when Status is Approved else optional
      *
      * @maps ApproverUserID
@@ -130,7 +116,6 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Returns Approver User Display Name.
      * Approver’s display name
-     *
      * Mandatory when Status is Approved else optional.
      */
     public function getApproverUserDisplayName(): ?string
@@ -141,7 +126,6 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Sets Approver User Display Name.
      * Approver’s display name
-     *
      * Mandatory when Status is Approved else optional.
      *
      * @maps ApproverUserDisplayName
@@ -154,7 +138,6 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Returns Reason.
      * Reason for Fleet Manager approval/rejection.
-     *
      * Optional
      */
     public function getReason(): ?string
@@ -165,7 +148,6 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     /**
      * Sets Reason.
      * Reason for Fleet Manager approval/rejection.
-     *
      * Optional
      *
      * @maps Reason

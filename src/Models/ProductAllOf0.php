@@ -27,7 +27,6 @@ class ProductAllOf0 implements \JsonSerializable
     /**
      * Returns Global Product Code.
      * The productCode returned by the Gateway API.
-     *
      * Example: 021
      */
     public function getGlobalProductCode(): ?string
@@ -38,7 +37,6 @@ class ProductAllOf0 implements \JsonSerializable
     /**
      * Sets Global Product Code.
      * The productCode returned by the Gateway API.
-     *
      * Example: 021
      *
      * @maps GlobalProductCode

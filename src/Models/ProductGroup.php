@@ -47,7 +47,6 @@ class ProductGroup implements \JsonSerializable
     /**
      * Returns Reference Id.
      * Referenced Purchase Category Id
-     *
      * Example: 123, 124
      */
     public function getReferenceId(): ?int
@@ -58,7 +57,6 @@ class ProductGroup implements \JsonSerializable
     /**
      * Sets Reference Id.
      * Referenced Purchase Category Id
-     *
      * Example: 123, 124
      *
      * @maps ReferenceId
@@ -111,7 +109,6 @@ class ProductGroup implements \JsonSerializable
     /**
      * Returns Is Default.
      * Indicates whether this is a default Product Group at ColCo level or not.
-     *
      * Note: The Customer level default settings are not considered here.
      */
     public function getIsDefault(): ?bool
@@ -122,7 +119,6 @@ class ProductGroup implements \JsonSerializable
     /**
      * Sets Is Default.
      * Indicates whether this is a default Product Group at ColCo level or not.
-     *
      * Note: The Customer level default settings are not considered here.
      *
      * @maps IsDefault

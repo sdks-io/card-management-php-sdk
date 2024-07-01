@@ -12,7 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\DeliveryAddressUpdate;
-use ShellCardManagementAPIsLib\Models\UpdateCardRenewalAddress;
+use ShellCardManagementAPIsLib\Models\UpdateCardRenewalAddress2;
 
 /**
  * Builder for model DeliveryAddressUpdate
@@ -69,7 +69,7 @@ class DeliveryAddressUpdateBuilder
     /**
      * Sets update card renewal address field.
      */
-    public function updateCardRenewalAddress(?UpdateCardRenewalAddress $value): self
+    public function updateCardRenewalAddress(?UpdateCardRenewalAddress2 $value): self
     {
         $this->instance->setUpdateCardRenewalAddress($value);
         return $this;

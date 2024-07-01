@@ -30,7 +30,6 @@ class CardBlockSchedule implements \JsonSerializable
     /**
      * Returns From Date.
      * Effective start date of Block / Unblock<br />
-     *
      * Format: yyyyMMdd
      */
     public function getFromDate(): ?string
@@ -44,7 +43,6 @@ class CardBlockSchedule implements \JsonSerializable
     /**
      * Sets From Date.
      * Effective start date of Block / Unblock<br />
-     *
      * Format: yyyyMMdd
      *
      * @maps FromDate
@@ -57,7 +55,6 @@ class CardBlockSchedule implements \JsonSerializable
     /**
      * Unsets From Date.
      * Effective start date of Block / Unblock<br />
-     *
      * Format: yyyyMMdd
      */
     public function unsetFromDate(): void
@@ -68,7 +65,6 @@ class CardBlockSchedule implements \JsonSerializable
     /**
      * Returns To Date.
      * Effective end date of Block / Unblock<br />
-     *
      * Format: yyyyMMdd
      */
     public function getToDate(): ?string
@@ -82,7 +78,6 @@ class CardBlockSchedule implements \JsonSerializable
     /**
      * Sets To Date.
      * Effective end date of Block / Unblock<br />
-     *
      * Format: yyyyMMdd
      *
      * @maps ToDate
@@ -95,7 +90,6 @@ class CardBlockSchedule implements \JsonSerializable
     /**
      * Unsets To Date.
      * Effective end date of Block / Unblock<br />
-     *
      * Format: yyyyMMdd
      */
     public function unsetToDate(): void

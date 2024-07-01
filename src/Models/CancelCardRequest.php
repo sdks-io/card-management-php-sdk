@@ -76,22 +76,15 @@ class CancelCardRequest implements \JsonSerializable
     /**
      * Returns Reason Id.
      * Reason id for cancelling the card.<br />
-     *
      * Optional if ReasonText is passed, else mandatory<br />
-     *
      * When passed, the reason Id will be validated with the allowed reason id’s configured for the card
      * type of the card.<br />
-     *
      * If the reason Id is not allowed, then it will be included on the error cards response.
      *
      *
-     *
      * Possible values:
-     *
      * 1 (Lost)
-     *
      * 2 (Stolen)
-     *
      * 3 (Card no longer required)
      */
     public function getReasonId(): ?int
@@ -105,22 +98,15 @@ class CancelCardRequest implements \JsonSerializable
     /**
      * Sets Reason Id.
      * Reason id for cancelling the card.<br />
-     *
      * Optional if ReasonText is passed, else mandatory<br />
-     *
      * When passed, the reason Id will be validated with the allowed reason id’s configured for the card
      * type of the card.<br />
-     *
      * If the reason Id is not allowed, then it will be included on the error cards response.
      *
      *
-     *
      * Possible values:
-     *
      * 1 (Lost)
-     *
      * 2 (Stolen)
-     *
      * 3 (Card no longer required)
      *
      * @maps ReasonId
@@ -133,22 +119,15 @@ class CancelCardRequest implements \JsonSerializable
     /**
      * Unsets Reason Id.
      * Reason id for cancelling the card.<br />
-     *
      * Optional if ReasonText is passed, else mandatory<br />
-     *
      * When passed, the reason Id will be validated with the allowed reason id’s configured for the card
      * type of the card.<br />
-     *
      * If the reason Id is not allowed, then it will be included on the error cards response.
      *
      *
-     *
      * Possible values:
-     *
      * 1 (Lost)
-     *
      * 2 (Stolen)
-     *
      * 3 (Card no longer required)
      */
     public function unsetReasonId(): void

@@ -55,9 +55,7 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else Mandatory.<br />
-     *
      * This input is a search criterion, if given.
      */
     public function getAccountId(): ?int
@@ -68,9 +66,7 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else Mandatory.<br />
-     *
      * This input is a search criterion, if given.
      *
      * @maps AccountId
@@ -83,9 +79,7 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else Mandatory.<br />
-     *
      * This input is a search criterion, if given.
      */
     public function getAccountNumber(): ?string
@@ -96,9 +90,7 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else Mandatory.<br />
-     *
      * This input is a search criterion, if given.
      *
      * @maps AccountNumber
@@ -111,9 +103,7 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Returns Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer. <br />
-     *
      * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. <br />
-     *
      * It is optional for other countries if ColCoID is provided.
      */
     public function getColCoCode(): ?int
@@ -124,9 +114,7 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Sets Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer. <br />
-     *
      * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. <br />
-     *
      * It is optional for other countries if ColCoID is provided.
      *
      * @maps ColCoCode
@@ -139,7 +127,6 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Returns Col Co Id.
      * Collecting Company Id of the selected payer<br />
-     *
      * Optional if ColCoCode is passed else Mandatory.
      */
     public function getColCoId(): ?int
@@ -150,7 +137,6 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Sets Col Co Id.
      * Collecting Company Id of the selected payer<br />
-     *
      * Optional if ColCoCode is passed else Mandatory.
      *
      * @maps ColCoId
@@ -163,7 +149,6 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer of the selected payer.<br />
-     *
      * Optional if PayerNumber is passed else Mandatory
      */
     public function getPayerId(): ?int
@@ -174,7 +159,6 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer of the selected payer.<br />
-     *
      * Optional if PayerNumber is passed else Mandatory
      *
      * @maps PayerId
@@ -187,7 +171,6 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number (Ex: GB000000123) of the selected payer.<br />
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function getPayerNumber(): ?string
@@ -198,7 +181,6 @@ class PINReminderRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number (Ex: GB000000123) of the selected payer.<br />
-     *
      * Optional if PayerId is passed else Mandatory
      *
      * @maps PayerNumber

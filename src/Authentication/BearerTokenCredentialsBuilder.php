@@ -78,6 +78,48 @@ class BearerTokenCredentialsBuilder
         return $this;
     }
 
+    /**
+     * Setter for clock skew time in seconds applied while checking the OAuth Token expiry.
+     *
+     * @param int $oAuthClockSkew
+     *
+     * @return $this
+     */
+    public function oAuthClockSkew(int $oAuthClockSkew): self
+    {
+        $this->config['BearerToken-ClockSkew'] = $oAuthClockSkew;
+        return $this;
+    }
+
+    /**
+     * Setter for the OAuthTokenProvider callable with 2 arguments. Arg1 will be the last OAuthToken
+     * instance, while Arg2 will be an instance of BearerTokenManager. The return type of callable should
+     * be an instance of OAuthToken model.
+     *
+     * @param callable(OAuthToken, BearerTokenManager): OAuthToken $oAuthTokenProvider
+     *
+     * @return $this
+     */
+    public function oAuthTokenProvider(callable $oAuthTokenProvider): self
+    {
+        $this->config['BearerToken-TokenProvider'] = $oAuthTokenProvider;
+        return $this;
+    }
+
+    /**
+     * Setter for the OAuthOnTokenUpdate callable with the updated OAuthToken instance as the only argument.
+     * Here the return type of callable should be void
+     *
+     * @param callable(OAuthToken): void $oAuthOnTokenUpdate
+     *
+     * @return $this
+     */
+    public function oAuthOnTokenUpdate(callable $oAuthOnTokenUpdate): self
+    {
+        $this->config['BearerToken-OnTokenUpdate'] = $oAuthOnTokenUpdate;
+        return $this;
+    }
+
     public function getConfiguration(): array
     {
         return CoreHelper::clone($this->config);

@@ -12,6 +12,9 @@ Documentation for accessing and setting credentials for BearerToken.
 | OAuthClientId | `string` | OAuth 2 Client ID | `oAuthClientId` | `getOAuthClientId()` |
 | OAuthClientSecret | `string` | OAuth 2 Client Secret | `oAuthClientSecret` | `getOAuthClientSecret()` |
 | OAuthToken | `OAuthToken\|null` | Object for storing information about the OAuth token | `oAuthToken` | `getOAuthToken()` |
+| OAuthClockSkew | `int` | Clock skew time in seconds applied while checking the OAuth Token expiry. | `oAuthClockSkew` | - |
+| OAuthTokenProvider | `callable(OAuthToken, BearerTokenManager): OAuthToken` | Registers a callback for oAuth Token Provider used for automatic token fetching/refreshing. | `oAuthTokenProvider` | - |
+| OAuthOnTokenUpdate | `callable(OAuthToken): void` | Registers a callback for token update event. | `oAuthOnTokenUpdate` | - |
 
 
 
@@ -21,7 +24,7 @@ Documentation for accessing and setting credentials for BearerToken.
 
 ### Client Initialization
 
-You must initialize the client with *OAuth 2.0 Client Credentials Grant* credentials as shown in the following code snippet.
+You must initialize the client with *OAuth 2.0 Client Credentials Grant* credentials as shown in the following code snippet. This will fetch the OAuth token automatically when any of the endpoints, requiring *OAuth 2.0 Client Credentials Grant* autentication, are called.
 
 ```php
 $client = ShellCardManagementAPIsClientBuilder::init()
@@ -36,99 +39,50 @@ $client = ShellCardManagementAPIsClientBuilder::init()
 
 
 
-Your application must obtain user authorization before it can execute an endpoint call in case this SDK chooses to use *OAuth 2.0 Client Credentials Grant*. This authorization includes the following steps.
+Your application can also manually provide an OAuthToken using the setter `oAuthToken` in `BearerTokenCredentialsBuilder` object. This function takes in an instance of OAuthToken containing information for authorizing client requests and refreshing the token itself.
 
-The `fetchToken()` method will exchange the OAuth client credentials for an *access token*. The access token is an object containing information for authorizing client requests and refreshing the token itself.
+### Adding OAuth Token Update Callback
 
-```php
-try {
-    $token = $client->getBearerTokenCredentials()->fetchToken();
-    // re-build the client with oauth token
-    $client = $client
-        ->toBuilder()
-        ->bearerTokenCredentials($client->getBearerTokenCredentialsBuilder()->oAuthToken($token))
-        ->build();
-} catch (ShellCardManagementAPIsLib\Exceptions\ApiException $e) {
-    // handle exception
-}
-```
-
-The client can now make authorized endpoint calls.
-
-### Storing an access token for reuse
-
-It is recommended that you store the access token for reuse.
+Whenever the OAuth Token gets updated, the provided callback implementation will be executed. For instance, you may use it to store your access token whenever it gets updated.
 
 ```php
-// store token
-$_SESSION['access_token'] = $client->getBearerTokenCredentials()->getOAuthToken();
-```
-
-### Creating a client from a stored token
-
-To authorize a client from a stored access token, just set the access token in Configuration along with the other configuration parameters before creating the client:
-
-```php
-// load token later...
-$token = $_SESSION['access_token'];
-
-// re-build the client with oauth token
-$client = $client
-    ->toBuilder()
-    ->bearerTokenCredentials($client->getBearerTokenCredentialsBuilder()->oAuthToken($token))
-    ->build();
-```
-
-### Complete example
-
-
-
-```php
-<?php
-require_once __DIR__.'/vendor/autoload.php';
-
-session_start();
-
-// Client configuration
 $client = ShellCardManagementAPIsClientBuilder::init()
     ->bearerTokenCredentials(
         BearerTokenCredentialsBuilder::init(
             'OAuthClientId',
             'OAuthClientSecret'
         )
+            ->oAuthOnTokenUpdate(
+                function (OAuthToken $oAuthToken): void {
+                    // Add the callback handler to perform operations like save to DB or file etc.
+                    // It will be triggered whenever the token gets updated.
+                    $this->saveTokenToDatabase($oAuthToken);
+                }
+            )
     )
-    ->environment('production')
-    ->url(envrr)
     ->build();
+```
 
+### Adding Custom OAuth Token Provider
 
+To authorize a client using a stored access token, set up the `oAuthTokenProvider` in `BearerTokenCredentialsBuilder` along with the other auth parameters before creating the client:
 
-// Obtain access token, restore from cache if possible
-if (isset($_SESSION['access_token'])) {
-    $token = $_SESSION['access_token'];
-    // re-build the client with oauth token
-    $client = $client
-        ->toBuilder()
-        ->bearerTokenCredentials($client->getBearerTokenCredentialsBuilder()->oAuthToken($token))
-        ->build();
-} else {
-    try {
-        // fetch an oauth token to authorize the client
-        $token = $client->getBearerTokenCredentials()->fetchToken();
-        // re-build the client with oauth token
-        $client = $client
-            ->toBuilder()
-            ->bearerTokenCredentials($client->getBearerTokenCredentialsBuilder()->oAuthToken($token))
-            ->build();
-
-        // store token
-        $_SESSION['access_token'] = $token;
-    } catch (ShellCardManagementAPIsLib\Exceptions\ApiException $e) {
-        // handle exception
-    }
-}
-
-// the client is now authorized; you can use $client to make endpoint calls
+```php
+$client = ShellCardManagementAPIsClientBuilder::init()
+    ->bearerTokenCredentials(
+        BearerTokenCredentialsBuilder::init(
+            'OAuthClientId',
+            'OAuthClientSecret'
+        )
+            ->oAuthTokenProvider(
+                function (?OAuthToken $lastOAuthToken, BearerTokenManager $authManager): OAuthToken {
+                    // Add the callback handler to provide a new OAuth token.
+                    // It will be triggered whenever the lastOAuthToken is null or expired.
+                    return $this->loadTokenFromDatabase() ?? $authManager->fetchToken();
+                }
+            )
+    )
+    ->build();
 ```
 
 

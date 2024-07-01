@@ -22,7 +22,7 @@ This is mandatory if PINContactType is 4 else optional and ignored.
 | `countryID` | `?int` | Optional | Country | getCountryID(): ?int | setCountryID(?int countryID): void |
 | `phoneNumber` | `?string` | Optional | Cardholder phone number for PIN delivery. | getPhoneNumber(): ?string | setPhoneNumber(?string phoneNumber): void |
 | `emailAddress` | `?string` | Optional | Cardholder email address for PIN delivery<br>Max Length : 90<br>Example: xxxxxx@example.com <br/>Note:Based on the international standard that there can be Max Length 64 before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88 (Minimum of 2) | getEmailAddress(): ?string | setEmailAddress(?string emailAddress): void |
-| `savePINReminder` | `?bool` | Optional | Save PIN Reminder<br>If SavePINReminder is true, the contact address will be saved database for PIN reminder.<br><br/>Only allowed for PIN Advice paper delivery. | getSavePINReminder(): ?bool | setSavePINReminder(?bool savePINReminder): void |
+| `savePINReminder` | `?bool` | Optional | Save PIN Reminder<br>If SavePINReminder is true, the contact address will be saved database for PIN reminder.<br><br><br/>Only allowed for PIN Advice paper delivery. | getSavePINReminder(): ?bool | setSavePINReminder(?bool savePINReminder): void |
 
 ## Example (as JSON)
 

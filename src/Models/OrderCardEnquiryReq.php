@@ -150,7 +150,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Returns Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer. <br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided.<br />
      */
     public function getColCoCode(): ?int
@@ -164,7 +163,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Sets Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer. <br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided.<br />
      *
      * @maps ColCoCode
@@ -177,7 +175,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Unsets Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer. <br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided.<br />
      */
     public function unsetColCoCode(): void
@@ -188,7 +185,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Returns Col Co Id.
      * Collecting Company Id (in ) of the selected payer. <br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided. Else, either ‘ColCoId’ or ‘ColCoCode’ is mandatory.
      * <br />
      */
@@ -203,7 +199,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Sets Col Co Id.
      * Collecting Company Id (in ) of the selected payer. <br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided. Else, either ‘ColCoId’ or ‘ColCoCode’ is mandatory.
      * <br />
      *
@@ -217,7 +212,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Unsets Col Co Id.
      * Collecting Company Id (in ) of the selected payer. <br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided. Else, either ‘ColCoId’ or ‘ColCoCode’ is mandatory.
      * <br />
      */
@@ -261,7 +255,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer) of the selected payer.<br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided. Else, either ‘PayerId’ or ‘PayerNumber’ is mandatory.
      */
     public function getPayerId(): ?int
@@ -275,7 +268,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer) of the selected payer.<br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided. Else, either ‘PayerId’ or ‘PayerNumber’ is mandatory.
      *
      * @maps PayerId
@@ -288,7 +280,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer) of the selected payer.<br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided. Else, either ‘PayerId’ or ‘PayerNumber’ is mandatory.
      */
     public function unsetPayerId(): void
@@ -299,7 +290,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.<br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided. Else, either ‘PayerId’ or ‘PayerNumber’ is mandatory.
      */
     public function getPayerNumber(): ?string
@@ -313,7 +303,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.<br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided. Else, either ‘PayerId’ or ‘PayerNumber’ is mandatory.
      *
      * @maps PayerNumber
@@ -326,7 +315,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number of the selected payer.<br />
-     *
      * Optional – when ‘ReferenceNumber’ is provided. Else, either ‘PayerId’ or ‘PayerNumber’ is mandatory.
      */
     public function unsetPayerNumber(): void
@@ -337,7 +325,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Returns Reference Number.
      * Reference number of the Card Order/ Bulk Card Order/ Order Card Request.<br />
-     *
      * Mandatory when ColCo and Payer fields are not provided. Else, optional.
      */
     public function getReferenceNumber(): ?int
@@ -348,7 +335,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Sets Reference Number.
      * Reference number of the Card Order/ Bulk Card Order/ Order Card Request.<br />
-     *
      * Mandatory when ColCo and Payer fields are not provided. Else, optional.
      *
      * @maps ReferenceNumber
@@ -360,20 +346,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
 
     /**
      * Returns Reference Type.
-     * Type of the reference number provided.<br />
-     *
-     * Mandatory if ReferenceNumber is provided. Else optional.<br />
-     *
-     * Allowed Values:<br />
-     *
-     * 1=Main Reference(Main Order Reference Number returned in the output of Card/OrderCard service. <br
-     * />
-     *
-     * 2=Order Card Reference (Reference number for each individual card in the order submitted via
-     * Card/OrderCard service. <br />
-     *
-     * 3=Bulk Order Card Reference (Reference number returned in the response of bulkcardinterface
-     * /UploadOrderCardTemplate. )
      */
     public function getReferenceType(): ?int
     {
@@ -382,20 +354,6 @@ class OrderCardEnquiryReq implements \JsonSerializable
 
     /**
      * Sets Reference Type.
-     * Type of the reference number provided.<br />
-     *
-     * Mandatory if ReferenceNumber is provided. Else optional.<br />
-     *
-     * Allowed Values:<br />
-     *
-     * 1=Main Reference(Main Order Reference Number returned in the output of Card/OrderCard service. <br
-     * />
-     *
-     * 2=Order Card Reference (Reference number for each individual card in the order submitted via
-     * Card/OrderCard service. <br />
-     *
-     * 3=Bulk Order Card Reference (Reference number returned in the response of bulkcardinterface
-     * /UploadOrderCardTemplate. )
      *
      * @maps ReferenceType
      * @factory \ShellCardManagementAPIsLib\Models\OrderCardEnquiryReqReferenceTypeEnum::checkValue
@@ -408,16 +366,11 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Returns From Date.
      * Card Orders from Date/Time.<br />
-     *
      * Optional.<br />
-     *
      * Value should be with in last 7 days<br />
-     *
      * This field is ignored if ReferenceNumber is provided <br />
-     *
      * This field is optional when not provided and ReferenceNumber is null or empty then the value should
      * be set to D-7(Where D is current date)<br />
-     *
      * Format: yyyyMMdd
      */
     public function getFromDate(): ?string
@@ -431,16 +384,11 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Sets From Date.
      * Card Orders from Date/Time.<br />
-     *
      * Optional.<br />
-     *
      * Value should be with in last 7 days<br />
-     *
      * This field is ignored if ReferenceNumber is provided <br />
-     *
      * This field is optional when not provided and ReferenceNumber is null or empty then the value should
      * be set to D-7(Where D is current date)<br />
-     *
      * Format: yyyyMMdd
      *
      * @maps FromDate
@@ -453,16 +401,11 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Unsets From Date.
      * Card Orders from Date/Time.<br />
-     *
      * Optional.<br />
-     *
      * Value should be with in last 7 days<br />
-     *
      * This field is ignored if ReferenceNumber is provided <br />
-     *
      * This field is optional when not provided and ReferenceNumber is null or empty then the value should
      * be set to D-7(Where D is current date)<br />
-     *
      * Format: yyyyMMdd
      */
     public function unsetFromDate(): void
@@ -473,16 +416,11 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Returns To Date.
      * Card Order to Date/Time<br />
-     *
      * Optional<br />
-     *
      * Value should be with in last 7 days<br />
-     *
      * This field is ignored if ReferenceNumber is provided <br />
-     *
      * This field is optional when not provided and ReferenceNumber is null or empty then the value should
      * be set to current date<br />
-     *
      * Format: yyyyMMdd
      */
     public function getToDate(): ?string
@@ -496,16 +434,11 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Sets To Date.
      * Card Order to Date/Time<br />
-     *
      * Optional<br />
-     *
      * Value should be with in last 7 days<br />
-     *
      * This field is ignored if ReferenceNumber is provided <br />
-     *
      * This field is optional when not provided and ReferenceNumber is null or empty then the value should
      * be set to current date<br />
-     *
      * Format: yyyyMMdd
      *
      * @maps ToDate
@@ -518,16 +451,11 @@ class OrderCardEnquiryReq implements \JsonSerializable
     /**
      * Unsets To Date.
      * Card Order to Date/Time<br />
-     *
      * Optional<br />
-     *
      * Value should be with in last 7 days<br />
-     *
      * This field is ignored if ReferenceNumber is provided <br />
-     *
      * This field is optional when not provided and ReferenceNumber is null or empty then the value should
      * be set to current date<br />
-     *
      * Format: yyyyMMdd
      */
     public function unsetToDate(): void

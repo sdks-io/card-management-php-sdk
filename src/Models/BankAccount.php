@@ -370,15 +370,10 @@ class BankAccount implements \JsonSerializable
     /**
      * Returns Country.
      * Bank Account Country Name
-     *
      * 1-Austria
-     *
      * 2-Belgium
-     *
      * 3-Bulgaria
-     *
      * 4-Croatia
-     *
      * 5-Czech Republic
      */
     public function getCountry(): ?string
@@ -392,15 +387,10 @@ class BankAccount implements \JsonSerializable
     /**
      * Sets Country.
      * Bank Account Country Name
-     *
      * 1-Austria
-     *
      * 2-Belgium
-     *
      * 3-Bulgaria
-     *
      * 4-Croatia
-     *
      * 5-Czech Republic
      *
      * @maps Country
@@ -413,15 +403,10 @@ class BankAccount implements \JsonSerializable
     /**
      * Unsets Country.
      * Bank Account Country Name
-     *
      * 1-Austria
-     *
      * 2-Belgium
-     *
      * 3-Bulgaria
-     *
      * 4-Croatia
-     *
      * 5-Czech Republic
      */
     public function unsetCountry(): void

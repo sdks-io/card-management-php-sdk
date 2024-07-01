@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Models\OrderCardEnquiryReq;
+use ShellCardManagementAPIsLib\Models\Filters2;
 use ShellCardManagementAPIsLib\Models\OrderCardEnquiryRequest;
 
 /**
@@ -42,7 +42,7 @@ class OrderCardEnquiryRequestBuilder
     /**
      * Sets filters field.
      */
-    public function filters(?OrderCardEnquiryReq $value): self
+    public function filters(?Filters2 $value): self
     {
         $this->instance->setFilters($value);
         return $this;

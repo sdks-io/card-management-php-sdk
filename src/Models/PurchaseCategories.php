@@ -62,27 +62,16 @@ class PurchaseCategories implements \JsonSerializable
     /**
      * Returns Code.
      * Purchase category code
-     *
      * Example: 0,1, 2 etc.
-     *
      * Full list below:
-     *
      * 0 - All Fuels (without VP) and Lubricants
-     *
      * 1 - Fuel Save only
-     *
      * 2 - Fuel Save and Lubricants
-     *
      * 3 - No Restrictions
-     *
      * 4 - VP and Fuel Save
-     *
      * 5 - Diesel ONLY
-     *
      * 6 - Diesel and Lubricants
-     *
      * 7 - VP and Lubricants
-     *
      * 8 - VP and Fuel Save and Lubricants
      */
     public function getCode(): ?string
@@ -93,27 +82,16 @@ class PurchaseCategories implements \JsonSerializable
     /**
      * Sets Code.
      * Purchase category code
-     *
      * Example: 0,1, 2 etc.
-     *
      * Full list below:
-     *
      * 0 - All Fuels (without VP) and Lubricants
-     *
      * 1 - Fuel Save only
-     *
      * 2 - Fuel Save and Lubricants
-     *
      * 3 - No Restrictions
-     *
      * 4 - VP and Fuel Save
-     *
      * 5 - Diesel ONLY
-     *
      * 6 - Diesel and Lubricants
-     *
      * 7 - VP and Lubricants
-     *
      * 8 - VP and Fuel Save and Lubricants
      *
      * @maps Code
@@ -190,7 +168,6 @@ class PurchaseCategories implements \JsonSerializable
     /**
      * Returns Is Visible.
      * If True then PurchaseCategory can be used while submitting new order cards requests.
-     *
      * If false this PurchaseCategory will not be used for Ordering Cards.
      */
     public function getIsVisible(): ?bool
@@ -201,7 +178,6 @@ class PurchaseCategories implements \JsonSerializable
     /**
      * Sets Is Visible.
      * If True then PurchaseCategory can be used while submitting new order cards requests.
-     *
      * If false this PurchaseCategory will not be used for Ordering Cards.
      *
      * @maps IsVisible

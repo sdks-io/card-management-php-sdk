@@ -114,11 +114,8 @@ class PayerAccess implements \JsonSerializable
     /**
      * Returns Colco Code.
      * Collecting company code.
-     *
      * Example:
-     *
      * 86-Philippines
-     *
      * 5-UK
      */
     public function getColcoCode(): ?int
@@ -132,11 +129,8 @@ class PayerAccess implements \JsonSerializable
     /**
      * Sets Colco Code.
      * Collecting company code.
-     *
      * Example:
-     *
      * 86-Philippines
-     *
      * 5-UK
      *
      * @maps ColcoCode
@@ -149,11 +143,8 @@ class PayerAccess implements \JsonSerializable
     /**
      * Unsets Colco Code.
      * Collecting company code.
-     *
      * Example:
-     *
      * 86-Philippines
-     *
      * 5-UK
      */
     public function unsetColcoCode(): void
@@ -269,7 +260,6 @@ class PayerAccess implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id to which the user has access
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -283,7 +273,6 @@ class PayerAccess implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id to which the user has access
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -296,7 +285,6 @@ class PayerAccess implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id to which the user has access
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -307,7 +295,6 @@ class PayerAccess implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number to which the user has access
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -321,7 +308,6 @@ class PayerAccess implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number to which the user has access
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -334,7 +320,6 @@ class PayerAccess implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number to which the user has access
-     *
      * Example: GB000000123
      */
     public function unsetPayerNumber(): void

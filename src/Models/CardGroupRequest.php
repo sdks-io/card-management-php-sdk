@@ -177,11 +177,8 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer id of the customer.
-     *
      * Optional if PayerNumber is passed, else Mandatory.
-     *
      * This input is a search criterion.
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -195,11 +192,8 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer id of the customer.
-     *
      * Optional if PayerNumber is passed, else Mandatory.
-     *
      * This input is a search criterion.
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -212,11 +206,8 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer id of the customer.
-     *
      * Optional if PayerNumber is passed, else Mandatory.
-     *
      * This input is a search criterion.
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -349,15 +340,10 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Returns Status.
      * Card Group Status
-     *
      * Mandatory
-     *
      * Allowed values:
-     *
      * • ALL
-     *
      * • TERMINATED
-     *
      * • ACTIVE
      */
     public function getStatus(): ?string
@@ -371,15 +357,10 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Sets Status.
      * Card Group Status
-     *
      * Mandatory
-     *
      * Allowed values:
-     *
      * • ALL
-     *
      * • TERMINATED
-     *
      * • ACTIVE
      *
      * @maps Status
@@ -392,15 +373,10 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Unsets Status.
      * Card Group Status
-     *
      * Mandatory
-     *
      * Allowed values:
-     *
      * • ALL
-     *
      * • TERMINATED
-     *
      * • ACTIVE
      */
     public function unsetStatus(): void
@@ -411,9 +387,7 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Returns Current Page.
      * Page Number (as shown to the users)
-     *
      * Optional
-     *
      * Default value 1
      */
     public function getCurrentPage(): ?int
@@ -424,9 +398,7 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Sets Current Page.
      * Page Number (as shown to the users)
-     *
      * Optional
-     *
      * Default value 1
      *
      * @maps CurrentPage
@@ -439,11 +411,8 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Returns Page Size.
      * Page Size – Number of records to show on a page.
-     *
      * Optional
-     *
      * Default value 50.
-     *
      * Return all rows if -1 is supplied as page size.
      */
     public function getPageSize(): ?int
@@ -454,11 +423,8 @@ class CardGroupRequest implements \JsonSerializable
     /**
      * Sets Page Size.
      * Page Size – Number of records to show on a page.
-     *
      * Optional
-     *
      * Default value 50.
-     *
      * Return all rows if -1 is supplied as page size.
      *
      * @maps PageSize

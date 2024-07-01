@@ -200,7 +200,6 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the customer.
-     *
      * Optional if AccountNumber is passed else Mandatory.
      */
     public function getAccountId(): ?int
@@ -214,7 +213,6 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the customer.
-     *
      * Optional if AccountNumber is passed else Mandatory.
      *
      * @maps AccountId
@@ -227,7 +225,6 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account Id of the customer.
-     *
      * Optional if AccountNumber is passed else Mandatory.
      */
     public function unsetAccountId(): void
@@ -238,9 +235,7 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed else Mandatory
-     *
      * Example: GB000000124
      */
     public function getAccountNumber(): ?string
@@ -254,9 +249,7 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed else Mandatory
-     *
      * Example: GB000000124
      *
      * @maps AccountNumber
@@ -269,9 +262,7 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed else Mandatory
-     *
      * Example: GB000000124
      */
     public function unsetAccountNumber(): void
@@ -282,9 +273,7 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Returns Include Usage Restrictions.
      * Include usage restrictions in the response.
-     *
      * Optional field– default value is False.
-     *
      * Possible values: True/False
      */
     public function getIncludeUsageRestrictions(): ?bool
@@ -295,9 +284,7 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Sets Include Usage Restrictions.
      * Include usage restrictions in the response.
-     *
      * Optional field– default value is False.
-     *
      * Possible values: True/False
      *
      * @maps IncludeUsageRestrictions
@@ -310,9 +297,7 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Returns Include Purchase Categories.
      * Include purchase categories in the response.
-     *
      * Optional field– default value is False.
-     *
      * Possible values: True/False
      */
     public function getIncludePurchaseCategories(): ?bool
@@ -323,9 +308,7 @@ class CardTypeRequest implements \JsonSerializable
     /**
      * Sets Include Purchase Categories.
      * Include purchase categories in the response.
-     *
      * Optional field– default value is False.
-     *
      * Possible values: True/False
      *
      * @maps IncludePurchaseCategories

@@ -259,7 +259,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns B CO Reference.
      * Bulk card order request refrence numer.<br />
-     *
      * This field will be null if the order is not through BCO.
      */
     public function getBCOReference(): ?int
@@ -273,7 +272,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets B CO Reference.
      * Bulk card order request refrence numer.<br />
-     *
      * This field will be null if the order is not through BCO.
      *
      * @maps BCOReference
@@ -286,7 +284,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets B CO Reference.
      * Bulk card order request refrence numer.<br />
-     *
      * This field will be null if the order is not through BCO.
      */
     public function unsetBCOReference(): void
@@ -297,7 +294,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns B CO Row Number.
      * Row number of the request in the BCO file.<br />
-     *
      * This field will be null if the order is not through BCO.
      */
     public function getBCORowNumber(): ?int
@@ -311,7 +307,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets B CO Row Number.
      * Row number of the request in the BCO file.<br />
-     *
      * This field will be null if the order is not through BCO.
      *
      * @maps BCORowNumber
@@ -324,7 +319,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets B CO Row Number.
      * Row number of the request in the BCO file.<br />
-     *
      * This field will be null if the order is not through BCO.
      */
     public function unsetBCORowNumber(): void
@@ -399,7 +393,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Card Id.
      * Unique Card Id.<br />
-     *
      * The field will be null if the card order request is not successly processed.
      */
     public function getCardId(): ?int
@@ -413,7 +406,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Card Id.
      * Unique Card Id.<br />
-     *
      * The field will be null if the card order request is not successly processed.
      *
      * @maps CardId
@@ -426,7 +418,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Card Id.
      * Unique Card Id.<br />
-     *
      * The field will be null if the card order request is not successly processed.
      */
     public function unsetCardId(): void
@@ -437,9 +428,7 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Card PAN.
      * Card PAN.<br />
-     *
      * Mask PAN (Mask all digits except the Last 6 digits of the PAN).<br />
-     *
      * The field will be null if the card order request is not successly processed.
      */
     public function getCardPAN(): ?string
@@ -453,9 +442,7 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Card PAN.
      * Card PAN.<br />
-     *
      * Mask PAN (Mask all digits except the Last 6 digits of the PAN).<br />
-     *
      * The field will be null if the card order request is not successly processed.
      *
      * @maps CardPAN
@@ -468,9 +455,7 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Card PAN.
      * Card PAN.<br />
-     *
      * Mask PAN (Mask all digits except the Last 6 digits of the PAN).<br />
-     *
      * The field will be null if the card order request is not successly processed.
      */
     public function unsetCardPAN(): void
@@ -481,7 +466,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Card Type Code.
      * CardTypeCode<br />
-     *
      * ISO code of the card i.e. first 7 digits of the PAN
      */
     public function getCardTypeCode(): ?string
@@ -495,7 +479,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Card Type Code.
      * CardTypeCode<br />
-     *
      * ISO code of the card i.e. first 7 digits of the PAN
      *
      * @maps CardTypeCode
@@ -508,7 +491,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Card Type Code.
      * CardTypeCode<br />
-     *
      * ISO code of the card i.e. first 7 digits of the PAN
      */
     public function unsetCardTypeCode(): void
@@ -615,7 +597,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Error Code.
      * Error code for the order card request.<br />
-     *
      * The value will be 0000 if it is processed without errors.
      */
     public function getErrorCode(): ?string
@@ -629,7 +610,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Error Code.
      * Error code for the order card request.<br />
-     *
      * The value will be 0000 if it is processed without errors.
      *
      * @maps ErrorCode
@@ -642,7 +622,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Error Code.
      * Error code for the order card request.<br />
-     *
      * The value will be 0000 if it is processed without errors.
      */
     public function unsetErrorCode(): void
@@ -653,7 +632,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Error Description.
      * Error description for the order card request.<br />
-     *
      * The value will be empty string if it is processed without errors.
      */
     public function getErrorDescription(): ?string
@@ -667,7 +645,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Error Description.
      * Error description for the order card request.<br />
-     *
      * The value will be empty string if it is processed without errors.
      *
      * @maps ErrorDescription
@@ -680,7 +657,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Error Description.
      * Error description for the order card request.<br />
-     *
      * The value will be empty string if it is processed without errors.
      */
     public function unsetErrorDescription(): void
@@ -691,7 +667,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Gateway Sync Error Code.
      * Error code for the Gateway sync error.<br />
-     *
      * The value will be 0000 if it is processed without errors.
      */
     public function getGatewaySyncErrorCode(): ?string
@@ -705,7 +680,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Gateway Sync Error Code.
      * Error code for the Gateway sync error.<br />
-     *
      * The value will be 0000 if it is processed without errors.
      *
      * @maps GatewaySyncErrorCode
@@ -718,7 +692,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Gateway Sync Error Code.
      * Error code for the Gateway sync error.<br />
-     *
      * The value will be 0000 if it is processed without errors.
      */
     public function unsetGatewaySyncErrorCode(): void
@@ -729,7 +702,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Gateway Sync Error Description.
      * Error description for the Gateway sync error.<br />
-     *
      * The value will be empty string if it is processed without errors.
      */
     public function getGatewaySyncErrorDescription(): ?string
@@ -743,7 +715,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Gateway Sync Error Description.
      * Error description for the Gateway sync error.<br />
-     *
      * The value will be empty string if it is processed without errors.
      *
      * @maps GatewaySyncErrorDescription
@@ -756,7 +727,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Gateway Sync Error Description.
      * Error description for the Gateway sync error.<br />
-     *
      * The value will be empty string if it is processed without errors.
      */
     public function unsetGatewaySyncErrorDescription(): void
@@ -767,17 +737,11 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Gateway Sync Status.
      * GatewaySyncStatus<br />
-     *
      * Status of the card sync with CFGW.<br />
-     *
      * Possible values:<br />
-     *
      * -Success<br />
-     *
      * -Failed<br />
-     *
      * -In Progress<br />
-     *
      * -Not Submitted
      */
     public function getGatewaySyncStatus(): ?string
@@ -791,17 +755,11 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Gateway Sync Status.
      * GatewaySyncStatus<br />
-     *
      * Status of the card sync with CFGW.<br />
-     *
      * Possible values:<br />
-     *
      * -Success<br />
-     *
      * -Failed<br />
-     *
      * -In Progress<br />
-     *
      * -Not Submitted
      *
      * @maps GatewaySyncStatus
@@ -814,17 +772,11 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Gateway Sync Status.
      * GatewaySyncStatus<br />
-     *
      * Status of the card sync with CFGW.<br />
-     *
      * Possible values:<br />
-     *
      * -Success<br />
-     *
      * -Failed<br />
-     *
      * -In Progress<br />
-     *
      * -Not Submitted
      */
     public function unsetGatewaySyncStatus(): void
@@ -835,7 +787,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Main Reference.
      * Main reference number for the order card request.<br />
-     *
      * This field will be null if the order is through BCO.
      */
     public function getMainReference(): ?int
@@ -846,7 +797,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Main Reference.
      * Main reference number for the order card request.<br />
-     *
      * This field will be null if the order is through BCO.
      *
      * @maps MainReference
@@ -859,7 +809,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Order Card Reference.
      * Indivitual card reference number for the order card request.<br />
-     *
      * This field will be null if the order is through BCO.
      */
     public function getOrderCardReference(): ?int
@@ -870,7 +819,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Order Card Reference.
      * Indivitual card reference number for the order card request.<br />
-     *
      * This field will be null if the order is through BCO.
      *
      * @maps OrderCardReference
@@ -883,21 +831,13 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Order Status.
      * Order status.<br />
-     *
      * Possible values:<br />
-     *
      * P   Pending<br />
-     *
      * I   Picked up for processing<br />
-     *
      * PX Failed at Queue but retry attempts pending<br />
-     *
      * X Failed  at Queue<br />
-     *
      * R Card is processed, awaiting for PAN update.<br />
-     *
      * S Processed<br />
-     *
      * F Failed
      */
     public function getOrderStatus(): ?string
@@ -911,21 +851,13 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Order Status.
      * Order status.<br />
-     *
      * Possible values:<br />
-     *
      * P   Pending<br />
-     *
      * I   Picked up for processing<br />
-     *
      * PX Failed at Queue but retry attempts pending<br />
-     *
      * X Failed  at Queue<br />
-     *
      * R Card is processed, awaiting for PAN update.<br />
-     *
      * S Processed<br />
-     *
      * F Failed
      *
      * @maps OrderStatus
@@ -938,21 +870,13 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Order Status.
      * Order status.<br />
-     *
      * Possible values:<br />
-     *
      * P   Pending<br />
-     *
      * I   Picked up for processing<br />
-     *
      * PX Failed at Queue but retry attempts pending<br />
-     *
      * X Failed  at Queue<br />
-     *
      * R Card is processed, awaiting for PAN update.<br />
-     *
      * S Processed<br />
-     *
      * F Failed
      */
     public function unsetOrderStatus(): void
@@ -1015,9 +939,7 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Processed Date.
      * Date and time (in cutomers local time) when the card order request is processed<br />
-     *
      * Format: yyyyMMdd HH:mm:ss<br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      */
     public function getProcessedDate(): ?string
@@ -1031,9 +953,7 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Processed Date.
      * Date and time (in cutomers local time) when the card order request is processed<br />
-     *
      * Format: yyyyMMdd HH:mm:ss<br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      *
      * @maps ProcessedDate
@@ -1046,9 +966,7 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Processed Date.
      * Date and time (in cutomers local time) when the card order request is processed<br />
-     *
      * Format: yyyyMMdd HH:mm:ss<br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      */
     public function unsetProcessedDate(): void
@@ -1091,7 +1009,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Purchase Category Id.
      * PurchaseCategoryId <br />
-     *
      * Note: Not Purchase code. This is a unique purchase category id assigned
      */
     public function getPurchaseCategoryId(): ?int
@@ -1105,7 +1022,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Purchase Category Id.
      * PurchaseCategoryId <br />
-     *
      * Note: Not Purchase code. This is a unique purchase category id assigned
      *
      * @maps PurchaseCategoryId
@@ -1118,7 +1034,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Purchase Category Id.
      * PurchaseCategoryId <br />
-     *
      * Note: Not Purchase code. This is a unique purchase category id assigned
      */
     public function unsetPurchaseCategoryId(): void
@@ -1161,9 +1076,7 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Submitted Date.
      * Date and time (in cutomers local time) when the card order request is submitted.<br />
-     *
      * Format: yyyyMMdd HH:mm:ss<br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      */
     public function getSubmittedDate(): ?string
@@ -1177,9 +1090,7 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Submitted Date.
      * Date and time (in cutomers local time) when the card order request is submitted.<br />
-     *
      * Format: yyyyMMdd HH:mm:ss<br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      *
      * @maps SubmittedDate
@@ -1192,9 +1103,7 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Submitted Date.
      * Date and time (in cutomers local time) when the card order request is submitted.<br />
-     *
      * Format: yyyyMMdd HH:mm:ss<br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      */
     public function unsetSubmittedDate(): void
@@ -1205,11 +1114,8 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Sync Processed Date.
      * SyncProcessedDate<br />
-     *
      * Date and time (in cutomers local time) when the sync card request is processed.<br />
-     *
      * Format: yyyyMMdd HH:mm:ss<br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      */
     public function getSyncProcessedDate(): ?string
@@ -1223,11 +1129,8 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Sync Processed Date.
      * SyncProcessedDate<br />
-     *
      * Date and time (in cutomers local time) when the sync card request is processed.<br />
-     *
      * Format: yyyyMMdd HH:mm:ss<br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      *
      * @maps SyncProcessedDate
@@ -1240,11 +1143,8 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Sync Processed Date.
      * SyncProcessedDate<br />
-     *
      * Date and time (in cutomers local time) when the sync card request is processed.<br />
-     *
      * Format: yyyyMMdd HH:mm:ss<br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      */
     public function unsetSyncProcessedDate(): void
@@ -1255,11 +1155,8 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Sync Requested Date.
      * SyncRequestedDate<br />
-     *
      * Date and time (in cutomers local time) when the sync card request is submitted.<br />
-     *
      * Format: yyyyMMdd HH:mm:ss <br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      */
     public function getSyncRequestedDate(): ?string
@@ -1273,11 +1170,8 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Sync Requested Date.
      * SyncRequestedDate<br />
-     *
      * Date and time (in cutomers local time) when the sync card request is submitted.<br />
-     *
      * Format: yyyyMMdd HH:mm:ss <br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      *
      * @maps SyncRequestedDate
@@ -1290,11 +1184,8 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Sync Requested Date.
      * SyncRequestedDate<br />
-     *
      * Date and time (in cutomers local time) when the sync card request is submitted.<br />
-     *
      * Format: yyyyMMdd HH:mm:ss <br />
-     *
      * Note: The client application to convert the string to appropriate date/time type.
      */
     public function unsetSyncRequestedDate(): void
@@ -1337,7 +1228,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Order Request Id.
      * Unique Id of the Original Order card request, the status of which is enquired by this API. <br />
-     *
      * This is returned for end to end traceability of a request based on the original Order Card request.
      */
     public function getOrderRequestId(): ?string
@@ -1351,7 +1241,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Order Request Id.
      * Unique Id of the Original Order card request, the status of which is enquired by this API. <br />
-     *
      * This is returned for end to end traceability of a request based on the original Order Card request.
      *
      * @maps OrderRequestId
@@ -1364,7 +1253,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Order Request Id.
      * Unique Id of the Original Order card request, the status of which is enquired by this API. <br />
-     *
      * This is returned for end to end traceability of a request based on the original Order Card request.
      */
     public function unsetOrderRequestId(): void
@@ -1374,19 +1262,14 @@ class OrderCardEnquiry implements \JsonSerializable
 
     /**
      * Returns Expiry Date.
-     * Expiry date of the card.<br />
-     *
-     * Format: MMyy<br />
-     *
-     * (Clients to convert this to appropriate DateTime type.)<br />
-     *
-     * Note: This is the Expiry Date saved.<br />
-     *
-     * If the Order Card request is still not processed, i.e.PAN is not yet issued, this field will be null
-     * or empty. <br />
-     *
+     * Expiry date of the card.
+     * Format: yyyymmdd hh:mm:ss
+     * (Clients to convert this to appropriate DateTime type.)
+     * Note: This is the Expiry Date saved DB.
+     * If the Order Card request is still not processed, i.e. PAN is not yet issued, this field will be
+     * null or empty.
      * For a Card Order with a custom Expiry Date passed in the request, this value will be returned after
-     * it is updated successfully.
+     * it is updated successfully in GFN by the background process.
      */
     public function getExpiryDate(): ?string
     {
@@ -1398,19 +1281,14 @@ class OrderCardEnquiry implements \JsonSerializable
 
     /**
      * Sets Expiry Date.
-     * Expiry date of the card.<br />
-     *
-     * Format: MMyy<br />
-     *
-     * (Clients to convert this to appropriate DateTime type.)<br />
-     *
-     * Note: This is the Expiry Date saved.<br />
-     *
-     * If the Order Card request is still not processed, i.e.PAN is not yet issued, this field will be null
-     * or empty. <br />
-     *
+     * Expiry date of the card.
+     * Format: yyyymmdd hh:mm:ss
+     * (Clients to convert this to appropriate DateTime type.)
+     * Note: This is the Expiry Date saved DB.
+     * If the Order Card request is still not processed, i.e. PAN is not yet issued, this field will be
+     * null or empty.
      * For a Card Order with a custom Expiry Date passed in the request, this value will be returned after
-     * it is updated successfully.
+     * it is updated successfully in GFN by the background process.
      *
      * @maps ExpiryDate
      */
@@ -1421,19 +1299,14 @@ class OrderCardEnquiry implements \JsonSerializable
 
     /**
      * Unsets Expiry Date.
-     * Expiry date of the card.<br />
-     *
-     * Format: MMyy<br />
-     *
-     * (Clients to convert this to appropriate DateTime type.)<br />
-     *
-     * Note: This is the Expiry Date saved.<br />
-     *
-     * If the Order Card request is still not processed, i.e.PAN is not yet issued, this field will be null
-     * or empty. <br />
-     *
+     * Expiry date of the card.
+     * Format: yyyymmdd hh:mm:ss
+     * (Clients to convert this to appropriate DateTime type.)
+     * Note: This is the Expiry Date saved DB.
+     * If the Order Card request is still not processed, i.e. PAN is not yet issued, this field will be
+     * null or empty.
      * For a Card Order with a custom Expiry Date passed in the request, this value will be returned after
-     * it is updated successfully.
+     * it is updated successfully in GFN by the background process.
      */
     public function unsetExpiryDate(): void
     {
@@ -1475,7 +1348,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Returns Status Description.
      * Order status.<br />
-     *
      * Possible values<br />
      *
      * Success<br />
@@ -1495,7 +1367,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Sets Status Description.
      * Order status.<br />
-     *
      * Possible values<br />
      *
      * Success<br />
@@ -1514,7 +1385,6 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * Unsets Status Description.
      * Order status.<br />
-     *
      * Possible values<br />
      *
      * Success<br />

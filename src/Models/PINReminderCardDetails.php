@@ -48,7 +48,7 @@ class PINReminderCardDetails implements \JsonSerializable
     private $pINContactType;
 
     /**
-     * @var PINDeliveryDetails|null
+     * @var PINDeliverTo|null
      */
     private $pINDeliverTo;
 
@@ -115,7 +115,6 @@ class PINReminderCardDetails implements \JsonSerializable
     /**
      * Returns P AN.
      * PAN of the card.
-     *
      * Optional if Either CardId or PANID is passed, else Mandatory. <br/>Note:PAN & ExpiryDate parameters
      * will be considered only if CardId & PANID are not provided
      */
@@ -127,7 +126,6 @@ class PINReminderCardDetails implements \JsonSerializable
     /**
      * Sets P AN.
      * PAN of the card.
-     *
      * Optional if Either CardId or PANID is passed, else Mandatory. <br/>Note:PAN & ExpiryDate parameters
      * will be considered only if CardId & PANID are not provided
      *
@@ -141,9 +139,7 @@ class PINReminderCardDetails implements \JsonSerializable
     /**
      * Returns Card Expiry Date.
      * Expiry date of the card.
-     *
      * Mandatory if Either PAN or PANID is passed, else optional.
-     *
      * Format: yyyyMMdd
      */
     public function getCardExpiryDate(): ?string
@@ -157,9 +153,7 @@ class PINReminderCardDetails implements \JsonSerializable
     /**
      * Sets Card Expiry Date.
      * Expiry date of the card.
-     *
      * Mandatory if Either PAN or PANID is passed, else optional.
-     *
      * Format: yyyyMMdd
      *
      * @maps CardExpiryDate
@@ -172,9 +166,7 @@ class PINReminderCardDetails implements \JsonSerializable
     /**
      * Unsets Card Expiry Date.
      * Expiry date of the card.
-     *
      * Mandatory if Either PAN or PANID is passed, else optional.
-     *
      * Format: yyyyMMdd
      */
     public function unsetCardExpiryDate(): void
@@ -185,9 +177,7 @@ class PINReminderCardDetails implements \JsonSerializable
     /**
      * Returns P in Advice Type.
      * PIN delivery method.
-     *
      * Mandatory
-     *
      * Allowed Values:
      *
      * 1. Paper
@@ -204,9 +194,7 @@ class PINReminderCardDetails implements \JsonSerializable
     /**
      * Sets P in Advice Type.
      * PIN delivery method.
-     *
      * Mandatory
-     *
      * Allowed Values:
      *
      * 1. Paper
@@ -226,19 +214,12 @@ class PINReminderCardDetails implements \JsonSerializable
     /**
      * Returns P in Contact Type.
      * PIN Contact Type.
-     *
      * Mandatory
-     *
      * Allowed Values:
-     *
      * 1. Use PIN Delivery contact details stored previously for this card
-     *
      * 2. Use Card Delivery contact details stored previously for this card
-     *
      * 3. Use default PIN Delivery contact details stored for this customer
-     *
      * 4. Use new specific contact for PIN Reminder only
-     *
      *
      *
      * Note: - PINContactType “3” is only allowed for Paper delivery
@@ -251,19 +232,12 @@ class PINReminderCardDetails implements \JsonSerializable
     /**
      * Sets P in Contact Type.
      * PIN Contact Type.
-     *
      * Mandatory
-     *
      * Allowed Values:
-     *
      * 1. Use PIN Delivery contact details stored previously for this card
-     *
      * 2. Use Card Delivery contact details stored previously for this card
-     *
      * 3. Use default PIN Delivery contact details stored for this customer
-     *
      * 4. Use new specific contact for PIN Reminder only
-     *
      *
      *
      * Note: - PINContactType “3” is only allowed for Paper delivery
@@ -277,24 +251,18 @@ class PINReminderCardDetails implements \JsonSerializable
 
     /**
      * Returns P in Deliver To.
-     * PINDeliverDetails entity. The fields of this entity are described below.
-     *
-     * This is mandatory if PINContactType is 4 else optional and ignored.
      */
-    public function getPINDeliverTo(): ?PINDeliveryDetails
+    public function getPINDeliverTo(): ?PINDeliverTo
     {
         return $this->pINDeliverTo;
     }
 
     /**
      * Sets P in Deliver To.
-     * PINDeliverDetails entity. The fields of this entity are described below.
-     *
-     * This is mandatory if PINContactType is 4 else optional and ignored.
      *
      * @maps PINDeliverTo
      */
-    public function setPINDeliverTo(?PINDeliveryDetails $pINDeliverTo): void
+    public function setPINDeliverTo(?PINDeliverTo $pINDeliverTo): void
     {
         $this->pINDeliverTo = $pINDeliverTo;
     }

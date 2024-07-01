@@ -77,22 +77,14 @@ class UpdateCardStatusRequest implements \JsonSerializable
     /**
      * Returns Reason Id.
      * Reason id for updating the card status.<br />
-     *
      * Optional<br />
-     *
      * Either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’. Else ignored.<br />
-     *
      * Possible values:<br />
-     *
      * -Lost <br />
-     *
      * -Stolen <br />
-     *
      * -Card no longer required<br />
-     *
      * When passed, the reason Id will be validated with the allowed reason ids configured for the card
      * type of the card.<br />
-     *
      * . If the given reason Id is not allowed for certain card types, then the request will be rejected as
      * invalid ResonId.
      */
@@ -107,22 +99,14 @@ class UpdateCardStatusRequest implements \JsonSerializable
     /**
      * Sets Reason Id.
      * Reason id for updating the card status.<br />
-     *
      * Optional<br />
-     *
      * Either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’. Else ignored.<br />
-     *
      * Possible values:<br />
-     *
      * -Lost <br />
-     *
      * -Stolen <br />
-     *
      * -Card no longer required<br />
-     *
      * When passed, the reason Id will be validated with the allowed reason ids configured for the card
      * type of the card.<br />
-     *
      * . If the given reason Id is not allowed for certain card types, then the request will be rejected as
      * invalid ResonId.
      *
@@ -136,22 +120,14 @@ class UpdateCardStatusRequest implements \JsonSerializable
     /**
      * Unsets Reason Id.
      * Reason id for updating the card status.<br />
-     *
      * Optional<br />
-     *
      * Either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’. Else ignored.<br />
-     *
      * Possible values:<br />
-     *
      * -Lost <br />
-     *
      * -Stolen <br />
-     *
      * -Card no longer required<br />
-     *
      * When passed, the reason Id will be validated with the allowed reason ids configured for the card
      * type of the card.<br />
-     *
      * . If the given reason Id is not allowed for certain card types, then the request will be rejected as
      * invalid ResonId.
      */
@@ -163,16 +139,11 @@ class UpdateCardStatusRequest implements \JsonSerializable
     /**
      * Returns Reason Text.
      * Reason text for updating the card status.<br />
-     *
      * Optional Either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’. Else
      * ignored.<br />
-     *
      * Possible values:<br />
-     *
      * -Lost <br />
-     *
      * -Stolen <br />
-     *
      * -Card no longer required <br />
      *
      * Optional – However, either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’.
@@ -198,16 +169,11 @@ class UpdateCardStatusRequest implements \JsonSerializable
     /**
      * Sets Reason Text.
      * Reason text for updating the card status.<br />
-     *
      * Optional Either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’. Else
      * ignored.<br />
-     *
      * Possible values:<br />
-     *
      * -Lost <br />
-     *
      * -Stolen <br />
-     *
      * -Card no longer required <br />
      *
      * Optional – However, either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’.
@@ -232,16 +198,11 @@ class UpdateCardStatusRequest implements \JsonSerializable
     /**
      * Unsets Reason Text.
      * Reason text for updating the card status.<br />
-     *
      * Optional Either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’. Else
      * ignored.<br />
-     *
      * Possible values:<br />
-     *
      * -Lost <br />
-     *
      * -Stolen <br />
-     *
      * -Card no longer required <br />
      *
      * Optional – However, either Reason ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’.
@@ -264,17 +225,11 @@ class UpdateCardStatusRequest implements \JsonSerializable
     /**
      * Returns Target Status.
      * The list of cards passed in Cards parameter will be updated to this status.<br />
-     *
      * Mandatory<br />
-     *
      * Allowed values:<br />
-     *
      * -TemporaryBlock<br />
-     *
      * -Unblock<br />
-     *
      * -Block<br />
-     *
      * -Damaged<br />
      */
     public function getTargetStatus(): string
@@ -285,17 +240,11 @@ class UpdateCardStatusRequest implements \JsonSerializable
     /**
      * Sets Target Status.
      * The list of cards passed in Cards parameter will be updated to this status.<br />
-     *
      * Mandatory<br />
-     *
      * Allowed values:<br />
-     *
      * -TemporaryBlock<br />
-     *
      * -Unblock<br />
-     *
      * -Block<br />
-     *
      * -Damaged<br />
      *
      * @required

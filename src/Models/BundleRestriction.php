@@ -15,147 +15,156 @@ use stdClass;
 class BundleRestriction implements \JsonSerializable
 {
     /**
-     * @var bool|null
+     * @var array
      */
-    private $resetDayTimeRestriction = false;
+    private $dayTimeRestrictionAction = [];
 
     /**
-     * @var bool|null
+     * @var array
      */
-    private $resetLocationRestriction = false;
+    private $locationRestrictionAction = [];
 
     /**
-     * @var bool|null
+     * @var array
      */
-    private $resetProductRestriction = false;
+    private $usageRestrictions = [];
 
     /**
-     * @var UsageRestrictions|null
-     */
-    private $usageRestrictions;
-
-    /**
-     * @var DayTimeRestrictions|null
+     * @var DayTimeRestriction|null
      */
     private $dayTimeRestrictions;
 
     /**
-     * @var ProductRestrictions|null
+     * @var array
      */
-    private $productRestriction;
+    private $productRestrictions = [];
 
     /**
-     * @var string|null
-     */
-    private $locationRestrictionProfileId;
-
-    /**
-     * @var LocationRestrictions|null
+     * @var LocationRestriction|null
      */
     private $locationRestrictions;
 
     /**
-     * Returns Reset Day Time Restriction.
-     * True/False
+     * Returns Day Time Restriction Action.
+     * The value indicates what actions to be performed with respect to day time restriction.
      *
-     * A value indicates if the day/time restriction is to be reset for card bundle.
+     * Mandatory
      *
-     * Optional
+     * Allowed values –
      *
-     * Default value is False.
+     * • Add: Apply the given restriction on the bundle.
+     *
+     * • Default: No Day/Time restriction will be applied on the bundle in Gateway.
      */
-    public function getResetDayTimeRestriction(): ?bool
+    public function getDayTimeRestrictionAction(): ?string
     {
-        return $this->resetDayTimeRestriction;
+        if (count($this->dayTimeRestrictionAction) == 0) {
+            return null;
+        }
+        return $this->dayTimeRestrictionAction['value'];
     }
 
     /**
-     * Sets Reset Day Time Restriction.
-     * True/False
+     * Sets Day Time Restriction Action.
+     * The value indicates what actions to be performed with respect to day time restriction.
      *
-     * A value indicates if the day/time restriction is to be reset for card bundle.
+     * Mandatory
      *
-     * Optional
+     * Allowed values –
      *
-     * Default value is False.
+     * • Add: Apply the given restriction on the bundle.
      *
-     * @maps ResetDayTimeRestriction
+     * • Default: No Day/Time restriction will be applied on the bundle in Gateway.
+     *
+     * @maps DayTimeRestrictionAction
      */
-    public function setResetDayTimeRestriction(?bool $resetDayTimeRestriction): void
+    public function setDayTimeRestrictionAction(?string $dayTimeRestrictionAction): void
     {
-        $this->resetDayTimeRestriction = $resetDayTimeRestriction;
+        $this->dayTimeRestrictionAction['value'] = $dayTimeRestrictionAction;
     }
 
     /**
-     * Returns Reset Location Restriction.
-     * True/False
+     * Unsets Day Time Restriction Action.
+     * The value indicates what actions to be performed with respect to day time restriction.
      *
-     * A value indicates if the location restriction is to be reset for card bundle.
+     * Mandatory
      *
-     * Optional
+     * Allowed values –
      *
-     * Default value is False.
+     * • Add: Apply the given restriction on the bundle.
+     *
+     * • Default: No Day/Time restriction will be applied on the bundle in Gateway.
      */
-    public function getResetLocationRestriction(): ?bool
+    public function unsetDayTimeRestrictionAction(): void
     {
-        return $this->resetLocationRestriction;
+        $this->dayTimeRestrictionAction = [];
     }
 
     /**
-     * Sets Reset Location Restriction.
-     * True/False
+     * Returns Location Restriction Action.
+     * The value indicates what actions to be performed with respect to location restriction.
      *
-     * A value indicates if the location restriction is to be reset for card bundle.
+     * Mandatory
      *
-     * Optional
+     * Allowed values –
      *
-     * Default value is False.
+     * • Add: Apply the given restriction on the bundle.
      *
-     * @maps ResetLocationRestriction
+     * • Default: No location restriction will be applied on the bundle in Gateway.
      */
-    public function setResetLocationRestriction(?bool $resetLocationRestriction): void
+    public function getLocationRestrictionAction(): ?string
     {
-        $this->resetLocationRestriction = $resetLocationRestriction;
+        if (count($this->locationRestrictionAction) == 0) {
+            return null;
+        }
+        return $this->locationRestrictionAction['value'];
     }
 
     /**
-     * Returns Reset Product Restriction.
-     * True/False
+     * Sets Location Restriction Action.
+     * The value indicates what actions to be performed with respect to location restriction.
      *
-     * A value indicates if the product restriction is to be reset for card bundle.
+     * Mandatory
      *
-     * Optional
+     * Allowed values –
      *
-     * Default value is False.
+     * • Add: Apply the given restriction on the bundle.
+     *
+     * • Default: No location restriction will be applied on the bundle in Gateway.
+     *
+     * @maps LocationRestrictionAction
      */
-    public function getResetProductRestriction(): ?bool
+    public function setLocationRestrictionAction(?string $locationRestrictionAction): void
     {
-        return $this->resetProductRestriction;
+        $this->locationRestrictionAction['value'] = $locationRestrictionAction;
     }
 
     /**
-     * Sets Reset Product Restriction.
-     * True/False
+     * Unsets Location Restriction Action.
+     * The value indicates what actions to be performed with respect to location restriction.
      *
-     * A value indicates if the product restriction is to be reset for card bundle.
+     * Mandatory
      *
-     * Optional
+     * Allowed values –
      *
-     * Default value is False.
+     * • Add: Apply the given restriction on the bundle.
      *
-     * @maps ResetProductRestriction
+     * • Default: No location restriction will be applied on the bundle in Gateway.
      */
-    public function setResetProductRestriction(?bool $resetProductRestriction): void
+    public function unsetLocationRestrictionAction(): void
     {
-        $this->resetProductRestriction = $resetProductRestriction;
+        $this->locationRestrictionAction = [];
     }
 
     /**
      * Returns Usage Restrictions.
      */
-    public function getUsageRestrictions(): ?UsageRestrictions
+    public function getUsageRestrictions(): ?UsageRestrictionsCard
     {
-        return $this->usageRestrictions;
+        if (count($this->usageRestrictions) == 0) {
+            return null;
+        }
+        return $this->usageRestrictions['value'];
     }
 
     /**
@@ -163,107 +172,84 @@ class BundleRestriction implements \JsonSerializable
      *
      * @maps UsageRestrictions
      */
-    public function setUsageRestrictions(?UsageRestrictions $usageRestrictions): void
+    public function setUsageRestrictions(?UsageRestrictionsCard $usageRestrictions): void
     {
-        $this->usageRestrictions = $usageRestrictions;
+        $this->usageRestrictions['value'] = $usageRestrictions;
+    }
+
+    /**
+     * Unsets Usage Restrictions.
+     */
+    public function unsetUsageRestrictions(): void
+    {
+        $this->usageRestrictions = [];
     }
 
     /**
      * Returns Day Time Restrictions.
-     * Day/time restrictions such as weekdays and time range to be applied on the bundle.
-     *
-     * Mandatory if respective action is set as “Add”.
-     *
-     * The details of DayTimeRestriction entity is given below.
+     * Details of the day/time restrictions such as weekdays and time range in which transactions should be
+     * allowed on the card.
      */
-    public function getDayTimeRestrictions(): ?DayTimeRestrictions
+    public function getDayTimeRestrictions(): ?DayTimeRestriction
     {
         return $this->dayTimeRestrictions;
     }
 
     /**
      * Sets Day Time Restrictions.
-     * Day/time restrictions such as weekdays and time range to be applied on the bundle.
-     *
-     * Mandatory if respective action is set as “Add”.
-     *
-     * The details of DayTimeRestriction entity is given below.
+     * Details of the day/time restrictions such as weekdays and time range in which transactions should be
+     * allowed on the card.
      *
      * @maps DayTimeRestrictions
      */
-    public function setDayTimeRestrictions(?DayTimeRestrictions $dayTimeRestrictions): void
+    public function setDayTimeRestrictions(?DayTimeRestriction $dayTimeRestrictions): void
     {
         $this->dayTimeRestrictions = $dayTimeRestrictions;
     }
 
     /**
-     * Returns Product Restriction.
+     * Returns Product Restrictions.
      */
-    public function getProductRestriction(): ?ProductRestrictions
+    public function getProductRestrictions(): ?ProductRestrictionCard
     {
-        return $this->productRestriction;
+        if (count($this->productRestrictions) == 0) {
+            return null;
+        }
+        return $this->productRestrictions['value'];
     }
 
     /**
-     * Sets Product Restriction.
+     * Sets Product Restrictions.
      *
-     * @maps ProductRestriction
+     * @maps ProductRestrictions
      */
-    public function setProductRestriction(?ProductRestrictions $productRestriction): void
+    public function setProductRestrictions(?ProductRestrictionCard $productRestrictions): void
     {
-        $this->productRestriction = $productRestriction;
+        $this->productRestrictions['value'] = $productRestrictions;
     }
 
     /**
-     * Returns Location Restriction Profile Id.
-     * Identifier of the location restriction profile to be updated for the bundle in Gateway.
-     *
-     * Optional
+     * Unsets Product Restrictions.
      */
-    public function getLocationRestrictionProfileId(): ?string
+    public function unsetProductRestrictions(): void
     {
-        return $this->locationRestrictionProfileId;
-    }
-
-    /**
-     * Sets Location Restriction Profile Id.
-     * Identifier of the location restriction profile to be updated for the bundle in Gateway.
-     *
-     * Optional
-     *
-     * @maps LocationRestrictionProfileId
-     */
-    public function setLocationRestrictionProfileId(?string $locationRestrictionProfileId): void
-    {
-        $this->locationRestrictionProfileId = $locationRestrictionProfileId;
+        $this->productRestrictions = [];
     }
 
     /**
      * Returns Location Restrictions.
-     * Location restrictions to be applied on the bundle which either allows or restricts using the cards,
-     * which are under the bundle, in the specified locations.
-     *
-     * Mandatory if respective action is set as “Add”.
-     *
-     * Details of location restrictions are given below.
      */
-    public function getLocationRestrictions(): ?LocationRestrictions
+    public function getLocationRestrictions(): ?LocationRestriction
     {
         return $this->locationRestrictions;
     }
 
     /**
      * Sets Location Restrictions.
-     * Location restrictions to be applied on the bundle which either allows or restricts using the cards,
-     * which are under the bundle, in the specified locations.
-     *
-     * Mandatory if respective action is set as “Add”.
-     *
-     * Details of location restrictions are given below.
      *
      * @maps LocationRestrictions
      */
-    public function setLocationRestrictions(?LocationRestrictions $locationRestrictions): void
+    public function setLocationRestrictions(?LocationRestriction $locationRestrictions): void
     {
         $this->locationRestrictions = $locationRestrictions;
     }
@@ -280,29 +266,23 @@ class BundleRestriction implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->resetDayTimeRestriction)) {
-            $json['ResetDayTimeRestriction']      = $this->resetDayTimeRestriction;
+        if (!empty($this->dayTimeRestrictionAction)) {
+            $json['DayTimeRestrictionAction']  = $this->dayTimeRestrictionAction['value'];
         }
-        if (isset($this->resetLocationRestriction)) {
-            $json['ResetLocationRestriction']     = $this->resetLocationRestriction;
+        if (!empty($this->locationRestrictionAction)) {
+            $json['LocationRestrictionAction'] = $this->locationRestrictionAction['value'];
         }
-        if (isset($this->resetProductRestriction)) {
-            $json['ResetProductRestriction']      = $this->resetProductRestriction;
-        }
-        if (isset($this->usageRestrictions)) {
-            $json['UsageRestrictions']            = $this->usageRestrictions;
+        if (!empty($this->usageRestrictions)) {
+            $json['UsageRestrictions']         = $this->usageRestrictions['value'];
         }
         if (isset($this->dayTimeRestrictions)) {
-            $json['DayTimeRestrictions']          = $this->dayTimeRestrictions;
+            $json['DayTimeRestrictions']       = $this->dayTimeRestrictions;
         }
-        if (isset($this->productRestriction)) {
-            $json['ProductRestriction']           = $this->productRestriction;
-        }
-        if (isset($this->locationRestrictionProfileId)) {
-            $json['LocationRestrictionProfileId'] = $this->locationRestrictionProfileId;
+        if (!empty($this->productRestrictions)) {
+            $json['ProductRestrictions']       = $this->productRestrictions['value'];
         }
         if (isset($this->locationRestrictions)) {
-            $json['LocationRestrictions']         = $this->locationRestrictions;
+            $json['LocationRestrictions']      = $this->locationRestrictions;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

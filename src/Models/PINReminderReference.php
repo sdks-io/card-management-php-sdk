@@ -141,9 +141,7 @@ class PINReminderReference implements \JsonSerializable
     /**
      * Returns Card Expiry Date.
      * Expiry date of the card.
-     *
      * Mandatory if Either PAN or PANID is passed, else optional.
-     *
      * Format: yyyyMMdd
      */
     public function getCardExpiryDate(): ?string
@@ -157,9 +155,7 @@ class PINReminderReference implements \JsonSerializable
     /**
      * Sets Card Expiry Date.
      * Expiry date of the card.
-     *
      * Mandatory if Either PAN or PANID is passed, else optional.
-     *
      * Format: yyyyMMdd
      *
      * @maps CardExpiryDate
@@ -172,9 +168,7 @@ class PINReminderReference implements \JsonSerializable
     /**
      * Unsets Card Expiry Date.
      * Expiry date of the card.
-     *
      * Mandatory if Either PAN or PANID is passed, else optional.
-     *
      * Format: yyyyMMdd
      */
     public function unsetCardExpiryDate(): void

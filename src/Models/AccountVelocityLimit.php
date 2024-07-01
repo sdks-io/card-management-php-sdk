@@ -15,44 +15,44 @@ use stdClass;
 class AccountVelocityLimit implements \JsonSerializable
 {
     /**
-     * @var array
+     * @var string|null
      */
-    private $type = [];
+    private $type;
 
     /**
-     * @var array
+     * @var string|null
      */
-    private $period = [];
+    private $period;
 
     /**
-     * @var array
+     * @var float|null
      */
-    private $limit = [];
+    private $limit;
 
     /**
-     * @var array
+     * @var float|null
      */
-    private $accumulation = [];
+    private $accumulation;
 
     /**
-     * @var array
+     * @var float|null
      */
-    private $balance = [];
+    private $balance;
 
     /**
-     * @var array
+     * @var bool|null
      */
-    private $override = [];
+    private $override;
 
     /**
-     * @var array
+     * @var string|null
      */
-    private $productGroup = [];
+    private $productGroup;
 
     /**
-     * @var array
+     * @var float|null
      */
-    private $threshold = [];
+    private $threshold;
 
     /**
      * Returns Type.
@@ -62,10 +62,7 @@ class AccountVelocityLimit implements \JsonSerializable
      */
     public function getType(): ?string
     {
-        if (count($this->type) == 0) {
-            return null;
-        }
-        return $this->type['value'];
+        return $this->type;
     }
 
     /**
@@ -78,18 +75,7 @@ class AccountVelocityLimit implements \JsonSerializable
      */
     public function setType(?string $type): void
     {
-        $this->type['value'] = $type;
-    }
-
-    /**
-     * Unsets Type.
-     * Type of velocity (COUNT type is not present for limits of PERTRX period
-     *
-     * Possible Values: VALUE, VOLUME, COUNT
-     */
-    public function unsetType(): void
-    {
-        $this->type = [];
+        $this->type = $type;
     }
 
     /**
@@ -100,10 +86,7 @@ class AccountVelocityLimit implements \JsonSerializable
      */
     public function getPeriod(): ?string
     {
-        if (count($this->period) == 0) {
-            return null;
-        }
-        return $this->period['value'];
+        return $this->period;
     }
 
     /**
@@ -116,56 +99,33 @@ class AccountVelocityLimit implements \JsonSerializable
      */
     public function setPeriod(?string $period): void
     {
-        $this->period['value'] = $period;
-    }
-
-    /**
-     * Unsets Period.
-     * Duration of the velocity or threshold alert.
-     *
-     * Possible Values: DAILY, WEEKLY, MONTHLY, ANNUAL, LIFETIME, PERTRX
-     */
-    public function unsetPeriod(): void
-    {
-        $this->period = [];
+        $this->period = $period;
     }
 
     /**
      * Returns Limit.
      * The limit associated with this velocity with the correct number of digits after the decimal point
-     * according to the minor denomination of the currency of the card issuer (except for COUNT type
-     * velocity).
+     * according to the minor denomination of the currency of the card issuer.
+     *
+     * Example: 1500.55
      */
     public function getLimit(): ?float
     {
-        if (count($this->limit) == 0) {
-            return null;
-        }
-        return $this->limit['value'];
+        return $this->limit;
     }
 
     /**
      * Sets Limit.
      * The limit associated with this velocity with the correct number of digits after the decimal point
-     * according to the minor denomination of the currency of the card issuer (except for COUNT type
-     * velocity).
+     * according to the minor denomination of the currency of the card issuer.
+     *
+     * Example: 1500.55
      *
      * @maps Limit
      */
     public function setLimit(?float $limit): void
     {
-        $this->limit['value'] = $limit;
-    }
-
-    /**
-     * Unsets Limit.
-     * The limit associated with this velocity with the correct number of digits after the decimal point
-     * according to the minor denomination of the currency of the card issuer (except for COUNT type
-     * velocity).
-     */
-    public function unsetLimit(): void
-    {
-        $this->limit = [];
+        $this->limit = $limit;
     }
 
     /**
@@ -173,13 +133,12 @@ class AccountVelocityLimit implements \JsonSerializable
      * The transaction accumulation during the current period with the correct number of digits after the
      * decimal point according to the minor denomination of the currency of the card issuer (except for
      * COUNT type velocity). Not present for PERTRX period.
+     *
+     * Example: 1100.55
      */
     public function getAccumulation(): ?float
     {
-        if (count($this->accumulation) == 0) {
-            return null;
-        }
-        return $this->accumulation['value'];
+        return $this->accumulation;
     }
 
     /**
@@ -188,22 +147,13 @@ class AccountVelocityLimit implements \JsonSerializable
      * decimal point according to the minor denomination of the currency of the card issuer (except for
      * COUNT type velocity). Not present for PERTRX period.
      *
+     * Example: 1100.55
+     *
      * @maps Accumulation
      */
     public function setAccumulation(?float $accumulation): void
     {
-        $this->accumulation['value'] = $accumulation;
-    }
-
-    /**
-     * Unsets Accumulation.
-     * The transaction accumulation during the current period with the correct number of digits after the
-     * decimal point according to the minor denomination of the currency of the card issuer (except for
-     * COUNT type velocity). Not present for PERTRX period.
-     */
-    public function unsetAccumulation(): void
-    {
-        $this->accumulation = [];
+        $this->accumulation = $accumulation;
     }
 
     /**
@@ -211,13 +161,12 @@ class AccountVelocityLimit implements \JsonSerializable
      * The remaining/available balance at this point in time with the correct number of digits after the
      * decimal point according to the minor denomination of the currency of the card issuer (except for
      * COUNT type velocity). Not present for PERTRX period.
+     *
+     * Example: 400.55
      */
     public function getBalance(): ?float
     {
-        if (count($this->balance) == 0) {
-            return null;
-        }
-        return $this->balance['value'];
+        return $this->balance;
     }
 
     /**
@@ -226,54 +175,37 @@ class AccountVelocityLimit implements \JsonSerializable
      * decimal point according to the minor denomination of the currency of the card issuer (except for
      * COUNT type velocity). Not present for PERTRX period.
      *
+     * Example: 400.55
+     *
      * @maps Balance
      */
     public function setBalance(?float $balance): void
     {
-        $this->balance['value'] = $balance;
-    }
-
-    /**
-     * Unsets Balance.
-     * The remaining/available balance at this point in time with the correct number of digits after the
-     * decimal point according to the minor denomination of the currency of the card issuer (except for
-     * COUNT type velocity). Not present for PERTRX period.
-     */
-    public function unsetBalance(): void
-    {
-        $this->balance = [];
+        $this->balance = $balance;
     }
 
     /**
      * Returns Override.
      * Indicate if the limit is overridden or default. (false for default).
+     *
+     * Example: false
      */
     public function getOverride(): ?bool
     {
-        if (count($this->override) == 0) {
-            return null;
-        }
-        return $this->override['value'];
+        return $this->override;
     }
 
     /**
      * Sets Override.
      * Indicate if the limit is overridden or default. (false for default).
      *
+     * Example: false
+     *
      * @maps Override
      */
     public function setOverride(?bool $override): void
     {
-        $this->override['value'] = $override;
-    }
-
-    /**
-     * Unsets Override.
-     * Indicate if the limit is overridden or default. (false for default).
-     */
-    public function unsetOverride(): void
-    {
-        $this->override = [];
+        $this->override = $override;
     }
 
     /**
@@ -287,10 +219,7 @@ class AccountVelocityLimit implements \JsonSerializable
      */
     public function getProductGroup(): ?string
     {
-        if (count($this->productGroup) == 0) {
-            return null;
-        }
-        return $this->productGroup['value'];
+        return $this->productGroup;
     }
 
     /**
@@ -306,21 +235,7 @@ class AccountVelocityLimit implements \JsonSerializable
      */
     public function setProductGroup(?string $productGroup): void
     {
-        $this->productGroup['value'] = $productGroup;
-    }
-
-    /**
-     * Unsets Product Group.
-     * The reference group name for product differentiated velocities. This field cannot be used with
-     * Volume type velocity.
-     *
-     * Example: RoadSvc
-     *
-     * This is an optional output field.
-     */
-    public function unsetProductGroup(): void
-    {
-        $this->productGroup = [];
+        $this->productGroup = $productGroup;
     }
 
     /**
@@ -328,13 +243,14 @@ class AccountVelocityLimit implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
+     *
+     * Example: 50.55
+     *
+     * This is an optional output field.
      */
     public function getThreshold(): ?float
     {
-        if (count($this->threshold) == 0) {
-            return null;
-        }
-        return $this->threshold['value'];
+        return $this->threshold;
     }
 
     /**
@@ -343,22 +259,15 @@ class AccountVelocityLimit implements \JsonSerializable
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
      *
+     * Example: 50.55
+     *
+     * This is an optional output field.
+     *
      * @maps Threshold
      */
     public function setThreshold(?float $threshold): void
     {
-        $this->threshold['value'] = $threshold;
-    }
-
-    /**
-     * Unsets Threshold.
-     * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
-     * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
-     * present for COUNT type velocity.
-     */
-    public function unsetThreshold(): void
-    {
-        $this->threshold = [];
+        $this->threshold = $threshold;
     }
 
     /**
@@ -373,29 +282,29 @@ class AccountVelocityLimit implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (!empty($this->type)) {
-            $json['Type']         = $this->type['value'];
+        if (isset($this->type)) {
+            $json['Type']         = $this->type;
         }
-        if (!empty($this->period)) {
-            $json['Period']       = $this->period['value'];
+        if (isset($this->period)) {
+            $json['Period']       = $this->period;
         }
-        if (!empty($this->limit)) {
-            $json['Limit']        = $this->limit['value'];
+        if (isset($this->limit)) {
+            $json['Limit']        = $this->limit;
         }
-        if (!empty($this->accumulation)) {
-            $json['Accumulation'] = $this->accumulation['value'];
+        if (isset($this->accumulation)) {
+            $json['Accumulation'] = $this->accumulation;
         }
-        if (!empty($this->balance)) {
-            $json['Balance']      = $this->balance['value'];
+        if (isset($this->balance)) {
+            $json['Balance']      = $this->balance;
         }
-        if (!empty($this->override)) {
-            $json['Override']     = $this->override['value'];
+        if (isset($this->override)) {
+            $json['Override']     = $this->override;
         }
-        if (!empty($this->productGroup)) {
-            $json['ProductGroup'] = $this->productGroup['value'];
+        if (isset($this->productGroup)) {
+            $json['ProductGroup'] = $this->productGroup;
         }
-        if (!empty($this->threshold)) {
-            $json['Threshold']    = $this->threshold['value'];
+        if (isset($this->threshold)) {
+            $json['Threshold']    = $this->threshold;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

@@ -102,7 +102,6 @@ class DeliveryAddressUpdateRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
      */
     public function getPayerId(): ?int
@@ -113,7 +112,6 @@ class DeliveryAddressUpdateRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
      *
      * @maps PayerId
@@ -126,7 +124,6 @@ class DeliveryAddressUpdateRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number (Ex: GB000000123) of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function getPayerNumber(): ?string
@@ -137,7 +134,6 @@ class DeliveryAddressUpdateRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number (Ex: GB000000123) of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      *
      * @maps PayerNumber
@@ -150,7 +146,6 @@ class DeliveryAddressUpdateRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed, else mandatory.
      */
     public function getAccountId(): ?int
@@ -161,7 +156,6 @@ class DeliveryAddressUpdateRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed, else mandatory.
      *
      * @maps AccountId
@@ -174,9 +168,7 @@ class DeliveryAddressUpdateRequest implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed, else mandatory.
-     *
      * This input is a search criterion, if given.
      */
     public function getAccountNumber(): ?string
@@ -187,9 +179,7 @@ class DeliveryAddressUpdateRequest implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed, else mandatory.
-     *
      * This input is a search criterion, if given.
      *
      * @maps AccountNumber

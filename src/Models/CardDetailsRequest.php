@@ -229,7 +229,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns Client Reference Id.
      * Customer reference number of the card.
-     *
      * Optional
      */
     public function getClientReferenceId(): ?string
@@ -243,7 +242,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets Client Reference Id.
      * Customer reference number of the card.
-     *
      * Optional
      *
      * @maps ClientReferenceId
@@ -256,7 +254,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Unsets Client Reference Id.
      * Customer reference number of the card.
-     *
      * Optional
      */
     public function unsetClientReferenceId(): void
@@ -331,7 +328,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed, else mandatory.
      */
     public function getAccountNumber(): ?string
@@ -345,7 +341,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed, else mandatory.
      *
      * @maps AccountNumber
@@ -358,7 +353,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed, else mandatory.
      */
     public function unsetAccountNumber(): void
@@ -369,7 +363,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed, else mandatory.
      */
     public function getAccountId(): ?int
@@ -383,7 +376,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed, else mandatory.
      *
      * @maps AccountId
@@ -396,7 +388,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed, else mandatory.
      */
     public function unsetAccountId(): void
@@ -407,7 +398,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns P AN.
      * PAN of the card.
-     *
      * Optional if CardId is passed, else Mandatory.
      */
     public function getPAN(): ?string
@@ -421,7 +411,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets P AN.
      * PAN of the card.
-     *
      * Optional if CardId is passed, else Mandatory.
      *
      * @maps PAN
@@ -434,7 +423,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Unsets P AN.
      * PAN of the card.
-     *
      * Optional if CardId is passed, else Mandatory.
      */
     public function unsetPAN(): void
@@ -445,7 +433,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns Card Id.
      * Card Id of the card.
-     *
      * Optional if PAN is passed, else Mandatory.
      */
     public function getCardId(): ?int
@@ -459,7 +446,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets Card Id.
      * Card Id of the card.
-     *
      * Optional if PAN is passed, else Mandatory.
      *
      * @maps CardId
@@ -472,7 +458,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Unsets Card Id.
      * Card Id of the card.
-     *
      * Optional if PAN is passed, else Mandatory.
      */
     public function unsetCardId(): void
@@ -483,7 +468,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns Token Type ID.
      * Token Type ID for the Card
-     *
      * Optional
      */
     public function getTokenTypeID(): ?int
@@ -497,7 +481,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets Token Type ID.
      * Token Type ID for the Card
-     *
      * Optional
      *
      * @maps TokenTypeID
@@ -510,7 +493,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Unsets Token Type ID.
      * Token Type ID for the Card
-     *
      * Optional
      */
     public function unsetTokenTypeID(): void
@@ -521,7 +503,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns Token Type Name.
      * Token Type name for the Card
-     *
      * Optional
      */
     public function getTokenTypeName(): ?string
@@ -535,7 +516,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets Token Type Name.
      * Token Type name for the Card
-     *
      * Optional
      *
      * @maps TokenTypeName
@@ -548,7 +528,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Unsets Token Type Name.
      * Token Type name for the Card
-     *
      * Optional
      */
     public function unsetTokenTypeName(): void
@@ -559,9 +538,7 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns Creation Date.
      * Card Creation Date time
-     *
      * Optional
-     *
      * Format: yyyyMMdd
      */
     public function getCreationDate(): ?string
@@ -575,9 +552,7 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets Creation Date.
      * Card Creation Date time
-     *
      * Optional
-     *
      * Format: yyyyMMdd
      *
      * @maps CreationDate
@@ -590,9 +565,7 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Unsets Creation Date.
      * Card Creation Date time
-     *
      * Optional
-     *
      * Format: yyyyMMdd
      */
     public function unsetCreationDate(): void
@@ -603,9 +576,7 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns Effective Date.
      * Effective date for the Card
-     *
      * Optional
-     *
      * Format: yyyyMMdd
      */
     public function getEffectiveDate(): ?string
@@ -619,9 +590,7 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets Effective Date.
      * Effective date for the Card
-     *
      * Optional
-     *
      * Format: yyyyMMdd
      *
      * @maps EffectiveDate
@@ -634,9 +603,7 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Unsets Effective Date.
      * Effective date for the Card
-     *
      * Optional
-     *
      * Format: yyyyMMdd
      */
     public function unsetEffectiveDate(): void
@@ -647,7 +614,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Returns Include Bundle Details.
      * When the value is True, API will return bundle Id associated with card in the response, if available.
-     *
      * Note: Use ‘Null’ or ‘False’ for optimum performance. A delay in response is expected when set to
      * ‘True’.
      */
@@ -659,7 +625,6 @@ class CardDetailsRequest implements \JsonSerializable
     /**
      * Sets Include Bundle Details.
      * When the value is True, API will return bundle Id associated with card in the response, if available.
-     *
      * Note: Use ‘Null’ or ‘False’ for optimum performance. A delay in response is expected when set to
      * ‘True’.
      *

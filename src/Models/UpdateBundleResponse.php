@@ -15,76 +15,178 @@ use stdClass;
 class UpdateBundleResponse implements \JsonSerializable
 {
     /**
-     * @var string|null
+     * @var array
      */
-    private $requestId;
+    private $requestId = [];
 
     /**
-     * @var string|null
+     * @var ErrorStatus|null
      */
-    private $status;
+    private $requestActionStatus;
 
     /**
-     * @var ErrorDetails|null
+     * @var ErrorStatus|null
      */
-    private $errors;
+    private $dayTimeRestrictionStatus;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $locationRestrictionStatus;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $productRestrictionStatus;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $usageRestrictionStatus;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $error;
 
     /**
      * Returns Request Id.
-     * API Request Id
+     * Request Id of the API call
      */
     public function getRequestId(): ?string
     {
-        return $this->requestId;
+        if (count($this->requestId) == 0) {
+            return null;
+        }
+        return $this->requestId['value'];
     }
 
     /**
      * Sets Request Id.
-     * API Request Id
+     * Request Id of the API call
      *
      * @maps RequestId
      */
     public function setRequestId(?string $requestId): void
     {
-        $this->requestId = $requestId;
+        $this->requestId['value'] = $requestId;
     }
 
     /**
-     * Returns Status.
-     * API Response Status
+     * Unsets Request Id.
+     * Request Id of the API call
      */
-    public function getStatus(): ?string
+    public function unsetRequestId(): void
     {
-        return $this->status;
+        $this->requestId = [];
     }
 
     /**
-     * Sets Status.
-     * API Response Status
+     * Returns Request Action Status.
+     */
+    public function getRequestActionStatus(): ?ErrorStatus
+    {
+        return $this->requestActionStatus;
+    }
+
+    /**
+     * Sets Request Action Status.
      *
-     * @maps Status
+     * @maps RequestActionStatus
      */
-    public function setStatus(?string $status): void
+    public function setRequestActionStatus(?ErrorStatus $requestActionStatus): void
     {
-        $this->status = $status;
+        $this->requestActionStatus = $requestActionStatus;
     }
 
     /**
-     * Returns Errors.
+     * Returns Day Time Restriction Status.
      */
-    public function getErrors(): ?ErrorDetails
+    public function getDayTimeRestrictionStatus(): ?ErrorStatus
     {
-        return $this->errors;
+        return $this->dayTimeRestrictionStatus;
     }
 
     /**
-     * Sets Errors.
+     * Sets Day Time Restriction Status.
      *
-     * @maps Errors
+     * @maps DayTimeRestrictionStatus
      */
-    public function setErrors(?ErrorDetails $errors): void
+    public function setDayTimeRestrictionStatus(?ErrorStatus $dayTimeRestrictionStatus): void
     {
-        $this->errors = $errors;
+        $this->dayTimeRestrictionStatus = $dayTimeRestrictionStatus;
+    }
+
+    /**
+     * Returns Location Restriction Status.
+     */
+    public function getLocationRestrictionStatus(): ?ErrorStatus
+    {
+        return $this->locationRestrictionStatus;
+    }
+
+    /**
+     * Sets Location Restriction Status.
+     *
+     * @maps LocationRestrictionStatus
+     */
+    public function setLocationRestrictionStatus(?ErrorStatus $locationRestrictionStatus): void
+    {
+        $this->locationRestrictionStatus = $locationRestrictionStatus;
+    }
+
+    /**
+     * Returns Product Restriction Status.
+     */
+    public function getProductRestrictionStatus(): ?ErrorStatus
+    {
+        return $this->productRestrictionStatus;
+    }
+
+    /**
+     * Sets Product Restriction Status.
+     *
+     * @maps ProductRestrictionStatus
+     */
+    public function setProductRestrictionStatus(?ErrorStatus $productRestrictionStatus): void
+    {
+        $this->productRestrictionStatus = $productRestrictionStatus;
+    }
+
+    /**
+     * Returns Usage Restriction Status.
+     */
+    public function getUsageRestrictionStatus(): ?ErrorStatus
+    {
+        return $this->usageRestrictionStatus;
+    }
+
+    /**
+     * Sets Usage Restriction Status.
+     *
+     * @maps UsageRestrictionStatus
+     */
+    public function setUsageRestrictionStatus(?ErrorStatus $usageRestrictionStatus): void
+    {
+        $this->usageRestrictionStatus = $usageRestrictionStatus;
+    }
+
+    /**
+     * Returns Error.
+     */
+    public function getError(): ?ErrorStatus
+    {
+        return $this->error;
+    }
+
+    /**
+     * Sets Error.
+     *
+     * @maps Error
+     */
+    public function setError(?ErrorStatus $error): void
+    {
+        $this->error = $error;
     }
 
     /**
@@ -99,14 +201,26 @@ class UpdateBundleResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->requestId)) {
-            $json['RequestId'] = $this->requestId;
+        if (!empty($this->requestId)) {
+            $json['RequestId']                 = $this->requestId['value'];
         }
-        if (isset($this->status)) {
-            $json['Status']    = $this->status;
+        if (isset($this->requestActionStatus)) {
+            $json['RequestActionStatus']       = $this->requestActionStatus;
         }
-        if (isset($this->errors)) {
-            $json['Errors']    = $this->errors;
+        if (isset($this->dayTimeRestrictionStatus)) {
+            $json['DayTimeRestrictionStatus']  = $this->dayTimeRestrictionStatus;
+        }
+        if (isset($this->locationRestrictionStatus)) {
+            $json['LocationRestrictionStatus'] = $this->locationRestrictionStatus;
+        }
+        if (isset($this->productRestrictionStatus)) {
+            $json['ProductRestrictionStatus']  = $this->productRestrictionStatus;
+        }
+        if (isset($this->usageRestrictionStatus)) {
+            $json['UsageRestrictionStatus']    = $this->usageRestrictionStatus;
+        }
+        if (isset($this->error)) {
+            $json['Error']                     = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

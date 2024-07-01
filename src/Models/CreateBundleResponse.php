@@ -15,107 +15,276 @@ use stdClass;
 class CreateBundleResponse implements \JsonSerializable
 {
     /**
-     * @var string|null
+     * @var array
      */
-    private $requestId;
+    private $requestId = [];
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $bundleCreationStatus;
 
     /**
      * @var string|null
      */
-    private $status;
+    private $bundleId;
 
     /**
-     * @var CreateBundleResponseDataItems[]|null
+     * @var ErrorStatus|null
      */
-    private $data;
+    private $dayTimeRestrictionStatus;
 
     /**
-     * @var ErrorDetails[]|null
+     * @var string|null
      */
-    private $errors;
+    private $dayTimeRestrictionProfileId;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $locationRestrictionStatus;
+
+    /**
+     * @var string|null
+     */
+    private $locationRestrictionProfileId;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $usageRestrictionStatus;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $productRestrictionStatus;
+
+    /**
+     * @var BundleCardRestrictionStatus|null
+     */
+    private $cards;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $error;
 
     /**
      * Returns Request Id.
-     * Request Id
+     * Request Id of the API call
      */
     public function getRequestId(): ?string
     {
-        return $this->requestId;
+        if (count($this->requestId) == 0) {
+            return null;
+        }
+        return $this->requestId['value'];
     }
 
     /**
      * Sets Request Id.
-     * Request Id
+     * Request Id of the API call
      *
      * @maps RequestId
      */
     public function setRequestId(?string $requestId): void
     {
-        $this->requestId = $requestId;
+        $this->requestId['value'] = $requestId;
     }
 
     /**
-     * Returns Status.
-     * Response status
+     * Unsets Request Id.
+     * Request Id of the API call
      */
-    public function getStatus(): ?string
+    public function unsetRequestId(): void
     {
-        return $this->status;
+        $this->requestId = [];
     }
 
     /**
-     * Sets Status.
-     * Response status
-     *
-     * @maps Status
+     * Returns Bundle Creation Status.
      */
-    public function setStatus(?string $status): void
+    public function getBundleCreationStatus(): ?ErrorStatus
     {
-        $this->status = $status;
+        return $this->bundleCreationStatus;
     }
 
     /**
-     * Returns Data.
+     * Sets Bundle Creation Status.
      *
-     * @return CreateBundleResponseDataItems[]|null
+     * @maps BundleCreationStatus
      */
-    public function getData(): ?array
+    public function setBundleCreationStatus(?ErrorStatus $bundleCreationStatus): void
     {
-        return $this->data;
+        $this->bundleCreationStatus = $bundleCreationStatus;
     }
 
     /**
-     * Sets Data.
-     *
-     * @maps Data
-     *
-     * @param CreateBundleResponseDataItems[]|null $data
+     * Returns Bundle Id.
+     * Identifier of the newly created bundle
      */
-    public function setData(?array $data): void
+    public function getBundleId(): ?string
     {
-        $this->data = $data;
+        return $this->bundleId;
     }
 
     /**
-     * Returns Errors.
+     * Sets Bundle Id.
+     * Identifier of the newly created bundle
      *
-     * @return ErrorDetails[]|null
+     * @maps BundleId
      */
-    public function getErrors(): ?array
+    public function setBundleId(?string $bundleId): void
     {
-        return $this->errors;
+        $this->bundleId = $bundleId;
     }
 
     /**
-     * Sets Errors.
-     *
-     * @maps Errors
-     *
-     * @param ErrorDetails[]|null $errors
+     * Returns Day Time Restriction Status.
      */
-    public function setErrors(?array $errors): void
+    public function getDayTimeRestrictionStatus(): ?ErrorStatus
     {
-        $this->errors = $errors;
+        return $this->dayTimeRestrictionStatus;
+    }
+
+    /**
+     * Sets Day Time Restriction Status.
+     *
+     * @maps DayTimeRestrictionStatus
+     */
+    public function setDayTimeRestrictionStatus(?ErrorStatus $dayTimeRestrictionStatus): void
+    {
+        $this->dayTimeRestrictionStatus = $dayTimeRestrictionStatus;
+    }
+
+    /**
+     * Returns Day Time Restriction Profile Id.
+     * Identifier of the day/time restriction profile created
+     */
+    public function getDayTimeRestrictionProfileId(): ?string
+    {
+        return $this->dayTimeRestrictionProfileId;
+    }
+
+    /**
+     * Sets Day Time Restriction Profile Id.
+     * Identifier of the day/time restriction profile created
+     *
+     * @maps DayTimeRestrictionProfileId
+     */
+    public function setDayTimeRestrictionProfileId(?string $dayTimeRestrictionProfileId): void
+    {
+        $this->dayTimeRestrictionProfileId = $dayTimeRestrictionProfileId;
+    }
+
+    /**
+     * Returns Location Restriction Status.
+     */
+    public function getLocationRestrictionStatus(): ?ErrorStatus
+    {
+        return $this->locationRestrictionStatus;
+    }
+
+    /**
+     * Sets Location Restriction Status.
+     *
+     * @maps LocationRestrictionStatus
+     */
+    public function setLocationRestrictionStatus(?ErrorStatus $locationRestrictionStatus): void
+    {
+        $this->locationRestrictionStatus = $locationRestrictionStatus;
+    }
+
+    /**
+     * Returns Location Restriction Profile Id.
+     * Identifier of the location restriction profile created
+     */
+    public function getLocationRestrictionProfileId(): ?string
+    {
+        return $this->locationRestrictionProfileId;
+    }
+
+    /**
+     * Sets Location Restriction Profile Id.
+     * Identifier of the location restriction profile created
+     *
+     * @maps LocationRestrictionProfileId
+     */
+    public function setLocationRestrictionProfileId(?string $locationRestrictionProfileId): void
+    {
+        $this->locationRestrictionProfileId = $locationRestrictionProfileId;
+    }
+
+    /**
+     * Returns Usage Restriction Status.
+     */
+    public function getUsageRestrictionStatus(): ?ErrorStatus
+    {
+        return $this->usageRestrictionStatus;
+    }
+
+    /**
+     * Sets Usage Restriction Status.
+     *
+     * @maps UsageRestrictionStatus
+     */
+    public function setUsageRestrictionStatus(?ErrorStatus $usageRestrictionStatus): void
+    {
+        $this->usageRestrictionStatus = $usageRestrictionStatus;
+    }
+
+    /**
+     * Returns Product Restriction Status.
+     */
+    public function getProductRestrictionStatus(): ?ErrorStatus
+    {
+        return $this->productRestrictionStatus;
+    }
+
+    /**
+     * Sets Product Restriction Status.
+     *
+     * @maps ProductRestrictionStatus
+     */
+    public function setProductRestrictionStatus(?ErrorStatus $productRestrictionStatus): void
+    {
+        $this->productRestrictionStatus = $productRestrictionStatus;
+    }
+
+    /**
+     * Returns Cards.
+     */
+    public function getCards(): ?BundleCardRestrictionStatus
+    {
+        return $this->cards;
+    }
+
+    /**
+     * Sets Cards.
+     *
+     * @maps Cards
+     */
+    public function setCards(?BundleCardRestrictionStatus $cards): void
+    {
+        $this->cards = $cards;
+    }
+
+    /**
+     * Returns Error.
+     */
+    public function getError(): ?ErrorStatus
+    {
+        return $this->error;
+    }
+
+    /**
+     * Sets Error.
+     *
+     * @maps Error
+     */
+    public function setError(?ErrorStatus $error): void
+    {
+        $this->error = $error;
     }
 
     /**
@@ -130,17 +299,38 @@ class CreateBundleResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->requestId)) {
-            $json['RequestId'] = $this->requestId;
+        if (!empty($this->requestId)) {
+            $json['RequestId']                    = $this->requestId['value'];
         }
-        if (isset($this->status)) {
-            $json['Status']    = $this->status;
+        if (isset($this->bundleCreationStatus)) {
+            $json['BundleCreationStatus']         = $this->bundleCreationStatus;
         }
-        if (isset($this->data)) {
-            $json['Data']      = $this->data;
+        if (isset($this->bundleId)) {
+            $json['BundleId']                     = $this->bundleId;
         }
-        if (isset($this->errors)) {
-            $json['Errors']    = $this->errors;
+        if (isset($this->dayTimeRestrictionStatus)) {
+            $json['DayTimeRestrictionStatus']     = $this->dayTimeRestrictionStatus;
+        }
+        if (isset($this->dayTimeRestrictionProfileId)) {
+            $json['DayTimeRestrictionProfileId']  = $this->dayTimeRestrictionProfileId;
+        }
+        if (isset($this->locationRestrictionStatus)) {
+            $json['LocationRestrictionStatus']    = $this->locationRestrictionStatus;
+        }
+        if (isset($this->locationRestrictionProfileId)) {
+            $json['LocationRestrictionProfileId'] = $this->locationRestrictionProfileId;
+        }
+        if (isset($this->usageRestrictionStatus)) {
+            $json['UsageRestrictionStatus']       = $this->usageRestrictionStatus;
+        }
+        if (isset($this->productRestrictionStatus)) {
+            $json['ProductRestrictionStatus']     = $this->productRestrictionStatus;
+        }
+        if (isset($this->cards)) {
+            $json['Cards']                        = $this->cards;
+        }
+        if (isset($this->error)) {
+            $json['Error']                        = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

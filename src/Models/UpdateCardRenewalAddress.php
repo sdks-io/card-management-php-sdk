@@ -14,7 +14,6 @@ use stdClass;
 
 /**
  * Delivery address of card. This address will be used for card reissue and PIN reminders in future.
- *
  * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
  */
 class UpdateCardRenewalAddress implements \JsonSerializable
@@ -93,9 +92,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Returns Contact Name.
      * Contact name
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      *
      *
      * Max Length: 50
@@ -108,9 +105,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Sets Contact Name.
      * Contact name
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      *
      *
      * Max Length: 50
@@ -126,7 +121,6 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Returns Contact Title.
      * Title
-     *
      * Max Length: 50
      */
     public function getContactTitle(): ?string
@@ -137,7 +131,6 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Sets Contact Title.
      * Title
-     *
      * Max Length: 50
      *
      * @maps ContactTitle
@@ -150,9 +143,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Returns Company Name.
      * Company name.
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      * Max Length: 50
      */
     public function getCompanyName(): string
@@ -163,9 +154,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Sets Company Name.
      * Company name.
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      * Max Length: 50
      *
      * @required
@@ -179,11 +168,8 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Returns Address Line.
      * Address line 1,2 and 3
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      * Max Length: 128
-     *
      * Note: -Each address line should be separated by “\r\n”.
      */
     public function getAddressLine(): string
@@ -194,11 +180,8 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Sets Address Line.
      * Address line 1,2 and 3
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      * Max Length: 128
-     *
      * Note: -Each address line should be separated by “\r\n”.
      *
      * @required
@@ -212,9 +195,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Returns Zip Code.
      * ZipCode
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      * Max Length: 10
      */
     public function getZipCode(): string
@@ -225,9 +206,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Sets Zip Code.
      * ZipCode
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      * Max Length: 10
      *
      * @required
@@ -241,9 +220,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Returns City.
      * City
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      * Max Length: 40
      */
     public function getCity(): ?string
@@ -254,9 +231,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Sets City.
      * City
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
-     *
      * Max Length: 40
      *
      * @maps City
@@ -289,7 +264,6 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Returns Country ID.
      * Country ID
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
      */
     public function getCountryID(): int
@@ -300,7 +274,6 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Sets Country ID.
      * Country ID
-     *
      * Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.
      *
      * @required
@@ -358,9 +331,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Returns Phone Number.
      * Phone number
-     *
      * Optional
-     *
      * Max Length: 16
      */
     public function getPhoneNumber(): ?string
@@ -371,9 +342,7 @@ class UpdateCardRenewalAddress implements \JsonSerializable
     /**
      * Sets Phone Number.
      * Phone number
-     *
      * Optional
-     *
      * Max Length: 16
      *
      * @maps PhoneNumber

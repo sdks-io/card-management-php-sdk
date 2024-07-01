@@ -30,7 +30,6 @@ class SearchCard implements \JsonSerializable
     /**
      * Returns Card Id.
      * Unique Card Id
-     *
      * Optional if PAN is given, else mandatory.
      */
     public function getCardId(): ?int
@@ -44,7 +43,6 @@ class SearchCard implements \JsonSerializable
     /**
      * Sets Card Id.
      * Unique Card Id
-     *
      * Optional if PAN is given, else mandatory.
      *
      * @maps CardId
@@ -57,7 +55,6 @@ class SearchCard implements \JsonSerializable
     /**
      * Unsets Card Id.
      * Unique Card Id
-     *
      * Optional if PAN is given, else mandatory.
      */
     public function unsetCardId(): void
@@ -68,9 +65,7 @@ class SearchCard implements \JsonSerializable
     /**
      * Returns P AN.
      * Card PAN.
-     *
      * Optional if CardId is given, else mandatory.
-     *
      * Note: PAN is ignored if CardId is given.
      */
     public function getPAN(): ?string
@@ -84,9 +79,7 @@ class SearchCard implements \JsonSerializable
     /**
      * Sets P AN.
      * Card PAN.
-     *
      * Optional if CardId is given, else mandatory.
-     *
      * Note: PAN is ignored if CardId is given.
      *
      * @maps PAN
@@ -99,9 +92,7 @@ class SearchCard implements \JsonSerializable
     /**
      * Unsets P AN.
      * Card PAN.
-     *
      * Optional if CardId is given, else mandatory.
-     *
      * Note: PAN is ignored if CardId is given.
      */
     public function unsetPAN(): void

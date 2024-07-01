@@ -32,7 +32,6 @@ class UpdateCardGroupResponseMoveCardReferencesItems implements \JsonSerializabl
     /**
      * Returns Card Id.
      * Card Id of the card.
-     *
      * Example: 123
      */
     public function getCardId(): ?int
@@ -46,7 +45,6 @@ class UpdateCardGroupResponseMoveCardReferencesItems implements \JsonSerializabl
     /**
      * Sets Card Id.
      * Card Id of the card.
-     *
      * Example: 123
      *
      * @maps CardId
@@ -59,7 +57,6 @@ class UpdateCardGroupResponseMoveCardReferencesItems implements \JsonSerializabl
     /**
      * Unsets Card Id.
      * Card Id of the card.
-     *
      * Example: 123
      */
     public function unsetCardId(): void
@@ -70,7 +67,6 @@ class UpdateCardGroupResponseMoveCardReferencesItems implements \JsonSerializabl
     /**
      * Returns P AN.
      * PAN of the card.
-     *
      * Example: 7002051123456789145
      */
     public function getPAN(): ?string
@@ -84,7 +80,6 @@ class UpdateCardGroupResponseMoveCardReferencesItems implements \JsonSerializabl
     /**
      * Sets P AN.
      * PAN of the card.
-     *
      * Example: 7002051123456789145
      *
      * @maps PAN
@@ -97,7 +92,6 @@ class UpdateCardGroupResponseMoveCardReferencesItems implements \JsonSerializabl
     /**
      * Unsets P AN.
      * PAN of the card.
-     *
      * Example: 7002051123456789145
      */
     public function unsetPAN(): void

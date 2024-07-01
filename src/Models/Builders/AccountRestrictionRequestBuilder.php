@@ -12,7 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AccountRestrictionRequest;
-use ShellCardManagementAPIsLib\Models\UsageRestrictions;
+use ShellCardManagementAPIsLib\Models\UsageRestrictionsCard;
 
 /**
  * Builder for model AccountRestrictionRequest
@@ -49,11 +49,29 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
+     * Unsets col co id field.
+     */
+    public function unsetColCoId(): self
+    {
+        $this->instance->unsetColCoId();
+        return $this;
+    }
+
+    /**
      * Sets col co code field.
      */
     public function colCoCode(?int $value): self
     {
         $this->instance->setColCoCode($value);
+        return $this;
+    }
+
+    /**
+     * Unsets col co code field.
+     */
+    public function unsetColCoCode(): self
+    {
+        $this->instance->unsetColCoCode();
         return $this;
     }
 
@@ -85,11 +103,47 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
+     * Unsets payer number field.
+     */
+    public function unsetPayerNumber(): self
+    {
+        $this->instance->unsetPayerNumber();
+        return $this;
+    }
+
+    /**
+     * Sets account id field.
+     */
+    public function accountId(?int $value): self
+    {
+        $this->instance->setAccountId($value);
+        return $this;
+    }
+
+    /**
+     * Unsets account id field.
+     */
+    public function unsetAccountId(): self
+    {
+        $this->instance->unsetAccountId();
+        return $this;
+    }
+
+    /**
      * Sets account number field.
      */
     public function accountNumber(?string $value): self
     {
         $this->instance->setAccountNumber($value);
+        return $this;
+    }
+
+    /**
+     * Unsets account number field.
+     */
+    public function unsetAccountNumber(): self
+    {
+        $this->instance->unsetAccountNumber();
         return $this;
     }
 
@@ -103,11 +157,29 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
+     * Unsets reset usage restrictions field.
+     */
+    public function unsetResetUsageRestrictions(): self
+    {
+        $this->instance->unsetResetUsageRestrictions();
+        return $this;
+    }
+
+    /**
      * Sets usage restrictions field.
      */
-    public function usageRestrictions(?UsageRestrictions $value): self
+    public function usageRestrictions(?UsageRestrictionsCard $value): self
     {
         $this->instance->setUsageRestrictions($value);
+        return $this;
+    }
+
+    /**
+     * Unsets usage restrictions field.
+     */
+    public function unsetUsageRestrictions(): self
+    {
+        $this->instance->unsetUsageRestrictions();
         return $this;
     }
 

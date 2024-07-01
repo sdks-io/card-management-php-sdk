@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AccountRestrictionResponse;
+use ShellCardManagementAPIsLib\Models\ErrorStatus;
 
 /**
  * Builder for model AccountRestrictionResponse
@@ -48,11 +49,56 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Unsets request id field.
      */
-    public function status(?string $value): self
+    public function unsetRequestId(): self
     {
-        $this->instance->setStatus($value);
+        $this->instance->unsetRequestId();
+        return $this;
+    }
+
+    /**
+     * Sets account id field.
+     */
+    public function accountId(?int $value): self
+    {
+        $this->instance->setAccountId($value);
+        return $this;
+    }
+
+    /**
+     * Sets account number field.
+     */
+    public function accountNumber(?string $value): self
+    {
+        $this->instance->setAccountNumber($value);
+        return $this;
+    }
+
+    /**
+     * Sets usage restriction status field.
+     */
+    public function usageRestrictionStatus(?string $value): self
+    {
+        $this->instance->setUsageRestrictionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets usage restriction description field.
+     */
+    public function usageRestrictionDescription(?string $value): self
+    {
+        $this->instance->setUsageRestrictionDescription($value);
+        return $this;
+    }
+
+    /**
+     * Sets error field.
+     */
+    public function error(?ErrorStatus $value): self
+    {
+        $this->instance->setError($value);
         return $this;
     }
 

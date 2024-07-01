@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib;
 
 use Core\ClientBuilder;
-use Core\Request\Parameters\TemplateParam;
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Authentication\BasicAuthCredentials;
 use ShellCardManagementAPIsLib\Authentication\BasicAuthCredentialsBuilder;
@@ -54,22 +53,14 @@ class ShellCardManagementAPIsClient implements ConfigurationInterface
     public function __construct(array $config = [])
     {
         $this->config = array_merge(ConfigurationDefaults::_ALL, CoreHelper::clone($config));
-        $this->basicAuthManager = new BasicAuthManager(
-            $this->config['username'] ?? ConfigurationDefaults::USERNAME,
-            $this->config['password'] ?? ConfigurationDefaults::PASSWORD
-        );
-        $this->bearerTokenManager = new BearerTokenManager(
-            $this->config['oAuthClientId'] ?? ConfigurationDefaults::O_AUTH_CLIENT_ID,
-            $this->config['oAuthClientSecret'] ?? ConfigurationDefaults::O_AUTH_CLIENT_SECRET,
-            $this->config['oAuthToken']
-        );
+        $this->basicAuthManager = new BasicAuthManager($this->config);
+        $this->bearerTokenManager = new BearerTokenManager($this->config);
         $this->client = ClientBuilder::init(new HttpClient(Configuration::init($this)))
             ->converter(new CompatibilityConverter())
             ->jsonHelper(ApiHelper::getJsonHelper())
             ->apiCallback($this->config['httpCallback'] ?? null)
             ->userAgent('APIMATIC 3.0')
-            ->globalConfig($this->getGlobalConfiguration())
-            ->serverUrls(self::ENVIRONMENT_MAP[$this->getEnvironment()], Server::DEFAULT_)
+            ->serverUrls(self::ENVIRONMENT_MAP[$this->getEnvironment()], Server::SHELL)
             ->authManagers(['BasicAuth' => $this->basicAuthManager, 'BearerToken' => $this->bearerTokenManager])
             ->build();
         $this->bearerTokenManager->setClient($this->client);
@@ -93,7 +84,6 @@ class ShellCardManagementAPIsClient implements ConfigurationInterface
             ->httpStatusCodesToRetry($this->getHttpStatusCodesToRetry())
             ->httpMethodsToRetry($this->getHttpMethodsToRetry())
             ->environment($this->getEnvironment())
-            ->url($this->getUrl())
             ->httpCallback($this->config['httpCallback'] ?? null);
 
         $basicAuth = $this->getBasicAuthCredentialsBuilder();
@@ -158,11 +148,6 @@ class ShellCardManagementAPIsClient implements ConfigurationInterface
         return $this->config['environment'] ?? ConfigurationDefaults::ENVIRONMENT;
     }
 
-    public function getUrl(): string
-    {
-        return $this->config['url'] ?? ConfigurationDefaults::URL;
-    }
-
     public function getBasicAuthCredentials(): BasicAuthCredentials
     {
         return $this->basicAuthManager;
@@ -225,7 +210,7 @@ class ShellCardManagementAPIsClient implements ConfigurationInterface
      *
      * @return string Base URI
      */
-    public function getBaseUri(string $server = Server::DEFAULT_): string
+    public function getBaseUri(string $server = Server::SHELL): string
     {
         return $this->client->getGlobalRequest($server)->getQueryUrl();
     }
@@ -275,22 +260,18 @@ class ShellCardManagementAPIsClient implements ConfigurationInterface
     }
 
     /**
-     * Get the defined global configurations
-     */
-    private function getGlobalConfiguration(): array
-    {
-        return [TemplateParam::init('url', $this->getUrl())->dontEncode()];
-    }
-
-    /**
      * A map of all base urls used in different environments and servers
      *
      * @var array
      */
     private const ENVIRONMENT_MAP = [
+        Environment::SIT => [
+            Server::OAUTH_SERVER => 'https://api-test.shell.com',
+            Server::SHELL => 'https://api-test.shell.com/test'
+        ],
         Environment::PRODUCTION => [
-            Server::DEFAULT_ => 'https://{url}',
-            Server::ACCESS_TOKEN_SERVER => 'https://api-test.shell.com/v1/oauth'
+            Server::OAUTH_SERVER => 'https://api.shell.com',
+            Server::SHELL => 'https://api.shell.com'
         ]
     ];
 }

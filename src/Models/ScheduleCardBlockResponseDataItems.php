@@ -59,9 +59,7 @@ class ScheduleCardBlockResponseDataItems implements \JsonSerializable
      * Effective start date & time of Block / Unblock as updated in the intermediate queue table.
      *
      *
-     *
      * Format: yyyyMMdd HH:mm
-     *
      * Eg: 20230512 12:30
      */
     public function getFromDate(): ?string
@@ -74,9 +72,7 @@ class ScheduleCardBlockResponseDataItems implements \JsonSerializable
      * Effective start date & time of Block / Unblock as updated in the intermediate queue table.
      *
      *
-     *
      * Format: yyyyMMdd HH:mm
-     *
      * Eg: 20230512 12:30
      *
      * @maps FromDate
@@ -91,9 +87,7 @@ class ScheduleCardBlockResponseDataItems implements \JsonSerializable
      * Effective end date & time of Block / Unblock as updated in the intermediate queue table.
      *
      *
-     *
      * Format: yyyyMMdd HH:mm
-     *
      * Eg: 20230512 14:30
      */
     public function getToDate(): ?string
@@ -106,9 +100,7 @@ class ScheduleCardBlockResponseDataItems implements \JsonSerializable
      * Effective end date & time of Block / Unblock as updated in the intermediate queue table.
      *
      *
-     *
      * Format: yyyyMMdd HH:mm
-     *
      * Eg: 20230512 14:30
      *
      * @maps ToDate
@@ -123,9 +115,7 @@ class ScheduleCardBlockResponseDataItems implements \JsonSerializable
      * Effective end date & time of Block / Unblock as updated in the intermediate queue table.
      *
      *
-     *
      * Format: yyyyMMdd HH:mm
-     *
      * Eg: 20230512 14:30
      */
     public function getReferenceId(): ?int
@@ -138,9 +128,7 @@ class ScheduleCardBlockResponseDataItems implements \JsonSerializable
      * Effective end date & time of Block / Unblock as updated in the intermediate queue table.
      *
      *
-     *
      * Format: yyyyMMdd HH:mm
-     *
      * Eg: 20230512 14:30
      *
      * @maps ReferenceId

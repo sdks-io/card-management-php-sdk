@@ -11,9 +11,9 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Models\CardDeliveryContact;
+use ShellCardManagementAPIsLib\Models\CardContact;
 use ShellCardManagementAPIsLib\Models\CardDetail;
-use ShellCardManagementAPIsLib\Models\PINDeliveryContact;
+use ShellCardManagementAPIsLib\Models\PINContact;
 
 /**
  * Builder for model CardDetail
@@ -385,7 +385,7 @@ class CardDetailBuilder
     /**
      * Sets card contact field.
      */
-    public function cardContact(?CardDeliveryContact $value): self
+    public function cardContact(?CardContact $value): self
     {
         $this->instance->setCardContact($value);
         return $this;
@@ -421,7 +421,7 @@ class CardDetailBuilder
     /**
      * Sets pincontact field.
      */
-    public function pINContact(?PINDeliveryContact $value): self
+    public function pINContact(?PINContact $value): self
     {
         $this->instance->setPINContact($value);
         return $this;

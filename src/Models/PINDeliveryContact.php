@@ -14,7 +14,6 @@ use stdClass;
 
 /**
  * Request entity object for PINDeliveryContact
- *
  * Mandatory when PINDeliveryAddressType is ‘3’ (New delivery address). Else, ignored.
  */
 class PINDeliveryContact implements \JsonSerializable
@@ -92,7 +91,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Contact Title.
      * Title of the contact person <br />
-     *
      * Optional
      */
     public function getDeliveryContactTitle(): ?string
@@ -106,7 +104,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Contact Title.
      * Title of the contact person <br />
-     *
      * Optional
      *
      * @maps DeliveryContactTitle
@@ -119,7 +116,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Contact Title.
      * Title of the contact person <br />
-     *
      * Optional
      */
     public function unsetDeliveryContactTitle(): void
@@ -130,11 +126,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Contact Name.
      * Name of the contact person <br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 50  <br />
-     *
      * Optional
      */
     public function getDeliveryContactName(): ?string
@@ -148,11 +141,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Contact Name.
      * Name of the contact person <br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 50  <br />
-     *
      * Optional
      *
      * @maps DeliveryContactName
@@ -165,11 +155,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Contact Name.
      * Name of the contact person <br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 50  <br />
-     *
      * Optional
      */
     public function unsetDeliveryContactName(): void
@@ -180,11 +167,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Company Name.
      * Company name <br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 50  <br />
-     *
      * Optional
      */
     public function getDeliveryCompanyName(): ?string
@@ -198,11 +182,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Company Name.
      * Company name <br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 50  <br />
-     *
      * Optional
      *
      * @maps DeliveryCompanyName
@@ -215,11 +196,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Company Name.
      * Company name <br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 50  <br />
-     *
      * Optional
      */
     public function unsetDeliveryCompanyName(): void
@@ -230,11 +208,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Address Line 1.
      * Address line 1 <br />
-     *
      * Mandatory - if PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function getDeliveryAddressLine1(): ?string
@@ -248,11 +223,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Address Line 1.
      * Address line 1 <br />
-     *
      * Mandatory - if PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      *
      * @maps DeliveryAddressLine1
@@ -265,11 +237,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Address Line 1.
      * Address line 1 <br />
-     *
      * Mandatory - if PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function unsetDeliveryAddressLine1(): void
@@ -280,11 +249,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Address Line 2.
      * Address line 2 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function getDeliveryAddressLine2(): ?string
@@ -298,11 +264,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Address Line 2.
      * Address line 2 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      *
      * @maps DeliveryAddressLine2
@@ -315,11 +278,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Address Line 2.
      * Address line 2 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function unsetDeliveryAddressLine2(): void
@@ -330,11 +290,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Address Line 3.
      * Address line 3 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function getDeliveryAddressLine3(): ?string
@@ -348,11 +305,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Address Line 3.
      * Address line 3 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      *
      * @maps DeliveryAddressLine3
@@ -365,11 +319,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Address Line 3.
      * Address line 3 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function unsetDeliveryAddressLine3(): void
@@ -380,11 +331,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Zip Code.
      * ZIP code <br />
-     *
      * Mandatory - if PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 10  <br />
-     *
      * Optional
      */
     public function getDeliveryZipCode(): ?string
@@ -398,11 +346,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Zip Code.
      * ZIP code <br />
-     *
      * Mandatory - if PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 10  <br />
-     *
      * Optional
      *
      * @maps DeliveryZipCode
@@ -415,11 +360,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Zip Code.
      * ZIP code <br />
-     *
      * Mandatory - if PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 10  <br />
-     *
      * Optional
      */
     public function unsetDeliveryZipCode(): void
@@ -430,11 +372,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery City.
      * City  <br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function getDeliveryCity(): ?string
@@ -448,11 +387,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery City.
      * City  <br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      *
      * @maps DeliveryCity
@@ -465,11 +401,8 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery City.
      * City  <br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function unsetDeliveryCity(): void
@@ -480,7 +413,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Region Id.
      * Region Id  <br />
-     *
      * Optional
      */
     public function getDeliveryRegionId(): ?int
@@ -494,7 +426,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Region Id.
      * Region Id  <br />
-     *
      * Optional
      *
      * @maps DeliveryRegionId
@@ -507,7 +438,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Region Id.
      * Region Id  <br />
-     *
      * Optional
      */
     public function unsetDeliveryRegionId(): void
@@ -518,7 +448,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Region.
      * Region  <br />
-     *
      * Optional<br />
      */
     public function getDeliveryRegion(): ?string
@@ -532,7 +461,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Region.
      * Region  <br />
-     *
      * Optional<br />
      *
      * @maps DeliveryRegion
@@ -545,7 +473,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Region.
      * Region  <br />
-     *
      * Optional<br />
      */
     public function unsetDeliveryRegion(): void
@@ -556,7 +483,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Country.
      * The ISO code of the country.<br />
-     *
      * Mandatory if PINAdviceType is paper else optional.
      */
     public function getDeliveryCountry(): ?string
@@ -570,7 +496,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Country.
      * The ISO code of the country.<br />
-     *
      * Mandatory if PINAdviceType is paper else optional.
      *
      * @maps DeliveryCountry
@@ -583,7 +508,6 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Country.
      * The ISO code of the country.<br />
-     *
      * Mandatory if PINAdviceType is paper else optional.
      */
     public function unsetDeliveryCountry(): void
@@ -594,9 +518,7 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Phone Number.
      * Phone number for to send SMS of the PIN in case PINAdviceType is SMS.<br />
-     *
      * Mandatory if PINAdviceType is SMS else optional.<br />
-     *
      * Max field length: 20
      */
     public function getPhoneNumber(): ?string
@@ -610,9 +532,7 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Phone Number.
      * Phone number for to send SMS of the PIN in case PINAdviceType is SMS.<br />
-     *
      * Mandatory if PINAdviceType is SMS else optional.<br />
-     *
      * Max field length: 20
      *
      * @maps PhoneNumber
@@ -625,9 +545,7 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Phone Number.
      * Phone number for to send SMS of the PIN in case PINAdviceType is SMS.<br />
-     *
      * Mandatory if PINAdviceType is SMS else optional.<br />
-     *
      * Max field length: 20
      */
     public function unsetPhoneNumber(): void
@@ -638,9 +556,7 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Email Address.
      * Email address for to send email of the PIN in case PINAdviceType is Email.<br />
-     *
      * Mandatory if PINAdviceType is email else optional.<br />
-     *
      * Max field length: 90. <br/>Note:Based on the international standard that there can be Max Length 64
      * before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88 (Minimum of
      * 2)
@@ -656,9 +572,7 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Email Address.
      * Email address for to send email of the PIN in case PINAdviceType is Email.<br />
-     *
      * Mandatory if PINAdviceType is email else optional.<br />
-     *
      * Max field length: 90. <br/>Note:Based on the international standard that there can be Max Length 64
      * before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88 (Minimum of
      * 2)
@@ -673,9 +587,7 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Unsets Email Address.
      * Email address for to send email of the PIN in case PINAdviceType is Email.<br />
-     *
      * Mandatory if PINAdviceType is email else optional.<br />
-     *
      * Max field length: 90. <br/>Note:Based on the international standard that there can be Max Length 64
      * before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88 (Minimum of
      * 2)
@@ -688,9 +600,7 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Returns Save for PIN Reminder.
      * The given address will be used for sending PIN reminders in future when requested.<br />
-     *
      * Only allowed for paper delivery<br />
-     *
      * Optional
      */
     public function getSaveForPINReminder(): ?bool
@@ -701,9 +611,7 @@ class PINDeliveryContact implements \JsonSerializable
     /**
      * Sets Save for PIN Reminder.
      * The given address will be used for sending PIN reminders in future when requested.<br />
-     *
      * Only allowed for paper delivery<br />
-     *
      * Optional
      *
      * @maps SaveForPINReminder

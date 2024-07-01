@@ -109,12 +109,6 @@ class ShellCardManagementAPIsClientBuilder
         return $this;
     }
 
-    public function url(string $url): self
-    {
-        $this->config['url'] = $url;
-        return $this;
-    }
-
     public function basicAuthCredentials(BasicAuthCredentialsBuilder $basicAuth): self
     {
         $this->config = array_merge($this->config, $basicAuth->getConfiguration());

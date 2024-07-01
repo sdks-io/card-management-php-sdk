@@ -171,7 +171,6 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function getPayerNumber(): ?string
@@ -182,7 +181,6 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      *
      * @maps PayerNumber
@@ -195,9 +193,7 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id (i.e., Customer Id of the Payment Customer) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -208,9 +204,7 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id (i.e., Customer Id of the Payment Customer) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -286,17 +280,12 @@ class UpdateCardGroupRequest implements \JsonSerializable
      * required to the current card group name.
      *
      *
-     *
      * Optional
      *
      *
-     *
      * Minimum length: 1 (Configurable)
-     *
      * Maximum length: 40 (Configurable)
-     *
      * Allowed characters (Configurable) are: - A-Z 0-9, / ‘. & Ä Ö Ü Å Æ É Ø
-     *
      * Note: The card group name has to be unique for customer. Else an error with error code 9015 is
      * returned.
      */
@@ -311,17 +300,12 @@ class UpdateCardGroupRequest implements \JsonSerializable
      * required to the current card group name.
      *
      *
-     *
      * Optional
      *
      *
-     *
      * Minimum length: 1 (Configurable)
-     *
      * Maximum length: 40 (Configurable)
-     *
      * Allowed characters (Configurable) are: - A-Z 0-9, / ‘. & Ä Ö Ü Å Æ É Ø
-     *
      * Note: The card group name has to be unique for customer. Else an error with error code 9015 is
      * returned.
      *
@@ -401,9 +385,7 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Terminate Card Group.
      * Whether to terminate the card group.
-     *
      * When set to true, the card group will be terminated by setting current date as it’s termination date.
-     *
      * Optional, False by default .
      */
     public function getTerminateCardGroup(): ?bool
@@ -414,9 +396,7 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Terminate Card Group.
      * Whether to terminate the card group.
-     *
      * When set to true, the card group will be terminated by setting current date as it’s termination date.
-     *
      * Optional, False by default .
      *
      * @maps TerminateCardGroup
@@ -429,9 +409,7 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Move Cards.
      * Whether to move the cards from this CardGroup in to a different or a new CardGroup.
-     *
      * Optional
-     *
      * When the value is set to ‘False’ or ‘null’, the cards that are currently in the card-group will
      * remain under the same card-group.
      */
@@ -443,9 +421,7 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Move Cards.
      * Whether to move the cards from this CardGroup in to a different or a new CardGroup.
-     *
      * Optional
-     *
      * When the value is set to ‘False’ or ‘null’, the cards that are currently in the card-group will
      * remain under the same card-group.
      *
@@ -459,7 +435,6 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Target Account Id.
      * Account ID of the new/target card-group.
-     *
      * Either TargetAccountId or TargetAccountNumber is mandatory when MoveCards is set to True.
      */
     public function getTargetAccountId(): ?int
@@ -470,7 +445,6 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Target Account Id.
      * Account ID of the new/target card-group.
-     *
      * Either TargetAccountId or TargetAccountNumber is mandatory when MoveCards is set to True.
      *
      * @maps TargetAccountId
@@ -483,7 +457,6 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Target Account Number.
      * Account Number of the new/target card-group.
-     *
      * Either TargetAccountId or TargetAccountNumber is mandatory when MoveCards is set to True.
      */
     public function getTargetAccountNumber(): ?string
@@ -494,7 +467,6 @@ class UpdateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Target Account Number.
      * Account Number of the new/target card-group.
-     *
      * Either TargetAccountId or TargetAccountNumber is mandatory when MoveCards is set to True.
      *
      * @maps TargetAccountNumber
@@ -510,13 +482,10 @@ class UpdateCardGroupRequest implements \JsonSerializable
      * group.
      *
      *
-     *
      * Mandatory when MoveCards parameter is True and TargetCardGroupId is null.
      *
      *
-     *
      * Minimum length: 1 (Configurable)
-     *
      * Maximum length: 30 (Configurable)
      */
     public function getTargetNewCardGroupName(): ?string
@@ -530,13 +499,10 @@ class UpdateCardGroupRequest implements \JsonSerializable
      * group.
      *
      *
-     *
      * Mandatory when MoveCards parameter is True and TargetCardGroupId is null.
      *
      *
-     *
      * Minimum length: 1 (Configurable)
-     *
      * Maximum length: 30 (Configurable)
      *
      * @maps TargetNewCardGroupName
@@ -550,9 +516,7 @@ class UpdateCardGroupRequest implements \JsonSerializable
      * Returns Target Card Group Id.
      * ID of the card group if the cards in the existing card-group have to be moved to another existing
      * card-group.
-     *
      * Mandatory when MoveCards parameter is True and TargetNewCardGroupName is null.
-     *
      * If the value is “-1” then the cards will be moved out of the current CardGroup.
      */
     public function getTargetCardGroupId(): ?int
@@ -564,9 +528,7 @@ class UpdateCardGroupRequest implements \JsonSerializable
      * Sets Target Card Group Id.
      * ID of the card group if the cards in the existing card-group have to be moved to another existing
      * card-group.
-     *
      * Mandatory when MoveCards parameter is True and TargetNewCardGroupName is null.
-     *
      * If the value is “-1” then the cards will be moved out of the current CardGroup.
      *
      * @maps TargetCardGroupId

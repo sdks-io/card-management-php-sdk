@@ -50,7 +50,6 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed, else Mandatory.
      */
     public function getAccountNumber(): ?string
@@ -61,7 +60,6 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed, else Mandatory.
      *
      * @maps AccountNumber
@@ -74,7 +72,6 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the customer.
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      */
     public function getAccountId(): ?int
@@ -85,7 +82,6 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the customer.
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      *
      * @maps AccountId
@@ -98,7 +94,6 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Returns P AN.
      * PAN of the card.
-     *
      * Optional if CardId is passed, else Mandatory.
      */
     public function getPAN(): ?string
@@ -109,7 +104,6 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Sets P AN.
      * PAN of the card.
-     *
      * Optional if CardId is passed, else Mandatory.
      *
      * @maps PAN
@@ -122,7 +116,6 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Returns Card Id.
      * Card Id of the card.
-     *
      * Optional if PAN is passed, else Mandatory.
      */
     public function getCardId(): ?int
@@ -133,7 +126,6 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Sets Card Id.
      * Card Id of the card.
-     *
      * Optional if PAN is passed, else Mandatory.
      *
      * @maps CardId

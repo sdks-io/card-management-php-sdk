@@ -128,7 +128,7 @@ class CardDetail implements \JsonSerializable
     private $cardDeliveryType;
 
     /**
-     * @var CardDeliveryContact|null
+     * @var CardContact|null
      */
     private $cardContact;
 
@@ -143,7 +143,7 @@ class CardDetail implements \JsonSerializable
     private $pINAdviceType;
 
     /**
-     * @var PINDeliveryContact|null
+     * @var PINContact|null
      */
     private $pINContact;
 
@@ -215,7 +215,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id  of the selected payer.<br />
-     *
      * Optional if PayerNumber is passed else Mandatory
      */
     public function getPayerId(): ?int
@@ -229,7 +228,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id  of the selected payer.<br />
-     *
      * Optional if PayerNumber is passed else Mandatory
      *
      * @maps PayerId
@@ -242,7 +240,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id  of the selected payer.<br />
-     *
      * Optional if PayerNumber is passed else Mandatory
      */
     public function unsetPayerId(): void
@@ -253,7 +250,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.<br />
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function getPayerNumber(): ?string
@@ -267,7 +263,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.<br />
-     *
      * Optional if PayerId is passed else Mandatory
      *
      * @maps PayerNumber
@@ -280,7 +275,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number of the selected payer.<br />
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function unsetPayerNumber(): void
@@ -291,9 +285,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else mandatory.<br />
-     *
      * This input is a search criterion, if given.
      */
     public function getAccountId(): ?int
@@ -307,9 +299,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else mandatory.<br />
-     *
      * This input is a search criterion, if given.
      *
      * @maps AccountId
@@ -322,9 +312,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account ID of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else mandatory.<br />
-     *
      * This input is a search criterion, if given.
      */
     public function unsetAccountId(): void
@@ -335,9 +323,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else mandatory.<br />
-     *
      * This input is a search criterion, if given.
      */
     public function getAccountNumber(): ?string
@@ -351,9 +337,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else mandatory.<br />
-     *
      * This input is a search criterion, if given.
      *
      * @maps AccountNumber
@@ -366,9 +350,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else mandatory.<br />
-     *
      * This input is a search criterion, if given.
      */
     public function unsetAccountNumber(): void
@@ -379,7 +361,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer.<br />
-     *
      * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
      * for other countries if ColCoID is provided.
      */
@@ -394,7 +375,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer.<br />
-     *
      * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
      * for other countries if ColCoID is provided.
      *
@@ -408,7 +388,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer.<br />
-     *
      * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
      * for other countries if ColCoID is provided.
      */
@@ -420,7 +399,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Col Co Id.
      * Collecting Company Id of the selected payer.<br />
-     *
      * Optional If ColCo Code is passed else Mandatory
      */
     public function getColCoId(): ?int
@@ -434,7 +412,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Col Co Id.
      * Collecting Company Id of the selected payer.<br />
-     *
      * Optional If ColCo Code is passed else Mandatory
      *
      * @maps ColCoId
@@ -447,7 +424,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Col Co Id.
      * Collecting Company Id of the selected payer.<br />
-     *
      * Optional If ColCo Code is passed else Mandatory
      */
     public function unsetColCoId(): void
@@ -458,7 +434,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Card Type Id.
      * Card Type ID<br />
-     *
      * Mandatory
      */
     public function getCardTypeId(): ?int
@@ -472,7 +447,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Card Type Id.
      * Card Type ID<br />
-     *
      * Mandatory
      *
      * @maps CardTypeId
@@ -485,7 +459,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Card Type Id.
      * Card Type ID<br />
-     *
      * Mandatory
      */
     public function unsetCardTypeId(): void
@@ -496,12 +469,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Token Type Id.
      * Token Type Id – Linked to the selected card type<br />
-     *
      * Optional<br />
-     *
      * Default – Assign the default token type associated with the card type of the card being created.<br
      * />
-     *
      * The default value will be set by the background process and an error (code 12009) will be thrown by
      * the background process when default value is not identified or invalid token type id is passed in
      * the request.
@@ -517,12 +487,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Token Type Id.
      * Token Type Id – Linked to the selected card type<br />
-     *
      * Optional<br />
-     *
      * Default – Assign the default token type associated with the card type of the card being created.<br
      * />
-     *
      * The default value will be set by the background process and an error (code 12009) will be thrown by
      * the background process when default value is not identified or invalid token type id is passed in
      * the request.
@@ -537,12 +504,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Token Type Id.
      * Token Type Id – Linked to the selected card type<br />
-     *
      * Optional<br />
-     *
      * Default – Assign the default token type associated with the card type of the card being created.<br
      * />
-     *
      * The default value will be set by the background process and an error (code 12009) will be thrown by
      * the background process when default value is not identified or invalid token type id is passed in
      * the request.
@@ -555,14 +519,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Emboss Text.
      * Text to be printed on the card as Account Name.<br />
-     *
      * Optional – When not provided default emboss text associated with the card type will be embossed.<br
      * />
-     *
      * Max length: 27<br />
-     *
      * The value should be validated against a configured list of allowed characters.<br />
-     *
      * [-0-9A-Z,/''.&amp; ÄÖÜÅÆÉØ]
      */
     public function getEmbossText(): ?string
@@ -576,14 +536,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Emboss Text.
      * Text to be printed on the card as Account Name.<br />
-     *
      * Optional – When not provided default emboss text associated with the card type will be embossed.<br
      * />
-     *
      * Max length: 27<br />
-     *
      * The value should be validated against a configured list of allowed characters.<br />
-     *
      * [-0-9A-Z,/''.&amp; ÄÖÜÅÆÉØ]
      *
      * @maps EmbossText
@@ -596,14 +552,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Emboss Text.
      * Text to be printed on the card as Account Name.<br />
-     *
      * Optional – When not provided default emboss text associated with the card type will be embossed.<br
      * />
-     *
      * Max length: 27<br />
-     *
      * The value should be validated against a configured list of allowed characters.<br />
-     *
      * [-0-9A-Z,/''.&amp; ÄÖÜÅÆÉØ]
      */
     public function unsetEmbossText(): void
@@ -685,13 +637,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Driver Name.
      * Driver Name.<br />
-     *
      * Optional when VRN is passed else mandatory.<br />
-     *
      * Max length: 27<br />
-     *
      * The value will be validated against a configured list of allowed characters.<br />
-     *
      * Default value for the configuration is: [-0-9A-Z,/''.&amp; ÄÖÜÅÆÉØ]<br />
      */
     public function getDriverName(): ?string
@@ -705,13 +653,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Driver Name.
      * Driver Name.<br />
-     *
      * Optional when VRN is passed else mandatory.<br />
-     *
      * Max length: 27<br />
-     *
      * The value will be validated against a configured list of allowed characters.<br />
-     *
      * Default value for the configuration is: [-0-9A-Z,/''.&amp; ÄÖÜÅÆÉØ]<br />
      *
      * @maps DriverName
@@ -724,13 +668,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Driver Name.
      * Driver Name.<br />
-     *
      * Optional when VRN is passed else mandatory.<br />
-     *
      * Max length: 27<br />
-     *
      * The value will be validated against a configured list of allowed characters.<br />
-     *
      * Default value for the configuration is: [-0-9A-Z,/''.&amp; ÄÖÜÅÆÉØ]<br />
      */
     public function unsetDriverName(): void
@@ -741,9 +681,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Odometer Input Required.
      * Odometer Input to be enabled on the card<br />
-     *
      * Optional.<br />
-     *
      * Default is False
      */
     public function getOdometerInputRequired(): ?bool
@@ -754,9 +692,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Odometer Input Required.
      * Odometer Input to be enabled on the card<br />
-     *
      * Optional.<br />
-     *
      * Default is False
      *
      * @maps OdometerInputRequired
@@ -769,11 +705,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Fleet Id Input Required.
      * FleetId Input to be enabled on the card<br />
-     *
      * Optional.<br />
-     *
      * Default is False<br />
-     *
      * Note: If AllowFleetIdInput settings of the account is disabled and this flag is marked
      *
      * true in the request, then request will be processed with VRN input required
@@ -788,11 +721,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Fleet Id Input Required.
      * FleetId Input to be enabled on the card<br />
-     *
      * Optional.<br />
-     *
      * Default is False<br />
-     *
      * Note: If AllowFleetIdInput settings of the account is disabled and this flag is marked
      *
      * true in the request, then request will be processed with VRN input required
@@ -809,7 +739,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Purchase Category Id.
      * Purchase category Id<br />
-     *
      * Mandatory
      */
     public function getPurchaseCategoryId(): ?int
@@ -823,7 +752,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Purchase Category Id.
      * Purchase category Id<br />
-     *
      * Mandatory
      *
      * @maps PurchaseCategoryId
@@ -836,7 +764,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Purchase Category Id.
      * Purchase category Id<br />
-     *
      * Mandatory
      */
     public function unsetPurchaseCategoryId(): void
@@ -847,10 +774,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Self Selected Encrypted PIN.
      * The encrypted value of self-selected PIN.<br />
-     *
      * Optional – When not provided, the PIN will be auto generated(if the card token type supports PIN)
      * and delivered based on the given PIN delivery option.<br />
-     *
      * Max Length: 256
      */
     public function getSelfSelectedEncryptedPIN(): ?string
@@ -861,10 +786,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Self Selected Encrypted PIN.
      * The encrypted value of self-selected PIN.<br />
-     *
      * Optional – When not provided, the PIN will be auto generated(if the card token type supports PIN)
      * and delivered based on the given PIN delivery option.<br />
-     *
      * Max Length: 256
      *
      * @maps SelfSelectedEncryptedPIN
@@ -877,9 +800,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Self Selected PIN Key ID.
      * KeyId of the PIN encrypted value.<br />
-     *
      * Mandatory, if opted for self-selected PIN else optional.<br />
-     *
      * Max Length: 30
      */
     public function getSelfSelectedPINKeyID(): ?string
@@ -893,9 +814,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Self Selected PIN Key ID.
      * KeyId of the PIN encrypted value.<br />
-     *
      * Mandatory, if opted for self-selected PIN else optional.<br />
-     *
      * Max Length: 30
      *
      * @maps SelfSelectedPINKeyID
@@ -908,9 +827,7 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Self Selected PIN Key ID.
      * KeyId of the PIN encrypted value.<br />
-     *
      * Mandatory, if opted for self-selected PIN else optional.<br />
-     *
      * Max Length: 30
      */
     public function unsetSelfSelectedPINKeyID(): void
@@ -921,13 +838,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Self Selected PIN Session Key.
      * Encoded message of the TCS form which is used for encrypting the PIN of this card.<br />
-     *
      * The encode message forms are provided to clients by another API (“TCS”).<br />
-     *
      * Instructions to encrypt the PIN is covered in the related API specifications document.<br />
-     *
      * Mandatory –If opted for self-selected PIN else optional.
-     *
      * Max Length: 1024
      */
     public function getSelfSelectedPINSessionKey(): ?string
@@ -941,13 +854,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Self Selected PIN Session Key.
      * Encoded message of the TCS form which is used for encrypting the PIN of this card.<br />
-     *
      * The encode message forms are provided to clients by another API (“TCS”).<br />
-     *
      * Instructions to encrypt the PIN is covered in the related API specifications document.<br />
-     *
      * Mandatory –If opted for self-selected PIN else optional.
-     *
      * Max Length: 1024
      *
      * @maps SelfSelectedPINSessionKey
@@ -960,13 +869,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Self Selected PIN Session Key.
      * Encoded message of the TCS form which is used for encrypting the PIN of this card.<br />
-     *
      * The encode message forms are provided to clients by another API (“TCS”).<br />
-     *
      * Instructions to encrypt the PIN is covered in the related API specifications document.<br />
-     *
      * Mandatory –If opted for self-selected PIN else optional.
-     *
      * Max Length: 1024
      */
     public function unsetSelfSelectedPINSessionKey(): void
@@ -977,7 +882,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Card Group Id.
      * Card group ID<br />
-     *
      * Optional
      */
     public function getCardGroupId(): ?int
@@ -991,7 +895,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Card Group Id.
      * Card group ID<br />
-     *
      * Optional
      *
      * @maps CardGroupId
@@ -1004,7 +907,6 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Card Group Id.
      * Card group ID<br />
-     *
      * Optional
      */
     public function unsetCardGroupId(): void
@@ -1015,13 +917,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Card Group Name.
      * Card group name<br />
-     *
      * This field is mandatory when IsNewCardGroup parameter is set to true.<br />
-     *
      * Maximum field length: 40<br />
-     *
      * The value will be validated against a configured list of allowed characters.<br />
-     *
      * Default value for the configuration is: [0-9A-Z.]
      */
     public function getCardGroupName(): ?string
@@ -1035,13 +933,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Card Group Name.
      * Card group name<br />
-     *
      * This field is mandatory when IsNewCardGroup parameter is set to true.<br />
-     *
      * Maximum field length: 40<br />
-     *
      * The value will be validated against a configured list of allowed characters.<br />
-     *
      * Default value for the configuration is: [0-9A-Z.]
      *
      * @maps CardGroupName
@@ -1054,13 +948,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Card Group Name.
      * Card group name<br />
-     *
      * This field is mandatory when IsNewCardGroup parameter is set to true.<br />
-     *
      * Maximum field length: 40<br />
-     *
      * The value will be validated against a configured list of allowed characters.<br />
-     *
      * Default value for the configuration is: [0-9A-Z.]
      */
     public function unsetCardGroupName(): void
@@ -1072,9 +962,7 @@ class CardDetail implements \JsonSerializable
      * Returns Is New Card Group.
      * This need to be set to true if the card group needs to be created prior to processing the card order
      * and the card needs to be assigned to the newly created card group.<br />
-     *
      * Optional<br />
-     *
      * Default - False
      */
     public function getIsNewCardGroup(): ?bool
@@ -1086,9 +974,7 @@ class CardDetail implements \JsonSerializable
      * Sets Is New Card Group.
      * This need to be set to true if the card group needs to be created prior to processing the card order
      * and the card needs to be assigned to the newly created card group.<br />
-     *
      * Optional<br />
-     *
      * Default - False
      *
      * @maps IsNewCardGroup
@@ -1147,13 +1033,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Card Delivery Type.
      * Card delivery type.<br />
-     *
      * Mandatory <br />
-     *
      * Allowed Value: <br />
-     *
      * 1. Customer Address(Default) <br />
-     *
      * 2. New Delivery Address
      */
     public function getCardDeliveryType(): ?int
@@ -1164,13 +1046,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Card Delivery Type.
      * Card delivery type.<br />
-     *
      * Mandatory <br />
-     *
      * Allowed Value: <br />
-     *
      * 1. Customer Address(Default) <br />
-     *
      * 2. New Delivery Address
      *
      * @maps CardDeliveryType
@@ -1182,24 +1060,18 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Returns Card Contact.
-     * Request entity object for CardDeliveryContact
-     *
-     * Mandatory when CardDeliveryType is 2 else ignored.
      */
-    public function getCardContact(): ?CardDeliveryContact
+    public function getCardContact(): ?CardContact
     {
         return $this->cardContact;
     }
 
     /**
      * Sets Card Contact.
-     * Request entity object for CardDeliveryContact
-     *
-     * Mandatory when CardDeliveryType is 2 else ignored.
      *
      * @maps CardContact
      */
-    public function setCardContact(?CardDeliveryContact $cardContact): void
+    public function setCardContact(?CardContact $cardContact): void
     {
         $this->cardContact = $cardContact;
     }
@@ -1207,15 +1079,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns P in Delivery Address Type.
      * PIN delivery address type selection.<br />
-     *
      * Optional<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Customer Address(Default)<br />
-     *
      * 2. Card Address<br />
-     *
      * 3. New Delivery Address
      */
     public function getPINDeliveryAddressType(): ?int
@@ -1229,15 +1096,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets P in Delivery Address Type.
      * PIN delivery address type selection.<br />
-     *
      * Optional<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Customer Address(Default)<br />
-     *
      * 2. Card Address<br />
-     *
      * 3. New Delivery Address
      *
      * @maps PINDeliveryAddressType
@@ -1250,15 +1112,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets P in Delivery Address Type.
      * PIN delivery address type selection.<br />
-     *
      * Optional<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Customer Address(Default)<br />
-     *
      * 2. Card Address<br />
-     *
      * 3. New Delivery Address
      */
     public function unsetPINDeliveryAddressType(): void
@@ -1269,17 +1126,11 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns P in Advice Type.
      * PIN delivery method.<br />
-     *
      * Mandatory<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Paper<br />
-     *
      * 2. Email<br />
-     *
      * 3. SMS<br />
-     *
      * 4. None <br /> **Note:** Paper delivery not applicable for selfselctedPIN type
      */
     public function getPINAdviceType(): ?int
@@ -1290,17 +1141,11 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets P in Advice Type.
      * PIN delivery method.<br />
-     *
      * Mandatory<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Paper<br />
-     *
      * 2. Email<br />
-     *
      * 3. SMS<br />
-     *
      * 4. None <br /> **Note:** Paper delivery not applicable for selfselctedPIN type
      *
      * @maps PINAdviceType
@@ -1312,24 +1157,18 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Returns P in Contact.
-     * Request entity object for PINDeliveryContact
-     *
-     * Mandatory when PINDeliveryAddressType is ‘3’ (New delivery address). Else, ignored.
      */
-    public function getPINContact(): ?PINDeliveryContact
+    public function getPINContact(): ?PINContact
     {
         return $this->pINContact;
     }
 
     /**
      * Sets P in Contact.
-     * Request entity object for PINDeliveryContact
-     *
-     * Mandatory when PINDeliveryAddressType is ‘3’ (New delivery address). Else, ignored.
      *
      * @maps PINContact
      */
-    public function setPINContact(?PINDeliveryContact $pINContact): void
+    public function setPINContact(?PINContact $pINContact): void
     {
         $this->pINContact = $pINContact;
     }
@@ -1337,14 +1176,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Notify Caller.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * If true, the caller would be notified back with the status as success or failure after the card
      * order is processed.
-     *
      * This webhook feature has to be subscribed by the customer prior to use , please refer the API
      * documentation for the more details.
      */
@@ -1356,14 +1191,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Notify Caller.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * If true, the caller would be notified back with the status as success or failure after the card
      * order is processed.
-     *
      * This webhook feature has to be subscribed by the customer prior to use , please refer the API
      * documentation for the more details.
      *
@@ -1377,18 +1208,12 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Caller.
      * The caller to be notified with the status of the card order.<br />
-     *
      * Mandatory, if NotifyCaller is true.<br />
-     *
      * Maximum field length: 20<br />
-     *
      * Allowed values:<br />
-     *
      * • “NextGenUI”: This value to be used by next gen UI application.<br />
-     *
      * • “FleetHubUILifeTime”: This value to be used by Fleet Hub UI application for life time restriction
      * cards.<br />
-     *
      * Note: The values passed in this field are case insensitive
      */
     public function getCaller(): ?string
@@ -1402,18 +1227,12 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Caller.
      * The caller to be notified with the status of the card order.<br />
-     *
      * Mandatory, if NotifyCaller is true.<br />
-     *
      * Maximum field length: 20<br />
-     *
      * Allowed values:<br />
-     *
      * • “NextGenUI”: This value to be used by next gen UI application.<br />
-     *
      * • “FleetHubUILifeTime”: This value to be used by Fleet Hub UI application for life time restriction
      * cards.<br />
-     *
      * Note: The values passed in this field are case insensitive
      *
      * @maps Caller
@@ -1426,18 +1245,12 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Caller.
      * The caller to be notified with the status of the card order.<br />
-     *
      * Mandatory, if NotifyCaller is true.<br />
-     *
      * Maximum field length: 20<br />
-     *
      * Allowed values:<br />
-     *
      * • “NextGenUI”: This value to be used by next gen UI application.<br />
-     *
      * • “FleetHubUILifeTime”: This value to be used by Fleet Hub UI application for life time restriction
      * cards.<br />
-     *
      * Note: The values passed in this field are case insensitive
      */
     public function unsetCaller(): void
@@ -1448,11 +1261,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Notify Caller on Sync.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * If true, the caller would be notified back with the status as success or failed after the processed
      * card is synced with Gateway.
      */
@@ -1464,11 +1274,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Notify Caller on Sync.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * If true, the caller would be notified back with the status as success or failed after the processed
      * card is synced with Gateway.
      *
@@ -1482,14 +1289,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Validate Fleet Id.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * For cards ordered with Validate Fleet Id parameter set to true, CFGW will be notified to enable this
      * validation for the card.<br />
-     *
      * Note: When “FleetIdInputRequired” is not set on the card, validate fleet id will be considered false
      * regardless of the value passed on this parameter.
      */
@@ -1501,14 +1304,10 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Validate Fleet Id.
      * True/False.<br />
-     *
      * Optional.<br />
-     *
      * Default: False<br />
-     *
      * For cards ordered with Validate Fleet Id parameter set to true, CFGW will be notified to enable this
      * validation for the card.<br />
-     *
      * Note: When “FleetIdInputRequired” is not set on the card, validate fleet id will be considered false
      * regardless of the value passed on this parameter.
      *
@@ -1522,21 +1321,13 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Fleet Option.
      * Type of action will be performed for the card when the fleet Id is validated.<br />
-     *
      * Optional.<br />
-     *
      * Default: NO_VALIDATION<br />
-     *
      * Allowed values:<br />
-     *
      * • ALERT<br />
-     *
      * • DECLINE<br />
-     *
      * • DECLINE_ALERT<br />
-     *
      * • NO_VALIDATION<br />
-     *
      * Note: When FleetIdOption is not provided and validatefleetid is true then by default allowed value
      * is NO_VALIDATION.
      */
@@ -1551,21 +1342,13 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Fleet Option.
      * Type of action will be performed for the card when the fleet Id is validated.<br />
-     *
      * Optional.<br />
-     *
      * Default: NO_VALIDATION<br />
-     *
      * Allowed values:<br />
-     *
      * • ALERT<br />
-     *
      * • DECLINE<br />
-     *
      * • DECLINE_ALERT<br />
-     *
      * • NO_VALIDATION<br />
-     *
      * Note: When FleetIdOption is not provided and validatefleetid is true then by default allowed value
      * is NO_VALIDATION.
      *
@@ -1579,21 +1362,13 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Fleet Option.
      * Type of action will be performed for the card when the fleet Id is validated.<br />
-     *
      * Optional.<br />
-     *
      * Default: NO_VALIDATION<br />
-     *
      * Allowed values:<br />
-     *
      * • ALERT<br />
-     *
      * • DECLINE<br />
-     *
      * • DECLINE_ALERT<br />
-     *
      * • NO_VALIDATION<br />
-     *
      * Note: When FleetIdOption is not provided and validatefleetid is true then by default allowed value
      * is NO_VALIDATION.
      */
@@ -1605,12 +1380,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Bundle Id.
      * Gateway Bundle Id to which the ordered card will be added.<br />
-     *
      * Optional.<br />
-     *
      * When a valid bundle Id is passed, upon successful processing of Card Order, the card will be added
      * to the provided bundle in Gateway.
-     *
      * If card bundle has crossed the limit of 500 cards or if the card bundle is not available in the
      * gateway then the background services will fail to added the card to the bundle.
      */
@@ -1625,12 +1397,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Bundle Id.
      * Gateway Bundle Id to which the ordered card will be added.<br />
-     *
      * Optional.<br />
-     *
      * When a valid bundle Id is passed, upon successful processing of Card Order, the card will be added
      * to the provided bundle in Gateway.
-     *
      * If card bundle has crossed the limit of 500 cards or if the card bundle is not available in the
      * gateway then the background services will fail to added the card to the bundle.
      *
@@ -1644,12 +1413,9 @@ class CardDetail implements \JsonSerializable
     /**
      * Unsets Bundle Id.
      * Gateway Bundle Id to which the ordered card will be added.<br />
-     *
      * Optional.<br />
-     *
      * When a valid bundle Id is passed, upon successful processing of Card Order, the card will be added
      * to the provided bundle in Gateway.
-     *
      * If card bundle has crossed the limit of 500 cards or if the card bundle is not available in the
      * gateway then the background services will fail to added the card to the bundle.
      */
@@ -1662,15 +1428,10 @@ class CardDetail implements \JsonSerializable
      * Returns Usage Restriction Action.
      * The value indicates what actions is to be performed with respect to usage restrictions on the card
      * being ordered.<br />
-     *
      * UsageRestrictionAction is mandatory when bundle Id is passed. Else ignored.<br />
-     *
      * Allowed values: –<br />
-     *
      * • Update<br />
-     *
      * • Default<br />
-     *
      * • None
      */
     public function getUsageRestrictionAction(): ?string
@@ -1685,15 +1446,10 @@ class CardDetail implements \JsonSerializable
      * Sets Usage Restriction Action.
      * The value indicates what actions is to be performed with respect to usage restrictions on the card
      * being ordered.<br />
-     *
      * UsageRestrictionAction is mandatory when bundle Id is passed. Else ignored.<br />
-     *
      * Allowed values: –<br />
-     *
      * • Update<br />
-     *
      * • Default<br />
-     *
      * • None
      *
      * @maps UsageRestrictionAction
@@ -1707,15 +1463,10 @@ class CardDetail implements \JsonSerializable
      * Unsets Usage Restriction Action.
      * The value indicates what actions is to be performed with respect to usage restrictions on the card
      * being ordered.<br />
-     *
      * UsageRestrictionAction is mandatory when bundle Id is passed. Else ignored.<br />
-     *
      * Allowed values: –<br />
-     *
      * • Update<br />
-     *
      * • Default<br />
-     *
      * • None
      */
     public function unsetUsageRestrictionAction(): void
@@ -1727,17 +1478,11 @@ class CardDetail implements \JsonSerializable
      * Returns Product Restriction Action.
      * The value indicates what actions is to be performed with respect to product restrictions on the card
      * being ordered.<br />
-     *
      * ProductRestrictionAction is mandatory when bundle Id is passed. Else ignored.<br />
-     *
      * Allowed values: -<br />
-     *
      * • Update<br />
-     *
      * • Default<br />
-     *
      * • None<br />
-     *
      * Note: This field is applicable when product restrictions
      */
     public function getProductRestrictionAction(): ?string
@@ -1752,17 +1497,11 @@ class CardDetail implements \JsonSerializable
      * Sets Product Restriction Action.
      * The value indicates what actions is to be performed with respect to product restrictions on the card
      * being ordered.<br />
-     *
      * ProductRestrictionAction is mandatory when bundle Id is passed. Else ignored.<br />
-     *
      * Allowed values: -<br />
-     *
      * • Update<br />
-     *
      * • Default<br />
-     *
      * • None<br />
-     *
      * Note: This field is applicable when product restrictions
      *
      * @maps ProductRestrictionAction
@@ -1776,17 +1515,11 @@ class CardDetail implements \JsonSerializable
      * Unsets Product Restriction Action.
      * The value indicates what actions is to be performed with respect to product restrictions on the card
      * being ordered.<br />
-     *
      * ProductRestrictionAction is mandatory when bundle Id is passed. Else ignored.<br />
-     *
      * Allowed values: -<br />
-     *
      * • Update<br />
-     *
      * • Default<br />
-     *
      * • None<br />
-     *
      * Note: This field is applicable when product restrictions
      */
     public function unsetProductRestrictionAction(): void
@@ -1797,11 +1530,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Products.
      * An array of 3-digit global product codes.<br />
-     *
      * Optional.<br />
-     *
      * Default restrictions will be applied both products and product groups are null or empty.<br />
-     *
      * Note: This field is applicable when product restrictions are migrated to CFGW else, it will be
      * ignored.
      *
@@ -1815,11 +1545,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Products.
      * An array of 3-digit global product codes.<br />
-     *
      * Optional.<br />
-     *
      * Default restrictions will be applied both products and product groups are null or empty.<br />
-     *
      * Note: This field is applicable when product restrictions are migrated to CFGW else, it will be
      * ignored.
      *
@@ -1835,11 +1562,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Returns Product Groups.
      * An array of product group ids.<br />
-     *
      * Optional.<br />
-     *
      * Default restrictions will be applied both products and product groups are null or empty.<br />
-     *
      * Note: This field is applicable when product restrictions are migrated to CFGW else, it will be
      * ignored
      *
@@ -1853,11 +1577,8 @@ class CardDetail implements \JsonSerializable
     /**
      * Sets Product Groups.
      * An array of product group ids.<br />
-     *
      * Optional.<br />
-     *
      * Default restrictions will be applied both products and product groups are null or empty.<br />
-     *
      * Note: This field is applicable when product restrictions are migrated to CFGW else, it will be
      * ignored
      *
@@ -1951,7 +1672,6 @@ class CardDetail implements \JsonSerializable
      * Returns Client Reference Id.
      * This is the Client Reference Id of card in the order which needs to be passed by the client.This
      * will be playback in the ordercard enquiry<br />
-     *
      * Optional
      */
     public function getClientReferenceId(): ?string
@@ -1966,7 +1686,6 @@ class CardDetail implements \JsonSerializable
      * Sets Client Reference Id.
      * This is the Client Reference Id of card in the order which needs to be passed by the client.This
      * will be playback in the ordercard enquiry<br />
-     *
      * Optional
      *
      * @maps ClientReferenceId
@@ -1980,7 +1699,6 @@ class CardDetail implements \JsonSerializable
      * Unsets Client Reference Id.
      * This is the Client Reference Id of card in the order which needs to be passed by the client.This
      * will be playback in the ordercard enquiry<br />
-     *
      * Optional
      */
     public function unsetClientReferenceId(): void
@@ -1990,12 +1708,6 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Returns Auto Renew.
-     * Whether to reissue card automatically when nearing the expiry.
-     *
-     * Allowed values: -
-     * 1.    As per card type setting (Default).
-     * 2.    Card will be Reissued when nearing its expiry date.
-     * 3.    Card will not be Reissued.
      */
     public function getAutoRenew(): ?int
     {
@@ -2004,12 +1716,6 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Sets Auto Renew.
-     * Whether to reissue card automatically when nearing the expiry.
-     *
-     * Allowed values: -
-     * 1.    As per card type setting (Default).
-     * 2.    Card will be Reissued when nearing its expiry date.
-     * 3.    Card will not be Reissued.
      *
      * @maps AutoRenew
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailAutoRenewEnum::checkValue

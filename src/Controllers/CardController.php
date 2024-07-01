@@ -16,15 +16,16 @@ use Core\Request\Parameters\QueryParam;
 use Core\Response\Types\ErrorType;
 use CoreInterfaces\Core\Request\RequestMethod;
 use ShellCardManagementAPIsLib\Exceptions\ApiException;
-use ShellCardManagementAPIsLib\Exceptions\DefaultErrorException;
 use ShellCardManagementAPIsLib\Exceptions\ErrorObjectException;
-use ShellCardManagementAPIsLib\Exceptions\ErrorUserAccessError1Exception;
 use ShellCardManagementAPIsLib\Models\AutoRenewCardRequest;
 use ShellCardManagementAPIsLib\Models\AutoRenewCardResponse;
-use ShellCardManagementAPIsLib\Models\CancelCardRequest;
 use ShellCardManagementAPIsLib\Models\CancelCardResponse;
 use ShellCardManagementAPIsLib\Models\CardDetailsRequest;
 use ShellCardManagementAPIsLib\Models\CardDetailsResponse;
+use ShellCardManagementAPIsLib\Models\CardManagementV1CancelRequest;
+use ShellCardManagementAPIsLib\Models\CardManagementV1OrdercardRequest;
+use ShellCardManagementAPIsLib\Models\CardManagementV1PinreminderRequest;
+use ShellCardManagementAPIsLib\Models\CardManagementV1UpdatestatusRequest;
 use ShellCardManagementAPIsLib\Models\CardMoveRequest;
 use ShellCardManagementAPIsLib\Models\CardMoveResponse;
 use ShellCardManagementAPIsLib\Models\CardSearchResponse;
@@ -35,16 +36,13 @@ use ShellCardManagementAPIsLib\Models\DeliveryAddressUpdateResponse;
 use ShellCardManagementAPIsLib\Models\GeneratePINKeyResponse;
 use ShellCardManagementAPIsLib\Models\OrderCardEnquiryRequest;
 use ShellCardManagementAPIsLib\Models\OrderCardEnquiryResponse;
-use ShellCardManagementAPIsLib\Models\OrderCardRequest;
 use ShellCardManagementAPIsLib\Models\OrderCardResponse;
-use ShellCardManagementAPIsLib\Models\PINReminderRequest;
 use ShellCardManagementAPIsLib\Models\PINReminderResponse;
 use ShellCardManagementAPIsLib\Models\PurchaseCategoryRequest;
 use ShellCardManagementAPIsLib\Models\PurchaseCategoryResponse;
 use ShellCardManagementAPIsLib\Models\ScheduleCardBlockRequest;
 use ShellCardManagementAPIsLib\Models\ScheduleCardBlockResponse;
 use ShellCardManagementAPIsLib\Models\SearchCardRequest;
-use ShellCardManagementAPIsLib\Models\UpdateCardStatusRequest;
 use ShellCardManagementAPIsLib\Models\UpdateCardStatusResponse;
 use ShellCardManagementAPIsLib\Models\UpdateMPayRegStatusRequest;
 use ShellCardManagementAPIsLib\Models\UpdateMPayRegStatusResponse;
@@ -54,7 +52,6 @@ class CardController extends BaseController
     /**
      * This API allows to search for Shell Cards in the Shell Card Platform. It provides flexible search
      * criteria and supports paging.
-     *
      * #### New version updates
      *
      * * Oauth authentication to access the API
@@ -101,7 +98,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function searchCard(string $requestId, ?SearchCardRequest $body = null): CardSearchResponse
+    public function searchcard(string $requestId, ?SearchCardRequest $body = null): CardSearchResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/search')
             ->auth('BearerToken')
@@ -115,17 +112,17 @@ class CardController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectException::class
                 )
             )
@@ -133,16 +130,16 @@ class CardController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectException::class
                 )
             )
@@ -187,7 +184,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardSummary(string $requestId, ?CardSummaryRequest $body = null): CardSummaryResponse
+    public function cardsummary(string $requestId, ?CardSummaryRequest $body = null): CardSummaryResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/summary')
             ->auth('BearerToken')
@@ -201,34 +198,28 @@ class CardController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectException::class
                 )
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn('403', ErrorType::init('Forbidden'))
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectException::class
                 )
             )
@@ -300,13 +291,13 @@ class CardController extends BaseController
      *
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param OrderCardRequest|null $body Order card request body
+     * @param CardManagementV1OrdercardRequest|null $body Order card request body
      *
      * @return OrderCardResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function orderCard(string $requestId, ?OrderCardRequest $body = null): OrderCardResponse
+    public function cardordercard(string $requestId, ?CardManagementV1OrdercardRequest $body = null): OrderCardResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/ordercard')
             ->auth('BearerToken')
@@ -319,37 +310,25 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server cannot or will not process the request due to something that is per' .
+                'ceived to be a client error (e.g., malformed request syntax, invalid request me' .
+                'ssage framing, or deceptive request routing).')
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn('403', ErrorType::init('Forbidden'))
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
-                ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server encountered an unexpected condition that  prevented it from fulfill' .
+                'ing the request.')
             )
             ->type(OrderCardResponse::class);
 
@@ -386,7 +365,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function orderCardEnquiry(
+    public function cardordercardenquiry(
         string $requestId,
         ?OrderCardEnquiryRequest $body = null
     ): OrderCardEnquiryResponse {
@@ -401,37 +380,25 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server cannot or will not process the request due to something that is per' .
+                'ceived to be a client error (e.g., malformed request syntax, invalid request me' .
+                'ssage framing, or deceptive request routing).')
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn('403', ErrorType::init('Forbidden'))
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
-                ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server encountered an unexpected condition that  prevented it from fulfill' .
+                'ing the request.')
             )
             ->type(OrderCardEnquiryResponse::class);
 
@@ -513,13 +480,13 @@ class CardController extends BaseController
      *
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param CancelCardRequest|null $body Update status request body
+     * @param CardManagementV1CancelRequest|null $body Update status request body
      *
      * @return CancelCardResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardCancel(string $requestId, ?CancelCardRequest $body = null): CancelCardResponse
+    public function cardcancel(string $requestId, ?CardManagementV1CancelRequest $body = null): CancelCardResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/cancel')
             ->auth('BearerToken')
@@ -533,36 +500,27 @@ class CardController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectException::class
                 )
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn('403', ErrorType::init('Forbidden'))
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
-                ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server encountered an unexpected condition that  prevented it from fulfill' .
+                'ing the request.')
             )
             ->type(CancelCardResponse::class);
 
@@ -675,15 +633,15 @@ class CardController extends BaseController
      *
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param UpdateCardStatusRequest|null $body Update status request body
+     * @param CardManagementV1UpdatestatusRequest|null $body Update status request body
      *
      * @return UpdateCardStatusResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardUpdateStatus(
+    public function cardupdatestatus(
         string $requestId,
-        ?UpdateCardStatusRequest $body = null
+        ?CardManagementV1UpdatestatusRequest $body = null
     ): UpdateCardStatusResponse {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/updatestatus')
             ->auth('BearerToken')
@@ -696,37 +654,25 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server cannot or will not process the request due to something that is per' .
+                'ceived to be a client error (e.g., malformed request syntax, invalid request me' .
+                'ssage framing, or deceptive request routing).')
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn('403', ErrorType::init('Forbidden'))
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
-                ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server encountered an unexpected condition that  prevented it from fulfill' .
+                'ing the request.')
             )
             ->type(UpdateCardStatusResponse::class);
 
@@ -761,7 +707,7 @@ class CardController extends BaseController
         ?PurchaseCategoryRequest $body = null
     ): PurchaseCategoryResponse {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/master/purchasecategory')
-            ->auth('BasicAuth')
+            ->auth('BearerToken')
             ->parameters(
                 HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
@@ -772,42 +718,29 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request  due to something that i" .
-                    "s perceived to be a client\r\n error (e.g., malformed request syntax, inval" .
-                    "id \r\n request message framing, or deceptive request routing).",
-                    DefaultErrorException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
             ->throwErrorOn(
                 '403',
-                ErrorType::init(
-                    "The server understood the request but refuses to authorize it.\r\n",
-                    ErrorUserAccessError1Exception::class
-                )
+                ErrorType::init('The server understood the request but refuses to authorize it.')
             )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition the prevented it from fulfi" .
-                    "lling the request.\r\n",
-                    DefaultErrorException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(PurchaseCategoryResponse::class);
@@ -837,13 +770,13 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardDetails(
+    public function carddetails(
         string $apikey,
         string $requestId,
         ?CardDetailsRequest $body = null
     ): CardDetailsResponse {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/card/card')
-            ->auth('BasicAuth')
+            ->auth('BearerToken')
             ->parameters(
                 HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
@@ -854,42 +787,29 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request  due to something that i" .
-                    "s perceived to be a client\r\n error (e.g., malformed request syntax, inval" .
-                    "id \r\n request message framing, or deceptive request routing).",
-                    DefaultErrorException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
             ->throwErrorOn(
                 '403',
-                ErrorType::init(
-                    "The server understood the request but refuses to authorize it.\r\n",
-                    ErrorUserAccessError1Exception::class
-                )
+                ErrorType::init('The server understood the request but refuses to authorize it.')
             )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition the prevented it from fulfi" .
-                    "lling the request.\r\n",
-                    DefaultErrorException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(CardDetailsResponse::class);
@@ -945,6 +865,7 @@ class CardController extends BaseController
      * according to the customers local date
      *
      *
+     *
      * @param string $apikey This is the API key of the specific environment which needs to be
      *        passed by the client.
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
@@ -958,7 +879,7 @@ class CardController extends BaseController
     public function cardMove(string $apikey, string $requestId, ?CardMoveRequest $body = null): CardMoveResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/card/move')
-            ->auth('BasicAuth')
+            ->auth('BearerToken')
             ->parameters(
                 HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
@@ -969,42 +890,29 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request  due to something that i" .
-                    "s perceived to be a client\r\n error (e.g., malformed request syntax, inval" .
-                    "id \r\n request message framing, or deceptive request routing).",
-                    DefaultErrorException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
             ->throwErrorOn(
                 '403',
-                ErrorType::init(
-                    "The server understood the request but refuses to authorize it.\r\n",
-                    ErrorUserAccessError1Exception::class
-                )
+                ErrorType::init('The server understood the request but refuses to authorize it.')
             )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition the prevented it from fulfi" .
-                    "lling the request.\r\n",
-                    DefaultErrorException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(CardMoveResponse::class);
@@ -1058,14 +966,16 @@ class CardController extends BaseController
      *
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param PINReminderRequest|null $body PIN reminder request body
+     * @param CardManagementV1PinreminderRequest|null $body PIN reminder request body
      *
      * @return PINReminderResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardPinReminder(string $requestId, ?PINReminderRequest $body = null): PINReminderResponse
-    {
+    public function cardpinreminder(
+        string $requestId,
+        ?CardManagementV1PinreminderRequest $body = null
+    ): PINReminderResponse {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/pinreminder')
             ->auth('BearerToken')
             ->parameters(
@@ -1078,17 +988,17 @@ class CardController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\r\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\r\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectException::class
                 )
             )
@@ -1096,16 +1006,16 @@ class CardController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\r\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\r\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectException::class
                 )
             )
@@ -1206,37 +1116,25 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server cannot or will not process the request due to something that is per' .
+                'ceived to be a client error (e.g., malformed request syntax, invalid request me' .
+                'ssage framing, or deceptive request routing).')
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn('403', ErrorType::init('Forbidden'))
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
-                ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server encountered an unexpected condition that  prevented it from fulfill' .
+                'ing the request.')
             )
             ->type(ScheduleCardBlockResponse::class);
 
@@ -1285,7 +1183,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function autoRenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoRenewCardResponse
+    public function autorenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoRenewCardResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/autorenew')
             ->auth('BearerToken')
@@ -1298,37 +1196,25 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server cannot or will not process the request due to something that is per' .
+                'ceived to be a client error (e.g., malformed request syntax, invalid request me' .
+                'ssage framing, or deceptive request routing).')
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn('403', ErrorType::init('Forbidden'))
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
-                ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server encountered an unexpected condition that  prevented it from fulfill' .
+                'ing the request.')
             )
             ->type(AutoRenewCardResponse::class);
 
@@ -1355,7 +1241,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function updateMobilePaymentRegistrationStatus(
+    public function updatemobilepaymentregistrationstatus(
         string $requestId,
         ?UpdateMPayRegStatusRequest $body = null
     ): UpdateMPayRegStatusResponse {
@@ -1374,36 +1260,27 @@ class CardController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectException::class
                 )
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn('403', ErrorType::init('Forbidden'))
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
-                ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The server encountered an unexpected condition that  prevented it from fulfill' .
+                'ing the request.')
             )
             ->type(UpdateMPayRegStatusResponse::class);
 
@@ -1425,7 +1302,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function getKey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
+    public function getkey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::GET, '/pin-management/v1/generatepinkeys')
             ->auth('BearerToken')
@@ -1434,42 +1311,29 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request  due to something that i" .
-                    "s perceived to be a client\r\n error (e.g., malformed request syntax, inval" .
-                    "id \r\n request message framing, or deceptive request routing).",
-                    DefaultErrorException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
             ->throwErrorOn(
                 '403',
-                ErrorType::init(
-                    "The server understood the request but refuses to authorize it.\r\n",
-                    ErrorUserAccessError1Exception::class
-                )
+                ErrorType::init('The server understood the request but refuses to authorize it.')
             )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition the prevented it from fulfi" .
-                    "lling the request.\r\n",
-                    DefaultErrorException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(GeneratePINKeyResponse::class);
@@ -1480,7 +1344,6 @@ class CardController extends BaseController
     /**
      * This API allows users to update the card’s delivery addresses (card delivery address used for card
      * re-issue and PIN delivery address used when PIN reminder is requested)
-     *
      * #### Supported operations
      *
      * * card delivery address update
@@ -1493,7 +1356,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function deliveryAddressUpdate(
+    public function deliveryaddressupdate(
         string $apikey,
         ?DeliveryAddressUpdateRequest $body = null
     ): DeliveryAddressUpdateResponse {
@@ -1508,42 +1371,29 @@ class CardController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request  due to something that i" .
-                    "s perceived to be a client\r\n error (e.g., malformed request syntax, inval" .
-                    "id \r\n request message framing, or deceptive request routing).",
-                    DefaultErrorException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
             ->throwErrorOn(
                 '403',
-                ErrorType::init(
-                    "The server understood the request but refuses to authorize it.\r\n",
-                    ErrorUserAccessError1Exception::class
-                )
+                ErrorType::init('The server understood the request but refuses to authorize it.')
             )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\r\n",
-                    DefaultErrorException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition the prevented it from fulfi" .
-                    "lling the request.\r\n",
-                    DefaultErrorException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(DeliveryAddressUpdateResponse::class);

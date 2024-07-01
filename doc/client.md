@@ -5,8 +5,7 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| `url` | `string(UrlEnum)` | This variable specifies the type of environment. Environments:<br><br>* `api.shell.com` - Production<br>* `api-test.shell.com` - SIT<br>*Default*: `UrlEnum::ENUM_APITESTSHELLCOMTEST` |
-| `environment` | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
+| `environment` | `Environment` | The API environment. <br> **Default: `Environment.SIT`** |
 | `timeout` | `int` | Timeout for API calls in seconds.<br>*Default*: `0` |
 | `enableRetries` | `bool` | Whether to enable retries and backoff feature.<br>*Default*: `false` |
 | `numberOfRetries` | `int` | The number of retries to make.<br>*Default*: `0` |
@@ -35,8 +34,7 @@ $client = ShellCardManagementAPIsClientBuilder::init()
             'OAuthClientSecret'
         )
     )
-    ->environment('production')
-    ->url(UrlEnum::ENUM_APITESTSHELLCOMTEST)
+    ->environment('SIT')
     ->build();
 ```
 

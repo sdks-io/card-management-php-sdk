@@ -688,13 +688,9 @@ class DeliveryAddresses implements \JsonSerializable
     /**
      * Returns Address Type.
      * Delivery address type.
-     *
      * Possible Values:
-     *
      * 1 – Card and PIN delivery address
-     *
      * 2 – Card delivery address
-     *
      * 3 – PIN delivery address
      */
     public function getAddressType(): ?int
@@ -708,13 +704,9 @@ class DeliveryAddresses implements \JsonSerializable
     /**
      * Sets Address Type.
      * Delivery address type.
-     *
      * Possible Values:
-     *
      * 1 – Card and PIN delivery address
-     *
      * 2 – Card delivery address
-     *
      * 3 – PIN delivery address
      *
      * @maps AddressType
@@ -727,13 +719,9 @@ class DeliveryAddresses implements \JsonSerializable
     /**
      * Unsets Address Type.
      * Delivery address type.
-     *
      * Possible Values:
-     *
      * 1 – Card and PIN delivery address
-     *
      * 2 – Card delivery address
-     *
      * 3 – PIN delivery address
      */
     public function unsetAddressType(): void

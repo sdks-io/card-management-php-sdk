@@ -136,7 +136,6 @@ class CreateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function getPayerNumber(): ?string
@@ -147,7 +146,6 @@ class CreateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
      *
      * @maps PayerNumber
@@ -160,7 +158,6 @@ class CreateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id (i.e., Customer Id of the Payment Customer in H3 Cards Platform) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
      */
     public function getPayerId(): ?int
@@ -171,7 +168,6 @@ class CreateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id (i.e., Customer Id of the Payment Customer in H3 Cards Platform) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
      *
      * @maps PayerId
@@ -184,7 +180,6 @@ class CreateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed else Mandatory.
      */
     public function getAccountId(): ?int
@@ -195,7 +190,6 @@ class CreateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID of the customer.
-     *
      * Optional if AccountNumber is passed else Mandatory.
      *
      * @maps AccountId
@@ -208,7 +202,6 @@ class CreateCardGroupRequest implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed else Mandatory.
      */
     public function getAccountNumber(): ?string
@@ -219,7 +212,6 @@ class CreateCardGroupRequest implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Optional if AccountId is passed else Mandatory.
      *
      * @maps AccountNumber
@@ -282,9 +274,7 @@ class CreateCardGroupRequest implements \JsonSerializable
      * Returns Cards.
      * List of cards to be moved to the new card group. This list is optional – no card will be moved to
      * the new card group when the list is empty.
-     *
      * The fields of Card entity are described in the below rows.
-     *
      * The maximum number of cards allowed to be moved in a request is 500 (configurable). The whole
      * request including the card group creation will be rejected when the limit is exceeded.
      *
@@ -299,9 +289,7 @@ class CreateCardGroupRequest implements \JsonSerializable
      * Sets Cards.
      * List of cards to be moved to the new card group. This list is optional – no card will be moved to
      * the new card group when the list is empty.
-     *
      * The fields of Card entity are described in the below rows.
-     *
      * The maximum number of cards allowed to be moved in a request is 500 (configurable). The whole
      * request including the card group creation will be rejected when the limit is exceeded.
      *

@@ -27,15 +27,6 @@ interface ConfigurationInterface extends HttpConfigurations
     public function getEnvironment(): string;
 
     /**
-     * Get this variable specifies the type of environment. Environments:
-     *
-     * * * `api.shell.com` - Production
-     *
-     * * * `api-test.shell.com` - SIT
-     */
-    public function getUrl(): string;
-
-    /**
      * Get the credentials to use with BasicAuth
      */
     public function getBasicAuthCredentials(): BasicAuthCredentials;
@@ -62,5 +53,5 @@ interface ConfigurationInterface extends HttpConfigurations
      *
      * @return string Base URI
      */
-    public function getBaseUri(string $server = Server::DEFAULT_): string;
+    public function getBaseUri(string $server = Server::SHELL): string;
 }

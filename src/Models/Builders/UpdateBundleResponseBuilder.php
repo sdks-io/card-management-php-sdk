@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Models\ErrorDetails;
+use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\UpdateBundleResponse;
 
 /**
@@ -49,20 +49,65 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Unsets request id field.
      */
-    public function status(?string $value): self
+    public function unsetRequestId(): self
     {
-        $this->instance->setStatus($value);
+        $this->instance->unsetRequestId();
         return $this;
     }
 
     /**
-     * Sets errors field.
+     * Sets request action status field.
      */
-    public function errors(?ErrorDetails $value): self
+    public function requestActionStatus(?ErrorStatus $value): self
     {
-        $this->instance->setErrors($value);
+        $this->instance->setRequestActionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets day time restriction status field.
+     */
+    public function dayTimeRestrictionStatus(?ErrorStatus $value): self
+    {
+        $this->instance->setDayTimeRestrictionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets location restriction status field.
+     */
+    public function locationRestrictionStatus(?ErrorStatus $value): self
+    {
+        $this->instance->setLocationRestrictionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets product restriction status field.
+     */
+    public function productRestrictionStatus(?ErrorStatus $value): self
+    {
+        $this->instance->setProductRestrictionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets usage restriction status field.
+     */
+    public function usageRestrictionStatus(?ErrorStatus $value): self
+    {
+        $this->instance->setUsageRestrictionStatus($value);
+        return $this;
+    }
+
+    /**
+     * Sets error field.
+     */
+    public function error(?ErrorStatus $value): self
+    {
+        $this->instance->setError($value);
         return $this;
     }
 

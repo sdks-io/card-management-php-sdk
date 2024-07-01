@@ -32,15 +32,10 @@ class PINAdviceTypes implements \JsonSerializable
     /**
      * Returns P in Advice Type ID.
      * Id of of PIN advice type.
-     *
      * Possible Values:
-     *
      * 1. Paper
-     *
      * 2. Email
-     *
      * 3. SMS
-     *
      * 4. None
      */
     public function getPINAdviceTypeID(): ?int
@@ -54,15 +49,10 @@ class PINAdviceTypes implements \JsonSerializable
     /**
      * Sets P in Advice Type ID.
      * Id of of PIN advice type.
-     *
      * Possible Values:
-     *
      * 1. Paper
-     *
      * 2. Email
-     *
      * 3. SMS
-     *
      * 4. None
      *
      * @maps PINAdviceTypeID
@@ -75,15 +65,10 @@ class PINAdviceTypes implements \JsonSerializable
     /**
      * Unsets P in Advice Type ID.
      * Id of of PIN advice type.
-     *
      * Possible Values:
-     *
      * 1. Paper
-     *
      * 2. Email
-     *
      * 3. SMS
-     *
      * 4. None
      */
     public function unsetPINAdviceTypeID(): void

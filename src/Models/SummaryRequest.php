@@ -14,7 +14,6 @@ use stdClass;
 
 /**
  * Encapsulates the details of a Summary Request.
- *
  * Summary Request fields are same as the Search Request base class and no new fields are required.
  */
 class SummaryRequest implements \JsonSerializable
@@ -261,7 +260,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer. <br />
-     *
      * Optional If ColCo Id or ColCoCountryCode is passed else Mandatory.<br />
      */
     public function getColCoCode(): ?int
@@ -275,7 +273,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer. <br />
-     *
      * Optional If ColCo Id or ColCoCountryCode is passed else Mandatory.<br />
      *
      * @maps ColCoCode
@@ -288,7 +285,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Col Co Code.
      * Collecting Company Code (Shell Code) of the selected payer. <br />
-     *
      * Optional If ColCo Id or ColCoCountryCode is passed else Mandatory.<br />
      */
     public function unsetColCoCode(): void
@@ -299,7 +295,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Col Co Country Code.
      * The 2 character ISO Code for the customer and card owning country.<br />
-     *
      * Optional If ColCoId or ColCoCode is passed else Mandatory.<br />
      */
     public function getColCoCountryCode(): ?string
@@ -313,7 +308,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Col Co Country Code.
      * The 2 character ISO Code for the customer and card owning country.<br />
-     *
      * Optional If ColCoId or ColCoCode is passed else Mandatory.<br />
      *
      * @maps ColCoCountryCode
@@ -326,7 +320,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Col Co Country Code.
      * The 2 character ISO Code for the customer and card owning country.<br />
-     *
      * Optional If ColCoId or ColCoCode is passed else Mandatory.<br />
      */
     public function unsetColCoCountryCode(): void
@@ -337,7 +330,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Col Co Id.
      * Collecting Company Id (in ) of the selected payer.<br />
-     *
      * Optional If ColCo Codeor ColCoCountryCode is passed else Mandatory <br />
      */
     public function getColCoId(): ?int
@@ -351,7 +343,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Col Co Id.
      * Collecting Company Id (in ) of the selected payer.<br />
-     *
      * Optional If ColCo Codeor ColCoCountryCode is passed else Mandatory <br />
      *
      * @maps ColCoId
@@ -364,7 +355,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Col Co Id.
      * Collecting Company Id (in ) of the selected payer.<br />
-     *
      * Optional If ColCo Codeor ColCoCountryCode is passed else Mandatory <br />
      */
     public function unsetColCoId(): void
@@ -375,7 +365,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer ) of the selected payer.<br />
-     *
      * Optional if PayerNumber is passed else Mandatory
      */
     public function getPayerId(): ?int
@@ -389,7 +378,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer ) of the selected payer.<br />
-     *
      * Optional if PayerNumber is passed else Mandatory
      *
      * @maps PayerId
@@ -402,7 +390,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer ) of the selected payer.<br />
-     *
      * Optional if PayerNumber is passed else Mandatory
      */
     public function unsetPayerId(): void
@@ -413,7 +400,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.<br />
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function getPayerNumber(): ?string
@@ -427,7 +413,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.<br />
-     *
      * Optional if PayerId is passed else Mandatory
      *
      * @maps PayerNumber
@@ -440,7 +425,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number of the selected payer.<br />
-     *
      * Optional if PayerId is passed else Mandatory
      */
     public function unsetPayerNumber(): void
@@ -451,11 +435,8 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Card Group Id.
      * Card group id.<br />
-     *
      * Optional. <br />
-     *
      * This input is a search criterion, if given.<br />
-     *
      * When -1 is passed, those cards that does not belong to any card group will be returned.
      */
     public function getCardGroupId(): ?int
@@ -469,11 +450,8 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Card Group Id.
      * Card group id.<br />
-     *
      * Optional. <br />
-     *
      * This input is a search criterion, if given.<br />
-     *
      * When -1 is passed, those cards that does not belong to any card group will be returned.
      *
      * @maps CardGroupId
@@ -486,11 +464,8 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Card Group Id.
      * Card group id.<br />
-     *
      * Optional. <br />
-     *
      * This input is a search criterion, if given.<br />
-     *
      * When -1 is passed, those cards that does not belong to any card group will be returned.
      */
     public function unsetCardGroupId(): void
@@ -501,11 +476,8 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Card Group Name.
      * Card group name.<br />
-     *
      * Optional.<br />
-     *
      * This input is a search criterion, if given.<br />
-     *
      * If CardGroupId is provided then this search criterion will be ignored, else, those cards that have
      * the card group name completely matching with the entered value will be returned
      */
@@ -520,11 +492,8 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Card Group Name.
      * Card group name.<br />
-     *
      * Optional.<br />
-     *
      * This input is a search criterion, if given.<br />
-     *
      * If CardGroupId is provided then this search criterion will be ignored, else, those cards that have
      * the card group name completely matching with the entered value will be returned
      *
@@ -538,11 +507,8 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Card Group Name.
      * Card group name.<br />
-     *
      * Optional.<br />
-     *
      * This input is a search criterion, if given.<br />
-     *
      * If CardGroupId is provided then this search criterion will be ignored, else, those cards that have
      * the card group name completely matching with the entered value will be returned
      */
@@ -554,42 +520,27 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Card Status.
      * Status of the card.<br />
-     *
      * Mandatory.<br />
-     *
      * Multiple statuses are allowed to be included in the search criteria.<br />
-     *
      * CardStatus filter accepts either of the two values for each status as described below. However, the
      * output field “StatusDescription” is aligned with second value highlighted in italics.<br />
-     *
      * Below are the possible allowed statuses: <br />
-     *
      * • ACTIVE or Active – Cards at status Active (The result will include all the cards having the
      * following intermediate statuses as defined s, if the IncludeIntermediateStatus flag is true: Active
      * (Block in progress), Active (Cancel in progress), Active (Marked as damaged)), New (Cancel in
      * progress).<br />
-     *
      * • ON_ORDER or New – Cards at status New <br />
-     *
      * • EXPIRED or Expired – Cards at status Expired<br />
-     *
      * • BLOCKED or Blocked Card – Cards at status Block (The result will include all cards having the
      * following intermediate status as defined, if the IncludeIntermediateStatus flag is true: Blocked
      * card (Unblock in progress))<br />
-     *
      * • TEMP_BLOCKED_CUSTOMER or Temporary Block(Customer) – Cards at status Temporary Blocked By
      * Customer<br />
-     *
      * • TEMP_BLOCKED_SHELL or Temporary Block (Shell) – Cards at Status Temporary Blocked by Shell<br />
-     *
      * • CANCELLED or Cancelled – Cards at status Cancelled<br />
-     *
      * • PENDING_RENEWAL or Pending Renewal - Cards that are in renewal process<br />
-     *
      * • REPLACED or Replaced – Cards at Status Replaced<br />
-     *
      * • FRAUD or Fraud – Cards at Status FRAUD<br />
-     *
      * • ALL
      *
      * @return string[]|null
@@ -602,42 +553,27 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Card Status.
      * Status of the card.<br />
-     *
      * Mandatory.<br />
-     *
      * Multiple statuses are allowed to be included in the search criteria.<br />
-     *
      * CardStatus filter accepts either of the two values for each status as described below. However, the
      * output field “StatusDescription” is aligned with second value highlighted in italics.<br />
-     *
      * Below are the possible allowed statuses: <br />
-     *
      * • ACTIVE or Active – Cards at status Active (The result will include all the cards having the
      * following intermediate statuses as defined s, if the IncludeIntermediateStatus flag is true: Active
      * (Block in progress), Active (Cancel in progress), Active (Marked as damaged)), New (Cancel in
      * progress).<br />
-     *
      * • ON_ORDER or New – Cards at status New <br />
-     *
      * • EXPIRED or Expired – Cards at status Expired<br />
-     *
      * • BLOCKED or Blocked Card – Cards at status Block (The result will include all cards having the
      * following intermediate status as defined, if the IncludeIntermediateStatus flag is true: Blocked
      * card (Unblock in progress))<br />
-     *
      * • TEMP_BLOCKED_CUSTOMER or Temporary Block(Customer) – Cards at status Temporary Blocked By
      * Customer<br />
-     *
      * • TEMP_BLOCKED_SHELL or Temporary Block (Shell) – Cards at Status Temporary Blocked by Shell<br />
-     *
      * • CANCELLED or Cancelled – Cards at status Cancelled<br />
-     *
      * • PENDING_RENEWAL or Pending Renewal - Cards that are in renewal process<br />
-     *
      * • REPLACED or Replaced – Cards at Status Replaced<br />
-     *
      * • FRAUD or Fraud – Cards at Status FRAUD<br />
-     *
      * • ALL
      *
      * @maps CardStatus
@@ -652,9 +588,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Expiring in Days.
      * Cards active and expiring in given number of days.<br />
-     *
      * Optional<br />
-     *
      * Note: When a value is passed in this parameter, only active cards will be considered while searching.
      */
     public function getExpiringInDays(): ?int
@@ -668,9 +602,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Expiring in Days.
      * Cards active and expiring in given number of days.<br />
-     *
      * Optional<br />
-     *
      * Note: When a value is passed in this parameter, only active cards will be considered while searching.
      *
      * @maps ExpiringInDays
@@ -683,9 +615,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Expiring in Days.
      * Cards active and expiring in given number of days.<br />
-     *
      * Optional<br />
-     *
      * Note: When a value is passed in this parameter, only active cards will be considered while searching.
      */
     public function unsetExpiringInDays(): void
@@ -696,11 +626,8 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Issued After.
      * If provided, only list cards issued after the given date<br />
-     *
      * Optional<br />
-     *
      * Format: yyyyMMdd<br />
-     *
      * Note: Clients to convert this to appropriate DateTime type.
      */
     public function getIssuedAfter(): ?string
@@ -714,11 +641,8 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Issued After.
      * If provided, only list cards issued after the given date<br />
-     *
      * Optional<br />
-     *
      * Format: yyyyMMdd<br />
-     *
      * Note: Clients to convert this to appropriate DateTime type.
      *
      * @maps IssuedAfter
@@ -731,11 +655,8 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Issued After.
      * If provided, only list cards issued after the given date<br />
-     *
      * Optional<br />
-     *
      * Format: yyyyMMdd<br />
-     *
      * Note: Clients to convert this to appropriate DateTime type.
      */
     public function unsetIssuedAfter(): void
@@ -746,12 +667,9 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns P an Ends With.
      * Last digits of the PAN number<br />
-     *
      * Minimum 4 last digits of the card should be sent for this field to be considered as part of the
      * search criteria.<br />
-     *
      * Optional<br />
-     *
      * Max Length: 50
      */
     public function getPANEndsWith(): ?string
@@ -765,12 +683,9 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets P an Ends With.
      * Last digits of the PAN number<br />
-     *
      * Minimum 4 last digits of the card should be sent for this field to be considered as part of the
      * search criteria.<br />
-     *
      * Optional<br />
-     *
      * Max Length: 50
      *
      * @maps PANEndsWith
@@ -783,12 +698,9 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets P an Ends With.
      * Last digits of the PAN number<br />
-     *
      * Minimum 4 last digits of the card should be sent for this field to be considered as part of the
      * search criteria.<br />
-     *
      * Optional<br />
-     *
      * Max Length: 50
      */
     public function unsetPANEndsWith(): void
@@ -799,16 +711,11 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Driver Name.
      * Driver Name embossed on the card<br />
-     *
      * Optional<br />
-     *
      * Up to 10 driver names could be passed in the parameter.<br />
-     *
      * Minimum of 4 characters should be provided for each driver name else not considered.<br />
-     *
      * Those cards will be returned when part of the driver name matches with any of the string passed in
      * the list.<br />
-     *
      * Max Length for each Driver name: 50
      *
      * @return string[]|null
@@ -821,16 +728,11 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Driver Name.
      * Driver Name embossed on the card<br />
-     *
      * Optional<br />
-     *
      * Up to 10 driver names could be passed in the parameter.<br />
-     *
      * Minimum of 4 characters should be provided for each driver name else not considered.<br />
-     *
      * Those cards will be returned when part of the driver name matches with any of the string passed in
      * the list.<br />
-     *
      * Max Length for each Driver name: 50
      *
      * @maps DriverName
@@ -845,16 +747,11 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Vehicle Registration Number.
      * Vehicle Registration embossed on the card<br />
-     *
      * Optional<br />
-     *
      * Up to 10 vehicle registration numbers could be passed in the parameter.<br />
-     *
      * Minimum of 4 characters should be provided for each VRN else not considered<br />
-     *
      * Those cards will be returned when part of the VRN matches with any of the string passed in the list.
      * <br />
-     *
      * Max Length for each VRN: 50
      *
      * @return string[]|null
@@ -867,16 +764,11 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Vehicle Registration Number.
      * Vehicle Registration embossed on the card<br />
-     *
      * Optional<br />
-     *
      * Up to 10 vehicle registration numbers could be passed in the parameter.<br />
-     *
      * Minimum of 4 characters should be provided for each VRN else not considered<br />
-     *
      * Those cards will be returned when part of the VRN matches with any of the string passed in the list.
      * <br />
-     *
      * Max Length for each VRN: 50
      *
      * @maps VehicleRegistrationNumber
@@ -891,7 +783,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Include Cards.
      * List of SearchCard entity i.e., Card Id or PAN, which needs to be included in the response.<br />
-     *
      * Details of the SerachCard entity are given below.
      *
      * @return SearchCard[]|null
@@ -904,7 +795,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Include Cards.
      * List of SearchCard entity i.e., Card Id or PAN, which needs to be included in the response.<br />
-     *
      * Details of the SerachCard entity are given below.
      *
      * @maps IncludeCards
@@ -919,7 +809,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Exclude Cards.
      * List of SearchCard entity i.e., Card Id or PAN, which needs to be excluded in the response. <br />
-     *
      * Details of the SerachCard entity are given below.
      *
      * @return SearchCard[]|null
@@ -932,7 +821,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Exclude Cards.
      * List of SearchCard entity i.e., Card Id or PAN, which needs to be excluded in the response. <br />
-     *
      * Details of the SerachCard entity are given below.
      *
      * @maps ExcludeCards
@@ -947,7 +835,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Exclude Bundle Id.
      * Bundle Id for the Card, which needs to be excluded in the response.<br />
-     *
      * Optional
      */
     public function getExcludeBundleId(): ?string
@@ -961,7 +848,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Exclude Bundle Id.
      * Bundle Id for the Card, which needs to be excluded in the response.<br />
-     *
      * Optional
      *
      * @maps ExcludeBundleId
@@ -974,7 +860,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Exclude Bundle Id.
      * Bundle Id for the Card, which needs to be excluded in the response.<br />
-     *
      * Optional
      */
     public function unsetExcludeBundleId(): void
@@ -985,13 +870,9 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Card Segment.
      * Market segment to which card belongs to.<br />
-     *
      * Optional.<br />
-     *
      * Allowed values<br />
-     *
      * • CRT<br />
-     *
      * • Fleet
      */
     public function getCardSegment(): ?string
@@ -1005,13 +886,9 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Card Segment.
      * Market segment to which card belongs to.<br />
-     *
      * Optional.<br />
-     *
      * Allowed values<br />
-     *
      * • CRT<br />
-     *
      * • Fleet
      *
      * @maps CardSegment
@@ -1024,13 +901,9 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Card Segment.
      * Market segment to which card belongs to.<br />
-     *
      * Optional.<br />
-     *
      * Allowed values<br />
-     *
      * • CRT<br />
-     *
      * • Fleet
      */
     public function unsetCardSegment(): void
@@ -1041,7 +914,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Purchase Category Code.
      * Purchase category code of the card.<br />
-     *
      * Optional.
      */
     public function getPurchaseCategoryCode(): ?string
@@ -1055,7 +927,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Purchase Category Code.
      * Purchase category code of the card.<br />
-     *
      * Optional.
      *
      * @maps PurchaseCategoryCode
@@ -1068,7 +939,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Purchase Category Code.
      * Purchase category code of the card.<br />
-     *
      * Optional.
      */
     public function unsetPurchaseCategoryCode(): void
@@ -1079,7 +949,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Card Type Code.
      * ISO code of the card i.e. first 7 digits of the PAN<br />
-     *
      * Optional.
      */
     public function getCardTypeCode(): ?string
@@ -1093,7 +962,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Card Type Code.
      * ISO code of the card i.e. first 7 digits of the PAN<br />
-     *
      * Optional.
      *
      * @maps CardTypeCode
@@ -1106,7 +974,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Card Type Code.
      * ISO code of the card i.e. first 7 digits of the PAN<br />
-     *
      * Optional.
      */
     public function unsetCardTypeCode(): void
@@ -1117,7 +984,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Exclude Pending Renewal Cards.
      * Default value is True.<br />
-     *
      * When true, the API will not return cards that are at Pending Renewal Status in Cards Platform
      */
     public function getExcludePendingRenewalCards(): ?bool
@@ -1128,7 +994,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Exclude Pending Renewal Cards.
      * Default value is True.<br />
-     *
      * When true, the API will not return cards that are at Pending Renewal Status in Cards Platform
      *
      * @maps ExcludePendingRenewalCards
@@ -1141,7 +1006,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Exclude Cancelled Cards.
      * Default value is True.<br />
-     *
      * When true, the API will not return cards that are at Cancelled Status in Cards Platform
      */
     public function getExcludeCancelledCards(): ?bool
@@ -1152,7 +1016,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Exclude Cancelled Cards.
      * Default value is True.<br />
-     *
      * When true, the API will not return cards that are at Cancelled Status in Cards Platform
      *
      * @maps ExcludeCancelledCards
@@ -1165,7 +1028,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Exclude Replaced Cards.
      * Default value is False.<br />
-     *
      * When true, the API will not return cards that are at Replaced Status in Cards Platform
      */
     public function getExcludeReplacedCards(): ?bool
@@ -1176,7 +1038,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Exclude Replaced Cards.
      * Default value is False.<br />
-     *
      * When true, the API will not return cards that are at Replaced Status in Cards Platform
      *
      * @maps ExcludeReplacedCards
@@ -1189,7 +1050,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Exclude Fraud Cards.
      * Default value is False.<br />
-     *
      * When true, the API will not return cards that are at Fraud Status in Cards Platform
      */
     public function getExcludeFraudCards(): ?bool
@@ -1200,7 +1060,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Exclude Fraud Cards.
      * Default value is False.<br />
-     *
      * When true, the API will not return cards that are at Fraud Status in Cards Platform
      *
      * @maps ExcludeFraudCards
@@ -1213,7 +1072,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Exclude Card Group Id.
      * Optional<br />
-     *
      * When passed, the API will not return cards that are currently in the Card Group specified
      */
     public function getExcludeCardGroupId(): ?int
@@ -1227,7 +1085,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Exclude Card Group Id.
      * Optional<br />
-     *
      * When passed, the API will not return cards that are currently in the Card Group specified
      *
      * @maps ExcludeCardGroupId
@@ -1240,7 +1097,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Exclude Card Group Id.
      * Optional<br />
-     *
      * When passed, the API will not return cards that are currently in the Card Group specified
      */
     public function unsetExcludeCardGroupId(): void
@@ -1251,7 +1107,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Exclude Card Group Name.
      * Optional<br />
-     *
      * When passed, the API will not return cards that are currently in the Card Group specified
      */
     public function getExcludeCardGroupName(): ?string
@@ -1265,7 +1120,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Exclude Card Group Name.
      * Optional<br />
-     *
      * When passed, the API will not return cards that are currently in the Card Group specified
      *
      * @maps ExcludeCardGroupName
@@ -1278,7 +1132,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Exclude Card Group Name.
      * Optional<br />
-     *
      * When passed, the API will not return cards that are currently in the Card Group specified
      */
     public function unsetExcludeCardGroupName(): void
@@ -1289,9 +1142,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Creation Date.
      * Card Creation Date<br />
-     *
      * Optional<br />
-     *
      * Format: yyyyMMdd
      */
     public function getCreationDate(): ?string
@@ -1305,9 +1156,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Creation Date.
      * Card Creation Date<br />
-     *
      * Optional<br />
-     *
      * Format: yyyyMMdd
      *
      * @maps CreationDate
@@ -1320,9 +1169,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Creation Date.
      * Card Creation Date<br />
-     *
      * Optional<br />
-     *
      * Format: yyyyMMdd
      */
     public function unsetCreationDate(): void
@@ -1333,9 +1180,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Effective Date.
      * Effective date for the Card<br />
-     *
      * Optional<br />
-     *
      * Format: yyyyMMdd
      */
     public function getEffectiveDate(): ?string
@@ -1349,9 +1194,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Effective Date.
      * Effective date for the Card<br />
-     *
      * Optional<br />
-     *
      * Format: yyyyMMdd
      *
      * @maps EffectiveDate
@@ -1364,9 +1207,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Effective Date.
      * Effective date for the Card<br />
-     *
      * Optional<br />
-     *
      * Format: yyyyMMdd
      */
     public function unsetEffectiveDate(): void
@@ -1377,13 +1218,9 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Network.
      * Cards allowed to be used in site.<br />
-     *
      * Optional.<br />
-     *
      * Allowed values<br />
-     *
      * • ShellSitesOnly<br />
-     *
      * • PartnersSitesIncluded<br />
      */
     public function getNetwork(): ?string
@@ -1397,13 +1234,9 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Network.
      * Cards allowed to be used in site.<br />
-     *
      * Optional.<br />
-     *
      * Allowed values<br />
-     *
      * • ShellSitesOnly<br />
-     *
      * • PartnersSitesIncluded<br />
      *
      * @maps Network
@@ -1416,13 +1249,9 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Network.
      * Cards allowed to be used in site.<br />
-     *
      * Optional.<br />
-     *
      * Allowed values<br />
-     *
      * • ShellSitesOnly<br />
-     *
      * • PartnersSitesIncluded<br />
      */
     public function unsetNetwork(): void
@@ -1433,9 +1262,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Coverage.
      * Cards allowed to used nationally/internationally.<br />
-     *
      * Optional.<br />
-     *
      * Allowed values<br />
      *
      * -National<br />
@@ -1453,9 +1280,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Coverage.
      * Cards allowed to used nationally/internationally.<br />
-     *
      * Optional.<br />
-     *
      * Allowed values<br />
      *
      * -National<br />
@@ -1472,9 +1297,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Coverage.
      * Cards allowed to used nationally/internationally.<br />
-     *
      * Optional.<br />
-     *
      * Allowed values<br />
      *
      * -National<br />
@@ -1489,9 +1312,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Expiry Month.
      * Month in which the card is expiring.<br />
-     *
      * Optional.<br />
-     *
      * Format: MMYYYY
      */
     public function getExpiryMonth(): ?string
@@ -1505,9 +1326,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Expiry Month.
      * Month in which the card is expiring.<br />
-     *
      * Optional.<br />
-     *
      * Format: MMYYYY
      *
      * @maps ExpiryMonth
@@ -1520,9 +1339,7 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Expiry Month.
      * Month in which the card is expiring.<br />
-     *
      * Optional.<br />
-     *
      * Format: MMYYYY
      */
     public function unsetExpiryMonth(): void
@@ -1533,7 +1350,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Exclude Old Cards.
      * Default Value: False<br />
-     *
      * When this field is set to True, cards with below status 2 years (configurable) ago and earlier are
      * excluded from the result<br />
      *
@@ -1565,7 +1381,6 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Exclude Old Cards.
      * Default Value: False<br />
-     *
      * When this field is set to True, cards with below status 2 years (configurable) ago and earlier are
      * excluded from the result<br />
      *
@@ -1599,23 +1414,14 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Returns Reissue Setting.
      * Default Value: All<br />
-     *
      * Optional<br />
-     *
      * This option is used to filter the list of cards with ‘ReissueSetting’.<br />
-     *
      * If ‘True’, the API will return cards with ReIssueSetting value is true.<br />
-     *
      * If ‘False’, the API will return cards with ReIsssueSetting value is false.<br />
-     *
      * If ‘ALL’, API will return cards with ReIssueSetting value True &amp; False both.<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. All<br />
-     *
      * 2. True<br />
-     *
      * 3. False
      */
     public function getReissueSetting(): ?string
@@ -1629,23 +1435,14 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Sets Reissue Setting.
      * Default Value: All<br />
-     *
      * Optional<br />
-     *
      * This option is used to filter the list of cards with ‘ReissueSetting’.<br />
-     *
      * If ‘True’, the API will return cards with ReIssueSetting value is true.<br />
-     *
      * If ‘False’, the API will return cards with ReIsssueSetting value is false.<br />
-     *
      * If ‘ALL’, API will return cards with ReIssueSetting value True &amp; False both.<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. All<br />
-     *
      * 2. True<br />
-     *
      * 3. False
      *
      * @maps ReissueSetting
@@ -1658,23 +1455,14 @@ class SummaryRequest implements \JsonSerializable
     /**
      * Unsets Reissue Setting.
      * Default Value: All<br />
-     *
      * Optional<br />
-     *
      * This option is used to filter the list of cards with ‘ReissueSetting’.<br />
-     *
      * If ‘True’, the API will return cards with ReIssueSetting value is true.<br />
-     *
      * If ‘False’, the API will return cards with ReIsssueSetting value is false.<br />
-     *
      * If ‘ALL’, API will return cards with ReIssueSetting value True &amp; False both.<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. All<br />
-     *
      * 2. True<br />
-     *
      * 3. False
      */
     public function unsetReissueSetting(): void

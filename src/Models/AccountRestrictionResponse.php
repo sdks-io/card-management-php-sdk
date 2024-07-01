@@ -15,53 +15,175 @@ use stdClass;
 class AccountRestrictionResponse implements \JsonSerializable
 {
     /**
-     * @var string|null
+     * @var array
      */
-    private $requestId;
+    private $requestId = [];
+
+    /**
+     * @var int|null
+     */
+    private $accountId;
 
     /**
      * @var string|null
      */
-    private $status;
+    private $accountNumber;
+
+    /**
+     * @var string|null
+     */
+    private $usageRestrictionStatus;
+
+    /**
+     * @var string|null
+     */
+    private $usageRestrictionDescription;
+
+    /**
+     * @var ErrorStatus|null
+     */
+    private $error;
 
     /**
      * Returns Request Id.
-     * API Request Id
+     * Request Id of the API call
      */
     public function getRequestId(): ?string
     {
-        return $this->requestId;
+        if (count($this->requestId) == 0) {
+            return null;
+        }
+        return $this->requestId['value'];
     }
 
     /**
      * Sets Request Id.
-     * API Request Id
+     * Request Id of the API call
      *
      * @maps RequestId
      */
     public function setRequestId(?string $requestId): void
     {
-        $this->requestId = $requestId;
+        $this->requestId['value'] = $requestId;
     }
 
     /**
-     * Returns Status.
-     * API Response Status
+     * Unsets Request Id.
+     * Request Id of the API call
      */
-    public function getStatus(): ?string
+    public function unsetRequestId(): void
     {
-        return $this->status;
+        $this->requestId = [];
     }
 
     /**
-     * Sets Status.
-     * API Response Status
+     * Returns Account Id.
+     * Account Id on which restriction is applied.
      *
-     * @maps Status
+     * Example: 123456
      */
-    public function setStatus(?string $status): void
+    public function getAccountId(): ?int
     {
-        $this->status = $status;
+        return $this->accountId;
+    }
+
+    /**
+     * Sets Account Id.
+     * Account Id on which restriction is applied.
+     *
+     * Example: 123456
+     *
+     * @maps AccountId
+     */
+    public function setAccountId(?int $accountId): void
+    {
+        $this->accountId = $accountId;
+    }
+
+    /**
+     * Returns Account Number.
+     * Account Number on which restriction is applied.
+     *
+     * Example: GB000000123
+     */
+    public function getAccountNumber(): ?string
+    {
+        return $this->accountNumber;
+    }
+
+    /**
+     * Sets Account Number.
+     * Account Number on which restriction is applied.
+     *
+     * Example: GB000000123
+     *
+     * @maps AccountNumber
+     */
+    public function setAccountNumber(?string $accountNumber): void
+    {
+        $this->accountNumber = $accountNumber;
+    }
+
+    /**
+     * Returns Usage Restriction Status.
+     * Status of the card usage restriction submitted to Gateway. Based on the response from Gateway value
+     * will be set as either “Success” or “Failed”.
+     */
+    public function getUsageRestrictionStatus(): ?string
+    {
+        return $this->usageRestrictionStatus;
+    }
+
+    /**
+     * Sets Usage Restriction Status.
+     * Status of the card usage restriction submitted to Gateway. Based on the response from Gateway value
+     * will be set as either “Success” or “Failed”.
+     *
+     * @maps UsageRestrictionStatus
+     */
+    public function setUsageRestrictionStatus(?string $usageRestrictionStatus): void
+    {
+        $this->usageRestrictionStatus = $usageRestrictionStatus;
+    }
+
+    /**
+     * Returns Usage Restriction Description.
+     * Response for the usage restriction in case of an error. This field will have a value only when
+     * “UsageRestrictionStatus” is “Failed”.
+     */
+    public function getUsageRestrictionDescription(): ?string
+    {
+        return $this->usageRestrictionDescription;
+    }
+
+    /**
+     * Sets Usage Restriction Description.
+     * Response for the usage restriction in case of an error. This field will have a value only when
+     * “UsageRestrictionStatus” is “Failed”.
+     *
+     * @maps UsageRestrictionDescription
+     */
+    public function setUsageRestrictionDescription(?string $usageRestrictionDescription): void
+    {
+        $this->usageRestrictionDescription = $usageRestrictionDescription;
+    }
+
+    /**
+     * Returns Error.
+     */
+    public function getError(): ?ErrorStatus
+    {
+        return $this->error;
+    }
+
+    /**
+     * Sets Error.
+     *
+     * @maps Error
+     */
+    public function setError(?ErrorStatus $error): void
+    {
+        $this->error = $error;
     }
 
     /**
@@ -76,11 +198,23 @@ class AccountRestrictionResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->requestId)) {
-            $json['RequestId'] = $this->requestId;
+        if (!empty($this->requestId)) {
+            $json['RequestId']                   = $this->requestId['value'];
         }
-        if (isset($this->status)) {
-            $json['Status']    = $this->status;
+        if (isset($this->accountId)) {
+            $json['AccountId']                   = $this->accountId;
+        }
+        if (isset($this->accountNumber)) {
+            $json['AccountNumber']               = $this->accountNumber;
+        }
+        if (isset($this->usageRestrictionStatus)) {
+            $json['UsageRestrictionStatus']      = $this->usageRestrictionStatus;
+        }
+        if (isset($this->usageRestrictionDescription)) {
+            $json['UsageRestrictionDescription'] = $this->usageRestrictionDescription;
+        }
+        if (isset($this->error)) {
+            $json['Error']                       = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

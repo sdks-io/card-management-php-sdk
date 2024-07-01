@@ -39,20 +39,20 @@ class DeleteBundleRequestBuilder
     }
 
     /**
-     * Sets col co id field.
-     */
-    public function colCoId(?int $value): self
-    {
-        $this->instance->setColCoId($value);
-        return $this;
-    }
-
-    /**
      * Sets col co code field.
      */
     public function colCoCode(?int $value): self
     {
         $this->instance->setColCoCode($value);
+        return $this;
+    }
+
+    /**
+     * Sets col co id field.
+     */
+    public function colCoId(?int $value): self
+    {
+        $this->instance->setColCoId($value);
         return $this;
     }
 

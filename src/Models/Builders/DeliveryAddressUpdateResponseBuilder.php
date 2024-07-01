@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\DeliveryAddressUpdateReferences2;
 use ShellCardManagementAPIsLib\Models\DeliveryAddressUpdateResponse;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
 
@@ -60,7 +61,7 @@ class DeliveryAddressUpdateResponseBuilder
     /**
      * Sets delivery address update references field.
      */
-    public function deliveryAddressUpdateReferences(?array $value): self
+    public function deliveryAddressUpdateReferences(?DeliveryAddressUpdateReferences2 $value): self
     {
         $this->instance->setDeliveryAddressUpdateReferences($value);
         return $this;

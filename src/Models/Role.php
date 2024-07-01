@@ -127,7 +127,6 @@ class Role implements \JsonSerializable
     /**
      * Returns Is Service Account.
      * True/False.
-     *
      * True if the role is Service accounts, else false.
      */
     public function getIsServiceAccount(): ?bool
@@ -138,7 +137,6 @@ class Role implements \JsonSerializable
     /**
      * Sets Is Service Account.
      * True/False.
-     *
      * True if the role is Service accounts, else false.
      *
      * @maps IsServiceAccount
@@ -151,7 +149,6 @@ class Role implements \JsonSerializable
     /**
      * Returns Is User Admin.
      * True/False.
-     *
      * True, if the role allows user administration, else false.
      */
     public function getIsUserAdmin(): ?bool
@@ -162,7 +159,6 @@ class Role implements \JsonSerializable
     /**
      * Sets Is User Admin.
      * True/False.
-     *
      * True, if the role allows user administration, else false.
      *
      * @maps IsUserAdmin

@@ -15,7 +15,7 @@ use stdClass;
 class SearchProductRestriction implements \JsonSerializable
 {
     /**
-     * @var ProductAllOf0[]|null
+     * @var RestrictionProduct[]|null
      */
     private $products;
 
@@ -27,7 +27,7 @@ class SearchProductRestriction implements \JsonSerializable
     /**
      * Returns Products.
      *
-     * @return ProductAllOf0[]|null
+     * @return RestrictionProduct[]|null
      */
     public function getProducts(): ?array
     {
@@ -39,7 +39,7 @@ class SearchProductRestriction implements \JsonSerializable
      *
      * @maps Products
      *
-     * @param ProductAllOf0[]|null $products
+     * @param RestrictionProduct[]|null $products
      */
     public function setProducts(?array $products): void
     {

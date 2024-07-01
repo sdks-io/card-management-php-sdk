@@ -15,7 +15,7 @@ namespace ShellCardManagementAPIsLib;
  */
 class Server
 {
-    public const DEFAULT_ = 'default';
+    public const OAUTH_SERVER = 'OAuth Server';
 
-    public const ACCESS_TOKEN_SERVER = 'access token server';
+    public const SHELL = 'Shell';
 }

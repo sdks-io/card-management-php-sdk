@@ -47,13 +47,9 @@ class PayerRequest implements \JsonSerializable
     /**
      * Returns Payers.
      * List of Payer entity.
-     *
      * Optional.
-     *
      * Note:
-     *
      * • Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
-     *
      * • This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH
      * changes are integrated.
      *
@@ -67,13 +63,9 @@ class PayerRequest implements \JsonSerializable
     /**
      * Sets Payers.
      * List of Payer entity.
-     *
      * Optional.
-     *
      * Note:
-     *
      * • Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
-     *
      * • This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH
      * changes are integrated.
      *

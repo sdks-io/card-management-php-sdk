@@ -11,8 +11,8 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\BundleRestriction;
 use ShellCardManagementAPIsLib\Models\CreateBundleRequest;
-use ShellCardManagementAPIsLib\Models\CreateBundleRequestRestrictions;
 
 /**
  * Builder for model CreateBundleRequest
@@ -34,9 +34,9 @@ class CreateBundleRequestBuilder
     /**
      * Initializes a new create bundle request Builder object.
      */
-    public static function init(string $description, array $cards): self
+    public static function init(): self
     {
-        return new self(new CreateBundleRequest($description, $cards));
+        return new self(new CreateBundleRequest());
     }
 
     /**
@@ -49,38 +49,11 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Unsets col co id field.
      */
-    public function payerId(?int $value): self
+    public function unsetColCoId(): self
     {
-        $this->instance->setPayerId($value);
-        return $this;
-    }
-
-    /**
-     * Sets account id field.
-     */
-    public function accountId(?int $value): self
-    {
-        $this->instance->setAccountId($value);
-        return $this;
-    }
-
-    /**
-     * Sets external bundle id field.
-     */
-    public function externalBundleId(?string $value): self
-    {
-        $this->instance->setExternalBundleId($value);
-        return $this;
-    }
-
-    /**
-     * Unsets external bundle id field.
-     */
-    public function unsetExternalBundleId(): self
-    {
-        $this->instance->unsetExternalBundleId();
+        $this->instance->unsetColCoId();
         return $this;
     }
 
@@ -103,11 +76,47 @@ class CreateBundleRequestBuilder
     }
 
     /**
+     * Sets payer id field.
+     */
+    public function payerId(?int $value): self
+    {
+        $this->instance->setPayerId($value);
+        return $this;
+    }
+
+    /**
+     * Unsets payer id field.
+     */
+    public function unsetPayerId(): self
+    {
+        $this->instance->unsetPayerId();
+        return $this;
+    }
+
+    /**
      * Sets payer number field.
      */
     public function payerNumber(?string $value): self
     {
         $this->instance->setPayerNumber($value);
+        return $this;
+    }
+
+    /**
+     * Sets account id field.
+     */
+    public function accountId(?int $value): self
+    {
+        $this->instance->setAccountId($value);
+        return $this;
+    }
+
+    /**
+     * Unsets account id field.
+     */
+    public function unsetAccountId(): self
+    {
+        $this->instance->unsetAccountId();
         return $this;
     }
 
@@ -130,11 +139,56 @@ class CreateBundleRequestBuilder
     }
 
     /**
+     * Sets external bundle id field.
+     */
+    public function externalBundleId(?string $value): self
+    {
+        $this->instance->setExternalBundleId($value);
+        return $this;
+    }
+
+    /**
+     * Unsets external bundle id field.
+     */
+    public function unsetExternalBundleId(): self
+    {
+        $this->instance->unsetExternalBundleId();
+        return $this;
+    }
+
+    /**
+     * Sets description field.
+     */
+    public function description(?string $value): self
+    {
+        $this->instance->setDescription($value);
+        return $this;
+    }
+
+    /**
+     * Sets cards field.
+     */
+    public function cards(?array $value): self
+    {
+        $this->instance->setCards($value);
+        return $this;
+    }
+
+    /**
      * Sets restrictions field.
      */
-    public function restrictions(?CreateBundleRequestRestrictions $value): self
+    public function restrictions(?BundleRestriction $value): self
     {
         $this->instance->setRestrictions($value);
+        return $this;
+    }
+
+    /**
+     * Unsets restrictions field.
+     */
+    public function unsetRestrictions(): self
+    {
+        $this->instance->unsetRestrictions();
         return $this;
     }
 

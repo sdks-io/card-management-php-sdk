@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Models\BundleRestriction;
+use ShellCardManagementAPIsLib\Models\BundleRestrictionUpdate;
 use ShellCardManagementAPIsLib\Models\UpdateBundleRequest;
 
 /**
@@ -34,9 +34,9 @@ class UpdateBundleRequestBuilder
     /**
      * Initializes a new update bundle request Builder object.
      */
-    public static function init(string $bundleId): self
+    public static function init(array $cards): self
     {
-        return new self(new UpdateBundleRequest($bundleId));
+        return new self(new UpdateBundleRequest($cards));
     }
 
     /**
@@ -54,78 +54,6 @@ class UpdateBundleRequestBuilder
     public function unsetColCoId(): self
     {
         $this->instance->unsetColCoId();
-        return $this;
-    }
-
-    /**
-     * Sets payer id field.
-     */
-    public function payerId(?int $value): self
-    {
-        $this->instance->setPayerId($value);
-        return $this;
-    }
-
-    /**
-     * Unsets payer id field.
-     */
-    public function unsetPayerId(): self
-    {
-        $this->instance->unsetPayerId();
-        return $this;
-    }
-
-    /**
-     * Sets account id field.
-     */
-    public function accountId(?int $value): self
-    {
-        $this->instance->setAccountId($value);
-        return $this;
-    }
-
-    /**
-     * Unsets account id field.
-     */
-    public function unsetAccountId(): self
-    {
-        $this->instance->unsetAccountId();
-        return $this;
-    }
-
-    /**
-     * Sets request action field.
-     */
-    public function requestAction(?string $value): self
-    {
-        $this->instance->setRequestAction($value);
-        return $this;
-    }
-
-    /**
-     * Sets cards field.
-     */
-    public function cards(?array $value): self
-    {
-        $this->instance->setCards($value);
-        return $this;
-    }
-
-    /**
-     * Sets usage restriction action field.
-     */
-    public function usageRestrictionAction(?string $value): self
-    {
-        $this->instance->setUsageRestrictionAction($value);
-        return $this;
-    }
-
-    /**
-     * Sets restrictions field.
-     */
-    public function restrictions(?BundleRestriction $value): self
-    {
-        $this->instance->setRestrictions($value);
         return $this;
     }
 
@@ -148,6 +76,24 @@ class UpdateBundleRequestBuilder
     }
 
     /**
+     * Sets payer id field.
+     */
+    public function payerId(?string $value): self
+    {
+        $this->instance->setPayerId($value);
+        return $this;
+    }
+
+    /**
+     * Unsets payer id field.
+     */
+    public function unsetPayerId(): self
+    {
+        $this->instance->unsetPayerId();
+        return $this;
+    }
+
+    /**
      * Sets payer number field.
      */
     public function payerNumber(?string $value): self
@@ -166,6 +112,24 @@ class UpdateBundleRequestBuilder
     }
 
     /**
+     * Sets account id field.
+     */
+    public function accountId(?int $value): self
+    {
+        $this->instance->setAccountId($value);
+        return $this;
+    }
+
+    /**
+     * Unsets account id field.
+     */
+    public function unsetAccountId(): self
+    {
+        $this->instance->unsetAccountId();
+        return $this;
+    }
+
+    /**
      * Sets account number field.
      */
     public function accountNumber(?string $value): self
@@ -180,6 +144,42 @@ class UpdateBundleRequestBuilder
     public function unsetAccountNumber(): self
     {
         $this->instance->unsetAccountNumber();
+        return $this;
+    }
+
+    /**
+     * Sets bundle id field.
+     */
+    public function bundleId(?string $value): self
+    {
+        $this->instance->setBundleId($value);
+        return $this;
+    }
+
+    /**
+     * Sets request action field.
+     */
+    public function requestAction(?string $value): self
+    {
+        $this->instance->setRequestAction($value);
+        return $this;
+    }
+
+    /**
+     * Sets usage restriction action field.
+     */
+    public function usageRestrictionAction(?string $value): self
+    {
+        $this->instance->setUsageRestrictionAction($value);
+        return $this;
+    }
+
+    /**
+     * Sets restrictions field.
+     */
+    public function restrictions(?BundleRestrictionUpdate $value): self
+    {
+        $this->instance->setRestrictions($value);
         return $this;
     }
 

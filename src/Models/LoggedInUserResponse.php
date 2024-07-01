@@ -438,7 +438,6 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Returns Decimal Separator.
      * Preferred Decimal separator configured for the logged in user
-     *
      * Note: - Colco default value (configured at Microservices) is returned when the user is not provided
      * or does not exist.
      */
@@ -453,7 +452,6 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Sets Decimal Separator.
      * Preferred Decimal separator configured for the logged in user
-     *
      * Note: - Colco default value (configured at Microservices) is returned when the user is not provided
      * or does not exist.
      *
@@ -467,7 +465,6 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Unsets Decimal Separator.
      * Preferred Decimal separator configured for the logged in user
-     *
      * Note: - Colco default value (configured at Microservices) is returned when the user is not provided
      * or does not exist.
      */
@@ -511,7 +508,6 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Returns Has API Access.
      * True/False
-     *
      * True, if user has access to the requested API. This is validated based on the role Vs API access
      * matrix and client Vs API access matrix.
      */
@@ -523,7 +519,6 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Sets Has API Access.
      * True/False
-     *
      * True, if user has access to the requested API. This is validated based on the role Vs API access
      * matrix and client Vs API access matrix.
      *
@@ -561,12 +556,9 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Returns Payers.
      * List of payers which the user has access to.
-     *
      * • It will return 250 payers only and it is configurable. If the user has more than that, the
      * remaining will be ignored.
-     *
      * • The payer which is marked as default will be the first item in the output.
-     *
      *
      *
      * Note: This list will be empty for users mapped with roles which has either IsShellAdmin or
@@ -582,12 +574,9 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Sets Payers.
      * List of payers which the user has access to.
-     *
      * • It will return 250 payers only and it is configurable. If the user has more than that, the
      * remaining will be ignored.
-     *
      * • The payer which is marked as default will be the first item in the output.
-     *
      *
      *
      * Note: This list will be empty for users mapped with roles which has either IsShellAdmin or
@@ -605,7 +594,6 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Returns Accounts.
      * List of accounts which the user has access to.
-     *
      * Note: This list will be empty for users mapped with roles which has either IsCustomerAdmin,
      * IsShellAdmin or IsServiceAccount set to true as their access level is controller at either ColCo or
      * payer level only.
@@ -620,7 +608,6 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Sets Accounts.
      * List of accounts which the user has access to.
-     *
      * Note: This list will be empty for users mapped with roles which has either IsCustomerAdmin,
      * IsShellAdmin or IsServiceAccount set to true as their access level is controller at either ColCo or
      * payer level only.
@@ -667,7 +654,6 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Returns E ID Access Details.
      * List of Electronic Invoice Data configured for the user.
-     *
      * Note: This list will be empty if the value of EIDDetails is set to false or empty in the request.
      *
      * @return EIDAccess[]|null
@@ -680,7 +666,6 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Sets E ID Access Details.
      * List of Electronic Invoice Data configured for the user.
-     *
      * Note: This list will be empty if the value of EIDDetails is set to false or empty in the request.
      *
      * @maps EIDAccessDetails

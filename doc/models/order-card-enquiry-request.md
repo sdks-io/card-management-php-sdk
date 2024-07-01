@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `filters` | [`?OrderCardEnquiryReq`](../../doc/models/order-card-enquiry-req.md) | Optional | This class holds Order Card Enquiry list based on which the Order Card Enquiry need to be filtered. | getFilters(): ?OrderCardEnquiryReq | setFilters(?OrderCardEnquiryReq filters): void |
+| `filters` | [`?Filters2`](../../doc/models/filters-2.md) | Optional | - | getFilters(): ?Filters2 | setFilters(?Filters2 filters): void |
 
 ## Example (as JSON)
 

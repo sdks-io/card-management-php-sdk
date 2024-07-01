@@ -27,7 +27,6 @@ class Accounts implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the customer.
-     *
      * Optional, if AccountNumber is passed, else mandatory.
      */
     public function getAccountId(): ?int
@@ -41,7 +40,6 @@ class Accounts implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the customer.
-     *
      * Optional, if AccountNumber is passed, else mandatory.
      *
      * @maps AccountId
@@ -54,7 +52,6 @@ class Accounts implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account Id of the customer.
-     *
      * Optional, if AccountNumber is passed, else mandatory.
      */
     public function unsetAccountId(): void
@@ -65,7 +62,6 @@ class Accounts implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Optional, if AccountId is passed, else mandatory.
      */
     public function getAccountNumber(): ?string
@@ -79,7 +75,6 @@ class Accounts implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Optional, if AccountId is passed, else mandatory.
      *
      * @maps AccountNumber
@@ -92,7 +87,6 @@ class Accounts implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account Number of the customer.
-     *
      * Optional, if AccountId is passed, else mandatory.
      */
     public function unsetAccountNumber(): void

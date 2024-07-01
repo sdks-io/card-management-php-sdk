@@ -15,26 +15,312 @@ use stdClass;
 class SearchAccountLimitRequest implements \JsonSerializable
 {
     /**
-     * @var SearchAccountLimitRequestFilters|null
+     * @var array
      */
-    private $filters;
+    private $colCoId = [];
 
     /**
-     * Returns Filters.
+     * @var array
      */
-    public function getFilters(): ?SearchAccountLimitRequestFilters
+    private $colCoCode = [];
+
+    /**
+     * @var array
+     */
+    private $payerId = [];
+
+    /**
+     * @var array
+     */
+    private $payerNumber = [];
+
+    /**
+     * @var array
+     */
+    private $accountId = [];
+
+    /**
+     * @var array
+     */
+    private $accountNumber = [];
+
+    /**
+     * Returns Col Co Id.
+     * Collecting Company Id of the selected payer.
+     *
+     * Optional if ColCoCode is passed else Mandatory.
+     *
+     * Example:
+     */
+    public function getColCoId(): ?int
     {
-        return $this->filters;
+        if (count($this->colCoId) == 0) {
+            return null;
+        }
+        return $this->colCoId['value'];
     }
 
     /**
-     * Sets Filters.
+     * Sets Col Co Id.
+     * Collecting Company Id of the selected payer.
      *
-     * @maps Filters
+     * Optional if ColCoCode is passed else Mandatory.
+     *
+     * Example:
+     *
+     * @maps ColCoId
      */
-    public function setFilters(?SearchAccountLimitRequestFilters $filters): void
+    public function setColCoId(?int $colCoId): void
     {
-        $this->filters = $filters;
+        $this->colCoId['value'] = $colCoId;
+    }
+
+    /**
+     * Unsets Col Co Id.
+     * Collecting Company Id of the selected payer.
+     *
+     * Optional if ColCoCode is passed else Mandatory.
+     *
+     * Example:
+     */
+    public function unsetColCoId(): void
+    {
+        $this->colCoId = [];
+    }
+
+    /**
+     * Returns Col Co Code.
+     * Collecting Company Code (Shell Code) of the selected payer.
+     *
+     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
+     * for other countries if ColCoID is provided.
+     *
+     * Example:
+     *
+     * 86 for Philippines
+     *
+     * 5 for UK
+     */
+    public function getColCoCode(): ?int
+    {
+        if (count($this->colCoCode) == 0) {
+            return null;
+        }
+        return $this->colCoCode['value'];
+    }
+
+    /**
+     * Sets Col Co Code.
+     * Collecting Company Code (Shell Code) of the selected payer.
+     *
+     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
+     * for other countries if ColCoID is provided.
+     *
+     * Example:
+     *
+     * 86 for Philippines
+     *
+     * 5 for UK
+     *
+     * @maps ColCoCode
+     */
+    public function setColCoCode(?int $colCoCode): void
+    {
+        $this->colCoCode['value'] = $colCoCode;
+    }
+
+    /**
+     * Unsets Col Co Code.
+     * Collecting Company Code (Shell Code) of the selected payer.
+     *
+     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
+     * for other countries if ColCoID is provided.
+     *
+     * Example:
+     *
+     * 86 for Philippines
+     *
+     * 5 for UK
+     */
+    public function unsetColCoCode(): void
+    {
+        $this->colCoCode = [];
+    }
+
+    /**
+     * Returns Payer Id.
+     * Payer Id of the selected payer.
+     *
+     * Optional if PayerNumber is passed else Mandatory
+     *
+     * Example: 123456
+     */
+    public function getPayerId(): ?int
+    {
+        if (count($this->payerId) == 0) {
+            return null;
+        }
+        return $this->payerId['value'];
+    }
+
+    /**
+     * Sets Payer Id.
+     * Payer Id of the selected payer.
+     *
+     * Optional if PayerNumber is passed else Mandatory
+     *
+     * Example: 123456
+     *
+     * @maps PayerId
+     */
+    public function setPayerId(?int $payerId): void
+    {
+        $this->payerId['value'] = $payerId;
+    }
+
+    /**
+     * Unsets Payer Id.
+     * Payer Id of the selected payer.
+     *
+     * Optional if PayerNumber is passed else Mandatory
+     *
+     * Example: 123456
+     */
+    public function unsetPayerId(): void
+    {
+        $this->payerId = [];
+    }
+
+    /**
+     * Returns Payer Number.
+     * Payer Number of the selected payer.
+     *
+     * Optional if PayerId is passed else Mandatory
+     *
+     * Example: GB000000123
+     */
+    public function getPayerNumber(): ?string
+    {
+        if (count($this->payerNumber) == 0) {
+            return null;
+        }
+        return $this->payerNumber['value'];
+    }
+
+    /**
+     * Sets Payer Number.
+     * Payer Number of the selected payer.
+     *
+     * Optional if PayerId is passed else Mandatory
+     *
+     * Example: GB000000123
+     *
+     * @maps PayerNumber
+     */
+    public function setPayerNumber(?string $payerNumber): void
+    {
+        $this->payerNumber['value'] = $payerNumber;
+    }
+
+    /**
+     * Unsets Payer Number.
+     * Payer Number of the selected payer.
+     *
+     * Optional if PayerId is passed else Mandatory
+     *
+     * Example: GB000000123
+     */
+    public function unsetPayerNumber(): void
+    {
+        $this->payerNumber = [];
+    }
+
+    /**
+     * Returns Account Id.
+     * Account ID of the customer.
+     *
+     * Optional if AccountNumber is passed else Mandatory
+     *
+     * Example: 123456
+     */
+    public function getAccountId(): ?int
+    {
+        if (count($this->accountId) == 0) {
+            return null;
+        }
+        return $this->accountId['value'];
+    }
+
+    /**
+     * Sets Account Id.
+     * Account ID of the customer.
+     *
+     * Optional if AccountNumber is passed else Mandatory
+     *
+     * Example: 123456
+     *
+     * @maps AccountId
+     */
+    public function setAccountId(?int $accountId): void
+    {
+        $this->accountId['value'] = $accountId;
+    }
+
+    /**
+     * Unsets Account Id.
+     * Account ID of the customer.
+     *
+     * Optional if AccountNumber is passed else Mandatory
+     *
+     * Example: 123456
+     */
+    public function unsetAccountId(): void
+    {
+        $this->accountId = [];
+    }
+
+    /**
+     * Returns Account Number.
+     * Account Number of the customer.
+     *
+     * Optional if AccountId is passed else Mandatory
+     *
+     * Example: GB000000123
+     */
+    public function getAccountNumber(): ?string
+    {
+        if (count($this->accountNumber) == 0) {
+            return null;
+        }
+        return $this->accountNumber['value'];
+    }
+
+    /**
+     * Sets Account Number.
+     * Account Number of the customer.
+     *
+     * Optional if AccountId is passed else Mandatory
+     *
+     * Example: GB000000123
+     *
+     * @maps AccountNumber
+     */
+    public function setAccountNumber(?string $accountNumber): void
+    {
+        $this->accountNumber['value'] = $accountNumber;
+    }
+
+    /**
+     * Unsets Account Number.
+     * Account Number of the customer.
+     *
+     * Optional if AccountId is passed else Mandatory
+     *
+     * Example: GB000000123
+     */
+    public function unsetAccountNumber(): void
+    {
+        $this->accountNumber = [];
     }
 
     /**
@@ -49,8 +335,23 @@ class SearchAccountLimitRequest implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->filters)) {
-            $json['Filters'] = $this->filters;
+        if (!empty($this->colCoId)) {
+            $json['ColCoId']       = $this->colCoId['value'];
+        }
+        if (!empty($this->colCoCode)) {
+            $json['ColCoCode']     = $this->colCoCode['value'];
+        }
+        if (!empty($this->payerId)) {
+            $json['PayerId']       = $this->payerId['value'];
+        }
+        if (!empty($this->payerNumber)) {
+            $json['PayerNumber']   = $this->payerNumber['value'];
+        }
+        if (!empty($this->accountId)) {
+            $json['AccountId']     = $this->accountId['value'];
+        }
+        if (!empty($this->accountNumber)) {
+            $json['AccountNumber'] = $this->accountNumber['value'];
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

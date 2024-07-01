@@ -20,9 +20,9 @@ class DeleteBundleResponse implements \JsonSerializable
     private $requestId;
 
     /**
-     * @var string|null
+     * @var ErrorStatus|null
      */
-    private $status;
+    private $error;
 
     /**
      * Returns Request Id.
@@ -45,23 +45,21 @@ class DeleteBundleResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Status.
-     * API Response Status
+     * Returns Error.
      */
-    public function getStatus(): ?string
+    public function getError(): ?ErrorStatus
     {
-        return $this->status;
+        return $this->error;
     }
 
     /**
-     * Sets Status.
-     * API Response Status
+     * Sets Error.
      *
-     * @maps Status
+     * @maps Error
      */
-    public function setStatus(?string $status): void
+    public function setError(?ErrorStatus $error): void
     {
-        $this->status = $status;
+        $this->error = $error;
     }
 
     /**
@@ -79,8 +77,8 @@ class DeleteBundleResponse implements \JsonSerializable
         if (isset($this->requestId)) {
             $json['RequestId'] = $this->requestId;
         }
-        if (isset($this->status)) {
-            $json['Status']    = $this->status;
+        if (isset($this->error)) {
+            $json['Error']     = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

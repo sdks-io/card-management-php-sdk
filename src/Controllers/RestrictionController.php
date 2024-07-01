@@ -15,26 +15,216 @@ use Core\Request\Parameters\HeaderParam;
 use Core\Response\Types\ErrorType;
 use CoreInterfaces\Core\Request\RequestMethod;
 use ShellCardManagementAPIsLib\Exceptions\ApiException;
-use ShellCardManagementAPIsLib\Exceptions\ErrorObjectException;
+use ShellCardManagementAPIsLib\Exceptions\FleetmanagementV2RestrictionSearchcard401ErrorException;
+use ShellCardManagementAPIsLib\Exceptions\FleetmanagementV2RestrictionSearchcard500ErrorException;
 use ShellCardManagementAPIsLib\Models\AccountRestrictionRequest;
 use ShellCardManagementAPIsLib\Models\AccountRestrictionResponse;
+use ShellCardManagementAPIsLib\Models\BudleDetailsRequest;
+use ShellCardManagementAPIsLib\Models\BundleDetailsResponse;
+use ShellCardManagementAPIsLib\Models\CardRestrictionReq;
+use ShellCardManagementAPIsLib\Models\CardRestrictionResponse;
 use ShellCardManagementAPIsLib\Models\CreateBundleRequest;
 use ShellCardManagementAPIsLib\Models\CreateBundleResponse;
 use ShellCardManagementAPIsLib\Models\DeleteBundleRequest;
 use ShellCardManagementAPIsLib\Models\DeleteBundleResponse;
-use ShellCardManagementAPIsLib\Models\RestrictionCardRequest;
-use ShellCardManagementAPIsLib\Models\RestrictionCardResponse;
-use ShellCardManagementAPIsLib\Models\RestrictionSearchCardRequest;
-use ShellCardManagementAPIsLib\Models\RestrictionSearchCardResponse;
 use ShellCardManagementAPIsLib\Models\SearchAccountLimitRequest;
 use ShellCardManagementAPIsLib\Models\SearchAccountLimitResponse;
-use ShellCardManagementAPIsLib\Models\SummaryOfBundleRequest;
-use ShellCardManagementAPIsLib\Models\SummaryOfBundleResponse;
+use ShellCardManagementAPIsLib\Models\SearchCardRestrictionReq;
+use ShellCardManagementAPIsLib\Models\SearchCardRestrictionRes;
+use ShellCardManagementAPIsLib\Models\SummaryofbundleResponse;
+use ShellCardManagementAPIsLib\Models\SummaryofbundlerRequest;
 use ShellCardManagementAPIsLib\Models\UpdateBundleRequest;
 use ShellCardManagementAPIsLib\Models\UpdateBundleResponse;
 
 class RestrictionController extends BaseController
 {
+    /**
+     * This API will allows querying card details including the day/time and product restrictions.
+     *
+     * #### Supported operations
+     *
+     * * Search by list of cards or bundle
+     *
+     * * Include card bundle details (optional)
+     *
+     *
+     *
+     * @param string $apikey This is the API key of the specific environment which needs to be
+     *        passed by the client.
+     * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
+     *        responses. This will be played back in the response from the request.
+     * @param SearchCardRestrictionReq|null $body Restriction search card request body
+     *
+     * @return SearchCardRestrictionRes Response from the API call
+     *
+     * @throws ApiException Thrown if API call fails
+     */
+    public function searchCardRestriction(
+        string $apikey,
+        string $requestId,
+        ?SearchCardRestrictionReq $body = null
+    ): SearchCardRestrictionRes {
+        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v2/restriction/searchcard')
+            ->auth('BasicAuth')
+            ->parameters(
+                HeaderParam::init('apikey', $apikey),
+                HeaderParam::init('RequestId', $requestId),
+                HeaderParam::init('Content-Type', 'application/json'),
+                BodyParam::init($body)
+            );
+
+        $_resHandler = $this->responseHandler()
+            ->throwErrorOn(
+                '400',
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
+            )
+            ->throwErrorOn(
+                '401',
+                ErrorType::init(
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
+                    FleetmanagementV2RestrictionSearchcard401ErrorException::class
+                )
+            )
+            ->throwErrorOn(
+                '403',
+                ErrorType::init('The server understood the request but refuses to authorize it.')
+            )
+            ->throwErrorOn(
+                '404',
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
+            )
+            ->throwErrorOn(
+                '500',
+                ErrorType::init(
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.',
+                    FleetmanagementV2RestrictionSearchcard500ErrorException::class
+                )
+            )
+            ->type(SearchCardRestrictionRes::class);
+
+        return $this->execute($_reqBuilder, $_resHandler);
+    }
+
+    /**
+     * The Card Limit and Restriction API is REST-based and employs Basic and ApiKey authentication. The
+     * API endpoints accept JSON-encoded request bodies, return JSON-encoded responses and use standard
+     * HTTP response codes.
+     *
+     *
+     *
+     * All resources are located in the Shell Card Platform.  The Shell Card Platform is the overall
+     * platform that encompasses all the internal Shell systems used to manage resources. The internal
+     * workings of the platform are not important when interacting with the API. However, it is worth
+     * noting that the platform uses a microservice architecture to communicate with various backend
+     * systems and some API calls are processed asynchronously.
+     *
+     *
+     *
+     * All endpoints use the `POST` verb for retrieving, updating, creating and deleting resources in the
+     * Shell Card Platform. The endpoints that retrieve resources from the Shell Card Platform allow
+     * flexible search parameters in the API request body.
+     *
+     *
+     *
+     * **Important Note** - This operation allows setting or updating the restrictions on existing cards.
+     * (For up to 3 cards in a single call).
+     *
+     *
+     *
+     * All restrictions of the cards are submitted and executed after successful below condition.
+     *
+     * •    The card exists.
+     *
+     * •    Day time restriction cannot be set to restrict the use of a card on all days of the week i.e., the
+     * values for all the days in the restriction cannot be set to false.
+     *
+     * •    Either of the usage, daytime, location or product restriction ‘Reset’ is set to ‘True’ or applied
+     * on the card.
+     *
+     * •    All the limits in the usage restriction profile for a card is not set to ‘0’/null.
+     *
+     * •    If IsVelocityCeiling is ‘true’, API will validate below condition:
+     *
+     * Usage restrictions for a card are lower than Customer Card Type level limits, if there are no
+     * customer level overrides available then lower than OU card type limits.
+     *
+     * •    In usage restrictions, the limits per transaction should be less than or equal to Daily, Daily
+     * should be less than or equal to Weekly, Weekly should be less than or equal to Monthly, Monthly
+     * should be less than or equal to Yearly (Annually). Exception being null/blank will be skipped. i.e.,
+     * Daily value should be less than equal to Monthly value if Weekly value is null/blank. Lifetime limit
+     * is not considered for usage restrictions limits validation.
+     *
+     * •    Apply the card type limit to Gateway when a value is NULL in the input. However, if the card type
+     * limit is NULL for the same field, then no limit will be applied in Gateway.
+     *
+     * •    If ‘SetDefaultOnVelocityUpdate’ is ‘true’ then the operation will apply customer cardtype or OU
+     * level velocity limits on existing cards when restrictions are modified without providing custom
+     * values for all fields.
+     *
+     *
+     *
+     * @param string $apikey This is the API key of the specific environment which needs to be
+     *        passed by the client.
+     * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
+     *        responses. This will be played back in the response from the request.
+     * @param CardRestrictionReq|null $body Card Restriction request body
+     *
+     * @return CardRestrictionResponse Response from the API call
+     *
+     * @throws ApiException Thrown if API call fails
+     */
+    public function applyRestriction(
+        string $apikey,
+        string $requestId,
+        ?CardRestrictionReq $body = null
+    ): CardRestrictionResponse {
+        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v2/restriction/card')
+            ->auth('BasicAuth')
+            ->parameters(
+                HeaderParam::init('apikey', $apikey),
+                HeaderParam::init('RequestId', $requestId),
+                HeaderParam::init('Content-Type', 'application/json'),
+                BodyParam::init($body)
+            );
+
+        $_resHandler = $this->responseHandler()
+            ->throwErrorOn(
+                '400',
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
+            )
+            ->throwErrorOn(
+                '401',
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
+            )
+            ->throwErrorOn(
+                '403',
+                ErrorType::init('The server understood the request but refuses to authorize it.')
+            )
+            ->throwErrorOn(
+                '404',
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
+            )
+            ->throwErrorOn(
+                '500',
+                ErrorType::init(
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
+                )
+            )
+            ->type(CardRestrictionResponse::class);
+
+        return $this->execute($_reqBuilder, $_resHandler);
+    }
+
     /**
      * This API enables clients to create a new card bundle and apply restrictions.
      *
@@ -74,19 +264,25 @@ class RestrictionController extends BaseController
      *
      * *  `0007` - Error returned if request parameters fail validation e.g. mandatory check.
      *
+     * @param string $apikey This is the API key of the specific environment which needs to be
+     *        passed by the client.
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param CreateBundleRequest|null $body Create Bundle Request body
+     * @param CreateBundleRequest|null $body CreateBundle request body
      *
      * @return CreateBundleResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function restrictionBundleCreate(string $requestId, ?CreateBundleRequest $body = null): CreateBundleResponse
-    {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-restrictions/v1/bundles/create')
-            ->auth('BearerToken')
+    public function createBundle(
+        string $apikey,
+        string $requestId,
+        ?CreateBundleRequest $body = null
+    ): CreateBundleResponse {
+        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/restriction/createbundle')
+            ->auth('BasicAuth')
             ->parameters(
+                HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
                 HeaderParam::init('Content-Type', 'application/json'),
                 BodyParam::init($body)
@@ -95,36 +291,29 @@ class RestrictionController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn(
+                '403',
+                ErrorType::init('The server understood the request but refuses to authorize it.')
+            )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(CreateBundleResponse::class);
@@ -178,19 +367,25 @@ class RestrictionController extends BaseController
      * *  `0007` - Error returned if request parameters fail validation e.g. at least one card must be
      * provided in the input.
      *
+     * @param string $apikey This is the API key of the specific environment which needs to be
+     *        passed by the client.
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param UpdateBundleRequest|null $body Update Bundle Request body
+     * @param UpdateBundleRequest|null $body Update Bundle request body
      *
      * @return UpdateBundleResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function restrictionBundleUpdate(string $requestId, ?UpdateBundleRequest $body = null): UpdateBundleResponse
-    {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-restrictions/v1/bundles/update')
-            ->auth('BearerToken')
+    public function updateBundle(
+        string $apikey,
+        string $requestId,
+        ?UpdateBundleRequest $body = null
+    ): UpdateBundleResponse {
+        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/restriction/updatebundle')
+            ->auth('BasicAuth')
             ->parameters(
+                HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
                 HeaderParam::init('Content-Type', 'application/json'),
                 BodyParam::init($body)
@@ -199,36 +394,29 @@ class RestrictionController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn(
+                '403',
+                ErrorType::init('The server understood the request but refuses to authorize it.')
+            )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(UpdateBundleResponse::class);
@@ -253,19 +441,25 @@ class RestrictionController extends BaseController
      *
      * *  `0007` - Error returned if request parameters fail validation e.g. mandatory check.
      *
+     * @param string $apikey This is the API key of the specific environment which needs to be
+     *        passed by the client.
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param DeleteBundleRequest|null $body Delete Bundle Request body
+     * @param DeleteBundleRequest|null $body Update Bundle request body
      *
      * @return DeleteBundleResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function restrictionBundleDelete(string $requestId, ?DeleteBundleRequest $body = null): DeleteBundleResponse
-    {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-restrictions/v1/bundles/delete')
-            ->auth('BearerToken')
+    public function deleteBundle(
+        string $apikey,
+        string $requestId,
+        ?DeleteBundleRequest $body = null
+    ): DeleteBundleResponse {
+        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/restriction/deletebundle')
+            ->auth('BasicAuth')
             ->parameters(
+                HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
                 HeaderParam::init('Content-Type', 'application/json'),
                 BodyParam::init($body)
@@ -274,36 +468,29 @@ class RestrictionController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn(
+                '403',
+                ErrorType::init('The server understood the request but refuses to authorize it.')
+            )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(DeleteBundleResponse::class);
@@ -329,21 +516,28 @@ class RestrictionController extends BaseController
      *
      * * Get summary of bundles by list of bundle Ids
      *
+     * @param string $apikey This is the API key of the specific environment which needs to be
+     *        passed by the client.
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param SummaryOfBundleRequest|null $body Summary Bundle Request body
+     * @param SummaryofbundlerRequest|null $body Summary of Bundle request body
      *
-     * @return SummaryOfBundleResponse Response from the API call
+     * @return SummaryofbundleResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function restrictionBundleSummary(
+    public function summaryofbundles(
+        string $apikey,
         string $requestId,
-        ?SummaryOfBundleRequest $body = null
-    ): SummaryOfBundleResponse {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-restrictions/v1/bundles/Summary')
-            ->auth('BearerToken')
+        ?SummaryofbundlerRequest $body = null
+    ): SummaryofbundleResponse {
+        $_reqBuilder = $this->requestBuilder(
+            RequestMethod::POST,
+            '/fleetmanagement/v1/restriction/summaryofbundles'
+        )
+            ->auth('BasicAuth')
             ->parameters(
+                HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
                 HeaderParam::init('Content-Type', 'application/json'),
                 BodyParam::init($body)
@@ -352,156 +546,79 @@ class RestrictionController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn(
+                '403',
+                ErrorType::init('The server understood the request but refuses to authorize it.')
+            )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
-            ->type(SummaryOfBundleResponse::class);
+            ->type(SummaryofbundleResponse::class);
 
         return $this->execute($_reqBuilder, $_resHandler);
     }
 
     /**
-     * This API allows to set or update the restrictions for existing cards or newly ordered cards under
-     * the same payer.
+     * This API allows setting or updating the usage restrictions of an existing account.
      *
      *
      *
-     * #### Supported operations
-     *
-     * * Set or reset usage restrictions for cards
-     *
-     * * Set or reset day/time restrictions for cards
-     *
-     * * Set or reset product restrictions for cards
-     *
-     * * Set or reset location restrictions for cards
-     *
-     * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
-     *        responses. This will be played back in the response from the request.
-     * @param RestrictionCardRequest|null $body Summary Bundle Request body
-     *
-     * @return RestrictionCardResponse Response from the API call
-     *
-     * @throws ApiException Thrown if API call fails
-     */
-    public function cardRestriction(string $requestId, ?RestrictionCardRequest $body = null): RestrictionCardResponse
-    {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-restrictions/v2/card')
-            ->auth('BearerToken')
-            ->parameters(
-                HeaderParam::init('RequestId', $requestId),
-                HeaderParam::init('Content-Type', 'application/json'),
-                BodyParam::init($body)
-            );
-
-        $_resHandler = $this->responseHandler()
-            ->throwErrorOn(
-                '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
-            )
-            ->throwErrorOn(
-                '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
-            )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
-            ->throwErrorOn(
-                '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
-            )
-            ->throwErrorOn(
-                '500',
-                ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
-                )
-            )
-            ->type(RestrictionCardResponse::class);
-
-        return $this->execute($_reqBuilder, $_resHandler);
-    }
-
-    /**
-     * This operation allows setting or updating the usage restrictions of an existing account.
+     * Then validation rules applied for this API.
      *
      *
      *
-     * #### Validation rules
+     * •    The account exists.
      *
-     *
-     *
-     * *    The account exists.
-     *
-     * *    Day time restriction cannot be set to restrict the use of a card, under the account, on all days
+     * •    Day time restriction cannot be set to restrict the use of a card, under the account, on all days
      * of the week.
      *
-     * *    Either of the usage, daytime or location is either marked for reset or new restriction values
+     * •    Either of the usage, daytime or location is either marked for reset or new restriction values
      * provided for the account.
      *
-     * *    In usage restrictions, the limits per transaction should be less than or equal to Daily, Daily
+     * •    In usage restrictions, the limits per transaction should be less than or equal to Daily, Daily
      * should be less than or equal to Weekly, Weekly should be less than or equal to Monthly. Exception
      * being 0/blank will be skipped, i.e., Daily value should be less than equal to Monthly value if
      * Weekly value is 0/blank.
      *
      *
      *
+     * @param string $apikey This is the API key of the specific environment which needs to be
+     *        passed by the client.
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param AccountRestrictionRequest|null $body Summary Bundle Request body
+     * @param AccountRestrictionRequest|null $body Account Restriction request body
      *
      * @return AccountRestrictionResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function accountRestriction(
+    public function restrictionAccount(
+        string $apikey,
         string $requestId,
         ?AccountRestrictionRequest $body = null
     ): AccountRestrictionResponse {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-restrictions/v1/Account')
+        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/restriction/account')
             ->auth('BearerToken')
             ->parameters(
+                HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
                 HeaderParam::init('Content-Type', 'application/json'),
                 BodyParam::init($body)
@@ -510,36 +627,29 @@ class RestrictionController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn(
+                '403',
+                ErrorType::init('The server understood the request but refuses to authorize it.')
+            )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(AccountRestrictionResponse::class);
@@ -548,25 +658,31 @@ class RestrictionController extends BaseController
     }
 
     /**
-     * This operation will allow user to get account level limits for the given account.
+     * This API will allow user to get account level limits for the given account. It returns the velocity
+     * limits if its overridden at the account else the values will be null/empty.
      *
-     * It returns the velocity limits if its overridden at the account else the values will be null/empty.
-     *
+     * @param string $apikey This is the API key of the specific environment which needs to be
+     *        passed by the client.
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param SearchAccountLimitRequest|null $body Summary Bundle Request body
+     * @param SearchAccountLimitRequest|null $body Search Account Limit RequestBody
      *
      * @return SearchAccountLimitResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
     public function searchAccountLimit(
+        string $apikey,
         string $requestId,
         ?SearchAccountLimitRequest $body = null
     ): SearchAccountLimitResponse {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-restrictions/v1/searchaccountlimit')
-            ->auth('BearerToken')
+        $_reqBuilder = $this->requestBuilder(
+            RequestMethod::POST,
+            '/fleetmanagement/v1/restriction/searchaccountlimit'
+        )
+            ->auth('BasicAuth')
             ->parameters(
+                HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
                 HeaderParam::init('Content-Type', 'application/json'),
                 BodyParam::init($body)
@@ -575,36 +691,29 @@ class RestrictionController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn(
+                '403',
+                ErrorType::init('The server understood the request but refuses to authorize it.')
+            )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
             ->type(SearchAccountLimitResponse::class);
@@ -613,30 +722,28 @@ class RestrictionController extends BaseController
     }
 
     /**
-     * This API will allows querying card details including the day/time and product restrictions.
+     * This API allows to get the details of a specific card bundle. It returns the bundle basic details
+     * along with the cards in the bundle and restrictions applied on them.
      *
-     * #### Supported operations
-     *
-     * * Search by list of cards or bundle
-     *
-     * * Include card bundle details (optional)
-     *
-     *
+     * @param string $apikey This is the API key of the specific environment which needs to be
+     *        passed by the client.
      * @param string $requestId Mandatory UUID (according to RFC 4122 standards) for requests and
      *        responses. This will be played back in the response from the request.
-     * @param RestrictionSearchCardRequest|null $body Summary Bundle Request body
+     * @param BudleDetailsRequest|null $body Bundle Details Request body
      *
-     * @return RestrictionSearchCardResponse Response from the API call
+     * @return BundleDetailsResponse Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function searchCardRestriction(
+    public function bundledetails(
+        string $apikey,
         string $requestId,
-        ?RestrictionSearchCardRequest $body = null
-    ): RestrictionSearchCardResponse {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-restrictions/v2/search')
-            ->auth('BearerToken')
+        ?BudleDetailsRequest $body = null
+    ): BundleDetailsResponse {
+        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/restriction/bundledetails')
+            ->auth('BasicAuth')
             ->parameters(
+                HeaderParam::init('apikey', $apikey),
                 HeaderParam::init('RequestId', $requestId),
                 HeaderParam::init('Content-Type', 'application/json'),
                 BodyParam::init($body)
@@ -645,39 +752,32 @@ class RestrictionController extends BaseController
         $_resHandler = $this->responseHandler()
             ->throwErrorOn(
                 '400',
-                ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init("The server cannot or will not process the request  due to something that is pe" .
+                "rceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n " .
+                "request message framing, or deceptive request routing).")
             )
             ->throwErrorOn(
                 '401',
-                ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The request has not been applied because it lacks valid  authentication creden' .
+                'tials for the target resource.')
             )
-            ->throwErrorOn('403', ErrorType::init('Forbidden', ErrorObjectException::class))
+            ->throwErrorOn(
+                '403',
+                ErrorType::init('The server understood the request but refuses to authorize it.')
+            )
             ->throwErrorOn(
                 '404',
-                ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
-                    ErrorObjectException::class
-                )
+                ErrorType::init('The origin server did not find a current representation  for the target resour' .
+                'ce or is not willing to disclose  that one exists.')
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
-                    ErrorObjectException::class
+                    'The server encountered an unexpected condition the prevented it from fulfi' .
+                    'lling the request.'
                 )
             )
-            ->type(RestrictionSearchCardResponse::class);
+            ->type(BundleDetailsResponse::class);
 
         return $this->execute($_reqBuilder, $_resHandler);
     }

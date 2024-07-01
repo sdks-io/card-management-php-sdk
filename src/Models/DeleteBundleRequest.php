@@ -17,12 +17,12 @@ class DeleteBundleRequest implements \JsonSerializable
     /**
      * @var int|null
      */
-    private $colCoId;
+    private $colCoCode;
 
     /**
      * @var int|null
      */
-    private $colCoCode;
+    private $colCoId;
 
     /**
      * @var string|null
@@ -55,38 +55,6 @@ class DeleteBundleRequest implements \JsonSerializable
     public function __construct(string $bundleId)
     {
         $this->bundleId = $bundleId;
-    }
-
-    /**
-     * Returns Col Co Id.
-     * Collecting Company Id of the selected payer.
-     *
-     * Optional if ColCoCode is passed else Mandatory.
-     *
-     * Example:
-     *
-     * 1 for Philippines
-     */
-    public function getColCoId(): ?int
-    {
-        return $this->colCoId;
-    }
-
-    /**
-     * Sets Col Co Id.
-     * Collecting Company Id of the selected payer.
-     *
-     * Optional if ColCoCode is passed else Mandatory.
-     *
-     * Example:
-     *
-     * 1 for Philippines
-     *
-     * @maps ColCoId
-     */
-    public function setColCoId(?int $colCoId): void
-    {
-        $this->colCoId = $colCoId;
     }
 
     /**
@@ -125,6 +93,44 @@ class DeleteBundleRequest implements \JsonSerializable
     public function setColCoCode(?int $colCoCode): void
     {
         $this->colCoCode = $colCoCode;
+    }
+
+    /**
+     * Returns Col Co Id.
+     * Collecting Company Code (Shell Code) of the selected payer.
+     *
+     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
+     * for other countries if ColCoID is provided.
+     *
+     * Example:
+     *
+     * 86 for Philippines
+     *
+     * 5 for UK
+     */
+    public function getColCoId(): ?int
+    {
+        return $this->colCoId;
+    }
+
+    /**
+     * Sets Col Co Id.
+     * Collecting Company Code (Shell Code) of the selected payer.
+     *
+     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
+     * for other countries if ColCoID is provided.
+     *
+     * Example:
+     *
+     * 86 for Philippines
+     *
+     * 5 for UK
+     *
+     * @maps ColCoId
+     */
+    public function setColCoId(?int $colCoId): void
+    {
+        $this->colCoId = $colCoId;
     }
 
     /**
@@ -276,11 +282,11 @@ class DeleteBundleRequest implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->colCoId)) {
-            $json['ColCoId']       = $this->colCoId;
-        }
         if (isset($this->colCoCode)) {
             $json['ColCoCode']     = $this->colCoCode;
+        }
+        if (isset($this->colCoId)) {
+            $json['ColCoId']       = $this->colCoId;
         }
         if (isset($this->payerNumber)) {
             $json['PayerNumber']   = $this->payerNumber;

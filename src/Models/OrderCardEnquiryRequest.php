@@ -15,26 +15,24 @@ use stdClass;
 class OrderCardEnquiryRequest implements \JsonSerializable
 {
     /**
-     * @var OrderCardEnquiryReq|null
+     * @var Filters2|null
      */
     private $filters;
 
     /**
      * Returns Filters.
-     * This class holds Order Card Enquiry list based on which the Order Card Enquiry need to be filtered.
      */
-    public function getFilters(): ?OrderCardEnquiryReq
+    public function getFilters(): ?Filters2
     {
         return $this->filters;
     }
 
     /**
      * Sets Filters.
-     * This class holds Order Card Enquiry list based on which the Order Card Enquiry need to be filtered.
      *
      * @maps Filters
      */
-    public function setFilters(?OrderCardEnquiryReq $filters): void
+    public function setFilters(?Filters2 $filters): void
     {
         $this->filters = $filters;
     }

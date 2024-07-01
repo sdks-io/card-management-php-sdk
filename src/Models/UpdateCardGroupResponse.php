@@ -47,7 +47,6 @@ class UpdateCardGroupResponse implements \JsonSerializable
     /**
      * Returns Main Reference.
      * Reference number for tracking the overall request.
-     *
      * The value will be null when the validation fails.
      */
     public function getMainReference(): ?int
@@ -58,7 +57,6 @@ class UpdateCardGroupResponse implements \JsonSerializable
     /**
      * Sets Main Reference.
      * Reference number for tracking the overall request.
-     *
      * The value will be null when the validation fails.
      *
      * @maps MainReference
@@ -71,7 +69,6 @@ class UpdateCardGroupResponse implements \JsonSerializable
     /**
      * Returns Update Card Group Reference.
      * Reference number for tracking the execution of terminate card-group request.
-     *
      * Reference number will be null when the validations fail or TerminateCardGroup in the request object
      * is false.
      */
@@ -83,7 +80,6 @@ class UpdateCardGroupResponse implements \JsonSerializable
     /**
      * Sets Update Card Group Reference.
      * Reference number for tracking the execution of terminate card-group request.
-     *
      * Reference number will be null when the validations fail or TerminateCardGroup in the request object
      * is false.
      *
@@ -124,7 +120,6 @@ class UpdateCardGroupResponse implements \JsonSerializable
      * Returns Move Card References.
      * List of cards submitted successfully for processing the move to the target card-group or to change
      * card-group to null.
-     *
      * This list will be empty when the validations fail or there are no cards in the card-group that is
      * getting terminated or MoveCards in the request object is false
      *
@@ -139,7 +134,6 @@ class UpdateCardGroupResponse implements \JsonSerializable
      * Sets Move Card References.
      * List of cards submitted successfully for processing the move to the target card-group or to change
      * card-group to null.
-     *
      * This list will be empty when the validations fail or there are no cards in the card-group that is
      * getting terminated or MoveCards in the request object is false
      *

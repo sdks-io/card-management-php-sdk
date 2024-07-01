@@ -15,5 +15,7 @@ namespace ShellCardManagementAPIsLib;
  */
 class Environment
 {
-    public const PRODUCTION = 'production';
+    public const SIT = 'SIT';
+
+    public const PRODUCTION = 'Production';
 }

@@ -215,10 +215,8 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Self Selected Encrypted PIN.
      * The encrypted value of self-selected PIN.<br />
-     *
      * Optional – When not provided, the PIN will be auto generated(if the card token type supports PIN)
      * and delivered based on the given PIN delivery option.<br />
-     *
      * Max Length: 256
      */
     public function getSelfSelectedEncryptedPIN(): ?string
@@ -232,10 +230,8 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Self Selected Encrypted PIN.
      * The encrypted value of self-selected PIN.<br />
-     *
      * Optional – When not provided, the PIN will be auto generated(if the card token type supports PIN)
      * and delivered based on the given PIN delivery option.<br />
-     *
      * Max Length: 256
      *
      * @maps SelfSelectedEncryptedPIN
@@ -248,10 +244,8 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Self Selected Encrypted PIN.
      * The encrypted value of self-selected PIN.<br />
-     *
      * Optional – When not provided, the PIN will be auto generated(if the card token type supports PIN)
      * and delivered based on the given PIN delivery option.<br />
-     *
      * Max Length: 256
      */
     public function unsetSelfSelectedEncryptedPIN(): void
@@ -262,9 +256,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Self Selected PIN Key ID.
      * KeyId of the PIN encrypted value.<br />
-     *
      * Mandatory, if opted for self-selected PIN else optional.<br />
-     *
      * Max Length: 30
      */
     public function getSelfSelectedPINKeyID(): ?string
@@ -278,9 +270,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Self Selected PIN Key ID.
      * KeyId of the PIN encrypted value.<br />
-     *
      * Mandatory, if opted for self-selected PIN else optional.<br />
-     *
      * Max Length: 30
      *
      * @maps SelfSelectedPINKeyID
@@ -293,9 +283,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Self Selected PIN Key ID.
      * KeyId of the PIN encrypted value.<br />
-     *
      * Mandatory, if opted for self-selected PIN else optional.<br />
-     *
      * Max Length: 30
      */
     public function unsetSelfSelectedPINKeyID(): void
@@ -306,13 +294,9 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Self Selected PIN Session Key.
      * Encoded message of the TCS form which is used for encrypting the PIN of this card.<br />
-     *
      * The encode message forms are provided to clients by another API (“TCS”).<br />
-     *
      * Instructions to encrypt the PIN is covered in the related API specifications document.<br />
-     *
      * Mandatory –If opted for self-selected PIN else optional.
-     *
      * Max Length: 1024
      */
     public function getSelfSelectedPINSessionKey(): ?string
@@ -326,13 +310,9 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Self Selected PIN Session Key.
      * Encoded message of the TCS form which is used for encrypting the PIN of this card.<br />
-     *
      * The encode message forms are provided to clients by another API (“TCS”).<br />
-     *
      * Instructions to encrypt the PIN is covered in the related API specifications document.<br />
-     *
      * Mandatory –If opted for self-selected PIN else optional.
-     *
      * Max Length: 1024
      *
      * @maps SelfSelectedPINSessionKey
@@ -345,13 +325,9 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Self Selected PIN Session Key.
      * Encoded message of the TCS form which is used for encrypting the PIN of this card.<br />
-     *
      * The encode message forms are provided to clients by another API (“TCS”).<br />
-     *
      * Instructions to encrypt the PIN is covered in the related API specifications document.<br />
-     *
      * Mandatory –If opted for self-selected PIN else optional.
-     *
      * Max Length: 1024
      */
     public function unsetSelfSelectedPINSessionKey(): void
@@ -362,14 +338,10 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Validate Fleet Id.
      * True/False.<br />
-     *
      * Optional <br />
-     *
      * Default: False<br />
-     *
      * For cards ordered with Validate Fleet Id parameter set to true, CFGW will be notified to enable this
      * validation for the card.<br />
-     *
      * Note: When “FleetIdInputRequired” is not set on the card, validate fleet id will be considered false
      * regardless of the value passed on this parameter.
      */
@@ -381,14 +353,10 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Validate Fleet Id.
      * True/False.<br />
-     *
      * Optional <br />
-     *
      * Default: False<br />
-     *
      * For cards ordered with Validate Fleet Id parameter set to true, CFGW will be notified to enable this
      * validation for the card.<br />
-     *
      * Note: When “FleetIdInputRequired” is not set on the card, validate fleet id will be considered false
      * regardless of the value passed on this parameter.
      *
@@ -402,11 +370,8 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Card Group Id.
      * Existing Card Group ID, under which the replacement card is to be created.<br />
-     *
      * Pass “-1” if the replacement card should not be assigned to any card group.<br />
-     *
      * Optional <br />
-     *
      * If not provided, the replacement card will be created under the same card group as the current card.
      */
     public function getCardGroupId(): ?int
@@ -420,11 +385,8 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Card Group Id.
      * Existing Card Group ID, under which the replacement card is to be created.<br />
-     *
      * Pass “-1” if the replacement card should not be assigned to any card group.<br />
-     *
      * Optional <br />
-     *
      * If not provided, the replacement card will be created under the same card group as the current card.
      *
      * @maps CardGroupId
@@ -437,11 +399,8 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Card Group Id.
      * Existing Card Group ID, under which the replacement card is to be created.<br />
-     *
      * Pass “-1” if the replacement card should not be assigned to any card group.<br />
-     *
      * Optional <br />
-     *
      * If not provided, the replacement card will be created under the same card group as the current card.
      */
     public function unsetCardGroupId(): void
@@ -452,15 +411,10 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Card Delivery Type.
      * Card delivery type.<br />
-     *
      * Mandatory <br />
-     *
      * Allowed Value: <br />
-     *
      * 1. Customer Address(Default) <br />
-     *
      * 2. New Delivery Address <br />
-     *
      * 3. Old Card Address
      */
     public function getCardDeliveryType(): ?int
@@ -471,15 +425,10 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Card Delivery Type.
      * Card delivery type.<br />
-     *
      * Mandatory <br />
-     *
      * Allowed Value: <br />
-     *
      * 1. Customer Address(Default) <br />
-     *
      * 2. New Delivery Address <br />
-     *
      * 3. Old Card Address
      *
      * @maps CardDeliveryType
@@ -492,9 +441,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Contact Title.
      * Title of the contact person. <br />
-     *
      * Optional<br />
-     *
      * Max field length: 10
      */
     public function getDeliveryContactTitle(): ?string
@@ -508,9 +455,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Contact Title.
      * Title of the contact person. <br />
-     *
      * Optional<br />
-     *
      * Max field length: 10
      *
      * @maps DeliveryContactTitle
@@ -523,9 +468,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Contact Title.
      * Title of the contact person. <br />
-     *
      * Optional<br />
-     *
      * Max field length: 10
      */
     public function unsetDeliveryContactTitle(): void
@@ -536,9 +479,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Contact Name.
      * Name of the contact person <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 50
      */
     public function getDeliveryContactName(): ?string
@@ -552,9 +493,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Contact Name.
      * Name of the contact person <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 50
      *
      * @maps DeliveryContactName
@@ -567,9 +506,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Contact Name.
      * Name of the contact person <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 50
      */
     public function unsetDeliveryContactName(): void
@@ -580,9 +517,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Company Name.
      * Company name <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.
-     *
      * Max field length: 50
      */
     public function getDeliveryCompanyName(): ?string
@@ -596,9 +531,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Company Name.
      * Company name <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.
-     *
      * Max field length: 50
      *
      * @maps DeliveryCompanyName
@@ -611,9 +544,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Company Name.
      * Company name <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.
-     *
      * Max field length: 50
      */
     public function unsetDeliveryCompanyName(): void
@@ -624,9 +555,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Address Line 1.
      * Address line 1 <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 40
      */
     public function getDeliveryAddressLine1(): ?string
@@ -640,9 +569,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Address Line 1.
      * Address line 1 <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 40
      *
      * @maps DeliveryAddressLine1
@@ -655,9 +582,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Address Line 1.
      * Address line 1 <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 40
      */
     public function unsetDeliveryAddressLine1(): void
@@ -668,9 +593,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Address Line 2.
      * Address line 2 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40
      */
     public function getDeliveryAddressLine2(): ?string
@@ -684,9 +607,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Address Line 2.
      * Address line 2 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40
      *
      * @maps DeliveryAddressLine2
@@ -699,9 +620,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Address Line 2.
      * Address line 2 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40
      */
     public function unsetDeliveryAddressLine2(): void
@@ -712,9 +631,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Address Line 3.
      * Address line 3 <br />
-     *
      * Optional<br />
-     *
      * Max field length: 40
      */
     public function getDeliveryAddressLine3(): ?string
@@ -728,9 +645,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Address Line 3.
      * Address line 3 <br />
-     *
      * Optional<br />
-     *
      * Max field length: 40
      *
      * @maps DeliveryAddressLine3
@@ -743,9 +658,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Address Line 3.
      * Address line 3 <br />
-     *
      * Optional<br />
-     *
      * Max field length: 40
      */
     public function unsetDeliveryAddressLine3(): void
@@ -756,9 +669,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Zip Code.
      * ZIP code <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 10
      */
     public function getDeliveryZipCode(): ?string
@@ -772,9 +683,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Zip Code.
      * ZIP code <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 10
      *
      * @maps DeliveryZipCode
@@ -787,9 +696,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Zip Code.
      * ZIP code <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 10
      */
     public function unsetDeliveryZipCode(): void
@@ -800,9 +707,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery City.
      * City  <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 40
      */
     public function getDeliveryCity(): ?string
@@ -816,9 +721,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery City.
      * City  <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 40
      *
      * @maps DeliveryCity
@@ -831,9 +734,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery City.
      * City  <br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true.<br />
-     *
      * Max field length: 40
      */
     public function unsetDeliveryCity(): void
@@ -844,7 +745,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Region Id.
      * Region Id  <br />
-     *
      * Optional
      */
     public function getDeliveryRegionId(): ?int
@@ -858,7 +758,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Region Id.
      * Region Id  <br />
-     *
      * Optional
      *
      * @maps DeliveryRegionId
@@ -871,7 +770,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Region Id.
      * Region Id  <br />
-     *
      * Optional
      */
     public function unsetDeliveryRegionId(): void
@@ -882,9 +780,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Region.
      * Region  <br />
-     *
      * Optional<br />
-     *
      * When region is passed
      */
     public function getDeliveryRegion(): ?string
@@ -898,9 +794,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Region.
      * Region  <br />
-     *
      * Optional<br />
-     *
      * When region is passed
      *
      * @maps DeliveryRegion
@@ -913,9 +807,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Region.
      * Region  <br />
-     *
      * Optional<br />
-     *
      * When region is passed
      */
     public function unsetDeliveryRegion(): void
@@ -926,7 +818,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Delivery Country.
      * The ISO code of the country.<br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true
      */
     public function getDeliveryCountry(): ?string
@@ -940,7 +831,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Delivery Country.
      * The ISO code of the country.<br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true
      *
      * @maps DeliveryCountry
@@ -953,7 +843,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Delivery Country.
      * The ISO code of the country.<br />
-     *
      * Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is passed as true
      */
     public function unsetDeliveryCountry(): void
@@ -996,9 +885,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Phone Number.
      * Phone number for to send SMS. <br />
-     *
      * Optional<br />
-     *
      * Max field length: 20
      */
     public function getPhoneNumber(): ?string
@@ -1009,9 +896,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Phone Number.
      * Phone number for to send SMS. <br />
-     *
      * Optional<br />
-     *
      * Max field length: 20
      *
      * @maps PhoneNumber
@@ -1024,9 +909,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns Email Address.
      * Email address for to send email.<br />
-     *
      * Mandatory if PINAdviceType is email else optional.<br />
-     *
      * Max field length: 90
      */
     public function getEmailAddress(): ?string
@@ -1040,9 +923,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets Email Address.
      * Email address for to send email.<br />
-     *
      * Mandatory if PINAdviceType is email else optional.<br />
-     *
      * Max field length: 90
      *
      * @maps EmailAddress
@@ -1055,9 +936,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets Email Address.
      * Email address for to send email.<br />
-     *
      * Mandatory if PINAdviceType is email else optional.<br />
-     *
      * Max field length: 90
      */
     public function unsetEmailAddress(): void
@@ -1068,15 +947,10 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Address Type.
      * PIN delivery address type selection.<br />
-     *
      * Optional<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Customer Address(Default)<br />
-     *
      * 2. Card Address<br />
-     *
      * 3. New Delivery Address
      */
     public function getPINDeliveryAddressType(): ?int
@@ -1090,15 +964,10 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Address Type.
      * PIN delivery address type selection.<br />
-     *
      * Optional<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Customer Address(Default)<br />
-     *
      * 2. Card Address<br />
-     *
      * 3. New Delivery Address
      *
      * @maps PINDeliveryAddressType
@@ -1111,15 +980,10 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Address Type.
      * PIN delivery address type selection.<br />
-     *
      * Optional<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Customer Address(Default)<br />
-     *
      * 2. Card Address<br />
-     *
      * 3. New Delivery Address
      */
     public function unsetPINDeliveryAddressType(): void
@@ -1130,17 +994,11 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Advice Type.
      * PIN delivery method.<br />
-     *
      * Mandatory when OrderReplacement Is true.<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Paper<br />
-     *
      * 2. Email<br />
-     *
      * 3. SMS<br />
-     *
      * 4. None
      */
     public function getPINAdviceType(): ?int
@@ -1154,17 +1012,11 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Advice Type.
      * PIN delivery method.<br />
-     *
      * Mandatory when OrderReplacement Is true.<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Paper<br />
-     *
      * 2. Email<br />
-     *
      * 3. SMS<br />
-     *
      * 4. None
      *
      * @maps PINAdviceType
@@ -1177,17 +1029,11 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Advice Type.
      * PIN delivery method.<br />
-     *
      * Mandatory when OrderReplacement Is true.<br />
-     *
      * Allowed Values:<br />
-     *
      * 1. Paper<br />
-     *
      * 2. Email<br />
-     *
      * 3. SMS<br />
-     *
      * 4. None
      */
     public function unsetPINAdviceType(): void
@@ -1198,9 +1044,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Contact Title.
      * Title of the contact person.<br />
-     *
      * Optional <br />
-     *
      * Max field length: 10
      */
     public function getPINDeliveryContactTitle(): ?string
@@ -1214,9 +1058,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Contact Title.
      * Title of the contact person.<br />
-     *
      * Optional <br />
-     *
      * Max field length: 10
      *
      * @maps PINDeliveryContactTitle
@@ -1229,9 +1071,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Contact Title.
      * Title of the contact person.<br />
-     *
      * Optional <br />
-     *
      * Max field length: 10
      */
     public function unsetPINDeliveryContactTitle(): void
@@ -1242,9 +1082,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Contact Name.
      * Name of the contact person.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 50
      */
     public function getPINDeliveryContactName(): ?string
@@ -1258,9 +1096,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Contact Name.
      * Name of the contact person.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 50
      *
      * @maps PINDeliveryContactName
@@ -1273,9 +1109,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Contact Name.
      * Name of the contact person.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 50
      */
     public function unsetPINDeliveryContactName(): void
@@ -1286,9 +1120,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Company Name.
      * Company name.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 50
      */
     public function getPINDeliveryCompanyName(): ?string
@@ -1302,9 +1134,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Company Name.
      * Company name.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 50
      *
      * @maps PINDeliveryCompanyName
@@ -1317,9 +1147,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Company Name.
      * Company name.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 50
      */
     public function unsetPINDeliveryCompanyName(): void
@@ -1330,9 +1158,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Address Line 1.
      * Address line 1.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 40
      */
     public function getPINDeliveryAddressLine1(): ?string
@@ -1346,9 +1172,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Address Line 1.
      * Address line 1.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 40
      *
      * @maps PINDeliveryAddressLine1
@@ -1361,9 +1185,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Address Line 1.
      * Address line 1.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional.<br />
-     *
      * Max field length: 40
      */
     public function unsetPINDeliveryAddressLine1(): void
@@ -1374,9 +1196,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Address Line 2.
      * Address line 2.<br />
-     *
      * Optional <br />
-     *
      * Max field length: 40
      */
     public function getPINDeliveryAddressLine2(): ?string
@@ -1390,9 +1210,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Address Line 2.
      * Address line 2.<br />
-     *
      * Optional <br />
-     *
      * Max field length: 40
      *
      * @maps PINDeliveryAddressLine2
@@ -1405,9 +1223,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Address Line 2.
      * Address line 2.<br />
-     *
      * Optional <br />
-     *
      * Max field length: 40
      */
     public function unsetPINDeliveryAddressLine2(): void
@@ -1418,9 +1234,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Address Line 3.
      * Address line 3.<br />
-     *
      * Optional <br />
-     *
      * Max field length: 40
      */
     public function getPINDeliveryAddressLine3(): ?string
@@ -1434,9 +1248,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Address Line 3.
      * Address line 3.<br />
-     *
      * Optional <br />
-     *
      * Max field length: 40
      *
      * @maps PINDeliveryAddressLine3
@@ -1449,9 +1261,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Address Line 3.
      * Address line 3.<br />
-     *
      * Optional <br />
-     *
      * Max field length: 40
      */
     public function unsetPINDeliveryAddressLine3(): void
@@ -1462,9 +1272,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Zip Code.
      * ZIP code.<br />
-     *
      * Mandatory - if PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 10
      */
     public function getPINDeliveryZipCode(): ?string
@@ -1478,9 +1286,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Zip Code.
      * ZIP code.<br />
-     *
      * Mandatory - if PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 10
      *
      * @maps PINDeliveryZipCode
@@ -1493,9 +1299,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Zip Code.
      * ZIP code.<br />
-     *
      * Mandatory - if PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 10
      */
     public function unsetPINDeliveryZipCode(): void
@@ -1506,9 +1310,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery City.
      * City.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 40
      */
     public function getPINDeliveryCity(): ?string
@@ -1522,9 +1324,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery City.
      * City.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 40
      *
      * @maps PINDeliveryCity
@@ -1537,9 +1337,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery City.
      * City.<br />
-     *
      * Mandatory - If PINAdviceType is paper else optional. <br />
-     *
      * Max field length: 40
      */
     public function unsetPINDeliveryCity(): void
@@ -1550,7 +1348,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Region Id.
      * Region Id.<br />
-     *
      * Optional
      */
     public function getPINDeliveryRegionId(): ?int
@@ -1564,7 +1361,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Region Id.
      * Region Id.<br />
-     *
      * Optional
      *
      * @maps PINDeliveryRegionId
@@ -1577,7 +1373,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Region Id.
      * Region Id.<br />
-     *
      * Optional
      */
     public function unsetPINDeliveryRegionId(): void
@@ -1588,7 +1383,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Region.
      * Region.<br />
-     *
      * When region is passed
      */
     public function getPINDeliveryRegion(): ?string
@@ -1602,7 +1396,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Region.
      * Region.<br />
-     *
      * When region is passed
      *
      * @maps PINDeliveryRegion
@@ -1615,7 +1408,6 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Region.
      * Region.<br />
-     *
      * When region is passed
      */
     public function unsetPINDeliveryRegion(): void
@@ -1626,9 +1418,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Country.
      * The ISO code of the country.<br />
-     *
      * Mappings for ISO code <br />
-     *
      * Mandatory if PINAdviceType is paper else optional.
      */
     public function getPINDeliveryCountry(): ?string
@@ -1642,9 +1432,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Country.
      * The ISO code of the country.<br />
-     *
      * Mappings for ISO code <br />
-     *
      * Mandatory if PINAdviceType is paper else optional.
      *
      * @maps PINDeliveryCountry
@@ -1657,9 +1445,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Country.
      * The ISO code of the country.<br />
-     *
      * Mappings for ISO code <br />
-     *
      * Mandatory if PINAdviceType is paper else optional.
      */
     public function unsetPINDeliveryCountry(): void
@@ -1670,9 +1456,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Delivery Country Id.
      * The countryId of the country.<br />
-     *
      * Mappings for ISO code<br />
-     *
      * This is not an input parameter.
      */
     public function getPINDeliveryCountryId(): ?int
@@ -1686,9 +1470,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Delivery Country Id.
      * The countryId of the country.<br />
-     *
      * Mappings for ISO code<br />
-     *
      * This is not an input parameter.
      *
      * @maps PINDeliveryCountryId
@@ -1701,9 +1483,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Delivery Country Id.
      * The countryId of the country.<br />
-     *
      * Mappings for ISO code<br />
-     *
      * This is not an input parameter.
      */
     public function unsetPINDeliveryCountryId(): void
@@ -1714,9 +1494,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Phone Number.
      * Phone number for to send SMS of the PIN in case PINAdviceType is SMS.<br />
-     *
      * Mandatory if PINAdviceType is SMS else optional.<br />
-     *
      * Max field length: 20
      */
     public function getPINPhoneNumber(): ?string
@@ -1730,9 +1508,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Phone Number.
      * Phone number for to send SMS of the PIN in case PINAdviceType is SMS.<br />
-     *
      * Mandatory if PINAdviceType is SMS else optional.<br />
-     *
      * Max field length: 20
      *
      * @maps PINPhoneNumber
@@ -1745,9 +1521,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Phone Number.
      * Phone number for to send SMS of the PIN in case PINAdviceType is SMS.<br />
-     *
      * Mandatory if PINAdviceType is SMS else optional.<br />
-     *
      * Max field length: 20
      */
     public function unsetPINPhoneNumber(): void
@@ -1758,9 +1532,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Returns P in Email Address.
      * Email address for to send email of the PIN in case PINAdviceType is Email.<br />
-     *
      * Mandatory if PINAdviceType is email else optional.<br />
-     *
      * Max field length: 90
      */
     public function getPINEmailAddress(): ?string
@@ -1774,9 +1546,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Sets P in Email Address.
      * Email address for to send email of the PIN in case PINAdviceType is Email.<br />
-     *
      * Mandatory if PINAdviceType is email else optional.<br />
-     *
      * Max field length: 90
      *
      * @maps PINEmailAddress
@@ -1789,9 +1559,7 @@ class ReplaceCardSettings implements \JsonSerializable
     /**
      * Unsets P in Email Address.
      * Email address for to send email of the PIN in case PINAdviceType is Email.<br />
-     *
      * Mandatory if PINAdviceType is email else optional.<br />
-     *
      * Max field length: 90
      */
     public function unsetPINEmailAddress(): void
@@ -1831,7 +1599,6 @@ class ReplaceCardSettings implements \JsonSerializable
      * Returns Save for Card Reissue.
      * If this is specified, the contact address will be saved in cards platform for card reissue
      * processing.<br />
-     *
      * Optional
      */
     public function getSaveForCardReissue(): ?bool
@@ -1843,7 +1610,6 @@ class ReplaceCardSettings implements \JsonSerializable
      * Sets Save for Card Reissue.
      * If this is specified, the contact address will be saved in cards platform for card reissue
      * processing.<br />
-     *
      * Optional
      *
      * @maps SaveForCardReissue

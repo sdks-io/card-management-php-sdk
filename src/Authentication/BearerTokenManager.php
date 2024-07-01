@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Authentication;
 
+use Closure;
+use Exception;
 use CoreInterfaces\Core\Request\TypeValidatorInterface;
 use Core\Authentication\CoreAuth;
 use Core\Client;
@@ -18,6 +20,7 @@ use Core\Utils\CoreHelper;
 use InvalidArgumentException;
 use ShellCardManagementAPIsLib\Models\OAuthToken;
 use ShellCardManagementAPIsLib\Controllers\OAuthAuthorizationController;
+use ShellCardManagementAPIsLib\ConfigurationDefaults;
 
 /**
  * Utility class for OAuth 2 authorization and token management
@@ -30,32 +33,21 @@ class BearerTokenManager extends CoreAuth implements BearerTokenCredentials
      */
     private $oAuthApi;
 
-    private $oAuthClientId;
-
-    private $oAuthClientSecret;
-
-    private $oAuthToken;
+    /**
+     * @var array
+     */
+    private $config;
 
     /**
-     * Returns an instance of this class.
-     *
-     * @param string $oAuthClientId OAuth 2 Client ID
-     * @param string $oAuthClientSecret OAuth 2 Client Secret
-     * @param mixed $oAuthToken Object for storing information about the OAuth token
+     * @var OAuthToken|null
      */
-    public function __construct(string $oAuthClientId, string $oAuthClientSecret, $oAuthToken)
+    private $internalOAuthToken;
+
+    public function __construct(array $config)
     {
-        $this->oAuthClientId = $oAuthClientId;
-        $this->oAuthClientSecret = $oAuthClientSecret;
-        if ($oAuthToken instanceof OAuthToken) {
-            $this->oAuthToken = $oAuthToken;
-            parent::__construct(
-                HeaderParam::init(
-                    'Authorization',
-                    CoreHelper::getBearerAuthString($oAuthToken->getAccessToken())
-                )->requiredNonEmpty()
-            );
-        }
+        parent::__construct();
+        $this->config = $config;
+        $this->internalOAuthToken = $this->getOAuthToken();
     }
 
     public function setClient(Client $client): void
@@ -68,7 +60,7 @@ class BearerTokenManager extends CoreAuth implements BearerTokenCredentials
      */
     public function getOAuthClientId(): string
     {
-        return $this->oAuthClientId;
+        return $this->config['oAuthClientId'] ?? ConfigurationDefaults::O_AUTH_CLIENT_ID;
     }
 
     /**
@@ -76,7 +68,7 @@ class BearerTokenManager extends CoreAuth implements BearerTokenCredentials
      */
     public function getOAuthClientSecret(): string
     {
-        return $this->oAuthClientSecret;
+        return $this->config['oAuthClientSecret'] ?? ConfigurationDefaults::O_AUTH_CLIENT_SECRET;
     }
 
     /**
@@ -84,7 +76,11 @@ class BearerTokenManager extends CoreAuth implements BearerTokenCredentials
      */
     public function getOAuthToken(): ?OAuthToken
     {
-        return $this->oAuthToken;
+        $oAuthToken = $this->config['oAuthToken'];
+        if ($oAuthToken instanceof OAuthToken) {
+            return clone $oAuthToken;
+        }
+        return ConfigurationDefaults::O_AUTH_TOKEN;
     }
 
     /**
@@ -95,8 +91,16 @@ class BearerTokenManager extends CoreAuth implements BearerTokenCredentials
      */
     public function equals(string $oAuthClientId, string $oAuthClientSecret): bool
     {
-        return $oAuthClientId == $this->oAuthClientId &&
-            $oAuthClientSecret == $this->oAuthClientSecret;
+        return $oAuthClientId == $this->getOAuthClientId() &&
+            $oAuthClientSecret == $this->getOAuthClientSecret();
+    }
+
+    /**
+     * Clock skew time in seconds applied while checking the OAuth Token expiry.
+     */
+    public function getOAuthClockSkew(): int
+    {
+        return $this->config['BearerToken-ClockSkew'] ?? ConfigurationDefaults::BEARER_TOKEN_CLOCK_SKEW;
     }
 
     /**
@@ -112,21 +116,44 @@ class BearerTokenManager extends CoreAuth implements BearerTokenCredentials
             $additionalParams
         );
 
-        //add expiry
-        if ($oAuthToken->getExpiresIn() != null && $oAuthToken->getExpiresIn() != 0) {
-            $oAuthToken->setExpiry(time() + $oAuthToken->getExpiresIn());
-        }
+        $this->addExpiryTime($oAuthToken);
 
         return $oAuthToken;
     }
 
     /**
-     * Has the OAuth token expired?
+     * Has the OAuth token expired? If the token argument is not provided then this function will check the expiry of
+     * the initial oauthToken, that's set in the client initialization.
      */
-    public function isTokenExpired(): bool
+    public function isTokenExpired(?OAuthToken $token = null): bool
     {
-        return $this->oAuthToken->getExpiry() != null &&
-            $this->oAuthToken->getExpiry() < time();
+        $token = $token ?? $this->getOAuthToken();
+        if ($token == null || empty($token->getExpiry())) {
+            return true;
+        }
+        return $token->getExpiry() < time() + $this->getOAuthClockSkew();
+    }
+
+    private function getTokenFromProvider(): ?OAuthToken
+    {
+        if ($this->internalOAuthToken != null && !$this->isTokenExpired($this->internalOAuthToken)) {
+            return $this->internalOAuthToken;
+        }
+        $provider = $this->config['BearerToken-TokenProvider'];
+        if (is_callable($provider)) {
+            $token = Closure::fromCallable($provider)($this->internalOAuthToken, $this);
+        } else {
+            try {
+                $token = $this->fetchToken();
+            } catch (Exception $exp) {
+                return $this->internalOAuthToken;
+            }
+        }
+        $updateCallback = $this->config['BearerToken-OnTokenUpdate'];
+        if (is_callable($updateCallback)) {
+            Closure::fromCallable($updateCallback)($token);
+        }
+        return $token;
     }
 
     /**
@@ -136,23 +163,41 @@ class BearerTokenManager extends CoreAuth implements BearerTokenCredentials
      */
     public function validate(TypeValidatorInterface $validator): void
     {
-        if ($this->oAuthToken == null) {
+        $this->internalOAuthToken = $this->getTokenFromProvider();
+        if ($this->internalOAuthToken == null) {
             throw new InvalidArgumentException('Client is not authorized. An OAuth token is needed to make API calls.');
         }
-
-        if ($this->isTokenExpired()) {
+        if ($this->isTokenExpired($this->internalOAuthToken)) {
             throw new InvalidArgumentException('OAuth token is expired. A valid token is needed to make API calls.');
         }
+        parent::__construct(
+            HeaderParam::init(
+                'Authorization',
+                CoreHelper::getBearerAuthString($this->internalOAuthToken->getAccessToken())
+            )->requiredNonEmpty()
+        );
         parent::validate($validator);
     }
 
     /**
-     * Build authorization header value for basic auth
+     * Build authorization header value for basic auth.
      */
     private function buildBasicHeader(): string
     {
         return 'Basic ' . base64_encode(
-            $this->oAuthClientId . ':' . $this->oAuthClientSecret
+            $this->getOAuthClientId() . ':' . $this->getOAuthClientSecret()
         );
+    }
+
+    /**
+     * Adds the expiry time to the given oAuthToken instance.
+     */
+    private function addExpiryTime(OAuthToken $oAuthToken): void
+    {
+        $expiresIn = $oAuthToken->getExpiresIn();
+        if (empty($expiresIn)) {
+            return;
+        }
+        $oAuthToken->setExpiry(time() + $expiresIn);
     }
 }

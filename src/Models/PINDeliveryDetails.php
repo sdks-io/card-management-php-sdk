@@ -14,7 +14,6 @@ use stdClass;
 
 /**
  * PINDeliverDetails entity. The fields of this entity are described below.
- *
  * This is mandatory if PINContactType is 4 else optional and ignored.
  */
 class PINDeliveryDetails implements \JsonSerializable
@@ -89,7 +88,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Returns Contact Name.
      * Contact Name
-     *
      * Max Length: 50
      */
     public function getContactName(): ?string
@@ -103,7 +101,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Sets Contact Name.
      * Contact Name
-     *
      * Max Length: 50
      *
      * @maps ContactName
@@ -116,7 +113,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Unsets Contact Name.
      * Contact Name
-     *
      * Max Length: 50
      */
     public function unsetContactName(): void
@@ -127,7 +123,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Returns Contact Title.
      * Contact Title
-     *
      * Max Length: 50
      */
     public function getContactTitle(): ?string
@@ -141,7 +136,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Sets Contact Title.
      * Contact Title
-     *
      * Max Length: 50
      *
      * @maps ContactTitle
@@ -154,7 +148,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Unsets Contact Title.
      * Contact Title
-     *
      * Max Length: 50
      */
     public function unsetContactTitle(): void
@@ -165,7 +158,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Returns Company Name.
      * Company Name for PIN delivery.
-     *
      * Max Length: 50
      */
     public function getCompanyName(): string
@@ -176,7 +168,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Sets Company Name.
      * Company Name for PIN delivery.
-     *
      * Max Length: 50
      *
      * @required
@@ -190,7 +181,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Returns Address Line.
      * Address Lines
-     *
      * Max Length: 1024
      */
     public function getAddressLine(): string
@@ -201,7 +191,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Sets Address Line.
      * Address Lines
-     *
      * Max Length: 1024
      *
      * @required
@@ -215,7 +204,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Returns Zip Code.
      * Zip Code
-     *
      * Max Length: 10
      */
     public function getZipCode(): ?string
@@ -226,7 +214,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Sets Zip Code.
      * Zip Code
-     *
      * Max Length: 10
      *
      * @maps ZipCode
@@ -239,7 +226,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Returns City.
      * City
-     *
      * Max Length: 40
      */
     public function getCity(): string
@@ -250,7 +236,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Sets City.
      * City
-     *
      * Max Length: 40
      *
      * @required
@@ -360,9 +345,7 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Returns Email Address.
      * Cardholder email address for PIN delivery
-     *
      * Max Length : 90
-     *
      * Example: xxxxxx@example.com <br/>Note:Based on the international standard that there can be Max
      * Length 64 before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88
      * (Minimum of 2)
@@ -378,9 +361,7 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Sets Email Address.
      * Cardholder email address for PIN delivery
-     *
      * Max Length : 90
-     *
      * Example: xxxxxx@example.com <br/>Note:Based on the international standard that there can be Max
      * Length 64 before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88
      * (Minimum of 2)
@@ -395,9 +376,7 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Unsets Email Address.
      * Cardholder email address for PIN delivery
-     *
      * Max Length : 90
-     *
      * Example: xxxxxx@example.com <br/>Note:Based on the international standard that there can be Max
      * Length 64 before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88
      * (Minimum of 2)
@@ -410,7 +389,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Returns Save PIN Reminder.
      * Save PIN Reminder
-     *
      * If SavePINReminder is true, the contact address will be saved database for PIN reminder.
      *
      * <br/>Only allowed for PIN Advice paper delivery.
@@ -423,7 +401,6 @@ class PINDeliveryDetails implements \JsonSerializable
     /**
      * Sets Save PIN Reminder.
      * Save PIN Reminder
-     *
      * If SavePINReminder is true, the contact address will be saved database for PIN reminder.
      *
      * <br/>Only allowed for PIN Advice paper delivery.

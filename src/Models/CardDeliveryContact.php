@@ -14,7 +14,6 @@ use stdClass;
 
 /**
  * Request entity object for CardDeliveryContact
- *
  * Mandatory when CardDeliveryType is 2 else ignored.
  */
 class CardDeliveryContact implements \JsonSerializable
@@ -92,9 +91,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Contact Title.
      * Title of the contact person <br />
-     *
      * Optional
-     *
      * Max field length: 10
      */
     public function getDeliveryContactTitle(): ?string
@@ -108,9 +105,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Contact Title.
      * Title of the contact person <br />
-     *
      * Optional
-     *
      * Max field length: 10
      *
      * @maps DeliveryContactTitle
@@ -123,9 +118,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Contact Title.
      * Title of the contact person <br />
-     *
      * Optional
-     *
      * Max field length: 10
      */
     public function unsetDeliveryContactTitle(): void
@@ -136,9 +129,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Contact Name.
      * Name of the contact person <br />
-     *
      * Mandatory  <br />
-     *
      * Max field length: 50
      */
     public function getDeliveryContactName(): ?string
@@ -149,9 +140,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Contact Name.
      * Name of the contact person <br />
-     *
      * Mandatory  <br />
-     *
      * Max field length: 50
      *
      * @maps DeliveryContactName
@@ -164,9 +153,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Company Name.
      * Company name <br />
-     *
      * Mandatory  <br />
-     *
      * Max field length: 50
      */
     public function getDeliveryCompanyName(): ?string
@@ -177,9 +164,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Company Name.
      * Company name <br />
-     *
      * Mandatory  <br />
-     *
      * Max field length: 50
      *
      * @maps DeliveryCompanyName
@@ -192,9 +177,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Address Line 1.
      * Address line 1 <br />
-     *
      * Mandatory<br />
-     *
      * Max field length: 40
      */
     public function getDeliveryAddressLine1(): ?string
@@ -205,9 +188,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Address Line 1.
      * Address line 1 <br />
-     *
      * Mandatory<br />
-     *
      * Max field length: 40
      *
      * @maps DeliveryAddressLine1
@@ -220,11 +201,8 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Address Line 2.
      * Address line 2 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function getDeliveryAddressLine2(): ?string
@@ -238,11 +216,8 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Address Line 2.
      * Address line 2 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      *
      * @maps DeliveryAddressLine2
@@ -255,11 +230,8 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Address Line 2.
      * Address line 2 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function unsetDeliveryAddressLine2(): void
@@ -270,11 +242,8 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Address Line 3.
      * Address line 3 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function getDeliveryAddressLine3(): ?string
@@ -288,11 +257,8 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Address Line 3.
      * Address line 3 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      *
      * @maps DeliveryAddressLine3
@@ -305,11 +271,8 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Address Line 3.
      * Address line 3 <br />
-     *
      * Optional <br />
-     *
      * Max field length: 40  <br />
-     *
      * Optional
      */
     public function unsetDeliveryAddressLine3(): void
@@ -320,11 +283,8 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Zip Code.
      * ZIP code <br />
-     *
      * Mandatory  <br />
-     *
      * Max field length: 10  <br />
-     *
      * Optional
      */
     public function getDeliveryZipCode(): ?string
@@ -335,11 +295,8 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Zip Code.
      * ZIP code <br />
-     *
      * Mandatory  <br />
-     *
      * Max field length: 10  <br />
-     *
      * Optional
      *
      * @maps DeliveryZipCode
@@ -352,9 +309,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery City.
      * City  <br />
-     *
      * Mandatory  <br />
-     *
      * Max field length: 40
      */
     public function getDeliveryCity(): ?string
@@ -365,9 +320,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery City.
      * City  <br />
-     *
      * Mandatory  <br />
-     *
      * Max field length: 40
      *
      * @maps DeliveryCity
@@ -380,7 +333,6 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Region Id.
      * Region Id  <br />
-     *
      * Optional
      */
     public function getDeliveryRegionId(): ?int
@@ -394,7 +346,6 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Region Id.
      * Region Id  <br />
-     *
      * Optional
      *
      * @maps DeliveryRegionId
@@ -407,7 +358,6 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Region Id.
      * Region Id  <br />
-     *
      * Optional
      */
     public function unsetDeliveryRegionId(): void
@@ -418,9 +368,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Delivery Region.
      * Region  <br />
-     *
      * Optional<br />
-     *
      * When region is passed
      */
     public function getDeliveryRegion(): ?string
@@ -434,9 +382,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Delivery Region.
      * Region  <br />
-     *
      * Optional<br />
-     *
      * When region is passed
      *
      * @maps DeliveryRegion
@@ -449,9 +395,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Unsets Delivery Region.
      * Region  <br />
-     *
      * Optional<br />
-     *
      * When region is passed
      */
     public function unsetDeliveryRegion(): void
@@ -482,9 +426,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Phone Number.
      * Phone number for courier delivery.<br />
-     *
      * Optional.<br />
-     *
      * Max field length: 20
      */
     public function getPhoneNumber(): ?string
@@ -498,9 +440,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Phone Number.
      * Phone number for courier delivery.<br />
-     *
      * Optional.<br />
-     *
      * Max field length: 20
      *
      * @maps PhoneNumber
@@ -513,9 +453,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Unsets Phone Number.
      * Phone number for courier delivery.<br />
-     *
      * Optional.<br />
-     *
      * Max field length: 20
      */
     public function unsetPhoneNumber(): void
@@ -526,9 +464,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Returns Email Address.
      * Email address for courier delivery.<br />
-     *
      * Optional.<br />
-     *
      * Max field length: 90 <br/>Note:Based on the international standard that there can be Max Length 64
      * before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88 (Minimum of
      * 2)
@@ -544,9 +480,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Sets Email Address.
      * Email address for courier delivery.<br />
-     *
      * Optional.<br />
-     *
      * Max field length: 90 <br/>Note:Based on the international standard that there can be Max Length 64
      * before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88 (Minimum of
      * 2)
@@ -561,9 +495,7 @@ class CardDeliveryContact implements \JsonSerializable
     /**
      * Unsets Email Address.
      * Email address for courier delivery.<br />
-     *
      * Optional.<br />
-     *
      * Max field length: 90 <br/>Note:Based on the international standard that there can be Max Length 64
      * before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88 (Minimum of
      * 2)
@@ -577,7 +509,6 @@ class CardDeliveryContact implements \JsonSerializable
      * Returns Save for Card Reissue.
      * If this is specified, the contact address will be saved in cards platform for card reissue
      * processing.<br />
-     *
      * Optional
      */
     public function getSaveForCardReissue(): ?bool
@@ -589,7 +520,6 @@ class CardDeliveryContact implements \JsonSerializable
      * Sets Save for Card Reissue.
      * If this is specified, the contact address will be saved in cards platform for card reissue
      * processing.<br />
-     *
      * Optional
      *
      * @maps SaveForCardReissue

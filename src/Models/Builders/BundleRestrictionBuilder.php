@@ -12,10 +12,10 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\BundleRestriction;
-use ShellCardManagementAPIsLib\Models\DayTimeRestrictions;
-use ShellCardManagementAPIsLib\Models\LocationRestrictions;
-use ShellCardManagementAPIsLib\Models\ProductRestrictions;
-use ShellCardManagementAPIsLib\Models\UsageRestrictions;
+use ShellCardManagementAPIsLib\Models\DayTimeRestriction;
+use ShellCardManagementAPIsLib\Models\LocationRestriction;
+use ShellCardManagementAPIsLib\Models\ProductRestrictionCard;
+use ShellCardManagementAPIsLib\Models\UsageRestrictionsCard;
 
 /**
  * Builder for model BundleRestriction
@@ -43,72 +43,90 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Sets reset day time restriction field.
+     * Sets day time restriction action field.
      */
-    public function resetDayTimeRestriction(?bool $value): self
+    public function dayTimeRestrictionAction(?string $value): self
     {
-        $this->instance->setResetDayTimeRestriction($value);
+        $this->instance->setDayTimeRestrictionAction($value);
         return $this;
     }
 
     /**
-     * Sets reset location restriction field.
+     * Unsets day time restriction action field.
      */
-    public function resetLocationRestriction(?bool $value): self
+    public function unsetDayTimeRestrictionAction(): self
     {
-        $this->instance->setResetLocationRestriction($value);
+        $this->instance->unsetDayTimeRestrictionAction();
         return $this;
     }
 
     /**
-     * Sets reset product restriction field.
+     * Sets location restriction action field.
      */
-    public function resetProductRestriction(?bool $value): self
+    public function locationRestrictionAction(?string $value): self
     {
-        $this->instance->setResetProductRestriction($value);
+        $this->instance->setLocationRestrictionAction($value);
+        return $this;
+    }
+
+    /**
+     * Unsets location restriction action field.
+     */
+    public function unsetLocationRestrictionAction(): self
+    {
+        $this->instance->unsetLocationRestrictionAction();
         return $this;
     }
 
     /**
      * Sets usage restrictions field.
      */
-    public function usageRestrictions(?UsageRestrictions $value): self
+    public function usageRestrictions(?UsageRestrictionsCard $value): self
     {
         $this->instance->setUsageRestrictions($value);
         return $this;
     }
 
     /**
+     * Unsets usage restrictions field.
+     */
+    public function unsetUsageRestrictions(): self
+    {
+        $this->instance->unsetUsageRestrictions();
+        return $this;
+    }
+
+    /**
      * Sets day time restrictions field.
      */
-    public function dayTimeRestrictions(?DayTimeRestrictions $value): self
+    public function dayTimeRestrictions(?DayTimeRestriction $value): self
     {
         $this->instance->setDayTimeRestrictions($value);
         return $this;
     }
 
     /**
-     * Sets product restriction field.
+     * Sets product restrictions field.
      */
-    public function productRestriction(?ProductRestrictions $value): self
+    public function productRestrictions(?ProductRestrictionCard $value): self
     {
-        $this->instance->setProductRestriction($value);
+        $this->instance->setProductRestrictions($value);
         return $this;
     }
 
     /**
-     * Sets location restriction profile id field.
+     * Unsets product restrictions field.
      */
-    public function locationRestrictionProfileId(?string $value): self
+    public function unsetProductRestrictions(): self
     {
-        $this->instance->setLocationRestrictionProfileId($value);
+        $this->instance->unsetProductRestrictions();
         return $this;
     }
 
     /**
      * Sets location restrictions field.
      */
-    public function locationRestrictions(?LocationRestrictions $value): self
+    public function locationRestrictions(?LocationRestriction $value): self
     {
         $this->instance->setLocationRestrictions($value);
         return $this;

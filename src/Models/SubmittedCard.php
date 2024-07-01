@@ -76,7 +76,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns Replacement Card Reference.
      * Reference number for tracking of replacement card order request of the specific card,<br />
-     *
      * This is applicable for requests with target status as Block and OrderReplacement passed as True.
      */
     public function getReplacementCardReference(): ?int
@@ -90,7 +89,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets Replacement Card Reference.
      * Reference number for tracking of replacement card order request of the specific card,<br />
-     *
      * This is applicable for requests with target status as Block and OrderReplacement passed as True.
      *
      * @maps ReplacementCardReference
@@ -103,7 +101,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets Replacement Card Reference.
      * Reference number for tracking of replacement card order request of the specific card,<br />
-     *
      * This is applicable for requests with target status as Block and OrderReplacement passed as True.
      */
     public function unsetReplacementCardReference(): void
@@ -146,7 +143,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      */
     public function getAccountId(): ?int
@@ -160,7 +156,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      *
      * @maps AccountId
@@ -173,7 +168,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account Id of the customer.<br />
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      */
     public function unsetAccountId(): void
@@ -184,7 +178,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else Mandatory.
      */
     public function getAccountNumber(): ?string
@@ -198,7 +191,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else Mandatory.
      *
      * @maps AccountNumber
@@ -211,7 +203,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account Number of the customer.<br />
-     *
      * Optional if AccountId is passed, else Mandatory.
      */
     public function unsetAccountNumber(): void
@@ -222,9 +213,7 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns Card Expiry Date.
      * Expiry date of the card.<br />
-     *
      * Mandatory if PAN is passed, else optional.<br />
-     *
      * Format: yyyyMMdd
      */
     public function getCardExpiryDate(): ?string
@@ -238,9 +227,7 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets Card Expiry Date.
      * Expiry date of the card.<br />
-     *
      * Mandatory if PAN is passed, else optional.<br />
-     *
      * Format: yyyyMMdd
      *
      * @maps CardExpiryDate
@@ -253,9 +240,7 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets Card Expiry Date.
      * Expiry date of the card.<br />
-     *
      * Mandatory if PAN is passed, else optional.<br />
-     *
      * Format: yyyyMMdd
      */
     public function unsetCardExpiryDate(): void
@@ -266,7 +251,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns Card Id.
      * Card Id of the card.<br />
-     *
      * Optional if PAN is passed, else Mandatory.
      */
     public function getCardId(): ?int
@@ -280,7 +264,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets Card Id.
      * Card Id of the card.<br />
-     *
      * Optional if PAN is passed, else Mandatory.
      *
      * @maps CardId
@@ -293,7 +276,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets Card Id.
      * Card Id of the card.<br />
-     *
      * Optional if PAN is passed, else Mandatory.
      */
     public function unsetCardId(): void
@@ -304,7 +286,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns Col Co Code.
      * Collecting company code of the customer. <br />
-     *
      * Optional if ColCoId is passed, else Mandatory.<br />
      */
     public function getColCoCode(): ?int
@@ -318,7 +299,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets Col Co Code.
      * Collecting company code of the customer. <br />
-     *
      * Optional if ColCoId is passed, else Mandatory.<br />
      *
      * @maps ColCoCode
@@ -331,7 +311,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets Col Co Code.
      * Collecting company code of the customer. <br />
-     *
      * Optional if ColCoId is passed, else Mandatory.<br />
      */
     public function unsetColCoCode(): void
@@ -342,7 +321,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns Col Co Id.
      * Collecting company id of the customer. <br />
-     *
      * Optional if ColCoCode is passed, else Mandatory.<br />
      */
     public function getColCoId(): ?int
@@ -356,7 +334,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets Col Co Id.
      * Collecting company id of the customer. <br />
-     *
      * Optional if ColCoCode is passed, else Mandatory.<br />
      *
      * @maps ColCoId
@@ -369,7 +346,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets Col Co Id.
      * Collecting company id of the customer. <br />
-     *
      * Optional if ColCoCode is passed, else Mandatory.<br />
      */
     public function unsetColCoId(): void
@@ -380,7 +356,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns P AN.
      * PAN of the card.<br />
-     *
      * Optional if CardId is passed, else Mandatory.<br />
      */
     public function getPAN(): ?string
@@ -394,7 +369,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets P AN.
      * PAN of the card.<br />
-     *
      * Optional if CardId is passed, else Mandatory.<br />
      *
      * @maps PAN
@@ -407,7 +381,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets P AN.
      * PAN of the card.<br />
-     *
      * Optional if CardId is passed, else Mandatory.<br />
      */
     public function unsetPAN(): void
@@ -418,7 +391,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer id of the customer.<br />
-     *
      * Optional if PayerNumber is passed, else Mandatory.
      */
     public function getPayerId(): ?int
@@ -432,7 +404,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer id of the customer.<br />
-     *
      * Optional if PayerNumber is passed, else Mandatory.
      *
      * @maps PayerId
@@ -445,7 +416,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer id of the customer.<br />
-     *
      * Optional if PayerNumber is passed, else Mandatory.
      */
     public function unsetPayerId(): void
@@ -456,7 +426,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Returns Payer Number.
      * PayerNumber of the customer.<br />
-     *
      * Optional if PayerId is passed, else Mandatory.
      */
     public function getPayerNumber(): ?string
@@ -470,7 +439,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Sets Payer Number.
      * PayerNumber of the customer.<br />
-     *
      * Optional if PayerId is passed, else Mandatory.
      *
      * @maps PayerNumber
@@ -483,7 +451,6 @@ class SubmittedCard implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * PayerNumber of the customer.<br />
-     *
      * Optional if PayerId is passed, else Mandatory.
      */
     public function unsetPayerNumber(): void

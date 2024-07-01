@@ -11,31 +11,33 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Models\SummaryOfBundleResponse;
+use ShellCardManagementAPIsLib\Models\CardBundle;
+use ShellCardManagementAPIsLib\Models\ErrorStatus;
+use ShellCardManagementAPIsLib\Models\SummaryofbundleResponse;
 
 /**
- * Builder for model SummaryOfBundleResponse
+ * Builder for model SummaryofbundleResponse
  *
- * @see SummaryOfBundleResponse
+ * @see SummaryofbundleResponse
  */
-class SummaryOfBundleResponseBuilder
+class SummaryofbundleResponseBuilder
 {
     /**
-     * @var SummaryOfBundleResponse
+     * @var SummaryofbundleResponse
      */
     private $instance;
 
-    private function __construct(SummaryOfBundleResponse $instance)
+    private function __construct(SummaryofbundleResponse $instance)
     {
         $this->instance = $instance;
     }
 
     /**
-     * Initializes a new summary of bundle response Builder object.
+     * Initializes a new summaryofbundle response Builder object.
      */
     public static function init(): self
     {
-        return new self(new SummaryOfBundleResponse());
+        return new self(new SummaryofbundleResponse());
     }
 
     /**
@@ -48,27 +50,81 @@ class SummaryOfBundleResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Unsets request id field.
      */
-    public function status(?string $value): self
+    public function unsetRequestId(): self
     {
-        $this->instance->setStatus($value);
+        $this->instance->unsetRequestId();
         return $this;
     }
 
     /**
-     * Sets data field.
+     * Sets payer id field.
      */
-    public function data(?array $value): self
+    public function payerId(?int $value): self
     {
-        $this->instance->setData($value);
+        $this->instance->setPayerId($value);
         return $this;
     }
 
     /**
-     * Initializes a new summary of bundle response object.
+     * Sets payer number field.
      */
-    public function build(): SummaryOfBundleResponse
+    public function payerNumber(?string $value): self
+    {
+        $this->instance->setPayerNumber($value);
+        return $this;
+    }
+
+    /**
+     * Sets account id field.
+     */
+    public function accountId(?int $value): self
+    {
+        $this->instance->setAccountId($value);
+        return $this;
+    }
+
+    /**
+     * Sets account number field.
+     */
+    public function accountNumber(?string $value): self
+    {
+        $this->instance->setAccountNumber($value);
+        return $this;
+    }
+
+    /**
+     * Sets count of cards not in bundle field.
+     */
+    public function countOfCardsNotInBundle(?int $value): self
+    {
+        $this->instance->setCountOfCardsNotInBundle($value);
+        return $this;
+    }
+
+    /**
+     * Sets card bundles field.
+     */
+    public function cardBundles(?CardBundle $value): self
+    {
+        $this->instance->setCardBundles($value);
+        return $this;
+    }
+
+    /**
+     * Sets error field.
+     */
+    public function error(?ErrorStatus $value): self
+    {
+        $this->instance->setError($value);
+        return $this;
+    }
+
+    /**
+     * Initializes a new summaryofbundle response object.
+     */
+    public function build(): SummaryofbundleResponse
     {
         return CoreHelper::clone($this->instance);
     }

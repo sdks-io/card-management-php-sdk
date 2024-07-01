@@ -963,27 +963,17 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     /**
      * Returns Medium Type ID.
      * Id of the medium type identifier.
-     *
      * Example: 1,2,4
      *
      *
-     *
      * Full list below:
-     *
      * 1 - Fuel Card
-     *
      * 2 - Fuel Card with EV
-     *
      * 3 - EV only
-     *
      * 4 - Fuel Card and Key Fob
-     *
      * 5 - Key Fob
-     *
      * 6 - Virtual Card
-     *
      * 7 - NPII Token
-     *
      * 8 – Smartpay Token
      */
     public function getMediumTypeID(): ?int
@@ -997,27 +987,17 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     /**
      * Sets Medium Type ID.
      * Id of the medium type identifier.
-     *
      * Example: 1,2,4
      *
      *
-     *
      * Full list below:
-     *
      * 1 - Fuel Card
-     *
      * 2 - Fuel Card with EV
-     *
      * 3 - EV only
-     *
      * 4 - Fuel Card and Key Fob
-     *
      * 5 - Key Fob
-     *
      * 6 - Virtual Card
-     *
      * 7 - NPII Token
-     *
      * 8 – Smartpay Token
      *
      * @maps MediumTypeID
@@ -1030,27 +1010,17 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     /**
      * Unsets Medium Type ID.
      * Id of the medium type identifier.
-     *
      * Example: 1,2,4
      *
      *
-     *
      * Full list below:
-     *
      * 1 - Fuel Card
-     *
      * 2 - Fuel Card with EV
-     *
      * 3 - EV only
-     *
      * 4 - Fuel Card and Key Fob
-     *
      * 5 - Key Fob
-     *
      * 6 - Virtual Card
-     *
      * 7 - NPII Token
-     *
      * 8 – Smartpay Token
      */
     public function unsetMediumTypeID(): void

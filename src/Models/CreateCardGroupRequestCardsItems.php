@@ -37,7 +37,6 @@ class CreateCardGroupRequestCardsItems implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the account of the card.
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      */
     public function getAccountId(): ?int
@@ -48,7 +47,6 @@ class CreateCardGroupRequestCardsItems implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the account of the card.
-     *
      * Optional if AccountNumber is passed, else Mandatory.
      *
      * @maps AccountId
@@ -61,7 +59,6 @@ class CreateCardGroupRequestCardsItems implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the account of the card.
-     *
      * Optional if AccountId is passed, else Mandatory.
      */
     public function getAccountNumber(): ?string
@@ -72,7 +69,6 @@ class CreateCardGroupRequestCardsItems implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the account of the card.
-     *
      * Optional if AccountId is passed, else Mandatory.
      *
      * @maps AccountNumber
@@ -85,7 +81,6 @@ class CreateCardGroupRequestCardsItems implements \JsonSerializable
     /**
      * Returns Card Id.
      * Card Id of the card.
-     *
      * Optional if PAN is passed, else Mandatory.
      */
     public function getCardId(): ?int
@@ -96,7 +91,6 @@ class CreateCardGroupRequestCardsItems implements \JsonSerializable
     /**
      * Sets Card Id.
      * Card Id of the card.
-     *
      * Optional if PAN is passed, else Mandatory.
      *
      * @maps CardId
@@ -109,7 +103,6 @@ class CreateCardGroupRequestCardsItems implements \JsonSerializable
     /**
      * Returns P AN.
      * PAN of the card.
-     *
      * Optional if CardId is passed, else Mandatory.
      */
     public function getPAN(): ?string
@@ -120,7 +113,6 @@ class CreateCardGroupRequestCardsItems implements \JsonSerializable
     /**
      * Sets P AN.
      * PAN of the card.
-     *
      * Optional if CardId is passed, else Mandatory.
      *
      * @maps PAN

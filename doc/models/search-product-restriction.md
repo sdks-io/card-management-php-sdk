@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `products` | [`?(ProductAllOf0[])`](../../doc/models/product-all-of-0.md) | Optional | - | getProducts(): ?array | setProducts(?array products): void |
+| `products` | [`?(RestrictionProduct[])`](../../doc/models/restriction-product.md) | Optional | - | getProducts(): ?array | setProducts(?array products): void |
 | `productGroups` | [`?(ProductGroup[])`](../../doc/models/product-group.md) | Optional | - | getProductGroups(): ?array | setProductGroups(?array productGroups): void |
 
 ## Example (as JSON)

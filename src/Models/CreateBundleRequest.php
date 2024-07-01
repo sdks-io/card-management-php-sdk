@@ -15,39 +15,19 @@ use stdClass;
 class CreateBundleRequest implements \JsonSerializable
 {
     /**
-     * @var int|null
-     */
-    private $colCoId;
-
-    /**
-     * @var int|null
-     */
-    private $payerId;
-
-    /**
-     * @var int|null
-     */
-    private $accountId;
-
-    /**
      * @var array
      */
-    private $externalBundleId = [];
-
-    /**
-     * @var string
-     */
-    private $description;
-
-    /**
-     * @var string[]
-     */
-    private $cards;
+    private $colCoId = [];
 
     /**
      * @var array
      */
     private $colCoCode = [];
+
+    /**
+     * @var array
+     */
+    private $payerId = [];
 
     /**
      * @var string|null
@@ -57,213 +37,87 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * @var array
      */
+    private $accountId = [];
+
+    /**
+     * @var array
+     */
     private $accountNumber = [];
 
     /**
-     * @var CreateBundleRequestRestrictions|null
+     * @var array
      */
-    private $restrictions;
+    private $externalBundleId = [];
 
     /**
-     * @param string $description
-     * @param string[] $cards
+     * @var string|null
      */
-    public function __construct(string $description, array $cards)
-    {
-        $this->description = $description;
-        $this->cards = $cards;
-    }
+    private $description;
+
+    /**
+     * @var string[]|null
+     */
+    private $cards;
+
+    /**
+     * @var array
+     */
+    private $restrictions = [];
 
     /**
      * Returns Col Co Id.
-     * Collecting Company Id  of the selected payer.
+     * Collecting Company Id of the selected payer.
      *
      * Optional if ColCoCode is passed else Mandatory.
      *
      * Example:
      *
-     * 1-Philippines
+     * 1 for Philippines
      *
-     * 5-UK
+     * 5 for UK
      */
     public function getColCoId(): ?int
     {
-        return $this->colCoId;
+        if (count($this->colCoId) == 0) {
+            return null;
+        }
+        return $this->colCoId['value'];
     }
 
     /**
      * Sets Col Co Id.
-     * Collecting Company Id  of the selected payer.
+     * Collecting Company Id of the selected payer.
      *
      * Optional if ColCoCode is passed else Mandatory.
      *
      * Example:
      *
-     * 1-Philippines
+     * 1 for Philippines
      *
-     * 5-UK
+     * 5 for UK
      *
      * @maps ColCoId
      */
     public function setColCoId(?int $colCoId): void
     {
-        $this->colCoId = $colCoId;
+        $this->colCoId['value'] = $colCoId;
     }
 
     /**
-     * Returns Payer Id.
-     * Payer Id of the selected payer.
+     * Unsets Col Co Id.
+     * Collecting Company Id of the selected payer.
      *
-     * Optional if PayerNumber is passed else Mandatory
+     * Optional if ColCoCode is passed else Mandatory.
      *
-     * Example: 123456
+     * Example:
+     *
+     * 1 for Philippines
+     *
+     * 5 for UK
      */
-    public function getPayerId(): ?int
+    public function unsetColCoId(): void
     {
-        return $this->payerId;
-    }
-
-    /**
-     * Sets Payer Id.
-     * Payer Id of the selected payer.
-     *
-     * Optional if PayerNumber is passed else Mandatory
-     *
-     * Example: 123456
-     *
-     * @maps PayerId
-     */
-    public function setPayerId(?int $payerId): void
-    {
-        $this->payerId = $payerId;
-    }
-
-    /**
-     * Returns Account Id.
-     * Account ID of the customer.
-     *
-     * Either AccountId or AccountNumber or both must be passed.
-     *
-     * Example: 123456
-     */
-    public function getAccountId(): ?int
-    {
-        return $this->accountId;
-    }
-
-    /**
-     * Sets Account Id.
-     * Account ID of the customer.
-     *
-     * Either AccountId or AccountNumber or both must be passed.
-     *
-     * Example: 123456
-     *
-     * @maps AccountId
-     */
-    public function setAccountId(?int $accountId): void
-    {
-        $this->accountId = $accountId;
-    }
-
-    /**
-     * Returns External Bundle Id.
-     * Identifier of the bundle in external system.
-     *
-     * Optional.
-     */
-    public function getExternalBundleId(): ?string
-    {
-        if (count($this->externalBundleId) == 0) {
-            return null;
-        }
-        return $this->externalBundleId['value'];
-    }
-
-    /**
-     * Sets External Bundle Id.
-     * Identifier of the bundle in external system.
-     *
-     * Optional.
-     *
-     * @maps ExternalBundleId
-     */
-    public function setExternalBundleId(?string $externalBundleId): void
-    {
-        $this->externalBundleId['value'] = $externalBundleId;
-    }
-
-    /**
-     * Unsets External Bundle Id.
-     * Identifier of the bundle in external system.
-     *
-     * Optional.
-     */
-    public function unsetExternalBundleId(): void
-    {
-        $this->externalBundleId = [];
-    }
-
-    /**
-     * Returns Description.
-     * A bundle description.
-     *
-     * Optional.
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * Sets Description.
-     * A bundle description.
-     *
-     * Optional.
-     *
-     * @required
-     * @maps Description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
-    }
-
-    /**
-     * Returns Cards.
-     * List of Card PANs to be added in the bundle.
-     *
-     * Mandatory.
-     *
-     * Example: 7002051006629890645
-     *
-     * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
-     *
-     * @return string[]
-     */
-    public function getCards(): array
-    {
-        return $this->cards;
-    }
-
-    /**
-     * Sets Cards.
-     * List of Card PANs to be added in the bundle.
-     *
-     * Mandatory.
-     *
-     * Example: 7002051006629890645
-     *
-     * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
-     *
-     * @required
-     * @maps Cards
-     *
-     * @param string[] $cards
-     */
-    public function setCards(array $cards): void
-    {
-        $this->cards = $cards;
+        $this->colCoId = [];
     }
 
     /**
@@ -275,9 +129,9 @@ class CreateBundleRequest implements \JsonSerializable
      *
      * Example:
      *
-     * 86-Philippines
+     * 86 for Philippines
      *
-     * 5-UK
+     * 5 for UK
      */
     public function getColCoCode(): ?int
     {
@@ -296,9 +150,9 @@ class CreateBundleRequest implements \JsonSerializable
      *
      * Example:
      *
-     * 86-Philippines
+     * 86 for Philippines
      *
-     * 5-UK
+     * 5 for UK
      *
      * @maps ColCoCode
      */
@@ -316,9 +170,9 @@ class CreateBundleRequest implements \JsonSerializable
      *
      * Example:
      *
-     * 86-Philippines
+     * 86 for Philippines
      *
-     * 5-UK
+     * 5 for UK
      */
     public function unsetColCoCode(): void
     {
@@ -326,10 +180,56 @@ class CreateBundleRequest implements \JsonSerializable
     }
 
     /**
-     * Returns Payer Number.
-     * Payer Number (Ex: GB000000123) of the selected payer.
+     * Returns Payer Id.
+     * Payer Id of the selected payer.
      *
-     * Optional if PayerId is passed else Mandatory
+     * Either PayerId or PayerNumber or both must be passed.
+     *
+     * Example: 123456
+     */
+    public function getPayerId(): ?int
+    {
+        if (count($this->payerId) == 0) {
+            return null;
+        }
+        return $this->payerId['value'];
+    }
+
+    /**
+     * Sets Payer Id.
+     * Payer Id of the selected payer.
+     *
+     * Either PayerId or PayerNumber or both must be passed.
+     *
+     * Example: 123456
+     *
+     * @maps PayerId
+     */
+    public function setPayerId(?int $payerId): void
+    {
+        $this->payerId['value'] = $payerId;
+    }
+
+    /**
+     * Unsets Payer Id.
+     * Payer Id of the selected payer.
+     *
+     * Either PayerId or PayerNumber or both must be passed.
+     *
+     * Example: 123456
+     */
+    public function unsetPayerId(): void
+    {
+        $this->payerId = [];
+    }
+
+    /**
+     * Returns Payer Number.
+     * Payer Number of the selected payer.
+     *
+     * Either PayerId or PayerNumber or both must be passed.
+     *
+     * Example: GB000000123
      */
     public function getPayerNumber(): ?string
     {
@@ -338,15 +238,61 @@ class CreateBundleRequest implements \JsonSerializable
 
     /**
      * Sets Payer Number.
-     * Payer Number (Ex: GB000000123) of the selected payer.
+     * Payer Number of the selected payer.
      *
-     * Optional if PayerId is passed else Mandatory
+     * Either PayerId or PayerNumber or both must be passed.
+     *
+     * Example: GB000000123
      *
      * @maps PayerNumber
      */
     public function setPayerNumber(?string $payerNumber): void
     {
         $this->payerNumber = $payerNumber;
+    }
+
+    /**
+     * Returns Account Id.
+     * Account ID of the customer.
+     *
+     * Either AccountId or AccountNumber or both must be passed.
+     *
+     * Example: 123456
+     */
+    public function getAccountId(): ?int
+    {
+        if (count($this->accountId) == 0) {
+            return null;
+        }
+        return $this->accountId['value'];
+    }
+
+    /**
+     * Sets Account Id.
+     * Account ID of the customer.
+     *
+     * Either AccountId or AccountNumber or both must be passed.
+     *
+     * Example: 123456
+     *
+     * @maps AccountId
+     */
+    public function setAccountId(?int $accountId): void
+    {
+        $this->accountId['value'] = $accountId;
+    }
+
+    /**
+     * Unsets Account Id.
+     * Account ID of the customer.
+     *
+     * Either AccountId or AccountNumber or both must be passed.
+     *
+     * Example: 123456
+     */
+    public function unsetAccountId(): void
+    {
+        $this->accountId = [];
     }
 
     /**
@@ -394,27 +340,130 @@ class CreateBundleRequest implements \JsonSerializable
     }
 
     /**
-     * Returns Restrictions.
-     * Restrictions to be applied on the bundle.
+     * Returns External Bundle Id.
+     * Identifier of the bundle in external system.
      *
-     * Mandatory
+     * Optional.
      */
-    public function getRestrictions(): ?CreateBundleRequestRestrictions
+    public function getExternalBundleId(): ?string
     {
-        return $this->restrictions;
+        if (count($this->externalBundleId) == 0) {
+            return null;
+        }
+        return $this->externalBundleId['value'];
+    }
+
+    /**
+     * Sets External Bundle Id.
+     * Identifier of the bundle in external system.
+     *
+     * Optional.
+     *
+     * @maps ExternalBundleId
+     */
+    public function setExternalBundleId(?string $externalBundleId): void
+    {
+        $this->externalBundleId['value'] = $externalBundleId;
+    }
+
+    /**
+     * Unsets External Bundle Id.
+     * Identifier of the bundle in external system.
+     *
+     * Optional.
+     */
+    public function unsetExternalBundleId(): void
+    {
+        $this->externalBundleId = [];
+    }
+
+    /**
+     * Returns Description.
+     * A bundle description.
+     *
+     * Optional.
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    /**
+     * Sets Description.
+     * A bundle description.
+     *
+     * Optional.
+     *
+     * @maps Description
+     */
+    public function setDescription(?string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Returns Cards.
+     * List of Card PANs to be added in the bundle.
+     *
+     * Mandatory.
+     *
+     * Example: 7002051006629890645
+     *
+     * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
+     *
+     * @return string[]|null
+     */
+    public function getCards(): ?array
+    {
+        return $this->cards;
+    }
+
+    /**
+     * Sets Cards.
+     * List of Card PANs to be added in the bundle.
+     *
+     * Mandatory.
+     *
+     * Example: 7002051006629890645
+     *
+     * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
+     *
+     * @maps Cards
+     *
+     * @param string[]|null $cards
+     */
+    public function setCards(?array $cards): void
+    {
+        $this->cards = $cards;
+    }
+
+    /**
+     * Returns Restrictions.
+     */
+    public function getRestrictions(): ?BundleRestriction
+    {
+        if (count($this->restrictions) == 0) {
+            return null;
+        }
+        return $this->restrictions['value'];
     }
 
     /**
      * Sets Restrictions.
-     * Restrictions to be applied on the bundle.
-     *
-     * Mandatory
      *
      * @maps Restrictions
      */
-    public function setRestrictions(?CreateBundleRequestRestrictions $restrictions): void
+    public function setRestrictions(?BundleRestriction $restrictions): void
     {
-        $this->restrictions = $restrictions;
+        $this->restrictions['value'] = $restrictions;
+    }
+
+    /**
+     * Unsets Restrictions.
+     */
+    public function unsetRestrictions(): void
+    {
+        $this->restrictions = [];
     }
 
     /**
@@ -429,31 +478,35 @@ class CreateBundleRequest implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->colCoId)) {
-            $json['ColCoId']          = $this->colCoId;
+        if (!empty($this->colCoId)) {
+            $json['ColCoId']          = $this->colCoId['value'];
         }
-        if (isset($this->payerId)) {
-            $json['PayerId']          = $this->payerId;
-        }
-        if (isset($this->accountId)) {
-            $json['AccountId']        = $this->accountId;
-        }
-        if (!empty($this->externalBundleId)) {
-            $json['ExternalBundleId'] = $this->externalBundleId['value'];
-        }
-        $json['Description']          = $this->description;
-        $json['Cards']                = $this->cards;
         if (!empty($this->colCoCode)) {
             $json['ColCoCode']        = $this->colCoCode['value'];
+        }
+        if (!empty($this->payerId)) {
+            $json['PayerId']          = $this->payerId['value'];
         }
         if (isset($this->payerNumber)) {
             $json['PayerNumber']      = $this->payerNumber;
         }
+        if (!empty($this->accountId)) {
+            $json['AccountId']        = $this->accountId['value'];
+        }
         if (!empty($this->accountNumber)) {
             $json['AccountNumber']    = $this->accountNumber['value'];
         }
-        if (isset($this->restrictions)) {
-            $json['Restrictions']     = $this->restrictions;
+        if (!empty($this->externalBundleId)) {
+            $json['ExternalBundleId'] = $this->externalBundleId['value'];
+        }
+        if (isset($this->description)) {
+            $json['Description']      = $this->description;
+        }
+        if (isset($this->cards)) {
+            $json['Cards']            = $this->cards;
+        }
+        if (!empty($this->restrictions)) {
+            $json['Restrictions']     = $this->restrictions['value'];
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

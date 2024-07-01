@@ -15,14 +15,14 @@ use stdClass;
 class AccountRestrictionRequest implements \JsonSerializable
 {
     /**
-     * @var int|null
+     * @var array
      */
-    private $colCoId;
+    private $colCoId = [];
 
     /**
-     * @var int|null
+     * @var array
      */
-    private $colCoCode;
+    private $colCoCode = [];
 
     /**
      * @var array
@@ -30,24 +30,29 @@ class AccountRestrictionRequest implements \JsonSerializable
     private $payerId = [];
 
     /**
-     * @var string|null
+     * @var array
      */
-    private $payerNumber;
+    private $payerNumber = [];
 
     /**
-     * @var string|null
+     * @var array
      */
-    private $accountNumber;
+    private $accountId = [];
 
     /**
-     * @var bool|null
+     * @var array
      */
-    private $resetUsageRestrictions = false;
+    private $accountNumber = [];
 
     /**
-     * @var UsageRestrictions|null
+     * @var array
      */
-    private $usageRestrictions;
+    private $resetUsageRestrictions = [];
+
+    /**
+     * @var array
+     */
+    private $usageRestrictions = [];
 
     /**
      * Returns Col Co Id.
@@ -63,7 +68,10 @@ class AccountRestrictionRequest implements \JsonSerializable
      */
     public function getColCoId(): ?int
     {
-        return $this->colCoId;
+        if (count($this->colCoId) == 0) {
+            return null;
+        }
+        return $this->colCoId['value'];
     }
 
     /**
@@ -82,7 +90,24 @@ class AccountRestrictionRequest implements \JsonSerializable
      */
     public function setColCoId(?int $colCoId): void
     {
-        $this->colCoId = $colCoId;
+        $this->colCoId['value'] = $colCoId;
+    }
+
+    /**
+     * Unsets Col Co Id.
+     * Collecting Company Id of the selected payer.
+     *
+     * Optional if ColCoCode is passed else Mandatory.
+     *
+     * Example:
+     *
+     * 1 for Philippines
+     *
+     * 5 for UK
+     */
+    public function unsetColCoId(): void
+    {
+        $this->colCoId = [];
     }
 
     /**
@@ -100,7 +125,10 @@ class AccountRestrictionRequest implements \JsonSerializable
      */
     public function getColCoCode(): ?int
     {
-        return $this->colCoCode;
+        if (count($this->colCoCode) == 0) {
+            return null;
+        }
+        return $this->colCoCode['value'];
     }
 
     /**
@@ -120,7 +148,25 @@ class AccountRestrictionRequest implements \JsonSerializable
      */
     public function setColCoCode(?int $colCoCode): void
     {
-        $this->colCoCode = $colCoCode;
+        $this->colCoCode['value'] = $colCoCode;
+    }
+
+    /**
+     * Unsets Col Co Code.
+     * Collecting Company Code (Shell Code) of the selected payer.
+     *
+     * Mandatory for serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine etc. It is optional
+     * for other countries if ColCoID is provided.
+     *
+     * Example:
+     *
+     * 86 for Philippines
+     *
+     * 5 for UK
+     */
+    public function unsetColCoCode(): void
+    {
+        $this->colCoCode = [];
     }
 
     /**
@@ -177,7 +223,10 @@ class AccountRestrictionRequest implements \JsonSerializable
      */
     public function getPayerNumber(): ?string
     {
-        return $this->payerNumber;
+        if (count($this->payerNumber) == 0) {
+            return null;
+        }
+        return $this->payerNumber['value'];
     }
 
     /**
@@ -192,7 +241,64 @@ class AccountRestrictionRequest implements \JsonSerializable
      */
     public function setPayerNumber(?string $payerNumber): void
     {
-        $this->payerNumber = $payerNumber;
+        $this->payerNumber['value'] = $payerNumber;
+    }
+
+    /**
+     * Unsets Payer Number.
+     * Payer Number of the selected payer.
+     *
+     * Optional if PayerId is passed else Mandatory
+     *
+     * Example: GB000000123
+     */
+    public function unsetPayerNumber(): void
+    {
+        $this->payerNumber = [];
+    }
+
+    /**
+     * Returns Account Id.
+     * Account ID of the customer on which the restrictions will be applied.
+     *
+     * Optional if AccountNumber is passed, else Mandatory.
+     *
+     * Example: 123456
+     */
+    public function getAccountId(): ?int
+    {
+        if (count($this->accountId) == 0) {
+            return null;
+        }
+        return $this->accountId['value'];
+    }
+
+    /**
+     * Sets Account Id.
+     * Account ID of the customer on which the restrictions will be applied.
+     *
+     * Optional if AccountNumber is passed, else Mandatory.
+     *
+     * Example: 123456
+     *
+     * @maps AccountId
+     */
+    public function setAccountId(?int $accountId): void
+    {
+        $this->accountId['value'] = $accountId;
+    }
+
+    /**
+     * Unsets Account Id.
+     * Account ID of the customer on which the restrictions will be applied.
+     *
+     * Optional if AccountNumber is passed, else Mandatory.
+     *
+     * Example: 123456
+     */
+    public function unsetAccountId(): void
+    {
+        $this->accountId = [];
     }
 
     /**
@@ -200,10 +306,15 @@ class AccountRestrictionRequest implements \JsonSerializable
      * Account Number of the customer on which the restrictions will be applied.
      *
      * Optional if AccountId is passed, else Mandatory.
+     *
+     * Example: GB000000123
      */
     public function getAccountNumber(): ?string
     {
-        return $this->accountNumber;
+        if (count($this->accountNumber) == 0) {
+            return null;
+        }
+        return $this->accountNumber['value'];
     }
 
     /**
@@ -212,15 +323,32 @@ class AccountRestrictionRequest implements \JsonSerializable
      *
      * Optional if AccountId is passed, else Mandatory.
      *
+     * Example: GB000000123
+     *
      * @maps AccountNumber
      */
     public function setAccountNumber(?string $accountNumber): void
     {
-        $this->accountNumber = $accountNumber;
+        $this->accountNumber['value'] = $accountNumber;
+    }
+
+    /**
+     * Unsets Account Number.
+     * Account Number of the customer on which the restrictions will be applied.
+     *
+     * Optional if AccountId is passed, else Mandatory.
+     *
+     * Example: GB000000123
+     */
+    public function unsetAccountNumber(): void
+    {
+        $this->accountNumber = [];
     }
 
     /**
      * Returns Reset Usage Restrictions.
+     * True/False.
+     *
      * If true, the usage restrictions applied on the account will be removed.
      *
      * Optional
@@ -229,11 +357,16 @@ class AccountRestrictionRequest implements \JsonSerializable
      */
     public function getResetUsageRestrictions(): ?bool
     {
-        return $this->resetUsageRestrictions;
+        if (count($this->resetUsageRestrictions) == 0) {
+            return null;
+        }
+        return $this->resetUsageRestrictions['value'];
     }
 
     /**
      * Sets Reset Usage Restrictions.
+     * True/False.
+     *
      * If true, the usage restrictions applied on the account will be removed.
      *
      * Optional
@@ -244,15 +377,33 @@ class AccountRestrictionRequest implements \JsonSerializable
      */
     public function setResetUsageRestrictions(?bool $resetUsageRestrictions): void
     {
-        $this->resetUsageRestrictions = $resetUsageRestrictions;
+        $this->resetUsageRestrictions['value'] = $resetUsageRestrictions;
+    }
+
+    /**
+     * Unsets Reset Usage Restrictions.
+     * True/False.
+     *
+     * If true, the usage restrictions applied on the account will be removed.
+     *
+     * Optional
+     *
+     * Default: False
+     */
+    public function unsetResetUsageRestrictions(): void
+    {
+        $this->resetUsageRestrictions = [];
     }
 
     /**
      * Returns Usage Restrictions.
      */
-    public function getUsageRestrictions(): ?UsageRestrictions
+    public function getUsageRestrictions(): ?UsageRestrictionsCard
     {
-        return $this->usageRestrictions;
+        if (count($this->usageRestrictions) == 0) {
+            return null;
+        }
+        return $this->usageRestrictions['value'];
     }
 
     /**
@@ -260,9 +411,17 @@ class AccountRestrictionRequest implements \JsonSerializable
      *
      * @maps UsageRestrictions
      */
-    public function setUsageRestrictions(?UsageRestrictions $usageRestrictions): void
+    public function setUsageRestrictions(?UsageRestrictionsCard $usageRestrictions): void
     {
-        $this->usageRestrictions = $usageRestrictions;
+        $this->usageRestrictions['value'] = $usageRestrictions;
+    }
+
+    /**
+     * Unsets Usage Restrictions.
+     */
+    public function unsetUsageRestrictions(): void
+    {
+        $this->usageRestrictions = [];
     }
 
     /**
@@ -277,26 +436,29 @@ class AccountRestrictionRequest implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->colCoId)) {
-            $json['ColCoId']                = $this->colCoId;
+        if (!empty($this->colCoId)) {
+            $json['ColCoId']                = $this->colCoId['value'];
         }
-        if (isset($this->colCoCode)) {
-            $json['ColCoCode']              = $this->colCoCode;
+        if (!empty($this->colCoCode)) {
+            $json['ColCoCode']              = $this->colCoCode['value'];
         }
         if (!empty($this->payerId)) {
             $json['PayerId']                = $this->payerId['value'];
         }
-        if (isset($this->payerNumber)) {
-            $json['PayerNumber']            = $this->payerNumber;
+        if (!empty($this->payerNumber)) {
+            $json['PayerNumber']            = $this->payerNumber['value'];
         }
-        if (isset($this->accountNumber)) {
-            $json['AccountNumber']          = $this->accountNumber;
+        if (!empty($this->accountId)) {
+            $json['AccountId']              = $this->accountId['value'];
         }
-        if (isset($this->resetUsageRestrictions)) {
-            $json['ResetUsageRestrictions'] = $this->resetUsageRestrictions;
+        if (!empty($this->accountNumber)) {
+            $json['AccountNumber']          = $this->accountNumber['value'];
         }
-        if (isset($this->usageRestrictions)) {
-            $json['UsageRestrictions']      = $this->usageRestrictions;
+        if (!empty($this->resetUsageRestrictions)) {
+            $json['ResetUsageRestrictions'] = $this->resetUsageRestrictions['value'];
+        }
+        if (!empty($this->usageRestrictions)) {
+            $json['UsageRestrictions']      = $this->usageRestrictions['value'];
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;
