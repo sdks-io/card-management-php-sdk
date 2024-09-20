@@ -49,8 +49,9 @@ class PayerRequest implements \JsonSerializable
      * List of Payer entity.
      * Optional.
      * Note:
-     * • Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
-     * • This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH
+     * •    Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an
+     * error.
+     * •    This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH
      * changes are integrated.
      *
      * @return Payers[]|null
@@ -65,8 +66,9 @@ class PayerRequest implements \JsonSerializable
      * List of Payer entity.
      * Optional.
      * Note:
-     * • Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
-     * • This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH
+     * •    Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an
+     * error.
+     * •    This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH
      * changes are integrated.
      *
      * @maps Payers
@@ -176,9 +178,9 @@ class PayerRequest implements \JsonSerializable
      *
      * Note:
      *
-     * • Max page size is 250, if the user provided value is more than 250 then it will throw error.
+     * •    Max page size is 250, if the user provided value is more than 250 then it will throw error.
      *
-     * • This value is configurable.
+     * •    This value is configurable.
      */
     public function getPageSize(): ?int
     {
@@ -199,9 +201,9 @@ class PayerRequest implements \JsonSerializable
      *
      * Note:
      *
-     * • Max page size is 250, if the user provided value is more than 250 then it will throw error.
+     * •    Max page size is 250, if the user provided value is more than 250 then it will throw error.
      *
-     * • This value is configurable.
+     * •    This value is configurable.
      *
      * @maps PageSize
      */

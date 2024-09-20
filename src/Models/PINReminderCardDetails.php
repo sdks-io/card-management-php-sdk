@@ -180,11 +180,11 @@ class PINReminderCardDetails implements \JsonSerializable
      * Mandatory
      * Allowed Values:
      *
-     * 1. Paper
+     * 1.    Paper
      *
-     * 2. Email
+     * 2.    Email
      *
-     * 3. SMS
+     * 3.    SMS
      */
     public function getPINAdviceType(): int
     {
@@ -197,11 +197,11 @@ class PINReminderCardDetails implements \JsonSerializable
      * Mandatory
      * Allowed Values:
      *
-     * 1. Paper
+     * 1.    Paper
      *
-     * 2. Email
+     * 2.    Email
      *
-     * 3. SMS
+     * 3.    SMS
      *
      * @required
      * @maps PINAdviceType
@@ -216,10 +216,10 @@ class PINReminderCardDetails implements \JsonSerializable
      * PIN Contact Type.
      * Mandatory
      * Allowed Values:
-     * 1. Use PIN Delivery contact details stored previously for this card
-     * 2. Use Card Delivery contact details stored previously for this card
-     * 3. Use default PIN Delivery contact details stored for this customer
-     * 4. Use new specific contact for PIN Reminder only
+     * 1.    Use PIN Delivery contact details stored previously for this card
+     * 2.    Use Card Delivery contact details stored previously for this card
+     * 3.    Use default PIN Delivery contact details stored for this customer
+     * 4.    Use new specific contact for PIN Reminder only
      *
      *
      * Note: - PINContactType “3” is only allowed for Paper delivery
@@ -234,10 +234,10 @@ class PINReminderCardDetails implements \JsonSerializable
      * PIN Contact Type.
      * Mandatory
      * Allowed Values:
-     * 1. Use PIN Delivery contact details stored previously for this card
-     * 2. Use Card Delivery contact details stored previously for this card
-     * 3. Use default PIN Delivery contact details stored for this customer
-     * 4. Use new specific contact for PIN Reminder only
+     * 1.    Use PIN Delivery contact details stored previously for this card
+     * 2.    Use Card Delivery contact details stored previously for this card
+     * 3.    Use default PIN Delivery contact details stored for this customer
+     * 4.    Use new specific contact for PIN Reminder only
      *
      *
      * Note: - PINContactType “3” is only allowed for Paper delivery

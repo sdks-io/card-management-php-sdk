@@ -75,6 +75,15 @@ class SearchCardBuilder
     }
 
     /**
+     * Sets panid field.
+     */
+    public function pANID(?float $value): self
+    {
+        $this->instance->setPANID($value);
+        return $this;
+    }
+
+    /**
      * Initializes a new search card object.
      */
     public function build(): SearchCard

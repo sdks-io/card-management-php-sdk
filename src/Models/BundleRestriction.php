@@ -25,19 +25,19 @@ class BundleRestriction implements \JsonSerializable
     private $locationRestrictionAction = [];
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $usageRestrictions = [];
+    private $usageRestrictions;
 
     /**
-     * @var DayTimeRestriction|null
+     * @var DayTimeRestrictions|null
      */
     private $dayTimeRestrictions;
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $productRestrictions = [];
+    private $productRestrictions;
 
     /**
      * @var LocationRestriction|null
@@ -52,9 +52,9 @@ class BundleRestriction implements \JsonSerializable
      *
      * Allowed values –
      *
-     * • Add: Apply the given restriction on the bundle.
+     * •    Add: Apply the given restriction on the bundle.
      *
-     * • Default: No Day/Time restriction will be applied on the bundle in Gateway.
+     * •    Default: No Day/Time restriction will be applied on the bundle in Gateway.
      */
     public function getDayTimeRestrictionAction(): ?string
     {
@@ -72,9 +72,9 @@ class BundleRestriction implements \JsonSerializable
      *
      * Allowed values –
      *
-     * • Add: Apply the given restriction on the bundle.
+     * •    Add: Apply the given restriction on the bundle.
      *
-     * • Default: No Day/Time restriction will be applied on the bundle in Gateway.
+     * •    Default: No Day/Time restriction will be applied on the bundle in Gateway.
      *
      * @maps DayTimeRestrictionAction
      */
@@ -91,9 +91,9 @@ class BundleRestriction implements \JsonSerializable
      *
      * Allowed values –
      *
-     * • Add: Apply the given restriction on the bundle.
+     * •    Add: Apply the given restriction on the bundle.
      *
-     * • Default: No Day/Time restriction will be applied on the bundle in Gateway.
+     * •    Default: No Day/Time restriction will be applied on the bundle in Gateway.
      */
     public function unsetDayTimeRestrictionAction(): void
     {
@@ -108,9 +108,9 @@ class BundleRestriction implements \JsonSerializable
      *
      * Allowed values –
      *
-     * • Add: Apply the given restriction on the bundle.
+     * •    Add: Apply the given restriction on the bundle.
      *
-     * • Default: No location restriction will be applied on the bundle in Gateway.
+     * •    Default: No location restriction will be applied on the bundle in Gateway.
      */
     public function getLocationRestrictionAction(): ?string
     {
@@ -128,9 +128,9 @@ class BundleRestriction implements \JsonSerializable
      *
      * Allowed values –
      *
-     * • Add: Apply the given restriction on the bundle.
+     * •    Add: Apply the given restriction on the bundle.
      *
-     * • Default: No location restriction will be applied on the bundle in Gateway.
+     * •    Default: No location restriction will be applied on the bundle in Gateway.
      *
      * @maps LocationRestrictionAction
      */
@@ -147,9 +147,9 @@ class BundleRestriction implements \JsonSerializable
      *
      * Allowed values –
      *
-     * • Add: Apply the given restriction on the bundle.
+     * •    Add: Apply the given restriction on the bundle.
      *
-     * • Default: No location restriction will be applied on the bundle in Gateway.
+     * •    Default: No location restriction will be applied on the bundle in Gateway.
      */
     public function unsetLocationRestrictionAction(): void
     {
@@ -159,12 +159,9 @@ class BundleRestriction implements \JsonSerializable
     /**
      * Returns Usage Restrictions.
      */
-    public function getUsageRestrictions(): ?UsageRestrictionsCard
+    public function getUsageRestrictions(): ?array
     {
-        if (count($this->usageRestrictions) == 0) {
-            return null;
-        }
-        return $this->usageRestrictions['value'];
+        return $this->usageRestrictions;
     }
 
     /**
@@ -172,37 +169,25 @@ class BundleRestriction implements \JsonSerializable
      *
      * @maps UsageRestrictions
      */
-    public function setUsageRestrictions(?UsageRestrictionsCard $usageRestrictions): void
+    public function setUsageRestrictions(?array $usageRestrictions): void
     {
-        $this->usageRestrictions['value'] = $usageRestrictions;
-    }
-
-    /**
-     * Unsets Usage Restrictions.
-     */
-    public function unsetUsageRestrictions(): void
-    {
-        $this->usageRestrictions = [];
+        $this->usageRestrictions = $usageRestrictions;
     }
 
     /**
      * Returns Day Time Restrictions.
-     * Details of the day/time restrictions such as weekdays and time range in which transactions should be
-     * allowed on the card.
      */
-    public function getDayTimeRestrictions(): ?DayTimeRestriction
+    public function getDayTimeRestrictions(): ?DayTimeRestrictions
     {
         return $this->dayTimeRestrictions;
     }
 
     /**
      * Sets Day Time Restrictions.
-     * Details of the day/time restrictions such as weekdays and time range in which transactions should be
-     * allowed on the card.
      *
      * @maps DayTimeRestrictions
      */
-    public function setDayTimeRestrictions(?DayTimeRestriction $dayTimeRestrictions): void
+    public function setDayTimeRestrictions(?DayTimeRestrictions $dayTimeRestrictions): void
     {
         $this->dayTimeRestrictions = $dayTimeRestrictions;
     }
@@ -210,12 +195,9 @@ class BundleRestriction implements \JsonSerializable
     /**
      * Returns Product Restrictions.
      */
-    public function getProductRestrictions(): ?ProductRestrictionCard
+    public function getProductRestrictions(): ?array
     {
-        if (count($this->productRestrictions) == 0) {
-            return null;
-        }
-        return $this->productRestrictions['value'];
+        return $this->productRestrictions;
     }
 
     /**
@@ -223,17 +205,9 @@ class BundleRestriction implements \JsonSerializable
      *
      * @maps ProductRestrictions
      */
-    public function setProductRestrictions(?ProductRestrictionCard $productRestrictions): void
+    public function setProductRestrictions(?array $productRestrictions): void
     {
-        $this->productRestrictions['value'] = $productRestrictions;
-    }
-
-    /**
-     * Unsets Product Restrictions.
-     */
-    public function unsetProductRestrictions(): void
-    {
-        $this->productRestrictions = [];
+        $this->productRestrictions = $productRestrictions;
     }
 
     /**
@@ -272,14 +246,14 @@ class BundleRestriction implements \JsonSerializable
         if (!empty($this->locationRestrictionAction)) {
             $json['LocationRestrictionAction'] = $this->locationRestrictionAction['value'];
         }
-        if (!empty($this->usageRestrictions)) {
-            $json['UsageRestrictions']         = $this->usageRestrictions['value'];
+        if (isset($this->usageRestrictions)) {
+            $json['UsageRestrictions']         = $this->usageRestrictions;
         }
         if (isset($this->dayTimeRestrictions)) {
             $json['DayTimeRestrictions']       = $this->dayTimeRestrictions;
         }
-        if (!empty($this->productRestrictions)) {
-            $json['ProductRestrictions']       = $this->productRestrictions['value'];
+        if (isset($this->productRestrictions)) {
+            $json['ProductRestrictions']       = $this->productRestrictions;
         }
         if (isset($this->locationRestrictions)) {
             $json['LocationRestrictions']      = $this->locationRestrictions;

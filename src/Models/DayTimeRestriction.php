@@ -211,7 +211,7 @@ class DayTimeRestriction implements \JsonSerializable
      *
      * Note:
      *
-     * 1. Clients to convert this to appropriate DateTime or TimeSpan type.
+     * 1.    Clients to convert this to appropriate DateTime or TimeSpan type.
      *
      * “00:00” is the lowest time value and “23:59” is the highest time value.
      */
@@ -228,7 +228,7 @@ class DayTimeRestriction implements \JsonSerializable
      *
      * Note:
      *
-     * 1. Clients to convert this to appropriate DateTime or TimeSpan type.
+     * 1.    Clients to convert this to appropriate DateTime or TimeSpan type.
      *
      * “00:00” is the lowest time value and “23:59” is the highest time value.
      *
@@ -247,7 +247,7 @@ class DayTimeRestriction implements \JsonSerializable
      *
      * Note:
      *
-     * 1. Clients to convert this to appropriate DateTime or TimeSpan type.
+     * 1.    Clients to convert this to appropriate DateTime or TimeSpan type.
      *
      * “00:00” is the lowest time value and “23:59” is the highest time value.
      */
@@ -264,7 +264,7 @@ class DayTimeRestriction implements \JsonSerializable
      *
      * Note:
      *
-     * 1. Clients to convert this to appropriate DateTime or TimeSpan type.
+     * 1.    Clients to convert this to appropriate DateTime or TimeSpan type.
      *
      * “00:00” is the lowest time value and “23:59” is the highest time value.
      *

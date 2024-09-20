@@ -350,10 +350,10 @@ class UpdateCardGroupRequest implements \JsonSerializable
      *
      * Note:
      *
-     * 1) If a card type is passed, the cardgorup will allow cards with same card type to be moved in to
+     * 1)    If a card type is passed, the cardgorup will allow cards with same card type to be moved in to
      * the card group.
      *
-     * 2) Pass ‘-1’ to remove the card type from the card group.
+     * 2)    Pass ‘-1’ to remove the card type from the card group.
      */
     public function getCardTypeId(): ?int
     {
@@ -370,10 +370,10 @@ class UpdateCardGroupRequest implements \JsonSerializable
      *
      * Note:
      *
-     * 1) If a card type is passed, the cardgorup will allow cards with same card type to be moved in to
+     * 1)    If a card type is passed, the cardgorup will allow cards with same card type to be moved in to
      * the card group.
      *
-     * 2) Pass ‘-1’ to remove the card type from the card group.
+     * 2)    Pass ‘-1’ to remove the card type from the card group.
      *
      * @maps CardTypeId
      */

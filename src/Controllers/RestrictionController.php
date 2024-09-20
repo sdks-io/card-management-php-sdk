@@ -140,11 +140,11 @@ class RestrictionController extends BaseController
      *
      * •    The card exists.
      *
-     * •    Day time restriction cannot be set to restrict the use of a card on all days of the week i.e., the
-     * values for all the days in the restriction cannot be set to false.
+     * •    Day time restriction cannot be set to restrict the use of a card on all days of the week i.e.,
+     * the values for all the days in the restriction cannot be set to false.
      *
-     * •    Either of the usage, daytime, location or product restriction ‘Reset’ is set to ‘True’ or applied
-     * on the card.
+     * •    Either of the usage, daytime, location or product restriction ‘Reset’ is set to ‘True’ or
+     * applied on the card.
      *
      * •    All the limits in the usage restriction profile for a card is not set to ‘0’/null.
      *
@@ -159,8 +159,8 @@ class RestrictionController extends BaseController
      * Daily value should be less than equal to Monthly value if Weekly value is null/blank. Lifetime limit
      * is not considered for usage restrictions limits validation.
      *
-     * •    Apply the card type limit to Gateway when a value is NULL in the input. However, if the card type
-     * limit is NULL for the same field, then no limit will be applied in Gateway.
+     * •    Apply the card type limit to Gateway when a value is NULL in the input. However, if the card
+     * type limit is NULL for the same field, then no limit will be applied in Gateway.
      *
      * •    If ‘SetDefaultOnVelocityUpdate’ is ‘true’ then the operation will apply customer cardtype or OU
      * level velocity limits on existing cards when restrictions are modified without providing custom
@@ -505,11 +505,9 @@ class RestrictionController extends BaseController
      * criteria.
      *
      *
-     *
      * Note - to include count of cards of an account that are not associated with any bundles, in the
      * input parameter SearchCardBundles either pass all the bundles of the account in the list or pass
      * only account with bundle id left blank/null.
-     *
      *
      *
      * #### Supported operations
@@ -587,8 +585,8 @@ class RestrictionController extends BaseController
      *
      * •    The account exists.
      *
-     * •    Day time restriction cannot be set to restrict the use of a card, under the account, on all days
-     * of the week.
+     * •    Day time restriction cannot be set to restrict the use of a card, under the account, on all
+     * days of the week.
      *
      * •    Either of the usage, daytime or location is either marked for reset or new restriction values
      * provided for the account.

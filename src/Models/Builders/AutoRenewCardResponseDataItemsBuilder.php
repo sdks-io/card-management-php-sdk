@@ -75,6 +75,24 @@ class AutoRenewCardResponseDataItemsBuilder
     }
 
     /**
+     * Sets panid field.
+     */
+    public function pANID(?float $value): self
+    {
+        $this->instance->setPANID($value);
+        return $this;
+    }
+
+    /**
+     * Unsets panid field.
+     */
+    public function unsetPANID(): self
+    {
+        $this->instance->unsetPANID();
+        return $this;
+    }
+
+    /**
      * Initializes a new auto renew card response data items object.
      */
     public function build(): AutoRenewCardResponseDataItems

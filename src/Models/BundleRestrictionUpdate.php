@@ -30,9 +30,9 @@ class BundleRestrictionUpdate implements \JsonSerializable
     private $resetProductRestriction = [];
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $usageRestrictions = [];
+    private $usageRestrictions;
 
     /**
      * @var array
@@ -45,9 +45,9 @@ class BundleRestrictionUpdate implements \JsonSerializable
     private $dayTimeRestrictions;
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $productRestrictions = [];
+    private $productRestrictions;
 
     /**
      * @var string|null
@@ -62,11 +62,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Returns Reset Day Time Restriction.
      * True/False
-     *
      * A value indicates if the day/time restriction is to be reset for card bundle.
-     *
      * Optional
-     *
      * Default value is False.
      */
     public function getResetDayTimeRestriction(): ?bool
@@ -80,11 +77,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Sets Reset Day Time Restriction.
      * True/False
-     *
      * A value indicates if the day/time restriction is to be reset for card bundle.
-     *
      * Optional
-     *
      * Default value is False.
      *
      * @maps ResetDayTimeRestriction
@@ -97,11 +91,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Unsets Reset Day Time Restriction.
      * True/False
-     *
      * A value indicates if the day/time restriction is to be reset for card bundle.
-     *
      * Optional
-     *
      * Default value is False.
      */
     public function unsetResetDayTimeRestriction(): void
@@ -112,11 +103,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Returns Reset Location Restriction.
      * True/False
-     *
      * A value indicates if the location restriction is to be reset for card bundle.
-     *
      * Optional
-     *
      * Default value is False.
      */
     public function getResetLocationRestriction(): ?bool
@@ -130,11 +118,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Sets Reset Location Restriction.
      * True/False
-     *
      * A value indicates if the location restriction is to be reset for card bundle.
-     *
      * Optional
-     *
      * Default value is False.
      *
      * @maps ResetLocationRestriction
@@ -147,11 +132,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Unsets Reset Location Restriction.
      * True/False
-     *
      * A value indicates if the location restriction is to be reset for card bundle.
-     *
      * Optional
-     *
      * Default value is False.
      */
     public function unsetResetLocationRestriction(): void
@@ -162,11 +144,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Returns Reset Product Restriction.
      * True/False
-     *
      * A value indicates if the product restriction is to be reset for card bundle.
-     *
      * Optional
-     *
      * Default value is False.
      */
     public function getResetProductRestriction(): ?bool
@@ -180,11 +159,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Sets Reset Product Restriction.
      * True/False
-     *
      * A value indicates if the product restriction is to be reset for card bundle.
-     *
      * Optional
-     *
      * Default value is False.
      *
      * @maps ResetProductRestriction
@@ -197,11 +173,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Unsets Reset Product Restriction.
      * True/False
-     *
      * A value indicates if the product restriction is to be reset for card bundle.
-     *
      * Optional
-     *
      * Default value is False.
      */
     public function unsetResetProductRestriction(): void
@@ -212,12 +185,9 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Returns Usage Restrictions.
      */
-    public function getUsageRestrictions(): ?UsageRestrictionsCard
+    public function getUsageRestrictions(): ?array
     {
-        if (count($this->usageRestrictions) == 0) {
-            return null;
-        }
-        return $this->usageRestrictions['value'];
+        return $this->usageRestrictions;
     }
 
     /**
@@ -225,23 +195,14 @@ class BundleRestrictionUpdate implements \JsonSerializable
      *
      * @maps UsageRestrictions
      */
-    public function setUsageRestrictions(?UsageRestrictionsCard $usageRestrictions): void
+    public function setUsageRestrictions(?array $usageRestrictions): void
     {
-        $this->usageRestrictions['value'] = $usageRestrictions;
-    }
-
-    /**
-     * Unsets Usage Restrictions.
-     */
-    public function unsetUsageRestrictions(): void
-    {
-        $this->usageRestrictions = [];
+        $this->usageRestrictions = $usageRestrictions;
     }
 
     /**
      * Returns Day Time Restriction Profile Id.
      * Identifier of the day/time restriction profile to be updated for the bundle in Gateway.
-     *
      * Optional
      */
     public function getDayTimeRestrictionProfileId(): ?string
@@ -255,7 +216,6 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Sets Day Time Restriction Profile Id.
      * Identifier of the day/time restriction profile to be updated for the bundle in Gateway.
-     *
      * Optional
      *
      * @maps DayTimeRestrictionProfileId
@@ -268,7 +228,6 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Unsets Day Time Restriction Profile Id.
      * Identifier of the day/time restriction profile to be updated for the bundle in Gateway.
-     *
      * Optional
      */
     public function unsetDayTimeRestrictionProfileId(): void
@@ -297,12 +256,9 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Returns Product Restrictions.
      */
-    public function getProductRestrictions(): ?ProductRestrictionCard
+    public function getProductRestrictions(): ?array
     {
-        if (count($this->productRestrictions) == 0) {
-            return null;
-        }
-        return $this->productRestrictions['value'];
+        return $this->productRestrictions;
     }
 
     /**
@@ -310,23 +266,14 @@ class BundleRestrictionUpdate implements \JsonSerializable
      *
      * @maps ProductRestrictions
      */
-    public function setProductRestrictions(?ProductRestrictionCard $productRestrictions): void
+    public function setProductRestrictions(?array $productRestrictions): void
     {
-        $this->productRestrictions['value'] = $productRestrictions;
-    }
-
-    /**
-     * Unsets Product Restrictions.
-     */
-    public function unsetProductRestrictions(): void
-    {
-        $this->productRestrictions = [];
+        $this->productRestrictions = $productRestrictions;
     }
 
     /**
      * Returns Location Restriction Profile Id.
      * Identifier of the location restriction profile to be updated for the bundle in Gateway.
-     *
      * Optional
      */
     public function getLocationRestrictionProfileId(): ?string
@@ -337,7 +284,6 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Sets Location Restriction Profile Id.
      * Identifier of the location restriction profile to be updated for the bundle in Gateway.
-     *
      * Optional
      *
      * @maps LocationRestrictionProfileId
@@ -386,8 +332,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
         if (!empty($this->resetProductRestriction)) {
             $json['ResetProductRestriction']      = $this->resetProductRestriction['value'];
         }
-        if (!empty($this->usageRestrictions)) {
-            $json['UsageRestrictions']            = $this->usageRestrictions['value'];
+        if (isset($this->usageRestrictions)) {
+            $json['UsageRestrictions']            = $this->usageRestrictions;
         }
         if (!empty($this->dayTimeRestrictionProfileId)) {
             $json['DayTimeRestrictionProfileId']  = $this->dayTimeRestrictionProfileId['value'];
@@ -395,8 +341,8 @@ class BundleRestrictionUpdate implements \JsonSerializable
         if (isset($this->dayTimeRestrictions)) {
             $json['DayTimeRestrictions']          = $this->dayTimeRestrictions;
         }
-        if (!empty($this->productRestrictions)) {
-            $json['ProductRestrictions']          = $this->productRestrictions['value'];
+        if (isset($this->productRestrictions)) {
+            $json['ProductRestrictions']          = $this->productRestrictions;
         }
         if (isset($this->locationRestrictionProfileId)) {
             $json['LocationRestrictionProfileId'] = $this->locationRestrictionProfileId;

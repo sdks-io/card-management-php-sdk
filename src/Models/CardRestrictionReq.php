@@ -157,9 +157,7 @@ class CardRestrictionReq implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -173,9 +171,7 @@ class CardRestrictionReq implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -188,9 +184,7 @@ class CardRestrictionReq implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -201,9 +195,7 @@ class CardRestrictionReq implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -217,9 +209,7 @@ class CardRestrictionReq implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -232,9 +222,7 @@ class CardRestrictionReq implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function unsetPayerNumber(): void

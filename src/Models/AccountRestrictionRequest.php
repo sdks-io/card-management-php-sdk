@@ -50,9 +50,9 @@ class AccountRestrictionRequest implements \JsonSerializable
     private $resetUsageRestrictions = [];
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $usageRestrictions = [];
+    private $usageRestrictions;
 
     /**
      * Returns Col Co Id.
@@ -172,9 +172,7 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -188,9 +186,7 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -203,9 +199,7 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -216,9 +210,7 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -232,9 +224,7 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -247,9 +237,7 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function unsetPayerNumber(): void
@@ -304,9 +292,7 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer on which the restrictions will be applied.
-     *
      * Optional if AccountId is passed, else Mandatory.
-     *
      * Example: GB000000123
      */
     public function getAccountNumber(): ?string
@@ -320,9 +306,7 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer on which the restrictions will be applied.
-     *
      * Optional if AccountId is passed, else Mandatory.
-     *
      * Example: GB000000123
      *
      * @maps AccountNumber
@@ -335,9 +319,7 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account Number of the customer on which the restrictions will be applied.
-     *
      * Optional if AccountId is passed, else Mandatory.
-     *
      * Example: GB000000123
      */
     public function unsetAccountNumber(): void
@@ -348,11 +330,8 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Returns Reset Usage Restrictions.
      * True/False.
-     *
      * If true, the usage restrictions applied on the account will be removed.
-     *
      * Optional
-     *
      * Default: False
      */
     public function getResetUsageRestrictions(): ?bool
@@ -366,11 +345,8 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Sets Reset Usage Restrictions.
      * True/False.
-     *
      * If true, the usage restrictions applied on the account will be removed.
-     *
      * Optional
-     *
      * Default: False
      *
      * @maps ResetUsageRestrictions
@@ -383,11 +359,8 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Unsets Reset Usage Restrictions.
      * True/False.
-     *
      * If true, the usage restrictions applied on the account will be removed.
-     *
      * Optional
-     *
      * Default: False
      */
     public function unsetResetUsageRestrictions(): void
@@ -398,12 +371,9 @@ class AccountRestrictionRequest implements \JsonSerializable
     /**
      * Returns Usage Restrictions.
      */
-    public function getUsageRestrictions(): ?UsageRestrictionsCard
+    public function getUsageRestrictions(): ?array
     {
-        if (count($this->usageRestrictions) == 0) {
-            return null;
-        }
-        return $this->usageRestrictions['value'];
+        return $this->usageRestrictions;
     }
 
     /**
@@ -411,17 +381,9 @@ class AccountRestrictionRequest implements \JsonSerializable
      *
      * @maps UsageRestrictions
      */
-    public function setUsageRestrictions(?UsageRestrictionsCard $usageRestrictions): void
+    public function setUsageRestrictions(?array $usageRestrictions): void
     {
-        $this->usageRestrictions['value'] = $usageRestrictions;
-    }
-
-    /**
-     * Unsets Usage Restrictions.
-     */
-    public function unsetUsageRestrictions(): void
-    {
-        $this->usageRestrictions = [];
+        $this->usageRestrictions = $usageRestrictions;
     }
 
     /**
@@ -457,8 +419,8 @@ class AccountRestrictionRequest implements \JsonSerializable
         if (!empty($this->resetUsageRestrictions)) {
             $json['ResetUsageRestrictions'] = $this->resetUsageRestrictions['value'];
         }
-        if (!empty($this->usageRestrictions)) {
-            $json['UsageRestrictions']      = $this->usageRestrictions['value'];
+        if (isset($this->usageRestrictions)) {
+            $json['UsageRestrictions']      = $this->usageRestrictions;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

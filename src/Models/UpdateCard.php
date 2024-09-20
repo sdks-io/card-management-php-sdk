@@ -100,6 +100,11 @@ class UpdateCard implements \JsonSerializable
     /**
      * @var array
      */
+    private $pANID = [];
+
+    /**
+     * @var array
+     */
     private $payerId = [];
 
     /**
@@ -743,6 +748,38 @@ class UpdateCard implements \JsonSerializable
     }
 
     /**
+     * Returns P ANID.
+     * PANID of the card
+     */
+    public function getPANID(): ?float
+    {
+        if (count($this->pANID) == 0) {
+            return null;
+        }
+        return $this->pANID['value'];
+    }
+
+    /**
+     * Sets P ANID.
+     * PANID of the card
+     *
+     * @maps PANID
+     */
+    public function setPANID(?float $pANID): void
+    {
+        $this->pANID['value'] = $pANID;
+    }
+
+    /**
+     * Unsets P ANID.
+     * PANID of the card
+     */
+    public function unsetPANID(): void
+    {
+        $this->pANID = [];
+    }
+
+    /**
      * Returns Payer Id.
      * Payer id of the customer.<br />
      * Optional if PayerNumber is passed, else Mandatory.
@@ -871,6 +908,9 @@ class UpdateCard implements \JsonSerializable
         }
         if (!empty($this->pAN)) {
             $json['PAN']                     = $this->pAN['value'];
+        }
+        if (!empty($this->pANID)) {
+            $json['PANID']                   = $this->pANID['value'];
         }
         if (!empty($this->payerId)) {
             $json['PayerId']                 = $this->payerId['value'];

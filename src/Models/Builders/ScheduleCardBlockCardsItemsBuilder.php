@@ -111,6 +111,15 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
+     * Sets panid field.
+     */
+    public function pANID(?string $value): self
+    {
+        $this->instance->setPANID($value);
+        return $this;
+    }
+
+    /**
      * Sets card expiry date field.
      */
     public function cardExpiryDate(?string $value): self

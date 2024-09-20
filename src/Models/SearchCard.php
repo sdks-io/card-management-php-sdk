@@ -28,6 +28,11 @@ class SearchCard implements \JsonSerializable
     private $pAN = [];
 
     /**
+     * @var float|null
+     */
+    private $pANID;
+
+    /**
      * Returns Card Id.
      * Unique Card Id
      * Optional if PAN is given, else mandatory.
@@ -101,6 +106,34 @@ class SearchCard implements \JsonSerializable
     }
 
     /**
+     * Returns P ANID.
+     * Card PANID
+     *
+     * optional id cardid given, else mandatory
+     *
+     * Note: PANID is ignored if CardId is given.
+     */
+    public function getPANID(): ?float
+    {
+        return $this->pANID;
+    }
+
+    /**
+     * Sets P ANID.
+     * Card PANID
+     *
+     * optional id cardid given, else mandatory
+     *
+     * Note: PANID is ignored if CardId is given.
+     *
+     * @maps PANID
+     */
+    public function setPANID(?float $pANID): void
+    {
+        $this->pANID = $pANID;
+    }
+
+    /**
      * Encode this object to JSON
      *
      * @param bool $asArrayWhenEmpty Whether to serialize this model as an array whenever no fields
@@ -117,6 +150,9 @@ class SearchCard implements \JsonSerializable
         }
         if (!empty($this->pAN)) {
             $json['PAN']    = $this->pAN['value'];
+        }
+        if (isset($this->pANID)) {
+            $json['PANID']  = $this->pANID;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

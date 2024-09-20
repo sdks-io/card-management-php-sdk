@@ -87,14 +87,14 @@ class AuditRequest implements \JsonSerializable
     /**
      * Returns Status.
      * Status of requests to be fetched.
-     * • Success
-     * • Failed
-     * • InProgress
-     * • Submitted
-     * • Rejected
-     * • PendingApproval
-     * • All
-     * • MailedToCSC
+     * •    Success
+     * •    Failed
+     * •    InProgress
+     * •    Submitted
+     * •    Rejected
+     * •    PendingApproval
+     * •    All
+     * •    MailedToCSC
      * Optional
      * If not passed “All” will be considered as the default value.
      */
@@ -106,14 +106,14 @@ class AuditRequest implements \JsonSerializable
     /**
      * Sets Status.
      * Status of requests to be fetched.
-     * • Success
-     * • Failed
-     * • InProgress
-     * • Submitted
-     * • Rejected
-     * • PendingApproval
-     * • All
-     * • MailedToCSC
+     * •    Success
+     * •    Failed
+     * •    InProgress
+     * •    Submitted
+     * •    Rejected
+     * •    PendingApproval
+     * •    All
+     * •    MailedToCSC
      * Optional
      * If not passed “All” will be considered as the default value.
      *
@@ -386,44 +386,25 @@ class AuditRequest implements \JsonSerializable
     /**
      * Returns Requested Operation.
      * Type of requests to be fetched.
-     *
      * Optional
-     *
      * Allowed values:
-     *
-     * • OrderCard
-     *
-     * • CreateCardGroup
-     *
-     * • PINReminder
-     *
-     * • MoveCard
-     *
-     * • UpdateCardStatus
-     *
-     * • UpdateCardGroup
-     *
-     * • AutoRenew
-     *
-     * • BulkCardOrder
-     *
-     * • BulkCardBlock
-     *
-     * • BulkCardOrderMultiAccount
-     *
-     * • MobilePaymentRegistration
-     *
-     * • UpdateCompanyInfo
-     *
-     * • BCOSummary
-     *
-     * • BCOMultiAccountSummary
-     *
-     * • BCBSummary
-     *
-     * • FundTransfer
-     *
-     * • DeliveryAddressUpdate
+     * •    OrderCard
+     * •    CreateCardGroup
+     * •    PINReminder
+     * •    MoveCard
+     * •    UpdateCardStatus
+     * •    UpdateCardGroup
+     * •    AutoRenew
+     * •    BulkCardOrder
+     * •    BulkCardBlock
+     * •    BulkCardOrderMultiAccount
+     * •    MobilePaymentRegistration
+     * •    UpdateCompanyInfo
+     * •    BCOSummary
+     * •    BCOMultiAccountSummary
+     * •    BCBSummary
+     * •    FundTransfer
+     * •    DeliveryAddressUpdate
      *
      * @return string[]|null
      */
@@ -435,44 +416,25 @@ class AuditRequest implements \JsonSerializable
     /**
      * Sets Requested Operation.
      * Type of requests to be fetched.
-     *
      * Optional
-     *
      * Allowed values:
-     *
-     * • OrderCard
-     *
-     * • CreateCardGroup
-     *
-     * • PINReminder
-     *
-     * • MoveCard
-     *
-     * • UpdateCardStatus
-     *
-     * • UpdateCardGroup
-     *
-     * • AutoRenew
-     *
-     * • BulkCardOrder
-     *
-     * • BulkCardBlock
-     *
-     * • BulkCardOrderMultiAccount
-     *
-     * • MobilePaymentRegistration
-     *
-     * • UpdateCompanyInfo
-     *
-     * • BCOSummary
-     *
-     * • BCOMultiAccountSummary
-     *
-     * • BCBSummary
-     *
-     * • FundTransfer
-     *
-     * • DeliveryAddressUpdate
+     * •    OrderCard
+     * •    CreateCardGroup
+     * •    PINReminder
+     * •    MoveCard
+     * •    UpdateCardStatus
+     * •    UpdateCardGroup
+     * •    AutoRenew
+     * •    BulkCardOrder
+     * •    BulkCardBlock
+     * •    BulkCardOrderMultiAccount
+     * •    MobilePaymentRegistration
+     * •    UpdateCompanyInfo
+     * •    BCOSummary
+     * •    BCOMultiAccountSummary
+     * •    BCBSummary
+     * •    FundTransfer
+     * •    DeliveryAddressUpdate
      *
      * @maps RequestedOperation
      *
@@ -487,13 +449,13 @@ class AuditRequest implements \JsonSerializable
      * Returns Sort Order.
      * Allowed Sorting Options:
      *
-     * 1. SubmittedDateDescending
+     * 1.    SubmittedDateDescending
      *
-     * 2. SubmittedDateAscending
+     * 2.    SubmittedDateAscending
      *
-     * 3. AccountNumberAscending
+     * 3.    AccountNumberAscending
      *
-     * 4. AccountNumberDescending
+     * 4.    AccountNumberDescending
      *
      * Optional: Default value is 1
      *
@@ -511,13 +473,13 @@ class AuditRequest implements \JsonSerializable
      * Sets Sort Order.
      * Allowed Sorting Options:
      *
-     * 1. SubmittedDateDescending
+     * 1.    SubmittedDateDescending
      *
-     * 2. SubmittedDateAscending
+     * 2.    SubmittedDateAscending
      *
-     * 3. AccountNumberAscending
+     * 3.    AccountNumberAscending
      *
-     * 4. AccountNumberDescending
+     * 4.    AccountNumberDescending
      *
      * Optional: Default value is 1
      *
@@ -534,13 +496,13 @@ class AuditRequest implements \JsonSerializable
      * Unsets Sort Order.
      * Allowed Sorting Options:
      *
-     * 1. SubmittedDateDescending
+     * 1.    SubmittedDateDescending
      *
-     * 2. SubmittedDateAscending
+     * 2.    SubmittedDateAscending
      *
-     * 3. AccountNumberAscending
+     * 3.    AccountNumberAscending
      *
-     * 4. AccountNumberDescending
+     * 4.    AccountNumberDescending
      *
      * Optional: Default value is 1
      *

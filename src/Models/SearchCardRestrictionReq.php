@@ -182,9 +182,7 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -198,9 +196,7 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -213,9 +209,7 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id (i.e. Customer Id of the Payment Customer) of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -226,9 +220,7 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -239,9 +231,7 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -272,9 +262,7 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Returns Bundle Id.
      * Identifier of the Card bundle
-     *
      * Optional if cards list is given, else mandatory.
-     *
      * This input is a search criterion, if given.
      */
     public function getBundleId(): ?string
@@ -288,9 +276,7 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Sets Bundle Id.
      * Identifier of the Card bundle
-     *
      * Optional if cards list is given, else mandatory.
-     *
      * This input is a search criterion, if given.
      *
      * @maps BundleId
@@ -303,9 +289,7 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Unsets Bundle Id.
      * Identifier of the Card bundle
-     *
      * Optional if cards list is given, else mandatory.
-     *
      * This input is a search criterion, if given.
      */
     public function unsetBundleId(): void
@@ -334,11 +318,8 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Returns Include Location Restrictions.
      * True/False
-     *
      * Whether to include location restriction of the cards in the response.
-     *
      * Optional
-     *
      * Default ‘false’
      */
     public function getIncludeLocationRestrictions(): ?bool
@@ -352,11 +333,8 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Sets Include Location Restrictions.
      * True/False
-     *
      * Whether to include location restriction of the cards in the response.
-     *
      * Optional
-     *
      * Default ‘false’
      *
      * @maps IncludeLocationRestrictions
@@ -369,11 +347,8 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Unsets Include Location Restrictions.
      * True/False
-     *
      * Whether to include location restriction of the cards in the response.
-     *
      * Optional
-     *
      * Default ‘false’
      */
     public function unsetIncludeLocationRestrictions(): void
@@ -434,7 +409,6 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Returns Include Inherited Limits.
      * Default value is True,
-     *
      * When True: service will return the inherited values for the usage limits (from card-program or
      * account as available) when it is not overridden on the card.
      */
@@ -449,7 +423,6 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Sets Include Inherited Limits.
      * Default value is True,
-     *
      * When True: service will return the inherited values for the usage limits (from card-program or
      * account as available) when it is not overridden on the card.
      *
@@ -463,7 +436,6 @@ class SearchCardRestrictionReq implements \JsonSerializable
     /**
      * Unsets Include Inherited Limits.
      * Default value is True,
-     *
      * When True: service will return the inherited values for the usage limits (from card-program or
      * account as available) when it is not overridden on the card.
      */

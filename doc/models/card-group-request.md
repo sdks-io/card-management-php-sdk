@@ -15,7 +15,7 @@
 | `payerNumber` | `?string` | Optional | PayerNumber of the customer.<br>Optional if PayerId is passed, else Mandatory.<br>This input is a search criterion.<br>Example: GB00123456 | getPayerNumber(): ?string | setPayerNumber(?string payerNumber): void |
 | `account` | [`?(Accounts[])`](../../doc/models/accounts.md) | Optional | - | getAccount(): ?array | setAccount(?array account): void |
 | `cardGroupName` | `?string` | Optional | Card Group Name<br>Optional.<br>Minimum of 2 characters should be provided else not considered.<br>CardGroups those have the entered value at any part | getCardGroupName(): ?string | setCardGroupName(?string cardGroupName): void |
-| `status` | `?string` | Optional | Card Group Status<br>Mandatory<br>Allowed values:<br>•	ALL<br>•	TERMINATED<br>•	ACTIVE | getStatus(): ?string | setStatus(?string status): void |
+| `status` | `?string` | Optional | Card Group Status<br>Mandatory<br>Allowed values:<br>•    ALL<br>•    TERMINATED<br>•    ACTIVE | getStatus(): ?string | setStatus(?string status): void |
 | `currentPage` | `?int` | Optional | Page Number (as shown to the users)<br>Optional<br>Default value 1 | getCurrentPage(): ?int | setCurrentPage(?int currentPage): void |
 | `pageSize` | `?int` | Optional | Page Size – Number of records to show on a page.<br>Optional<br>Default value 50.<br>Return all rows if -1 is supplied as page size. | getPageSize(): ?int | setPageSize(?int pageSize): void |
 

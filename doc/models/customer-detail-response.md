@@ -17,7 +17,7 @@
 | `allowFleetIdInput` | `?bool` | Optional | True/False.<br>When false, users should not be allowed to enable Fleet Id prompt option while ordering cards under this account. | getAllowFleetIdInput(): ?bool | setAllowFleetIdInput(?bool allowFleetIdInput): void |
 | `band` | `?string` | Optional | Band Id and Description of the Payer in Card Platform<br>e.g. (Id – Description):<br>1-Platinum<br>2-Gold<br>3-Silver<br>4-Bronze | getBand(): ?string | setBand(?string band): void |
 | `billingAddress` | [`?Address`](../../doc/models/address.md) | Optional | - | getBillingAddress(): ?Address | setBillingAddress(?Address billingAddress): void |
-| `cardGroupPosition` | `?string` | Optional | Card group position at –<br>•	Payer – Payer level<br>•	Account – Account level | getCardGroupPosition(): ?string | setCardGroupPosition(?string cardGroupPosition): void |
+| `cardGroupPosition` | `?string` | Optional | Card group position at –<br>•    Payer – Payer level<br>•    Account – Account level | getCardGroupPosition(): ?string | setCardGroupPosition(?string cardGroupPosition): void |
 | `correspondenceAddress` | [`?Address`](../../doc/models/address.md) | Optional | - | getCorrespondenceAddress(): ?Address | setCorrespondenceAddress(?Address correspondenceAddress): void |
 | `deliveryAddresses` | [`?(DeliveryAddresses[])`](../../doc/models/delivery-addresses.md) | Optional | - | getDeliveryAddresses(): ?array | setDeliveryAddresses(?array deliveryAddresses): void |
 | `fleetPin` | `?bool` | Optional | Is Fleet Pin optional enabled for the selected account | getFleetPin(): ?bool | setFleetPin(?bool fleetPin): void |

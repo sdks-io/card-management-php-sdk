@@ -476,15 +476,15 @@ All endpoints use the `POST` verb for retrieving, updating, creating and deletin
 **Important Note** - This operation allows setting or updating the restrictions on existing cards. (For up to 3 cards in a single call).
 
 All restrictions of the cards are submitted and executed after successful below condition.
-•	The card exists.
-•	Day time restriction cannot be set to restrict the use of a card on all days of the week i.e., the values for all the days in the restriction cannot be set to false.
-•	Either of the usage, daytime, location or product restriction ‘Reset’ is set to ‘True’ or applied on the card.
-•	All the limits in the usage restriction profile for a card is not set to ‘0’/null.
-•	If IsVelocityCeiling is ‘true’, API will validate below condition:
+•    The card exists.
+•    Day time restriction cannot be set to restrict the use of a card on all days of the week i.e., the values for all the days in the restriction cannot be set to false.
+•    Either of the usage, daytime, location or product restriction ‘Reset’ is set to ‘True’ or applied on the card.
+•    All the limits in the usage restriction profile for a card is not set to ‘0’/null.
+•    If IsVelocityCeiling is ‘true’, API will validate below condition:
 Usage restrictions for a card are lower than Customer Card Type level limits, if there are no customer level overrides available then lower than OU card type limits.
-•	In usage restrictions, the limits per transaction should be less than or equal to Daily, Daily should be less than or equal to Weekly, Weekly should be less than or equal to Monthly, Monthly should be less than or equal to Yearly (Annually). Exception being null/blank will be skipped. i.e., Daily value should be less than equal to Monthly value if Weekly value is null/blank. Lifetime limit is not considered for usage restrictions limits validation.
-•	Apply the card type limit to Gateway when a value is NULL in the input. However, if the card type limit is NULL for the same field, then no limit will be applied in Gateway.
-•	If ‘SetDefaultOnVelocityUpdate’ is ‘true’ then the operation will apply customer cardtype or OU level velocity limits on existing cards when restrictions are modified without providing custom values for all fields.
+•    In usage restrictions, the limits per transaction should be less than or equal to Daily, Daily should be less than or equal to Weekly, Weekly should be less than or equal to Monthly, Monthly should be less than or equal to Yearly (Annually). Exception being null/blank will be skipped. i.e., Daily value should be less than equal to Monthly value if Weekly value is null/blank. Lifetime limit is not considered for usage restrictions limits validation.
+•    Apply the card type limit to Gateway when a value is NULL in the input. However, if the card type limit is NULL for the same field, then no limit will be applied in Gateway.
+•    If ‘SetDefaultOnVelocityUpdate’ is ‘true’ then the operation will apply customer cardtype or OU level velocity limits on existing cards when restrictions are modified without providing custom values for all fields.
 
 ```php
 function applyRestriction(
@@ -814,10 +814,10 @@ This API allows setting or updating the usage restrictions of an existing accoun
 
 Then validation rules applied for this API.
 
-•	The account exists.
-•	Day time restriction cannot be set to restrict the use of a card, under the account, on all days of the week.
-•	Either of the usage, daytime or location is either marked for reset or new restriction values provided for the account.
-•	In usage restrictions, the limits per transaction should be less than or equal to Daily, Daily should be less than or equal to Weekly, Weekly should be less than or equal to Monthly. Exception being 0/blank will be skipped, i.e., Daily value should be less than equal to Monthly value if Weekly value is 0/blank.
+•    The account exists.
+•    Day time restriction cannot be set to restrict the use of a card, under the account, on all days of the week.
+•    Either of the usage, daytime or location is either marked for reset or new restriction values provided for the account.
+•    In usage restrictions, the limits per transaction should be less than or equal to Daily, Daily should be less than or equal to Weekly, Weekly should be less than or equal to Monthly. Exception being 0/blank will be skipped, i.e., Daily value should be less than equal to Monthly value if Weekly value is 0/blank.
 
 ```php
 function restrictionAccount(

@@ -274,6 +274,24 @@ class UpdateCardBuilder
     }
 
     /**
+     * Sets panid field.
+     */
+    public function pANID(?float $value): self
+    {
+        $this->instance->setPANID($value);
+        return $this;
+    }
+
+    /**
+     * Unsets panid field.
+     */
+    public function unsetPANID(): self
+    {
+        $this->instance->unsetPANID();
+        return $this;
+    }
+
+    /**
      * Sets payer id field.
      */
     public function payerId(?int $value): self

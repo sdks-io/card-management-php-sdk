@@ -180,6 +180,16 @@ class Card implements \JsonSerializable
     private $pAN = [];
 
     /**
+     * @var string|null
+     */
+    private $maskedPAN;
+
+    /**
+     * @var float|null
+     */
+    private $pANID;
+
+    /**
      * @var array
      */
     private $purchaseCategoryCode = [];
@@ -1268,7 +1278,7 @@ class Card implements \JsonSerializable
 
     /**
      * Returns P AN.
-     * Card PAN Mask PAN (Mask all digits except the Last 6 digits of the PAN)
+     * Card PAN
      */
     public function getPAN(): ?string
     {
@@ -1280,7 +1290,7 @@ class Card implements \JsonSerializable
 
     /**
      * Sets P AN.
-     * Card PAN Mask PAN (Mask all digits except the Last 6 digits of the PAN)
+     * Card PAN
      *
      * @maps PAN
      */
@@ -1291,11 +1301,51 @@ class Card implements \JsonSerializable
 
     /**
      * Unsets P AN.
-     * Card PAN Mask PAN (Mask all digits except the Last 6 digits of the PAN)
+     * Card PAN
      */
     public function unsetPAN(): void
     {
         $this->pAN = [];
+    }
+
+    /**
+     * Returns Masked PAN.
+     * Card PAN Mask PAN (Mask all digits except the Last 6 digits of the PAN)
+     */
+    public function getMaskedPAN(): ?string
+    {
+        return $this->maskedPAN;
+    }
+
+    /**
+     * Sets Masked PAN.
+     * Card PAN Mask PAN (Mask all digits except the Last 6 digits of the PAN)
+     *
+     * @maps MaskedPAN
+     */
+    public function setMaskedPAN(?string $maskedPAN): void
+    {
+        $this->maskedPAN = $maskedPAN;
+    }
+
+    /**
+     * Returns P ANID.
+     * Card PAN ID.
+     */
+    public function getPANID(): ?float
+    {
+        return $this->pANID;
+    }
+
+    /**
+     * Sets P ANID.
+     * Card PAN ID.
+     *
+     * @maps PANID
+     */
+    public function setPANID(?float $pANID): void
+    {
+        $this->pANID = $pANID;
     }
 
     /**
@@ -2035,6 +2085,12 @@ class Card implements \JsonSerializable
         }
         if (!empty($this->pAN)) {
             $json['PAN']                    = $this->pAN['value'];
+        }
+        if (isset($this->maskedPAN)) {
+            $json['MaskedPAN']              = $this->maskedPAN;
+        }
+        if (isset($this->pANID)) {
+            $json['PANID']                  = $this->pANID;
         }
         if (!empty($this->purchaseCategoryCode)) {
             $json['PurchaseCategoryCode']   = $this->purchaseCategoryCode['value'];

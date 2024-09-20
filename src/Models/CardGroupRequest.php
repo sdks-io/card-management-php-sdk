@@ -342,9 +342,9 @@ class CardGroupRequest implements \JsonSerializable
      * Card Group Status
      * Mandatory
      * Allowed values:
-     * • ALL
-     * • TERMINATED
-     * • ACTIVE
+     * •    ALL
+     * •    TERMINATED
+     * •    ACTIVE
      */
     public function getStatus(): ?string
     {
@@ -359,9 +359,9 @@ class CardGroupRequest implements \JsonSerializable
      * Card Group Status
      * Mandatory
      * Allowed values:
-     * • ALL
-     * • TERMINATED
-     * • ACTIVE
+     * •    ALL
+     * •    TERMINATED
+     * •    ACTIVE
      *
      * @maps Status
      */
@@ -375,9 +375,9 @@ class CardGroupRequest implements \JsonSerializable
      * Card Group Status
      * Mandatory
      * Allowed values:
-     * • ALL
-     * • TERMINATED
-     * • ACTIVE
+     * •    ALL
+     * •    TERMINATED
+     * •    ACTIVE
      */
     public function unsetStatus(): void
     {

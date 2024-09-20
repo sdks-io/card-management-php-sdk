@@ -952,39 +952,39 @@ class AuditResponseAuditsItems implements \JsonSerializable
      *
      * Possible values:
      *
-     * • OrderCard
+     * •    OrderCard
      *
-     * • CreateCardGroup
+     * •    CreateCardGroup
      *
-     * • PINReminder
+     * •    PINReminder
      *
-     * • MoveCard
+     * •    MoveCard
      *
-     * • UpdateCardStatus
+     * •    UpdateCardStatus
      *
-     * • UpdateCardGroup
+     * •    UpdateCardGroup
      *
-     * • AutoRenew
+     * •    AutoRenew
      *
-     * • BulkCardOrder
+     * •    BulkCardOrder
      *
-     * • BulkCardBlock
+     * •    BulkCardBlock
      *
-     * • BulkCardOrderMultiAccount
+     * •    BulkCardOrderMultiAccount
      *
-     * • MobilePaymentRegistration
+     * •    MobilePaymentRegistration
      *
-     * • UpdateCompanyInfo
+     * •    UpdateCompanyInfo
      *
-     * • BCOSummary
+     * •    BCOSummary
      *
-     * • BCOMultiAccountSummary
+     * •    BCOMultiAccountSummary
      *
-     * • BCBSummary
+     * •    BCBSummary
      *
-     * • FundTransfer
+     * •    FundTransfer
      *
-     * • DeliveryAddressUpdate
+     * •    DeliveryAddressUpdate
      */
     public function getRequestedOperation(): ?string
     {
@@ -1000,39 +1000,39 @@ class AuditResponseAuditsItems implements \JsonSerializable
      *
      * Possible values:
      *
-     * • OrderCard
+     * •    OrderCard
      *
-     * • CreateCardGroup
+     * •    CreateCardGroup
      *
-     * • PINReminder
+     * •    PINReminder
      *
-     * • MoveCard
+     * •    MoveCard
      *
-     * • UpdateCardStatus
+     * •    UpdateCardStatus
      *
-     * • UpdateCardGroup
+     * •    UpdateCardGroup
      *
-     * • AutoRenew
+     * •    AutoRenew
      *
-     * • BulkCardOrder
+     * •    BulkCardOrder
      *
-     * • BulkCardBlock
+     * •    BulkCardBlock
      *
-     * • BulkCardOrderMultiAccount
+     * •    BulkCardOrderMultiAccount
      *
-     * • MobilePaymentRegistration
+     * •    MobilePaymentRegistration
      *
-     * • UpdateCompanyInfo
+     * •    UpdateCompanyInfo
      *
-     * • BCOSummary
+     * •    BCOSummary
      *
-     * • BCOMultiAccountSummary
+     * •    BCOMultiAccountSummary
      *
-     * • BCBSummary
+     * •    BCBSummary
      *
-     * • FundTransfer
+     * •    FundTransfer
      *
-     * • DeliveryAddressUpdate
+     * •    DeliveryAddressUpdate
      *
      * @maps RequestedOperation
      */
@@ -1047,39 +1047,39 @@ class AuditResponseAuditsItems implements \JsonSerializable
      *
      * Possible values:
      *
-     * • OrderCard
+     * •    OrderCard
      *
-     * • CreateCardGroup
+     * •    CreateCardGroup
      *
-     * • PINReminder
+     * •    PINReminder
      *
-     * • MoveCard
+     * •    MoveCard
      *
-     * • UpdateCardStatus
+     * •    UpdateCardStatus
      *
-     * • UpdateCardGroup
+     * •    UpdateCardGroup
      *
-     * • AutoRenew
+     * •    AutoRenew
      *
-     * • BulkCardOrder
+     * •    BulkCardOrder
      *
-     * • BulkCardBlock
+     * •    BulkCardBlock
      *
-     * • BulkCardOrderMultiAccount
+     * •    BulkCardOrderMultiAccount
      *
-     * • MobilePaymentRegistration
+     * •    MobilePaymentRegistration
      *
-     * • UpdateCompanyInfo
+     * •    UpdateCompanyInfo
      *
-     * • BCOSummary
+     * •    BCOSummary
      *
-     * • BCOMultiAccountSummary
+     * •    BCOMultiAccountSummary
      *
-     * • BCBSummary
+     * •    BCBSummary
      *
-     * • FundTransfer
+     * •    FundTransfer
      *
-     * • DeliveryAddressUpdate
+     * •    DeliveryAddressUpdate
      */
     public function unsetRequestedOperation(): void
     {
@@ -1124,39 +1124,39 @@ class AuditResponseAuditsItems implements \JsonSerializable
      *
      * Possible values:
      *
-     * • OrderCard
+     * •    OrderCard
      *
-     * • CreateCardGroup
+     * •    CreateCardGroup
      *
-     * • PINReminder
+     * •    PINReminder
      *
-     * • MoveCard
+     * •    MoveCard
      *
-     * • UpdateCardStatus
+     * •    UpdateCardStatus
      *
-     * • UpdateCardGroup
+     * •    UpdateCardGroup
      *
-     * • AutoRenew
+     * •    AutoRenew
      *
-     * • BulkCardOrder
+     * •    BulkCardOrder
      *
-     * • BulkCardBlock
+     * •    BulkCardBlock
      *
-     * • BulkCardOrderMultiAccount
+     * •    BulkCardOrderMultiAccount
      *
-     * • MobilePaymentRegistration
+     * •    MobilePaymentRegistration
      *
-     * • UpdateCompanyInfo
+     * •    UpdateCompanyInfo
      *
-     * • BCOSummary
+     * •    BCOSummary
      *
-     * • BCOMultiAccountSummary
+     * •    BCOMultiAccountSummary
      *
-     * • BCBSummary
+     * •    BCBSummary
      *
-     * • FundTransfer
+     * •    FundTransfer
      *
-     * • DeliveryAddressUpdate
+     * •    DeliveryAddressUpdate
      */
     public function getRequestType(): ?string
     {
@@ -1172,39 +1172,39 @@ class AuditResponseAuditsItems implements \JsonSerializable
      *
      * Possible values:
      *
-     * • OrderCard
+     * •    OrderCard
      *
-     * • CreateCardGroup
+     * •    CreateCardGroup
      *
-     * • PINReminder
+     * •    PINReminder
      *
-     * • MoveCard
+     * •    MoveCard
      *
-     * • UpdateCardStatus
+     * •    UpdateCardStatus
      *
-     * • UpdateCardGroup
+     * •    UpdateCardGroup
      *
-     * • AutoRenew
+     * •    AutoRenew
      *
-     * • BulkCardOrder
+     * •    BulkCardOrder
      *
-     * • BulkCardBlock
+     * •    BulkCardBlock
      *
-     * • BulkCardOrderMultiAccount
+     * •    BulkCardOrderMultiAccount
      *
-     * • MobilePaymentRegistration
+     * •    MobilePaymentRegistration
      *
-     * • UpdateCompanyInfo
+     * •    UpdateCompanyInfo
      *
-     * • BCOSummary
+     * •    BCOSummary
      *
-     * • BCOMultiAccountSummary
+     * •    BCOMultiAccountSummary
      *
-     * • BCBSummary
+     * •    BCBSummary
      *
-     * • FundTransfer
+     * •    FundTransfer
      *
-     * • DeliveryAddressUpdate
+     * •    DeliveryAddressUpdate
      *
      * @maps RequestType
      */
@@ -1219,39 +1219,39 @@ class AuditResponseAuditsItems implements \JsonSerializable
      *
      * Possible values:
      *
-     * • OrderCard
+     * •    OrderCard
      *
-     * • CreateCardGroup
+     * •    CreateCardGroup
      *
-     * • PINReminder
+     * •    PINReminder
      *
-     * • MoveCard
+     * •    MoveCard
      *
-     * • UpdateCardStatus
+     * •    UpdateCardStatus
      *
-     * • UpdateCardGroup
+     * •    UpdateCardGroup
      *
-     * • AutoRenew
+     * •    AutoRenew
      *
-     * • BulkCardOrder
+     * •    BulkCardOrder
      *
-     * • BulkCardBlock
+     * •    BulkCardBlock
      *
-     * • BulkCardOrderMultiAccount
+     * •    BulkCardOrderMultiAccount
      *
-     * • MobilePaymentRegistration
+     * •    MobilePaymentRegistration
      *
-     * • UpdateCompanyInfo
+     * •    UpdateCompanyInfo
      *
-     * • BCOSummary
+     * •    BCOSummary
      *
-     * • BCOMultiAccountSummary
+     * •    BCOMultiAccountSummary
      *
-     * • BCBSummary
+     * •    BCBSummary
      *
-     * • FundTransfer
+     * •    FundTransfer
      *
-     * • DeliveryAddressUpdate
+     * •    DeliveryAddressUpdate
      */
     public function unsetRequestType(): void
     {
@@ -1262,13 +1262,13 @@ class AuditResponseAuditsItems implements \JsonSerializable
      * Returns Status.
      * Status of the request.
      * Possible values:
-     * • Success
-     * • Failed
-     * • InProgress
-     * • Submitted
-     * • Rejected
-     * • PendingApproval
-     * • MailedToCSC
+     * •    Success
+     * •    Failed
+     * •    InProgress
+     * •    Submitted
+     * •    Rejected
+     * •    PendingApproval
+     * •    MailedToCSC
      */
     public function getStatus(): ?string
     {
@@ -1282,13 +1282,13 @@ class AuditResponseAuditsItems implements \JsonSerializable
      * Sets Status.
      * Status of the request.
      * Possible values:
-     * • Success
-     * • Failed
-     * • InProgress
-     * • Submitted
-     * • Rejected
-     * • PendingApproval
-     * • MailedToCSC
+     * •    Success
+     * •    Failed
+     * •    InProgress
+     * •    Submitted
+     * •    Rejected
+     * •    PendingApproval
+     * •    MailedToCSC
      *
      * @maps Status
      */
@@ -1301,13 +1301,13 @@ class AuditResponseAuditsItems implements \JsonSerializable
      * Unsets Status.
      * Status of the request.
      * Possible values:
-     * • Success
-     * • Failed
-     * • InProgress
-     * • Submitted
-     * • Rejected
-     * • PendingApproval
-     * • MailedToCSC
+     * •    Success
+     * •    Failed
+     * •    InProgress
+     * •    Submitted
+     * •    Rejected
+     * •    PendingApproval
+     * •    MailedToCSC
      */
     public function unsetStatus(): void
     {

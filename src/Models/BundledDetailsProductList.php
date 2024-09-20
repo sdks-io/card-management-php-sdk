@@ -52,7 +52,6 @@ class BundledDetailsProductList implements \JsonSerializable
     /**
      * Returns Purchase Category Id.
      * Purchase category Id
-     *
      * Example: 123, 124, etc.,
      */
     public function getPurchaseCategoryId(): ?int
@@ -63,7 +62,6 @@ class BundledDetailsProductList implements \JsonSerializable
     /**
      * Sets Purchase Category Id.
      * Purchase category Id
-     *
      * Example: 123, 124, etc.,
      *
      * @maps PurchaseCategoryId
@@ -116,7 +114,6 @@ class BundledDetailsProductList implements \JsonSerializable
     /**
      * Returns Products.
      * An array of 3-digit global product codes.
-     *
      * Example: [ "033", "021", "023" ]
      *
      * @return string[]|null
@@ -129,7 +126,6 @@ class BundledDetailsProductList implements \JsonSerializable
     /**
      * Sets Products.
      * An array of 3-digit global product codes.
-     *
      * Example: [ "033", "021", "023" ]
      *
      * @maps Products
@@ -144,7 +140,6 @@ class BundledDetailsProductList implements \JsonSerializable
     /**
      * Returns Product Groups.
      * An array of product group ids.
-     *
      * Example: [ "670246404", "40557126" ]
      *
      * @return string[]|null
@@ -157,7 +152,6 @@ class BundledDetailsProductList implements \JsonSerializable
     /**
      * Sets Product Groups.
      * An array of product group ids.
-     *
      * Example: [ "670246404", "40557126" ]
      *
      * @maps ProductGroups

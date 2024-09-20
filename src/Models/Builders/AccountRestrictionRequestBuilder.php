@@ -12,7 +12,6 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AccountRestrictionRequest;
-use ShellCardManagementAPIsLib\Models\UsageRestrictionsCard;
 
 /**
  * Builder for model AccountRestrictionRequest
@@ -168,18 +167,9 @@ class AccountRestrictionRequestBuilder
     /**
      * Sets usage restrictions field.
      */
-    public function usageRestrictions(?UsageRestrictionsCard $value): self
+    public function usageRestrictions(?array $value): self
     {
         $this->instance->setUsageRestrictions($value);
-        return $this;
-    }
-
-    /**
-     * Unsets usage restrictions field.
-     */
-    public function unsetUsageRestrictions(): self
-    {
-        $this->instance->unsetUsageRestrictions();
         return $this;
     }
 

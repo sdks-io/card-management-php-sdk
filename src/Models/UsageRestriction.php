@@ -416,15 +416,10 @@ class UsageRestriction implements \JsonSerializable
     /**
      * Returns Level.
      * Usage limit is applied on the card from this level.
-     *
      * Valid values –
-     *
-     * • Inherited
-     *
-     * • Card
-     *
+     * •    Inherited
+     * •    Card
      * When Card level usage restrictions are not present, the API will return the inherited restrictions.
-     *
      * Note: -This field is deprecated. Instead, use ‘Override’.
      */
     public function getLevel(): ?string
@@ -435,15 +430,10 @@ class UsageRestriction implements \JsonSerializable
     /**
      * Sets Level.
      * Usage limit is applied on the card from this level.
-     *
      * Valid values –
-     *
-     * • Inherited
-     *
-     * • Card
-     *
+     * •    Inherited
+     * •    Card
      * When Card level usage restrictions are not present, the API will return the inherited restrictions.
-     *
      * Note: -This field is deprecated. Instead, use ‘Override’.
      *
      * @maps Level
@@ -552,7 +542,6 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
      */
     public function getDailySpendThreshold(): ?float
@@ -565,7 +554,6 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
      *
      * @maps DailySpendThreshold
@@ -674,9 +662,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getWeeklySpendThreshold(): ?float
@@ -689,9 +675,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps WeeklySpendThreshold
@@ -948,9 +932,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getAnnualSpendThreshold(): ?float
@@ -963,9 +945,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps AnnualSpendThreshold
@@ -1074,9 +1054,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getLifeTimeSpendThreshold(): ?float
@@ -1089,9 +1067,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps LifeTimeSpendThreshold
@@ -1200,9 +1176,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getDailyVolumeThreshold(): ?float
@@ -1215,9 +1189,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps DailyVolumeThreshold
@@ -1326,9 +1298,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getWeeklyVolumeThreshold(): ?float
@@ -1341,9 +1311,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps WeeklyVolumeThreshold
@@ -1448,9 +1416,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getMonthlyVolumeThreshold(): ?float
@@ -1463,9 +1429,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps MonthlyVolumeThreshold
@@ -1628,9 +1592,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getAnnualVolumeThreshold(): ?float
@@ -1643,9 +1605,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps AnnualVolumeThreshold
@@ -1754,9 +1714,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getLifeTimeVolumeThreshold(): ?float
@@ -1769,9 +1727,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps LifeTimeVolumeThreshold
@@ -1880,9 +1836,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getDailyTransactionThreshold(): ?float
@@ -1895,9 +1849,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps DailyTransactionThreshold
@@ -2006,9 +1958,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getWeeklyTransactionThreshold(): ?float
@@ -2021,9 +1971,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps WeeklyTransactionThreshold
@@ -2132,9 +2080,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getMonthlyTransactionThreshold(): ?float
@@ -2147,9 +2093,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps MonthlyTransactionThreshold
@@ -2254,9 +2198,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getAnnualTransactionThreshold(): ?float
@@ -2269,9 +2211,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps AnnualTransactionThreshold
@@ -2380,9 +2320,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getLifeTimeTransactionThreshold(): ?float
@@ -2395,9 +2333,7 @@ class UsageRestriction implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps LifeTimeTransactionThreshold

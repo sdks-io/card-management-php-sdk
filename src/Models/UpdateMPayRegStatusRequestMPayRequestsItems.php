@@ -68,7 +68,7 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
      * Status of mobile payment registration request
      * Mandatory.
      * Allowed values –
-     * • Approved
+     * •    Approved
      * •   Rejected
      */
     public function getStatus(): ?string
@@ -81,7 +81,7 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
      * Status of mobile payment registration request
      * Mandatory.
      * Allowed values –
-     * • Approved
+     * •    Approved
      * •   Rejected
      *
      * @maps Status

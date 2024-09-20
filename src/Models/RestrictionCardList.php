@@ -300,7 +300,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Driver Name.
      * Driver name
-     *
      * Example:  ANDREW GILBERRY
      */
     public function getDriverName(): ?string
@@ -311,7 +310,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Driver Name.
      * Driver name
-     *
      * Example:  ANDREW GILBERRY
      *
      * @maps DriverName
@@ -324,7 +322,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns V RN.
      * Vehicle registration number
-     *
      * Example: MV65YLH
      */
     public function getVRN(): ?string
@@ -335,7 +332,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets V RN.
      * Vehicle registration number
-     *
      * Example: MV65YLH
      *
      * @maps VRN
@@ -348,9 +344,7 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Issue Date.
      * Issue date
-     *
      * Format: yyyyMMdd
-     *
      * Note: Clients to convert this to appropriate DateTime type.
      */
     public function getIssueDate(): ?string
@@ -361,9 +355,7 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Issue Date.
      * Issue date
-     *
      * Format: yyyyMMdd
-     *
      * Note: Clients to convert this to appropriate DateTime type.
      *
      * @maps IssueDate
@@ -396,7 +388,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID
-     *
      * Example: 29484
      */
     public function getAccountId(): ?int
@@ -407,7 +398,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID
-     *
      * Example: 29484
      *
      * @maps AccountId
@@ -420,7 +410,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number
-     *
      * Example: GB99215176
      */
     public function getAccountNumber(): ?string
@@ -431,7 +420,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number
-     *
      * Example: GB99215176
      *
      * @maps AccountNumber
@@ -444,7 +432,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Account Name.
      * Account Name
-     *
      * Example: MATTHEW ALGIE & COMPANY LIMITED
      */
     public function getAccountName(): ?string
@@ -455,7 +442,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Account Name.
      * Account Name
-     *
      * Example: MATTHEW ALGIE & COMPANY LIMITED
      *
      * @maps AccountName
@@ -488,7 +474,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Currency Code.
      * ISO currency code of the Customer Currency
-     *
      * Example: GBP
      */
     public function getCurrencyCode(): ?string
@@ -499,7 +484,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Currency Code.
      * ISO currency code of the Customer Currency
-     *
      * Example: GBP
      *
      * @maps CurrencyCode
@@ -512,7 +496,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Col Co Currency Code.
      * ISO currency code of the country.
-     *
      * Example: GBP
      */
     public function getColCoCurrencyCode(): ?string
@@ -523,7 +506,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Col Co Currency Code.
      * ISO currency code of the country.
-     *
      * Example: GBP
      *
      * @maps ColCoCurrencyCode
@@ -536,7 +518,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Col Co Currency Symbol.
      * Currency symbol of the country.
-     *
      * Example: £, $
      */
     public function getColCoCurrencySymbol(): ?string
@@ -547,7 +528,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Col Co Currency Symbol.
      * Currency symbol of the country.
-     *
      * Example: £, $
      *
      * @maps ColCoCurrencySymbol
@@ -560,7 +540,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Restriction Currency Code.
      * ISO currency code of the country.
-     *
      * Example: GBP
      */
     public function getRestrictionCurrencyCode(): ?string
@@ -571,7 +550,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Restriction Currency Code.
      * ISO currency code of the country.
-     *
      * Example: GBP
      *
      * @maps RestrictionCurrencyCode
@@ -584,7 +562,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Restriction Currency Symbol.
      * Currency symbol of the country.
-     *
      * Example: £, $
      */
     public function getRestrictionCurrencySymbol(): ?string
@@ -595,7 +572,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Restriction Currency Symbol.
      * Currency symbol of the country.
-     *
      * Example: £, $
      *
      * @maps RestrictionCurrencySymbol
@@ -608,7 +584,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Purchase Category Id.
      * Purchase category Id
-     *
      * Example: 123, 124, etc.,
      */
     public function getPurchaseCategoryId(): ?string
@@ -619,7 +594,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Purchase Category Id.
      * Purchase category Id
-     *
      * Example: 123, 124, etc.,
      *
      * @maps PurchaseCategoryId
@@ -752,7 +726,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Is Superseded.
      * True/False
-     *
      * True if a new card is issued with the same PAN, else false
      */
     public function getIsSuperseded(): ?bool
@@ -763,7 +736,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Is Superseded.
      * True/False
-     *
      * True if a new card is issued with the same PAN, else false
      *
      * @maps IsSuperseded
@@ -776,7 +748,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Is Virtual Card.
      * True/False
-     *
      * True if it is a virtual card, else false
      */
     public function getIsVirtualCard(): ?bool
@@ -787,7 +758,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Is Virtual Card.
      * True/False
-     *
      * True if it is a virtual card, else false
      *
      * @maps IsVirtualCard
@@ -800,7 +770,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Is National.
      * True/False
-     *
      * True if it is a national card, else false
      */
     public function getIsNational(): ?bool
@@ -811,7 +780,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Is National.
      * True/False
-     *
      * True if it is a national card, else false
      *
      * @maps IsNational
@@ -824,7 +792,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Is International.
      * True/False
-     *
      * True if it is an international card, else false
      */
     public function getIsInternational(): ?bool
@@ -835,7 +802,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Is International.
      * True/False
-     *
      * True if it is an international card, else false
      *
      * @maps IsInternational
@@ -848,7 +814,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Is CRT.
      * True/False
-     *
      * True if it is a CRT type card, else false
      */
     public function getIsCRT(): ?bool
@@ -859,7 +824,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Is CRT.
      * True/False
-     *
      * True if it is a CRT type card, else false
      *
      * @maps IsCRT
@@ -872,7 +836,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Is Fleet.
      * True/False
-     *
      * True if it is a Fleet type card, else false
      */
     public function getIsFleet(): ?bool
@@ -883,7 +846,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Is Fleet.
      * True/False
-     *
      * True if it is a Fleet type card, else false
      *
      * @maps IsFleet
@@ -896,7 +858,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Is Shell Sites Only.
      * True/False
-     *
      * True if it is only allowed at Shell sites, else false
      */
     public function getIsShellSitesOnly(): ?bool
@@ -907,7 +868,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Is Shell Sites Only.
      * True/False
-     *
      * True if it is only allowed at Shell sites, else false
      *
      * @maps IsShellSitesOnly
@@ -920,7 +880,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Is Partner Sites Included.
      * True/False
-     *
      * True if it is allowed at all partner sites, else false
      */
     public function getIsPartnerSitesIncluded(): ?bool
@@ -931,7 +890,6 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Is Partner Sites Included.
      * True/False
-     *
      * True if it is allowed at all partner sites, else false
      *
      * @maps IsPartnerSitesIncluded
@@ -944,17 +902,11 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Card Type Id.
      * Card Type ID
-     *
      * Example Id & Description:
-     *
      * 1 - Philippines CRT 7077861
-     *
      * 2- Philippines Fleet 7002861
-     *
      * 5-SHELL FLEET- HONG KONG 7002821
-     *
      * 6-SHELL NHF- HONG KONG 7002821
-     *
      * 7-SHELL CRT- HONG KONG 7077821
      */
     public function getCardTypeId(): ?int
@@ -965,17 +917,11 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Card Type Id.
      * Card Type ID
-     *
      * Example Id & Description:
-     *
      * 1 - Philippines CRT 7077861
-     *
      * 2- Philippines Fleet 7002861
-     *
      * 5-SHELL FLEET- HONG KONG 7002821
-     *
      * 6-SHELL NHF- HONG KONG 7002821
-     *
      * 7-SHELL CRT- HONG KONG 7077821
      *
      * @maps CardTypeId
@@ -1008,17 +954,11 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Card Type Name.
      * Card Type Name
-     *
      * Example Id & Description:
-     *
      * 1 - Philippines CRT 7077861
-     *
      * 2- Philippines Fleet 7002861
-     *
      * 5-SHELL FLEET- HONG KONG 7002821
-     *
      * 6-SHELL NHF- HONG KONG 7002821
-     *
      * 7-SHELL CRT- HONG KONG 7077821
      */
     public function getCardTypeName(): ?string
@@ -1029,17 +969,11 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Card Type Name.
      * Card Type Name
-     *
      * Example Id & Description:
-     *
      * 1 - Philippines CRT 7077861
-     *
      * 2- Philippines Fleet 7002861
-     *
      * 5-SHELL FLEET- HONG KONG 7002821
-     *
      * 6-SHELL NHF- HONG KONG 7002821
-     *
      * 7-SHELL CRT- HONG KONG 7077821
      *
      * @maps CardTypeName
@@ -1052,10 +986,8 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Bundle Id.
      * Bundle Id associated with card in the Gateway.
-     *
      * This field will have a null value if the card is not associated with any bundle of
      * IncludeBundleDetails in request is false.
-     *
      * If the search is based on a bundle Id, the same will be returned.
      */
     public function getBundleId(): ?string
@@ -1066,10 +998,8 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Bundle Id.
      * Bundle Id associated with card in the Gateway.
-     *
      * This field will have a null value if the card is not associated with any bundle of
      * IncludeBundleDetails in request is false.
-     *
      * If the search is based on a bundle Id, the same will be returned.
      *
      * @maps BundleId
@@ -1082,23 +1012,14 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Returns Medium Type ID.
      * Id of the medium type identifier.
-     *
      * Example: 1,2,4
-     *
      * Full list below:
-     *
      * 1 - Fuel Card
-     *
      * 2 - Fuel Card with EV
-     *
      * 4 - Fuel Card and Key fob Card
-     *
      * 5 - Key fob
-     *
      * 6 - Virtual Card
-     *
      * 7 - NPII Token
-     *
      * 8 – Smartpay
      */
     public function getMediumTypeID(): ?int
@@ -1109,23 +1030,14 @@ class RestrictionCardList implements \JsonSerializable
     /**
      * Sets Medium Type ID.
      * Id of the medium type identifier.
-     *
      * Example: 1,2,4
-     *
      * Full list below:
-     *
      * 1 - Fuel Card
-     *
      * 2 - Fuel Card with EV
-     *
      * 4 - Fuel Card and Key fob Card
-     *
      * 5 - Key fob
-     *
      * 6 - Virtual Card
-     *
      * 7 - NPII Token
-     *
      * 8 – Smartpay
      *
      * @maps MediumTypeID

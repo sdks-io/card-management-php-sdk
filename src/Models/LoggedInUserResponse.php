@@ -556,9 +556,9 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Returns Payers.
      * List of payers which the user has access to.
-     * • It will return 250 payers only and it is configurable. If the user has more than that, the
+     * •    It will return 250 payers only and it is configurable. If the user has more than that, the
      * remaining will be ignored.
-     * • The payer which is marked as default will be the first item in the output.
+     * •    The payer which is marked as default will be the first item in the output.
      *
      *
      * Note: This list will be empty for users mapped with roles which has either IsShellAdmin or
@@ -574,9 +574,9 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Sets Payers.
      * List of payers which the user has access to.
-     * • It will return 250 payers only and it is configurable. If the user has more than that, the
+     * •    It will return 250 payers only and it is configurable. If the user has more than that, the
      * remaining will be ignored.
-     * • The payer which is marked as default will be the first item in the output.
+     * •    The payer which is marked as default will be the first item in the output.
      *
      *
      * Note: This list will be empty for users mapped with roles which has either IsShellAdmin or

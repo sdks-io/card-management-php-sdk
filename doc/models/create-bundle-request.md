@@ -18,7 +18,7 @@
 | `externalBundleId` | `?string` | Optional | Identifier of the bundle in external system.<br>Optional. | getExternalBundleId(): ?string | setExternalBundleId(?string externalBundleId): void |
 | `description` | `?string` | Optional | A bundle description.<br>Optional. | getDescription(): ?string | setDescription(?string description): void |
 | `cards` | `?(string[])` | Optional | List of Card PANs to be added in the bundle.<br>Mandatory.<br>Example: 7002051006629890645<br>When PAN matches with multiple cards, the restriction will be applied on the latest issued card. | getCards(): ?array | setCards(?array cards): void |
-| `restrictions` | [`?BundleRestriction`](../../doc/models/bundle-restriction.md) | Optional | - | getRestrictions(): ?BundleRestriction | setRestrictions(?BundleRestriction restrictions): void |
+| `restrictions` | `?array` | Optional | - | getRestrictions(): ?array | setRestrictions(?array restrictions): void |
 
 ## Example (as JSON)
 

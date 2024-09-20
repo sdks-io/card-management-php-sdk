@@ -60,9 +60,9 @@ class CreateBundleRequest implements \JsonSerializable
     private $cards;
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $restrictions = [];
+    private $restrictions;
 
     /**
      * Returns Col Co Id.
@@ -182,9 +182,7 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -198,9 +196,7 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -213,9 +209,7 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -226,9 +220,7 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -239,9 +231,7 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -254,9 +244,7 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID of the customer.
-     *
      * Either AccountId or AccountNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function getAccountId(): ?int
@@ -270,9 +258,7 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID of the customer.
-     *
      * Either AccountId or AccountNumber or both must be passed.
-     *
      * Example: 123456
      *
      * @maps AccountId
@@ -285,9 +271,7 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account ID of the customer.
-     *
      * Either AccountId or AccountNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function unsetAccountId(): void
@@ -342,7 +326,6 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Returns External Bundle Id.
      * Identifier of the bundle in external system.
-     *
      * Optional.
      */
     public function getExternalBundleId(): ?string
@@ -356,7 +339,6 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Sets External Bundle Id.
      * Identifier of the bundle in external system.
-     *
      * Optional.
      *
      * @maps ExternalBundleId
@@ -369,7 +351,6 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Unsets External Bundle Id.
      * Identifier of the bundle in external system.
-     *
      * Optional.
      */
     public function unsetExternalBundleId(): void
@@ -380,7 +361,6 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Returns Description.
      * A bundle description.
-     *
      * Optional.
      */
     public function getDescription(): ?string
@@ -391,7 +371,6 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Sets Description.
      * A bundle description.
-     *
      * Optional.
      *
      * @maps Description
@@ -404,11 +383,8 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Returns Cards.
      * List of Card PANs to be added in the bundle.
-     *
      * Mandatory.
-     *
      * Example: 7002051006629890645
-     *
      * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
      *
      * @return string[]|null
@@ -421,11 +397,8 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Sets Cards.
      * List of Card PANs to be added in the bundle.
-     *
      * Mandatory.
-     *
      * Example: 7002051006629890645
-     *
      * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
      *
      * @maps Cards
@@ -440,12 +413,9 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Returns Restrictions.
      */
-    public function getRestrictions(): ?BundleRestriction
+    public function getRestrictions(): ?array
     {
-        if (count($this->restrictions) == 0) {
-            return null;
-        }
-        return $this->restrictions['value'];
+        return $this->restrictions;
     }
 
     /**
@@ -453,17 +423,9 @@ class CreateBundleRequest implements \JsonSerializable
      *
      * @maps Restrictions
      */
-    public function setRestrictions(?BundleRestriction $restrictions): void
+    public function setRestrictions(?array $restrictions): void
     {
-        $this->restrictions['value'] = $restrictions;
-    }
-
-    /**
-     * Unsets Restrictions.
-     */
-    public function unsetRestrictions(): void
-    {
-        $this->restrictions = [];
+        $this->restrictions = $restrictions;
     }
 
     /**
@@ -505,8 +467,8 @@ class CreateBundleRequest implements \JsonSerializable
         if (isset($this->cards)) {
             $json['Cards']            = $this->cards;
         }
-        if (!empty($this->restrictions)) {
-            $json['Restrictions']     = $this->restrictions['value'];
+        if (isset($this->restrictions)) {
+            $json['Restrictions']     = $this->restrictions;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

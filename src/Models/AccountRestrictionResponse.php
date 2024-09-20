@@ -79,7 +79,6 @@ class AccountRestrictionResponse implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id on which restriction is applied.
-     *
      * Example: 123456
      */
     public function getAccountId(): ?int
@@ -90,7 +89,6 @@ class AccountRestrictionResponse implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id on which restriction is applied.
-     *
      * Example: 123456
      *
      * @maps AccountId
@@ -103,7 +101,6 @@ class AccountRestrictionResponse implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number on which restriction is applied.
-     *
      * Example: GB000000123
      */
     public function getAccountNumber(): ?string
@@ -114,7 +111,6 @@ class AccountRestrictionResponse implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number on which restriction is applied.
-     *
      * Example: GB000000123
      *
      * @maps AccountNumber

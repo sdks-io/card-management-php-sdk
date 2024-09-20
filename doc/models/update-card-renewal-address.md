@@ -20,7 +20,7 @@ Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The 
 | `city` | `?string` | Optional | City<br>Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.<br>Max Length: 40 | getCity(): ?string | setCity(?string city): void |
 | `regionID` | `?int` | Optional | Region id of card. | getRegionID(): ?int | setRegionID(?int regionID): void |
 | `countryID` | `int` | Required | Country ID<br>Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise. | getCountryID(): int | setCountryID(int countryID): void |
-| `emailAddress` | `?string` | Optional | Email Address<br><br>Max Length: 90<br>Note: -<br>Based on the international standard that there can be<br>•	Max Length 64 before the @ (the 'Local part’) =64(minimum of 1)<br>•	Max Lenth after the (the domain) = 88 (Minimum of 2) | getEmailAddress(): ?string | setEmailAddress(?string emailAddress): void |
+| `emailAddress` | `?string` | Optional | Email Address<br><br>Max Length: 90<br>Note: -<br>Based on the international standard that there can be<br>•    Max Length 64 before the @ (the 'Local part’) =64(minimum of 1)<br>•    Max Lenth after the (the domain) = 88 (Minimum of 2) | getEmailAddress(): ?string | setEmailAddress(?string emailAddress): void |
 | `phoneNumber` | `?string` | Optional | Phone number<br>Optional<br>Max Length: 16 | getPhoneNumber(): ?string | setPhoneNumber(?string phoneNumber): void |
 
 ## Example (as JSON)

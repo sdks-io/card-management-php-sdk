@@ -27,9 +27,9 @@
       "OrderCardReplacement": false
     }
   ],
-  "TargetStatus": "TargetStatus0",
-  "ReasonId": 120,
-  "ReasonText": "ReasonText8"
+  "TargetStatus": "TargetStatus2",
+  "ReasonId": 22,
+  "ReasonText": "ReasonText6"
 }
 ```
 

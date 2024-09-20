@@ -50,19 +50,19 @@ class RestrictionCardsList implements \JsonSerializable
     private $resetLocationRestrictions = [];
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $usageRestrictions = [];
+    private $usageRestrictions;
 
     /**
-     * @var DayTimeRestriction|null
+     * @var DayTimeRestrictions|null
      */
     private $dayTimeRestrictions;
 
     /**
-     * @var array
+     * @var array|null
      */
-    private $productRestrictions = [];
+    private $productRestrictions;
 
     /**
      * @var LocationRestriction|null
@@ -161,7 +161,7 @@ class RestrictionCardsList implements \JsonSerializable
      *
      * Note:
      *
-     * • PAN is ignored if CardId is given.
+     * •    PAN is ignored if CardId is given.
      *
      * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
      */
@@ -183,7 +183,7 @@ class RestrictionCardsList implements \JsonSerializable
      *
      * Note:
      *
-     * • PAN is ignored if CardId is given.
+     * •    PAN is ignored if CardId is given.
      *
      * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
      *
@@ -204,7 +204,7 @@ class RestrictionCardsList implements \JsonSerializable
      *
      * Note:
      *
-     * • PAN is ignored if CardId is given.
+     * •    PAN is ignored if CardId is given.
      *
      * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
      */
@@ -248,7 +248,6 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Returns Reset Day Time Restrictions.
      * True/False.
-     *
      * If true, the Day/Time restrictions applied on the card will be deleted. Else, the card restrictions
      * will be updated with the day/time restrictions provided in the API.
      */
@@ -263,7 +262,6 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Sets Reset Day Time Restrictions.
      * True/False.
-     *
      * If true, the Day/Time restrictions applied on the card will be deleted. Else, the card restrictions
      * will be updated with the day/time restrictions provided in the API.
      *
@@ -277,7 +275,6 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Unsets Reset Day Time Restrictions.
      * True/False.
-     *
      * If true, the Day/Time restrictions applied on the card will be deleted. Else, the card restrictions
      * will be updated with the day/time restrictions provided in the API.
      */
@@ -289,7 +286,6 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Returns Reset Product Restrictions.
      * True/False.
-     *
      * If true, Default fuel/non-fuel sets configured at the purchase category level will be applied to the
      * card. Else, the card will be applied with product restrictions provided in the API.
      */
@@ -304,7 +300,6 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Sets Reset Product Restrictions.
      * True/False.
-     *
      * If true, Default fuel/non-fuel sets configured at the purchase category level will be applied to the
      * card. Else, the card will be applied with product restrictions provided in the API.
      *
@@ -318,7 +313,6 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Unsets Reset Product Restrictions.
      * True/False.
-     *
      * If true, Default fuel/non-fuel sets configured at the purchase category level will be applied to the
      * card. Else, the card will be applied with product restrictions provided in the API.
      */
@@ -330,7 +324,6 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Returns Reset Location Restrictions.
      * True/False.
-     *
      * If true, the location restrictions applied on the card will be deleted. Else, the card restrictions
      * will be updated with the location restrictions provided in the API.
      */
@@ -345,7 +338,6 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Sets Reset Location Restrictions.
      * True/False.
-     *
      * If true, the location restrictions applied on the card will be deleted. Else, the card restrictions
      * will be updated with the location restrictions provided in the API.
      *
@@ -359,7 +351,6 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Unsets Reset Location Restrictions.
      * True/False.
-     *
      * If true, the location restrictions applied on the card will be deleted. Else, the card restrictions
      * will be updated with the location restrictions provided in the API.
      */
@@ -371,12 +362,9 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Returns Usage Restrictions.
      */
-    public function getUsageRestrictions(): ?UsageRestrictionsCard
+    public function getUsageRestrictions(): ?array
     {
-        if (count($this->usageRestrictions) == 0) {
-            return null;
-        }
-        return $this->usageRestrictions['value'];
+        return $this->usageRestrictions;
     }
 
     /**
@@ -384,37 +372,25 @@ class RestrictionCardsList implements \JsonSerializable
      *
      * @maps UsageRestrictions
      */
-    public function setUsageRestrictions(?UsageRestrictionsCard $usageRestrictions): void
+    public function setUsageRestrictions(?array $usageRestrictions): void
     {
-        $this->usageRestrictions['value'] = $usageRestrictions;
-    }
-
-    /**
-     * Unsets Usage Restrictions.
-     */
-    public function unsetUsageRestrictions(): void
-    {
-        $this->usageRestrictions = [];
+        $this->usageRestrictions = $usageRestrictions;
     }
 
     /**
      * Returns Day Time Restrictions.
-     * Details of the day/time restrictions such as weekdays and time range in which transactions should be
-     * allowed on the card.
      */
-    public function getDayTimeRestrictions(): ?DayTimeRestriction
+    public function getDayTimeRestrictions(): ?DayTimeRestrictions
     {
         return $this->dayTimeRestrictions;
     }
 
     /**
      * Sets Day Time Restrictions.
-     * Details of the day/time restrictions such as weekdays and time range in which transactions should be
-     * allowed on the card.
      *
      * @maps DayTimeRestrictions
      */
-    public function setDayTimeRestrictions(?DayTimeRestriction $dayTimeRestrictions): void
+    public function setDayTimeRestrictions(?DayTimeRestrictions $dayTimeRestrictions): void
     {
         $this->dayTimeRestrictions = $dayTimeRestrictions;
     }
@@ -422,12 +398,9 @@ class RestrictionCardsList implements \JsonSerializable
     /**
      * Returns Product Restrictions.
      */
-    public function getProductRestrictions(): ?ProductRestrictionCard
+    public function getProductRestrictions(): ?array
     {
-        if (count($this->productRestrictions) == 0) {
-            return null;
-        }
-        return $this->productRestrictions['value'];
+        return $this->productRestrictions;
     }
 
     /**
@@ -435,17 +408,9 @@ class RestrictionCardsList implements \JsonSerializable
      *
      * @maps ProductRestrictions
      */
-    public function setProductRestrictions(?ProductRestrictionCard $productRestrictions): void
+    public function setProductRestrictions(?array $productRestrictions): void
     {
-        $this->productRestrictions['value'] = $productRestrictions;
-    }
-
-    /**
-     * Unsets Product Restrictions.
-     */
-    public function unsetProductRestrictions(): void
-    {
-        $this->productRestrictions = [];
+        $this->productRestrictions = $productRestrictions;
     }
 
     /**
@@ -499,14 +464,14 @@ class RestrictionCardsList implements \JsonSerializable
         if (!empty($this->resetLocationRestrictions)) {
             $json['ResetLocationRestrictions'] = $this->resetLocationRestrictions['value'];
         }
-        if (!empty($this->usageRestrictions)) {
-            $json['UsageRestrictions']         = $this->usageRestrictions['value'];
+        if (isset($this->usageRestrictions)) {
+            $json['UsageRestrictions']         = $this->usageRestrictions;
         }
         if (isset($this->dayTimeRestrictions)) {
             $json['DayTimeRestrictions']       = $this->dayTimeRestrictions;
         }
-        if (!empty($this->productRestrictions)) {
-            $json['ProductRestrictions']       = $this->productRestrictions['value'];
+        if (isset($this->productRestrictions)) {
+            $json['ProductRestrictions']       = $this->productRestrictions;
         }
         if (isset($this->locationRestrictions)) {
             $json['LocationRestrictions']      = $this->locationRestrictions;

@@ -167,9 +167,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id  of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -183,9 +181,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id  of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -198,9 +194,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id  of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -211,9 +205,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -227,9 +219,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -242,9 +232,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function unsetPayerNumber(): void
@@ -255,9 +243,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the customer.
-     *
      * Optional if Account Number is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getAccountId(): ?int
@@ -271,9 +257,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the customer.
-     *
      * Optional if Account Number is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps AccountId
@@ -286,9 +270,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account Id of the customer.
-     *
      * Optional if Account Number is passed else Mandatory
-     *
      * Example: 123456
      */
     public function unsetAccountId(): void
@@ -299,9 +281,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Optional if Account Id is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function getAccountNumber(): ?string
@@ -315,9 +295,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Optional if Account Id is passed else Mandatory
-     *
      * Example: GB000000123
      *
      * @maps AccountNumber
@@ -330,9 +308,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Unsets Account Number.
      * Account Number of the customer.
-     *
      * Optional if Account Id is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function unsetAccountNumber(): void
@@ -343,9 +319,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Returns Bundle Id.
      * List of Bundle Id associated with account
-     *
      * Optional.
-     *
      * When not present all the bundles in the given account will be returned in the response.
      *
      * @return string[]|null
@@ -358,9 +332,7 @@ class SummaryofbundlerRequest implements \JsonSerializable
     /**
      * Sets Bundle Id.
      * List of Bundle Id associated with account
-     *
      * Optional.
-     *
      * When not present all the bundles in the given account will be returned in the response.
      *
      * @maps BundleId

@@ -41,7 +41,9 @@
 | `localCurrencyCode` | `?string` | Optional | ISO code of the local currency. <br /> | getLocalCurrencyCode(): ?string | setLocalCurrencyCode(?string localCurrencyCode): void |
 | `localCurrencySymbol` | `?string` | Optional | Local currency symbol. <br /> | getLocalCurrencySymbol(): ?string | setLocalCurrencySymbol(?string localCurrencySymbol): void |
 | `odometerInput` | `?bool` | Optional | True/False True if odometer input is enabled on the card, else false | getOdometerInput(): ?bool | setOdometerInput(?bool odometerInput): void |
-| `pAN` | `?string` | Optional | Card PAN Mask PAN (Mask all digits except the Last 6 digits of the PAN) | getPAN(): ?string | setPAN(?string pAN): void |
+| `pAN` | `?string` | Optional | Card PAN | getPAN(): ?string | setPAN(?string pAN): void |
+| `maskedPAN` | `?string` | Optional | Card PAN Mask PAN (Mask all digits except the Last 6 digits of the PAN) | getMaskedPAN(): ?string | setMaskedPAN(?string maskedPAN): void |
+| `pANID` | `?float` | Optional | Card PAN ID. | getPANID(): ?float | setPANID(?float pANID): void |
 | `purchaseCategoryCode` | `?string` | Optional | Purchase category code | getPurchaseCategoryCode(): ?string | setPurchaseCategoryCode(?string purchaseCategoryCode): void |
 | `purchaseCategoryId` | `?int` | Optional | Purchase category Id <br /><br>Note: Not Purchase code. | getPurchaseCategoryId(): ?int | setPurchaseCategoryId(?int purchaseCategoryId): void |
 | `purchaseCategoryName` | `?string` | Optional | Purchase category name | getPurchaseCategoryName(): ?string | setPurchaseCategoryName(?string purchaseCategoryName): void |

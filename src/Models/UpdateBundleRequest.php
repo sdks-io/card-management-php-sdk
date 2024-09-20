@@ -195,9 +195,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function getPayerId(): ?string
@@ -211,9 +209,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -226,9 +222,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Unsets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function unsetPayerId(): void
@@ -239,9 +233,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -255,9 +247,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -270,9 +260,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Unsets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: GB000000123
      */
     public function unsetPayerNumber(): void
@@ -283,9 +271,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID of the customer.
-     *
      * Either AccountId or AccountNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function getAccountId(): ?int
@@ -299,9 +285,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID of the customer.
-     *
      * Either AccountId or AccountNumber or both must be passed.
-     *
      * Example: 123456
      *
      * @maps AccountId
@@ -314,9 +298,7 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Unsets Account Id.
      * Account ID of the customer.
-     *
      * Either AccountId or AccountNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function unsetAccountId(): void
@@ -371,7 +353,6 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Returns Bundle Id.
      * Identifier of the bundle in Gateway.
-     *
      * Mandatory
      */
     public function getBundleId(): ?string
@@ -382,7 +363,6 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Sets Bundle Id.
      * Identifier of the bundle in Gateway.
-     *
      * Mandatory
      *
      * @maps BundleId
@@ -395,16 +375,11 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Returns Request Action.
      * The value indicates the action to be performed with the request.
-     *
      * Mandatory
-     *
      * Allowed values:
-     *
-     * • Add
-     *
-     * • Update
-     *
-     * • Remove
+     * •    Add
+     * •    Update
+     * •    Remove
      */
     public function getRequestAction(): ?string
     {
@@ -414,16 +389,11 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Sets Request Action.
      * The value indicates the action to be performed with the request.
-     *
      * Mandatory
-     *
      * Allowed values:
-     *
-     * • Add
-     *
-     * • Update
-     *
-     * • Remove
+     * •    Add
+     * •    Update
+     * •    Remove
      *
      * @maps RequestAction
      */
@@ -435,11 +405,8 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Returns Cards.
      * List of Card PANs to be added in the bundle.
-     *
      * Mandatory for Add / Remove request action. Ignored for Update action.
-     *
      * Example: 7002051006629890645
-     *
      * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
      *
      * @return string[]
@@ -452,11 +419,8 @@ class UpdateBundleRequest implements \JsonSerializable
     /**
      * Sets Cards.
      * List of Card PANs to be added in the bundle.
-     *
      * Mandatory for Add / Remove request action. Ignored for Update action.
-     *
      * Example: 7002051006629890645
-     *
      * When PAN matches with multiple cards, the restriction will be applied on the latest issued card.
      *
      * @required
@@ -473,14 +437,10 @@ class UpdateBundleRequest implements \JsonSerializable
      * Returns Usage Restriction Action.
      * The value indicates what actions to be performed with respect to usage restrictions on the list of
      * cards being added or removed.
-     *
      * Mandatory for Add / Remove request action. Ignored for Update action.
-     *
      * Allowed values:
-     *
-     * • Update
-     *
-     * • None
+     * •    Update
+     * •    None
      */
     public function getUsageRestrictionAction(): ?string
     {
@@ -491,14 +451,10 @@ class UpdateBundleRequest implements \JsonSerializable
      * Sets Usage Restriction Action.
      * The value indicates what actions to be performed with respect to usage restrictions on the list of
      * cards being added or removed.
-     *
      * Mandatory for Add / Remove request action. Ignored for Update action.
-     *
      * Allowed values:
-     *
-     * • Update
-     *
-     * • None
+     * •    Update
+     * •    None
      *
      * @maps UsageRestrictionAction
      */

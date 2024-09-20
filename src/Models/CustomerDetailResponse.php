@@ -411,8 +411,8 @@ class CustomerDetailResponse implements \JsonSerializable
     /**
      * Returns Card Group Position.
      * Card group position at –
-     * • Payer – Payer level
-     * • Account – Account level
+     * •    Payer – Payer level
+     * •    Account – Account level
      */
     public function getCardGroupPosition(): ?string
     {
@@ -425,8 +425,8 @@ class CustomerDetailResponse implements \JsonSerializable
     /**
      * Sets Card Group Position.
      * Card group position at –
-     * • Payer – Payer level
-     * • Account – Account level
+     * •    Payer – Payer level
+     * •    Account – Account level
      *
      * @maps CardGroupPosition
      */
@@ -438,8 +438,8 @@ class CustomerDetailResponse implements \JsonSerializable
     /**
      * Unsets Card Group Position.
      * Card group position at –
-     * • Payer – Payer level
-     * • Account – Account level
+     * •    Payer – Payer level
+     * •    Account – Account level
      */
     public function unsetCardGroupPosition(): void
     {
@@ -913,10 +913,10 @@ class CustomerDetailResponse implements \JsonSerializable
      * Returns Default PIN Advice Type.
      * Default PIN AdviceType of the customer.
      * Possible Values:
-     * 1. Paper
-     * 2. Email
-     * 3. SMS
-     * 4. None
+     * 1.    Paper
+     * 2.    Email
+     * 3.    SMS
+     * 4.    None
      */
     public function getDefaultPINAdviceType(): ?int
     {
@@ -930,10 +930,10 @@ class CustomerDetailResponse implements \JsonSerializable
      * Sets Default PIN Advice Type.
      * Default PIN AdviceType of the customer.
      * Possible Values:
-     * 1. Paper
-     * 2. Email
-     * 3. SMS
-     * 4. None
+     * 1.    Paper
+     * 2.    Email
+     * 3.    SMS
+     * 4.    None
      *
      * @maps DefaultPINAdviceType
      */
@@ -946,10 +946,10 @@ class CustomerDetailResponse implements \JsonSerializable
      * Unsets Default PIN Advice Type.
      * Default PIN AdviceType of the customer.
      * Possible Values:
-     * 1. Paper
-     * 2. Email
-     * 3. SMS
-     * 4. None
+     * 1.    Paper
+     * 2.    Email
+     * 3.    SMS
+     * 4.    None
      */
     public function unsetDefaultPINAdviceType(): void
     {

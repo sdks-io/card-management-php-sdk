@@ -13,9 +13,8 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\BundledDetailsProductList;
 use ShellCardManagementAPIsLib\Models\BundledRestrictionsList;
-use ShellCardManagementAPIsLib\Models\DayTimeRestriction;
+use ShellCardManagementAPIsLib\Models\DayTimeRestrictions;
 use ShellCardManagementAPIsLib\Models\LocationRestriction;
-use ShellCardManagementAPIsLib\Models\UsageRestriction;
 
 /**
  * Builder for model BundledRestrictionsList
@@ -45,25 +44,16 @@ class BundledRestrictionsListBuilder
     /**
      * Sets usage restrictions field.
      */
-    public function usageRestrictions(?UsageRestriction $value): self
+    public function usageRestrictions(?array $value): self
     {
         $this->instance->setUsageRestrictions($value);
         return $this;
     }
 
     /**
-     * Unsets usage restrictions field.
-     */
-    public function unsetUsageRestrictions(): self
-    {
-        $this->instance->unsetUsageRestrictions();
-        return $this;
-    }
-
-    /**
      * Sets day time restrictions field.
      */
-    public function dayTimeRestrictions(?DayTimeRestriction $value): self
+    public function dayTimeRestrictions(?DayTimeRestrictions $value): self
     {
         $this->instance->setDayTimeRestrictions($value);
         return $this;

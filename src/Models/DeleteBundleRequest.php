@@ -136,9 +136,7 @@ class DeleteBundleRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -149,9 +147,7 @@ class DeleteBundleRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -164,9 +160,7 @@ class DeleteBundleRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -177,9 +171,7 @@ class DeleteBundleRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Either PayerId or PayerNumber or both must be passed.
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -192,9 +184,7 @@ class DeleteBundleRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID of the customer.
-     *
      * Either AccountId or AccountNumber or both must be passed.
-     *
      * Example: 123456
      */
     public function getAccountId(): ?int
@@ -205,9 +195,7 @@ class DeleteBundleRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID of the customer.
-     *
      * Either AccountId or AccountNumber or both must be passed.
-     *
      * Example: 123456
      *
      * @maps AccountId
@@ -248,7 +236,6 @@ class DeleteBundleRequest implements \JsonSerializable
     /**
      * Returns Bundle Id.
      * Identifier of the card bundle in Gateway.
-     *
      * Mandatory
      */
     public function getBundleId(): string
@@ -259,7 +246,6 @@ class DeleteBundleRequest implements \JsonSerializable
     /**
      * Sets Bundle Id.
      * Identifier of the card bundle in Gateway.
-     *
      * Mandatory
      *
      * @required

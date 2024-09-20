@@ -60,6 +60,16 @@ class OrderCardEnquiry implements \JsonSerializable
     /**
      * @var array
      */
+    private $maskedPAN = [];
+
+    /**
+     * @var array
+     */
+    private $pANID = [];
+
+    /**
+     * @var array
+     */
     private $cardTypeCode = [];
 
     /**
@@ -464,6 +474,70 @@ class OrderCardEnquiry implements \JsonSerializable
     }
 
     /**
+     * Returns Masked PAN.
+     * Card PAN
+     */
+    public function getMaskedPAN(): ?string
+    {
+        if (count($this->maskedPAN) == 0) {
+            return null;
+        }
+        return $this->maskedPAN['value'];
+    }
+
+    /**
+     * Sets Masked PAN.
+     * Card PAN
+     *
+     * @maps MaskedPAN
+     */
+    public function setMaskedPAN(?string $maskedPAN): void
+    {
+        $this->maskedPAN['value'] = $maskedPAN;
+    }
+
+    /**
+     * Unsets Masked PAN.
+     * Card PAN
+     */
+    public function unsetMaskedPAN(): void
+    {
+        $this->maskedPAN = [];
+    }
+
+    /**
+     * Returns P ANID.
+     * Card PAN ID as a unique number for each PAN
+     */
+    public function getPANID(): ?float
+    {
+        if (count($this->pANID) == 0) {
+            return null;
+        }
+        return $this->pANID['value'];
+    }
+
+    /**
+     * Sets P ANID.
+     * Card PAN ID as a unique number for each PAN
+     *
+     * @maps PANID
+     */
+    public function setPANID(?float $pANID): void
+    {
+        $this->pANID['value'] = $pANID;
+    }
+
+    /**
+     * Unsets P ANID.
+     * Card PAN ID as a unique number for each PAN
+     */
+    public function unsetPANID(): void
+    {
+        $this->pANID = [];
+    }
+
+    /**
      * Returns Card Type Code.
      * CardTypeCode<br />
      * ISO code of the card i.e. first 7 digits of the PAN
@@ -834,11 +908,11 @@ class OrderCardEnquiry implements \JsonSerializable
      * Possible values:<br />
      * P   Pending<br />
      * I   Picked up for processing<br />
-     * PX Failed at Queue but retry attempts pending<br />
-     * X Failed  at Queue<br />
-     * R Card is processed, awaiting for PAN update.<br />
-     * S Processed<br />
-     * F Failed
+     * PX    Failed at Queue but retry attempts pending<br />
+     * X    Failed  at Queue<br />
+     * R    Card is processed, awaiting for PAN update.<br />
+     * S    Processed<br />
+     * F    Failed
      */
     public function getOrderStatus(): ?string
     {
@@ -854,11 +928,11 @@ class OrderCardEnquiry implements \JsonSerializable
      * Possible values:<br />
      * P   Pending<br />
      * I   Picked up for processing<br />
-     * PX Failed at Queue but retry attempts pending<br />
-     * X Failed  at Queue<br />
-     * R Card is processed, awaiting for PAN update.<br />
-     * S Processed<br />
-     * F Failed
+     * PX    Failed at Queue but retry attempts pending<br />
+     * X    Failed  at Queue<br />
+     * R    Card is processed, awaiting for PAN update.<br />
+     * S    Processed<br />
+     * F    Failed
      *
      * @maps OrderStatus
      */
@@ -873,11 +947,11 @@ class OrderCardEnquiry implements \JsonSerializable
      * Possible values:<br />
      * P   Pending<br />
      * I   Picked up for processing<br />
-     * PX Failed at Queue but retry attempts pending<br />
-     * X Failed  at Queue<br />
-     * R Card is processed, awaiting for PAN update.<br />
-     * S Processed<br />
-     * F Failed
+     * PX    Failed at Queue but retry attempts pending<br />
+     * X    Failed  at Queue<br />
+     * R    Card is processed, awaiting for PAN update.<br />
+     * S    Processed<br />
+     * F    Failed
      */
     public function unsetOrderStatus(): void
     {
@@ -1465,6 +1539,12 @@ class OrderCardEnquiry implements \JsonSerializable
         }
         if (!empty($this->cardPAN)) {
             $json['CardPAN']                     = $this->cardPAN['value'];
+        }
+        if (!empty($this->maskedPAN)) {
+            $json['MaskedPAN']                   = $this->maskedPAN['value'];
+        }
+        if (!empty($this->pANID)) {
+            $json['PANID']                       = $this->pANID['value'];
         }
         if (!empty($this->cardTypeCode)) {
             $json['CardTypeCode']                = $this->cardTypeCode['value'];

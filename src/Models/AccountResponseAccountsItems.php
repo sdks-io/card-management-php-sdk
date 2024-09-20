@@ -439,13 +439,13 @@ class AccountResponseAccountsItems implements \JsonSerializable
      *
      * E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      */
@@ -464,13 +464,13 @@ class AccountResponseAccountsItems implements \JsonSerializable
      *
      * E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      *
@@ -488,13 +488,13 @@ class AccountResponseAccountsItems implements \JsonSerializable
      *
      * E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      */
@@ -542,13 +542,13 @@ class AccountResponseAccountsItems implements \JsonSerializable
      * Returns Billing Run Frequency.
      * Frequency at which the billing process is triggered. E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      */
@@ -564,13 +564,13 @@ class AccountResponseAccountsItems implements \JsonSerializable
      * Sets Billing Run Frequency.
      * Frequency at which the billing process is triggered. E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      *
@@ -585,13 +585,13 @@ class AccountResponseAccountsItems implements \JsonSerializable
      * Unsets Billing Run Frequency.
      * Frequency at which the billing process is triggered. E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      */

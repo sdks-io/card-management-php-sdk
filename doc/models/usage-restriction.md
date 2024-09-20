@@ -11,7 +11,7 @@ Details of the usage restrictions such as day/week/month value and volume restri
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `level` | `?string` | Optional | Usage limit is applied on the card from this level.<br>Valid values –<br>•	Inherited<br>•	Card<br>When Card level usage restrictions are not present, the API will return the inherited restrictions.<br>Note: -This field is deprecated. Instead, use ‘Override’. | getLevel(): ?string | setLevel(?string level): void |
+| `level` | `?string` | Optional | Usage limit is applied on the card from this level.<br>Valid values –<br>•    Inherited<br>•    Card<br>When Card level usage restrictions are not present, the API will return the inherited restrictions.<br>Note: -This field is deprecated. Instead, use ‘Override’. | getLevel(): ?string | setLevel(?string level): void |
 | `dailySpend` | `?float` | Optional | Maximum spend value (amount) allowed per day.<br>Card limit ‘0’ represents the value is inherited and inherited limit could be calculated by adding accumulated and balance.<br>However, Inherited limit ‘0’ represents unlimited. | getDailySpend(): ?float | setDailySpend(?float dailySpend): void |
 | `dailySpendAccumulated` | `?float` | Optional | Balance spend value (amount) available for rest of the day. | getDailySpendAccumulated(): ?float | setDailySpendAccumulated(?float dailySpendAccumulated): void |
 | `dailySpendBalance` | `?float` | Optional | Balance spend value (amount) available for rest of the day. | getDailySpendBalance(): ?float | setDailySpendBalance(?float dailySpendBalance): void |

@@ -37,7 +37,6 @@ class ShellSiteRestriction implements \JsonSerializable
     /**
      * Returns Country.
      * ISO 3166-1 Numeric-3 code of the country where the site restriction is applied.
-     *
      * Example: 826 for United Kingdom.
      */
     public function getCountry(): ?string
@@ -48,7 +47,6 @@ class ShellSiteRestriction implements \JsonSerializable
     /**
      * Sets Country.
      * ISO 3166-1 Numeric-3 code of the country where the site restriction is applied.
-     *
      * Example: 826 for United Kingdom.
      *
      * @maps Country
@@ -62,7 +60,6 @@ class ShellSiteRestriction implements \JsonSerializable
      * Returns Sites.
      * A list of Site IDs in this country, in the format “AA1111” where “AA” is a 2-character country code
      * and “1111” is a 4-digit site number in that country, which is either restricted or allowed.
-     *
      * For example, “GB1234”.
      *
      * @return string[]|null
@@ -76,7 +73,6 @@ class ShellSiteRestriction implements \JsonSerializable
      * Sets Sites.
      * A list of Site IDs in this country, in the format “AA1111” where “AA” is a 2-character country code
      * and “1111” is a 4-digit site number in that country, which is either restricted or allowed.
-     *
      * For example, “GB1234”.
      *
      * @maps Sites
@@ -115,10 +111,8 @@ class ShellSiteRestriction implements \JsonSerializable
     /**
      * Returns Exclusive.
      * Flag indicates whether the profile is inclusive or exclusive.
-     *
      * Example: False - (inclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites & site
      * groups where the transaction will be allowed.
-     *
      * True - (exclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites and site groups where
      * the transactions will be declined.
      */
@@ -130,10 +124,8 @@ class ShellSiteRestriction implements \JsonSerializable
     /**
      * Sets Exclusive.
      * Flag indicates whether the profile is inclusive or exclusive.
-     *
      * Example: False - (inclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites & site
      * groups where the transaction will be allowed.
-     *
      * True - (exclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites and site groups where
      * the transactions will be declined.
      *

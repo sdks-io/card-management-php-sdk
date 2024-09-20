@@ -22,7 +22,6 @@ class BundleCardRestrictionStatus implements \JsonSerializable
     /**
      * Returns P AN.
      * Card PAN.
-     *
      * Example: 7002051006629890645
      */
     public function getPAN(): ?string
@@ -33,7 +32,6 @@ class BundleCardRestrictionStatus implements \JsonSerializable
     /**
      * Sets P AN.
      * Card PAN.
-     *
      * Example: 7002051006629890645
      *
      * @maps PAN

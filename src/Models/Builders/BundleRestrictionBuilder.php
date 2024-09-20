@@ -12,10 +12,8 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\BundleRestriction;
-use ShellCardManagementAPIsLib\Models\DayTimeRestriction;
+use ShellCardManagementAPIsLib\Models\DayTimeRestrictions;
 use ShellCardManagementAPIsLib\Models\LocationRestriction;
-use ShellCardManagementAPIsLib\Models\ProductRestrictionCard;
-use ShellCardManagementAPIsLib\Models\UsageRestrictionsCard;
 
 /**
  * Builder for model BundleRestriction
@@ -81,25 +79,16 @@ class BundleRestrictionBuilder
     /**
      * Sets usage restrictions field.
      */
-    public function usageRestrictions(?UsageRestrictionsCard $value): self
+    public function usageRestrictions(?array $value): self
     {
         $this->instance->setUsageRestrictions($value);
         return $this;
     }
 
     /**
-     * Unsets usage restrictions field.
-     */
-    public function unsetUsageRestrictions(): self
-    {
-        $this->instance->unsetUsageRestrictions();
-        return $this;
-    }
-
-    /**
      * Sets day time restrictions field.
      */
-    public function dayTimeRestrictions(?DayTimeRestriction $value): self
+    public function dayTimeRestrictions(?DayTimeRestrictions $value): self
     {
         $this->instance->setDayTimeRestrictions($value);
         return $this;
@@ -108,18 +97,9 @@ class BundleRestrictionBuilder
     /**
      * Sets product restrictions field.
      */
-    public function productRestrictions(?ProductRestrictionCard $value): self
+    public function productRestrictions(?array $value): self
     {
         $this->instance->setProductRestrictions($value);
-        return $this;
-    }
-
-    /**
-     * Unsets product restrictions field.
-     */
-    public function unsetProductRestrictions(): self
-    {
-        $this->instance->unsetProductRestrictions();
         return $this;
     }
 

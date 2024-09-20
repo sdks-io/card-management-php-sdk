@@ -534,6 +534,24 @@ class CardBuilder
     }
 
     /**
+     * Sets masked pan field.
+     */
+    public function maskedPAN(?string $value): self
+    {
+        $this->instance->setMaskedPAN($value);
+        return $this;
+    }
+
+    /**
+     * Sets panid field.
+     */
+    public function pANID(?float $value): self
+    {
+        $this->instance->setPANID($value);
+        return $this;
+    }
+
+    /**
      * Sets purchase category code field.
      */
     public function purchaseCategoryCode(?string $value): self

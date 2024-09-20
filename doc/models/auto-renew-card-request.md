@@ -28,6 +28,7 @@
       "AccountNumber": "AccountNumber6",
       "AccountId": 112,
       "PAN": "PAN8",
+      "PANID": 223.22,
       "CardId": 18,
       "ReissueSetting": false
     }

@@ -37,11 +37,8 @@
   ],
   "Restrictions": {
     "UsageRestrictions": {
-      "Level": "Level0",
-      "DailySpend": 7.72,
-      "DailySpendAccumulated": 127.2,
-      "DailySpendBalance": 5.36,
-      "DailySpendOverride": false
+      "key1": "val1",
+      "key2": "val2"
     },
     "DayTimeRestrictions": {
       "Monday": false,

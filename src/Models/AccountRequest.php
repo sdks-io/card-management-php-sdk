@@ -95,12 +95,12 @@ class AccountRequest implements \JsonSerializable
      * Optional if StatusList is passed, else mandatory.
      * Ignored if StatusList is passed.
      * Allowed values:
-     * • ALL
-     * • ACTIVE
-     * • BLOCKED
-     * • CANCELLED
-     * • CREDITLOCK
-     * • DELINQUENCYLOCK
+     * •    ALL
+     * •    ACTIVE
+     * •    BLOCKED
+     * •    CANCELLED
+     * •    CREDITLOCK
+     * •    DELINQUENCYLOCK
      */
     public function getStatus(): ?string
     {
@@ -116,12 +116,12 @@ class AccountRequest implements \JsonSerializable
      * Optional if StatusList is passed, else mandatory.
      * Ignored if StatusList is passed.
      * Allowed values:
-     * • ALL
-     * • ACTIVE
-     * • BLOCKED
-     * • CANCELLED
-     * • CREDITLOCK
-     * • DELINQUENCYLOCK
+     * •    ALL
+     * •    ACTIVE
+     * •    BLOCKED
+     * •    CANCELLED
+     * •    CREDITLOCK
+     * •    DELINQUENCYLOCK
      *
      * @maps Status
      */
@@ -136,12 +136,12 @@ class AccountRequest implements \JsonSerializable
      * Optional if StatusList is passed, else mandatory.
      * Ignored if StatusList is passed.
      * Allowed values:
-     * • ALL
-     * • ACTIVE
-     * • BLOCKED
-     * • CANCELLED
-     * • CREDITLOCK
-     * • DELINQUENCYLOCK
+     * •    ALL
+     * •    ACTIVE
+     * •    BLOCKED
+     * •    CANCELLED
+     * •    CREDITLOCK
+     * •    DELINQUENCYLOCK
      */
     public function unsetStatus(): void
     {
@@ -612,15 +612,15 @@ class AccountRequest implements \JsonSerializable
      *
      * Allowed values:
      *
-     * • ACTIVE
+     * •    ACTIVE
      *
-     * • BLOCKED
+     * •    BLOCKED
      *
-     * • CANCELLED
+     * •    CANCELLED
      *
-     * • CREDITLOCK
+     * •    CREDITLOCK
      *
-     * • DELINQUENCYLOCK
+     * •    DELINQUENCYLOCK
      *
      * @return array<string|null>|null
      */
@@ -639,15 +639,15 @@ class AccountRequest implements \JsonSerializable
      *
      * Allowed values:
      *
-     * • ACTIVE
+     * •    ACTIVE
      *
-     * • BLOCKED
+     * •    BLOCKED
      *
-     * • CANCELLED
+     * •    CANCELLED
      *
-     * • CREDITLOCK
+     * •    CREDITLOCK
      *
-     * • DELINQUENCYLOCK
+     * •    DELINQUENCYLOCK
      *
      * @maps StatusList
      *

@@ -1719,9 +1719,9 @@ class SearchRequest implements \JsonSerializable
      * If ‘False’, the API will return cards with ReIsssueSetting value is false.<br />
      * If ‘ALL’, API will return cards with ReIssueSetting value True &amp; False both.<br />
      * Allowed Values:<br />
-     * 1. All<br />
-     * 2. True<br />
-     * 3. False
+     * 1.    All<br />
+     * 2.    True<br />
+     * 3.    False
      */
     public function getReissueSetting(): ?string
     {
@@ -1740,9 +1740,9 @@ class SearchRequest implements \JsonSerializable
      * If ‘False’, the API will return cards with ReIsssueSetting value is false.<br />
      * If ‘ALL’, API will return cards with ReIssueSetting value True &amp; False both.<br />
      * Allowed Values:<br />
-     * 1. All<br />
-     * 2. True<br />
-     * 3. False
+     * 1.    All<br />
+     * 2.    True<br />
+     * 3.    False
      *
      * @maps ReissueSetting
      */
@@ -1760,9 +1760,9 @@ class SearchRequest implements \JsonSerializable
      * If ‘False’, the API will return cards with ReIsssueSetting value is false.<br />
      * If ‘ALL’, API will return cards with ReIssueSetting value True &amp; False both.<br />
      * Allowed Values:<br />
-     * 1. All<br />
-     * 2. True<br />
-     * 3. False
+     * 1.    All<br />
+     * 2.    True<br />
+     * 3.    False
      */
     public function unsetReissueSetting(): void
     {

@@ -66,6 +66,16 @@ class SubmittedCard implements \JsonSerializable
     /**
      * @var array
      */
+    private $pANID = [];
+
+    /**
+     * @var array
+     */
+    private $maskedPAN = [];
+
+    /**
+     * @var array
+     */
     private $payerId = [];
 
     /**
@@ -389,6 +399,70 @@ class SubmittedCard implements \JsonSerializable
     }
 
     /**
+     * Returns P ANID.
+     * PANID of the card
+     */
+    public function getPANID(): ?float
+    {
+        if (count($this->pANID) == 0) {
+            return null;
+        }
+        return $this->pANID['value'];
+    }
+
+    /**
+     * Sets P ANID.
+     * PANID of the card
+     *
+     * @maps PANID
+     */
+    public function setPANID(?float $pANID): void
+    {
+        $this->pANID['value'] = $pANID;
+    }
+
+    /**
+     * Unsets P ANID.
+     * PANID of the card
+     */
+    public function unsetPANID(): void
+    {
+        $this->pANID = [];
+    }
+
+    /**
+     * Returns Masked PAN.
+     * Card PAN
+     */
+    public function getMaskedPAN(): ?string
+    {
+        if (count($this->maskedPAN) == 0) {
+            return null;
+        }
+        return $this->maskedPAN['value'];
+    }
+
+    /**
+     * Sets Masked PAN.
+     * Card PAN
+     *
+     * @maps MaskedPAN
+     */
+    public function setMaskedPAN(?string $maskedPAN): void
+    {
+        $this->maskedPAN['value'] = $maskedPAN;
+    }
+
+    /**
+     * Unsets Masked PAN.
+     * Card PAN
+     */
+    public function unsetMaskedPAN(): void
+    {
+        $this->maskedPAN = [];
+    }
+
+    /**
      * Returns Payer Id.
      * Payer id of the customer.<br />
      * Optional if PayerNumber is passed, else Mandatory.
@@ -496,6 +570,12 @@ class SubmittedCard implements \JsonSerializable
         }
         if (!empty($this->pAN)) {
             $json['PAN']                      = $this->pAN['value'];
+        }
+        if (!empty($this->pANID)) {
+            $json['PANID']                    = $this->pANID['value'];
+        }
+        if (!empty($this->maskedPAN)) {
+            $json['MaskedPAN']                = $this->maskedPAN['value'];
         }
         if (!empty($this->payerId)) {
             $json['PayerId']                  = $this->payerId['value'];

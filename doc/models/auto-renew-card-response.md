@@ -24,7 +24,8 @@
   "Data": [
     {
       "AutoRenewReferenceId": 102,
-      "CardIdAndPAN": "CardIdAndPAN4"
+      "CardIdAndPAN": "CardIdAndPAN4",
+      "PANID": 176.64
     }
   ]
 }

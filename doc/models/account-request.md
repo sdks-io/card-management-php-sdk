@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `status` | `?string` | Optional | Account Status.<br>Optional if StatusList is passed, else mandatory.<br>Ignored if StatusList is passed.<br>Allowed values:<br>•	ALL<br>•	ACTIVE<br>•	BLOCKED<br>•	CANCELLED<br>•	CREDITLOCK<br>•	DELINQUENCYLOCK | getStatus(): ?string | setStatus(?string status): void |
+| `status` | `?string` | Optional | Account Status.<br>Optional if StatusList is passed, else mandatory.<br>Ignored if StatusList is passed.<br>Allowed values:<br>•    ALL<br>•    ACTIVE<br>•    BLOCKED<br>•    CANCELLED<br>•    CREDITLOCK<br>•    DELINQUENCYLOCK | getStatus(): ?string | setStatus(?string status): void |
 | `includeCardSummary` | `?bool` | Optional | Include card summary details in the response.<br><br>When passed as false, the card summary related parameters on response will be set to null.<br><br>Optional – default value: true.<br>**Default**: `true` | getIncludeCardSummary(): ?bool | setIncludeCardSummary(?bool includeCardSummary): void |
 | `payerId` | `?int` | Optional | Payer id of the customer.<br>Optional if PayerNumber is passed, else Mandatory. | getPayerId(): ?int | setPayerId(?int payerId): void |
 | `payerNumber` | `?string` | Optional | PayerNumber of the customer.<br>Optional if PayerId is passed, else Mandatory. | getPayerNumber(): ?string | setPayerNumber(?string payerNumber): void |
@@ -23,7 +23,7 @@
 | `returnTollsCustomerId` | `?bool` | Optional | Return e-Toll Customer details When True. | getReturnTollsCustomerId(): ?bool | setReturnTollsCustomerId(?bool returnTollsCustomerId): void |
 | `accounts` | [`?(Accounts[])`](../../doc/models/accounts.md) | Optional | - | getAccounts(): ?array | setAccounts(?array accounts): void |
 | `accountName` | `?string` | Optional | Account Name of the customer.<br>Optional.<br>Minimum of 4 characters should be provided else not considered.<br>Accounts those have the entered value at any part of the Name will be returned. | getAccountName(): ?string | setAccountName(?string accountName): void |
-| `statusList` | `?(array<?string>)` | Optional | Account Statuses.<br>Optional<br>Multiple statuses are allowed to be included in the search criteria.<br>Allowed values:<br>•	ACTIVE<br>•	BLOCKED<br>•	CANCELLED<br>•	CREDITLOCK<br>•	DELINQUENCYLOCK | getStatusList(): ?array | setStatusList(?array statusList): void |
+| `statusList` | `?(array<?string>)` | Optional | Account Statuses.<br>Optional<br>Multiple statuses are allowed to be included in the search criteria.<br>Allowed values:<br>•    ACTIVE<br>•    BLOCKED<br>•    CANCELLED<br>•    CREDITLOCK<br>•    DELINQUENCYLOCK | getStatusList(): ?array | setStatusList(?array statusList): void |
 
 ## Example (as JSON)
 

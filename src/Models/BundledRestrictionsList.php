@@ -15,12 +15,12 @@ use stdClass;
 class BundledRestrictionsList implements \JsonSerializable
 {
     /**
-     * @var array
+     * @var array|null
      */
-    private $usageRestrictions = [];
+    private $usageRestrictions;
 
     /**
-     * @var DayTimeRestriction|null
+     * @var DayTimeRestrictions|null
      */
     private $dayTimeRestrictions;
 
@@ -36,57 +36,36 @@ class BundledRestrictionsList implements \JsonSerializable
 
     /**
      * Returns Usage Restrictions.
-     * Details of the usage restrictions such as day/week/month value and volume restrictions applied on
-     * the card.
      */
-    public function getUsageRestrictions(): ?UsageRestriction
+    public function getUsageRestrictions(): ?array
     {
-        if (count($this->usageRestrictions) == 0) {
-            return null;
-        }
-        return $this->usageRestrictions['value'];
+        return $this->usageRestrictions;
     }
 
     /**
      * Sets Usage Restrictions.
-     * Details of the usage restrictions such as day/week/month value and volume restrictions applied on
-     * the card.
      *
      * @maps UsageRestrictions
      */
-    public function setUsageRestrictions(?UsageRestriction $usageRestrictions): void
+    public function setUsageRestrictions(?array $usageRestrictions): void
     {
-        $this->usageRestrictions['value'] = $usageRestrictions;
-    }
-
-    /**
-     * Unsets Usage Restrictions.
-     * Details of the usage restrictions such as day/week/month value and volume restrictions applied on
-     * the card.
-     */
-    public function unsetUsageRestrictions(): void
-    {
-        $this->usageRestrictions = [];
+        $this->usageRestrictions = $usageRestrictions;
     }
 
     /**
      * Returns Day Time Restrictions.
-     * Details of the day/time restrictions such as weekdays and time range in which transactions should be
-     * allowed on the card.
      */
-    public function getDayTimeRestrictions(): ?DayTimeRestriction
+    public function getDayTimeRestrictions(): ?DayTimeRestrictions
     {
         return $this->dayTimeRestrictions;
     }
 
     /**
      * Sets Day Time Restrictions.
-     * Details of the day/time restrictions such as weekdays and time range in which transactions should be
-     * allowed on the card.
      *
      * @maps DayTimeRestrictions
      */
-    public function setDayTimeRestrictions(?DayTimeRestriction $dayTimeRestrictions): void
+    public function setDayTimeRestrictions(?DayTimeRestrictions $dayTimeRestrictions): void
     {
         $this->dayTimeRestrictions = $dayTimeRestrictions;
     }
@@ -139,8 +118,8 @@ class BundledRestrictionsList implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (!empty($this->usageRestrictions)) {
-            $json['UsageRestrictions']    = $this->usageRestrictions['value'];
+        if (isset($this->usageRestrictions)) {
+            $json['UsageRestrictions']    = $this->usageRestrictions;
         }
         if (isset($this->dayTimeRestrictions)) {
             $json['DayTimeRestrictions']  = $this->dayTimeRestrictions;

@@ -66,6 +66,15 @@ class AutoRenewCardRequestAutoRenewCardsItemsBuilder
     }
 
     /**
+     * Sets panid field.
+     */
+    public function pANID(?float $value): self
+    {
+        $this->instance->setPANID($value);
+        return $this;
+    }
+
+    /**
      * Sets card id field.
      */
     public function cardId(?int $value): self

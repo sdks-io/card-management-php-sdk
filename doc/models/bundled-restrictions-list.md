@@ -9,8 +9,8 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `usageRestrictions` | [`?UsageRestriction`](../../doc/models/usage-restriction.md) | Optional | Details of the usage restrictions such as day/week/month value and volume restrictions applied on the card. | getUsageRestrictions(): ?UsageRestriction | setUsageRestrictions(?UsageRestriction usageRestrictions): void |
-| `dayTimeRestrictions` | [`?DayTimeRestriction`](../../doc/models/day-time-restriction.md) | Optional | Details of the day/time restrictions such as weekdays and time range in which transactions should be allowed on the card. | getDayTimeRestrictions(): ?DayTimeRestriction | setDayTimeRestrictions(?DayTimeRestriction dayTimeRestrictions): void |
+| `usageRestrictions` | `?array` | Optional | - | getUsageRestrictions(): ?array | setUsageRestrictions(?array usageRestrictions): void |
+| `dayTimeRestrictions` | [`?DayTimeRestrictions`](../../doc/models/day-time-restrictions.md) | Optional | - | getDayTimeRestrictions(): ?DayTimeRestrictions | setDayTimeRestrictions(?DayTimeRestrictions dayTimeRestrictions): void |
 | `productRestrictions` | [`?BundledDetailsProductList`](../../doc/models/bundled-details-product-list.md) | Optional | - | getProductRestrictions(): ?BundledDetailsProductList | setProductRestrictions(?BundledDetailsProductList productRestrictions): void |
 | `locationRestrictions` | [`?LocationRestriction`](../../doc/models/location-restriction.md) | Optional | - | getLocationRestrictions(): ?LocationRestriction | setLocationRestrictions(?LocationRestriction locationRestrictions): void |
 
@@ -19,11 +19,8 @@
 ```json
 {
   "UsageRestrictions": {
-    "Level": "Level0",
-    "DailySpend": 7.72,
-    "DailySpendAccumulated": 127.2,
-    "DailySpendBalance": 5.36,
-    "DailySpendOverride": false
+    "key1": "val1",
+    "key2": "val2"
   },
   "DayTimeRestrictions": {
     "Monday": false,

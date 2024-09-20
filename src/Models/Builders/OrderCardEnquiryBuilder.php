@@ -183,6 +183,42 @@ class OrderCardEnquiryBuilder
     }
 
     /**
+     * Sets masked pan field.
+     */
+    public function maskedPAN(?string $value): self
+    {
+        $this->instance->setMaskedPAN($value);
+        return $this;
+    }
+
+    /**
+     * Unsets masked pan field.
+     */
+    public function unsetMaskedPAN(): self
+    {
+        $this->instance->unsetMaskedPAN();
+        return $this;
+    }
+
+    /**
+     * Sets panid field.
+     */
+    public function pANID(?float $value): self
+    {
+        $this->instance->setPANID($value);
+        return $this;
+    }
+
+    /**
+     * Unsets panid field.
+     */
+    public function unsetPANID(): self
+    {
+        $this->instance->unsetPANID();
+        return $this;
+    }
+
+    /**
      * Sets card type code field.
      */
     public function cardTypeCode(?string $value): self

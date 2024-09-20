@@ -32,7 +32,6 @@ class NetworkRestriction implements \JsonSerializable
     /**
      * Returns Country.
      * ISO 3166-1 Numeric-3 code of the country where the network restriction is applied.
-     *
      * Example: 826 for United Kingdom.
      */
     public function getCountry(): ?string
@@ -43,7 +42,6 @@ class NetworkRestriction implements \JsonSerializable
     /**
      * Sets Country.
      * ISO 3166-1 Numeric-3 code of the country where the network restriction is applied.
-     *
      * Example: 826 for United Kingdom.
      *
      * @maps Country
@@ -56,7 +54,6 @@ class NetworkRestriction implements \JsonSerializable
     /**
      * Returns Networks.
      * A list of Gateway network codes, typically 7 or 10 digits.
-     *
      * Example: 0002003250
      *
      * @return string[]|null
@@ -69,7 +66,6 @@ class NetworkRestriction implements \JsonSerializable
     /**
      * Sets Networks.
      * A list of Gateway network codes, typically 7 or 10 digits.
-     *
      * Example: 0002003250
      *
      * @maps Networks
@@ -84,10 +80,8 @@ class NetworkRestriction implements \JsonSerializable
     /**
      * Returns Exclusive.
      * Flag indicates whether the profile is inclusive or exclusive.
-     *
      * Example: False - (inclusive), i.e. the “Networks” property lists the networks in which the
      * transaction will be allowed.
-     *
      * True - (exclusive), i.e. the “Networks” property lists the networks in which the transactions will
      * be declined.
      */
@@ -99,10 +93,8 @@ class NetworkRestriction implements \JsonSerializable
     /**
      * Sets Exclusive.
      * Flag indicates whether the profile is inclusive or exclusive.
-     *
      * Example: False - (inclusive), i.e. the “Networks” property lists the networks in which the
      * transaction will be allowed.
-     *
      * True - (exclusive), i.e. the “Networks” property lists the networks in which the transactions will
      * be declined.
      *

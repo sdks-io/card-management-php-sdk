@@ -104,7 +104,6 @@ class SearchAccountLimitResponse implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number
-     *
      * Example: GB99215176
      */
     public function getAccountNumber(): ?string
@@ -115,7 +114,6 @@ class SearchAccountLimitResponse implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number
-     *
      * Example: GB99215176
      *
      * @maps AccountNumber
@@ -128,7 +126,6 @@ class SearchAccountLimitResponse implements \JsonSerializable
     /**
      * Returns Reference Product.
      * 3 digit Shell global fuel product code, if already set up.
-     *
      * Example: 021
      */
     public function getReferenceProduct(): ?string
@@ -139,7 +136,6 @@ class SearchAccountLimitResponse implements \JsonSerializable
     /**
      * Sets Reference Product.
      * 3 digit Shell global fuel product code, if already set up.
-     *
      * Example: 021
      *
      * @maps ReferenceProduct
@@ -152,7 +148,6 @@ class SearchAccountLimitResponse implements \JsonSerializable
     /**
      * Returns Restriction Condition.
      * The restriction condition code.
-     *
      * Example: DECLINE_ALERT
      */
     public function getRestrictionCondition(): ?string
@@ -163,7 +158,6 @@ class SearchAccountLimitResponse implements \JsonSerializable
     /**
      * Sets Restriction Condition.
      * The restriction condition code.
-     *
      * Example: DECLINE_ALERT
      *
      * @maps RestrictionCondition

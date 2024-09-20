@@ -57,7 +57,6 @@ class AccountVelocityLimit implements \JsonSerializable
     /**
      * Returns Type.
      * Type of velocity (COUNT type is not present for limits of PERTRX period
-     *
      * Possible Values: VALUE, VOLUME, COUNT
      */
     public function getType(): ?string
@@ -68,7 +67,6 @@ class AccountVelocityLimit implements \JsonSerializable
     /**
      * Sets Type.
      * Type of velocity (COUNT type is not present for limits of PERTRX period
-     *
      * Possible Values: VALUE, VOLUME, COUNT
      *
      * @maps Type
@@ -81,7 +79,6 @@ class AccountVelocityLimit implements \JsonSerializable
     /**
      * Returns Period.
      * Duration of the velocity or threshold alert.
-     *
      * Possible Values: DAILY, WEEKLY, MONTHLY, ANNUAL, LIFETIME, PERTRX
      */
     public function getPeriod(): ?string
@@ -92,7 +89,6 @@ class AccountVelocityLimit implements \JsonSerializable
     /**
      * Sets Period.
      * Duration of the velocity or threshold alert.
-     *
      * Possible Values: DAILY, WEEKLY, MONTHLY, ANNUAL, LIFETIME, PERTRX
      *
      * @maps Period
@@ -106,7 +102,6 @@ class AccountVelocityLimit implements \JsonSerializable
      * Returns Limit.
      * The limit associated with this velocity with the correct number of digits after the decimal point
      * according to the minor denomination of the currency of the card issuer.
-     *
      * Example: 1500.55
      */
     public function getLimit(): ?float
@@ -118,7 +113,6 @@ class AccountVelocityLimit implements \JsonSerializable
      * Sets Limit.
      * The limit associated with this velocity with the correct number of digits after the decimal point
      * according to the minor denomination of the currency of the card issuer.
-     *
      * Example: 1500.55
      *
      * @maps Limit
@@ -133,7 +127,6 @@ class AccountVelocityLimit implements \JsonSerializable
      * The transaction accumulation during the current period with the correct number of digits after the
      * decimal point according to the minor denomination of the currency of the card issuer (except for
      * COUNT type velocity). Not present for PERTRX period.
-     *
      * Example: 1100.55
      */
     public function getAccumulation(): ?float
@@ -146,7 +139,6 @@ class AccountVelocityLimit implements \JsonSerializable
      * The transaction accumulation during the current period with the correct number of digits after the
      * decimal point according to the minor denomination of the currency of the card issuer (except for
      * COUNT type velocity). Not present for PERTRX period.
-     *
      * Example: 1100.55
      *
      * @maps Accumulation
@@ -161,7 +153,6 @@ class AccountVelocityLimit implements \JsonSerializable
      * The remaining/available balance at this point in time with the correct number of digits after the
      * decimal point according to the minor denomination of the currency of the card issuer (except for
      * COUNT type velocity). Not present for PERTRX period.
-     *
      * Example: 400.55
      */
     public function getBalance(): ?float
@@ -174,7 +165,6 @@ class AccountVelocityLimit implements \JsonSerializable
      * The remaining/available balance at this point in time with the correct number of digits after the
      * decimal point according to the minor denomination of the currency of the card issuer (except for
      * COUNT type velocity). Not present for PERTRX period.
-     *
      * Example: 400.55
      *
      * @maps Balance
@@ -187,7 +177,6 @@ class AccountVelocityLimit implements \JsonSerializable
     /**
      * Returns Override.
      * Indicate if the limit is overridden or default. (false for default).
-     *
      * Example: false
      */
     public function getOverride(): ?bool
@@ -198,7 +187,6 @@ class AccountVelocityLimit implements \JsonSerializable
     /**
      * Sets Override.
      * Indicate if the limit is overridden or default. (false for default).
-     *
      * Example: false
      *
      * @maps Override
@@ -212,9 +200,7 @@ class AccountVelocityLimit implements \JsonSerializable
      * Returns Product Group.
      * The reference group name for product differentiated velocities. This field cannot be used with
      * Volume type velocity.
-     *
      * Example: RoadSvc
-     *
      * This is an optional output field.
      */
     public function getProductGroup(): ?string
@@ -226,9 +212,7 @@ class AccountVelocityLimit implements \JsonSerializable
      * Sets Product Group.
      * The reference group name for product differentiated velocities. This field cannot be used with
      * Volume type velocity.
-     *
      * Example: RoadSvc
-     *
      * This is an optional output field.
      *
      * @maps ProductGroup
@@ -243,9 +227,7 @@ class AccountVelocityLimit implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      */
     public function getThreshold(): ?float
@@ -258,9 +240,7 @@ class AccountVelocityLimit implements \JsonSerializable
      * The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no
      * alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not
      * present for COUNT type velocity.
-     *
      * Example: 50.55
-     *
      * This is an optional output field.
      *
      * @maps Threshold

@@ -27,7 +27,6 @@ class CountryRestriction implements \JsonSerializable
     /**
      * Returns Countries.
      * A list of ISO 3166-1 Numeric-3 country codes.
-     *
      * Example: 826 for United Kingdom.
      *
      * @return string[]|null
@@ -40,7 +39,6 @@ class CountryRestriction implements \JsonSerializable
     /**
      * Sets Countries.
      * A list of ISO 3166-1 Numeric-3 country codes.
-     *
      * Example: 826 for United Kingdom.
      *
      * @maps Countries
@@ -55,10 +53,8 @@ class CountryRestriction implements \JsonSerializable
     /**
      * Returns Exclusive.
      * Flag indicates whether the profile is inclusive or exclusive.
-     *
      * Example: False - (inclusive), i.e. the “Countries” property lists the countries where the
      * transactions will be allowed.
-     *
      * True - (exclusive), i.e. the “Countries” property lists the countries where the transactions will be
      * declined.
      */
@@ -70,10 +66,8 @@ class CountryRestriction implements \JsonSerializable
     /**
      * Sets Exclusive.
      * Flag indicates whether the profile is inclusive or exclusive.
-     *
      * Example: False - (inclusive), i.e. the “Countries” property lists the countries where the
      * transactions will be allowed.
-     *
      * True - (exclusive), i.e. the “Countries” property lists the countries where the transactions will be
      * declined.
      *

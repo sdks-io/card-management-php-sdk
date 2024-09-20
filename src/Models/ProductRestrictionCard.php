@@ -27,9 +27,7 @@ class ProductRestrictionCard implements \JsonSerializable
     /**
      * Returns Products.
      * An array of 3-digit global product codes.
-     *
      * Optional.
-     *
      * Example: [ "033", "021", "023”]
      *
      * @return string[]|null
@@ -42,9 +40,7 @@ class ProductRestrictionCard implements \JsonSerializable
     /**
      * Sets Products.
      * An array of 3-digit global product codes.
-     *
      * Optional.
-     *
      * Example: [ "033", "021", "023”]
      *
      * @maps Products
@@ -59,9 +55,7 @@ class ProductRestrictionCard implements \JsonSerializable
     /**
      * Returns Product Groups.
      * An array of product group IDs.
-     *
      * Optional.
-     *
      * Example: [ "670246404", "40557126" ]
      *
      * @return string[]|null
@@ -74,9 +68,7 @@ class ProductRestrictionCard implements \JsonSerializable
     /**
      * Sets Product Groups.
      * An array of product group IDs.
-     *
      * Optional.
-     *
      * Example: [ "670246404", "40557126" ]
      *
      * @maps ProductGroups

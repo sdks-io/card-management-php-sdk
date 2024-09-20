@@ -413,9 +413,9 @@ class ReplaceCardSettings implements \JsonSerializable
      * Card delivery type.<br />
      * Mandatory <br />
      * Allowed Value: <br />
-     * 1. Customer Address(Default) <br />
-     * 2. New Delivery Address <br />
-     * 3. Old Card Address
+     * 1.    Customer Address(Default) <br />
+     * 2.    New Delivery Address <br />
+     * 3.    Old Card Address
      */
     public function getCardDeliveryType(): ?int
     {
@@ -427,9 +427,9 @@ class ReplaceCardSettings implements \JsonSerializable
      * Card delivery type.<br />
      * Mandatory <br />
      * Allowed Value: <br />
-     * 1. Customer Address(Default) <br />
-     * 2. New Delivery Address <br />
-     * 3. Old Card Address
+     * 1.    Customer Address(Default) <br />
+     * 2.    New Delivery Address <br />
+     * 3.    Old Card Address
      *
      * @maps CardDeliveryType
      */
@@ -949,9 +949,9 @@ class ReplaceCardSettings implements \JsonSerializable
      * PIN delivery address type selection.<br />
      * Optional<br />
      * Allowed Values:<br />
-     * 1. Customer Address(Default)<br />
-     * 2. Card Address<br />
-     * 3. New Delivery Address
+     * 1.    Customer Address(Default)<br />
+     * 2.    Card Address<br />
+     * 3.    New Delivery Address
      */
     public function getPINDeliveryAddressType(): ?int
     {
@@ -966,9 +966,9 @@ class ReplaceCardSettings implements \JsonSerializable
      * PIN delivery address type selection.<br />
      * Optional<br />
      * Allowed Values:<br />
-     * 1. Customer Address(Default)<br />
-     * 2. Card Address<br />
-     * 3. New Delivery Address
+     * 1.    Customer Address(Default)<br />
+     * 2.    Card Address<br />
+     * 3.    New Delivery Address
      *
      * @maps PINDeliveryAddressType
      */
@@ -982,9 +982,9 @@ class ReplaceCardSettings implements \JsonSerializable
      * PIN delivery address type selection.<br />
      * Optional<br />
      * Allowed Values:<br />
-     * 1. Customer Address(Default)<br />
-     * 2. Card Address<br />
-     * 3. New Delivery Address
+     * 1.    Customer Address(Default)<br />
+     * 2.    Card Address<br />
+     * 3.    New Delivery Address
      */
     public function unsetPINDeliveryAddressType(): void
     {
@@ -996,10 +996,10 @@ class ReplaceCardSettings implements \JsonSerializable
      * PIN delivery method.<br />
      * Mandatory when OrderReplacement Is true.<br />
      * Allowed Values:<br />
-     * 1. Paper<br />
-     * 2. Email<br />
-     * 3. SMS<br />
-     * 4. None
+     * 1.    Paper<br />
+     * 2.    Email<br />
+     * 3.    SMS<br />
+     * 4.    None
      */
     public function getPINAdviceType(): ?int
     {
@@ -1014,10 +1014,10 @@ class ReplaceCardSettings implements \JsonSerializable
      * PIN delivery method.<br />
      * Mandatory when OrderReplacement Is true.<br />
      * Allowed Values:<br />
-     * 1. Paper<br />
-     * 2. Email<br />
-     * 3. SMS<br />
-     * 4. None
+     * 1.    Paper<br />
+     * 2.    Email<br />
+     * 3.    SMS<br />
+     * 4.    None
      *
      * @maps PINAdviceType
      */
@@ -1031,10 +1031,10 @@ class ReplaceCardSettings implements \JsonSerializable
      * PIN delivery method.<br />
      * Mandatory when OrderReplacement Is true.<br />
      * Allowed Values:<br />
-     * 1. Paper<br />
-     * 2. Email<br />
-     * 3. SMS<br />
-     * 4. None
+     * 1.    Paper<br />
+     * 2.    Email<br />
+     * 3.    SMS<br />
+     * 4.    None
      */
     public function unsetPINAdviceType(): void
     {

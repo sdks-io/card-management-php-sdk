@@ -57,6 +57,11 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
     /**
      * @var string|null
      */
+    private $pANID;
+
+    /**
+     * @var string|null
+     */
     private $cardExpiryDate;
 
     /**
@@ -305,6 +310,34 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
     }
 
     /**
+     * Returns P ANID.
+     * Card PAN ID.
+     *
+     * Optional if CardId is given, else mandatory.
+     *
+     * Note: PANID is ignored if CardId is given.
+     */
+    public function getPANID(): ?string
+    {
+        return $this->pANID;
+    }
+
+    /**
+     * Sets P ANID.
+     * Card PAN ID.
+     *
+     * Optional if CardId is given, else mandatory.
+     *
+     * Note: PANID is ignored if CardId is given.
+     *
+     * @maps PANID
+     */
+    public function setPANID(?string $pANID): void
+    {
+        $this->pANID = $pANID;
+    }
+
+    /**
      * Returns Card Expiry Date.
      * Expiry date of the card.
      * Optional if CardId is passed, else Mandatory.
@@ -335,12 +368,13 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
      * Action
      * Mandatory
      * Possible values are:
-     * • AddOrUpdate – adds a new request or updates any existing requests, with overlapping dates, for the
-     * card
-     * • AddAndOverwriteAll - all the existing requests of the given card will be removed and a new request
-     * with the specified FromDate and ToDate will be added.
-     * • Delete – deletes any existing request with the same start date and end date for the card
-     * • DeleteAll – deletes all saved future dated requests (all block and unblock requests) of the card.
+     * •    AddOrUpdate – adds a new request or updates any existing requests, with overlapping dates, for
+     * the card
+     * •    AddAndOverwriteAll - all the existing requests of the given card will be removed and a new
+     * request with the specified FromDate and ToDate will be added.
+     * •    Delete – deletes any existing request with the same start date and end date for the card
+     * •    DeleteAll – deletes all saved future dated requests (all block and unblock requests) of the
+     * card.
      */
     public function getAction(): string
     {
@@ -352,12 +386,13 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
      * Action
      * Mandatory
      * Possible values are:
-     * • AddOrUpdate – adds a new request or updates any existing requests, with overlapping dates, for the
-     * card
-     * • AddAndOverwriteAll - all the existing requests of the given card will be removed and a new request
-     * with the specified FromDate and ToDate will be added.
-     * • Delete – deletes any existing request with the same start date and end date for the card
-     * • DeleteAll – deletes all saved future dated requests (all block and unblock requests) of the card.
+     * •    AddOrUpdate – adds a new request or updates any existing requests, with overlapping dates, for
+     * the card
+     * •    AddAndOverwriteAll - all the existing requests of the given card will be removed and a new
+     * request with the specified FromDate and ToDate will be added.
+     * •    Delete – deletes any existing request with the same start date and end date for the card
+     * •    DeleteAll – deletes all saved future dated requests (all block and unblock requests) of the
+     * card.
      *
      * @required
      * @maps Action
@@ -373,9 +408,9 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
      *
      * Allowed Formats: –
      *
-     * • yyyyMMdd
+     * •    yyyyMMdd
      *
-     * • yyyyMMdd HH:mm
+     * •    yyyyMMdd HH:mm
      *
      * Eg: 20230512 14:30, 20230512
      *
@@ -383,18 +418,18 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
      *
      * Default value:
      *
-     * •  If the card status is “Active” then Current date & Time
+     * •     If the card status is “Active” then Current date & Time
      *
-     * • If the card status is “TemporaryBlock (Customer)” then null.
+     * •    If the card status is “TemporaryBlock (Customer)” then null.
      *
      * Note:
      *
-     * • Time is considered only when “IsTimeSupported” is true else it will be treated as a date.
+     * •    Time is considered only when “IsTimeSupported” is true else it will be treated as a date.
      *
-     * • Time will be passed in UTC time-zone.
+     * •    Time will be passed in UTC time-zone.
      *
-     * • If the Card Status is “Temporary Block (Customer)” and FromDate is provided – The fromdate & time
-     * is considered as starting period of unblock request.
+     * •    If the Card Status is “Temporary Block (Customer)” and FromDate is provided – The fromdate &
+     * time is considered as starting period of unblock request.
      */
     public function getFromDate(): ?string
     {
@@ -407,9 +442,9 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
      *
      * Allowed Formats: –
      *
-     * • yyyyMMdd
+     * •    yyyyMMdd
      *
-     * • yyyyMMdd HH:mm
+     * •    yyyyMMdd HH:mm
      *
      * Eg: 20230512 14:30, 20230512
      *
@@ -417,18 +452,18 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
      *
      * Default value:
      *
-     * •  If the card status is “Active” then Current date & Time
+     * •     If the card status is “Active” then Current date & Time
      *
-     * • If the card status is “TemporaryBlock (Customer)” then null.
+     * •    If the card status is “TemporaryBlock (Customer)” then null.
      *
      * Note:
      *
-     * • Time is considered only when “IsTimeSupported” is true else it will be treated as a date.
+     * •    Time is considered only when “IsTimeSupported” is true else it will be treated as a date.
      *
-     * • Time will be passed in UTC time-zone.
+     * •    Time will be passed in UTC time-zone.
      *
-     * • If the Card Status is “Temporary Block (Customer)” and FromDate is provided – The fromdate & time
-     * is considered as starting period of unblock request.
+     * •    If the Card Status is “Temporary Block (Customer)” and FromDate is provided – The fromdate &
+     * time is considered as starting period of unblock request.
      *
      * @maps FromDate
      */
@@ -441,19 +476,19 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
      * Returns To Date.
      * Effective end date of Block / Unblock
      * Allowed Formats: –
-     * • yyyyMMdd
-     * • yyyyMMdd HH:mm
+     * •    yyyyMMdd
+     * •    yyyyMMdd HH:mm
      * Eg: 20230512 14:30, 20230512
      * Optional – When the Card status is Active else mandatory.
      * When not provided, the card will remain blocked until manually unblocked.
      * Note:
-     * • Time is considered only when the “IsTimeSupported” flag is set as true, else it will be considered
-     * as only date.
-     * • Date & Time passed in the request will be considered in UTC time-zone.
-     * • If the card is currently in ‘Temporary Block (Customer)’ status, then this date is treated as the
-     * unblock date and is mandatory.
-     * • If the Card Status is “Temporary Block (Customer)” and FromDate & ToDate is provided - The request
-     * will be considered as a scheduled specific period unblock request.
+     * •    Time is considered only when the “IsTimeSupported” flag is set as true, else it will be
+     * considered as only date.
+     * •    Date & Time passed in the request will be considered in UTC time-zone.
+     * •    If the card is currently in ‘Temporary Block (Customer)’ status, then this date is treated as
+     * the unblock date and is mandatory.
+     * •    If the Card Status is “Temporary Block (Customer)” and FromDate & ToDate is provided - The
+     * request will be considered as a scheduled specific period unblock request.
      */
     public function getToDate(): ?string
     {
@@ -464,19 +499,19 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
      * Sets To Date.
      * Effective end date of Block / Unblock
      * Allowed Formats: –
-     * • yyyyMMdd
-     * • yyyyMMdd HH:mm
+     * •    yyyyMMdd
+     * •    yyyyMMdd HH:mm
      * Eg: 20230512 14:30, 20230512
      * Optional – When the Card status is Active else mandatory.
      * When not provided, the card will remain blocked until manually unblocked.
      * Note:
-     * • Time is considered only when the “IsTimeSupported” flag is set as true, else it will be considered
-     * as only date.
-     * • Date & Time passed in the request will be considered in UTC time-zone.
-     * • If the card is currently in ‘Temporary Block (Customer)’ status, then this date is treated as the
-     * unblock date and is mandatory.
-     * • If the Card Status is “Temporary Block (Customer)” and FromDate & ToDate is provided - The request
-     * will be considered as a scheduled specific period unblock request.
+     * •    Time is considered only when the “IsTimeSupported” flag is set as true, else it will be
+     * considered as only date.
+     * •    Date & Time passed in the request will be considered in UTC time-zone.
+     * •    If the card is currently in ‘Temporary Block (Customer)’ status, then this date is treated as
+     * the unblock date and is mandatory.
+     * •    If the Card Status is “Temporary Block (Customer)” and FromDate & ToDate is provided - The
+     * request will be considered as a scheduled specific period unblock request.
      *
      * @maps ToDate
      */
@@ -592,6 +627,9 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
         }
         if (isset($this->pAN)) {
             $json['PAN']            = $this->pAN;
+        }
+        if (isset($this->pANID)) {
+            $json['PANID']          = $this->pANID;
         }
         if (isset($this->cardExpiryDate)) {
             $json['CardExpiryDate'] = $this->cardExpiryDate;

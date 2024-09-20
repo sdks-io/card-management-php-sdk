@@ -171,21 +171,21 @@ class PurchaseCategory1AllOf0 implements \JsonSerializable
      * Returns Title.
      * Purchase category Title by given language code.
      *
-     * 1. Basic
+     * 1.    Basic
      *
-     * 2. Essentials
+     * 2.    Essentials
      *
-     * 3. Extra
+     * 3.    Extra
      *
-     * 4. Premium
+     * 4.    Premium
      *
-     * 5. Basic and LNG
+     * 5.    Basic and LNG
      *
-     * 6. Essentials and LNG
+     * 6.    Essentials and LNG
      *
-     * 7. Extra and LNG
+     * 7.    Extra and LNG
      *
-     * 8. Premium and LNG
+     * 8.    Premium and LNG
      *
      * Note: Purchase Category name (GFN) is returned when Title does not exist for the given language Code
      * and default language code (en-GB).
@@ -199,21 +199,21 @@ class PurchaseCategory1AllOf0 implements \JsonSerializable
      * Sets Title.
      * Purchase category Title by given language code.
      *
-     * 1. Basic
+     * 1.    Basic
      *
-     * 2. Essentials
+     * 2.    Essentials
      *
-     * 3. Extra
+     * 3.    Extra
      *
-     * 4. Premium
+     * 4.    Premium
      *
-     * 5. Basic and LNG
+     * 5.    Basic and LNG
      *
-     * 6. Essentials and LNG
+     * 6.    Essentials and LNG
      *
-     * 7. Extra and LNG
+     * 7.    Extra and LNG
      *
-     * 8. Premium and LNG
+     * 8.    Premium and LNG
      *
      * Note: Purchase Category name (GFN) is returned when Title does not exist for the given language Code
      * and default language code (en-GB).

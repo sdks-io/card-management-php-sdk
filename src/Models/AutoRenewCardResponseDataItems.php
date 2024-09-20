@@ -25,6 +25,11 @@ class AutoRenewCardResponseDataItems implements \JsonSerializable
     private $cardIdAndPAN = [];
 
     /**
+     * @var array
+     */
+    private $pANID = [];
+
+    /**
      * Returns Auto Renew Reference Id.
      * CardId and PAN of the card. ;( Semicolon is used as delimiter.
      */
@@ -89,6 +94,38 @@ class AutoRenewCardResponseDataItems implements \JsonSerializable
     }
 
     /**
+     * Returns P ANID.
+     * PANID of the card
+     */
+    public function getPANID(): ?float
+    {
+        if (count($this->pANID) == 0) {
+            return null;
+        }
+        return $this->pANID['value'];
+    }
+
+    /**
+     * Sets P ANID.
+     * PANID of the card
+     *
+     * @maps PANID
+     */
+    public function setPANID(?float $pANID): void
+    {
+        $this->pANID['value'] = $pANID;
+    }
+
+    /**
+     * Unsets P ANID.
+     * PANID of the card
+     */
+    public function unsetPANID(): void
+    {
+        $this->pANID = [];
+    }
+
+    /**
      * Encode this object to JSON
      *
      * @param bool $asArrayWhenEmpty Whether to serialize this model as an array whenever no fields
@@ -105,6 +142,9 @@ class AutoRenewCardResponseDataItems implements \JsonSerializable
         }
         if (!empty($this->cardIdAndPAN)) {
             $json['CardIdAndPAN']         = $this->cardIdAndPAN['value'];
+        }
+        if (!empty($this->pANID)) {
+            $json['PANID']                = $this->pANID['value'];
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

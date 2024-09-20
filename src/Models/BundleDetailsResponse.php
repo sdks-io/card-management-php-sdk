@@ -82,7 +82,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id of the bundles and cards.
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -93,7 +92,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id of the bundles and cards.
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -106,7 +104,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the bundles and cards.
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -117,7 +114,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the bundles and cards.
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -130,7 +126,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account ID of the bundle.
-     *
      * Example: 123456
      */
     public function getAccountId(): ?int
@@ -141,7 +136,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account ID of the bundle.
-     *
      * Example: 123456
      *
      * @maps AccountId
@@ -154,7 +148,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the bundle.
-     *
      * Example: GB000000123
      */
     public function getAccountNumber(): ?string
@@ -165,7 +158,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the bundle.
-     *
      * Example: GB000000123
      *
      * @maps AccountNumber
@@ -262,7 +254,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Returns Restriction Currency Code.
      * ISO currency code of the country.
-     *
      * Example: GBP
      */
     public function getRestrictionCurrencyCode(): ?string
@@ -273,7 +264,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Sets Restriction Currency Code.
      * ISO currency code of the country.
-     *
      * Example: GBP
      *
      * @maps RestrictionCurrencyCode
@@ -286,7 +276,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Returns Restriction Currency Symbol.
      * Currency symbol of the country.
-     *
      * Example: £, $
      */
     public function getRestrictionCurrencySymbol(): ?string
@@ -297,7 +286,6 @@ class BundleDetailsResponse implements \JsonSerializable
     /**
      * Sets Restriction Currency Symbol.
      * Currency symbol of the country.
-     *
      * Example: £, $
      *
      * @maps RestrictionCurrencySymbol

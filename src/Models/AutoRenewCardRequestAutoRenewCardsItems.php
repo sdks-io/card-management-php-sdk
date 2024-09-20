@@ -30,6 +30,11 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     private $pAN;
 
     /**
+     * @var float|null
+     */
+    private $pANID;
+
+    /**
      * @var int|null
      */
     private $cardId;
@@ -114,6 +119,34 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     }
 
     /**
+     * Returns P ANID.
+     * Card PAN ID.
+     *
+     * Optional if CardId is given, else mandatory.
+     *
+     * Note: PANID is ignored if CardId is given.
+     */
+    public function getPANID(): ?float
+    {
+        return $this->pANID;
+    }
+
+    /**
+     * Sets P ANID.
+     * Card PAN ID.
+     *
+     * Optional if CardId is given, else mandatory.
+     *
+     * Note: PANID is ignored if CardId is given.
+     *
+     * @maps PANID
+     */
+    public function setPANID(?float $pANID): void
+    {
+        $this->pANID = $pANID;
+    }
+
+    /**
      * Returns Card Id.
      * Card Id of the card.
      * Optional if PAN is passed, else Mandatory.
@@ -192,6 +225,9 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
         }
         if (isset($this->pAN)) {
             $json['PAN']           = $this->pAN;
+        }
+        if (isset($this->pANID)) {
+            $json['PANID']         = $this->pANID;
         }
         if (isset($this->cardId)) {
             $json['CardId']        = $this->cardId;

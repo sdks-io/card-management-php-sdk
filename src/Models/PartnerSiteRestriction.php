@@ -37,7 +37,6 @@ class PartnerSiteRestriction implements \JsonSerializable
     /**
      * Returns Network Code.
      * Gateway network codes, typically 7 or 10 digits, where sites and site groups belong to.
-     *
      * Example: 0002003250
      */
     public function getNetworkCode(): ?string
@@ -48,7 +47,6 @@ class PartnerSiteRestriction implements \JsonSerializable
     /**
      * Sets Network Code.
      * Gateway network codes, typically 7 or 10 digits, where sites and site groups belong to.
-     *
      * Example: 0002003250
      *
      * @maps NetworkCode
@@ -61,11 +59,8 @@ class PartnerSiteRestriction implements \JsonSerializable
     /**
      * Returns Sites.
      * A list of Site IDs in this network which needs to be either restricted or allowed.
-     *
      * For example, 97123, 97155
-     *
      * A list of values must be passed for either Sites or SiteGroups or both.
-     *
      * Max 10 sites are allowed for the Partner site Restriction.
      *
      * @return string[]|null
@@ -78,11 +73,8 @@ class PartnerSiteRestriction implements \JsonSerializable
     /**
      * Sets Sites.
      * A list of Site IDs in this network which needs to be either restricted or allowed.
-     *
      * For example, 97123, 97155
-     *
      * A list of values must be passed for either Sites or SiteGroups or both.
-     *
      * Max 10 sites are allowed for the Partner site Restriction.
      *
      * @maps Sites
@@ -97,11 +89,8 @@ class PartnerSiteRestriction implements \JsonSerializable
     /**
      * Returns Site Groups.
      * A list of site group ids in this network which needs to be either restricted or allowed.
-     *
      * For example, 83649200
-     *
      * A list of values must be passed for either Sites or SiteGroups or both.
-     *
      * Max 10 sites groups are allowed for the Partner site Restriction.
      *
      * @return string[]|null
@@ -114,11 +103,8 @@ class PartnerSiteRestriction implements \JsonSerializable
     /**
      * Sets Site Groups.
      * A list of site group ids in this network which needs to be either restricted or allowed.
-     *
      * For example, 83649200
-     *
      * A list of values must be passed for either Sites or SiteGroups or both.
-     *
      * Max 10 sites groups are allowed for the Partner site Restriction.
      *
      * @maps SiteGroups
@@ -133,12 +119,9 @@ class PartnerSiteRestriction implements \JsonSerializable
     /**
      * Returns Exclusive.
      * Flag indicates whether the profile is inclusive or exclusive.
-     *
      * Mandatory
-     *
      * Example: False - (inclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites & site
      * groups where the transaction will be allowed.
-     *
      * True - (exclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites and site groups where
      * the transactions will be declined.
      */
@@ -150,12 +133,9 @@ class PartnerSiteRestriction implements \JsonSerializable
     /**
      * Sets Exclusive.
      * Flag indicates whether the profile is inclusive or exclusive.
-     *
      * Mandatory
-     *
      * Example: False - (inclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites & site
      * groups where the transaction will be allowed.
-     *
      * True - (exclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites and site groups where
      * the transactions will be declined.
      *

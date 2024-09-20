@@ -1579,13 +1579,13 @@ class PayerDetails implements \JsonSerializable
      *
      * E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      */
@@ -1604,13 +1604,13 @@ class PayerDetails implements \JsonSerializable
      *
      * E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      *
@@ -1628,13 +1628,13 @@ class PayerDetails implements \JsonSerializable
      *
      * E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      */
@@ -1682,13 +1682,13 @@ class PayerDetails implements \JsonSerializable
      * Returns Billing Run Frequnecy.
      * Frequency at which the billing process is triggered.E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      */
@@ -1704,13 +1704,13 @@ class PayerDetails implements \JsonSerializable
      * Sets Billing Run Frequnecy.
      * Frequency at which the billing process is triggered.E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      *
@@ -1725,13 +1725,13 @@ class PayerDetails implements \JsonSerializable
      * Unsets Billing Run Frequnecy.
      * Frequency at which the billing process is triggered.E.g.:
      *
-     * 1 Daily (all days)
+     * 1    Daily (all days)
      *
-     * 2 Daily (only working days)
+     * 2    Daily (only working days)
      *
-     * 3 Weekly - Monday
+     * 3    Weekly - Monday
      *
-     * 4 Weekly – Tuesday
+     * 4    Weekly – Tuesday
      *
      * Etc.
      */
@@ -3819,7 +3819,7 @@ class PayerDetails implements \JsonSerializable
 
     /**
      * Returns Tolls Colco Country Type Id.
-     * String Colco country type id in e-TM system
+     * String    Colco country type id in e-TM system
      * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to
      * null or empty.
      */
@@ -3833,7 +3833,7 @@ class PayerDetails implements \JsonSerializable
 
     /**
      * Sets Tolls Colco Country Type Id.
-     * String Colco country type id in e-TM system
+     * String    Colco country type id in e-TM system
      * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to
      * null or empty.
      *
@@ -3846,7 +3846,7 @@ class PayerDetails implements \JsonSerializable
 
     /**
      * Unsets Tolls Colco Country Type Id.
-     * String Colco country type id in e-TM system
+     * String    Colco country type id in e-TM system
      * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to
      * null or empty.
      */

@@ -27,7 +27,6 @@ class RestrictionProduct implements \JsonSerializable
     /**
      * Returns Global Product Code.
      * The productCode returned by the Gateway API.
-     *
      * Example: 021
      */
     public function getGlobalProductCode(): ?string
@@ -38,7 +37,6 @@ class RestrictionProduct implements \JsonSerializable
     /**
      * Sets Global Product Code.
      * The productCode returned by the Gateway API.
-     *
      * Example: 021
      *
      * @maps GlobalProductCode
@@ -51,7 +49,6 @@ class RestrictionProduct implements \JsonSerializable
     /**
      * Returns Description.
      * The description returned by the Gateway API.
-     *
      * Example: High Performance Diesel
      */
     public function getDescription(): ?string
@@ -62,7 +59,6 @@ class RestrictionProduct implements \JsonSerializable
     /**
      * Sets Description.
      * The description returned by the Gateway API.
-     *
      * Example: High Performance Diesel
      *
      * @maps Description

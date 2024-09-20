@@ -125,6 +125,7 @@ $body = SearchCardRequestBuilder::init()
                     SearchCardBuilder::init()
                         ->cardId(466907)
                         ->pAN('7077327290224795811')
+                        ->pANID(17350065)
                         ->build()
                 ]
             )
@@ -137,6 +138,7 @@ $body = SearchCardRequestBuilder::init()
                     SearchCardBuilder::init()
                         ->cardId(466906)
                         ->pAN('7077327290224795801')
+                        ->pANID(17350065)
                         ->build()
                 ]
             )
@@ -220,6 +222,8 @@ $result = $cardController->searchcard(
       "LocalCurrencySymbol": "Kč",
       "OdometerInput": true,
       "PAN": "7077327290223410782",
+      "MaskedPAN": "7077327******410782",
+      "PANID": 17350064,
       "PurchaseCategoryCode": "3",
       "PurchaseCategoryId": 103,
       "PurchaseCategoryName": "3 - No Restriction",
@@ -671,6 +675,8 @@ $result = $cardController->cardordercardenquiry(
       "CardGroupName": "null",
       "CardId": 41008,
       "CardPAN": "7077187910757000712",
+      "MaskedPAN": "707718******000712",
+      "PANID": 17285721,
       "CardTypeCode": "7077187",
       "CardTypeId": 704,
       "CardTypeName": "NL CRT Nat. Shell + partnernetwerk",
@@ -1002,6 +1008,7 @@ $body = CardManagementV1UpdatestatusRequestBuilder::init(
             ->colCoCode(32)
             ->colCoId(32)
             ->pAN('7077327290223410816')
+            ->pANID(17350064)
             ->payerId(1223)
             ->payerNumber('CZ00000928')
             ->build()
@@ -1037,6 +1044,8 @@ $result = $cardController->cardupdatestatus(
       "ColCoCode": 32,
       "ColCoId": 32,
       "PAN": "7077327290223421201",
+      "PANID": 17352931,
+      "MaskedPAN": "7077327******421201",
       "PayerId": 1227,
       "PayerNumber": "CZ00000927"
     }
@@ -1668,6 +1677,7 @@ $body = ScheduleCardBlockRequestBuilder::init()
                 ->payerNumber('CZ00000928')
                 ->cardId(234)
                 ->pAN('7077327290223418348')
+                ->pANID('130128')
                 ->cardExpiryDate('20240731')
                 ->fromDate('20230701 14:30')
                 ->toDate('20230731 16:30')
@@ -1768,6 +1778,7 @@ $body = AutoRenewCardRequestBuilder::init()
                 ->accountNumber('CZ00000929')
                 ->accountId(1229)
                 ->pAN('7077327290223440243')
+                ->pANID(17240826)
                 ->cardId(446472)
                 ->build()
         ]
@@ -1790,7 +1801,8 @@ $result = $cardController->autorenew(
   "Data": [
     {
       "AutoRenewReferenceId": 226,
-      "CardIdAndPAN": "446472;7077327290223440243"
+      "CardIdAndPAN": "446472;7077327290223440243",
+      "PANID": 17240826
     }
   ]
 }

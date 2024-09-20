@@ -87,7 +87,6 @@ class RestrictioncardsRes implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the customer.
-     *
      * Example: 123456
      */
     public function getAccountId(): ?int
@@ -98,7 +97,6 @@ class RestrictioncardsRes implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the customer.
-     *
      * Example: 123456
      *
      * @maps AccountId
@@ -111,7 +109,6 @@ class RestrictioncardsRes implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Example: GB000000123
      */
     public function getAccountNumber(): ?string
@@ -122,7 +119,6 @@ class RestrictioncardsRes implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Example: GB000000123
      *
      * @maps AccountNumber
@@ -135,7 +131,6 @@ class RestrictioncardsRes implements \JsonSerializable
     /**
      * Returns Card Id.
      * Unique Card Id
-     *
      * Example: 275549
      */
     public function getCardId(): ?string
@@ -146,7 +141,6 @@ class RestrictioncardsRes implements \JsonSerializable
     /**
      * Sets Card Id.
      * Unique Card Id
-     *
      * Example: 275549
      *
      * @maps CardId
@@ -159,7 +153,6 @@ class RestrictioncardsRes implements \JsonSerializable
     /**
      * Returns P AN.
      * Card PAN.
-     *
      * Example: 7002051006629890645
      */
     public function getPAN(): ?string
@@ -170,7 +163,6 @@ class RestrictioncardsRes implements \JsonSerializable
     /**
      * Sets P AN.
      * Card PAN.
-     *
      * Example: 7002051006629890645
      *
      * @maps PAN

@@ -102,9 +102,7 @@ class UsageRestrictionsCard implements \JsonSerializable
     /**
      * Returns Daily Spend.
      * Maximum spend value (amount) allowed per day.
-     *
      * Optional
-     *
      * It allows null in the input field. If Values is passed as null, apply the card type limit. However,
      * if the card type limit is NULL for the same field then No limit will be applied in Gateway.
      */
@@ -119,9 +117,7 @@ class UsageRestrictionsCard implements \JsonSerializable
     /**
      * Sets Daily Spend.
      * Maximum spend value (amount) allowed per day.
-     *
      * Optional
-     *
      * It allows null in the input field. If Values is passed as null, apply the card type limit. However,
      * if the card type limit is NULL for the same field then No limit will be applied in Gateway.
      *
@@ -135,9 +131,7 @@ class UsageRestrictionsCard implements \JsonSerializable
     /**
      * Unsets Daily Spend.
      * Maximum spend value (amount) allowed per day.
-     *
      * Optional
-     *
      * It allows null in the input field. If Values is passed as null, apply the card type limit. However,
      * if the card type limit is NULL for the same field then No limit will be applied in Gateway.
      */

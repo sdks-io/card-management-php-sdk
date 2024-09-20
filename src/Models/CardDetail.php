@@ -1035,8 +1035,8 @@ class CardDetail implements \JsonSerializable
      * Card delivery type.<br />
      * Mandatory <br />
      * Allowed Value: <br />
-     * 1. Customer Address(Default) <br />
-     * 2. New Delivery Address
+     * 1.    Customer Address(Default) <br />
+     * 2.    New Delivery Address
      */
     public function getCardDeliveryType(): ?int
     {
@@ -1048,8 +1048,8 @@ class CardDetail implements \JsonSerializable
      * Card delivery type.<br />
      * Mandatory <br />
      * Allowed Value: <br />
-     * 1. Customer Address(Default) <br />
-     * 2. New Delivery Address
+     * 1.    Customer Address(Default) <br />
+     * 2.    New Delivery Address
      *
      * @maps CardDeliveryType
      */
@@ -1081,9 +1081,9 @@ class CardDetail implements \JsonSerializable
      * PIN delivery address type selection.<br />
      * Optional<br />
      * Allowed Values:<br />
-     * 1. Customer Address(Default)<br />
-     * 2. Card Address<br />
-     * 3. New Delivery Address
+     * 1.    Customer Address(Default)<br />
+     * 2.    Card Address<br />
+     * 3.    New Delivery Address
      */
     public function getPINDeliveryAddressType(): ?int
     {
@@ -1098,9 +1098,9 @@ class CardDetail implements \JsonSerializable
      * PIN delivery address type selection.<br />
      * Optional<br />
      * Allowed Values:<br />
-     * 1. Customer Address(Default)<br />
-     * 2. Card Address<br />
-     * 3. New Delivery Address
+     * 1.    Customer Address(Default)<br />
+     * 2.    Card Address<br />
+     * 3.    New Delivery Address
      *
      * @maps PINDeliveryAddressType
      */
@@ -1114,9 +1114,9 @@ class CardDetail implements \JsonSerializable
      * PIN delivery address type selection.<br />
      * Optional<br />
      * Allowed Values:<br />
-     * 1. Customer Address(Default)<br />
-     * 2. Card Address<br />
-     * 3. New Delivery Address
+     * 1.    Customer Address(Default)<br />
+     * 2.    Card Address<br />
+     * 3.    New Delivery Address
      */
     public function unsetPINDeliveryAddressType(): void
     {
@@ -1128,10 +1128,10 @@ class CardDetail implements \JsonSerializable
      * PIN delivery method.<br />
      * Mandatory<br />
      * Allowed Values:<br />
-     * 1. Paper<br />
-     * 2. Email<br />
-     * 3. SMS<br />
-     * 4. None <br /> **Note:** Paper delivery not applicable for selfselctedPIN type
+     * 1.    Paper<br />
+     * 2.    Email<br />
+     * 3.    SMS<br />
+     * 4.    None <br /> **Note:** Paper delivery not applicable for selfselctedPIN type
      */
     public function getPINAdviceType(): ?int
     {
@@ -1143,10 +1143,10 @@ class CardDetail implements \JsonSerializable
      * PIN delivery method.<br />
      * Mandatory<br />
      * Allowed Values:<br />
-     * 1. Paper<br />
-     * 2. Email<br />
-     * 3. SMS<br />
-     * 4. None <br /> **Note:** Paper delivery not applicable for selfselctedPIN type
+     * 1.    Paper<br />
+     * 2.    Email<br />
+     * 3.    SMS<br />
+     * 4.    None <br /> **Note:** Paper delivery not applicable for selfselctedPIN type
      *
      * @maps PINAdviceType
      */
@@ -1211,9 +1211,9 @@ class CardDetail implements \JsonSerializable
      * Mandatory, if NotifyCaller is true.<br />
      * Maximum field length: 20<br />
      * Allowed values:<br />
-     * • “NextGenUI”: This value to be used by next gen UI application.<br />
-     * • “FleetHubUILifeTime”: This value to be used by Fleet Hub UI application for life time restriction
-     * cards.<br />
+     * •    “NextGenUI”: This value to be used by next gen UI application.<br />
+     * •    “FleetHubUILifeTime”: This value to be used by Fleet Hub UI application for life time
+     * restriction cards.<br />
      * Note: The values passed in this field are case insensitive
      */
     public function getCaller(): ?string
@@ -1230,9 +1230,9 @@ class CardDetail implements \JsonSerializable
      * Mandatory, if NotifyCaller is true.<br />
      * Maximum field length: 20<br />
      * Allowed values:<br />
-     * • “NextGenUI”: This value to be used by next gen UI application.<br />
-     * • “FleetHubUILifeTime”: This value to be used by Fleet Hub UI application for life time restriction
-     * cards.<br />
+     * •    “NextGenUI”: This value to be used by next gen UI application.<br />
+     * •    “FleetHubUILifeTime”: This value to be used by Fleet Hub UI application for life time
+     * restriction cards.<br />
      * Note: The values passed in this field are case insensitive
      *
      * @maps Caller
@@ -1248,9 +1248,9 @@ class CardDetail implements \JsonSerializable
      * Mandatory, if NotifyCaller is true.<br />
      * Maximum field length: 20<br />
      * Allowed values:<br />
-     * • “NextGenUI”: This value to be used by next gen UI application.<br />
-     * • “FleetHubUILifeTime”: This value to be used by Fleet Hub UI application for life time restriction
-     * cards.<br />
+     * •    “NextGenUI”: This value to be used by next gen UI application.<br />
+     * •    “FleetHubUILifeTime”: This value to be used by Fleet Hub UI application for life time
+     * restriction cards.<br />
      * Note: The values passed in this field are case insensitive
      */
     public function unsetCaller(): void
@@ -1324,10 +1324,10 @@ class CardDetail implements \JsonSerializable
      * Optional.<br />
      * Default: NO_VALIDATION<br />
      * Allowed values:<br />
-     * • ALERT<br />
-     * • DECLINE<br />
-     * • DECLINE_ALERT<br />
-     * • NO_VALIDATION<br />
+     * •    ALERT<br />
+     * •    DECLINE<br />
+     * •    DECLINE_ALERT<br />
+     * •    NO_VALIDATION<br />
      * Note: When FleetIdOption is not provided and validatefleetid is true then by default allowed value
      * is NO_VALIDATION.
      */
@@ -1345,10 +1345,10 @@ class CardDetail implements \JsonSerializable
      * Optional.<br />
      * Default: NO_VALIDATION<br />
      * Allowed values:<br />
-     * • ALERT<br />
-     * • DECLINE<br />
-     * • DECLINE_ALERT<br />
-     * • NO_VALIDATION<br />
+     * •    ALERT<br />
+     * •    DECLINE<br />
+     * •    DECLINE_ALERT<br />
+     * •    NO_VALIDATION<br />
      * Note: When FleetIdOption is not provided and validatefleetid is true then by default allowed value
      * is NO_VALIDATION.
      *
@@ -1365,10 +1365,10 @@ class CardDetail implements \JsonSerializable
      * Optional.<br />
      * Default: NO_VALIDATION<br />
      * Allowed values:<br />
-     * • ALERT<br />
-     * • DECLINE<br />
-     * • DECLINE_ALERT<br />
-     * • NO_VALIDATION<br />
+     * •    ALERT<br />
+     * •    DECLINE<br />
+     * •    DECLINE_ALERT<br />
+     * •    NO_VALIDATION<br />
      * Note: When FleetIdOption is not provided and validatefleetid is true then by default allowed value
      * is NO_VALIDATION.
      */
@@ -1708,6 +1708,12 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Returns Auto Renew.
+     * Whether to reissue card automatically when nearing the expiry.
+     *
+     * Allowed values: -
+     * 1.    As per card type setting (Default).
+     * 2.    Card will be Reissued when nearing its expiry date.
+     * 3.    Card will not be Reissued.
      */
     public function getAutoRenew(): ?int
     {
@@ -1716,6 +1722,12 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Sets Auto Renew.
+     * Whether to reissue card automatically when nearing the expiry.
+     *
+     * Allowed values: -
+     * 1.    As per card type setting (Default).
+     * 2.    Card will be Reissued when nearing its expiry date.
+     * 3.    Card will not be Reissued.
      *
      * @maps AutoRenew
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailAutoRenewEnum::checkValue

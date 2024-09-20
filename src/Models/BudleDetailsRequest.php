@@ -126,9 +126,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getPayerId(): ?string
@@ -139,9 +137,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id of the selected payer.
-     *
      * Optional if PayerNumber is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -154,9 +150,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -167,9 +161,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the selected payer.
-     *
      * Optional if PayerId is passed else Mandatory
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -182,9 +174,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Returns Account Id.
      * Account Id of the customer.
-     *
      * Optional if Account Number is passed else Mandatory
-     *
      * Example: 123456
      */
     public function getAccountId(): ?int
@@ -195,9 +185,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Sets Account Id.
      * Account Id of the customer.
-     *
      * Optional if Account Number is passed else Mandatory
-     *
      * Example: 123456
      *
      * @maps AccountId
@@ -210,9 +198,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the customer.
-     *
      * Optional if Account Id is passed else Mandatory
-     *
      * Example: GB000000123
      */
     public function getAccountNumber(): ?string
@@ -223,9 +209,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the customer.
-     *
      * Optional if Account Id is passed else Mandatory
-     *
      * Example: GB000000123
      *
      * @maps AccountNumber
@@ -238,9 +222,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Returns Bundle Id.
      * Bundle Id associated with account
-     *
      * Mandatory.
-     *
      * Example: 835662721
      */
     public function getBundleId(): ?string
@@ -251,9 +233,7 @@ class BudleDetailsRequest implements \JsonSerializable
     /**
      * Sets Bundle Id.
      * Bundle Id associated with account
-     *
      * Mandatory.
-     *
      * Example: 835662721
      *
      * @maps BundleId

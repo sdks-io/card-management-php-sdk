@@ -34,7 +34,7 @@
       "IsFuelType": false
     }
   ],
-  "Title": "1.\tBasic",
+  "Title": "1.    Basic",
   "Description": "0 - Diesel Products and TMF"
 }
 ```

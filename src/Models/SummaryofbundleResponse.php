@@ -89,7 +89,6 @@ class SummaryofbundleResponse implements \JsonSerializable
     /**
      * Returns Payer Id.
      * Payer Id of the bundles and cards.
-     *
      * Example: 123456
      */
     public function getPayerId(): ?int
@@ -100,7 +99,6 @@ class SummaryofbundleResponse implements \JsonSerializable
     /**
      * Sets Payer Id.
      * Payer Id of the bundles and cards.
-     *
      * Example: 123456
      *
      * @maps PayerId
@@ -113,7 +111,6 @@ class SummaryofbundleResponse implements \JsonSerializable
     /**
      * Returns Payer Number.
      * Payer Number of the bundles and cards.
-     *
      * Example: GB000000123
      */
     public function getPayerNumber(): ?string
@@ -124,7 +121,6 @@ class SummaryofbundleResponse implements \JsonSerializable
     /**
      * Sets Payer Number.
      * Payer Number of the bundles and cards.
-     *
      * Example: GB000000123
      *
      * @maps PayerNumber
@@ -155,7 +151,6 @@ class SummaryofbundleResponse implements \JsonSerializable
     /**
      * Returns Account Number.
      * Account Number of the bundle.
-     *
      * Example: GB000000123
      */
     public function getAccountNumber(): ?string
@@ -166,7 +161,6 @@ class SummaryofbundleResponse implements \JsonSerializable
     /**
      * Sets Account Number.
      * Account Number of the bundle.
-     *
      * Example: GB000000123
      *
      * @maps AccountNumber
