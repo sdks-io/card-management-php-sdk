@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
+use ShellCardManagementAPIsLib\Models\PayerDetails;
 use ShellCardManagementAPIsLib\Models\PayerResponse;
 
 /**
@@ -32,7 +33,7 @@ class PayerResponseBuilder
     }
 
     /**
-     * Initializes a new payer response Builder object.
+     * Initializes a new Payer Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +41,9 @@ class PayerResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -49,7 +52,7 @@ class PayerResponseBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -58,7 +61,9 @@ class PayerResponseBuilder
     }
 
     /**
-     * Sets payers field.
+     * Sets Payers field.
+     *
+     * @param PayerDetails[]|null $value
      */
     public function payers(?array $value): self
     {
@@ -67,7 +72,9 @@ class PayerResponseBuilder
     }
 
     /**
-     * Sets current page field.
+     * Sets Current Page field.
+     *
+     * @param int|null $value
      */
     public function currentPage(?int $value): self
     {
@@ -76,7 +83,9 @@ class PayerResponseBuilder
     }
 
     /**
-     * Sets row count field.
+     * Sets Row Count field.
+     *
+     * @param int|null $value
      */
     public function rowCount(?int $value): self
     {
@@ -85,7 +94,9 @@ class PayerResponseBuilder
     }
 
     /**
-     * Sets total pages field.
+     * Sets Total Pages field.
+     *
+     * @param int|null $value
      */
     public function totalPages(?int $value): self
     {
@@ -94,7 +105,9 @@ class PayerResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -103,7 +116,7 @@ class PayerResponseBuilder
     }
 
     /**
-     * Initializes a new payer response object.
+     * Initializes a new Payer Response object.
      */
     public function build(): PayerResponse
     {

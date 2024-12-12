@@ -32,7 +32,7 @@ class FleetmanagementV1UserLoggedinuser500Error1Builder
     }
 
     /**
-     * Initializes a new fleetmanagement v1 user loggedinuser 500 error 1 Builder object.
+     * Initializes a new Fleetmanagement V1 User Loggedinuser 500 Error 1 Builder object.
      */
     public static function init(): self
     {
@@ -41,6 +41,8 @@ class FleetmanagementV1UserLoggedinuser500Error1Builder
 
     /**
      * Sets fault field.
+     *
+     * @param Fault|null $value
      */
     public function fault(?Fault $value): self
     {
@@ -49,7 +51,7 @@ class FleetmanagementV1UserLoggedinuser500Error1Builder
     }
 
     /**
-     * Initializes a new fleetmanagement v1 user loggedinuser 500 error 1 object.
+     * Initializes a new Fleetmanagement V1 User Loggedinuser 500 Error 1 object.
      */
     public function build(): FleetmanagementV1UserLoggedinuser500Error1
     {

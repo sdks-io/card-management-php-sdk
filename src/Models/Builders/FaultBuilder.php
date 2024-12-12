@@ -32,7 +32,7 @@ class FaultBuilder
     }
 
     /**
-     * Initializes a new fault Builder object.
+     * Initializes a new Fault Builder object.
      */
     public static function init(): self
     {
@@ -41,6 +41,8 @@ class FaultBuilder
 
     /**
      * Sets faultstring field.
+     *
+     * @param string|null $value
      */
     public function faultstring(?string $value): self
     {
@@ -50,6 +52,8 @@ class FaultBuilder
 
     /**
      * Sets detail field.
+     *
+     * @param Detail|null $value
      */
     public function detail(?Detail $value): self
     {
@@ -58,7 +62,7 @@ class FaultBuilder
     }
 
     /**
-     * Initializes a new fault object.
+     * Initializes a new Fault object.
      */
     public function build(): Fault
     {

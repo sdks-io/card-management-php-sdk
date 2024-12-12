@@ -31,7 +31,7 @@ class AddressBuilder
     }
 
     /**
-     * Initializes a new address Builder object.
+     * Initializes a new Address Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets address id field.
+     * Sets Address Id field.
+     *
+     * @param int|null $value
      */
     public function addressId(?int $value): self
     {
@@ -48,7 +50,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets address id field.
+     * Unsets Address Id field.
      */
     public function unsetAddressId(): self
     {
@@ -57,7 +59,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets address line 1 field.
+     * Sets Address Line 1 field.
+     *
+     * @param string|null $value
      */
     public function addressLine1(?string $value): self
     {
@@ -66,7 +70,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets address line 1 field.
+     * Unsets Address Line 1 field.
      */
     public function unsetAddressLine1(): self
     {
@@ -75,7 +79,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets address line 2 field.
+     * Sets Address Line 2 field.
+     *
+     * @param string|null $value
      */
     public function addressLine2(?string $value): self
     {
@@ -84,7 +90,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets address line 2 field.
+     * Unsets Address Line 2 field.
      */
     public function unsetAddressLine2(): self
     {
@@ -93,7 +99,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets address line 3 field.
+     * Sets Address Line 3 field.
+     *
+     * @param string|null $value
      */
     public function addressLine3(?string $value): self
     {
@@ -102,7 +110,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets address line 3 field.
+     * Unsets Address Line 3 field.
      */
     public function unsetAddressLine3(): self
     {
@@ -111,7 +119,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets zip code field.
+     * Sets Zip Code field.
+     *
+     * @param string|null $value
      */
     public function zipCode(?string $value): self
     {
@@ -120,7 +130,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets zip code field.
+     * Unsets Zip Code field.
      */
     public function unsetZipCode(): self
     {
@@ -129,7 +139,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets city field.
+     * Sets City field.
+     *
+     * @param string|null $value
      */
     public function city(?string $value): self
     {
@@ -138,7 +150,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets city field.
+     * Unsets City field.
      */
     public function unsetCity(): self
     {
@@ -147,7 +159,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets region id field.
+     * Sets Region Id field.
+     *
+     * @param int|null $value
      */
     public function regionId(?int $value): self
     {
@@ -156,7 +170,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets region id field.
+     * Unsets Region Id field.
      */
     public function unsetRegionId(): self
     {
@@ -165,7 +179,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets country isocode field.
+     * Sets Country ISO Code field.
+     *
+     * @param string|null $value
      */
     public function countryISOCode(?string $value): self
     {
@@ -174,7 +190,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets country isocode field.
+     * Unsets Country ISO Code field.
      */
     public function unsetCountryISOCode(): self
     {
@@ -183,7 +199,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets country field.
+     * Sets Country field.
+     *
+     * @param string|null $value
      */
     public function country(?string $value): self
     {
@@ -192,7 +210,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets country field.
+     * Unsets Country field.
      */
     public function unsetCountry(): self
     {
@@ -201,7 +219,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets telephone field.
+     * Sets Telephone field.
+     *
+     * @param string|null $value
      */
     public function telephone(?string $value): self
     {
@@ -210,7 +230,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets telephone field.
+     * Unsets Telephone field.
      */
     public function unsetTelephone(): self
     {
@@ -219,7 +239,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets email address field.
+     * Sets Email Address field.
+     *
+     * @param string|null $value
      */
     public function emailAddress(?string $value): self
     {
@@ -228,7 +250,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets email address field.
+     * Unsets Email Address field.
      */
     public function unsetEmailAddress(): self
     {
@@ -237,7 +259,9 @@ class AddressBuilder
     }
 
     /**
-     * Sets fax field.
+     * Sets Fax field.
+     *
+     * @param string|null $value
      */
     public function fax(?string $value): self
     {
@@ -246,7 +270,7 @@ class AddressBuilder
     }
 
     /**
-     * Unsets fax field.
+     * Unsets Fax field.
      */
     public function unsetFax(): self
     {
@@ -255,7 +279,7 @@ class AddressBuilder
     }
 
     /**
-     * Initializes a new address object.
+     * Initializes a new Address object.
      */
     public function build(): Address
     {

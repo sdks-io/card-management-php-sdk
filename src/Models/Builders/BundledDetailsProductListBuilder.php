@@ -31,7 +31,7 @@ class BundledDetailsProductListBuilder
     }
 
     /**
-     * Initializes a new bundled details product list Builder object.
+     * Initializes a new Bundled Details Product List Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class BundledDetailsProductListBuilder
     }
 
     /**
-     * Sets purchase category id field.
+     * Sets Purchase Category Id field.
+     *
+     * @param int|null $value
      */
     public function purchaseCategoryId(?int $value): self
     {
@@ -48,7 +50,9 @@ class BundledDetailsProductListBuilder
     }
 
     /**
-     * Sets purchase category code field.
+     * Sets Purchase Category Code field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryCode(?string $value): self
     {
@@ -57,7 +61,9 @@ class BundledDetailsProductListBuilder
     }
 
     /**
-     * Sets products field.
+     * Sets Products field.
+     *
+     * @param string[]|null $value
      */
     public function products(?array $value): self
     {
@@ -66,7 +72,9 @@ class BundledDetailsProductListBuilder
     }
 
     /**
-     * Sets product groups field.
+     * Sets Product Groups field.
+     *
+     * @param string[]|null $value
      */
     public function productGroups(?array $value): self
     {
@@ -75,7 +83,9 @@ class BundledDetailsProductListBuilder
     }
 
     /**
-     * Sets fuel set id field.
+     * Sets Fuel Set Id field.
+     *
+     * @param string|null $value
      */
     public function fuelSetId(?string $value): self
     {
@@ -84,7 +94,9 @@ class BundledDetailsProductListBuilder
     }
 
     /**
-     * Sets fuel set name field.
+     * Sets Fuel Set Name field.
+     *
+     * @param string|null $value
      */
     public function fuelSetName(?string $value): self
     {
@@ -93,7 +105,9 @@ class BundledDetailsProductListBuilder
     }
 
     /**
-     * Sets non fuel sets field.
+     * Sets Non Fuel Sets field.
+     *
+     * @param string|null $value
      */
     public function nonFuelSets(?string $value): self
     {
@@ -102,7 +116,7 @@ class BundledDetailsProductListBuilder
     }
 
     /**
-     * Initializes a new bundled details product list object.
+     * Initializes a new Bundled Details Product List object.
      */
     public function build(): BundledDetailsProductList
     {

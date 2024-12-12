@@ -31,7 +31,7 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Initializes a new col co access Builder object.
+     * Initializes a new Col Co Access Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param string|null $value
      */
     public function colCoId(?string $value): self
     {
@@ -48,7 +50,7 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -57,7 +59,9 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCode(?string $value): self
     {
@@ -66,7 +70,7 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -75,7 +79,9 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Sets col co country name field.
+     * Sets Col Co Country Name field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryName(?string $value): self
     {
@@ -84,7 +90,7 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Unsets col co country name field.
+     * Unsets Col Co Country Name field.
      */
     public function unsetColCoCountryName(): self
     {
@@ -93,7 +99,9 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Sets issuing country number field.
+     * Sets Issuing Country Number field.
+     *
+     * @param string|null $value
      */
     public function issuingCountryNumber(?string $value): self
     {
@@ -102,7 +110,7 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Unsets issuing country number field.
+     * Unsets Issuing Country Number field.
      */
     public function unsetIssuingCountryNumber(): self
     {
@@ -111,7 +119,7 @@ class ColCoAccessBuilder
     }
 
     /**
-     * Initializes a new col co access object.
+     * Initializes a new Col Co Access object.
      */
     public function build(): ColCoAccess
     {

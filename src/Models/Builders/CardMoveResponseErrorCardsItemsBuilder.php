@@ -31,7 +31,7 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Initializes a new card move response error cards items Builder object.
+     * Initializes a new Card Move Response Error Cards Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -48,7 +50,7 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -57,7 +59,9 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -66,7 +70,7 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -75,7 +79,9 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -84,7 +90,7 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -93,7 +99,9 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -102,7 +110,7 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -111,7 +119,9 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets validation error code field.
+     * Sets Validation Error Code field.
+     *
+     * @param string|null $value
      */
     public function validationErrorCode(?string $value): self
     {
@@ -120,7 +130,7 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Unsets validation error code field.
+     * Unsets Validation Error Code field.
      */
     public function unsetValidationErrorCode(): self
     {
@@ -129,7 +139,9 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets validation error description field.
+     * Sets Validation Error Description field.
+     *
+     * @param string|null $value
      */
     public function validationErrorDescription(?string $value): self
     {
@@ -138,7 +150,7 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Unsets validation error description field.
+     * Unsets Validation Error Description field.
      */
     public function unsetValidationErrorDescription(): self
     {
@@ -147,7 +159,7 @@ class CardMoveResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Initializes a new card move response error cards items object.
+     * Initializes a new Card Move Response Error Cards Items object.
      */
     public function build(): CardMoveResponseErrorCardsItems
     {

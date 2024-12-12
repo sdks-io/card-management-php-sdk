@@ -31,7 +31,7 @@ class ProductAllOf0Builder
     }
 
     /**
-     * Initializes a new product all of 0 Builder object.
+     * Initializes a new Product All Of 0 Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class ProductAllOf0Builder
     }
 
     /**
-     * Sets global product code field.
+     * Sets Global Product Code field.
+     *
+     * @param string|null $value
      */
     public function globalProductCode(?string $value): self
     {
@@ -48,7 +50,9 @@ class ProductAllOf0Builder
     }
 
     /**
-     * Sets description field.
+     * Sets Description field.
+     *
+     * @param string|null $value
      */
     public function description(?string $value): self
     {
@@ -57,7 +61,7 @@ class ProductAllOf0Builder
     }
 
     /**
-     * Initializes a new product all of 0 object.
+     * Initializes a new Product All Of 0 object.
      */
     public function build(): ProductAllOf0
     {

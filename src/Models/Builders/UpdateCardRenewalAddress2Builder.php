@@ -31,7 +31,13 @@ class UpdateCardRenewalAddress2Builder
     }
 
     /**
-     * Initializes a new update card renewal address 2 Builder object.
+     * Initializes a new Update Card Renewal Address 2 Builder object.
+     *
+     * @param string $contactName
+     * @param string $companyName
+     * @param string $addressLine
+     * @param string $zipCode
+     * @param int $countryID
      */
     public static function init(
         string $contactName,
@@ -46,7 +52,9 @@ class UpdateCardRenewalAddress2Builder
     }
 
     /**
-     * Sets contact title field.
+     * Sets Contact Title field.
+     *
+     * @param string|null $value
      */
     public function contactTitle(?string $value): self
     {
@@ -55,7 +63,9 @@ class UpdateCardRenewalAddress2Builder
     }
 
     /**
-     * Sets city field.
+     * Sets City field.
+     *
+     * @param string|null $value
      */
     public function city(?string $value): self
     {
@@ -64,7 +74,9 @@ class UpdateCardRenewalAddress2Builder
     }
 
     /**
-     * Sets region id field.
+     * Sets Region ID field.
+     *
+     * @param int|null $value
      */
     public function regionID(?int $value): self
     {
@@ -73,7 +85,9 @@ class UpdateCardRenewalAddress2Builder
     }
 
     /**
-     * Sets email address field.
+     * Sets Email Address field.
+     *
+     * @param string|null $value
      */
     public function emailAddress(?string $value): self
     {
@@ -82,7 +96,9 @@ class UpdateCardRenewalAddress2Builder
     }
 
     /**
-     * Sets phone number field.
+     * Sets Phone Number field.
+     *
+     * @param string|null $value
      */
     public function phoneNumber(?string $value): self
     {
@@ -91,7 +107,7 @@ class UpdateCardRenewalAddress2Builder
     }
 
     /**
-     * Initializes a new update card renewal address 2 object.
+     * Initializes a new Update Card Renewal Address 2 object.
      */
     public function build(): UpdateCardRenewalAddress2
     {

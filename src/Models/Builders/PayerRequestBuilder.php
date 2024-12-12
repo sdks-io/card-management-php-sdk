@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\PayerRequest;
+use ShellCardManagementAPIsLib\Models\Payers;
 
 /**
  * Builder for model PayerRequest
@@ -31,7 +32,7 @@ class PayerRequestBuilder
     }
 
     /**
-     * Initializes a new payer request Builder object.
+     * Initializes a new Payer Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class PayerRequestBuilder
     }
 
     /**
-     * Sets payers field.
+     * Sets Payers field.
+     *
+     * @param Payers[]|null $value
      */
     public function payers(?array $value): self
     {
@@ -48,7 +51,9 @@ class PayerRequestBuilder
     }
 
     /**
-     * Sets return basic details only field.
+     * Sets Return Basic Details Only field.
+     *
+     * @param bool|null $value
      */
     public function returnBasicDetailsOnly(?bool $value): self
     {
@@ -57,7 +62,9 @@ class PayerRequestBuilder
     }
 
     /**
-     * Sets include addresses field.
+     * Sets Include Addresses field.
+     *
+     * @param bool|null $value
      */
     public function includeAddresses(?bool $value): self
     {
@@ -66,7 +73,9 @@ class PayerRequestBuilder
     }
 
     /**
-     * Sets include bonus parameters field.
+     * Sets Include Bonus Parameters field.
+     *
+     * @param bool|null $value
      */
     public function includeBonusParameters(?bool $value): self
     {
@@ -75,7 +84,9 @@ class PayerRequestBuilder
     }
 
     /**
-     * Sets current page field.
+     * Sets Current Page field.
+     *
+     * @param int|null $value
      */
     public function currentPage(?int $value): self
     {
@@ -84,7 +95,9 @@ class PayerRequestBuilder
     }
 
     /**
-     * Sets page size field.
+     * Sets Page Size field.
+     *
+     * @param int|null $value
      */
     public function pageSize(?int $value): self
     {
@@ -93,7 +106,7 @@ class PayerRequestBuilder
     }
 
     /**
-     * Initializes a new payer request object.
+     * Initializes a new Payer Request object.
      */
     public function build(): PayerRequest
     {

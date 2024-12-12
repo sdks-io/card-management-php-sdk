@@ -32,7 +32,7 @@ class CardSummaryRequestBuilder
     }
 
     /**
-     * Initializes a new card summary request Builder object.
+     * Initializes a new Card Summary Request Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class CardSummaryRequestBuilder
     }
 
     /**
-     * Sets filters field.
+     * Sets Filters field.
+     *
+     * @param Filters1|null $value
      */
     public function filters(?Filters1 $value): self
     {
@@ -49,7 +51,7 @@ class CardSummaryRequestBuilder
     }
 
     /**
-     * Initializes a new card summary request object.
+     * Initializes a new Card Summary Request object.
      */
     public function build(): CardSummaryRequest
     {

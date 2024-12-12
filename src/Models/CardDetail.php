@@ -1708,12 +1708,6 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Returns Auto Renew.
-     * Whether to reissue card automatically when nearing the expiry.
-     *
-     * Allowed values: -
-     * 1.    As per card type setting (Default).
-     * 2.    Card will be Reissued when nearing its expiry date.
-     * 3.    Card will not be Reissued.
      */
     public function getAutoRenew(): ?int
     {
@@ -1722,12 +1716,6 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Sets Auto Renew.
-     * Whether to reissue card automatically when nearing the expiry.
-     *
-     * Allowed values: -
-     * 1.    As per card type setting (Default).
-     * 2.    Card will be Reissued when nearing its expiry date.
-     * 3.    Card will not be Reissued.
      *
      * @maps AutoRenew
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailAutoRenewEnum::checkValue

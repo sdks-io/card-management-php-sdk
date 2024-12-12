@@ -31,7 +31,9 @@ class AutoRenewCardRequestAutoRenewCardsItemsBuilder
     }
 
     /**
-     * Initializes a new auto renew card request auto renew cards items Builder object.
+     * Initializes a new Auto Renew Card Request Auto Renew Cards Items Builder object.
+     *
+     * @param bool $reissueSetting
      */
     public static function init(bool $reissueSetting): self
     {
@@ -39,7 +41,9 @@ class AutoRenewCardRequestAutoRenewCardsItemsBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -48,7 +52,9 @@ class AutoRenewCardRequestAutoRenewCardsItemsBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -57,7 +63,9 @@ class AutoRenewCardRequestAutoRenewCardsItemsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -66,7 +74,9 @@ class AutoRenewCardRequestAutoRenewCardsItemsBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param float|null $value
      */
     public function pANID(?float $value): self
     {
@@ -75,7 +85,9 @@ class AutoRenewCardRequestAutoRenewCardsItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -84,7 +96,7 @@ class AutoRenewCardRequestAutoRenewCardsItemsBuilder
     }
 
     /**
-     * Initializes a new auto renew card request auto renew cards items object.
+     * Initializes a new Auto Renew Card Request Auto Renew Cards Items object.
      */
     public function build(): AutoRenewCardRequestAutoRenewCardsItems
     {

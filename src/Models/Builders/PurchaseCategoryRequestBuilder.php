@@ -31,7 +31,7 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Initializes a new purchase category request Builder object.
+     * Initializes a new Purchase Category Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -48,7 +50,9 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -57,7 +61,7 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -66,7 +70,9 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -75,7 +81,7 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -84,7 +90,9 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Sets card type id field.
+     * Sets Card Type Id field.
+     *
+     * @param int|null $value
      */
     public function cardTypeId(?int $value): self
     {
@@ -93,7 +101,7 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Unsets card type id field.
+     * Unsets Card Type Id field.
      */
     public function unsetCardTypeId(): self
     {
@@ -102,7 +110,9 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Sets purchase category id field.
+     * Sets Purchase Category Id field.
+     *
+     * @param int|null $value
      */
     public function purchaseCategoryId(?int $value): self
     {
@@ -111,7 +121,9 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Sets language code field.
+     * Sets Language Code field.
+     *
+     * @param string|null $value
      */
     public function languageCode(?string $value): self
     {
@@ -120,7 +132,7 @@ class PurchaseCategoryRequestBuilder
     }
 
     /**
-     * Initializes a new purchase category request object.
+     * Initializes a new Purchase Category Request object.
      */
     public function build(): PurchaseCategoryRequest
     {

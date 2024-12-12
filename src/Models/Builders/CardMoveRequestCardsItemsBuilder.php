@@ -31,7 +31,7 @@ class CardMoveRequestCardsItemsBuilder
     }
 
     /**
-     * Initializes a new card move request cards items Builder object.
+     * Initializes a new Card Move Request Cards Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardMoveRequestCardsItemsBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -48,7 +50,9 @@ class CardMoveRequestCardsItemsBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -57,7 +61,9 @@ class CardMoveRequestCardsItemsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -66,7 +72,9 @@ class CardMoveRequestCardsItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -75,7 +83,7 @@ class CardMoveRequestCardsItemsBuilder
     }
 
     /**
-     * Initializes a new card move request cards items object.
+     * Initializes a new Card Move Request Cards Items object.
      */
     public function build(): CardMoveRequestCardsItems
     {

@@ -32,7 +32,7 @@ class FleetmanagementV1CustomerPayers404Error1Builder
     }
 
     /**
-     * Initializes a new fleetmanagement v1 customer payers 404 error 1 Builder object.
+     * Initializes a new Fleetmanagement V1 Customer Payers 404 Error 1 Builder object.
      */
     public static function init(): self
     {
@@ -41,6 +41,8 @@ class FleetmanagementV1CustomerPayers404Error1Builder
 
     /**
      * Sets fault field.
+     *
+     * @param Fault|null $value
      */
     public function fault(?Fault $value): self
     {
@@ -49,7 +51,7 @@ class FleetmanagementV1CustomerPayers404Error1Builder
     }
 
     /**
-     * Initializes a new fleetmanagement v1 customer payers 404 error 1 object.
+     * Initializes a new Fleetmanagement V1 Customer Payers 404 Error 1 object.
      */
     public function build(): FleetmanagementV1CustomerPayers404Error1
     {

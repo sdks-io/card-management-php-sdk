@@ -31,7 +31,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Initializes a new schedule card block cards items Builder object.
+     * Initializes a new Schedule Card Block Cards Items Builder object.
+     *
+     * @param string $action
      */
     public static function init(string $action): self
     {
@@ -39,7 +41,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -48,7 +52,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -57,7 +63,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -66,7 +74,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -75,7 +85,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -84,7 +96,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -93,7 +107,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -102,7 +118,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -111,7 +129,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param string|null $value
      */
     public function pANID(?string $value): self
     {
@@ -120,7 +140,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets card expiry date field.
+     * Sets Card Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function cardExpiryDate(?string $value): self
     {
@@ -129,7 +151,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets from date field.
+     * Sets From Date field.
+     *
+     * @param string|null $value
      */
     public function fromDate(?string $value): self
     {
@@ -138,7 +162,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets to date field.
+     * Sets To Date field.
+     *
+     * @param string|null $value
      */
     public function toDate(?string $value): self
     {
@@ -147,7 +173,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets caller field.
+     * Sets Caller field.
+     *
+     * @param string|null $value
      */
     public function caller(?string $value): self
     {
@@ -156,7 +184,7 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Unsets caller field.
+     * Unsets Caller field.
      */
     public function unsetCaller(): self
     {
@@ -165,7 +193,9 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Sets notify caller field.
+     * Sets Notify Caller field.
+     *
+     * @param bool|null $value
      */
     public function notifyCaller(?bool $value): self
     {
@@ -174,7 +204,7 @@ class ScheduleCardBlockCardsItemsBuilder
     }
 
     /**
-     * Initializes a new schedule card block cards items object.
+     * Initializes a new Schedule Card Block Cards Items object.
      */
     public function build(): ScheduleCardBlockCardsItems
     {

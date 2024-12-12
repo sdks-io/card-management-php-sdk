@@ -32,7 +32,9 @@ class PINReminderCardDetailsBuilder
     }
 
     /**
-     * Initializes a new pinreminder card details Builder object.
+     * Initializes a new PIN Reminder Card Details Builder object.
+     *
+     * @param int $pINAdviceType
      */
     public static function init(int $pINAdviceType): self
     {
@@ -40,7 +42,9 @@ class PINReminderCardDetailsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -49,7 +53,9 @@ class PINReminderCardDetailsBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param int|null $value
      */
     public function pANID(?int $value): self
     {
@@ -58,7 +64,9 @@ class PINReminderCardDetailsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -67,7 +75,9 @@ class PINReminderCardDetailsBuilder
     }
 
     /**
-     * Sets card expiry date field.
+     * Sets Card Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function cardExpiryDate(?string $value): self
     {
@@ -76,7 +86,7 @@ class PINReminderCardDetailsBuilder
     }
 
     /**
-     * Unsets card expiry date field.
+     * Unsets Card Expiry Date field.
      */
     public function unsetCardExpiryDate(): self
     {
@@ -85,7 +95,9 @@ class PINReminderCardDetailsBuilder
     }
 
     /**
-     * Sets pincontact type field.
+     * Sets PIN Contact Type field.
+     *
+     * @param int|null $value
      */
     public function pINContactType(?int $value): self
     {
@@ -94,7 +106,9 @@ class PINReminderCardDetailsBuilder
     }
 
     /**
-     * Sets pindeliver to field.
+     * Sets PIN Deliver To field.
+     *
+     * @param PINDeliverTo|null $value
      */
     public function pINDeliverTo(?PINDeliverTo $value): self
     {
@@ -103,7 +117,7 @@ class PINReminderCardDetailsBuilder
     }
 
     /**
-     * Initializes a new pinreminder card details object.
+     * Initializes a new PIN Reminder Card Details object.
      */
     public function build(): PINReminderCardDetails
     {

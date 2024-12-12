@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AccountRequest;
+use ShellCardManagementAPIsLib\Models\Accounts;
 
 /**
  * Builder for model AccountRequest
@@ -31,7 +32,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Initializes a new account request Builder object.
+     * Initializes a new Account Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -48,7 +51,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets status field.
+     * Unsets Status field.
      */
     public function unsetStatus(): self
     {
@@ -57,7 +60,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets include card summary field.
+     * Sets Include Card Summary field.
+     *
+     * @param bool|null $value
      */
     public function includeCardSummary(?bool $value): self
     {
@@ -66,7 +71,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -75,7 +82,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -84,7 +91,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -93,7 +102,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -102,7 +111,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets page size field.
+     * Sets Page Size field.
+     *
+     * @param int|null $value
      */
     public function pageSize(?int $value): self
     {
@@ -111,7 +122,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets page size field.
+     * Unsets Page Size field.
      */
     public function unsetPageSize(): self
     {
@@ -120,7 +131,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -129,7 +142,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -138,7 +151,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -147,7 +162,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -156,7 +171,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -165,7 +182,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -174,7 +191,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets current page field.
+     * Sets Current Page field.
+     *
+     * @param int|null $value
      */
     public function currentPage(?int $value): self
     {
@@ -183,7 +202,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets current page field.
+     * Unsets Current Page field.
      */
     public function unsetCurrentPage(): self
     {
@@ -192,7 +211,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets invoice points only field.
+     * Sets Invoice Points Only field.
+     *
+     * @param bool|null $value
      */
     public function invoicePointsOnly(?bool $value): self
     {
@@ -201,7 +222,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets invoice points only field.
+     * Unsets Invoice Points Only field.
      */
     public function unsetInvoicePointsOnly(): self
     {
@@ -210,7 +231,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -219,7 +242,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -228,7 +251,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets return tolls customer id field.
+     * Sets Return Tolls Customer Id field.
+     *
+     * @param bool|null $value
      */
     public function returnTollsCustomerId(?bool $value): self
     {
@@ -237,7 +262,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets accounts field.
+     * Sets Accounts field.
+     *
+     * @param Accounts[]|null $value
      */
     public function accounts(?array $value): self
     {
@@ -246,7 +273,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets account name field.
+     * Sets Account Name field.
+     *
+     * @param string|null $value
      */
     public function accountName(?string $value): self
     {
@@ -255,7 +284,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Unsets account name field.
+     * Unsets Account Name field.
      */
     public function unsetAccountName(): self
     {
@@ -264,7 +293,9 @@ class AccountRequestBuilder
     }
 
     /**
-     * Sets status list field.
+     * Sets Status List field.
+     *
+     * @param array<string|null>|null $value
      */
     public function statusList(?array $value): self
     {
@@ -273,7 +304,7 @@ class AccountRequestBuilder
     }
 
     /**
-     * Initializes a new account request object.
+     * Initializes a new Account Request object.
      */
     public function build(): AccountRequest
     {

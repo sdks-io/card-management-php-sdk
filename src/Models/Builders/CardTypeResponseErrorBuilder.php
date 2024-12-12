@@ -31,7 +31,7 @@ class CardTypeResponseErrorBuilder
     }
 
     /**
-     * Initializes a new card type response error Builder object.
+     * Initializes a new Card Type Response Error Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardTypeResponseErrorBuilder
     }
 
     /**
-     * Sets code field.
+     * Sets Code field.
+     *
+     * @param string|null $value
      */
     public function code(?string $value): self
     {
@@ -48,7 +50,9 @@ class CardTypeResponseErrorBuilder
     }
 
     /**
-     * Sets description field.
+     * Sets Description field.
+     *
+     * @param string|null $value
      */
     public function description(?string $value): self
     {
@@ -57,7 +61,7 @@ class CardTypeResponseErrorBuilder
     }
 
     /**
-     * Initializes a new card type response error object.
+     * Initializes a new Card Type Response Error object.
      */
     public function build(): CardTypeResponseError
     {

@@ -32,7 +32,7 @@ class DefaultErrorBuilder
     }
 
     /**
-     * Initializes a new default error Builder object.
+     * Initializes a new Default Error Builder object.
      */
     public static function init(): self
     {
@@ -41,6 +41,8 @@ class DefaultErrorBuilder
 
     /**
      * Sets fault field.
+     *
+     * @param Fault|null $value
      */
     public function fault(?Fault $value): self
     {
@@ -49,7 +51,7 @@ class DefaultErrorBuilder
     }
 
     /**
-     * Initializes a new default error object.
+     * Initializes a new Default Error object.
      */
     public function build(): DefaultError
     {

@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\Card;
 use ShellCardManagementAPIsLib\Models\CardSearchResponse;
 
 /**
@@ -31,7 +32,7 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Initializes a new card search response Builder object.
+     * Initializes a new Card Search Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -48,7 +51,7 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -57,7 +60,9 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -66,7 +71,7 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Unsets status field.
+     * Unsets Status field.
      */
     public function unsetStatus(): self
     {
@@ -75,7 +80,9 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Sets data field.
+     * Sets Data field.
+     *
+     * @param Card[]|null $value
      */
     public function data(?array $value): self
     {
@@ -84,7 +91,9 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Sets page field.
+     * Sets Page field.
+     *
+     * @param int|null $value
      */
     public function page(?int $value): self
     {
@@ -93,7 +102,9 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Sets page size field.
+     * Sets Page Size field.
+     *
+     * @param int|null $value
      */
     public function pageSize(?int $value): self
     {
@@ -102,7 +113,9 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Sets total pages field.
+     * Sets Total Pages field.
+     *
+     * @param int|null $value
      */
     public function totalPages(?int $value): self
     {
@@ -111,7 +124,9 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Sets total records field.
+     * Sets Total Records field.
+     *
+     * @param int|null $value
      */
     public function totalRecords(?int $value): self
     {
@@ -120,7 +135,7 @@ class CardSearchResponseBuilder
     }
 
     /**
-     * Initializes a new card search response object.
+     * Initializes a new Card Search Response object.
      */
     public function build(): CardSearchResponse
     {

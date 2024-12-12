@@ -11,6 +11,8 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\ErrorDetails;
+use ShellCardManagementAPIsLib\Models\SubmittedCard;
 use ShellCardManagementAPIsLib\Models\UpdateCardStatusResponse;
 
 /**
@@ -31,7 +33,7 @@ class UpdateCardStatusResponseBuilder
     }
 
     /**
-     * Initializes a new update card status response Builder object.
+     * Initializes a new Update Card Status Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +41,9 @@ class UpdateCardStatusResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -48,7 +52,9 @@ class UpdateCardStatusResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -57,7 +63,9 @@ class UpdateCardStatusResponseBuilder
     }
 
     /**
-     * Sets data field.
+     * Sets Data field.
+     *
+     * @param SubmittedCard[]|null $value
      */
     public function data(?array $value): self
     {
@@ -66,7 +74,9 @@ class UpdateCardStatusResponseBuilder
     }
 
     /**
-     * Sets main reference field.
+     * Sets Main Reference field.
+     *
+     * @param int|null $value
      */
     public function mainReference(?int $value): self
     {
@@ -75,7 +85,9 @@ class UpdateCardStatusResponseBuilder
     }
 
     /**
-     * Sets order replacement reference field.
+     * Sets Order Replacement Reference field.
+     *
+     * @param int|null $value
      */
     public function orderReplacementReference(?int $value): self
     {
@@ -84,7 +96,9 @@ class UpdateCardStatusResponseBuilder
     }
 
     /**
-     * Sets errors field.
+     * Sets Errors field.
+     *
+     * @param ErrorDetails[]|null $value
      */
     public function errors(?array $value): self
     {
@@ -93,7 +107,7 @@ class UpdateCardStatusResponseBuilder
     }
 
     /**
-     * Initializes a new update card status response object.
+     * Initializes a new Update Card Status Response object.
      */
     public function build(): UpdateCardStatusResponse
     {

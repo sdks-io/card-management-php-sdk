@@ -31,7 +31,7 @@ class CountryRestrictionBuilder
     }
 
     /**
-     * Initializes a new country restriction Builder object.
+     * Initializes a new Country Restriction Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CountryRestrictionBuilder
     }
 
     /**
-     * Sets countries field.
+     * Sets Countries field.
+     *
+     * @param string[]|null $value
      */
     public function countries(?array $value): self
     {
@@ -48,7 +50,9 @@ class CountryRestrictionBuilder
     }
 
     /**
-     * Sets exclusive field.
+     * Sets Exclusive field.
+     *
+     * @param bool|null $value
      */
     public function exclusive(?bool $value): self
     {
@@ -57,7 +61,7 @@ class CountryRestrictionBuilder
     }
 
     /**
-     * Initializes a new country restriction object.
+     * Initializes a new Country Restriction object.
      */
     public function build(): CountryRestriction
     {

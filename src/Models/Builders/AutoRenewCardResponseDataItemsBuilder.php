@@ -31,7 +31,7 @@ class AutoRenewCardResponseDataItemsBuilder
     }
 
     /**
-     * Initializes a new auto renew card response data items Builder object.
+     * Initializes a new Auto Renew Card Response Data Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class AutoRenewCardResponseDataItemsBuilder
     }
 
     /**
-     * Sets auto renew reference id field.
+     * Sets Auto Renew Reference Id field.
+     *
+     * @param int|null $value
      */
     public function autoRenewReferenceId(?int $value): self
     {
@@ -48,7 +50,7 @@ class AutoRenewCardResponseDataItemsBuilder
     }
 
     /**
-     * Unsets auto renew reference id field.
+     * Unsets Auto Renew Reference Id field.
      */
     public function unsetAutoRenewReferenceId(): self
     {
@@ -57,7 +59,9 @@ class AutoRenewCardResponseDataItemsBuilder
     }
 
     /**
-     * Sets card id and pan field.
+     * Sets Card Id And PAN field.
+     *
+     * @param string|null $value
      */
     public function cardIdAndPAN(?string $value): self
     {
@@ -66,7 +70,7 @@ class AutoRenewCardResponseDataItemsBuilder
     }
 
     /**
-     * Unsets card id and pan field.
+     * Unsets Card Id And PAN field.
      */
     public function unsetCardIdAndPAN(): self
     {
@@ -75,7 +79,9 @@ class AutoRenewCardResponseDataItemsBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param float|null $value
      */
     public function pANID(?float $value): self
     {
@@ -84,7 +90,7 @@ class AutoRenewCardResponseDataItemsBuilder
     }
 
     /**
-     * Unsets panid field.
+     * Unsets PANID field.
      */
     public function unsetPANID(): self
     {
@@ -93,7 +99,7 @@ class AutoRenewCardResponseDataItemsBuilder
     }
 
     /**
-     * Initializes a new auto renew card response data items object.
+     * Initializes a new Auto Renew Card Response Data Items object.
      */
     public function build(): AutoRenewCardResponseDataItems
     {

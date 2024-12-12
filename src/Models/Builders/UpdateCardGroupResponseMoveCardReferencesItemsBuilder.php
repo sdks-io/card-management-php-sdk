@@ -31,7 +31,7 @@ class UpdateCardGroupResponseMoveCardReferencesItemsBuilder
     }
 
     /**
-     * Initializes a new update card group response move card references items Builder object.
+     * Initializes a new Update Card Group Response Move Card References Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class UpdateCardGroupResponseMoveCardReferencesItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -48,7 +50,7 @@ class UpdateCardGroupResponseMoveCardReferencesItemsBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -57,7 +59,9 @@ class UpdateCardGroupResponseMoveCardReferencesItemsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -66,7 +70,7 @@ class UpdateCardGroupResponseMoveCardReferencesItemsBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -75,7 +79,9 @@ class UpdateCardGroupResponseMoveCardReferencesItemsBuilder
     }
 
     /**
-     * Sets reference field.
+     * Sets Reference field.
+     *
+     * @param int|null $value
      */
     public function reference(?int $value): self
     {
@@ -84,7 +90,7 @@ class UpdateCardGroupResponseMoveCardReferencesItemsBuilder
     }
 
     /**
-     * Unsets reference field.
+     * Unsets Reference field.
      */
     public function unsetReference(): self
     {
@@ -93,7 +99,7 @@ class UpdateCardGroupResponseMoveCardReferencesItemsBuilder
     }
 
     /**
-     * Initializes a new update card group response move card references items object.
+     * Initializes a new Update Card Group Response Move Card References Items object.
      */
     public function build(): UpdateCardGroupResponseMoveCardReferencesItems
     {

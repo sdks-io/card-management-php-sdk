@@ -11,6 +11,8 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\ProductGroup;
+use ShellCardManagementAPIsLib\Models\RestrictionProduct;
 use ShellCardManagementAPIsLib\Models\SearchProductRestriction;
 
 /**
@@ -31,7 +33,7 @@ class SearchProductRestrictionBuilder
     }
 
     /**
-     * Initializes a new search product restriction Builder object.
+     * Initializes a new Search Product Restriction Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +41,9 @@ class SearchProductRestrictionBuilder
     }
 
     /**
-     * Sets products field.
+     * Sets Products field.
+     *
+     * @param RestrictionProduct[]|null $value
      */
     public function products(?array $value): self
     {
@@ -48,7 +52,9 @@ class SearchProductRestrictionBuilder
     }
 
     /**
-     * Sets product groups field.
+     * Sets Product Groups field.
+     *
+     * @param ProductGroup[]|null $value
      */
     public function productGroups(?array $value): self
     {
@@ -57,7 +63,7 @@ class SearchProductRestrictionBuilder
     }
 
     /**
-     * Initializes a new search product restriction object.
+     * Initializes a new Search Product Restriction object.
      */
     public function build(): SearchProductRestriction
     {

@@ -31,7 +31,7 @@ class CreateCardGroupResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Initializes a new create card group response successful requests items Builder object.
+     * Initializes a new Create Card Group Response Successful Requests Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CreateCardGroupResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -48,7 +50,9 @@ class CreateCardGroupResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -57,7 +61,9 @@ class CreateCardGroupResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Sets reference field.
+     * Sets Reference field.
+     *
+     * @param int|null $value
      */
     public function reference(?int $value): self
     {
@@ -66,7 +72,7 @@ class CreateCardGroupResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Initializes a new create card group response successful requests items object.
+     * Initializes a new Create Card Group Response Successful Requests Items object.
      */
     public function build(): CreateCardGroupResponseSuccessfulRequestsItems
     {

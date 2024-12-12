@@ -31,7 +31,7 @@ class GeneratePINKeyResponseBuilder
     }
 
     /**
-     * Initializes a new generate pinkey response Builder object.
+     * Initializes a new Generate PIN Key Response Builder object.
      */
     public static function init(): self
     {
@@ -40,6 +40,8 @@ class GeneratePINKeyResponseBuilder
 
     /**
      * Sets uid field.
+     *
+     * @param string|null $value
      */
     public function uid(?string $value): self
     {
@@ -49,6 +51,8 @@ class GeneratePINKeyResponseBuilder
 
     /**
      * Sets value field.
+     *
+     * @param string|null $value
      */
     public function value(?string $value): self
     {
@@ -57,7 +61,7 @@ class GeneratePINKeyResponseBuilder
     }
 
     /**
-     * Initializes a new generate pinkey response object.
+     * Initializes a new Generate PIN Key Response object.
      */
     public function build(): GeneratePINKeyResponse
     {

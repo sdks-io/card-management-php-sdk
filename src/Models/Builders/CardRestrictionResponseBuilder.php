@@ -13,6 +13,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardRestrictionResponse;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
+use ShellCardManagementAPIsLib\Models\RestrictioncardsRes;
 
 /**
  * Builder for model CardRestrictionResponse
@@ -32,7 +33,7 @@ class CardRestrictionResponseBuilder
     }
 
     /**
-     * Initializes a new card restriction response Builder object.
+     * Initializes a new Card Restriction Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +41,9 @@ class CardRestrictionResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -49,7 +52,7 @@ class CardRestrictionResponseBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -58,7 +61,9 @@ class CardRestrictionResponseBuilder
     }
 
     /**
-     * Sets restriction request reference field.
+     * Sets Restriction Request Reference field.
+     *
+     * @param float|null $value
      */
     public function restrictionRequestReference(?float $value): self
     {
@@ -67,7 +72,9 @@ class CardRestrictionResponseBuilder
     }
 
     /**
-     * Sets cards field.
+     * Sets Cards field.
+     *
+     * @param RestrictioncardsRes[]|null $value
      */
     public function cards(?array $value): self
     {
@@ -76,7 +83,9 @@ class CardRestrictionResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -85,7 +94,7 @@ class CardRestrictionResponseBuilder
     }
 
     /**
-     * Initializes a new card restriction response object.
+     * Initializes a new Card Restriction Response object.
      */
     public function build(): CardRestrictionResponse
     {

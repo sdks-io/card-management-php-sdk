@@ -31,7 +31,7 @@ class ShellSiteRestrictionBuilder
     }
 
     /**
-     * Initializes a new shell site restriction Builder object.
+     * Initializes a new Shell Site Restriction Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class ShellSiteRestrictionBuilder
     }
 
     /**
-     * Sets country field.
+     * Sets Country field.
+     *
+     * @param string|null $value
      */
     public function country(?string $value): self
     {
@@ -48,7 +50,9 @@ class ShellSiteRestrictionBuilder
     }
 
     /**
-     * Sets sites field.
+     * Sets Sites field.
+     *
+     * @param string[]|null $value
      */
     public function sites(?array $value): self
     {
@@ -57,7 +61,9 @@ class ShellSiteRestrictionBuilder
     }
 
     /**
-     * Sets site groups field.
+     * Sets Site Groups field.
+     *
+     * @param string[]|null $value
      */
     public function siteGroups(?array $value): self
     {
@@ -66,7 +72,9 @@ class ShellSiteRestrictionBuilder
     }
 
     /**
-     * Sets exclusive field.
+     * Sets Exclusive field.
+     *
+     * @param bool|null $value
      */
     public function exclusive(?bool $value): self
     {
@@ -75,7 +83,7 @@ class ShellSiteRestrictionBuilder
     }
 
     /**
-     * Initializes a new shell site restriction object.
+     * Initializes a new Shell Site Restriction object.
      */
     public function build(): ShellSiteRestriction
     {

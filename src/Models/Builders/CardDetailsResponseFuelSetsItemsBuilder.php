@@ -31,7 +31,10 @@ class CardDetailsResponseFuelSetsItemsBuilder
     }
 
     /**
-     * Initializes a new card details response fuel sets items Builder object.
+     * Initializes a new Card Details Response Fuel Sets Items Builder object.
+     *
+     * @param int $productRestrictionId
+     * @param string $description
      */
     public static function init(int $productRestrictionId, string $description): self
     {
@@ -39,7 +42,7 @@ class CardDetailsResponseFuelSetsItemsBuilder
     }
 
     /**
-     * Initializes a new card details response fuel sets items object.
+     * Initializes a new Card Details Response Fuel Sets Items object.
      */
     public function build(): CardDetailsResponseFuelSetsItems
     {

@@ -31,7 +31,7 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Initializes a new restriction card list Builder object.
+     * Initializes a new Restriction Card List Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -48,7 +50,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -57,7 +61,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets expiry date field.
+     * Sets Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function expiryDate(?string $value): self
     {
@@ -66,7 +72,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets status id field.
+     * Sets Status Id field.
+     *
+     * @param int|null $value
      */
     public function statusId(?int $value): self
     {
@@ -75,7 +83,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets status description field.
+     * Sets Status Description field.
+     *
+     * @param string|null $value
      */
     public function statusDescription(?string $value): self
     {
@@ -84,7 +94,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets driver name field.
+     * Sets Driver Name field.
+     *
+     * @param string|null $value
      */
     public function driverName(?string $value): self
     {
@@ -93,7 +105,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets vrn field.
+     * Sets VRN field.
+     *
+     * @param string|null $value
      */
     public function vRN(?string $value): self
     {
@@ -102,7 +116,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets issue date field.
+     * Sets Issue Date field.
+     *
+     * @param string|null $value
      */
     public function issueDate(?string $value): self
     {
@@ -111,7 +127,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets issue number field.
+     * Sets Issue Number field.
+     *
+     * @param int|null $value
      */
     public function issueNumber(?int $value): self
     {
@@ -120,7 +138,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -129,7 +149,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -138,7 +160,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets account name field.
+     * Sets Account Name field.
+     *
+     * @param string|null $value
      */
     public function accountName(?string $value): self
     {
@@ -147,7 +171,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets account short name field.
+     * Sets Account Short Name field.
+     *
+     * @param string|null $value
      */
     public function accountShortName(?string $value): self
     {
@@ -156,7 +182,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets currency code field.
+     * Sets Currency Code field.
+     *
+     * @param string|null $value
      */
     public function currencyCode(?string $value): self
     {
@@ -165,7 +193,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets col co currency code field.
+     * Sets Col Co Currency Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCurrencyCode(?string $value): self
     {
@@ -174,7 +204,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets col co currency symbol field.
+     * Sets Col Co Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function colCoCurrencySymbol(?string $value): self
     {
@@ -183,7 +215,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets restriction currency code field.
+     * Sets Restriction Currency Code field.
+     *
+     * @param string|null $value
      */
     public function restrictionCurrencyCode(?string $value): self
     {
@@ -192,7 +226,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets restriction currency symbol field.
+     * Sets Restriction Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function restrictionCurrencySymbol(?string $value): self
     {
@@ -201,7 +237,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets purchase category id field.
+     * Sets Purchase Category Id field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryId(?string $value): self
     {
@@ -210,7 +248,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets purchase category code field.
+     * Sets Purchase Category Code field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryCode(?string $value): self
     {
@@ -219,7 +259,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets purchase category name field.
+     * Sets Purchase Category Name field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryName(?string $value): self
     {
@@ -228,7 +270,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets is superseded field.
+     * Sets Is Superseded field.
+     *
+     * @param bool|null $value
      */
     public function isSuperseded(?bool $value): self
     {
@@ -237,7 +281,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets is virtual card field.
+     * Sets Is Virtual Card field.
+     *
+     * @param bool|null $value
      */
     public function isVirtualCard(?bool $value): self
     {
@@ -246,7 +292,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets is national field.
+     * Sets Is National field.
+     *
+     * @param bool|null $value
      */
     public function isNational(?bool $value): self
     {
@@ -255,7 +303,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets is international field.
+     * Sets Is International field.
+     *
+     * @param bool|null $value
      */
     public function isInternational(?bool $value): self
     {
@@ -264,7 +314,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets is crt field.
+     * Sets Is CRT field.
+     *
+     * @param bool|null $value
      */
     public function isCRT(?bool $value): self
     {
@@ -273,7 +325,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets is fleet field.
+     * Sets Is Fleet field.
+     *
+     * @param bool|null $value
      */
     public function isFleet(?bool $value): self
     {
@@ -282,7 +336,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets is shell sites only field.
+     * Sets Is Shell Sites Only field.
+     *
+     * @param bool|null $value
      */
     public function isShellSitesOnly(?bool $value): self
     {
@@ -291,7 +347,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets is partner sites included field.
+     * Sets Is Partner Sites Included field.
+     *
+     * @param bool|null $value
      */
     public function isPartnerSitesIncluded(?bool $value): self
     {
@@ -300,7 +358,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets card type id field.
+     * Sets Card Type Id field.
+     *
+     * @param int|null $value
      */
     public function cardTypeId(?int $value): self
     {
@@ -309,7 +369,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets card type code field.
+     * Sets Card Type Code field.
+     *
+     * @param string|null $value
      */
     public function cardTypeCode(?string $value): self
     {
@@ -318,7 +380,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets card type name field.
+     * Sets Card Type Name field.
+     *
+     * @param string|null $value
      */
     public function cardTypeName(?string $value): self
     {
@@ -327,7 +391,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets bundle id field.
+     * Sets Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function bundleId(?string $value): self
     {
@@ -336,7 +402,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets medium type id field.
+     * Sets Medium Type ID field.
+     *
+     * @param int|null $value
      */
     public function mediumTypeID(?int $value): self
     {
@@ -345,7 +413,9 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Sets medium type field.
+     * Sets Medium Type field.
+     *
+     * @param string|null $value
      */
     public function mediumType(?string $value): self
     {
@@ -354,7 +424,7 @@ class RestrictionCardListBuilder
     }
 
     /**
-     * Initializes a new restriction card list object.
+     * Initializes a new Restriction Card List object.
      */
     public function build(): RestrictionCardList
     {

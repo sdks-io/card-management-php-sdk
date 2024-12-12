@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\DeliveryAddressUpdate;
 use ShellCardManagementAPIsLib\Models\DeliveryAddressUpdateRequest;
 
 /**
@@ -31,7 +32,7 @@ class DeliveryAddressUpdateRequestBuilder
     }
 
     /**
-     * Initializes a new delivery address update request Builder object.
+     * Initializes a new Delivery Address Update Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class DeliveryAddressUpdateRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -48,7 +51,9 @@ class DeliveryAddressUpdateRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -57,7 +62,9 @@ class DeliveryAddressUpdateRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -66,7 +73,9 @@ class DeliveryAddressUpdateRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -75,7 +84,9 @@ class DeliveryAddressUpdateRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -84,7 +95,9 @@ class DeliveryAddressUpdateRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -93,7 +106,9 @@ class DeliveryAddressUpdateRequestBuilder
     }
 
     /**
-     * Sets delivery address updates field.
+     * Sets Delivery Address Updates field.
+     *
+     * @param DeliveryAddressUpdate[]|null $value
      */
     public function deliveryAddressUpdates(?array $value): self
     {
@@ -102,7 +117,7 @@ class DeliveryAddressUpdateRequestBuilder
     }
 
     /**
-     * Initializes a new delivery address update request object.
+     * Initializes a new Delivery Address Update Request object.
      */
     public function build(): DeliveryAddressUpdateRequest
     {

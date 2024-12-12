@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\ProductGroup;
 use ShellCardManagementAPIsLib\Models\PurchaseCategory1AllOf0;
 
 /**
@@ -31,7 +32,10 @@ class PurchaseCategory1AllOf0Builder
     }
 
     /**
-     * Initializes a new purchase category 1 all of 0 Builder object.
+     * Initializes a new Purchase Category 1 All Of 0 Builder object.
+     *
+     * @param bool $isVisible
+     * @param ProductGroup[] $productGroups
      */
     public static function init(bool $isVisible, array $productGroups): self
     {
@@ -39,7 +43,9 @@ class PurchaseCategory1AllOf0Builder
     }
 
     /**
-     * Sets id field.
+     * Sets Id field.
+     *
+     * @param int|null $value
      */
     public function id(?int $value): self
     {
@@ -48,7 +54,9 @@ class PurchaseCategory1AllOf0Builder
     }
 
     /**
-     * Sets code field.
+     * Sets Code field.
+     *
+     * @param string|null $value
      */
     public function code(?string $value): self
     {
@@ -57,7 +65,9 @@ class PurchaseCategory1AllOf0Builder
     }
 
     /**
-     * Sets name field.
+     * Sets Name field.
+     *
+     * @param string|null $value
      */
     public function name(?string $value): self
     {
@@ -66,7 +76,9 @@ class PurchaseCategory1AllOf0Builder
     }
 
     /**
-     * Sets title field.
+     * Sets Title field.
+     *
+     * @param string|null $value
      */
     public function title(?string $value): self
     {
@@ -75,7 +87,9 @@ class PurchaseCategory1AllOf0Builder
     }
 
     /**
-     * Sets description field.
+     * Sets Description field.
+     *
+     * @param string|null $value
      */
     public function description(?string $value): self
     {
@@ -84,7 +98,7 @@ class PurchaseCategory1AllOf0Builder
     }
 
     /**
-     * Initializes a new purchase category 1 all of 0 object.
+     * Initializes a new Purchase Category 1 All Of 0 object.
      */
     public function build(): PurchaseCategory1AllOf0
     {

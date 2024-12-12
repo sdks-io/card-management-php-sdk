@@ -12,7 +12,10 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\Address;
+use ShellCardManagementAPIsLib\Models\BankAccount;
+use ShellCardManagementAPIsLib\Models\CustomerContract;
 use ShellCardManagementAPIsLib\Models\FinanceCurrency2;
+use ShellCardManagementAPIsLib\Models\InvoiceDistributionMethod;
 use ShellCardManagementAPIsLib\Models\PayerDetails;
 
 /**
@@ -33,7 +36,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Initializes a new payer details Builder object.
+     * Initializes a new Payer Details Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +44,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -50,7 +55,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -59,7 +64,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -68,7 +75,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -77,7 +84,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets country code field.
+     * Sets Country Code field.
+     *
+     * @param string|null $value
      */
     public function countryCode(?string $value): self
     {
@@ -86,7 +95,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets country code field.
+     * Unsets Country Code field.
      */
     public function unsetCountryCode(): self
     {
@@ -95,7 +104,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets country field.
+     * Sets Country field.
+     *
+     * @param string|null $value
      */
     public function country(?string $value): self
     {
@@ -104,7 +115,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets country field.
+     * Unsets Country field.
      */
     public function unsetCountry(): self
     {
@@ -113,7 +124,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -122,7 +135,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -131,7 +144,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -140,7 +155,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -149,7 +164,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets payer full name field.
+     * Sets Payer Full Name field.
+     *
+     * @param string|null $value
      */
     public function payerFullName(?string $value): self
     {
@@ -158,7 +175,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets payer full name field.
+     * Unsets Payer Full Name field.
      */
     public function unsetPayerFullName(): self
     {
@@ -167,7 +184,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets payer short name field.
+     * Sets Payer Short Name field.
+     *
+     * @param string|null $value
      */
     public function payerShortName(?string $value): self
     {
@@ -176,7 +195,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets payer short name field.
+     * Unsets Payer Short Name field.
      */
     public function unsetPayerShortName(): self
     {
@@ -185,7 +204,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets payer group id field.
+     * Sets Payer Group Id field.
+     *
+     * @param int|null $value
      */
     public function payerGroupId(?int $value): self
     {
@@ -194,7 +215,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets payer group id field.
+     * Unsets Payer Group Id field.
      */
     public function unsetPayerGroupId(): self
     {
@@ -203,7 +224,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets amount due field.
+     * Sets Amount Due field.
+     *
+     * @param float|null $value
      */
     public function amountDue(?float $value): self
     {
@@ -212,7 +235,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets amount due field.
+     * Unsets Amount Due field.
      */
     public function unsetAmountDue(): self
     {
@@ -221,7 +244,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets amount overdue field.
+     * Sets Amount Overdue field.
+     *
+     * @param float|null $value
      */
     public function amountOverdue(?float $value): self
     {
@@ -230,7 +255,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets amount overdue field.
+     * Unsets Amount Overdue field.
      */
     public function unsetAmountOverdue(): self
     {
@@ -239,7 +264,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets amount not overdue field.
+     * Sets Amount Not Overdue field.
+     *
+     * @param float|null $value
      */
     public function amountNotOverdue(?float $value): self
     {
@@ -248,7 +275,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets amount not overdue field.
+     * Unsets Amount Not Overdue field.
      */
     public function unsetAmountNotOverdue(): self
     {
@@ -257,7 +284,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets outstanding balance field.
+     * Sets Outstanding Balance field.
+     *
+     * @param float|null $value
      */
     public function outstandingBalance(?float $value): self
     {
@@ -266,7 +295,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets outstanding balance field.
+     * Unsets Outstanding Balance field.
      */
     public function unsetOutstandingBalance(): self
     {
@@ -275,7 +304,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets unallocated payment field.
+     * Sets Unallocated Payment field.
+     *
+     * @param float|null $value
      */
     public function unallocatedPayment(?float $value): self
     {
@@ -284,7 +315,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets unallocated payment field.
+     * Unsets Unallocated Payment field.
      */
     public function unsetUnallocatedPayment(): self
     {
@@ -293,7 +324,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets soacurrency code field.
+     * Sets SOA Currency Code field.
+     *
+     * @param string|null $value
      */
     public function sOACurrencyCode(?string $value): self
     {
@@ -302,7 +335,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets soacurrency code field.
+     * Unsets SOA Currency Code field.
      */
     public function unsetSOACurrencyCode(): self
     {
@@ -311,7 +344,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets soacurrency symbol field.
+     * Sets SOA Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function sOACurrencySymbol(?string $value): self
     {
@@ -320,7 +355,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets soacurrency symbol field.
+     * Unsets SOA Currency Symbol field.
      */
     public function unsetSOACurrencySymbol(): self
     {
@@ -329,7 +364,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets soacredit limit currency code field.
+     * Sets SOA Credit Limit Currency Code field.
+     *
+     * @param string|null $value
      */
     public function sOACreditLimitCurrencyCode(?string $value): self
     {
@@ -338,7 +375,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets soacredit limit currency code field.
+     * Unsets SOA Credit Limit Currency Code field.
      */
     public function unsetSOACreditLimitCurrencyCode(): self
     {
@@ -347,7 +384,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets soacredit limit currency symbol field.
+     * Sets SOA Credit Limit Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function sOACreditLimitCurrencySymbol(?string $value): self
     {
@@ -356,7 +395,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets soacredit limit currency symbol field.
+     * Unsets SOA Credit Limit Currency Symbol field.
      */
     public function unsetSOACreditLimitCurrencySymbol(): self
     {
@@ -365,7 +404,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets last payment currency code field.
+     * Sets Last Payment Currency Code field.
+     *
+     * @param string|null $value
      */
     public function lastPaymentCurrencyCode(?string $value): self
     {
@@ -374,7 +415,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets last payment currency code field.
+     * Unsets Last Payment Currency Code field.
      */
     public function unsetLastPaymentCurrencyCode(): self
     {
@@ -383,7 +424,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets last payment currency symbol field.
+     * Sets Last Payment Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function lastPaymentCurrencySymbol(?string $value): self
     {
@@ -392,7 +435,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets last payment currency symbol field.
+     * Unsets Last Payment Currency Symbol field.
      */
     public function unsetLastPaymentCurrencySymbol(): self
     {
@@ -401,7 +444,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets last payment amount field.
+     * Sets Last Payment Amount field.
+     *
+     * @param float|null $value
      */
     public function lastPaymentAmount(?float $value): self
     {
@@ -410,7 +455,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets last payment amount field.
+     * Unsets Last Payment Amount field.
      */
     public function unsetLastPaymentAmount(): self
     {
@@ -419,7 +464,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets last payment date field.
+     * Sets Last Payment Date field.
+     *
+     * @param string|null $value
      */
     public function lastPaymentDate(?string $value): self
     {
@@ -428,7 +475,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets last payment date field.
+     * Unsets Last Payment Date field.
      */
     public function unsetLastPaymentDate(): self
     {
@@ -437,7 +484,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets soalast payment amount field.
+     * Sets SOA Last Payment Amount field.
+     *
+     * @param float|null $value
      */
     public function sOALastPaymentAmount(?float $value): self
     {
@@ -446,7 +495,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets soalast payment amount field.
+     * Unsets SOA Last Payment Amount field.
      */
     public function unsetSOALastPaymentAmount(): self
     {
@@ -455,7 +504,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets soalast payment date field.
+     * Sets SOA Last Payment Date field.
+     *
+     * @param string|null $value
      */
     public function sOALastPaymentDate(?string $value): self
     {
@@ -464,7 +515,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets soalast payment date field.
+     * Unsets SOA Last Payment Date field.
      */
     public function unsetSOALastPaymentDate(): self
     {
@@ -473,7 +524,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets currency code field.
+     * Sets Currency Code field.
+     *
+     * @param string|null $value
      */
     public function currencyCode(?string $value): self
     {
@@ -482,7 +535,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets currency code field.
+     * Unsets Currency Code field.
      */
     public function unsetCurrencyCode(): self
     {
@@ -491,7 +544,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets currency symbol field.
+     * Sets Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function currencySymbol(?string $value): self
     {
@@ -500,7 +555,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets currency symbol field.
+     * Unsets Currency Symbol field.
      */
     public function unsetCurrencySymbol(): self
     {
@@ -509,7 +564,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -518,7 +575,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -527,7 +584,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets local currency code field.
+     * Sets Local Currency Code field.
+     *
+     * @param string|null $value
      */
     public function localCurrencyCode(?string $value): self
     {
@@ -536,7 +595,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets local currency code field.
+     * Unsets Local Currency Code field.
      */
     public function unsetLocalCurrencyCode(): self
     {
@@ -545,7 +604,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets local currency symbol field.
+     * Sets Local Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function localCurrencySymbol(?string $value): self
     {
@@ -554,7 +615,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets local currency symbol field.
+     * Unsets Local Currency Symbol field.
      */
     public function unsetLocalCurrencySymbol(): self
     {
@@ -563,7 +624,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets local currency exchange rate field.
+     * Sets Local Currency Exchange Rate field.
+     *
+     * @param float|null $value
      */
     public function localCurrencyExchangeRate(?float $value): self
     {
@@ -572,7 +635,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets local currency exchange rate field.
+     * Unsets Local Currency Exchange Rate field.
      */
     public function unsetLocalCurrencyExchangeRate(): self
     {
@@ -581,7 +644,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets local currency exchange rate so a field.
+     * Sets Local Currency Exchange Rate So A field.
+     *
+     * @param float|null $value
      */
     public function localCurrencyExchangeRateSoA(?float $value): self
     {
@@ -590,7 +655,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets local currency exchange rate so a field.
+     * Unsets Local Currency Exchange Rate So A field.
      */
     public function unsetLocalCurrencyExchangeRateSoA(): self
     {
@@ -599,7 +664,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets billing frequency type id field.
+     * Sets Billing Frequency Type Id field.
+     *
+     * @param int|null $value
      */
     public function billingFrequencyTypeId(?int $value): self
     {
@@ -608,7 +675,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets billing frequency type id field.
+     * Unsets Billing Frequency Type Id field.
      */
     public function unsetBillingFrequencyTypeId(): self
     {
@@ -617,7 +684,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets billing frequency type field.
+     * Sets Billing Frequency Type field.
+     *
+     * @param string|null $value
      */
     public function billingFrequencyType(?string $value): self
     {
@@ -626,7 +695,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets billing frequency type field.
+     * Unsets Billing Frequency Type field.
      */
     public function unsetBillingFrequencyType(): self
     {
@@ -635,7 +704,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets billing run frequency type id field.
+     * Sets Billing Run Frequency Type Id field.
+     *
+     * @param int|null $value
      */
     public function billingRunFrequencyTypeId(?int $value): self
     {
@@ -644,7 +715,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets billing run frequency type id field.
+     * Unsets Billing Run Frequency Type Id field.
      */
     public function unsetBillingRunFrequencyTypeId(): self
     {
@@ -653,7 +724,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets billing run frequnecy field.
+     * Sets Billing Run Frequnecy field.
+     *
+     * @param string|null $value
      */
     public function billingRunFrequnecy(?string $value): self
     {
@@ -662,7 +735,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets billing run frequnecy field.
+     * Unsets Billing Run Frequnecy field.
      */
     public function unsetBillingRunFrequnecy(): self
     {
@@ -671,7 +744,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets day 1 run field.
+     * Sets Day 1 Run field.
+     *
+     * @param int|null $value
      */
     public function day1Run(?int $value): self
     {
@@ -680,7 +755,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets day 1 run field.
+     * Unsets Day 1 Run field.
      */
     public function unsetDay1Run(): self
     {
@@ -689,7 +764,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets day 2 run field.
+     * Sets Day 2 Run field.
+     *
+     * @param int|null $value
      */
     public function day2Run(?int $value): self
     {
@@ -698,7 +775,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets day 2 run field.
+     * Unsets Day 2 Run field.
      */
     public function unsetDay2Run(): self
     {
@@ -707,7 +784,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets day 3 run field.
+     * Sets Day 3 Run field.
+     *
+     * @param int|null $value
      */
     public function day3Run(?int $value): self
     {
@@ -716,7 +795,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets day 3 run field.
+     * Unsets Day 3 Run field.
      */
     public function unsetDay3Run(): self
     {
@@ -725,7 +804,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets day 4 run field.
+     * Sets Day 4 Run field.
+     *
+     * @param int|null $value
      */
     public function day4Run(?int $value): self
     {
@@ -734,7 +815,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets day 4 run field.
+     * Unsets Day 4 Run field.
      */
     public function unsetDay4Run(): self
     {
@@ -743,7 +824,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets invoice distribution methods field.
+     * Sets Invoice Distribution Methods field.
+     *
+     * @param InvoiceDistributionMethod[]|null $value
      */
     public function invoiceDistributionMethods(?array $value): self
     {
@@ -752,7 +835,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets output type field.
+     * Sets Output Type field.
+     *
+     * @param string|null $value
      */
     public function outputType(?string $value): self
     {
@@ -761,7 +846,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets output type field.
+     * Unsets Output Type field.
      */
     public function unsetOutputType(): self
     {
@@ -770,7 +855,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets invoice account id field.
+     * Sets Invoice Account ID field.
+     *
+     * @param int|null $value
      */
     public function invoiceAccountID(?int $value): self
     {
@@ -779,7 +866,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets invoice account id field.
+     * Unsets Invoice Account ID field.
      */
     public function unsetInvoiceAccountID(): self
     {
@@ -788,7 +875,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets invoice account number field.
+     * Sets Invoice Account Number field.
+     *
+     * @param string|null $value
      */
     public function invoiceAccountNumber(?string $value): self
     {
@@ -797,7 +886,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets invoice account number field.
+     * Unsets Invoice Account Number field.
      */
     public function unsetInvoiceAccountNumber(): self
     {
@@ -806,7 +895,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets invoice account short name field.
+     * Sets Invoice Account Short Name field.
+     *
+     * @param string|null $value
      */
     public function invoiceAccountShortName(?string $value): self
     {
@@ -815,7 +906,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets invoice account short name field.
+     * Unsets Invoice Account Short Name field.
      */
     public function unsetInvoiceAccountShortName(): self
     {
@@ -824,7 +915,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets best of indicator field.
+     * Sets Best Of Indicator field.
+     *
+     * @param bool|null $value
      */
     public function bestOfIndicator(?bool $value): self
     {
@@ -833,7 +926,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets is international field.
+     * Sets Is International field.
+     *
+     * @param bool|null $value
      */
     public function isInternational(?bool $value): self
     {
@@ -842,7 +937,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total accounts field.
+     * Sets Total Accounts field.
+     *
+     * @param int|null $value
      */
     public function totalAccounts(?int $value): self
     {
@@ -851,7 +948,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total accounts field.
+     * Unsets Total Accounts field.
      */
     public function unsetTotalAccounts(): self
     {
@@ -860,7 +957,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total active accounts field.
+     * Sets Total Active Accounts field.
+     *
+     * @param int|null $value
      */
     public function totalActiveAccounts(?int $value): self
     {
@@ -869,7 +968,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total active accounts field.
+     * Unsets Total Active Accounts field.
      */
     public function unsetTotalActiveAccounts(): self
     {
@@ -878,7 +977,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total cards field.
+     * Sets Total Cards field.
+     *
+     * @param int|null $value
      */
     public function totalCards(?int $value): self
     {
@@ -887,7 +988,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total cards field.
+     * Unsets Total Cards field.
      */
     public function unsetTotalCards(): self
     {
@@ -896,7 +997,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total active cards field.
+     * Sets Total Active Cards field.
+     *
+     * @param int|null $value
      */
     public function totalActiveCards(?int $value): self
     {
@@ -905,7 +1008,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total active cards field.
+     * Unsets Total Active Cards field.
      */
     public function unsetTotalActiveCards(): self
     {
@@ -914,7 +1017,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total blocked cards field.
+     * Sets Total Blocked Cards field.
+     *
+     * @param int|null $value
      */
     public function totalBlockedCards(?int $value): self
     {
@@ -923,7 +1028,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total blocked cards field.
+     * Unsets Total Blocked Cards field.
      */
     public function unsetTotalBlockedCards(): self
     {
@@ -932,7 +1037,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total cancelled cards field.
+     * Sets Total Cancelled Cards field.
+     *
+     * @param int|null $value
      */
     public function totalCancelledCards(?int $value): self
     {
@@ -941,7 +1048,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total cancelled cards field.
+     * Unsets Total Cancelled Cards field.
      */
     public function unsetTotalCancelledCards(): self
     {
@@ -950,7 +1057,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total expired cards field.
+     * Sets Total Expired Cards field.
+     *
+     * @param int|null $value
      */
     public function totalExpiredCards(?int $value): self
     {
@@ -959,7 +1068,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total expired cards field.
+     * Unsets Total Expired Cards field.
      */
     public function unsetTotalExpiredCards(): self
     {
@@ -968,7 +1077,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total renewal pending cards field.
+     * Sets Total Renewal Pending Cards field.
+     *
+     * @param int|null $value
      */
     public function totalRenewalPendingCards(?int $value): self
     {
@@ -977,7 +1088,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total renewal pending cards field.
+     * Unsets Total Renewal Pending Cards field.
      */
     public function unsetTotalRenewalPendingCards(): self
     {
@@ -986,7 +1097,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total replaced cards field.
+     * Sets Total Replaced Cards field.
+     *
+     * @param int|null $value
      */
     public function totalReplacedCards(?int $value): self
     {
@@ -995,7 +1108,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total replaced cards field.
+     * Unsets Total Replaced Cards field.
      */
     public function unsetTotalReplacedCards(): self
     {
@@ -1004,7 +1117,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total temporary block cards by customer field.
+     * Sets Total Temporary Block Cards By Customer field.
+     *
+     * @param int|null $value
      */
     public function totalTemporaryBlockCardsByCustomer(?int $value): self
     {
@@ -1013,7 +1128,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total temporary block cards by customer field.
+     * Unsets Total Temporary Block Cards By Customer field.
      */
     public function unsetTotalTemporaryBlockCardsByCustomer(): self
     {
@@ -1022,7 +1137,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total temporary block cards by shell field.
+     * Sets Total Temporary Block Cards By Shell field.
+     *
+     * @param int|null $value
      */
     public function totalTemporaryBlockCardsByShell(?int $value): self
     {
@@ -1031,7 +1148,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total temporary block cards by shell field.
+     * Unsets Total Temporary Block Cards By Shell field.
      */
     public function unsetTotalTemporaryBlockCardsByShell(): self
     {
@@ -1040,7 +1157,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total new cards field.
+     * Sets Total New Cards field.
+     *
+     * @param int|null $value
      */
     public function totalNewCards(?int $value): self
     {
@@ -1049,7 +1168,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total new cards field.
+     * Unsets Total New Cards field.
      */
     public function unsetTotalNewCards(): self
     {
@@ -1058,7 +1177,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total fraud cards field.
+     * Sets Total Fraud Cards field.
+     *
+     * @param int|null $value
      */
     public function totalFraudCards(?int $value): self
     {
@@ -1067,7 +1188,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total fraud cards field.
+     * Unsets Total Fraud Cards field.
      */
     public function unsetTotalFraudCards(): self
     {
@@ -1076,7 +1197,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total blocked accounts field.
+     * Sets Total Blocked Accounts field.
+     *
+     * @param int|null $value
      */
     public function totalBlockedAccounts(?int $value): self
     {
@@ -1085,7 +1208,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total blocked accounts field.
+     * Unsets Total Blocked Accounts field.
      */
     public function unsetTotalBlockedAccounts(): self
     {
@@ -1094,7 +1217,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets total cancelled accounts field.
+     * Sets Total Cancelled Accounts field.
+     *
+     * @param int|null $value
      */
     public function totalCancelledAccounts(?int $value): self
     {
@@ -1103,7 +1228,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets total cancelled accounts field.
+     * Unsets Total Cancelled Accounts field.
      */
     public function unsetTotalCancelledAccounts(): self
     {
@@ -1112,7 +1237,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets payer trading name field.
+     * Sets Payer Trading Name field.
+     *
+     * @param string|null $value
      */
     public function payerTradingName(?string $value): self
     {
@@ -1121,7 +1248,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets payer trading name field.
+     * Unsets Payer Trading Name field.
      */
     public function unsetPayerTradingName(): self
     {
@@ -1130,7 +1257,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -1139,7 +1268,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets billing language field.
+     * Sets Billing Language field.
+     *
+     * @param string|null $value
      */
     public function billingLanguage(?string $value): self
     {
@@ -1148,7 +1279,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets billing language field.
+     * Unsets Billing Language field.
      */
     public function unsetBillingLanguage(): self
     {
@@ -1157,7 +1288,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets legal entity field.
+     * Sets Legal Entity field.
+     *
+     * @param string|null $value
      */
     public function legalEntity(?string $value): self
     {
@@ -1166,7 +1299,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets legal entity field.
+     * Unsets Legal Entity field.
      */
     public function unsetLegalEntity(): self
     {
@@ -1175,7 +1308,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets date established field.
+     * Sets Date Established field.
+     *
+     * @param string|null $value
      */
     public function dateEstablished(?string $value): self
     {
@@ -1184,7 +1319,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets date established field.
+     * Unsets Date Established field.
      */
     public function unsetDateEstablished(): self
     {
@@ -1193,7 +1328,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets customer classification field.
+     * Sets Customer Classification field.
+     *
+     * @param string|null $value
      */
     public function customerClassification(?string $value): self
     {
@@ -1202,7 +1339,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets customer classification field.
+     * Unsets Customer Classification field.
      */
     public function unsetCustomerClassification(): self
     {
@@ -1211,7 +1348,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets industry class field.
+     * Sets Industry Class field.
+     *
+     * @param string|null $value
      */
     public function industryClass(?string $value): self
     {
@@ -1220,7 +1359,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets industry class field.
+     * Unsets Industry Class field.
      */
     public function unsetIndustryClass(): self
     {
@@ -1229,7 +1368,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets marketing segmentation field.
+     * Sets Marketing Segmentation field.
+     *
+     * @param string|null $value
      */
     public function marketingSegmentation(?string $value): self
     {
@@ -1238,7 +1379,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets marketing segmentation field.
+     * Unsets Marketing Segmentation field.
      */
     public function unsetMarketingSegmentation(): self
     {
@@ -1247,7 +1388,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets line of business field.
+     * Sets Line Of Business field.
+     *
+     * @param string|null $value
      */
     public function lineOfBusiness(?string $value): self
     {
@@ -1256,7 +1399,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets line of business field.
+     * Unsets Line Of Business field.
      */
     public function unsetLineOfBusiness(): self
     {
@@ -1265,7 +1408,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets print credit limit field.
+     * Sets Print Credit Limit field.
+     *
+     * @param bool|null $value
      */
     public function printCreditLimit(?bool $value): self
     {
@@ -1274,7 +1419,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets card group type field.
+     * Sets Card Group Type field.
+     *
+     * @param string|null $value
      */
     public function cardGroupType(?string $value): self
     {
@@ -1283,7 +1430,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets card group type field.
+     * Unsets Card Group Type field.
      */
     public function unsetCardGroupType(): self
     {
@@ -1292,7 +1439,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets renew cards field.
+     * Sets Renew Cards field.
+     *
+     * @param bool|null $value
      */
     public function renewCards(?bool $value): self
     {
@@ -1301,7 +1450,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets allow select pin field.
+     * Sets Allow Select PIN field.
+     *
+     * @param bool|null $value
      */
     public function allowSelectPIN(?bool $value): self
     {
@@ -1310,7 +1461,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets use fleet pin field.
+     * Sets Use Fleet PIN field.
+     *
+     * @param bool|null $value
      */
     public function useFleetPIN(?bool $value): self
     {
@@ -1319,7 +1472,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets vatreg number field.
+     * Sets VAT Reg Number field.
+     *
+     * @param string|null $value
      */
     public function vATRegNumber(?string $value): self
     {
@@ -1328,7 +1483,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets vatreg number field.
+     * Unsets VAT Reg Number field.
      */
     public function unsetVATRegNumber(): self
     {
@@ -1337,7 +1492,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets vatreg number 2 field.
+     * Sets VAT Reg Number 2 field.
+     *
+     * @param string|null $value
      */
     public function vATRegNumber2(?string $value): self
     {
@@ -1346,7 +1503,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets registration number field.
+     * Sets Registration Number field.
+     *
+     * @param string|null $value
      */
     public function registrationNumber(?string $value): self
     {
@@ -1355,7 +1514,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets registration number field.
+     * Unsets Registration Number field.
      */
     public function unsetRegistrationNumber(): self
     {
@@ -1364,7 +1523,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets registration number 2 field.
+     * Sets Registration Number 2 field.
+     *
+     * @param string|null $value
      */
     public function registrationNumber2(?string $value): self
     {
@@ -1373,7 +1534,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets registration number 2 field.
+     * Unsets Registration Number 2 field.
      */
     public function unsetRegistrationNumber2(): self
     {
@@ -1382,7 +1543,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets sales ledger balance field.
+     * Sets Sales Ledger Balance field.
+     *
+     * @param float|null $value
      */
     public function salesLedgerBalance(?float $value): self
     {
@@ -1391,7 +1554,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets sales ledger balance field.
+     * Unsets Sales Ledger Balance field.
      */
     public function unsetSalesLedgerBalance(): self
     {
@@ -1400,7 +1563,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets exposure field.
+     * Sets Exposure field.
+     *
+     * @param float|null $value
      */
     public function exposure(?float $value): self
     {
@@ -1409,7 +1574,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets exposure field.
+     * Unsets Exposure field.
      */
     public function unsetExposure(): self
     {
@@ -1418,7 +1583,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets outstanding debt field.
+     * Sets Outstanding Debt field.
+     *
+     * @param float|null $value
      */
     public function outstandingDebt(?float $value): self
     {
@@ -1427,7 +1594,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets outstanding debt field.
+     * Unsets Outstanding Debt field.
      */
     public function unsetOutstandingDebt(): self
     {
@@ -1436,7 +1603,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets available credit field.
+     * Sets Available Credit field.
+     *
+     * @param float|null $value
      */
     public function availableCredit(?float $value): self
     {
@@ -1445,7 +1614,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets available credit field.
+     * Unsets Available Credit field.
      */
     public function unsetAvailableCredit(): self
     {
@@ -1454,7 +1623,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets band field.
+     * Sets Band field.
+     *
+     * @param string|null $value
      */
     public function band(?string $value): self
     {
@@ -1463,7 +1634,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets band field.
+     * Unsets Band field.
      */
     public function unsetBand(): self
     {
@@ -1472,7 +1643,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets global customer reference id field.
+     * Sets Global Customer Reference Id field.
+     *
+     * @param string|null $value
      */
     public function globalCustomerReferenceId(?string $value): self
     {
@@ -1481,7 +1654,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets global customer reference id field.
+     * Unsets Global Customer Reference Id field.
      */
     public function unsetGlobalCustomerReferenceId(): self
     {
@@ -1490,7 +1663,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets credit limit field.
+     * Sets Credit Limit field.
+     *
+     * @param float|null $value
      */
     public function creditLimit(?float $value): self
     {
@@ -1499,7 +1674,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets credit limit field.
+     * Unsets Credit Limit field.
      */
     public function unsetCreditLimit(): self
     {
@@ -1508,7 +1683,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets credit limit in customer currency field.
+     * Sets Credit Limit In Customer Currency field.
+     *
+     * @param float|null $value
      */
     public function creditLimitInCustomerCurrency(?float $value): self
     {
@@ -1517,7 +1694,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets credit limit in customer currency field.
+     * Unsets Credit Limit In Customer Currency field.
      */
     public function unsetCreditLimitInCustomerCurrency(): self
     {
@@ -1526,7 +1703,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets billing currency code field.
+     * Sets Billing Currency Code field.
+     *
+     * @param string|null $value
      */
     public function billingCurrencyCode(?string $value): self
     {
@@ -1535,7 +1714,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets billing currency code field.
+     * Unsets Billing Currency Code field.
      */
     public function unsetBillingCurrencyCode(): self
     {
@@ -1544,7 +1723,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets billing currency symbol field.
+     * Sets Billing Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function billingCurrencySymbol(?string $value): self
     {
@@ -1553,7 +1734,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets billing currency symbol field.
+     * Unsets Billing Currency Symbol field.
      */
     public function unsetBillingCurrencySymbol(): self
     {
@@ -1562,7 +1743,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets payment method field.
+     * Sets Payment Method field.
+     *
+     * @param string|null $value
      */
     public function paymentMethod(?string $value): self
     {
@@ -1571,7 +1754,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets payment method field.
+     * Unsets Payment Method field.
      */
     public function unsetPaymentMethod(): self
     {
@@ -1580,7 +1763,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets payment terms field.
+     * Sets Payment Terms field.
+     *
+     * @param string|null $value
      */
     public function paymentTerms(?string $value): self
     {
@@ -1589,7 +1774,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets payment terms field.
+     * Unsets Payment Terms field.
      */
     public function unsetPaymentTerms(): self
     {
@@ -1598,7 +1783,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets temporary credit limit increase field.
+     * Sets Temporary Credit Limit Increase field.
+     *
+     * @param float|null $value
      */
     public function temporaryCreditLimitIncrease(?float $value): self
     {
@@ -1607,7 +1794,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets temporary credit limit increase field.
+     * Unsets Temporary Credit Limit Increase field.
      */
     public function unsetTemporaryCreditLimitIncrease(): self
     {
@@ -1616,7 +1803,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets temporary credit limit increase in customer currency field.
+     * Sets Temporary Credit Limit Increase In Customer Currency field.
+     *
+     * @param float|null $value
      */
     public function temporaryCreditLimitIncreaseInCustomerCurrency(?float $value): self
     {
@@ -1625,7 +1814,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets temporary credit limit increase in customer currency field.
+     * Unsets Temporary Credit Limit Increase In Customer Currency field.
      */
     public function unsetTemporaryCreditLimitIncreaseInCustomerCurrency(): self
     {
@@ -1634,7 +1823,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets temporary credit limit expiry date field.
+     * Sets Temporary Credit Limit Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function temporaryCreditLimitExpiryDate(?string $value): self
     {
@@ -1643,7 +1834,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets temporary credit limit expiry date field.
+     * Unsets Temporary Credit Limit Expiry Date field.
      */
     public function unsetTemporaryCreditLimitExpiryDate(): self
     {
@@ -1652,7 +1843,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets payer bank account field.
+     * Sets Payer Bank Account field.
+     *
+     * @param BankAccount[]|null $value
      */
     public function payerBankAccount(?array $value): self
     {
@@ -1661,7 +1854,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets card delivery address field.
+     * Sets Card Delivery Address field.
+     *
+     * @param Address|null $value
      */
     public function cardDeliveryAddress(?Address $value): self
     {
@@ -1670,7 +1865,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets correspondance address field.
+     * Sets Correspondance Address field.
+     *
+     * @param Address|null $value
      */
     public function correspondanceAddress(?Address $value): self
     {
@@ -1679,7 +1876,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets billing address field.
+     * Sets Billing Address field.
+     *
+     * @param Address|null $value
      */
     public function billingAddress(?Address $value): self
     {
@@ -1688,7 +1887,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets has active vol based pricing field.
+     * Sets Has Active Vol Based Pricing field.
+     *
+     * @param bool|null $value
      */
     public function hasActiveVolBasedPricing(?bool $value): self
     {
@@ -1697,7 +1898,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets has active vol based bonus field.
+     * Sets Has Active Vol Based Bonus field.
+     *
+     * @param bool|null $value
      */
     public function hasActiveVolBasedBonus(?bool $value): self
     {
@@ -1706,7 +1909,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets has active vol based association bonus field.
+     * Sets Has Active Vol Based Association Bonus field.
+     *
+     * @param bool|null $value
      */
     public function hasActiveVolBasedAssociationBonus(?bool $value): self
     {
@@ -1715,7 +1920,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets finance currency field.
+     * Sets Finance Currency field.
+     *
+     * @param FinanceCurrency2|null $value
      */
     public function financeCurrency(?FinanceCurrency2 $value): self
     {
@@ -1724,7 +1931,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets tolls customer id field.
+     * Sets Tolls Customer Id field.
+     *
+     * @param string|null $value
      */
     public function tollsCustomerId(?string $value): self
     {
@@ -1733,7 +1942,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets tolls customer id field.
+     * Unsets Tolls Customer Id field.
      */
     public function unsetTollsCustomerId(): self
     {
@@ -1742,7 +1951,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets tolls colco country type id field.
+     * Sets Tolls Colco Country Type Id field.
+     *
+     * @param string|null $value
      */
     public function tollsColcoCountryTypeId(?string $value): self
     {
@@ -1751,7 +1962,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Unsets tolls colco country type id field.
+     * Unsets Tolls Colco Country Type Id field.
      */
     public function unsetTollsColcoCountryTypeId(): self
     {
@@ -1760,7 +1971,9 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Sets contracts field.
+     * Sets Contracts field.
+     *
+     * @param CustomerContract[]|null $value
      */
     public function contracts(?array $value): self
     {
@@ -1769,7 +1982,7 @@ class PayerDetailsBuilder
     }
 
     /**
-     * Initializes a new payer details object.
+     * Initializes a new Payer Details object.
      */
     public function build(): PayerDetails
     {

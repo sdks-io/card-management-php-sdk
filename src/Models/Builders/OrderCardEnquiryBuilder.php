@@ -31,7 +31,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Initializes a new order card enquiry Builder object.
+     * Initializes a new Order Card Enquiry Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +50,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -57,7 +59,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -66,7 +70,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -75,7 +79,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets bcoreference field.
+     * Sets BCO Reference field.
+     *
+     * @param int|null $value
      */
     public function bCOReference(?int $value): self
     {
@@ -84,7 +90,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets bcoreference field.
+     * Unsets BCO Reference field.
      */
     public function unsetBCOReference(): self
     {
@@ -93,7 +99,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets bcorow number field.
+     * Sets BCO Row Number field.
+     *
+     * @param int|null $value
      */
     public function bCORowNumber(?int $value): self
     {
@@ -102,7 +110,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets bcorow number field.
+     * Unsets BCO Row Number field.
      */
     public function unsetBCORowNumber(): self
     {
@@ -111,7 +119,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets card group id field.
+     * Sets Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function cardGroupId(?int $value): self
     {
@@ -120,7 +130,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets card group id field.
+     * Unsets Card Group Id field.
      */
     public function unsetCardGroupId(): self
     {
@@ -129,7 +139,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -138,7 +150,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets card group name field.
+     * Unsets Card Group Name field.
      */
     public function unsetCardGroupName(): self
     {
@@ -147,7 +159,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -156,7 +170,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -165,7 +179,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets card pan field.
+     * Sets Card PAN field.
+     *
+     * @param string|null $value
      */
     public function cardPAN(?string $value): self
     {
@@ -174,7 +190,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets card pan field.
+     * Unsets Card PAN field.
      */
     public function unsetCardPAN(): self
     {
@@ -183,7 +199,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets masked pan field.
+     * Sets Masked PAN field.
+     *
+     * @param string|null $value
      */
     public function maskedPAN(?string $value): self
     {
@@ -192,7 +210,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets masked pan field.
+     * Unsets Masked PAN field.
      */
     public function unsetMaskedPAN(): self
     {
@@ -201,7 +219,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param float|null $value
      */
     public function pANID(?float $value): self
     {
@@ -210,7 +230,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets panid field.
+     * Unsets PANID field.
      */
     public function unsetPANID(): self
     {
@@ -219,7 +239,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets card type code field.
+     * Sets Card Type Code field.
+     *
+     * @param string|null $value
      */
     public function cardTypeCode(?string $value): self
     {
@@ -228,7 +250,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets card type code field.
+     * Unsets Card Type Code field.
      */
     public function unsetCardTypeCode(): self
     {
@@ -237,7 +259,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets card type id field.
+     * Sets Card Type Id field.
+     *
+     * @param int|null $value
      */
     public function cardTypeId(?int $value): self
     {
@@ -246,7 +270,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets card type id field.
+     * Unsets Card Type Id field.
      */
     public function unsetCardTypeId(): self
     {
@@ -255,7 +279,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets card type name field.
+     * Sets Card Type Name field.
+     *
+     * @param string|null $value
      */
     public function cardTypeName(?string $value): self
     {
@@ -264,7 +290,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets card type name field.
+     * Unsets Card Type Name field.
      */
     public function unsetCardTypeName(): self
     {
@@ -273,7 +299,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets driver name field.
+     * Sets Driver Name field.
+     *
+     * @param string|null $value
      */
     public function driverName(?string $value): self
     {
@@ -282,7 +310,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets driver name field.
+     * Unsets Driver Name field.
      */
     public function unsetDriverName(): self
     {
@@ -291,7 +319,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets error code field.
+     * Sets Error Code field.
+     *
+     * @param string|null $value
      */
     public function errorCode(?string $value): self
     {
@@ -300,7 +330,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets error code field.
+     * Unsets Error Code field.
      */
     public function unsetErrorCode(): self
     {
@@ -309,7 +339,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets error description field.
+     * Sets Error Description field.
+     *
+     * @param string|null $value
      */
     public function errorDescription(?string $value): self
     {
@@ -318,7 +350,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets error description field.
+     * Unsets Error Description field.
      */
     public function unsetErrorDescription(): self
     {
@@ -327,7 +359,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets gateway sync error code field.
+     * Sets Gateway Sync Error Code field.
+     *
+     * @param string|null $value
      */
     public function gatewaySyncErrorCode(?string $value): self
     {
@@ -336,7 +370,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets gateway sync error code field.
+     * Unsets Gateway Sync Error Code field.
      */
     public function unsetGatewaySyncErrorCode(): self
     {
@@ -345,7 +379,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets gateway sync error description field.
+     * Sets Gateway Sync Error Description field.
+     *
+     * @param string|null $value
      */
     public function gatewaySyncErrorDescription(?string $value): self
     {
@@ -354,7 +390,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets gateway sync error description field.
+     * Unsets Gateway Sync Error Description field.
      */
     public function unsetGatewaySyncErrorDescription(): self
     {
@@ -363,7 +399,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets gateway sync status field.
+     * Sets Gateway Sync Status field.
+     *
+     * @param string|null $value
      */
     public function gatewaySyncStatus(?string $value): self
     {
@@ -372,7 +410,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets gateway sync status field.
+     * Unsets Gateway Sync Status field.
      */
     public function unsetGatewaySyncStatus(): self
     {
@@ -381,7 +419,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets main reference field.
+     * Sets Main Reference field.
+     *
+     * @param int|null $value
      */
     public function mainReference(?int $value): self
     {
@@ -390,7 +430,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets order card reference field.
+     * Sets Order Card Reference field.
+     *
+     * @param int|null $value
      */
     public function orderCardReference(?int $value): self
     {
@@ -399,7 +441,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets order status field.
+     * Sets Order Status field.
+     *
+     * @param string|null $value
      */
     public function orderStatus(?string $value): self
     {
@@ -408,7 +452,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets order status field.
+     * Unsets Order Status field.
      */
     public function unsetOrderStatus(): self
     {
@@ -417,7 +461,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -426,7 +472,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -435,7 +483,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -444,7 +492,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets processed date field.
+     * Sets Processed Date field.
+     *
+     * @param string|null $value
      */
     public function processedDate(?string $value): self
     {
@@ -453,7 +503,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets processed date field.
+     * Unsets Processed Date field.
      */
     public function unsetProcessedDate(): self
     {
@@ -462,7 +512,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets purchase category code field.
+     * Sets Purchase Category Code field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryCode(?string $value): self
     {
@@ -471,7 +523,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets purchase category code field.
+     * Unsets Purchase Category Code field.
      */
     public function unsetPurchaseCategoryCode(): self
     {
@@ -480,7 +532,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets purchase category id field.
+     * Sets Purchase Category Id field.
+     *
+     * @param int|null $value
      */
     public function purchaseCategoryId(?int $value): self
     {
@@ -489,7 +543,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets purchase category id field.
+     * Unsets Purchase Category Id field.
      */
     public function unsetPurchaseCategoryId(): self
     {
@@ -498,7 +552,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets purchase category name field.
+     * Sets Purchase Category Name field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryName(?string $value): self
     {
@@ -507,7 +563,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets purchase category name field.
+     * Unsets Purchase Category Name field.
      */
     public function unsetPurchaseCategoryName(): self
     {
@@ -516,7 +572,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets submitted date field.
+     * Sets Submitted Date field.
+     *
+     * @param string|null $value
      */
     public function submittedDate(?string $value): self
     {
@@ -525,7 +583,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets submitted date field.
+     * Unsets Submitted Date field.
      */
     public function unsetSubmittedDate(): self
     {
@@ -534,7 +592,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets sync processed date field.
+     * Sets Sync Processed Date field.
+     *
+     * @param string|null $value
      */
     public function syncProcessedDate(?string $value): self
     {
@@ -543,7 +603,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets sync processed date field.
+     * Unsets Sync Processed Date field.
      */
     public function unsetSyncProcessedDate(): self
     {
@@ -552,7 +612,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets sync requested date field.
+     * Sets Sync Requested Date field.
+     *
+     * @param string|null $value
      */
     public function syncRequestedDate(?string $value): self
     {
@@ -561,7 +623,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets sync requested date field.
+     * Unsets Sync Requested Date field.
      */
     public function unsetSyncRequestedDate(): self
     {
@@ -570,7 +632,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets vrn field.
+     * Sets VRN field.
+     *
+     * @param string|null $value
      */
     public function vRN(?string $value): self
     {
@@ -579,7 +643,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets vrn field.
+     * Unsets VRN field.
      */
     public function unsetVRN(): self
     {
@@ -588,7 +652,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets order request id field.
+     * Sets Order Request Id field.
+     *
+     * @param string|null $value
      */
     public function orderRequestId(?string $value): self
     {
@@ -597,7 +663,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets order request id field.
+     * Unsets Order Request Id field.
      */
     public function unsetOrderRequestId(): self
     {
@@ -606,7 +672,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets expiry date field.
+     * Sets Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function expiryDate(?string $value): self
     {
@@ -615,7 +683,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets expiry date field.
+     * Unsets Expiry Date field.
      */
     public function unsetExpiryDate(): self
     {
@@ -624,7 +692,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets client reference id field.
+     * Sets Client Reference Id field.
+     *
+     * @param string|null $value
      */
     public function clientReferenceId(?string $value): self
     {
@@ -633,7 +703,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets client reference id field.
+     * Unsets Client Reference Id field.
      */
     public function unsetClientReferenceId(): self
     {
@@ -642,7 +712,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets status description field.
+     * Sets Status Description field.
+     *
+     * @param string|null $value
      */
     public function statusDescription(?string $value): self
     {
@@ -651,7 +723,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets status description field.
+     * Unsets Status Description field.
      */
     public function unsetStatusDescription(): self
     {
@@ -660,7 +732,9 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -669,7 +743,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -678,7 +752,7 @@ class OrderCardEnquiryBuilder
     }
 
     /**
-     * Initializes a new order card enquiry object.
+     * Initializes a new Order Card Enquiry object.
      */
     public function build(): OrderCardEnquiry
     {

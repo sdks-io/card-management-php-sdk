@@ -33,7 +33,7 @@ class DeliveryAddressUpdateResponseBuilder
     }
 
     /**
-     * Initializes a new delivery address update response Builder object.
+     * Initializes a new Delivery Address Update Response Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +41,9 @@ class DeliveryAddressUpdateResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -50,7 +52,9 @@ class DeliveryAddressUpdateResponseBuilder
     }
 
     /**
-     * Sets service reference field.
+     * Sets Service Reference field.
+     *
+     * @param int|null $value
      */
     public function serviceReference(?int $value): self
     {
@@ -59,7 +63,9 @@ class DeliveryAddressUpdateResponseBuilder
     }
 
     /**
-     * Sets delivery address update references field.
+     * Sets Delivery Address Update References field.
+     *
+     * @param DeliveryAddressUpdateReferences2|null $value
      */
     public function deliveryAddressUpdateReferences(?DeliveryAddressUpdateReferences2 $value): self
     {
@@ -68,7 +74,9 @@ class DeliveryAddressUpdateResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -77,7 +85,7 @@ class DeliveryAddressUpdateResponseBuilder
     }
 
     /**
-     * Initializes a new delivery address update response object.
+     * Initializes a new Delivery Address Update Response object.
      */
     public function build(): DeliveryAddressUpdateResponse
     {

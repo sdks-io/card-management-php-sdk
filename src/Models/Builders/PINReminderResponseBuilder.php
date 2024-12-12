@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\PINReminderReference;
 use ShellCardManagementAPIsLib\Models\PINReminderResponse;
 
 /**
@@ -31,7 +32,7 @@ class PINReminderResponseBuilder
     }
 
     /**
-     * Initializes a new pinreminder response Builder object.
+     * Initializes a new PIN Reminder Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class PINReminderResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -48,7 +51,9 @@ class PINReminderResponseBuilder
     }
 
     /**
-     * Sets main reference field.
+     * Sets Main Reference field.
+     *
+     * @param int|null $value
      */
     public function mainReference(?int $value): self
     {
@@ -57,7 +62,9 @@ class PINReminderResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -66,7 +73,9 @@ class PINReminderResponseBuilder
     }
 
     /**
-     * Sets data field.
+     * Sets Data field.
+     *
+     * @param PINReminderReference[]|null $value
      */
     public function data(?array $value): self
     {
@@ -75,7 +84,7 @@ class PINReminderResponseBuilder
     }
 
     /**
-     * Initializes a new pinreminder response object.
+     * Initializes a new PIN Reminder Response object.
      */
     public function build(): PINReminderResponse
     {

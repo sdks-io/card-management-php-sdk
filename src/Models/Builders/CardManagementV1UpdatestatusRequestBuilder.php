@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardManagementV1UpdatestatusRequest;
+use ShellCardManagementAPIsLib\Models\UpdateCard;
 
 /**
  * Builder for model CardManagementV1UpdatestatusRequest
@@ -31,7 +32,10 @@ class CardManagementV1UpdatestatusRequestBuilder
     }
 
     /**
-     * Initializes a new card management v1 updatestatus request Builder object.
+     * Initializes a new Card Management V1 Updatestatus Request Builder object.
+     *
+     * @param UpdateCard[] $cards
+     * @param string $targetStatus
      */
     public static function init(array $cards, string $targetStatus): self
     {
@@ -39,7 +43,9 @@ class CardManagementV1UpdatestatusRequestBuilder
     }
 
     /**
-     * Sets reason id field.
+     * Sets Reason Id field.
+     *
+     * @param int|null $value
      */
     public function reasonId(?int $value): self
     {
@@ -48,7 +54,7 @@ class CardManagementV1UpdatestatusRequestBuilder
     }
 
     /**
-     * Unsets reason id field.
+     * Unsets Reason Id field.
      */
     public function unsetReasonId(): self
     {
@@ -57,7 +63,9 @@ class CardManagementV1UpdatestatusRequestBuilder
     }
 
     /**
-     * Sets reason text field.
+     * Sets Reason Text field.
+     *
+     * @param string|null $value
      */
     public function reasonText(?string $value): self
     {
@@ -66,7 +74,7 @@ class CardManagementV1UpdatestatusRequestBuilder
     }
 
     /**
-     * Unsets reason text field.
+     * Unsets Reason Text field.
      */
     public function unsetReasonText(): self
     {
@@ -75,7 +83,7 @@ class CardManagementV1UpdatestatusRequestBuilder
     }
 
     /**
-     * Initializes a new card management v1 updatestatus request object.
+     * Initializes a new Card Management V1 Updatestatus Request object.
      */
     public function build(): CardManagementV1UpdatestatusRequest
     {

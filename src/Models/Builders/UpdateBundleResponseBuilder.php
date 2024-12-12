@@ -32,7 +32,7 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Initializes a new update bundle response Builder object.
+     * Initializes a new Update Bundle Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -49,7 +51,7 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -58,7 +60,9 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Sets request action status field.
+     * Sets Request Action Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function requestActionStatus(?ErrorStatus $value): self
     {
@@ -67,7 +71,9 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Sets day time restriction status field.
+     * Sets Day Time Restriction Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function dayTimeRestrictionStatus(?ErrorStatus $value): self
     {
@@ -76,7 +82,9 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Sets location restriction status field.
+     * Sets Location Restriction Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function locationRestrictionStatus(?ErrorStatus $value): self
     {
@@ -85,7 +93,9 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Sets product restriction status field.
+     * Sets Product Restriction Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function productRestrictionStatus(?ErrorStatus $value): self
     {
@@ -94,7 +104,9 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Sets usage restriction status field.
+     * Sets Usage Restriction Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function usageRestrictionStatus(?ErrorStatus $value): self
     {
@@ -103,7 +115,9 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -112,7 +126,7 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Initializes a new update bundle response object.
+     * Initializes a new Update Bundle Response object.
      */
     public function build(): UpdateBundleResponse
     {

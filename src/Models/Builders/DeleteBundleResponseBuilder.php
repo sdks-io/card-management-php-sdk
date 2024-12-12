@@ -32,7 +32,7 @@ class DeleteBundleResponseBuilder
     }
 
     /**
-     * Initializes a new delete bundle response Builder object.
+     * Initializes a new Delete Bundle Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class DeleteBundleResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -49,7 +51,9 @@ class DeleteBundleResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -58,7 +62,7 @@ class DeleteBundleResponseBuilder
     }
 
     /**
-     * Initializes a new delete bundle response object.
+     * Initializes a new Delete Bundle Response object.
      */
     public function build(): DeleteBundleResponse
     {

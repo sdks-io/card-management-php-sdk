@@ -31,7 +31,7 @@ class EIDAccessBuilder
     }
 
     /**
-     * Initializes a new eidaccess Builder object.
+     * Initializes a new EID Access Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class EIDAccessBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param string|null $value
      */
     public function colCoId(?string $value): self
     {
@@ -48,7 +50,7 @@ class EIDAccessBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -57,7 +59,9 @@ class EIDAccessBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -66,7 +70,7 @@ class EIDAccessBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -75,7 +79,9 @@ class EIDAccessBuilder
     }
 
     /**
-     * Sets account group id field.
+     * Sets Account Group Id field.
+     *
+     * @param string|null $value
      */
     public function accountGroupId(?string $value): self
     {
@@ -84,7 +90,7 @@ class EIDAccessBuilder
     }
 
     /**
-     * Unsets account group id field.
+     * Unsets Account Group Id field.
      */
     public function unsetAccountGroupId(): self
     {
@@ -93,7 +99,7 @@ class EIDAccessBuilder
     }
 
     /**
-     * Initializes a new eidaccess object.
+     * Initializes a new EID Access object.
      */
     public function build(): EIDAccess
     {

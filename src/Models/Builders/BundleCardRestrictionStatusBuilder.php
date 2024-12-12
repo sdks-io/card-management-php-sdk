@@ -31,7 +31,7 @@ class BundleCardRestrictionStatusBuilder
     }
 
     /**
-     * Initializes a new bundle card restriction status Builder object.
+     * Initializes a new Bundle Card Restriction Status Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class BundleCardRestrictionStatusBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -48,7 +50,7 @@ class BundleCardRestrictionStatusBuilder
     }
 
     /**
-     * Initializes a new bundle card restriction status object.
+     * Initializes a new Bundle Card Restriction Status object.
      */
     public function build(): BundleCardRestrictionStatus
     {

@@ -31,7 +31,7 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Initializes a new account velocity limit Builder object.
+     * Initializes a new Account Velocity Limit Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Sets type field.
+     * Sets Type field.
+     *
+     * @param string|null $value
      */
     public function type(?string $value): self
     {
@@ -48,7 +50,9 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Sets period field.
+     * Sets Period field.
+     *
+     * @param string|null $value
      */
     public function period(?string $value): self
     {
@@ -57,7 +61,9 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Sets limit field.
+     * Sets Limit field.
+     *
+     * @param float|null $value
      */
     public function limit(?float $value): self
     {
@@ -66,7 +72,9 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Sets accumulation field.
+     * Sets Accumulation field.
+     *
+     * @param float|null $value
      */
     public function accumulation(?float $value): self
     {
@@ -75,7 +83,9 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Sets balance field.
+     * Sets Balance field.
+     *
+     * @param float|null $value
      */
     public function balance(?float $value): self
     {
@@ -84,7 +94,9 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Sets override field.
+     * Sets Override field.
+     *
+     * @param bool|null $value
      */
     public function override(?bool $value): self
     {
@@ -93,7 +105,9 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Sets product group field.
+     * Sets Product Group field.
+     *
+     * @param string|null $value
      */
     public function productGroup(?string $value): self
     {
@@ -102,7 +116,9 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Sets threshold field.
+     * Sets Threshold field.
+     *
+     * @param float|null $value
      */
     public function threshold(?float $value): self
     {
@@ -111,7 +127,7 @@ class AccountVelocityLimitBuilder
     }
 
     /**
-     * Initializes a new account velocity limit object.
+     * Initializes a new Account Velocity Limit object.
      */
     public function build(): AccountVelocityLimit
     {

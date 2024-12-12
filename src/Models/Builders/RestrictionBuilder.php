@@ -34,7 +34,7 @@ class RestrictionBuilder
     }
 
     /**
-     * Initializes a new restriction Builder object.
+     * Initializes a new Restriction Builder object.
      */
     public static function init(): self
     {
@@ -42,7 +42,9 @@ class RestrictionBuilder
     }
 
     /**
-     * Sets usage restrictions field.
+     * Sets Usage Restrictions field.
+     *
+     * @param array|null $value
      */
     public function usageRestrictions(?array $value): self
     {
@@ -51,7 +53,9 @@ class RestrictionBuilder
     }
 
     /**
-     * Sets day time restrictions field.
+     * Sets Day Time Restrictions field.
+     *
+     * @param DayTimeRestrictions|null $value
      */
     public function dayTimeRestrictions(?DayTimeRestrictions $value): self
     {
@@ -60,7 +64,9 @@ class RestrictionBuilder
     }
 
     /**
-     * Sets product restrictions field.
+     * Sets Product Restrictions field.
+     *
+     * @param SearchProductRestriction|null $value
      */
     public function productRestrictions(?SearchProductRestriction $value): self
     {
@@ -69,7 +75,9 @@ class RestrictionBuilder
     }
 
     /**
-     * Sets location restrictions field.
+     * Sets Location Restrictions field.
+     *
+     * @param LocationRestriction|null $value
      */
     public function locationRestrictions(?LocationRestriction $value): self
     {
@@ -78,7 +86,7 @@ class RestrictionBuilder
     }
 
     /**
-     * Initializes a new restriction object.
+     * Initializes a new Restriction object.
      */
     public function build(): Restriction
     {

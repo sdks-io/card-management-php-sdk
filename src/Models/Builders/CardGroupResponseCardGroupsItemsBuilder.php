@@ -31,7 +31,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Initializes a new card group response card groups items Builder object.
+     * Initializes a new Card Group Response Card Groups Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +50,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -57,7 +59,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -66,7 +70,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -75,7 +79,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets account short name field.
+     * Sets Account Short Name field.
+     *
+     * @param string|null $value
      */
     public function accountShortName(?string $value): self
     {
@@ -84,7 +90,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets account short name field.
+     * Unsets Account Short Name field.
      */
     public function unsetAccountShortName(): self
     {
@@ -93,7 +99,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets active cards field.
+     * Sets Active Cards field.
+     *
+     * @param int|null $value
      */
     public function activeCards(?int $value): self
     {
@@ -102,7 +110,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets active cards field.
+     * Unsets Active Cards field.
      */
     public function unsetActiveCards(): self
     {
@@ -111,7 +119,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets blocked cards field.
+     * Sets Blocked Cards field.
+     *
+     * @param int|null $value
      */
     public function blockedCards(?int $value): self
     {
@@ -120,7 +130,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets blocked cards field.
+     * Unsets Blocked Cards field.
      */
     public function unsetBlockedCards(): self
     {
@@ -129,7 +139,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets cancelled cards field.
+     * Sets Cancelled Cards field.
+     *
+     * @param int|null $value
      */
     public function cancelledCards(?int $value): self
     {
@@ -138,7 +150,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets cancelled cards field.
+     * Unsets Cancelled Cards field.
      */
     public function unsetCancelledCards(): self
     {
@@ -147,7 +159,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets card delivery point field.
+     * Sets Card Delivery Point field.
+     *
+     * @param bool|null $value
      */
     public function cardDeliveryPoint(?bool $value): self
     {
@@ -156,7 +170,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets card delivery point field.
+     * Unsets Card Delivery Point field.
      */
     public function unsetCardDeliveryPoint(): self
     {
@@ -165,7 +179,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets card group id field.
+     * Sets Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function cardGroupId(?int $value): self
     {
@@ -174,7 +190,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets card group id field.
+     * Unsets Card Group Id field.
      */
     public function unsetCardGroupId(): self
     {
@@ -183,7 +199,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -192,7 +210,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets card group name field.
+     * Unsets Card Group Name field.
      */
     public function unsetCardGroupName(): self
     {
@@ -201,7 +219,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets card type code field.
+     * Sets Card Type Code field.
+     *
+     * @param string|null $value
      */
     public function cardTypeCode(?string $value): self
     {
@@ -210,7 +230,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets card type code field.
+     * Unsets Card Type Code field.
      */
     public function unsetCardTypeCode(): self
     {
@@ -219,7 +239,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets card type id field.
+     * Sets Card Type Id field.
+     *
+     * @param int|null $value
      */
     public function cardTypeId(?int $value): self
     {
@@ -228,7 +250,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets card type id field.
+     * Unsets Card Type Id field.
      */
     public function unsetCardTypeId(): self
     {
@@ -237,7 +259,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets card type name field.
+     * Sets Card Type Name field.
+     *
+     * @param string|null $value
      */
     public function cardTypeName(?string $value): self
     {
@@ -246,7 +270,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets card type name field.
+     * Unsets Card Type Name field.
      */
     public function unsetCardTypeName(): self
     {
@@ -255,7 +279,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets expired cards field.
+     * Sets Expired Cards field.
+     *
+     * @param int|null $value
      */
     public function expiredCards(?int $value): self
     {
@@ -264,7 +290,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets expired cards field.
+     * Unsets Expired Cards field.
      */
     public function unsetExpiredCards(): self
     {
@@ -273,7 +299,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets expiry date field.
+     * Sets Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function expiryDate(?string $value): self
     {
@@ -282,7 +310,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets expiry date field.
+     * Unsets Expiry Date field.
      */
     public function unsetExpiryDate(): self
     {
@@ -291,7 +319,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets print on card field.
+     * Sets Print On Card field.
+     *
+     * @param bool|null $value
      */
     public function printOnCard(?bool $value): self
     {
@@ -300,7 +330,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets print on card field.
+     * Unsets Print On Card field.
      */
     public function unsetPrintOnCard(): self
     {
@@ -309,7 +339,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets renewal pending cards field.
+     * Sets Renewal Pending Cards field.
+     *
+     * @param int|null $value
      */
     public function renewalPendingCards(?int $value): self
     {
@@ -318,7 +350,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets renewal pending cards field.
+     * Unsets Renewal Pending Cards field.
      */
     public function unsetRenewalPendingCards(): self
     {
@@ -327,7 +359,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets replaced cards field.
+     * Sets Replaced Cards field.
+     *
+     * @param int|null $value
      */
     public function replacedCards(?int $value): self
     {
@@ -336,7 +370,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets replaced cards field.
+     * Unsets Replaced Cards field.
      */
     public function unsetReplacedCards(): self
     {
@@ -345,7 +379,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -354,7 +390,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets status field.
+     * Unsets Status field.
      */
     public function unsetStatus(): self
     {
@@ -363,7 +399,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets temporary block by customer field.
+     * Sets Temporary Block By Customer field.
+     *
+     * @param int|null $value
      */
     public function temporaryBlockByCustomer(?int $value): self
     {
@@ -372,7 +410,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets temporary block by customer field.
+     * Unsets Temporary Block By Customer field.
      */
     public function unsetTemporaryBlockByCustomer(): self
     {
@@ -381,7 +419,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets temporary block by shell field.
+     * Sets Temporary Block By Shell field.
+     *
+     * @param int|null $value
      */
     public function temporaryBlockByShell(?int $value): self
     {
@@ -390,7 +430,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets temporary block by shell field.
+     * Unsets Temporary Block By Shell field.
      */
     public function unsetTemporaryBlockByShell(): self
     {
@@ -399,7 +439,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets terminated date field.
+     * Sets Terminated Date field.
+     *
+     * @param string|null $value
      */
     public function terminatedDate(?string $value): self
     {
@@ -408,7 +450,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets terminated date field.
+     * Unsets Terminated Date field.
      */
     public function unsetTerminatedDate(): self
     {
@@ -417,7 +459,9 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Sets total cards field.
+     * Sets Total Cards field.
+     *
+     * @param int|null $value
      */
     public function totalCards(?int $value): self
     {
@@ -426,7 +470,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Unsets total cards field.
+     * Unsets Total Cards field.
      */
     public function unsetTotalCards(): self
     {
@@ -435,7 +479,7 @@ class CardGroupResponseCardGroupsItemsBuilder
     }
 
     /**
-     * Initializes a new card group response card groups items object.
+     * Initializes a new Card Group Response Card Groups Items object.
      */
     public function build(): CardGroupResponseCardGroupsItems
     {

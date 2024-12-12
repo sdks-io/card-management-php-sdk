@@ -12,6 +12,8 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CreateCardGroupResponse;
+use ShellCardManagementAPIsLib\Models\CreateCardGroupResponseErrorCardsItems;
+use ShellCardManagementAPIsLib\Models\CreateCardGroupResponseSuccessfulRequestsItems;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
 
 /**
@@ -32,7 +34,7 @@ class CreateCardGroupResponseBuilder
     }
 
     /**
-     * Initializes a new create card group response Builder object.
+     * Initializes a new Create Card Group Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +42,9 @@ class CreateCardGroupResponseBuilder
     }
 
     /**
-     * Sets main reference field.
+     * Sets Main Reference field.
+     *
+     * @param int|null $value
      */
     public function mainReference(?int $value): self
     {
@@ -49,7 +53,9 @@ class CreateCardGroupResponseBuilder
     }
 
     /**
-     * Sets new card group reference field.
+     * Sets New Card Group Reference field.
+     *
+     * @param int|null $value
      */
     public function newCardGroupReference(?int $value): self
     {
@@ -58,7 +64,9 @@ class CreateCardGroupResponseBuilder
     }
 
     /**
-     * Sets successful requests field.
+     * Sets Successful Requests field.
+     *
+     * @param CreateCardGroupResponseSuccessfulRequestsItems[]|null $value
      */
     public function successfulRequests(?array $value): self
     {
@@ -67,7 +75,9 @@ class CreateCardGroupResponseBuilder
     }
 
     /**
-     * Sets error cards field.
+     * Sets Error Cards field.
+     *
+     * @param CreateCardGroupResponseErrorCardsItems[]|null $value
      */
     public function errorCards(?array $value): self
     {
@@ -76,7 +86,9 @@ class CreateCardGroupResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -85,7 +97,9 @@ class CreateCardGroupResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -94,7 +108,7 @@ class CreateCardGroupResponseBuilder
     }
 
     /**
-     * Initializes a new create card group response object.
+     * Initializes a new Create Card Group Response object.
      */
     public function build(): CreateCardGroupResponse
     {

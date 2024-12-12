@@ -31,7 +31,7 @@ class AccountsBuilder
     }
 
     /**
-     * Initializes a new accounts Builder object.
+     * Initializes a new Accounts Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class AccountsBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +50,7 @@ class AccountsBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -57,7 +59,9 @@ class AccountsBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -66,7 +70,7 @@ class AccountsBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -75,7 +79,7 @@ class AccountsBuilder
     }
 
     /**
-     * Initializes a new accounts object.
+     * Initializes a new Accounts object.
      */
     public function build(): Accounts
     {

@@ -30,6 +30,7 @@ This API will allows querying card details including the day/time and product re
 #### Supported operations
 
 * Search by list of cards or bundle
+
 * Include card bundle details (optional)
 
 ```php

@@ -31,7 +31,7 @@ class ScheduleCardBlockResponseDataItemsBuilder
     }
 
     /**
-     * Initializes a new schedule card block response data items Builder object.
+     * Initializes a new Schedule Card Block Response Data Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class ScheduleCardBlockResponseDataItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -48,7 +50,9 @@ class ScheduleCardBlockResponseDataItemsBuilder
     }
 
     /**
-     * Sets from date field.
+     * Sets From Date field.
+     *
+     * @param string|null $value
      */
     public function fromDate(?string $value): self
     {
@@ -57,7 +61,9 @@ class ScheduleCardBlockResponseDataItemsBuilder
     }
 
     /**
-     * Sets to date field.
+     * Sets To Date field.
+     *
+     * @param string|null $value
      */
     public function toDate(?string $value): self
     {
@@ -66,7 +72,9 @@ class ScheduleCardBlockResponseDataItemsBuilder
     }
 
     /**
-     * Sets reference id field.
+     * Sets Reference Id field.
+     *
+     * @param int|null $value
      */
     public function referenceId(?int $value): self
     {
@@ -75,7 +83,7 @@ class ScheduleCardBlockResponseDataItemsBuilder
     }
 
     /**
-     * Initializes a new schedule card block response data items object.
+     * Initializes a new Schedule Card Block Response Data Items object.
      */
     public function build(): ScheduleCardBlockResponseDataItems
     {

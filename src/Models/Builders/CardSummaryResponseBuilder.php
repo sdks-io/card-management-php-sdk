@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardSummaryResponse;
+use ShellCardManagementAPIsLib\Models\SummaryResponse;
 
 /**
  * Builder for model CardSummaryResponse
@@ -31,7 +32,7 @@ class CardSummaryResponseBuilder
     }
 
     /**
-     * Initializes a new card summary response Builder object.
+     * Initializes a new Card Summary Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class CardSummaryResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -48,7 +51,9 @@ class CardSummaryResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -57,7 +62,9 @@ class CardSummaryResponseBuilder
     }
 
     /**
-     * Sets data field.
+     * Sets Data field.
+     *
+     * @param SummaryResponse[]|null $value
      */
     public function data(?array $value): self
     {
@@ -66,7 +73,7 @@ class CardSummaryResponseBuilder
     }
 
     /**
-     * Initializes a new card summary response object.
+     * Initializes a new Card Summary Response object.
      */
     public function build(): CardSummaryResponse
     {

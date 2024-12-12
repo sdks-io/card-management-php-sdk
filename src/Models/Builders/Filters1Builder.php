@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\Filters1;
+use ShellCardManagementAPIsLib\Models\SearchCard;
 
 /**
  * Builder for model Filters1
@@ -31,7 +32,7 @@ class Filters1Builder
     }
 
     /**
-     * Initializes a new filters 1 Builder object.
+     * Initializes a new Filters 1 Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +51,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -57,7 +60,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -66,7 +71,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -75,7 +80,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -84,7 +91,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -93,7 +100,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -102,7 +111,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -111,7 +120,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -120,7 +131,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -129,7 +140,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -138,7 +151,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -147,7 +160,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -156,7 +171,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -165,7 +180,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets card group id field.
+     * Sets Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function cardGroupId(?int $value): self
     {
@@ -174,7 +191,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets card group id field.
+     * Unsets Card Group Id field.
      */
     public function unsetCardGroupId(): self
     {
@@ -183,7 +200,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -192,7 +211,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets card group name field.
+     * Unsets Card Group Name field.
      */
     public function unsetCardGroupName(): self
     {
@@ -201,7 +220,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets card status field.
+     * Sets Card Status field.
+     *
+     * @param string[]|null $value
      */
     public function cardStatus(?array $value): self
     {
@@ -210,7 +231,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets expiring in days field.
+     * Sets Expiring In Days field.
+     *
+     * @param int|null $value
      */
     public function expiringInDays(?int $value): self
     {
@@ -219,7 +242,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets expiring in days field.
+     * Unsets Expiring In Days field.
      */
     public function unsetExpiringInDays(): self
     {
@@ -228,7 +251,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets issued after field.
+     * Sets Issued After field.
+     *
+     * @param string|null $value
      */
     public function issuedAfter(?string $value): self
     {
@@ -237,7 +262,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets issued after field.
+     * Unsets Issued After field.
      */
     public function unsetIssuedAfter(): self
     {
@@ -246,7 +271,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets panends with field.
+     * Sets PAN Ends With field.
+     *
+     * @param string|null $value
      */
     public function pANEndsWith(?string $value): self
     {
@@ -255,7 +282,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets panends with field.
+     * Unsets PAN Ends With field.
      */
     public function unsetPANEndsWith(): self
     {
@@ -264,7 +291,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets driver name field.
+     * Sets Driver Name field.
+     *
+     * @param string[]|null $value
      */
     public function driverName(?array $value): self
     {
@@ -273,7 +302,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets vehicle registration number field.
+     * Sets Vehicle Registration Number field.
+     *
+     * @param string[]|null $value
      */
     public function vehicleRegistrationNumber(?array $value): self
     {
@@ -282,7 +313,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets include cards field.
+     * Sets Include Cards field.
+     *
+     * @param SearchCard[]|null $value
      */
     public function includeCards(?array $value): self
     {
@@ -291,7 +324,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets exclude cards field.
+     * Sets Exclude Cards field.
+     *
+     * @param SearchCard[]|null $value
      */
     public function excludeCards(?array $value): self
     {
@@ -300,7 +335,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets exclude bundle id field.
+     * Sets Exclude Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function excludeBundleId(?string $value): self
     {
@@ -309,7 +346,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets exclude bundle id field.
+     * Unsets Exclude Bundle Id field.
      */
     public function unsetExcludeBundleId(): self
     {
@@ -318,7 +355,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets card segment field.
+     * Sets Card Segment field.
+     *
+     * @param string|null $value
      */
     public function cardSegment(?string $value): self
     {
@@ -327,7 +366,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets card segment field.
+     * Unsets Card Segment field.
      */
     public function unsetCardSegment(): self
     {
@@ -336,7 +375,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets purchase category code field.
+     * Sets Purchase Category Code field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryCode(?string $value): self
     {
@@ -345,7 +386,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets purchase category code field.
+     * Unsets Purchase Category Code field.
      */
     public function unsetPurchaseCategoryCode(): self
     {
@@ -354,7 +395,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets card type code field.
+     * Sets Card Type Code field.
+     *
+     * @param string|null $value
      */
     public function cardTypeCode(?string $value): self
     {
@@ -363,7 +406,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets card type code field.
+     * Unsets Card Type Code field.
      */
     public function unsetCardTypeCode(): self
     {
@@ -372,7 +415,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets exclude pending renewal cards field.
+     * Sets Exclude Pending Renewal Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludePendingRenewalCards(?bool $value): self
     {
@@ -381,7 +426,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets exclude cancelled cards field.
+     * Sets Exclude Cancelled Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludeCancelledCards(?bool $value): self
     {
@@ -390,7 +437,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets exclude replaced cards field.
+     * Sets Exclude Replaced Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludeReplacedCards(?bool $value): self
     {
@@ -399,7 +448,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets exclude fraud cards field.
+     * Sets Exclude Fraud Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludeFraudCards(?bool $value): self
     {
@@ -408,7 +459,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets exclude card group id field.
+     * Sets Exclude Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function excludeCardGroupId(?int $value): self
     {
@@ -417,7 +470,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets exclude card group id field.
+     * Unsets Exclude Card Group Id field.
      */
     public function unsetExcludeCardGroupId(): self
     {
@@ -426,7 +479,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets exclude card group name field.
+     * Sets Exclude Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function excludeCardGroupName(?string $value): self
     {
@@ -435,7 +490,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets exclude card group name field.
+     * Unsets Exclude Card Group Name field.
      */
     public function unsetExcludeCardGroupName(): self
     {
@@ -444,7 +499,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets creation date field.
+     * Sets Creation Date field.
+     *
+     * @param string|null $value
      */
     public function creationDate(?string $value): self
     {
@@ -453,7 +510,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets creation date field.
+     * Unsets Creation Date field.
      */
     public function unsetCreationDate(): self
     {
@@ -462,7 +519,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets effective date field.
+     * Sets Effective Date field.
+     *
+     * @param string|null $value
      */
     public function effectiveDate(?string $value): self
     {
@@ -471,7 +530,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets effective date field.
+     * Unsets Effective Date field.
      */
     public function unsetEffectiveDate(): self
     {
@@ -480,7 +539,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets network field.
+     * Sets Network field.
+     *
+     * @param string|null $value
      */
     public function network(?string $value): self
     {
@@ -489,7 +550,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets network field.
+     * Unsets Network field.
      */
     public function unsetNetwork(): self
     {
@@ -498,7 +559,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets coverage field.
+     * Sets Coverage field.
+     *
+     * @param string|null $value
      */
     public function coverage(?string $value): self
     {
@@ -507,7 +570,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets coverage field.
+     * Unsets Coverage field.
      */
     public function unsetCoverage(): self
     {
@@ -516,7 +579,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets expiry month field.
+     * Sets Expiry Month field.
+     *
+     * @param string|null $value
      */
     public function expiryMonth(?string $value): self
     {
@@ -525,7 +590,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets expiry month field.
+     * Unsets Expiry Month field.
      */
     public function unsetExpiryMonth(): self
     {
@@ -534,7 +599,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets exclude old cards field.
+     * Sets Exclude Old Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludeOldCards(?bool $value): self
     {
@@ -543,7 +610,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets reissue setting field.
+     * Sets Reissue Setting field.
+     *
+     * @param string|null $value
      */
     public function reissueSetting(?string $value): self
     {
@@ -552,7 +621,7 @@ class Filters1Builder
     }
 
     /**
-     * Unsets reissue setting field.
+     * Unsets Reissue Setting field.
      */
     public function unsetReissueSetting(): self
     {
@@ -561,7 +630,9 @@ class Filters1Builder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -570,7 +641,7 @@ class Filters1Builder
     }
 
     /**
-     * Initializes a new filters 1 object.
+     * Initializes a new Filters 1 object.
      */
     public function build(): Filters1
     {

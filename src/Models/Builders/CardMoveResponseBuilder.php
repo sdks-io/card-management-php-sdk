@@ -12,6 +12,8 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardMoveResponse;
+use ShellCardManagementAPIsLib\Models\CardMoveResponseErrorCardsItems;
+use ShellCardManagementAPIsLib\Models\CardMoveResponseSuccessfulRequestsItems;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
 
 /**
@@ -32,7 +34,7 @@ class CardMoveResponseBuilder
     }
 
     /**
-     * Initializes a new card move response Builder object.
+     * Initializes a new Card Move Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +42,9 @@ class CardMoveResponseBuilder
     }
 
     /**
-     * Sets move card request reference field.
+     * Sets Move Card Request Reference field.
+     *
+     * @param int|null $value
      */
     public function moveCardRequestReference(?int $value): self
     {
@@ -49,7 +53,9 @@ class CardMoveResponseBuilder
     }
 
     /**
-     * Sets successful requests field.
+     * Sets Successful Requests field.
+     *
+     * @param CardMoveResponseSuccessfulRequestsItems[]|null $value
      */
     public function successfulRequests(?array $value): self
     {
@@ -58,7 +64,9 @@ class CardMoveResponseBuilder
     }
 
     /**
-     * Sets error cards field.
+     * Sets Error Cards field.
+     *
+     * @param CardMoveResponseErrorCardsItems[]|null $value
      */
     public function errorCards(?array $value): self
     {
@@ -67,7 +75,9 @@ class CardMoveResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -76,7 +86,9 @@ class CardMoveResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -85,7 +97,7 @@ class CardMoveResponseBuilder
     }
 
     /**
-     * Initializes a new card move response object.
+     * Initializes a new Card Move Response object.
      */
     public function build(): CardMoveResponse
     {

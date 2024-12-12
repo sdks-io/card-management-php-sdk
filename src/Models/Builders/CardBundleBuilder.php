@@ -31,7 +31,7 @@ class CardBundleBuilder
     }
 
     /**
-     * Initializes a new card bundle Builder object.
+     * Initializes a new Card Bundle Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardBundleBuilder
     }
 
     /**
-     * Sets bundle id field.
+     * Sets Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function bundleId(?string $value): self
     {
@@ -48,7 +50,9 @@ class CardBundleBuilder
     }
 
     /**
-     * Sets external bundle id field.
+     * Sets External Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function externalBundleId(?string $value): self
     {
@@ -57,7 +61,9 @@ class CardBundleBuilder
     }
 
     /**
-     * Sets description field.
+     * Sets Description field.
+     *
+     * @param string|null $value
      */
     public function description(?string $value): self
     {
@@ -66,7 +72,9 @@ class CardBundleBuilder
     }
 
     /**
-     * Sets total cards field.
+     * Sets Total Cards field.
+     *
+     * @param int|null $value
      */
     public function totalCards(?int $value): self
     {
@@ -75,7 +83,7 @@ class CardBundleBuilder
     }
 
     /**
-     * Initializes a new card bundle object.
+     * Initializes a new Card Bundle object.
      */
     public function build(): CardBundle
     {

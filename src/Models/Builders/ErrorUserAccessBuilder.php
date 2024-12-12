@@ -32,7 +32,7 @@ class ErrorUserAccessBuilder
     }
 
     /**
-     * Initializes a new error user access Builder object.
+     * Initializes a new Error User Access Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class ErrorUserAccessBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorUserAccessError|null $value
      */
     public function error(?ErrorUserAccessError $value): self
     {
@@ -49,7 +51,7 @@ class ErrorUserAccessBuilder
     }
 
     /**
-     * Initializes a new error user access object.
+     * Initializes a new Error User Access object.
      */
     public function build(): ErrorUserAccess
     {

@@ -31,7 +31,7 @@ class DefaultErrorFaultDetailBuilder
     }
 
     /**
-     * Initializes a new default error fault detail Builder object.
+     * Initializes a new Default Error Fault Detail Builder object.
      */
     public static function init(): self
     {
@@ -40,6 +40,8 @@ class DefaultErrorFaultDetailBuilder
 
     /**
      * Sets errorcode field.
+     *
+     * @param string|null $value
      */
     public function errorcode(?string $value): self
     {
@@ -48,7 +50,7 @@ class DefaultErrorFaultDetailBuilder
     }
 
     /**
-     * Initializes a new default error fault detail object.
+     * Initializes a new Default Error Fault Detail object.
      */
     public function build(): DefaultErrorFaultDetail
     {

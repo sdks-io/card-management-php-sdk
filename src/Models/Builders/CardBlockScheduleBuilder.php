@@ -31,7 +31,7 @@ class CardBlockScheduleBuilder
     }
 
     /**
-     * Initializes a new card block schedule Builder object.
+     * Initializes a new Card Block Schedule Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardBlockScheduleBuilder
     }
 
     /**
-     * Sets from date field.
+     * Sets From Date field.
+     *
+     * @param string|null $value
      */
     public function fromDate(?string $value): self
     {
@@ -48,7 +50,7 @@ class CardBlockScheduleBuilder
     }
 
     /**
-     * Unsets from date field.
+     * Unsets From Date field.
      */
     public function unsetFromDate(): self
     {
@@ -57,7 +59,9 @@ class CardBlockScheduleBuilder
     }
 
     /**
-     * Sets to date field.
+     * Sets To Date field.
+     *
+     * @param string|null $value
      */
     public function toDate(?string $value): self
     {
@@ -66,7 +70,7 @@ class CardBlockScheduleBuilder
     }
 
     /**
-     * Unsets to date field.
+     * Unsets To Date field.
      */
     public function unsetToDate(): self
     {
@@ -75,7 +79,7 @@ class CardBlockScheduleBuilder
     }
 
     /**
-     * Initializes a new card block schedule object.
+     * Initializes a new Card Block Schedule object.
      */
     public function build(): CardBlockSchedule
     {

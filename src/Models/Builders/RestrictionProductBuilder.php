@@ -31,7 +31,7 @@ class RestrictionProductBuilder
     }
 
     /**
-     * Initializes a new restriction product Builder object.
+     * Initializes a new Restriction Product Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class RestrictionProductBuilder
     }
 
     /**
-     * Sets global product code field.
+     * Sets Global Product Code field.
+     *
+     * @param string|null $value
      */
     public function globalProductCode(?string $value): self
     {
@@ -48,7 +50,9 @@ class RestrictionProductBuilder
     }
 
     /**
-     * Sets description field.
+     * Sets Description field.
+     *
+     * @param string|null $value
      */
     public function description(?string $value): self
     {
@@ -57,7 +61,7 @@ class RestrictionProductBuilder
     }
 
     /**
-     * Initializes a new restriction product object.
+     * Initializes a new Restriction Product object.
      */
     public function build(): RestrictionProduct
     {

@@ -15,24 +15,24 @@ Go to the Shell Developer Portal: [https://developer.shell.com](https://develope
 
 Run the following command to install the package and automatically add the dependency to your composer.json file:
 
-```php
-composer require "shell/card-management-sdk:1.2.0"
+```bash
+composer require "shell/card-management-sdk:1.3.0"
 ```
 
 Or add it to the composer.json file manually as given below:
 
-```php
+```json
 "require": {
-    "shell/card-management-sdk": "1.2.0"
+    "shell/card-management-sdk": "1.3.0"
 }
 ```
 
 You can also view the package at:
-https://packagist.org/packages/shell/card-management-sdk#1.2.0
+https://packagist.org/packages/shell/card-management-sdk#1.3.0
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
@@ -48,8 +48,8 @@ The following parameters are configurable for the API Client:
 | `retryOnTimeout` | `bool` | Whether to retry on request timeout.<br>*Default*: `true` |
 | `httpStatusCodesToRetry` | `array` | Http status codes to retry against.<br>*Default*: `408, 413, 429, 500, 502, 503, 504, 521, 522, 524` |
 | `httpMethodsToRetry` | `array` | Http methods to retry against.<br>*Default*: `'GET', 'PUT'` |
-| `basicAuthCredentials` | [`BasicAuthCredentials`](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/auth/basic-authentication.md) | The Credentials Setter for Basic Authentication |
-| `bearerTokenCredentials` | [`BearerTokenCredentials`](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/auth/oauth-2-client-credentials-grant.md) | The Credentials Setter for OAuth 2 Client Credentials Grant |
+| `basicAuthCredentials` | [`BasicAuthCredentials`](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/auth/basic-authentication.md) | The Credentials Setter for Basic Authentication |
+| `bearerTokenCredentials` | [`BearerTokenCredentials`](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/auth/oauth-2-client-credentials-grant.md) | The Credentials Setter for OAuth 2 Client Credentials Grant |
 
 The API client can be initialized as follows:
 
@@ -86,18 +86,18 @@ The SDK can be configured to use a different environment for making API calls. A
 
 This API uses the following authentication schemes.
 
-* [`BasicAuth (Basic Authentication)`](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/auth/basic-authentication.md)
-* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/auth/oauth-2-client-credentials-grant.md)
+* [`BasicAuth (Basic Authentication)`](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/auth/basic-authentication.md)
+* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/auth/oauth-2-client-credentials-grant.md)
 
 ## List of APIs
 
-* [Customer](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/controllers/customer.md)
-* [Restriction](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/controllers/restriction.md)
-* [Card](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/controllers/card.md)
+* [Customer](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/controllers/customer.md)
+* [Restriction](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/controllers/restriction.md)
+* [Card](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/controllers/card.md)
 
 ## Classes Documentation
 
-* [ApiException](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/api-exception.md)
-* [HttpRequest](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/http-request.md)
-* [HttpResponse](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.2.0/doc/http-response.md)
+* [ApiException](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/api-exception.md)
+* [HttpRequest](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/http-request.md)
+* [HttpResponse](https://www.github.com/sdks-io/card-management-php-sdk/tree/1.3.0/doc/http-response.md)
 

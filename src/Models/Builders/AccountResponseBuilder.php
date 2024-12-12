@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AccountResponse;
+use ShellCardManagementAPIsLib\Models\AccountResponseAccountsItems;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
 
 /**
@@ -32,7 +33,7 @@ class AccountResponseBuilder
     }
 
     /**
-     * Initializes a new account response Builder object.
+     * Initializes a new Account Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +41,9 @@ class AccountResponseBuilder
     }
 
     /**
-     * Sets accounts field.
+     * Sets Accounts field.
+     *
+     * @param AccountResponseAccountsItems[]|null $value
      */
     public function accounts(?array $value): self
     {
@@ -49,7 +52,9 @@ class AccountResponseBuilder
     }
 
     /**
-     * Sets current page field.
+     * Sets Current Page field.
+     *
+     * @param int|null $value
      */
     public function currentPage(?int $value): self
     {
@@ -58,7 +63,9 @@ class AccountResponseBuilder
     }
 
     /**
-     * Sets row count field.
+     * Sets Row Count field.
+     *
+     * @param int|null $value
      */
     public function rowCount(?int $value): self
     {
@@ -67,7 +74,9 @@ class AccountResponseBuilder
     }
 
     /**
-     * Sets total pages field.
+     * Sets Total Pages field.
+     *
+     * @param int|null $value
      */
     public function totalPages(?int $value): self
     {
@@ -76,7 +85,9 @@ class AccountResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -85,7 +96,9 @@ class AccountResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -94,7 +107,7 @@ class AccountResponseBuilder
     }
 
     /**
-     * Initializes a new account response object.
+     * Initializes a new Account Response object.
      */
     public function build(): AccountResponse
     {

@@ -13,6 +13,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\UpdateCardGroupResponse;
+use ShellCardManagementAPIsLib\Models\UpdateCardGroupResponseMoveCardReferencesItems;
 
 /**
  * Builder for model UpdateCardGroupResponse
@@ -32,7 +33,7 @@ class UpdateCardGroupResponseBuilder
     }
 
     /**
-     * Initializes a new update card group response Builder object.
+     * Initializes a new Update Card Group Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +41,9 @@ class UpdateCardGroupResponseBuilder
     }
 
     /**
-     * Sets main reference field.
+     * Sets Main Reference field.
+     *
+     * @param int|null $value
      */
     public function mainReference(?int $value): self
     {
@@ -49,7 +52,9 @@ class UpdateCardGroupResponseBuilder
     }
 
     /**
-     * Sets update card group reference field.
+     * Sets Update Card Group Reference field.
+     *
+     * @param int|null $value
      */
     public function updateCardGroupReference(?int $value): self
     {
@@ -58,7 +63,9 @@ class UpdateCardGroupResponseBuilder
     }
 
     /**
-     * Sets new card group reference field.
+     * Sets New Card Group Reference field.
+     *
+     * @param int|null $value
      */
     public function newCardGroupReference(?int $value): self
     {
@@ -67,7 +74,9 @@ class UpdateCardGroupResponseBuilder
     }
 
     /**
-     * Sets move card references field.
+     * Sets Move Card References field.
+     *
+     * @param UpdateCardGroupResponseMoveCardReferencesItems[]|null $value
      */
     public function moveCardReferences(?array $value): self
     {
@@ -76,7 +85,9 @@ class UpdateCardGroupResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -85,7 +96,9 @@ class UpdateCardGroupResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -94,7 +107,7 @@ class UpdateCardGroupResponseBuilder
     }
 
     /**
-     * Initializes a new update card group response object.
+     * Initializes a new Update Card Group Response object.
      */
     public function build(): UpdateCardGroupResponse
     {

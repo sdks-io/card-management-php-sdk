@@ -31,7 +31,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Initializes a new replace card settings Builder object.
+     * Initializes a new Replace Card Settings Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets self selected encrypted pin field.
+     * Sets Self Selected Encrypted PIN field.
+     *
+     * @param string|null $value
      */
     public function selfSelectedEncryptedPIN(?string $value): self
     {
@@ -48,7 +50,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets self selected encrypted pin field.
+     * Unsets Self Selected Encrypted PIN field.
      */
     public function unsetSelfSelectedEncryptedPIN(): self
     {
@@ -57,7 +59,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets self selected pinkey id field.
+     * Sets Self Selected PIN Key ID field.
+     *
+     * @param string|null $value
      */
     public function selfSelectedPINKeyID(?string $value): self
     {
@@ -66,7 +70,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets self selected pinkey id field.
+     * Unsets Self Selected PIN Key ID field.
      */
     public function unsetSelfSelectedPINKeyID(): self
     {
@@ -75,7 +79,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets self selected pinsession key field.
+     * Sets Self Selected PIN Session Key field.
+     *
+     * @param string|null $value
      */
     public function selfSelectedPINSessionKey(?string $value): self
     {
@@ -84,7 +90,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets self selected pinsession key field.
+     * Unsets Self Selected PIN Session Key field.
      */
     public function unsetSelfSelectedPINSessionKey(): self
     {
@@ -93,7 +99,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets validate fleet id field.
+     * Sets Validate Fleet Id field.
+     *
+     * @param bool|null $value
      */
     public function validateFleetId(?bool $value): self
     {
@@ -102,7 +110,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets card group id field.
+     * Sets Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function cardGroupId(?int $value): self
     {
@@ -111,7 +121,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets card group id field.
+     * Unsets Card Group Id field.
      */
     public function unsetCardGroupId(): self
     {
@@ -120,7 +130,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets card delivery type field.
+     * Sets Card Delivery Type field.
+     *
+     * @param int|null $value
      */
     public function cardDeliveryType(?int $value): self
     {
@@ -129,7 +141,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery contact title field.
+     * Sets Delivery Contact Title field.
+     *
+     * @param string|null $value
      */
     public function deliveryContactTitle(?string $value): self
     {
@@ -138,7 +152,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery contact title field.
+     * Unsets Delivery Contact Title field.
      */
     public function unsetDeliveryContactTitle(): self
     {
@@ -147,7 +161,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery contact name field.
+     * Sets Delivery Contact Name field.
+     *
+     * @param string|null $value
      */
     public function deliveryContactName(?string $value): self
     {
@@ -156,7 +172,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery contact name field.
+     * Unsets Delivery Contact Name field.
      */
     public function unsetDeliveryContactName(): self
     {
@@ -165,7 +181,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery company name field.
+     * Sets Delivery Company Name field.
+     *
+     * @param string|null $value
      */
     public function deliveryCompanyName(?string $value): self
     {
@@ -174,7 +192,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery company name field.
+     * Unsets Delivery Company Name field.
      */
     public function unsetDeliveryCompanyName(): self
     {
@@ -183,7 +201,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery address line 1 field.
+     * Sets Delivery Address Line 1 field.
+     *
+     * @param string|null $value
      */
     public function deliveryAddressLine1(?string $value): self
     {
@@ -192,7 +212,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery address line 1 field.
+     * Unsets Delivery Address Line 1 field.
      */
     public function unsetDeliveryAddressLine1(): self
     {
@@ -201,7 +221,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery address line 2 field.
+     * Sets Delivery Address Line 2 field.
+     *
+     * @param string|null $value
      */
     public function deliveryAddressLine2(?string $value): self
     {
@@ -210,7 +232,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery address line 2 field.
+     * Unsets Delivery Address Line 2 field.
      */
     public function unsetDeliveryAddressLine2(): self
     {
@@ -219,7 +241,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery address line 3 field.
+     * Sets Delivery Address Line 3 field.
+     *
+     * @param string|null $value
      */
     public function deliveryAddressLine3(?string $value): self
     {
@@ -228,7 +252,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery address line 3 field.
+     * Unsets Delivery Address Line 3 field.
      */
     public function unsetDeliveryAddressLine3(): self
     {
@@ -237,7 +261,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery zip code field.
+     * Sets Delivery Zip Code field.
+     *
+     * @param string|null $value
      */
     public function deliveryZipCode(?string $value): self
     {
@@ -246,7 +272,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery zip code field.
+     * Unsets Delivery Zip Code field.
      */
     public function unsetDeliveryZipCode(): self
     {
@@ -255,7 +281,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery city field.
+     * Sets Delivery City field.
+     *
+     * @param string|null $value
      */
     public function deliveryCity(?string $value): self
     {
@@ -264,7 +292,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery city field.
+     * Unsets Delivery City field.
      */
     public function unsetDeliveryCity(): self
     {
@@ -273,7 +301,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery region id field.
+     * Sets Delivery Region Id field.
+     *
+     * @param int|null $value
      */
     public function deliveryRegionId(?int $value): self
     {
@@ -282,7 +312,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery region id field.
+     * Unsets Delivery Region Id field.
      */
     public function unsetDeliveryRegionId(): self
     {
@@ -291,7 +321,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery region field.
+     * Sets Delivery Region field.
+     *
+     * @param string|null $value
      */
     public function deliveryRegion(?string $value): self
     {
@@ -300,7 +332,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery region field.
+     * Unsets Delivery Region field.
      */
     public function unsetDeliveryRegion(): self
     {
@@ -309,7 +341,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery country field.
+     * Sets Delivery Country field.
+     *
+     * @param string|null $value
      */
     public function deliveryCountry(?string $value): self
     {
@@ -318,7 +352,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery country field.
+     * Unsets Delivery Country field.
      */
     public function unsetDeliveryCountry(): self
     {
@@ -327,7 +361,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets delivery country id field.
+     * Sets Delivery Country Id field.
+     *
+     * @param int|null $value
      */
     public function deliveryCountryId(?int $value): self
     {
@@ -336,7 +372,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets delivery country id field.
+     * Unsets Delivery Country Id field.
      */
     public function unsetDeliveryCountryId(): self
     {
@@ -345,7 +381,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets phone number field.
+     * Sets Phone Number field.
+     *
+     * @param string|null $value
      */
     public function phoneNumber(?string $value): self
     {
@@ -354,7 +392,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets email address field.
+     * Sets Email Address field.
+     *
+     * @param string|null $value
      */
     public function emailAddress(?string $value): self
     {
@@ -363,7 +403,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets email address field.
+     * Unsets Email Address field.
      */
     public function unsetEmailAddress(): self
     {
@@ -372,7 +412,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery address type field.
+     * Sets PIN Delivery Address Type field.
+     *
+     * @param int|null $value
      */
     public function pINDeliveryAddressType(?int $value): self
     {
@@ -381,7 +423,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery address type field.
+     * Unsets PIN Delivery Address Type field.
      */
     public function unsetPINDeliveryAddressType(): self
     {
@@ -390,7 +432,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pinadvice type field.
+     * Sets PIN Advice Type field.
+     *
+     * @param int|null $value
      */
     public function pINAdviceType(?int $value): self
     {
@@ -399,7 +443,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pinadvice type field.
+     * Unsets PIN Advice Type field.
      */
     public function unsetPINAdviceType(): self
     {
@@ -408,7 +452,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery contact title field.
+     * Sets PIN Delivery Contact Title field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryContactTitle(?string $value): self
     {
@@ -417,7 +463,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery contact title field.
+     * Unsets PIN Delivery Contact Title field.
      */
     public function unsetPINDeliveryContactTitle(): self
     {
@@ -426,7 +472,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery contact name field.
+     * Sets PIN Delivery Contact Name field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryContactName(?string $value): self
     {
@@ -435,7 +483,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery contact name field.
+     * Unsets PIN Delivery Contact Name field.
      */
     public function unsetPINDeliveryContactName(): self
     {
@@ -444,7 +492,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery company name field.
+     * Sets PIN Delivery Company Name field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryCompanyName(?string $value): self
     {
@@ -453,7 +503,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery company name field.
+     * Unsets PIN Delivery Company Name field.
      */
     public function unsetPINDeliveryCompanyName(): self
     {
@@ -462,7 +512,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery address line 1 field.
+     * Sets PIN Delivery Address Line 1 field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryAddressLine1(?string $value): self
     {
@@ -471,7 +523,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery address line 1 field.
+     * Unsets PIN Delivery Address Line 1 field.
      */
     public function unsetPINDeliveryAddressLine1(): self
     {
@@ -480,7 +532,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery address line 2 field.
+     * Sets PIN Delivery Address Line 2 field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryAddressLine2(?string $value): self
     {
@@ -489,7 +543,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery address line 2 field.
+     * Unsets PIN Delivery Address Line 2 field.
      */
     public function unsetPINDeliveryAddressLine2(): self
     {
@@ -498,7 +552,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery address line 3 field.
+     * Sets PIN Delivery Address Line 3 field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryAddressLine3(?string $value): self
     {
@@ -507,7 +563,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery address line 3 field.
+     * Unsets PIN Delivery Address Line 3 field.
      */
     public function unsetPINDeliveryAddressLine3(): self
     {
@@ -516,7 +572,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery zip code field.
+     * Sets PIN Delivery Zip Code field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryZipCode(?string $value): self
     {
@@ -525,7 +583,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery zip code field.
+     * Unsets PIN Delivery Zip Code field.
      */
     public function unsetPINDeliveryZipCode(): self
     {
@@ -534,7 +592,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery city field.
+     * Sets PIN Delivery City field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryCity(?string $value): self
     {
@@ -543,7 +603,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery city field.
+     * Unsets PIN Delivery City field.
      */
     public function unsetPINDeliveryCity(): self
     {
@@ -552,7 +612,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery region id field.
+     * Sets PIN Delivery Region Id field.
+     *
+     * @param int|null $value
      */
     public function pINDeliveryRegionId(?int $value): self
     {
@@ -561,7 +623,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery region id field.
+     * Unsets PIN Delivery Region Id field.
      */
     public function unsetPINDeliveryRegionId(): self
     {
@@ -570,7 +632,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery region field.
+     * Sets PIN Delivery Region field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryRegion(?string $value): self
     {
@@ -579,7 +643,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery region field.
+     * Unsets PIN Delivery Region field.
      */
     public function unsetPINDeliveryRegion(): self
     {
@@ -588,7 +652,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery country field.
+     * Sets PIN Delivery Country field.
+     *
+     * @param string|null $value
      */
     public function pINDeliveryCountry(?string $value): self
     {
@@ -597,7 +663,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery country field.
+     * Unsets PIN Delivery Country field.
      */
     public function unsetPINDeliveryCountry(): self
     {
@@ -606,7 +672,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pindelivery country id field.
+     * Sets PIN Delivery Country Id field.
+     *
+     * @param int|null $value
      */
     public function pINDeliveryCountryId(?int $value): self
     {
@@ -615,7 +683,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pindelivery country id field.
+     * Unsets PIN Delivery Country Id field.
      */
     public function unsetPINDeliveryCountryId(): self
     {
@@ -624,7 +692,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pinphone number field.
+     * Sets PIN Phone Number field.
+     *
+     * @param string|null $value
      */
     public function pINPhoneNumber(?string $value): self
     {
@@ -633,7 +703,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pinphone number field.
+     * Unsets PIN Phone Number field.
      */
     public function unsetPINPhoneNumber(): self
     {
@@ -642,7 +712,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets pinemail address field.
+     * Sets PIN Email Address field.
+     *
+     * @param string|null $value
      */
     public function pINEmailAddress(?string $value): self
     {
@@ -651,7 +723,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets pinemail address field.
+     * Unsets PIN Email Address field.
      */
     public function unsetPINEmailAddress(): self
     {
@@ -660,7 +732,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets save for pinreminder field.
+     * Sets Save For PIN Reminder field.
+     *
+     * @param bool|null $value
      */
     public function saveForPINReminder(?bool $value): self
     {
@@ -669,7 +743,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets save for card reissue field.
+     * Sets Save For Card Reissue field.
+     *
+     * @param bool|null $value
      */
     public function saveForCardReissue(?bool $value): self
     {
@@ -678,7 +754,9 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Sets expiry date field.
+     * Sets Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function expiryDate(?string $value): self
     {
@@ -687,7 +765,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Unsets expiry date field.
+     * Unsets Expiry Date field.
      */
     public function unsetExpiryDate(): self
     {
@@ -696,7 +774,7 @@ class ReplaceCardSettingsBuilder
     }
 
     /**
-     * Initializes a new replace card settings object.
+     * Initializes a new Replace Card Settings object.
      */
     public function build(): ReplaceCardSettings
     {

@@ -31,7 +31,7 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Initializes a new restrictioncards res Builder object.
+     * Initializes a new Restrictioncards Res Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +50,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -57,7 +61,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param string|null $value
      */
     public function cardId(?string $value): self
     {
@@ -66,7 +72,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -75,7 +83,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets usage restriction status field.
+     * Sets Usage Restriction Status field.
+     *
+     * @param string|null $value
      */
     public function usageRestrictionStatus(?string $value): self
     {
@@ -84,7 +94,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets usage restriction description field.
+     * Sets Usage Restriction Description field.
+     *
+     * @param string|null $value
      */
     public function usageRestrictionDescription(?string $value): self
     {
@@ -93,7 +105,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets day time restriction status field.
+     * Sets Day Time Restriction Status field.
+     *
+     * @param string|null $value
      */
     public function dayTimeRestrictionStatus(?string $value): self
     {
@@ -102,7 +116,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets day time restriction description field.
+     * Sets Day Time Restriction Description field.
+     *
+     * @param string|null $value
      */
     public function dayTimeRestrictionDescription(?string $value): self
     {
@@ -111,7 +127,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets product restriction status field.
+     * Sets Product Restriction Status field.
+     *
+     * @param string|null $value
      */
     public function productRestrictionStatus(?string $value): self
     {
@@ -120,7 +138,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets product restriction description field.
+     * Sets Product Restriction Description field.
+     *
+     * @param string|null $value
      */
     public function productRestrictionDescription(?string $value): self
     {
@@ -129,7 +149,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets location restriction status field.
+     * Sets Location Restriction Status field.
+     *
+     * @param string|null $value
      */
     public function locationRestrictionStatus(?string $value): self
     {
@@ -138,7 +160,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets location restriction status description field.
+     * Sets Location Restriction Status Description field.
+     *
+     * @param string|null $value
      */
     public function locationRestrictionStatusDescription(?string $value): self
     {
@@ -147,7 +171,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets validation error code field.
+     * Sets Validation Error Code field.
+     *
+     * @param string|null $value
      */
     public function validationErrorCode(?string $value): self
     {
@@ -156,7 +182,9 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Sets validation error description field.
+     * Sets Validation Error Description field.
+     *
+     * @param string|null $value
      */
     public function validationErrorDescription(?string $value): self
     {
@@ -165,7 +193,7 @@ class RestrictioncardsResBuilder
     }
 
     /**
-     * Initializes a new restrictioncards res object.
+     * Initializes a new Restrictioncards Res object.
      */
     public function build(): RestrictioncardsRes
     {

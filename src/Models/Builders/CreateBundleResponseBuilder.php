@@ -33,7 +33,7 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Initializes a new create bundle response Builder object.
+     * Initializes a new Create Bundle Response Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +41,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -50,7 +52,7 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -59,7 +61,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets bundle creation status field.
+     * Sets Bundle Creation Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function bundleCreationStatus(?ErrorStatus $value): self
     {
@@ -68,7 +72,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets bundle id field.
+     * Sets Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function bundleId(?string $value): self
     {
@@ -77,7 +83,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets day time restriction status field.
+     * Sets Day Time Restriction Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function dayTimeRestrictionStatus(?ErrorStatus $value): self
     {
@@ -86,7 +94,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets day time restriction profile id field.
+     * Sets Day Time Restriction Profile Id field.
+     *
+     * @param string|null $value
      */
     public function dayTimeRestrictionProfileId(?string $value): self
     {
@@ -95,7 +105,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets location restriction status field.
+     * Sets Location Restriction Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function locationRestrictionStatus(?ErrorStatus $value): self
     {
@@ -104,7 +116,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets location restriction profile id field.
+     * Sets Location Restriction Profile Id field.
+     *
+     * @param string|null $value
      */
     public function locationRestrictionProfileId(?string $value): self
     {
@@ -113,7 +127,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets usage restriction status field.
+     * Sets Usage Restriction Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function usageRestrictionStatus(?ErrorStatus $value): self
     {
@@ -122,7 +138,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets product restriction status field.
+     * Sets Product Restriction Status field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function productRestrictionStatus(?ErrorStatus $value): self
     {
@@ -131,7 +149,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets cards field.
+     * Sets Cards field.
+     *
+     * @param BundleCardRestrictionStatus|null $value
      */
     public function cards(?BundleCardRestrictionStatus $value): self
     {
@@ -140,7 +160,9 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -149,7 +171,7 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Initializes a new create bundle response object.
+     * Initializes a new Create Bundle Response object.
      */
     public function build(): CreateBundleResponse
     {

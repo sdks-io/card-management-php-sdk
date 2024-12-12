@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
+use ShellCardManagementAPIsLib\Models\PurchaseCategory1AllOf0;
 use ShellCardManagementAPIsLib\Models\PurchaseCategoryResponse;
 
 /**
@@ -32,7 +33,7 @@ class PurchaseCategoryResponseBuilder
     }
 
     /**
-     * Initializes a new purchase category response Builder object.
+     * Initializes a new Purchase Category Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +41,9 @@ class PurchaseCategoryResponseBuilder
     }
 
     /**
-     * Sets purchase categories field.
+     * Sets Purchase Categories field.
+     *
+     * @param PurchaseCategory1AllOf0[]|null $value
      */
     public function purchaseCategories(?array $value): self
     {
@@ -49,7 +52,9 @@ class PurchaseCategoryResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -58,7 +63,7 @@ class PurchaseCategoryResponseBuilder
     }
 
     /**
-     * Initializes a new purchase category response object.
+     * Initializes a new Purchase Category Response object.
      */
     public function build(): PurchaseCategoryResponse
     {

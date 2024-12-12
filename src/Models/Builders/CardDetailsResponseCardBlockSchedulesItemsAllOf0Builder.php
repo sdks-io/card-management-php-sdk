@@ -31,7 +31,7 @@ class CardDetailsResponseCardBlockSchedulesItemsAllOf0Builder
     }
 
     /**
-     * Initializes a new card details response card block schedules items all of 0 Builder object.
+     * Initializes a new Card Details Response Card Block Schedules Items All Of 0 Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardDetailsResponseCardBlockSchedulesItemsAllOf0Builder
     }
 
     /**
-     * Sets from date field.
+     * Sets From Date field.
+     *
+     * @param string|null $value
      */
     public function fromDate(?string $value): self
     {
@@ -48,7 +50,9 @@ class CardDetailsResponseCardBlockSchedulesItemsAllOf0Builder
     }
 
     /**
-     * Sets to date field.
+     * Sets To Date field.
+     *
+     * @param string|null $value
      */
     public function toDate(?string $value): self
     {
@@ -57,7 +61,7 @@ class CardDetailsResponseCardBlockSchedulesItemsAllOf0Builder
     }
 
     /**
-     * Initializes a new card details response card block schedules items all of 0 object.
+     * Initializes a new Card Details Response Card Block Schedules Items All Of 0 object.
      */
     public function build(): CardDetailsResponseCardBlockSchedulesItemsAllOf0
     {

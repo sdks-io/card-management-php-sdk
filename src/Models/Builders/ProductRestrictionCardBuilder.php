@@ -31,7 +31,7 @@ class ProductRestrictionCardBuilder
     }
 
     /**
-     * Initializes a new product restriction card Builder object.
+     * Initializes a new Product Restriction Card Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class ProductRestrictionCardBuilder
     }
 
     /**
-     * Sets products field.
+     * Sets Products field.
+     *
+     * @param string[]|null $value
      */
     public function products(?array $value): self
     {
@@ -48,7 +50,9 @@ class ProductRestrictionCardBuilder
     }
 
     /**
-     * Sets product groups field.
+     * Sets Product Groups field.
+     *
+     * @param string[]|null $value
      */
     public function productGroups(?array $value): self
     {
@@ -57,7 +61,7 @@ class ProductRestrictionCardBuilder
     }
 
     /**
-     * Initializes a new product restriction card object.
+     * Initializes a new Product Restriction Card object.
      */
     public function build(): ProductRestrictionCard
     {

@@ -31,7 +31,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Initializes a new audit response audits items Builder object.
+     * Initializes a new Audit Response Audits Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +50,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -57,7 +59,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -66,7 +70,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -75,7 +79,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets additional information 1 field.
+     * Sets Additional Information 1 field.
+     *
+     * @param string|null $value
      */
     public function additionalInformation1(?string $value): self
     {
@@ -84,7 +90,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets additional information 1 field.
+     * Unsets Additional Information 1 field.
      */
     public function unsetAdditionalInformation1(): self
     {
@@ -93,7 +99,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets additional information 2 field.
+     * Sets Additional Information 2 field.
+     *
+     * @param string|null $value
      */
     public function additionalInformation2(?string $value): self
     {
@@ -102,7 +110,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets additional information 2 field.
+     * Unsets Additional Information 2 field.
      */
     public function unsetAdditionalInformation2(): self
     {
@@ -111,7 +119,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets additional information 3 field.
+     * Sets Additional Information 3 field.
+     *
+     * @param string|null $value
      */
     public function additionalInformation3(?string $value): self
     {
@@ -120,7 +130,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets additional information 3 field.
+     * Unsets Additional Information 3 field.
      */
     public function unsetAdditionalInformation3(): self
     {
@@ -129,7 +139,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets additional information 4 field.
+     * Sets Additional Information 4 field.
+     *
+     * @param string|null $value
      */
     public function additionalInformation4(?string $value): self
     {
@@ -138,7 +150,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets additional information 4 field.
+     * Unsets Additional Information 4 field.
      */
     public function unsetAdditionalInformation4(): self
     {
@@ -147,7 +159,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets additional information 5 field.
+     * Sets Additional Information 5 field.
+     *
+     * @param string|null $value
      */
     public function additionalInformation5(?string $value): self
     {
@@ -156,7 +170,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets additional information 5 field.
+     * Unsets Additional Information 5 field.
      */
     public function unsetAdditionalInformation5(): self
     {
@@ -165,7 +179,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets additional information 6 field.
+     * Sets Additional Information 6 field.
+     *
+     * @param string|null $value
      */
     public function additionalInformation6(?string $value): self
     {
@@ -174,7 +190,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets additional information 6 field.
+     * Unsets Additional Information 6 field.
      */
     public function unsetAdditionalInformation6(): self
     {
@@ -183,7 +199,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets additional information 7 field.
+     * Sets Additional Information 7 field.
+     *
+     * @param string|null $value
      */
     public function additionalInformation7(?string $value): self
     {
@@ -192,7 +210,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets additional information 7 field.
+     * Unsets Additional Information 7 field.
      */
     public function unsetAdditionalInformation7(): self
     {
@@ -201,7 +219,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets additional information 8 field.
+     * Sets Additional Information 8 field.
+     *
+     * @param string|null $value
      */
     public function additionalInformation8(?string $value): self
     {
@@ -210,7 +230,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets additional information 8 field.
+     * Unsets Additional Information 8 field.
      */
     public function unsetAdditionalInformation8(): self
     {
@@ -219,7 +239,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets additional information 9 field.
+     * Sets Additional Information 9 field.
+     *
+     * @param string|null $value
      */
     public function additionalInformation9(?string $value): self
     {
@@ -228,7 +250,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets additional information 9 field.
+     * Unsets Additional Information 9 field.
      */
     public function unsetAdditionalInformation9(): self
     {
@@ -237,7 +259,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets card group id field.
+     * Sets Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function cardGroupId(?int $value): self
     {
@@ -246,7 +270,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets card group id field.
+     * Unsets Card Group Id field.
      */
     public function unsetCardGroupId(): self
     {
@@ -255,7 +279,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -264,7 +290,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets card group name field.
+     * Unsets Card Group Name field.
      */
     public function unsetCardGroupName(): self
     {
@@ -273,7 +299,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -282,7 +310,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -291,7 +319,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -300,7 +330,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -309,7 +339,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -318,7 +350,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -327,7 +359,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets error code field.
+     * Sets Error Code field.
+     *
+     * @param string|null $value
      */
     public function errorCode(?string $value): self
     {
@@ -336,7 +370,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets error string field.
+     * Sets Error String field.
+     *
+     * @param string|null $value
      */
     public function errorString(?string $value): self
     {
@@ -345,7 +381,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets error string field.
+     * Unsets Error String field.
      */
     public function unsetErrorString(): self
     {
@@ -354,7 +390,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets global request id field.
+     * Sets Global Request ID field.
+     *
+     * @param string|null $value
      */
     public function globalRequestID(?string $value): self
     {
@@ -363,7 +401,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets global request id field.
+     * Unsets Global Request ID field.
      */
     public function unsetGlobalRequestID(): self
     {
@@ -372,7 +410,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -381,7 +421,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -390,7 +430,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -399,7 +441,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -408,7 +450,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -417,7 +461,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -426,7 +470,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets processed on field.
+     * Sets Processed On field.
+     *
+     * @param string|null $value
      */
     public function processedOn(?string $value): self
     {
@@ -435,7 +481,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets processed on field.
+     * Unsets Processed On field.
      */
     public function unsetProcessedOn(): self
     {
@@ -444,7 +490,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets requested by field.
+     * Sets Requested By field.
+     *
+     * @param string|null $value
      */
     public function requestedBy(?string $value): self
     {
@@ -453,7 +501,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets requested by field.
+     * Unsets Requested By field.
      */
     public function unsetRequestedBy(): self
     {
@@ -462,7 +510,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets requested operation field.
+     * Sets Requested Operation field.
+     *
+     * @param string|null $value
      */
     public function requestedOperation(?string $value): self
     {
@@ -471,7 +521,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets requested operation field.
+     * Unsets Requested Operation field.
      */
     public function unsetRequestedOperation(): self
     {
@@ -480,7 +530,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets request reference field.
+     * Sets Request Reference field.
+     *
+     * @param int|null $value
      */
     public function requestReference(?int $value): self
     {
@@ -489,7 +541,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets request reference field.
+     * Unsets Request Reference field.
      */
     public function unsetRequestReference(): self
     {
@@ -498,7 +550,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets request type field.
+     * Sets Request Type field.
+     *
+     * @param string|null $value
      */
     public function requestType(?string $value): self
     {
@@ -507,7 +561,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets request type field.
+     * Unsets Request Type field.
      */
     public function unsetRequestType(): self
     {
@@ -516,7 +570,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -525,7 +581,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets status field.
+     * Unsets Status field.
      */
     public function unsetStatus(): self
     {
@@ -534,7 +590,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets submitted on field.
+     * Sets Submitted On field.
+     *
+     * @param string|null $value
      */
     public function submittedOn(?string $value): self
     {
@@ -543,7 +601,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets submitted on field.
+     * Unsets Submitted On field.
      */
     public function unsetSubmittedOn(): self
     {
@@ -552,7 +610,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets sub request reference field.
+     * Sets Sub Request Reference field.
+     *
+     * @param int|null $value
      */
     public function subRequestReference(?int $value): self
     {
@@ -561,7 +621,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets sub request reference field.
+     * Unsets Sub Request Reference field.
      */
     public function unsetSubRequestReference(): self
     {
@@ -570,7 +630,9 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Sets user display name field.
+     * Sets User Display Name field.
+     *
+     * @param string|null $value
      */
     public function userDisplayName(?string $value): self
     {
@@ -579,7 +641,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Unsets user display name field.
+     * Unsets User Display Name field.
      */
     public function unsetUserDisplayName(): self
     {
@@ -588,7 +650,7 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
-     * Initializes a new audit response audits items object.
+     * Initializes a new Audit Response Audits Items object.
      */
     public function build(): AuditResponseAuditsItems
     {

@@ -31,7 +31,7 @@ class CustomerContractBuilder
     }
 
     /**
-     * Initializes a new customer contract Builder object.
+     * Initializes a new Customer Contract Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CustomerContractBuilder
     }
 
     /**
-     * Sets partner id field.
+     * Sets Partner Id field.
+     *
+     * @param string|null $value
      */
     public function partnerId(?string $value): self
     {
@@ -48,7 +50,7 @@ class CustomerContractBuilder
     }
 
     /**
-     * Unsets partner id field.
+     * Unsets Partner Id field.
      */
     public function unsetPartnerId(): self
     {
@@ -57,7 +59,9 @@ class CustomerContractBuilder
     }
 
     /**
-     * Sets partner name field.
+     * Sets Partner Name field.
+     *
+     * @param string|null $value
      */
     public function partnerName(?string $value): self
     {
@@ -66,7 +70,7 @@ class CustomerContractBuilder
     }
 
     /**
-     * Unsets partner name field.
+     * Unsets Partner Name field.
      */
     public function unsetPartnerName(): self
     {
@@ -75,7 +79,7 @@ class CustomerContractBuilder
     }
 
     /**
-     * Initializes a new customer contract object.
+     * Initializes a new Customer Contract object.
      */
     public function build(): CustomerContract
     {

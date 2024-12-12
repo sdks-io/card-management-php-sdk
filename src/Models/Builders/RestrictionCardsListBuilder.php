@@ -33,7 +33,7 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Initializes a new restriction cards list Builder object.
+     * Initializes a new Restriction Cards List Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +41,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -50,7 +52,7 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -59,7 +61,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -68,7 +72,7 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -77,7 +81,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -86,7 +92,7 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -95,7 +101,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets reset usage restrictions field.
+     * Sets Reset Usage Restrictions field.
+     *
+     * @param bool|null $value
      */
     public function resetUsageRestrictions(?bool $value): self
     {
@@ -104,7 +112,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets reset day time restrictions field.
+     * Sets Reset Day Time Restrictions field.
+     *
+     * @param bool|null $value
      */
     public function resetDayTimeRestrictions(?bool $value): self
     {
@@ -113,7 +123,7 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Unsets reset day time restrictions field.
+     * Unsets Reset Day Time Restrictions field.
      */
     public function unsetResetDayTimeRestrictions(): self
     {
@@ -122,7 +132,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets reset product restrictions field.
+     * Sets Reset Product Restrictions field.
+     *
+     * @param bool|null $value
      */
     public function resetProductRestrictions(?bool $value): self
     {
@@ -131,7 +143,7 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Unsets reset product restrictions field.
+     * Unsets Reset Product Restrictions field.
      */
     public function unsetResetProductRestrictions(): self
     {
@@ -140,7 +152,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets reset location restrictions field.
+     * Sets Reset Location Restrictions field.
+     *
+     * @param bool|null $value
      */
     public function resetLocationRestrictions(?bool $value): self
     {
@@ -149,7 +163,7 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Unsets reset location restrictions field.
+     * Unsets Reset Location Restrictions field.
      */
     public function unsetResetLocationRestrictions(): self
     {
@@ -158,7 +172,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets usage restrictions field.
+     * Sets Usage Restrictions field.
+     *
+     * @param array|null $value
      */
     public function usageRestrictions(?array $value): self
     {
@@ -167,7 +183,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets day time restrictions field.
+     * Sets Day Time Restrictions field.
+     *
+     * @param DayTimeRestrictions|null $value
      */
     public function dayTimeRestrictions(?DayTimeRestrictions $value): self
     {
@@ -176,7 +194,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets product restrictions field.
+     * Sets Product Restrictions field.
+     *
+     * @param array|null $value
      */
     public function productRestrictions(?array $value): self
     {
@@ -185,7 +205,9 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Sets location restrictions field.
+     * Sets Location Restrictions field.
+     *
+     * @param LocationRestriction|null $value
      */
     public function locationRestrictions(?LocationRestriction $value): self
     {
@@ -194,7 +216,7 @@ class RestrictionCardsListBuilder
     }
 
     /**
-     * Initializes a new restriction cards list object.
+     * Initializes a new Restriction Cards List object.
      */
     public function build(): RestrictionCardsList
     {

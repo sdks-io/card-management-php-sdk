@@ -31,7 +31,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Initializes a new card details request Builder object.
+     * Initializes a new Card Details Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -48,7 +50,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -57,7 +61,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -66,7 +70,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -75,7 +81,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -84,7 +90,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets client reference id field.
+     * Sets Client Reference Id field.
+     *
+     * @param string|null $value
      */
     public function clientReferenceId(?string $value): self
     {
@@ -93,7 +101,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets client reference id field.
+     * Unsets Client Reference Id field.
      */
     public function unsetClientReferenceId(): self
     {
@@ -102,7 +110,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -111,7 +121,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -120,7 +130,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -129,7 +141,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -138,7 +150,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -147,7 +161,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -156,7 +170,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -165,7 +181,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -174,7 +190,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -183,7 +201,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -192,7 +210,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -201,7 +221,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -210,7 +230,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets token type id field.
+     * Sets Token Type ID field.
+     *
+     * @param int|null $value
      */
     public function tokenTypeID(?int $value): self
     {
@@ -219,7 +241,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets token type id field.
+     * Unsets Token Type ID field.
      */
     public function unsetTokenTypeID(): self
     {
@@ -228,7 +250,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets token type name field.
+     * Sets Token Type Name field.
+     *
+     * @param string|null $value
      */
     public function tokenTypeName(?string $value): self
     {
@@ -237,7 +261,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets token type name field.
+     * Unsets Token Type Name field.
      */
     public function unsetTokenTypeName(): self
     {
@@ -246,7 +270,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets creation date field.
+     * Sets Creation Date field.
+     *
+     * @param string|null $value
      */
     public function creationDate(?string $value): self
     {
@@ -255,7 +281,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets creation date field.
+     * Unsets Creation Date field.
      */
     public function unsetCreationDate(): self
     {
@@ -264,7 +290,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets effective date field.
+     * Sets Effective Date field.
+     *
+     * @param string|null $value
      */
     public function effectiveDate(?string $value): self
     {
@@ -273,7 +301,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Unsets effective date field.
+     * Unsets Effective Date field.
      */
     public function unsetEffectiveDate(): self
     {
@@ -282,7 +310,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets include bundle details field.
+     * Sets Include Bundle Details field.
+     *
+     * @param bool|null $value
      */
     public function includeBundleDetails(?bool $value): self
     {
@@ -291,7 +321,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets include intermediate status field.
+     * Sets Include Intermediate Status field.
+     *
+     * @param bool|null $value
      */
     public function includeIntermediateStatus(?bool $value): self
     {
@@ -300,7 +332,9 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Sets include scheduled card blocks field.
+     * Sets Include Scheduled Card Blocks field.
+     *
+     * @param bool|null $value
      */
     public function includeScheduledCardBlocks(?bool $value): self
     {
@@ -309,7 +343,7 @@ class CardDetailsRequestBuilder
     }
 
     /**
-     * Initializes a new card details request object.
+     * Initializes a new Card Details Request object.
      */
     public function build(): CardDetailsRequest
     {

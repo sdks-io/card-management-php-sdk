@@ -31,7 +31,7 @@ class DeliveryAddressUpdateReferencesBuilder
     }
 
     /**
-     * Initializes a new delivery address update references Builder object.
+     * Initializes a new Delivery Address Update References Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class DeliveryAddressUpdateReferencesBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -48,7 +50,9 @@ class DeliveryAddressUpdateReferencesBuilder
     }
 
     /**
-     * Sets card pan field.
+     * Sets Card PAN field.
+     *
+     * @param string|null $value
      */
     public function cardPAN(?string $value): self
     {
@@ -57,7 +61,9 @@ class DeliveryAddressUpdateReferencesBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -66,7 +72,9 @@ class DeliveryAddressUpdateReferencesBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -75,7 +83,9 @@ class DeliveryAddressUpdateReferencesBuilder
     }
 
     /**
-     * Sets reference id field.
+     * Sets Reference Id field.
+     *
+     * @param int|null $value
      */
     public function referenceId(?int $value): self
     {
@@ -84,7 +94,9 @@ class DeliveryAddressUpdateReferencesBuilder
     }
 
     /**
-     * Sets error info field.
+     * Sets Error Info field.
+     *
+     * @param string|null $value
      */
     public function errorInfo(?string $value): self
     {
@@ -93,7 +105,7 @@ class DeliveryAddressUpdateReferencesBuilder
     }
 
     /**
-     * Initializes a new delivery address update references object.
+     * Initializes a new Delivery Address Update References object.
      */
     public function build(): DeliveryAddressUpdateReferences
     {

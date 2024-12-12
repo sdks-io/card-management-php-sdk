@@ -32,7 +32,9 @@ class DeliveryAddressUpdateBuilder
     }
 
     /**
-     * Initializes a new delivery address update Builder object.
+     * Initializes a new Delivery Address Update Builder object.
+     *
+     * @param bool $useCustomerDefaultAddress
      */
     public static function init(bool $useCustomerDefaultAddress): self
     {
@@ -40,7 +42,9 @@ class DeliveryAddressUpdateBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -49,7 +53,9 @@ class DeliveryAddressUpdateBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -58,7 +64,9 @@ class DeliveryAddressUpdateBuilder
     }
 
     /**
-     * Sets card expiry date field.
+     * Sets Card Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function cardExpiryDate(?string $value): self
     {
@@ -67,7 +75,9 @@ class DeliveryAddressUpdateBuilder
     }
 
     /**
-     * Sets update card renewal address field.
+     * Sets Update Card Renewal Address field.
+     *
+     * @param UpdateCardRenewalAddress2|null $value
      */
     public function updateCardRenewalAddress(?UpdateCardRenewalAddress2 $value): self
     {
@@ -76,7 +86,7 @@ class DeliveryAddressUpdateBuilder
     }
 
     /**
-     * Initializes a new delivery address update object.
+     * Initializes a new Delivery Address Update object.
      */
     public function build(): DeliveryAddressUpdate
     {

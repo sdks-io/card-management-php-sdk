@@ -14,6 +14,7 @@ use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardDayTimeRestrictions;
 use ShellCardManagementAPIsLib\Models\CardTypeResponseCustomerCardTypesItems;
 use ShellCardManagementAPIsLib\Models\CardUsageRestrictions;
+use ShellCardManagementAPIsLib\Models\PurchaseCategories;
 
 /**
  * Builder for model CardTypeResponseCustomerCardTypesItems
@@ -33,7 +34,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Initializes a new card type response customer card types items Builder object.
+     * Initializes a new Card Type Response Customer Card Types Items Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +42,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets can have pin field.
+     * Sets Can Have PIN field.
+     *
+     * @param bool|null $value
      */
     public function canHavePIN(?bool $value): self
     {
@@ -50,7 +53,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets card type id field.
+     * Sets Card Type Id field.
+     *
+     * @param int|null $value
      */
     public function cardTypeId(?int $value): self
     {
@@ -59,7 +64,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets card type id field.
+     * Unsets Card Type Id field.
      */
     public function unsetCardTypeId(): self
     {
@@ -68,7 +73,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets card type name field.
+     * Sets Card Type Name field.
+     *
+     * @param string|null $value
      */
     public function cardTypeName(?string $value): self
     {
@@ -77,7 +84,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets card type name field.
+     * Unsets Card Type Name field.
      */
     public function unsetCardTypeName(): self
     {
@@ -86,7 +93,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets col co currency code field.
+     * Sets Col Co Currency Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCurrencyCode(?string $value): self
     {
@@ -95,7 +104,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets col co currency code field.
+     * Unsets Col Co Currency Code field.
      */
     public function unsetColCoCurrencyCode(): self
     {
@@ -104,7 +113,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets customer card type id field.
+     * Sets Customer Card Type Id field.
+     *
+     * @param int|null $value
      */
     public function customerCardTypeId(?int $value): self
     {
@@ -113,7 +124,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets customer card type id field.
+     * Unsets Customer Card Type Id field.
      */
     public function unsetCustomerCardTypeId(): self
     {
@@ -122,7 +133,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets day time restrictions field.
+     * Sets Day Time Restrictions field.
+     *
+     * @param CardDayTimeRestrictions|null $value
      */
     public function dayTimeRestrictions(?CardDayTimeRestrictions $value): self
     {
@@ -131,7 +144,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets default purchase category id field.
+     * Sets Default Purchase Category Id field.
+     *
+     * @param int|null $value
      */
     public function defaultPurchaseCategoryId(?int $value): self
     {
@@ -140,7 +155,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets default purchase category id field.
+     * Unsets Default Purchase Category Id field.
      */
     public function unsetDefaultPurchaseCategoryId(): self
     {
@@ -149,7 +164,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets emboss account name field.
+     * Sets Emboss Account Name field.
+     *
+     * @param string|null $value
      */
     public function embossAccountName(?string $value): self
     {
@@ -158,7 +175,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets emboss account name field.
+     * Unsets Emboss Account Name field.
      */
     public function unsetEmbossAccountName(): self
     {
@@ -167,7 +184,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets expiry period field.
+     * Sets Expiry Period field.
+     *
+     * @param int|null $value
      */
     public function expiryPeriod(?int $value): self
     {
@@ -176,7 +195,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets expiry period field.
+     * Unsets Expiry Period field.
      */
     public function unsetExpiryPeriod(): self
     {
@@ -185,7 +204,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is crt field.
+     * Sets Is CRT field.
+     *
+     * @param bool|null $value
      */
     public function isCRT(?bool $value): self
     {
@@ -194,7 +215,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is fleet field.
+     * Sets Is Fleet field.
+     *
+     * @param bool|null $value
      */
     public function isFleet(?bool $value): self
     {
@@ -203,7 +226,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is international field.
+     * Sets Is International field.
+     *
+     * @param bool|null $value
      */
     public function isInternational(?bool $value): self
     {
@@ -212,7 +237,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is national field.
+     * Sets Is National field.
+     *
+     * @param bool|null $value
      */
     public function isNational(?bool $value): self
     {
@@ -221,7 +248,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is partner sites included field.
+     * Sets Is Partner Sites Included field.
+     *
+     * @param bool|null $value
      */
     public function isPartnerSitesIncluded(?bool $value): self
     {
@@ -230,7 +259,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is shell sites only field.
+     * Sets Is Shell Sites Only field.
+     *
+     * @param bool|null $value
      */
     public function isShellSitesOnly(?bool $value): self
     {
@@ -239,7 +270,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is virtual field.
+     * Sets Is Virtual field.
+     *
+     * @param bool|null $value
      */
     public function isVirtual(?bool $value): self
     {
@@ -248,7 +281,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is visible to customers field.
+     * Sets Is Visible To Customers field.
+     *
+     * @param bool|null $value
      */
     public function isVisibleToCustomers(?bool $value): self
     {
@@ -257,7 +292,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is active field.
+     * Sets Is Active field.
+     *
+     * @param bool|null $value
      */
     public function isActive(?bool $value): self
     {
@@ -266,7 +303,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is card available for download field.
+     * Sets Is Card Available For Download field.
+     *
+     * @param bool|null $value
      */
     public function isCardAvailableForDownload(?bool $value): self
     {
@@ -275,7 +314,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is card visible to customers field.
+     * Sets Is Card Visible To Customers field.
+     *
+     * @param bool|null $value
      */
     public function isCardVisibleToCustomers(?bool $value): self
     {
@@ -284,7 +325,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets panlength field.
+     * Sets PAN Length field.
+     *
+     * @param int|null $value
      */
     public function pANLength(?int $value): self
     {
@@ -293,7 +336,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets panlength field.
+     * Unsets PAN Length field.
      */
     public function unsetPANLength(): self
     {
@@ -302,7 +345,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets purchase categories field.
+     * Sets Purchase Categories field.
+     *
+     * @param PurchaseCategories[]|null $value
      */
     public function purchaseCategories(?array $value): self
     {
@@ -311,7 +356,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets purchase categories field.
+     * Unsets Purchase Categories field.
      */
     public function unsetPurchaseCategories(): self
     {
@@ -320,7 +365,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets token type id field.
+     * Sets Token Type Id field.
+     *
+     * @param int|null $value
      */
     public function tokenTypeId(?int $value): self
     {
@@ -329,7 +376,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets token type id field.
+     * Unsets Token Type Id field.
      */
     public function unsetTokenTypeId(): self
     {
@@ -338,7 +385,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets token type name field.
+     * Sets Token Type Name field.
+     *
+     * @param string|null $value
      */
     public function tokenTypeName(?string $value): self
     {
@@ -347,7 +396,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets token type name field.
+     * Unsets Token Type Name field.
      */
     public function unsetTokenTypeName(): self
     {
@@ -356,7 +405,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets usage restrictions field.
+     * Sets Usage Restrictions field.
+     *
+     * @param CardUsageRestrictions|null $value
      */
     public function usageRestrictions(?CardUsageRestrictions $value): self
     {
@@ -365,7 +416,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets emvcontactless field.
+     * Sets EMV Contactless field.
+     *
+     * @param bool|null $value
      */
     public function eMVContactless(?bool $value): self
     {
@@ -374,7 +427,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets rfid field.
+     * Sets RFID field.
+     *
+     * @param bool|null $value
      */
     public function rFID(?bool $value): self
     {
@@ -383,7 +438,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets pinchange supported field.
+     * Sets PIN Change Supported field.
+     *
+     * @param bool|null $value
      */
     public function pINChangeSupported(?bool $value): self
     {
@@ -392,7 +449,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets require pin field.
+     * Sets Require PIN field.
+     *
+     * @param bool|null $value
      */
     public function requirePIN(?bool $value): self
     {
@@ -401,7 +460,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets offline pin field.
+     * Sets Offline PIN field.
+     *
+     * @param bool|null $value
      */
     public function offlinePIN(?bool $value): self
     {
@@ -410,7 +471,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets is default field.
+     * Sets Is Default field.
+     *
+     * @param bool|null $value
      */
     public function isDefault(?bool $value): self
     {
@@ -419,7 +482,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets applications to show npiitokens field.
+     * Sets Applications To Show NPII Tokens field.
+     *
+     * @param bool|null $value
      */
     public function applicationsToShowNPIITokens(?bool $value): self
     {
@@ -428,7 +493,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets medium type id field.
+     * Sets Medium Type ID field.
+     *
+     * @param int|null $value
      */
     public function mediumTypeID(?int $value): self
     {
@@ -437,7 +504,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets medium type id field.
+     * Unsets Medium Type ID field.
      */
     public function unsetMediumTypeID(): self
     {
@@ -446,7 +513,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets medium type field.
+     * Sets Medium Type field.
+     *
+     * @param string|null $value
      */
     public function mediumType(?string $value): self
     {
@@ -455,7 +524,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets medium type field.
+     * Unsets Medium Type field.
      */
     public function unsetMediumType(): self
     {
@@ -464,7 +533,9 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets col co currency symbol field.
+     * Sets Col Co Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function colCoCurrencySymbol(?string $value): self
     {
@@ -473,7 +544,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets col co currency symbol field.
+     * Unsets Col Co Currency Symbol field.
      */
     public function unsetColCoCurrencySymbol(): self
     {
@@ -482,7 +553,7 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Initializes a new card type response customer card types items object.
+     * Initializes a new Card Type Response Customer Card Types Items object.
      */
     public function build(): CardTypeResponseCustomerCardTypesItems
     {

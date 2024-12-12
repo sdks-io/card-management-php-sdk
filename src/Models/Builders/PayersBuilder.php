@@ -31,7 +31,7 @@ class PayersBuilder
     }
 
     /**
-     * Initializes a new payers Builder object.
+     * Initializes a new Payers Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class PayersBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -48,7 +50,7 @@ class PayersBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -57,7 +59,9 @@ class PayersBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -66,7 +70,7 @@ class PayersBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -75,7 +79,9 @@ class PayersBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -84,7 +90,7 @@ class PayersBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -93,7 +99,9 @@ class PayersBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -102,7 +110,7 @@ class PayersBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -111,7 +119,9 @@ class PayersBuilder
     }
 
     /**
-     * Sets payer name field.
+     * Sets Payer Name field.
+     *
+     * @param string|null $value
      */
     public function payerName(?string $value): self
     {
@@ -120,7 +130,7 @@ class PayersBuilder
     }
 
     /**
-     * Unsets payer name field.
+     * Unsets Payer Name field.
      */
     public function unsetPayerName(): self
     {
@@ -129,7 +139,9 @@ class PayersBuilder
     }
 
     /**
-     * Sets payer group id field.
+     * Sets Payer Group Id field.
+     *
+     * @param int|null $value
      */
     public function payerGroupId(?int $value): self
     {
@@ -138,7 +150,7 @@ class PayersBuilder
     }
 
     /**
-     * Unsets payer group id field.
+     * Unsets Payer Group Id field.
      */
     public function unsetPayerGroupId(): self
     {
@@ -147,7 +159,7 @@ class PayersBuilder
     }
 
     /**
-     * Initializes a new payers object.
+     * Initializes a new Payers object.
      */
     public function build(): Payers
     {

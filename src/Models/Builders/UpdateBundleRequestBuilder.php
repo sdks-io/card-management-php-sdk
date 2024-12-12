@@ -32,7 +32,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Initializes a new update bundle request Builder object.
+     * Initializes a new Update Bundle Request Builder object.
+     *
+     * @param string[] $cards
      */
     public static function init(array $cards): self
     {
@@ -40,7 +42,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -49,7 +53,7 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -58,7 +62,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -67,7 +73,7 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -76,7 +82,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param string|null $value
      */
     public function payerId(?string $value): self
     {
@@ -85,7 +93,7 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -94,7 +102,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -103,7 +113,7 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -112,7 +122,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -121,7 +133,7 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -130,7 +142,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -139,7 +153,7 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -148,7 +162,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets bundle id field.
+     * Sets Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function bundleId(?string $value): self
     {
@@ -157,7 +173,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets request action field.
+     * Sets Request Action field.
+     *
+     * @param string|null $value
      */
     public function requestAction(?string $value): self
     {
@@ -166,7 +184,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets usage restriction action field.
+     * Sets Usage Restriction Action field.
+     *
+     * @param string|null $value
      */
     public function usageRestrictionAction(?string $value): self
     {
@@ -175,7 +195,9 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Sets restrictions field.
+     * Sets Restrictions field.
+     *
+     * @param BundleRestrictionUpdate|null $value
      */
     public function restrictions(?BundleRestrictionUpdate $value): self
     {
@@ -184,7 +206,7 @@ class UpdateBundleRequestBuilder
     }
 
     /**
-     * Initializes a new update bundle request object.
+     * Initializes a new Update Bundle Request object.
      */
     public function build(): UpdateBundleRequest
     {

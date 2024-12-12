@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\CreateCardResponse;
 use ShellCardManagementAPIsLib\Models\OrderCardResponse;
 
 /**
@@ -31,7 +32,7 @@ class OrderCardResponseBuilder
     }
 
     /**
-     * Initializes a new order card response Builder object.
+     * Initializes a new Order Card Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class OrderCardResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -48,7 +51,9 @@ class OrderCardResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -57,7 +62,9 @@ class OrderCardResponseBuilder
     }
 
     /**
-     * Sets data field.
+     * Sets Data field.
+     *
+     * @param CreateCardResponse[]|null $value
      */
     public function data(?array $value): self
     {
@@ -66,7 +73,9 @@ class OrderCardResponseBuilder
     }
 
     /**
-     * Sets main reference field.
+     * Sets Main Reference field.
+     *
+     * @param int|null $value
      */
     public function mainReference(?int $value): self
     {
@@ -75,7 +84,7 @@ class OrderCardResponseBuilder
     }
 
     /**
-     * Initializes a new order card response object.
+     * Initializes a new Order Card Response object.
      */
     public function build(): OrderCardResponse
     {

@@ -31,7 +31,7 @@ class CreateCardResponseBuilder
     }
 
     /**
-     * Initializes a new create card response Builder object.
+     * Initializes a new Create Card Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CreateCardResponseBuilder
     }
 
     /**
-     * Sets driver and vrn field.
+     * Sets Driver And VRN field.
+     *
+     * @param string|null $value
      */
     public function driverAndVRN(?string $value): self
     {
@@ -48,7 +50,7 @@ class CreateCardResponseBuilder
     }
 
     /**
-     * Unsets driver and vrn field.
+     * Unsets Driver And VRN field.
      */
     public function unsetDriverAndVRN(): self
     {
@@ -57,7 +59,9 @@ class CreateCardResponseBuilder
     }
 
     /**
-     * Sets order card reference field.
+     * Sets Order Card Reference field.
+     *
+     * @param int|null $value
      */
     public function orderCardReference(?int $value): self
     {
@@ -66,7 +70,7 @@ class CreateCardResponseBuilder
     }
 
     /**
-     * Unsets order card reference field.
+     * Unsets Order Card Reference field.
      */
     public function unsetOrderCardReference(): self
     {
@@ -75,7 +79,7 @@ class CreateCardResponseBuilder
     }
 
     /**
-     * Initializes a new create card response object.
+     * Initializes a new Create Card Response object.
      */
     public function build(): CreateCardResponse
     {

@@ -31,7 +31,7 @@ class NetworkRestrictionBuilder
     }
 
     /**
-     * Initializes a new network restriction Builder object.
+     * Initializes a new Network Restriction Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class NetworkRestrictionBuilder
     }
 
     /**
-     * Sets country field.
+     * Sets Country field.
+     *
+     * @param string|null $value
      */
     public function country(?string $value): self
     {
@@ -48,7 +50,9 @@ class NetworkRestrictionBuilder
     }
 
     /**
-     * Sets networks field.
+     * Sets Networks field.
+     *
+     * @param string[]|null $value
      */
     public function networks(?array $value): self
     {
@@ -57,7 +61,9 @@ class NetworkRestrictionBuilder
     }
 
     /**
-     * Sets exclusive field.
+     * Sets Exclusive field.
+     *
+     * @param bool|null $value
      */
     public function exclusive(?bool $value): self
     {
@@ -66,7 +72,7 @@ class NetworkRestrictionBuilder
     }
 
     /**
-     * Initializes a new network restriction object.
+     * Initializes a new Network Restriction object.
      */
     public function build(): NetworkRestriction
     {

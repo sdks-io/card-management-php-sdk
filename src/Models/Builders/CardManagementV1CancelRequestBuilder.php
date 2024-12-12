@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardManagementV1CancelRequest;
+use ShellCardManagementAPIsLib\Models\UpdateCard;
 
 /**
  * Builder for model CardManagementV1CancelRequest
@@ -31,7 +32,9 @@ class CardManagementV1CancelRequestBuilder
     }
 
     /**
-     * Initializes a new card management v1 cancel request Builder object.
+     * Initializes a new Card Management V1 Cancel Request Builder object.
+     *
+     * @param UpdateCard[] $cards
      */
     public static function init(array $cards): self
     {
@@ -39,7 +42,9 @@ class CardManagementV1CancelRequestBuilder
     }
 
     /**
-     * Sets reason id field.
+     * Sets Reason Id field.
+     *
+     * @param int|null $value
      */
     public function reasonId(?int $value): self
     {
@@ -48,7 +53,7 @@ class CardManagementV1CancelRequestBuilder
     }
 
     /**
-     * Unsets reason id field.
+     * Unsets Reason Id field.
      */
     public function unsetReasonId(): self
     {
@@ -57,7 +62,9 @@ class CardManagementV1CancelRequestBuilder
     }
 
     /**
-     * Sets reason text field.
+     * Sets Reason Text field.
+     *
+     * @param string|null $value
      */
     public function reasonText(?string $value): self
     {
@@ -66,7 +73,7 @@ class CardManagementV1CancelRequestBuilder
     }
 
     /**
-     * Unsets reason text field.
+     * Unsets Reason Text field.
      */
     public function unsetReasonText(): self
     {
@@ -75,7 +82,7 @@ class CardManagementV1CancelRequestBuilder
     }
 
     /**
-     * Initializes a new card management v1 cancel request object.
+     * Initializes a new Card Management V1 Cancel Request object.
      */
     public function build(): CardManagementV1CancelRequest
     {

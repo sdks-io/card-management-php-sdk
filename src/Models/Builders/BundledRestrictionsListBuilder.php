@@ -34,7 +34,7 @@ class BundledRestrictionsListBuilder
     }
 
     /**
-     * Initializes a new bundled restrictions list Builder object.
+     * Initializes a new Bundled Restrictions List Builder object.
      */
     public static function init(): self
     {
@@ -42,7 +42,9 @@ class BundledRestrictionsListBuilder
     }
 
     /**
-     * Sets usage restrictions field.
+     * Sets Usage Restrictions field.
+     *
+     * @param array|null $value
      */
     public function usageRestrictions(?array $value): self
     {
@@ -51,7 +53,9 @@ class BundledRestrictionsListBuilder
     }
 
     /**
-     * Sets day time restrictions field.
+     * Sets Day Time Restrictions field.
+     *
+     * @param DayTimeRestrictions|null $value
      */
     public function dayTimeRestrictions(?DayTimeRestrictions $value): self
     {
@@ -60,7 +64,9 @@ class BundledRestrictionsListBuilder
     }
 
     /**
-     * Sets product restrictions field.
+     * Sets Product Restrictions field.
+     *
+     * @param BundledDetailsProductList|null $value
      */
     public function productRestrictions(?BundledDetailsProductList $value): self
     {
@@ -69,7 +75,9 @@ class BundledRestrictionsListBuilder
     }
 
     /**
-     * Sets location restrictions field.
+     * Sets Location Restrictions field.
+     *
+     * @param LocationRestriction|null $value
      */
     public function locationRestrictions(?LocationRestriction $value): self
     {
@@ -78,7 +86,7 @@ class BundledRestrictionsListBuilder
     }
 
     /**
-     * Initializes a new bundled restrictions list object.
+     * Initializes a new Bundled Restrictions List object.
      */
     public function build(): BundledRestrictionsList
     {

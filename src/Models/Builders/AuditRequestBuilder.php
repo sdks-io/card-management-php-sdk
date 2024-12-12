@@ -32,7 +32,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Initializes a new audit request Builder object.
+     * Initializes a new Audit Request Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -49,7 +51,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -58,7 +62,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -67,7 +71,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -76,7 +82,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -85,7 +91,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -94,7 +102,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -103,7 +111,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -112,7 +122,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -121,7 +131,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -130,7 +142,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -139,7 +151,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets accounts field.
+     * Sets Accounts field.
+     *
+     * @param Accounts|null $value
      */
     public function accounts(?Accounts $value): self
     {
@@ -148,7 +162,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets page size field.
+     * Sets Page Size field.
+     *
+     * @param int|null $value
      */
     public function pageSize(?int $value): self
     {
@@ -157,7 +173,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets requested operation field.
+     * Sets Requested Operation field.
+     *
+     * @param string[]|null $value
      */
     public function requestedOperation(?array $value): self
     {
@@ -166,7 +184,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets sort order field.
+     * Sets Sort Order field.
+     *
+     * @param string|null $value
      */
     public function sortOrder(?string $value): self
     {
@@ -175,7 +195,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets sort order field.
+     * Unsets Sort Order field.
      */
     public function unsetSortOrder(): self
     {
@@ -184,7 +204,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets search text field.
+     * Sets Search Text field.
+     *
+     * @param string|null $value
      */
     public function searchText(?string $value): self
     {
@@ -193,7 +215,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets search text field.
+     * Unsets Search Text field.
      */
     public function unsetSearchText(): self
     {
@@ -202,7 +224,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets current page field.
+     * Sets Current Page field.
+     *
+     * @param int|null $value
      */
     public function currentPage(?int $value): self
     {
@@ -211,7 +235,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets current page field.
+     * Unsets Current Page field.
      */
     public function unsetCurrentPage(): self
     {
@@ -220,7 +244,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets from date field.
+     * Sets From Date field.
+     *
+     * @param string|null $value
      */
     public function fromDate(?string $value): self
     {
@@ -229,7 +255,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets from date field.
+     * Unsets From Date field.
      */
     public function unsetFromDate(): self
     {
@@ -238,7 +264,9 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets to date field.
+     * Sets To Date field.
+     *
+     * @param string|null $value
      */
     public function toDate(?string $value): self
     {
@@ -247,7 +275,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Unsets to date field.
+     * Unsets To Date field.
      */
     public function unsetToDate(): self
     {
@@ -256,7 +284,7 @@ class AuditRequestBuilder
     }
 
     /**
-     * Initializes a new audit request object.
+     * Initializes a new Audit Request object.
      */
     public function build(): AuditRequest
     {

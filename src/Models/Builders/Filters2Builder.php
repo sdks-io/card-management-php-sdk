@@ -31,7 +31,7 @@ class Filters2Builder
     }
 
     /**
-     * Initializes a new filters 2 Builder object.
+     * Initializes a new Filters 2 Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +50,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -57,7 +59,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -66,7 +70,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -75,7 +79,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -84,7 +90,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -93,7 +99,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -102,7 +110,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -111,7 +119,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -120,7 +130,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -129,7 +139,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -138,7 +150,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -147,7 +159,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -156,7 +170,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -165,7 +179,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets reference number field.
+     * Sets Reference Number field.
+     *
+     * @param int|null $value
      */
     public function referenceNumber(?int $value): self
     {
@@ -174,7 +190,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets reference type field.
+     * Sets Reference Type field.
+     *
+     * @param int|null $value
      */
     public function referenceType(?int $value): self
     {
@@ -183,7 +201,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets from date field.
+     * Sets From Date field.
+     *
+     * @param string|null $value
      */
     public function fromDate(?string $value): self
     {
@@ -192,7 +212,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets from date field.
+     * Unsets From Date field.
      */
     public function unsetFromDate(): self
     {
@@ -201,7 +221,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets to date field.
+     * Sets To Date field.
+     *
+     * @param string|null $value
      */
     public function toDate(?string $value): self
     {
@@ -210,7 +232,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets to date field.
+     * Unsets To Date field.
      */
     public function unsetToDate(): self
     {
@@ -219,7 +241,9 @@ class Filters2Builder
     }
 
     /**
-     * Sets order request id field.
+     * Sets Order Request Id field.
+     *
+     * @param string|null $value
      */
     public function orderRequestId(?string $value): self
     {
@@ -228,7 +252,7 @@ class Filters2Builder
     }
 
     /**
-     * Unsets order request id field.
+     * Unsets Order Request Id field.
      */
     public function unsetOrderRequestId(): self
     {
@@ -237,7 +261,7 @@ class Filters2Builder
     }
 
     /**
-     * Initializes a new filters 2 object.
+     * Initializes a new Filters 2 object.
      */
     public function build(): Filters2
     {

@@ -13,6 +13,9 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CountryRestriction;
 use ShellCardManagementAPIsLib\Models\LocationRestriction;
+use ShellCardManagementAPIsLib\Models\NetworkRestriction;
+use ShellCardManagementAPIsLib\Models\PartnerSiteRestriction;
+use ShellCardManagementAPIsLib\Models\ShellSiteRestriction;
 
 /**
  * Builder for model LocationRestriction
@@ -32,7 +35,7 @@ class LocationRestrictionBuilder
     }
 
     /**
-     * Initializes a new location restriction Builder object.
+     * Initializes a new Location Restriction Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +43,9 @@ class LocationRestrictionBuilder
     }
 
     /**
-     * Sets country restrictions field.
+     * Sets Country Restrictions field.
+     *
+     * @param CountryRestriction|null $value
      */
     public function countryRestrictions(?CountryRestriction $value): self
     {
@@ -49,7 +54,9 @@ class LocationRestrictionBuilder
     }
 
     /**
-     * Sets network restrictions field.
+     * Sets Network Restrictions field.
+     *
+     * @param NetworkRestriction[]|null $value
      */
     public function networkRestrictions(?array $value): self
     {
@@ -58,7 +65,9 @@ class LocationRestrictionBuilder
     }
 
     /**
-     * Sets shell site restrictions field.
+     * Sets Shell Site Restrictions field.
+     *
+     * @param ShellSiteRestriction[]|null $value
      */
     public function shellSiteRestrictions(?array $value): self
     {
@@ -67,7 +76,9 @@ class LocationRestrictionBuilder
     }
 
     /**
-     * Sets partner site restrictions field.
+     * Sets Partner Site Restrictions field.
+     *
+     * @param PartnerSiteRestriction[]|null $value
      */
     public function partnerSiteRestrictions(?array $value): self
     {
@@ -76,7 +87,7 @@ class LocationRestrictionBuilder
     }
 
     /**
-     * Initializes a new location restriction object.
+     * Initializes a new Location Restriction object.
      */
     public function build(): LocationRestriction
     {

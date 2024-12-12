@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\ScheduleCardBlockResponse;
+use ShellCardManagementAPIsLib\Models\ScheduleCardBlockResponseDataItems;
 
 /**
  * Builder for model ScheduleCardBlockResponse
@@ -31,7 +32,7 @@ class ScheduleCardBlockResponseBuilder
     }
 
     /**
-     * Initializes a new schedule card block response Builder object.
+     * Initializes a new Schedule Card Block Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class ScheduleCardBlockResponseBuilder
     }
 
     /**
-     * Sets main reference field.
+     * Sets Main Reference field.
+     *
+     * @param int|null $value
      */
     public function mainReference(?int $value): self
     {
@@ -48,7 +51,9 @@ class ScheduleCardBlockResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -57,7 +62,9 @@ class ScheduleCardBlockResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -66,7 +73,9 @@ class ScheduleCardBlockResponseBuilder
     }
 
     /**
-     * Sets data field.
+     * Sets Data field.
+     *
+     * @param ScheduleCardBlockResponseDataItems[]|null $value
      */
     public function data(?array $value): self
     {
@@ -75,7 +84,7 @@ class ScheduleCardBlockResponseBuilder
     }
 
     /**
-     * Initializes a new schedule card block response object.
+     * Initializes a new Schedule Card Block Response object.
      */
     public function build(): ScheduleCardBlockResponse
     {

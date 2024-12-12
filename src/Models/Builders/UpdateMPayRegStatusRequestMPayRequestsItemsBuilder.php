@@ -31,7 +31,7 @@ class UpdateMPayRegStatusRequestMPayRequestsItemsBuilder
     }
 
     /**
-     * Initializes a new update mpay reg status request mpay requests items Builder object.
+     * Initializes a new Update M Pay Reg Status Request M Pay Requests Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class UpdateMPayRegStatusRequestMPayRequestsItemsBuilder
     }
 
     /**
-     * Sets global request id field.
+     * Sets Global Request ID field.
+     *
+     * @param string|null $value
      */
     public function globalRequestID(?string $value): self
     {
@@ -48,7 +50,9 @@ class UpdateMPayRegStatusRequestMPayRequestsItemsBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -57,7 +61,9 @@ class UpdateMPayRegStatusRequestMPayRequestsItemsBuilder
     }
 
     /**
-     * Sets approver user id field.
+     * Sets Approver User ID field.
+     *
+     * @param string|null $value
      */
     public function approverUserID(?string $value): self
     {
@@ -66,7 +72,9 @@ class UpdateMPayRegStatusRequestMPayRequestsItemsBuilder
     }
 
     /**
-     * Sets approver user display name field.
+     * Sets Approver User Display Name field.
+     *
+     * @param string|null $value
      */
     public function approverUserDisplayName(?string $value): self
     {
@@ -75,7 +83,9 @@ class UpdateMPayRegStatusRequestMPayRequestsItemsBuilder
     }
 
     /**
-     * Sets reason field.
+     * Sets Reason field.
+     *
+     * @param string|null $value
      */
     public function reason(?string $value): self
     {
@@ -84,7 +94,7 @@ class UpdateMPayRegStatusRequestMPayRequestsItemsBuilder
     }
 
     /**
-     * Initializes a new update mpay reg status request mpay requests items object.
+     * Initializes a new Update M Pay Reg Status Request M Pay Requests Items object.
      */
     public function build(): UpdateMPayRegStatusRequestMPayRequestsItems
     {

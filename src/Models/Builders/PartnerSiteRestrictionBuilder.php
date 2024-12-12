@@ -31,7 +31,7 @@ class PartnerSiteRestrictionBuilder
     }
 
     /**
-     * Initializes a new partner site restriction Builder object.
+     * Initializes a new Partner Site Restriction Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class PartnerSiteRestrictionBuilder
     }
 
     /**
-     * Sets network code field.
+     * Sets Network Code field.
+     *
+     * @param string|null $value
      */
     public function networkCode(?string $value): self
     {
@@ -48,7 +50,9 @@ class PartnerSiteRestrictionBuilder
     }
 
     /**
-     * Sets sites field.
+     * Sets Sites field.
+     *
+     * @param string[]|null $value
      */
     public function sites(?array $value): self
     {
@@ -57,7 +61,9 @@ class PartnerSiteRestrictionBuilder
     }
 
     /**
-     * Sets site groups field.
+     * Sets Site Groups field.
+     *
+     * @param string[]|null $value
      */
     public function siteGroups(?array $value): self
     {
@@ -66,7 +72,9 @@ class PartnerSiteRestrictionBuilder
     }
 
     /**
-     * Sets exclusive field.
+     * Sets Exclusive field.
+     *
+     * @param bool|null $value
      */
     public function exclusive(?bool $value): self
     {
@@ -75,7 +83,7 @@ class PartnerSiteRestrictionBuilder
     }
 
     /**
-     * Initializes a new partner site restriction object.
+     * Initializes a new Partner Site Restriction object.
      */
     public function build(): PartnerSiteRestriction
     {

@@ -13,7 +13,9 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\Address;
 use ShellCardManagementAPIsLib\Models\CustomerDetailResponse;
+use ShellCardManagementAPIsLib\Models\DeliveryAddresses;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
+use ShellCardManagementAPIsLib\Models\PINAdviceTypes;
 
 /**
  * Builder for model CustomerDetailResponse
@@ -33,7 +35,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Initializes a new customer detail response Builder object.
+     * Initializes a new Customer Detail Response Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +43,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -50,7 +54,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -59,7 +63,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets account name field.
+     * Sets Account Name field.
+     *
+     * @param string|null $value
      */
     public function accountName(?string $value): self
     {
@@ -68,7 +74,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets account name field.
+     * Unsets Account Name field.
      */
     public function unsetAccountName(): self
     {
@@ -77,7 +83,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -86,7 +94,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -95,7 +103,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets account short name field.
+     * Sets Account Short Name field.
+     *
+     * @param string|null $value
      */
     public function accountShortName(?string $value): self
     {
@@ -104,7 +114,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets account short name field.
+     * Unsets Account Short Name field.
      */
     public function unsetAccountShortName(): self
     {
@@ -113,7 +123,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets account trading name field.
+     * Sets Account Trading Name field.
+     *
+     * @param string|null $value
      */
     public function accountTradingName(?string $value): self
     {
@@ -122,7 +134,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets account trading name field.
+     * Unsets Account Trading Name field.
      */
     public function unsetAccountTradingName(): self
     {
@@ -131,7 +143,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets allow fleet id input field.
+     * Sets Allow Fleet Id Input field.
+     *
+     * @param bool|null $value
      */
     public function allowFleetIdInput(?bool $value): self
     {
@@ -140,7 +154,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets band field.
+     * Sets Band field.
+     *
+     * @param string|null $value
      */
     public function band(?string $value): self
     {
@@ -149,7 +165,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets band field.
+     * Unsets Band field.
      */
     public function unsetBand(): self
     {
@@ -158,7 +174,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets billing address field.
+     * Sets Billing Address field.
+     *
+     * @param Address|null $value
      */
     public function billingAddress(?Address $value): self
     {
@@ -167,7 +185,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets card group position field.
+     * Sets Card Group Position field.
+     *
+     * @param string|null $value
      */
     public function cardGroupPosition(?string $value): self
     {
@@ -176,7 +196,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets card group position field.
+     * Unsets Card Group Position field.
      */
     public function unsetCardGroupPosition(): self
     {
@@ -185,7 +205,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets correspondence address field.
+     * Sets Correspondence Address field.
+     *
+     * @param Address|null $value
      */
     public function correspondenceAddress(?Address $value): self
     {
@@ -194,7 +216,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets delivery addresses field.
+     * Sets Delivery Addresses field.
+     *
+     * @param DeliveryAddresses[]|null $value
      */
     public function deliveryAddresses(?array $value): self
     {
@@ -203,7 +227,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets fleet pin field.
+     * Sets Fleet Pin field.
+     *
+     * @param bool|null $value
      */
     public function fleetPin(?bool $value): self
     {
@@ -212,7 +238,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets full name field.
+     * Sets Full Name field.
+     *
+     * @param string|null $value
      */
     public function fullName(?string $value): self
     {
@@ -221,7 +249,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets full name field.
+     * Unsets Full Name field.
      */
     public function unsetFullName(): self
     {
@@ -230,7 +258,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets invoice customer id field.
+     * Sets Invoice Customer Id field.
+     *
+     * @param int|null $value
      */
     public function invoiceCustomerId(?int $value): self
     {
@@ -239,7 +269,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets invoice customer id field.
+     * Unsets Invoice Customer Id field.
      */
     public function unsetInvoiceCustomerId(): self
     {
@@ -248,7 +278,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets invoice customer short name field.
+     * Sets Invoice Customer Short Name field.
+     *
+     * @param string|null $value
      */
     public function invoiceCustomerShortName(?string $value): self
     {
@@ -257,7 +289,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets invoice customer short name field.
+     * Unsets Invoice Customer Short Name field.
      */
     public function unsetInvoiceCustomerShortName(): self
     {
@@ -266,7 +298,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets is invoice point field.
+     * Sets Is Invoice Point field.
+     *
+     * @param bool|null $value
      */
     public function isInvoicePoint(?bool $value): self
     {
@@ -275,7 +309,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets is invoice point field.
+     * Unsets Is Invoice Point field.
      */
     public function unsetIsInvoicePoint(): self
     {
@@ -284,7 +318,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets marketing segmentation field.
+     * Sets Marketing Segmentation field.
+     *
+     * @param string|null $value
      */
     public function marketingSegmentation(?string $value): self
     {
@@ -293,7 +329,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets marketing segmentation field.
+     * Unsets Marketing Segmentation field.
      */
     public function unsetMarketingSegmentation(): self
     {
@@ -302,7 +338,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets vatnumber field.
+     * Sets VAT Number field.
+     *
+     * @param string|null $value
      */
     public function vATNumber(?string $value): self
     {
@@ -311,7 +349,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets vatnumber field.
+     * Unsets VAT Number field.
      */
     public function unsetVATNumber(): self
     {
@@ -320,7 +358,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -329,7 +369,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -338,7 +378,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets payer name field.
+     * Sets Payer Name field.
+     *
+     * @param string|null $value
      */
     public function payerName(?string $value): self
     {
@@ -347,7 +389,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets payer name field.
+     * Unsets Payer Name field.
      */
     public function unsetPayerName(): self
     {
@@ -356,7 +398,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -365,7 +409,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -374,7 +418,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets self selected pin field.
+     * Sets Self Selected Pin field.
+     *
+     * @param bool|null $value
      */
     public function selfSelectedPin(?bool $value): self
     {
@@ -383,7 +429,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets self selected pin field.
+     * Unsets Self Selected Pin field.
      */
     public function unsetSelfSelectedPin(): self
     {
@@ -392,7 +438,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -401,7 +449,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets status field.
+     * Unsets Status field.
      */
     public function unsetStatus(): self
     {
@@ -410,7 +458,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets default pinadvice type field.
+     * Sets Default PIN Advice Type field.
+     *
+     * @param int|null $value
      */
     public function defaultPINAdviceType(?int $value): self
     {
@@ -419,7 +469,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets default pinadvice type field.
+     * Unsets Default PIN Advice Type field.
      */
     public function unsetDefaultPINAdviceType(): self
     {
@@ -428,7 +478,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets pinadvice types field.
+     * Sets PIN Advice Types field.
+     *
+     * @param PINAdviceTypes[]|null $value
      */
     public function pINAdviceTypes(?array $value): self
     {
@@ -437,7 +489,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -446,7 +500,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -455,7 +511,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -464,7 +520,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets pinchange allowed by cardholder field.
+     * Sets PIN Change Allowed By Cardholder field.
+     *
+     * @param bool|null $value
      */
     public function pINChangeAllowedByCardholder(?bool $value): self
     {
@@ -473,7 +531,9 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Sets pinchange allowed from fleet pin field.
+     * Sets PIN Change Allowed From Fleet PIN field.
+     *
+     * @param bool|null $value
      */
     public function pINChangeAllowedFromFleetPIN(?bool $value): self
     {
@@ -482,7 +542,7 @@ class CustomerDetailResponseBuilder
     }
 
     /**
-     * Initializes a new customer detail response object.
+     * Initializes a new Customer Detail Response object.
      */
     public function build(): CustomerDetailResponse
     {

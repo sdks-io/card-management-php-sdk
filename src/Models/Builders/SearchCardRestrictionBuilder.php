@@ -31,7 +31,7 @@ class SearchCardRestrictionBuilder
     }
 
     /**
-     * Initializes a new search card restriction Builder object.
+     * Initializes a new Search Card Restriction Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class SearchCardRestrictionBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -48,7 +50,7 @@ class SearchCardRestrictionBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -57,7 +59,9 @@ class SearchCardRestrictionBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -66,7 +70,7 @@ class SearchCardRestrictionBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -75,7 +79,7 @@ class SearchCardRestrictionBuilder
     }
 
     /**
-     * Initializes a new search card restriction object.
+     * Initializes a new Search Card Restriction object.
      */
     public function build(): SearchCardRestriction
     {

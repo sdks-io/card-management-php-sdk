@@ -31,7 +31,7 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Initializes a new update card group request Builder object.
+     * Initializes a new Update Card Group Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -48,7 +50,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -57,7 +61,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -66,7 +72,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -75,7 +83,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -84,7 +94,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -93,7 +105,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets card group id field.
+     * Sets Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function cardGroupId(?int $value): self
     {
@@ -102,7 +116,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -111,7 +127,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets print on card field.
+     * Sets Print On Card field.
+     *
+     * @param bool|null $value
      */
     public function printOnCard(?bool $value): self
     {
@@ -120,7 +138,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets card type id field.
+     * Sets Card Type Id field.
+     *
+     * @param int|null $value
      */
     public function cardTypeId(?int $value): self
     {
@@ -129,7 +149,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets terminate card group field.
+     * Sets Terminate Card Group field.
+     *
+     * @param bool|null $value
      */
     public function terminateCardGroup(?bool $value): self
     {
@@ -138,7 +160,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets move cards field.
+     * Sets Move Cards field.
+     *
+     * @param bool|null $value
      */
     public function moveCards(?bool $value): self
     {
@@ -147,7 +171,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets target account id field.
+     * Sets Target Account Id field.
+     *
+     * @param int|null $value
      */
     public function targetAccountId(?int $value): self
     {
@@ -156,7 +182,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets target account number field.
+     * Sets Target Account Number field.
+     *
+     * @param string|null $value
      */
     public function targetAccountNumber(?string $value): self
     {
@@ -165,7 +193,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets target new card group name field.
+     * Sets Target New Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function targetNewCardGroupName(?string $value): self
     {
@@ -174,7 +204,9 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Sets target card group id field.
+     * Sets Target Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function targetCardGroupId(?int $value): self
     {
@@ -183,7 +215,7 @@ class UpdateCardGroupRequestBuilder
     }
 
     /**
-     * Initializes a new update card group request object.
+     * Initializes a new Update Card Group Request object.
      */
     public function build(): UpdateCardGroupRequest
     {

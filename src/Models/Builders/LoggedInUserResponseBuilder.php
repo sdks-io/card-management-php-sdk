@@ -11,8 +11,13 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\AccountAccess;
+use ShellCardManagementAPIsLib\Models\ColCoAccess;
+use ShellCardManagementAPIsLib\Models\EIDAccess;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\LoggedInUserResponse;
+use ShellCardManagementAPIsLib\Models\PayerAccess;
+use ShellCardManagementAPIsLib\Models\Role;
 
 /**
  * Builder for model LoggedInUserResponse
@@ -32,7 +37,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Initializes a new logged in user response Builder object.
+     * Initializes a new Logged In User Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +45,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets user name field.
+     * Sets User Name field.
+     *
+     * @param string|null $value
      */
     public function userName(?string $value): self
     {
@@ -49,7 +56,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets user name field.
+     * Unsets User Name field.
      */
     public function unsetUserName(): self
     {
@@ -58,7 +65,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets display name field.
+     * Sets Display Name field.
+     *
+     * @param string|null $value
      */
     public function displayName(?string $value): self
     {
@@ -67,7 +76,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets display name field.
+     * Unsets Display Name field.
      */
     public function unsetDisplayName(): self
     {
@@ -76,7 +85,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets id mssoid field.
+     * Sets Id MSSOID field.
+     *
+     * @param string|null $value
      */
     public function idMSSOID(?string $value): self
     {
@@ -85,7 +96,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets id mssoid field.
+     * Unsets Id MSSOID field.
      */
     public function unsetIdMSSOID(): self
     {
@@ -94,7 +105,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets preferred language field.
+     * Sets Preferred Language field.
+     *
+     * @param string|null $value
      */
     public function preferredLanguage(?string $value): self
     {
@@ -103,7 +116,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets preferred language field.
+     * Unsets Preferred Language field.
      */
     public function unsetPreferredLanguage(): self
     {
@@ -112,7 +125,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets is super admin field.
+     * Sets Is Super Admin field.
+     *
+     * @param bool|null $value
      */
     public function isSuperAdmin(?bool $value): self
     {
@@ -121,7 +136,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets date format field.
+     * Sets Date Format field.
+     *
+     * @param string|null $value
      */
     public function dateFormat(?string $value): self
     {
@@ -130,7 +147,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets date format field.
+     * Unsets Date Format field.
      */
     public function unsetDateFormat(): self
     {
@@ -139,7 +156,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets time format field.
+     * Sets Time Format field.
+     *
+     * @param string|null $value
      */
     public function timeFormat(?string $value): self
     {
@@ -148,7 +167,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets time format field.
+     * Unsets Time Format field.
      */
     public function unsetTimeFormat(): self
     {
@@ -157,7 +176,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets week begins field.
+     * Sets Week Begins field.
+     *
+     * @param int|null $value
      */
     public function weekBegins(?int $value): self
     {
@@ -166,7 +187,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets week begins field.
+     * Unsets Week Begins field.
      */
     public function unsetWeekBegins(): self
     {
@@ -175,7 +196,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets display week field.
+     * Sets Display Week field.
+     *
+     * @param bool|null $value
      */
     public function displayWeek(?bool $value): self
     {
@@ -184,7 +207,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets csvseparator field.
+     * Sets CSV Separator field.
+     *
+     * @param string|null $value
      */
     public function cSVSeparator(?string $value): self
     {
@@ -193,7 +218,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets csvseparator field.
+     * Unsets CSV Separator field.
      */
     public function unsetCSVSeparator(): self
     {
@@ -202,7 +227,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets decimal separator field.
+     * Sets Decimal Separator field.
+     *
+     * @param string|null $value
      */
     public function decimalSeparator(?string $value): self
     {
@@ -211,7 +238,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets decimal separator field.
+     * Unsets Decimal Separator field.
      */
     public function unsetDecimalSeparator(): self
     {
@@ -220,7 +247,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets report format field.
+     * Sets Report Format field.
+     *
+     * @param string|null $value
      */
     public function reportFormat(?string $value): self
     {
@@ -229,7 +258,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets report format field.
+     * Unsets Report Format field.
      */
     public function unsetReportFormat(): self
     {
@@ -238,7 +267,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets has apiaccess field.
+     * Sets Has API Access field.
+     *
+     * @param bool|null $value
      */
     public function hasAPIAccess(?bool $value): self
     {
@@ -247,7 +278,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets roles field.
+     * Sets Roles field.
+     *
+     * @param Role[]|null $value
      */
     public function roles(?array $value): self
     {
@@ -256,7 +289,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets payers field.
+     * Sets Payers field.
+     *
+     * @param PayerAccess[]|null $value
      */
     public function payers(?array $value): self
     {
@@ -265,7 +300,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets accounts field.
+     * Sets Accounts field.
+     *
+     * @param AccountAccess[]|null $value
      */
     public function accounts(?array $value): self
     {
@@ -274,7 +311,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets collecting companies field.
+     * Sets Collecting Companies field.
+     *
+     * @param ColCoAccess[]|null $value
      */
     public function collectingCompanies(?array $value): self
     {
@@ -283,7 +322,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets eidaccess details field.
+     * Sets EID Access Details field.
+     *
+     * @param EIDAccess[]|null $value
      */
     public function eIDAccessDetails(?array $value): self
     {
@@ -292,7 +333,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets user classification by system field.
+     * Sets User Classification By System field.
+     *
+     * @param string|null $value
      */
     public function userClassificationBySystem(?string $value): self
     {
@@ -301,7 +344,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets user classification by system field.
+     * Unsets User Classification By System field.
      */
     public function unsetUserClassificationBySystem(): self
     {
@@ -310,7 +353,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets user classification by shell field.
+     * Sets User Classification By Shell field.
+     *
+     * @param string|null $value
      */
     public function userClassificationByShell(?string $value): self
     {
@@ -319,7 +364,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets user classification by shell field.
+     * Unsets User Classification By Shell field.
      */
     public function unsetUserClassificationByShell(): self
     {
@@ -328,7 +373,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets payer count field.
+     * Sets Payer Count field.
+     *
+     * @param int|null $value
      */
     public function payerCount(?int $value): self
     {
@@ -337,7 +384,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets payer count field.
+     * Unsets Payer Count field.
      */
     public function unsetPayerCount(): self
     {
@@ -346,7 +393,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets account count field.
+     * Sets Account Count field.
+     *
+     * @param int|null $value
      */
     public function accountCount(?int $value): self
     {
@@ -355,7 +404,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets account count field.
+     * Unsets Account Count field.
      */
     public function unsetAccountCount(): self
     {
@@ -364,7 +413,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets card count field.
+     * Sets Card Count field.
+     *
+     * @param int|null $value
      */
     public function cardCount(?int $value): self
     {
@@ -373,7 +424,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Unsets card count field.
+     * Unsets Card Count field.
      */
     public function unsetCardCount(): self
     {
@@ -382,7 +433,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -391,7 +444,9 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -400,7 +455,7 @@ class LoggedInUserResponseBuilder
     }
 
     /**
-     * Initializes a new logged in user response object.
+     * Initializes a new Logged In User Response object.
      */
     public function build(): LoggedInUserResponse
     {

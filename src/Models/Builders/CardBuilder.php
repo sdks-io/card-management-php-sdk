@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\Card;
+use ShellCardManagementAPIsLib\Models\CardBlockSchedule;
 
 /**
  * Builder for model Card
@@ -31,7 +32,7 @@ class CardBuilder
     }
 
     /**
-     * Initializes a new card Builder object.
+     * Initializes a new Card Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class CardBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +51,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -57,7 +60,9 @@ class CardBuilder
     }
 
     /**
-     * Sets account name field.
+     * Sets Account Name field.
+     *
+     * @param string|null $value
      */
     public function accountName(?string $value): self
     {
@@ -66,7 +71,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets account name field.
+     * Unsets Account Name field.
      */
     public function unsetAccountName(): self
     {
@@ -75,7 +80,9 @@ class CardBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -84,7 +91,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -93,7 +100,9 @@ class CardBuilder
     }
 
     /**
-     * Sets account short name field.
+     * Sets Account Short Name field.
+     *
+     * @param string|null $value
      */
     public function accountShortName(?string $value): self
     {
@@ -102,7 +111,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets account short name field.
+     * Unsets Account Short Name field.
      */
     public function unsetAccountShortName(): self
     {
@@ -111,7 +120,9 @@ class CardBuilder
     }
 
     /**
-     * Sets bundle id field.
+     * Sets Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function bundleId(?string $value): self
     {
@@ -120,7 +131,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets bundle id field.
+     * Unsets Bundle Id field.
      */
     public function unsetBundleId(): self
     {
@@ -129,7 +140,9 @@ class CardBuilder
     }
 
     /**
-     * Sets card block schedules field.
+     * Sets Card Block Schedules field.
+     *
+     * @param CardBlockSchedule[]|null $value
      */
     public function cardBlockSchedules(?array $value): self
     {
@@ -138,7 +151,9 @@ class CardBuilder
     }
 
     /**
-     * Sets card group id field.
+     * Sets Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function cardGroupId(?int $value): self
     {
@@ -147,7 +162,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets card group id field.
+     * Unsets Card Group Id field.
      */
     public function unsetCardGroupId(): self
     {
@@ -156,7 +171,9 @@ class CardBuilder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -165,7 +182,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets card group name field.
+     * Unsets Card Group Name field.
      */
     public function unsetCardGroupName(): self
     {
@@ -174,7 +191,9 @@ class CardBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -183,7 +202,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -192,7 +211,9 @@ class CardBuilder
     }
 
     /**
-     * Sets card type code field.
+     * Sets Card Type Code field.
+     *
+     * @param string|null $value
      */
     public function cardTypeCode(?string $value): self
     {
@@ -201,7 +222,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets card type code field.
+     * Unsets Card Type Code field.
      */
     public function unsetCardTypeCode(): self
     {
@@ -210,7 +231,9 @@ class CardBuilder
     }
 
     /**
-     * Sets card type id field.
+     * Sets Card Type Id field.
+     *
+     * @param int|null $value
      */
     public function cardTypeId(?int $value): self
     {
@@ -219,7 +242,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets card type id field.
+     * Unsets Card Type Id field.
      */
     public function unsetCardTypeId(): self
     {
@@ -228,7 +251,9 @@ class CardBuilder
     }
 
     /**
-     * Sets card type name field.
+     * Sets Card Type Name field.
+     *
+     * @param string|null $value
      */
     public function cardTypeName(?string $value): self
     {
@@ -237,7 +262,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets card type name field.
+     * Unsets Card Type Name field.
      */
     public function unsetCardTypeName(): self
     {
@@ -246,7 +271,9 @@ class CardBuilder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -255,7 +282,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -264,7 +291,9 @@ class CardBuilder
     }
 
     /**
-     * Sets creation date field.
+     * Sets Creation Date field.
+     *
+     * @param string|null $value
      */
     public function creationDate(?string $value): self
     {
@@ -273,7 +302,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets creation date field.
+     * Unsets Creation Date field.
      */
     public function unsetCreationDate(): self
     {
@@ -282,7 +311,9 @@ class CardBuilder
     }
 
     /**
-     * Sets driver name field.
+     * Sets Driver Name field.
+     *
+     * @param string|null $value
      */
     public function driverName(?string $value): self
     {
@@ -291,7 +322,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets driver name field.
+     * Unsets Driver Name field.
      */
     public function unsetDriverName(): self
     {
@@ -300,7 +331,9 @@ class CardBuilder
     }
 
     /**
-     * Sets effective date field.
+     * Sets Effective Date field.
+     *
+     * @param string|null $value
      */
     public function effectiveDate(?string $value): self
     {
@@ -309,7 +342,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets effective date field.
+     * Unsets Effective Date field.
      */
     public function unsetEffectiveDate(): self
     {
@@ -318,7 +351,9 @@ class CardBuilder
     }
 
     /**
-     * Sets expiry date field.
+     * Sets Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function expiryDate(?string $value): self
     {
@@ -327,7 +362,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets expiry date field.
+     * Unsets Expiry Date field.
      */
     public function unsetExpiryDate(): self
     {
@@ -336,7 +371,9 @@ class CardBuilder
     }
 
     /**
-     * Sets fleet id input field.
+     * Sets Fleet Id Input field.
+     *
+     * @param bool|null $value
      */
     public function fleetIdInput(?bool $value): self
     {
@@ -345,7 +382,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is crt field.
+     * Sets Is CRT field.
+     *
+     * @param bool|null $value
      */
     public function isCRT(?bool $value): self
     {
@@ -354,7 +393,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is fleet field.
+     * Sets Is Fleet field.
+     *
+     * @param bool|null $value
      */
     public function isFleet(?bool $value): self
     {
@@ -363,7 +404,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is international field.
+     * Sets Is International field.
+     *
+     * @param bool|null $value
      */
     public function isInternational(?bool $value): self
     {
@@ -372,7 +415,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is national field.
+     * Sets Is National field.
+     *
+     * @param bool|null $value
      */
     public function isNational(?bool $value): self
     {
@@ -381,7 +426,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is partner sites included field.
+     * Sets Is Partner Sites Included field.
+     *
+     * @param bool|null $value
      */
     public function isPartnerSitesIncluded(?bool $value): self
     {
@@ -390,7 +437,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is shell sites only field.
+     * Sets Is Shell Sites Only field.
+     *
+     * @param bool|null $value
      */
     public function isShellSitesOnly(?bool $value): self
     {
@@ -399,7 +448,9 @@ class CardBuilder
     }
 
     /**
-     * Sets issue date field.
+     * Sets Issue Date field.
+     *
+     * @param string|null $value
      */
     public function issueDate(?string $value): self
     {
@@ -408,7 +459,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets issue date field.
+     * Unsets Issue Date field.
      */
     public function unsetIssueDate(): self
     {
@@ -417,7 +468,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is superseded field.
+     * Sets Is Superseded field.
+     *
+     * @param bool|null $value
      */
     public function isSuperseded(?bool $value): self
     {
@@ -426,7 +479,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is virtual card field.
+     * Sets Is Virtual Card field.
+     *
+     * @param bool|null $value
      */
     public function isVirtualCard(?bool $value): self
     {
@@ -435,7 +490,9 @@ class CardBuilder
     }
 
     /**
-     * Sets last modified date field.
+     * Sets Last Modified Date field.
+     *
+     * @param string|null $value
      */
     public function lastModifiedDate(?string $value): self
     {
@@ -444,7 +501,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets last modified date field.
+     * Unsets Last Modified Date field.
      */
     public function unsetLastModifiedDate(): self
     {
@@ -453,7 +510,9 @@ class CardBuilder
     }
 
     /**
-     * Sets last used date field.
+     * Sets Last Used Date field.
+     *
+     * @param string|null $value
      */
     public function lastUsedDate(?string $value): self
     {
@@ -462,7 +521,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets last used date field.
+     * Unsets Last Used Date field.
      */
     public function unsetLastUsedDate(): self
     {
@@ -471,7 +530,9 @@ class CardBuilder
     }
 
     /**
-     * Sets local currency code field.
+     * Sets Local Currency Code field.
+     *
+     * @param string|null $value
      */
     public function localCurrencyCode(?string $value): self
     {
@@ -480,7 +541,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets local currency code field.
+     * Unsets Local Currency Code field.
      */
     public function unsetLocalCurrencyCode(): self
     {
@@ -489,7 +550,9 @@ class CardBuilder
     }
 
     /**
-     * Sets local currency symbol field.
+     * Sets Local Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function localCurrencySymbol(?string $value): self
     {
@@ -498,7 +561,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets local currency symbol field.
+     * Unsets Local Currency Symbol field.
      */
     public function unsetLocalCurrencySymbol(): self
     {
@@ -507,7 +570,9 @@ class CardBuilder
     }
 
     /**
-     * Sets odometer input field.
+     * Sets Odometer Input field.
+     *
+     * @param bool|null $value
      */
     public function odometerInput(?bool $value): self
     {
@@ -516,7 +581,9 @@ class CardBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -525,7 +592,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -534,7 +601,9 @@ class CardBuilder
     }
 
     /**
-     * Sets masked pan field.
+     * Sets Masked PAN field.
+     *
+     * @param string|null $value
      */
     public function maskedPAN(?string $value): self
     {
@@ -543,7 +612,9 @@ class CardBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param float|null $value
      */
     public function pANID(?float $value): self
     {
@@ -552,7 +623,9 @@ class CardBuilder
     }
 
     /**
-     * Sets purchase category code field.
+     * Sets Purchase Category Code field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryCode(?string $value): self
     {
@@ -561,7 +634,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets purchase category code field.
+     * Unsets Purchase Category Code field.
      */
     public function unsetPurchaseCategoryCode(): self
     {
@@ -570,7 +643,9 @@ class CardBuilder
     }
 
     /**
-     * Sets purchase category id field.
+     * Sets Purchase Category Id field.
+     *
+     * @param int|null $value
      */
     public function purchaseCategoryId(?int $value): self
     {
@@ -579,7 +654,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets purchase category id field.
+     * Unsets Purchase Category Id field.
      */
     public function unsetPurchaseCategoryId(): self
     {
@@ -588,7 +663,9 @@ class CardBuilder
     }
 
     /**
-     * Sets purchase category name field.
+     * Sets Purchase Category Name field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryName(?string $value): self
     {
@@ -597,7 +674,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets purchase category name field.
+     * Unsets Purchase Category Name field.
      */
     public function unsetPurchaseCategoryName(): self
     {
@@ -606,7 +683,9 @@ class CardBuilder
     }
 
     /**
-     * Sets reason field.
+     * Sets Reason field.
+     *
+     * @param string|null $value
      */
     public function reason(?string $value): self
     {
@@ -615,7 +694,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets reason field.
+     * Unsets Reason field.
      */
     public function unsetReason(): self
     {
@@ -624,7 +703,9 @@ class CardBuilder
     }
 
     /**
-     * Sets reissue setting field.
+     * Sets Reissue Setting field.
+     *
+     * @param string|null $value
      */
     public function reissueSetting(?string $value): self
     {
@@ -633,7 +714,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets reissue setting field.
+     * Unsets Reissue Setting field.
      */
     public function unsetReissueSetting(): self
     {
@@ -642,7 +723,9 @@ class CardBuilder
     }
 
     /**
-     * Sets status description field.
+     * Sets Status Description field.
+     *
+     * @param string|null $value
      */
     public function statusDescription(?string $value): self
     {
@@ -651,7 +734,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets status description field.
+     * Unsets Status Description field.
      */
     public function unsetStatusDescription(): self
     {
@@ -660,7 +743,9 @@ class CardBuilder
     }
 
     /**
-     * Sets status id field.
+     * Sets Status Id field.
+     *
+     * @param int|null $value
      */
     public function statusId(?int $value): self
     {
@@ -669,7 +754,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets status id field.
+     * Unsets Status Id field.
      */
     public function unsetStatusId(): self
     {
@@ -678,7 +763,9 @@ class CardBuilder
     }
 
     /**
-     * Sets token type id field.
+     * Sets Token Type ID field.
+     *
+     * @param int|null $value
      */
     public function tokenTypeID(?int $value): self
     {
@@ -687,7 +774,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets token type id field.
+     * Unsets Token Type ID field.
      */
     public function unsetTokenTypeID(): self
     {
@@ -696,7 +783,9 @@ class CardBuilder
     }
 
     /**
-     * Sets token type name field.
+     * Sets Token Type Name field.
+     *
+     * @param string|null $value
      */
     public function tokenTypeName(?string $value): self
     {
@@ -705,7 +794,9 @@ class CardBuilder
     }
 
     /**
-     * Sets vrn field.
+     * Sets VRN field.
+     *
+     * @param string|null $value
      */
     public function vRN(?string $value): self
     {
@@ -714,7 +805,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets vrn field.
+     * Unsets VRN field.
      */
     public function unsetVRN(): self
     {
@@ -723,7 +814,9 @@ class CardBuilder
     }
 
     /**
-     * Sets client reference id field.
+     * Sets Client Reference Id field.
+     *
+     * @param string|null $value
      */
     public function clientReferenceId(?string $value): self
     {
@@ -732,7 +825,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets client reference id field.
+     * Unsets Client Reference Id field.
      */
     public function unsetClientReferenceId(): self
     {
@@ -741,7 +834,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is emvcontact field.
+     * Sets Is EMV Contact field.
+     *
+     * @param bool|null $value
      */
     public function isEMVContact(?bool $value): self
     {
@@ -750,7 +845,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is emvcontactless field.
+     * Sets Is EMV Contactless field.
+     *
+     * @param bool|null $value
      */
     public function isEMVContactless(?bool $value): self
     {
@@ -759,7 +856,9 @@ class CardBuilder
     }
 
     /**
-     * Sets is rfid field.
+     * Sets Is RFID field.
+     *
+     * @param bool|null $value
      */
     public function isRFID(?bool $value): self
     {
@@ -768,7 +867,9 @@ class CardBuilder
     }
 
     /**
-     * Sets rfiduid field.
+     * Sets RFIDUID field.
+     *
+     * @param string|null $value
      */
     public function rFIDUID(?string $value): self
     {
@@ -777,7 +878,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets rfiduid field.
+     * Unsets RFIDUID field.
      */
     public function unsetRFIDUID(): self
     {
@@ -786,7 +887,9 @@ class CardBuilder
     }
 
     /**
-     * Sets emaid field.
+     * Sets EMAID field.
+     *
+     * @param string|null $value
      */
     public function eMAID(?string $value): self
     {
@@ -795,7 +898,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets emaid field.
+     * Unsets EMAID field.
      */
     public function unsetEMAID(): self
     {
@@ -804,7 +907,9 @@ class CardBuilder
     }
 
     /**
-     * Sets evprinted number field.
+     * Sets EV Printed Number field.
+     *
+     * @param string|null $value
      */
     public function eVPrintedNumber(?string $value): self
     {
@@ -813,7 +918,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets evprinted number field.
+     * Unsets EV Printed Number field.
      */
     public function unsetEVPrintedNumber(): self
     {
@@ -822,7 +927,9 @@ class CardBuilder
     }
 
     /**
-     * Sets card media code field.
+     * Sets Card Media Code field.
+     *
+     * @param string|null $value
      */
     public function cardMediaCode(?string $value): self
     {
@@ -831,7 +938,7 @@ class CardBuilder
     }
 
     /**
-     * Unsets card media code field.
+     * Unsets Card Media Code field.
      */
     public function unsetCardMediaCode(): self
     {
@@ -840,7 +947,7 @@ class CardBuilder
     }
 
     /**
-     * Initializes a new card object.
+     * Initializes a new Card object.
      */
     public function build(): Card
     {

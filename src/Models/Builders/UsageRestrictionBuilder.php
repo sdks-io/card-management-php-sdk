@@ -31,7 +31,7 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Initializes a new usage restriction Builder object.
+     * Initializes a new Usage Restriction Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets level field.
+     * Sets Level field.
+     *
+     * @param string|null $value
      */
     public function level(?string $value): self
     {
@@ -48,7 +50,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily spend field.
+     * Sets Daily Spend field.
+     *
+     * @param float|null $value
      */
     public function dailySpend(?float $value): self
     {
@@ -57,7 +61,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily spend accumulated field.
+     * Sets Daily Spend Accumulated field.
+     *
+     * @param float|null $value
      */
     public function dailySpendAccumulated(?float $value): self
     {
@@ -66,7 +72,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily spend balance field.
+     * Sets Daily Spend Balance field.
+     *
+     * @param float|null $value
      */
     public function dailySpendBalance(?float $value): self
     {
@@ -75,7 +83,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily spend override field.
+     * Sets Daily Spend Override field.
+     *
+     * @param bool|null $value
      */
     public function dailySpendOverride(?bool $value): self
     {
@@ -84,7 +94,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily spend threshold field.
+     * Sets Daily Spend Threshold field.
+     *
+     * @param float|null $value
      */
     public function dailySpendThreshold(?float $value): self
     {
@@ -93,7 +105,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly spend field.
+     * Sets Weekly Spend field.
+     *
+     * @param float|null $value
      */
     public function weeklySpend(?float $value): self
     {
@@ -102,7 +116,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly spend accumulated field.
+     * Sets Weekly Spend Accumulated field.
+     *
+     * @param float|null $value
      */
     public function weeklySpendAccumulated(?float $value): self
     {
@@ -111,7 +127,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly spend balance field.
+     * Sets Weekly Spend Balance field.
+     *
+     * @param float|null $value
      */
     public function weeklySpendBalance(?float $value): self
     {
@@ -120,7 +138,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly spend override field.
+     * Sets Weekly Spend Override field.
+     *
+     * @param bool|null $value
      */
     public function weeklySpendOverride(?bool $value): self
     {
@@ -129,7 +149,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly spend threshold field.
+     * Sets Weekly Spend Threshold field.
+     *
+     * @param float|null $value
      */
     public function weeklySpendThreshold(?float $value): self
     {
@@ -138,7 +160,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly spend field.
+     * Sets Monthly Spend field.
+     *
+     * @param float|null $value
      */
     public function monthlySpend(?float $value): self
     {
@@ -147,7 +171,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly spend accumulated field.
+     * Sets Monthly Spend Accumulated field.
+     *
+     * @param float|null $value
      */
     public function monthlySpendAccumulated(?float $value): self
     {
@@ -156,7 +182,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly spend balance field.
+     * Sets Monthly Spend Balance field.
+     *
+     * @param float|null $value
      */
     public function monthlySpendBalance(?float $value): self
     {
@@ -165,7 +193,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly spend override field.
+     * Sets Monthly Spend Override field.
+     *
+     * @param bool|null $value
      */
     public function monthlySpendOverride(?bool $value): self
     {
@@ -174,7 +204,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets per transaction spend field.
+     * Sets Per Transaction Spend field.
+     *
+     * @param float|null $value
      */
     public function perTransactionSpend(?float $value): self
     {
@@ -183,7 +215,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets per transaction spend override field.
+     * Sets Per Transaction Spend Override field.
+     *
+     * @param bool|null $value
      */
     public function perTransactionSpendOverride(?bool $value): self
     {
@@ -192,7 +226,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual spend field.
+     * Sets Annual Spend field.
+     *
+     * @param float|null $value
      */
     public function annualSpend(?float $value): self
     {
@@ -201,7 +237,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual spend accumulated field.
+     * Sets Annual Spend Accumulated field.
+     *
+     * @param float|null $value
      */
     public function annualSpendAccumulated(?float $value): self
     {
@@ -210,7 +248,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual spend balance field.
+     * Sets Annual Spend Balance field.
+     *
+     * @param float|null $value
      */
     public function annualSpendBalance(?float $value): self
     {
@@ -219,7 +259,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual spend override field.
+     * Sets Annual Spend Override field.
+     *
+     * @param bool|null $value
      */
     public function annualSpendOverride(?bool $value): self
     {
@@ -228,7 +270,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual spend threshold field.
+     * Sets Annual Spend Threshold field.
+     *
+     * @param float|null $value
      */
     public function annualSpendThreshold(?float $value): self
     {
@@ -237,7 +281,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time spend field.
+     * Sets Life Time Spend field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeSpend(?float $value): self
     {
@@ -246,7 +292,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time spend accumulated field.
+     * Sets Life Time Spend Accumulated field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeSpendAccumulated(?float $value): self
     {
@@ -255,7 +303,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time spend balance field.
+     * Sets Life Time Spend Balance field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeSpendBalance(?float $value): self
     {
@@ -264,7 +314,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time spend override field.
+     * Sets Life Time Spend Override field.
+     *
+     * @param bool|null $value
      */
     public function lifeTimeSpendOverride(?bool $value): self
     {
@@ -273,7 +325,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time spend threshold field.
+     * Sets Life Time Spend Threshold field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeSpendThreshold(?float $value): self
     {
@@ -282,7 +336,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily volume field.
+     * Sets Daily Volume field.
+     *
+     * @param float|null $value
      */
     public function dailyVolume(?float $value): self
     {
@@ -291,7 +347,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily volume accumulated field.
+     * Sets Daily Volume Accumulated field.
+     *
+     * @param float|null $value
      */
     public function dailyVolumeAccumulated(?float $value): self
     {
@@ -300,7 +358,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily volume balance field.
+     * Sets Daily Volume Balance field.
+     *
+     * @param float|null $value
      */
     public function dailyVolumeBalance(?float $value): self
     {
@@ -309,7 +369,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily volume override field.
+     * Sets Daily Volume Override field.
+     *
+     * @param float|null $value
      */
     public function dailyVolumeOverride(?float $value): self
     {
@@ -318,7 +380,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily volume threshold field.
+     * Sets Daily Volume Threshold field.
+     *
+     * @param float|null $value
      */
     public function dailyVolumeThreshold(?float $value): self
     {
@@ -327,7 +391,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly volume field.
+     * Sets Weekly Volume field.
+     *
+     * @param float|null $value
      */
     public function weeklyVolume(?float $value): self
     {
@@ -336,7 +402,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly volume accumulated field.
+     * Sets Weekly Volume Accumulated field.
+     *
+     * @param float|null $value
      */
     public function weeklyVolumeAccumulated(?float $value): self
     {
@@ -345,7 +413,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly volume balance field.
+     * Sets Weekly Volume Balance field.
+     *
+     * @param float|null $value
      */
     public function weeklyVolumeBalance(?float $value): self
     {
@@ -354,7 +424,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly volume override field.
+     * Sets Weekly Volume Override field.
+     *
+     * @param bool|null $value
      */
     public function weeklyVolumeOverride(?bool $value): self
     {
@@ -363,7 +435,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly volume threshold field.
+     * Sets Weekly Volume Threshold field.
+     *
+     * @param float|null $value
      */
     public function weeklyVolumeThreshold(?float $value): self
     {
@@ -372,7 +446,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly volume field.
+     * Sets Monthly Volume field.
+     *
+     * @param float|null $value
      */
     public function monthlyVolume(?float $value): self
     {
@@ -381,7 +457,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly volume accumulated field.
+     * Sets Monthly Volume Accumulated field.
+     *
+     * @param float|null $value
      */
     public function monthlyVolumeAccumulated(?float $value): self
     {
@@ -390,7 +468,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly volume balance field.
+     * Sets Monthly Volume Balance field.
+     *
+     * @param float|null $value
      */
     public function monthlyVolumeBalance(?float $value): self
     {
@@ -399,7 +479,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly volume override field.
+     * Sets Monthly Volume Override field.
+     *
+     * @param bool|null $value
      */
     public function monthlyVolumeOverride(?bool $value): self
     {
@@ -408,7 +490,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly volume threshold field.
+     * Sets Monthly Volume Threshold field.
+     *
+     * @param float|null $value
      */
     public function monthlyVolumeThreshold(?float $value): self
     {
@@ -417,7 +501,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets per transaction volume field.
+     * Sets Per Transaction Volume field.
+     *
+     * @param float|null $value
      */
     public function perTransactionVolume(?float $value): self
     {
@@ -426,7 +512,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets per transaction volume override field.
+     * Sets Per Transaction Volume Override field.
+     *
+     * @param bool|null $value
      */
     public function perTransactionVolumeOverride(?bool $value): self
     {
@@ -435,7 +523,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual volume field.
+     * Sets Annual Volume field.
+     *
+     * @param float|null $value
      */
     public function annualVolume(?float $value): self
     {
@@ -444,7 +534,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual volume accumulated field.
+     * Sets Annual Volume Accumulated field.
+     *
+     * @param float|null $value
      */
     public function annualVolumeAccumulated(?float $value): self
     {
@@ -453,7 +545,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual volume balance field.
+     * Sets Annual Volume Balance field.
+     *
+     * @param float|null $value
      */
     public function annualVolumeBalance(?float $value): self
     {
@@ -462,7 +556,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual volume override field.
+     * Sets Annual Volume Override field.
+     *
+     * @param bool|null $value
      */
     public function annualVolumeOverride(?bool $value): self
     {
@@ -471,7 +567,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual volume threshold field.
+     * Sets Annual Volume Threshold field.
+     *
+     * @param float|null $value
      */
     public function annualVolumeThreshold(?float $value): self
     {
@@ -480,7 +578,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time volume field.
+     * Sets Life Time Volume field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeVolume(?float $value): self
     {
@@ -489,7 +589,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time volume accumulated field.
+     * Sets Life Time Volume Accumulated field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeVolumeAccumulated(?float $value): self
     {
@@ -498,7 +600,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time volume balance field.
+     * Sets Life Time Volume Balance field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeVolumeBalance(?float $value): self
     {
@@ -507,7 +611,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time volume override field.
+     * Sets Life Time Volume Override field.
+     *
+     * @param bool|null $value
      */
     public function lifeTimeVolumeOverride(?bool $value): self
     {
@@ -516,7 +622,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time volume threshold field.
+     * Sets Life Time Volume Threshold field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeVolumeThreshold(?float $value): self
     {
@@ -525,7 +633,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily transaction count field.
+     * Sets Daily Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function dailyTransactionCount(?float $value): self
     {
@@ -534,7 +644,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily transaction accumulated field.
+     * Sets Daily Transaction Accumulated field.
+     *
+     * @param float|null $value
      */
     public function dailyTransactionAccumulated(?float $value): self
     {
@@ -543,7 +655,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily transaction balance field.
+     * Sets Daily Transaction Balance field.
+     *
+     * @param float|null $value
      */
     public function dailyTransactionBalance(?float $value): self
     {
@@ -552,7 +666,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily transaction override field.
+     * Sets Daily Transaction Override field.
+     *
+     * @param bool|null $value
      */
     public function dailyTransactionOverride(?bool $value): self
     {
@@ -561,7 +677,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets daily transaction threshold field.
+     * Sets Daily Transaction Threshold field.
+     *
+     * @param float|null $value
      */
     public function dailyTransactionThreshold(?float $value): self
     {
@@ -570,7 +688,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly transaction count field.
+     * Sets Weekly Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function weeklyTransactionCount(?float $value): self
     {
@@ -579,7 +699,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly transaction accumulated field.
+     * Sets Weekly Transaction Accumulated field.
+     *
+     * @param float|null $value
      */
     public function weeklyTransactionAccumulated(?float $value): self
     {
@@ -588,7 +710,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly transaction balance field.
+     * Sets Weekly Transaction Balance field.
+     *
+     * @param float|null $value
      */
     public function weeklyTransactionBalance(?float $value): self
     {
@@ -597,7 +721,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly transaction override field.
+     * Sets Weekly Transaction Override field.
+     *
+     * @param bool|null $value
      */
     public function weeklyTransactionOverride(?bool $value): self
     {
@@ -606,7 +732,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets weekly transaction threshold field.
+     * Sets Weekly Transaction Threshold field.
+     *
+     * @param float|null $value
      */
     public function weeklyTransactionThreshold(?float $value): self
     {
@@ -615,7 +743,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly transaction count field.
+     * Sets Monthly Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function monthlyTransactionCount(?float $value): self
     {
@@ -624,7 +754,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly transaction accumulated field.
+     * Sets Monthly Transaction Accumulated field.
+     *
+     * @param float|null $value
      */
     public function monthlyTransactionAccumulated(?float $value): self
     {
@@ -633,7 +765,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly transaction balance field.
+     * Sets Monthly Transaction Balance field.
+     *
+     * @param float|null $value
      */
     public function monthlyTransactionBalance(?float $value): self
     {
@@ -642,7 +776,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly transaction override field.
+     * Sets Monthly Transaction Override field.
+     *
+     * @param bool|null $value
      */
     public function monthlyTransactionOverride(?bool $value): self
     {
@@ -651,7 +787,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets monthly transaction threshold field.
+     * Sets Monthly Transaction Threshold field.
+     *
+     * @param float|null $value
      */
     public function monthlyTransactionThreshold(?float $value): self
     {
@@ -660,7 +798,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual transaction count field.
+     * Sets Annual Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function annualTransactionCount(?float $value): self
     {
@@ -669,7 +809,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual transaction accumulated field.
+     * Sets Annual Transaction Accumulated field.
+     *
+     * @param float|null $value
      */
     public function annualTransactionAccumulated(?float $value): self
     {
@@ -678,7 +820,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual transaction balance field.
+     * Sets Annual Transaction Balance field.
+     *
+     * @param float|null $value
      */
     public function annualTransactionBalance(?float $value): self
     {
@@ -687,7 +831,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual transaction override field.
+     * Sets Annual Transaction Override field.
+     *
+     * @param bool|null $value
      */
     public function annualTransactionOverride(?bool $value): self
     {
@@ -696,7 +842,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets annual transaction threshold field.
+     * Sets Annual Transaction Threshold field.
+     *
+     * @param float|null $value
      */
     public function annualTransactionThreshold(?float $value): self
     {
@@ -705,7 +853,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time transaction count field.
+     * Sets Life Time Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeTransactionCount(?float $value): self
     {
@@ -714,7 +864,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time transaction accumulated field.
+     * Sets Life Time Transaction Accumulated field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeTransactionAccumulated(?float $value): self
     {
@@ -723,7 +875,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time transaction balance field.
+     * Sets Life Time Transaction Balance field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeTransactionBalance(?float $value): self
     {
@@ -732,7 +886,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time transaction override field.
+     * Sets Life Time Transaction Override field.
+     *
+     * @param bool|null $value
      */
     public function lifeTimeTransactionOverride(?bool $value): self
     {
@@ -741,7 +897,9 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Sets life time transaction threshold field.
+     * Sets Life Time Transaction Threshold field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeTransactionThreshold(?float $value): self
     {
@@ -750,7 +908,7 @@ class UsageRestrictionBuilder
     }
 
     /**
-     * Initializes a new usage restriction object.
+     * Initializes a new Usage Restriction object.
      */
     public function build(): UsageRestriction
     {

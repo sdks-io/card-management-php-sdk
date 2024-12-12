@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AutoRenewCardResponse;
+use ShellCardManagementAPIsLib\Models\AutoRenewCardResponseDataItems;
 
 /**
  * Builder for model AutoRenewCardResponse
@@ -31,7 +32,7 @@ class AutoRenewCardResponseBuilder
     }
 
     /**
-     * Initializes a new auto renew card response Builder object.
+     * Initializes a new Auto Renew Card Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class AutoRenewCardResponseBuilder
     }
 
     /**
-     * Sets main reference field.
+     * Sets Main Reference field.
+     *
+     * @param int|null $value
      */
     public function mainReference(?int $value): self
     {
@@ -48,7 +51,9 @@ class AutoRenewCardResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -57,7 +62,9 @@ class AutoRenewCardResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -66,7 +73,9 @@ class AutoRenewCardResponseBuilder
     }
 
     /**
-     * Sets data field.
+     * Sets Data field.
+     *
+     * @param AutoRenewCardResponseDataItems[]|null $value
      */
     public function data(?array $value): self
     {
@@ -75,7 +84,7 @@ class AutoRenewCardResponseBuilder
     }
 
     /**
-     * Initializes a new auto renew card response object.
+     * Initializes a new Auto Renew Card Response object.
      */
     public function build(): AutoRenewCardResponse
     {

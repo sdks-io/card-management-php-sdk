@@ -31,7 +31,7 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Initializes a new logged in user request Builder object.
+     * Initializes a new Logged In User Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Sets include payer group field.
+     * Sets Include Payer Group field.
+     *
+     * @param bool|null $value
      */
     public function includePayerGroup(?bool $value): self
     {
@@ -48,7 +50,9 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Sets include eiddetails field.
+     * Sets Include EID Details field.
+     *
+     * @param bool|null $value
      */
     public function includeEIDDetails(?bool $value): self
     {
@@ -57,7 +61,9 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Sets requested apiname field.
+     * Sets Requested API Name field.
+     *
+     * @param string|null $value
      */
     public function requestedAPIName(?string $value): self
     {
@@ -66,7 +72,7 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Unsets requested apiname field.
+     * Unsets Requested API Name field.
      */
     public function unsetRequestedAPIName(): self
     {
@@ -75,7 +81,9 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -84,7 +92,7 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -93,7 +101,9 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -102,7 +112,7 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -111,7 +121,7 @@ class LoggedInUserRequestBuilder
     }
 
     /**
-     * Initializes a new logged in user request object.
+     * Initializes a new Logged In User Request object.
      */
     public function build(): LoggedInUserRequest
     {

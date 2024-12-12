@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\SearchCard;
 use ShellCardManagementAPIsLib\Models\SearchRequest;
 
 /**
@@ -31,7 +32,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Initializes a new search request Builder object.
+     * Initializes a new Search Request Builder object.
+     *
+     * @param string[] $cardStatus
      */
     public static function init(array $cardStatus): self
     {
@@ -39,7 +42,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +53,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -57,7 +62,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -66,7 +73,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -75,7 +82,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets card group id field.
+     * Sets Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function cardGroupId(?int $value): self
     {
@@ -84,7 +93,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets card group id field.
+     * Unsets Card Group Id field.
      */
     public function unsetCardGroupId(): self
     {
@@ -93,7 +102,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -102,7 +113,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets card group name field.
+     * Unsets Card Group Name field.
      */
     public function unsetCardGroupName(): self
     {
@@ -111,7 +122,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets card segment field.
+     * Sets Card Segment field.
+     *
+     * @param string|null $value
      */
     public function cardSegment(?string $value): self
     {
@@ -120,7 +133,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets card segment field.
+     * Unsets Card Segment field.
      */
     public function unsetCardSegment(): self
     {
@@ -129,7 +142,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets card type code field.
+     * Sets Card Type Code field.
+     *
+     * @param string|null $value
      */
     public function cardTypeCode(?string $value): self
     {
@@ -138,7 +153,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets card type code field.
+     * Unsets Card Type Code field.
      */
     public function unsetCardTypeCode(): self
     {
@@ -147,7 +162,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -156,7 +173,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -165,7 +182,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -174,7 +193,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -183,7 +202,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -192,7 +213,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -201,7 +222,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets coverage field.
+     * Sets Coverage field.
+     *
+     * @param string|null $value
      */
     public function coverage(?string $value): self
     {
@@ -210,7 +233,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets coverage field.
+     * Unsets Coverage field.
      */
     public function unsetCoverage(): self
     {
@@ -219,7 +242,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets creation date field.
+     * Sets Creation Date field.
+     *
+     * @param string|null $value
      */
     public function creationDate(?string $value): self
     {
@@ -228,7 +253,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets creation date field.
+     * Unsets Creation Date field.
      */
     public function unsetCreationDate(): self
     {
@@ -237,7 +262,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets driver name field.
+     * Sets Driver Name field.
+     *
+     * @param string[]|null $value
      */
     public function driverName(?array $value): self
     {
@@ -246,7 +273,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets effective date field.
+     * Sets Effective Date field.
+     *
+     * @param string|null $value
      */
     public function effectiveDate(?string $value): self
     {
@@ -255,7 +284,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets effective date field.
+     * Unsets Effective Date field.
      */
     public function unsetEffectiveDate(): self
     {
@@ -264,7 +293,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude bundle id field.
+     * Sets Exclude Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function excludeBundleId(?string $value): self
     {
@@ -273,7 +304,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets exclude bundle id field.
+     * Unsets Exclude Bundle Id field.
      */
     public function unsetExcludeBundleId(): self
     {
@@ -282,7 +313,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude cancelled cards field.
+     * Sets Exclude Cancelled Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludeCancelledCards(?bool $value): self
     {
@@ -291,7 +324,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude card group id field.
+     * Sets Exclude Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function excludeCardGroupId(?int $value): self
     {
@@ -300,7 +335,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets exclude card group id field.
+     * Unsets Exclude Card Group Id field.
      */
     public function unsetExcludeCardGroupId(): self
     {
@@ -309,7 +344,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude card group name field.
+     * Sets Exclude Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function excludeCardGroupName(?string $value): self
     {
@@ -318,7 +355,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets exclude card group name field.
+     * Unsets Exclude Card Group Name field.
      */
     public function unsetExcludeCardGroupName(): self
     {
@@ -327,7 +364,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude cards field.
+     * Sets Exclude Cards field.
+     *
+     * @param SearchCard[]|null $value
      */
     public function excludeCards(?array $value): self
     {
@@ -336,7 +375,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude fraud cards field.
+     * Sets Exclude Fraud Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludeFraudCards(?bool $value): self
     {
@@ -345,7 +386,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude pending renewal cards field.
+     * Sets Exclude Pending Renewal Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludePendingRenewalCards(?bool $value): self
     {
@@ -354,7 +397,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude replaced cards field.
+     * Sets Exclude Replaced Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludeReplacedCards(?bool $value): self
     {
@@ -363,7 +408,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets expiring in days field.
+     * Sets Expiring In Days field.
+     *
+     * @param int|null $value
      */
     public function expiringInDays(?int $value): self
     {
@@ -372,7 +419,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets expiring in days field.
+     * Unsets Expiring In Days field.
      */
     public function unsetExpiringInDays(): self
     {
@@ -381,7 +428,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets expiry month field.
+     * Sets Expiry Month field.
+     *
+     * @param string|null $value
      */
     public function expiryMonth(?string $value): self
     {
@@ -390,7 +439,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets expiry month field.
+     * Unsets Expiry Month field.
      */
     public function unsetExpiryMonth(): self
     {
@@ -399,7 +448,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets include bundle details field.
+     * Sets Include Bundle Details field.
+     *
+     * @param bool|null $value
      */
     public function includeBundleDetails(?bool $value): self
     {
@@ -408,7 +459,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets include cards field.
+     * Sets Include Cards field.
+     *
+     * @param SearchCard[]|null $value
      */
     public function includeCards(?array $value): self
     {
@@ -417,7 +470,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets include intermediate status field.
+     * Sets Include Intermediate Status field.
+     *
+     * @param bool|null $value
      */
     public function includeIntermediateStatus(?bool $value): self
     {
@@ -426,7 +481,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets issued after field.
+     * Sets Issued After field.
+     *
+     * @param string|null $value
      */
     public function issuedAfter(?string $value): self
     {
@@ -435,7 +492,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets issued after field.
+     * Unsets Issued After field.
      */
     public function unsetIssuedAfter(): self
     {
@@ -444,7 +501,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets network field.
+     * Sets Network field.
+     *
+     * @param string|null $value
      */
     public function network(?string $value): self
     {
@@ -453,7 +512,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets network field.
+     * Unsets Network field.
      */
     public function unsetNetwork(): self
     {
@@ -462,7 +521,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets panends with field.
+     * Sets PAN Ends With field.
+     *
+     * @param string|null $value
      */
     public function pANEndsWith(?string $value): self
     {
@@ -471,7 +532,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets panends with field.
+     * Unsets PAN Ends With field.
      */
     public function unsetPANEndsWith(): self
     {
@@ -480,7 +541,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -489,7 +552,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -498,7 +561,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -507,7 +572,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -516,7 +581,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets purchase category code field.
+     * Sets Purchase Category Code field.
+     *
+     * @param string|null $value
      */
     public function purchaseCategoryCode(?string $value): self
     {
@@ -525,7 +592,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets purchase category code field.
+     * Unsets Purchase Category Code field.
      */
     public function unsetPurchaseCategoryCode(): self
     {
@@ -534,7 +601,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets sort order field.
+     * Sets Sort Order field.
+     *
+     * @param string|null $value
      */
     public function sortOrder(?string $value): self
     {
@@ -543,7 +612,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets sort order field.
+     * Unsets Sort Order field.
      */
     public function unsetSortOrder(): self
     {
@@ -552,7 +621,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets include scheduled card blocks field.
+     * Sets Include Scheduled Card Blocks field.
+     *
+     * @param bool|null $value
      */
     public function includeScheduledCardBlocks(?bool $value): self
     {
@@ -561,7 +632,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets token type id field.
+     * Sets Token Type ID field.
+     *
+     * @param int|null $value
      */
     public function tokenTypeID(?int $value): self
     {
@@ -570,7 +643,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets token type id field.
+     * Unsets Token Type ID field.
      */
     public function unsetTokenTypeID(): self
     {
@@ -579,7 +652,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets token type name field.
+     * Sets Token Type Name field.
+     *
+     * @param string|null $value
      */
     public function tokenTypeName(?string $value): self
     {
@@ -588,7 +663,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets token type name field.
+     * Unsets Token Type Name field.
      */
     public function unsetTokenTypeName(): self
     {
@@ -597,7 +672,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets vehicle registration number field.
+     * Sets Vehicle Registration Number field.
+     *
+     * @param string[]|null $value
      */
     public function vehicleRegistrationNumber(?array $value): self
     {
@@ -606,7 +683,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude old cards field.
+     * Sets Exclude Old Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludeOldCards(?bool $value): self
     {
@@ -615,7 +694,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets exclude expiring cards field.
+     * Sets Exclude Expiring Cards field.
+     *
+     * @param bool|null $value
      */
     public function excludeExpiringCards(?bool $value): self
     {
@@ -624,7 +705,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets client reference id field.
+     * Sets Client Reference Id field.
+     *
+     * @param string|null $value
      */
     public function clientReferenceId(?string $value): self
     {
@@ -633,7 +716,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets client reference id field.
+     * Unsets Client Reference Id field.
      */
     public function unsetClientReferenceId(): self
     {
@@ -642,7 +725,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets reissue setting field.
+     * Sets Reissue Setting field.
+     *
+     * @param string|null $value
      */
     public function reissueSetting(?string $value): self
     {
@@ -651,7 +736,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Unsets reissue setting field.
+     * Unsets Reissue Setting field.
      */
     public function unsetReissueSetting(): self
     {
@@ -660,7 +745,9 @@ class SearchRequestBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -669,7 +756,7 @@ class SearchRequestBuilder
     }
 
     /**
-     * Initializes a new search request object.
+     * Initializes a new Search Request object.
      */
     public function build(): SearchRequest
     {

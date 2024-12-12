@@ -32,7 +32,7 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Initializes a new card restriction req Builder object.
+     * Initializes a new Card Restriction Req Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -49,7 +51,7 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -58,7 +60,9 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -67,7 +71,7 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -76,7 +80,9 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -85,7 +91,7 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -94,7 +100,9 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -103,7 +111,7 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -112,7 +120,9 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Sets cards field.
+     * Sets Cards field.
+     *
+     * @param RestrictionCardsList|null $value
      */
     public function cards(?RestrictionCardsList $value): self
     {
@@ -121,7 +131,7 @@ class CardRestrictionReqBuilder
     }
 
     /**
-     * Initializes a new card restriction req object.
+     * Initializes a new Card Restriction Req object.
      */
     public function build(): CardRestrictionReq
     {

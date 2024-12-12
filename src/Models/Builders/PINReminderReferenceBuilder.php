@@ -31,7 +31,7 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Initializes a new pinreminder reference Builder object.
+     * Initializes a new PIN Reminder Reference Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -48,7 +50,7 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -57,7 +59,9 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param int|null $value
      */
     public function pANID(?int $value): self
     {
@@ -66,7 +70,7 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Unsets panid field.
+     * Unsets PANID field.
      */
     public function unsetPANID(): self
     {
@@ -75,7 +79,9 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param int|null $value
      */
     public function pAN(?int $value): self
     {
@@ -84,7 +90,7 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -93,7 +99,9 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Sets card expiry date field.
+     * Sets Card Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function cardExpiryDate(?string $value): self
     {
@@ -102,7 +110,7 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Unsets card expiry date field.
+     * Unsets Card Expiry Date field.
      */
     public function unsetCardExpiryDate(): self
     {
@@ -111,7 +119,9 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Sets reference id field.
+     * Sets Reference Id field.
+     *
+     * @param int|null $value
      */
     public function referenceId(?int $value): self
     {
@@ -120,7 +130,7 @@ class PINReminderReferenceBuilder
     }
 
     /**
-     * Initializes a new pinreminder reference object.
+     * Initializes a new PIN Reminder Reference object.
      */
     public function build(): PINReminderReference
     {

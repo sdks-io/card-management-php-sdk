@@ -31,7 +31,7 @@ class DetailBuilder
     }
 
     /**
-     * Initializes a new detail Builder object.
+     * Initializes a new Detail Builder object.
      */
     public static function init(): self
     {
@@ -40,6 +40,8 @@ class DetailBuilder
 
     /**
      * Sets errorcode field.
+     *
+     * @param string|null $value
      */
     public function errorcode(?string $value): self
     {
@@ -48,7 +50,7 @@ class DetailBuilder
     }
 
     /**
-     * Initializes a new detail object.
+     * Initializes a new Detail object.
      */
     public function build(): Detail
     {

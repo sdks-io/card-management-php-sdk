@@ -31,7 +31,7 @@ class PurchaseCategoriesBuilder
     }
 
     /**
-     * Initializes a new purchase categories Builder object.
+     * Initializes a new Purchase Categories Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class PurchaseCategoriesBuilder
     }
 
     /**
-     * Sets id field.
+     * Sets Id field.
+     *
+     * @param int|null $value
      */
     public function id(?int $value): self
     {
@@ -48,7 +50,9 @@ class PurchaseCategoriesBuilder
     }
 
     /**
-     * Sets code field.
+     * Sets Code field.
+     *
+     * @param string|null $value
      */
     public function code(?string $value): self
     {
@@ -57,7 +61,9 @@ class PurchaseCategoriesBuilder
     }
 
     /**
-     * Sets name field.
+     * Sets Name field.
+     *
+     * @param string|null $value
      */
     public function name(?string $value): self
     {
@@ -66,7 +72,9 @@ class PurchaseCategoriesBuilder
     }
 
     /**
-     * Sets is visible field.
+     * Sets Is Visible field.
+     *
+     * @param bool|null $value
      */
     public function isVisible(?bool $value): self
     {
@@ -75,7 +83,9 @@ class PurchaseCategoriesBuilder
     }
 
     /**
-     * Sets product groups field.
+     * Sets Product Groups field.
+     *
+     * @param string|null $value
      */
     public function productGroups(?string $value): self
     {
@@ -84,7 +94,7 @@ class PurchaseCategoriesBuilder
     }
 
     /**
-     * Initializes a new purchase categories object.
+     * Initializes a new Purchase Categories object.
      */
     public function build(): PurchaseCategories
     {

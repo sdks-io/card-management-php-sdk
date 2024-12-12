@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\AccountVelocityLimit;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\SearchAccountLimitResponse;
 
@@ -32,7 +33,7 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Initializes a new search account limit response Builder object.
+     * Initializes a new Search Account Limit Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +41,9 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -49,7 +52,7 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -58,7 +61,9 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -67,7 +72,9 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -76,7 +83,9 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Sets reference product field.
+     * Sets Reference Product field.
+     *
+     * @param string|null $value
      */
     public function referenceProduct(?string $value): self
     {
@@ -85,7 +94,9 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Sets restriction condition field.
+     * Sets Restriction Condition field.
+     *
+     * @param string|null $value
      */
     public function restrictionCondition(?string $value): self
     {
@@ -94,7 +105,9 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Sets velocity limits field.
+     * Sets Velocity Limits field.
+     *
+     * @param AccountVelocityLimit[]|null $value
      */
     public function velocityLimits(?array $value): self
     {
@@ -103,7 +116,9 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -112,7 +127,7 @@ class SearchAccountLimitResponseBuilder
     }
 
     /**
-     * Initializes a new search account limit response object.
+     * Initializes a new Search Account Limit Response object.
      */
     public function build(): SearchAccountLimitResponse
     {

@@ -31,7 +31,7 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Initializes a new account restriction request Builder object.
+     * Initializes a new Account Restriction Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -48,7 +50,7 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -57,7 +59,9 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -66,7 +70,7 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -75,7 +79,9 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -84,7 +90,7 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -93,7 +99,9 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -102,7 +110,7 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -111,7 +119,9 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -120,7 +130,7 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -129,7 +139,9 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -138,7 +150,7 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -147,7 +159,9 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Sets reset usage restrictions field.
+     * Sets Reset Usage Restrictions field.
+     *
+     * @param bool|null $value
      */
     public function resetUsageRestrictions(?bool $value): self
     {
@@ -156,7 +170,7 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Unsets reset usage restrictions field.
+     * Unsets Reset Usage Restrictions field.
      */
     public function unsetResetUsageRestrictions(): self
     {
@@ -165,7 +179,9 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Sets usage restrictions field.
+     * Sets Usage Restrictions field.
+     *
+     * @param array|null $value
      */
     public function usageRestrictions(?array $value): self
     {
@@ -174,7 +190,7 @@ class AccountRestrictionRequestBuilder
     }
 
     /**
-     * Initializes a new account restriction request object.
+     * Initializes a new Account Restriction Request object.
      */
     public function build(): AccountRestrictionRequest
     {

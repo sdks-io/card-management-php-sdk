@@ -31,7 +31,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Initializes a new payer access Builder object.
+     * Initializes a new Payer Access Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class PayerAccessBuilder
     }
 
     /**
-     * Sets is default field.
+     * Sets Is Default field.
+     *
+     * @param bool|null $value
      */
     public function isDefault(?bool $value): self
     {
@@ -48,7 +50,9 @@ class PayerAccessBuilder
     }
 
     /**
-     * Sets colco id field.
+     * Sets Colco Id field.
+     *
+     * @param int|null $value
      */
     public function colcoId(?int $value): self
     {
@@ -57,7 +61,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Unsets colco id field.
+     * Unsets Colco Id field.
      */
     public function unsetColcoId(): self
     {
@@ -66,7 +70,9 @@ class PayerAccessBuilder
     }
 
     /**
-     * Sets colco code field.
+     * Sets Colco Code field.
+     *
+     * @param int|null $value
      */
     public function colcoCode(?int $value): self
     {
@@ -75,7 +81,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Unsets colco code field.
+     * Unsets Colco Code field.
      */
     public function unsetColcoCode(): self
     {
@@ -84,7 +90,9 @@ class PayerAccessBuilder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -93,7 +101,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -102,7 +110,9 @@ class PayerAccessBuilder
     }
 
     /**
-     * Sets payer group id field.
+     * Sets Payer Group Id field.
+     *
+     * @param int|null $value
      */
     public function payerGroupId(?int $value): self
     {
@@ -111,7 +121,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Unsets payer group id field.
+     * Unsets Payer Group Id field.
      */
     public function unsetPayerGroupId(): self
     {
@@ -120,7 +130,9 @@ class PayerAccessBuilder
     }
 
     /**
-     * Sets payer group field.
+     * Sets Payer Group field.
+     *
+     * @param string|null $value
      */
     public function payerGroup(?string $value): self
     {
@@ -129,7 +141,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Unsets payer group field.
+     * Unsets Payer Group field.
      */
     public function unsetPayerGroup(): self
     {
@@ -138,7 +150,9 @@ class PayerAccessBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -147,7 +161,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -156,7 +170,9 @@ class PayerAccessBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -165,7 +181,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -174,7 +190,9 @@ class PayerAccessBuilder
     }
 
     /**
-     * Sets payer name field.
+     * Sets Payer Name field.
+     *
+     * @param string|null $value
      */
     public function payerName(?string $value): self
     {
@@ -183,7 +201,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Unsets payer name field.
+     * Unsets Payer Name field.
      */
     public function unsetPayerName(): self
     {
@@ -192,7 +210,7 @@ class PayerAccessBuilder
     }
 
     /**
-     * Initializes a new payer access object.
+     * Initializes a new Payer Access object.
      */
     public function build(): PayerAccess
     {

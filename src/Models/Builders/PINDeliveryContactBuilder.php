@@ -31,7 +31,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Initializes a new pindelivery contact Builder object.
+     * Initializes a new PIN Delivery Contact Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery contact title field.
+     * Sets Delivery Contact Title field.
+     *
+     * @param string|null $value
      */
     public function deliveryContactTitle(?string $value): self
     {
@@ -48,7 +50,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery contact title field.
+     * Unsets Delivery Contact Title field.
      */
     public function unsetDeliveryContactTitle(): self
     {
@@ -57,7 +59,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery contact name field.
+     * Sets Delivery Contact Name field.
+     *
+     * @param string|null $value
      */
     public function deliveryContactName(?string $value): self
     {
@@ -66,7 +70,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery contact name field.
+     * Unsets Delivery Contact Name field.
      */
     public function unsetDeliveryContactName(): self
     {
@@ -75,7 +79,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery company name field.
+     * Sets Delivery Company Name field.
+     *
+     * @param string|null $value
      */
     public function deliveryCompanyName(?string $value): self
     {
@@ -84,7 +90,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery company name field.
+     * Unsets Delivery Company Name field.
      */
     public function unsetDeliveryCompanyName(): self
     {
@@ -93,7 +99,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery address line 1 field.
+     * Sets Delivery Address Line 1 field.
+     *
+     * @param string|null $value
      */
     public function deliveryAddressLine1(?string $value): self
     {
@@ -102,7 +110,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery address line 1 field.
+     * Unsets Delivery Address Line 1 field.
      */
     public function unsetDeliveryAddressLine1(): self
     {
@@ -111,7 +119,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery address line 2 field.
+     * Sets Delivery Address Line 2 field.
+     *
+     * @param string|null $value
      */
     public function deliveryAddressLine2(?string $value): self
     {
@@ -120,7 +130,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery address line 2 field.
+     * Unsets Delivery Address Line 2 field.
      */
     public function unsetDeliveryAddressLine2(): self
     {
@@ -129,7 +139,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery address line 3 field.
+     * Sets Delivery Address Line 3 field.
+     *
+     * @param string|null $value
      */
     public function deliveryAddressLine3(?string $value): self
     {
@@ -138,7 +150,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery address line 3 field.
+     * Unsets Delivery Address Line 3 field.
      */
     public function unsetDeliveryAddressLine3(): self
     {
@@ -147,7 +159,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery zip code field.
+     * Sets Delivery Zip Code field.
+     *
+     * @param string|null $value
      */
     public function deliveryZipCode(?string $value): self
     {
@@ -156,7 +170,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery zip code field.
+     * Unsets Delivery Zip Code field.
      */
     public function unsetDeliveryZipCode(): self
     {
@@ -165,7 +179,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery city field.
+     * Sets Delivery City field.
+     *
+     * @param string|null $value
      */
     public function deliveryCity(?string $value): self
     {
@@ -174,7 +190,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery city field.
+     * Unsets Delivery City field.
      */
     public function unsetDeliveryCity(): self
     {
@@ -183,7 +199,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery region id field.
+     * Sets Delivery Region Id field.
+     *
+     * @param int|null $value
      */
     public function deliveryRegionId(?int $value): self
     {
@@ -192,7 +210,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery region id field.
+     * Unsets Delivery Region Id field.
      */
     public function unsetDeliveryRegionId(): self
     {
@@ -201,7 +219,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery region field.
+     * Sets Delivery Region field.
+     *
+     * @param string|null $value
      */
     public function deliveryRegion(?string $value): self
     {
@@ -210,7 +230,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery region field.
+     * Unsets Delivery Region field.
      */
     public function unsetDeliveryRegion(): self
     {
@@ -219,7 +239,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery country field.
+     * Sets Delivery Country field.
+     *
+     * @param string|null $value
      */
     public function deliveryCountry(?string $value): self
     {
@@ -228,7 +250,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery country field.
+     * Unsets Delivery Country field.
      */
     public function unsetDeliveryCountry(): self
     {
@@ -237,7 +259,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets phone number field.
+     * Sets Phone Number field.
+     *
+     * @param string|null $value
      */
     public function phoneNumber(?string $value): self
     {
@@ -246,7 +270,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets phone number field.
+     * Unsets Phone Number field.
      */
     public function unsetPhoneNumber(): self
     {
@@ -255,7 +279,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets email address field.
+     * Sets Email Address field.
+     *
+     * @param string|null $value
      */
     public function emailAddress(?string $value): self
     {
@@ -264,7 +290,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Unsets email address field.
+     * Unsets Email Address field.
      */
     public function unsetEmailAddress(): self
     {
@@ -273,7 +299,9 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Sets save for pinreminder field.
+     * Sets Save For PIN Reminder field.
+     *
+     * @param bool|null $value
      */
     public function saveForPINReminder(?bool $value): self
     {
@@ -282,7 +310,7 @@ class PINDeliveryContactBuilder
     }
 
     /**
-     * Initializes a new pindelivery contact object.
+     * Initializes a new PIN Delivery Contact object.
      */
     public function build(): PINDeliveryContact
     {

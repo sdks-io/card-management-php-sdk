@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardMoveRequest;
+use ShellCardManagementAPIsLib\Models\CardMoveRequestCardsItems;
 
 /**
  * Builder for model CardMoveRequest
@@ -31,7 +32,7 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Initializes a new card move request Builder object.
+     * Initializes a new Card Move Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -48,7 +51,7 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -57,7 +60,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -66,7 +71,7 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -75,7 +80,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -84,7 +91,7 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -93,7 +100,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -102,7 +111,7 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -111,7 +120,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -120,7 +131,7 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -129,7 +140,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets cards field.
+     * Sets Cards field.
+     *
+     * @param CardMoveRequestCardsItems[]|null $value
      */
     public function cards(?array $value): self
     {
@@ -138,7 +151,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets target account id field.
+     * Sets Target Account Id field.
+     *
+     * @param int|null $value
      */
     public function targetAccountId(?int $value): self
     {
@@ -147,7 +162,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets target account number field.
+     * Sets Target Account Number field.
+     *
+     * @param string|null $value
      */
     public function targetAccountNumber(?string $value): self
     {
@@ -156,7 +173,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets target card group id field.
+     * Sets Target Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function targetCardGroupId(?int $value): self
     {
@@ -165,7 +184,9 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Sets target new card group name field.
+     * Sets Target New Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function targetNewCardGroupName(?string $value): self
     {
@@ -174,7 +195,7 @@ class CardMoveRequestBuilder
     }
 
     /**
-     * Initializes a new card move request object.
+     * Initializes a new Card Move Request object.
      */
     public function build(): CardMoveRequest
     {

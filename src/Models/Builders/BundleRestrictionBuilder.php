@@ -33,7 +33,7 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Initializes a new bundle restriction Builder object.
+     * Initializes a new Bundle Restriction Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +41,9 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Sets day time restriction action field.
+     * Sets Day Time Restriction Action field.
+     *
+     * @param string|null $value
      */
     public function dayTimeRestrictionAction(?string $value): self
     {
@@ -50,7 +52,7 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Unsets day time restriction action field.
+     * Unsets Day Time Restriction Action field.
      */
     public function unsetDayTimeRestrictionAction(): self
     {
@@ -59,7 +61,9 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Sets location restriction action field.
+     * Sets Location Restriction Action field.
+     *
+     * @param string|null $value
      */
     public function locationRestrictionAction(?string $value): self
     {
@@ -68,7 +72,7 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Unsets location restriction action field.
+     * Unsets Location Restriction Action field.
      */
     public function unsetLocationRestrictionAction(): self
     {
@@ -77,7 +81,9 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Sets usage restrictions field.
+     * Sets Usage Restrictions field.
+     *
+     * @param array|null $value
      */
     public function usageRestrictions(?array $value): self
     {
@@ -86,7 +92,9 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Sets day time restrictions field.
+     * Sets Day Time Restrictions field.
+     *
+     * @param DayTimeRestrictions|null $value
      */
     public function dayTimeRestrictions(?DayTimeRestrictions $value): self
     {
@@ -95,7 +103,9 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Sets product restrictions field.
+     * Sets Product Restrictions field.
+     *
+     * @param array|null $value
      */
     public function productRestrictions(?array $value): self
     {
@@ -104,7 +114,9 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Sets location restrictions field.
+     * Sets Location Restrictions field.
+     *
+     * @param LocationRestriction|null $value
      */
     public function locationRestrictions(?LocationRestriction $value): self
     {
@@ -113,7 +125,7 @@ class BundleRestrictionBuilder
     }
 
     /**
-     * Initializes a new bundle restriction object.
+     * Initializes a new Bundle Restriction object.
      */
     public function build(): BundleRestriction
     {

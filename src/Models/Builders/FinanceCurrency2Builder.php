@@ -31,7 +31,7 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Initializes a new finance currency 2 Builder object.
+     * Initializes a new Finance Currency 2 Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Sets currency code field.
+     * Sets Currency Code field.
+     *
+     * @param string|null $value
      */
     public function currencyCode(?string $value): self
     {
@@ -48,7 +50,7 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Unsets currency code field.
+     * Unsets Currency Code field.
      */
     public function unsetCurrencyCode(): self
     {
@@ -57,7 +59,9 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Sets currency symbol field.
+     * Sets Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function currencySymbol(?string $value): self
     {
@@ -66,7 +70,7 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Unsets currency symbol field.
+     * Unsets Currency Symbol field.
      */
     public function unsetCurrencySymbol(): self
     {
@@ -75,7 +79,9 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Sets invoice exchange rate field.
+     * Sets Invoice Exchange Rate field.
+     *
+     * @param float|null $value
      */
     public function invoiceExchangeRate(?float $value): self
     {
@@ -84,7 +90,7 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Unsets invoice exchange rate field.
+     * Unsets Invoice Exchange Rate field.
      */
     public function unsetInvoiceExchangeRate(): self
     {
@@ -93,7 +99,9 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Sets credit limit exchange rate field.
+     * Sets Credit Limit Exchange Rate field.
+     *
+     * @param float|null $value
      */
     public function creditLimitExchangeRate(?float $value): self
     {
@@ -102,7 +110,7 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Unsets credit limit exchange rate field.
+     * Unsets Credit Limit Exchange Rate field.
      */
     public function unsetCreditLimitExchangeRate(): self
     {
@@ -111,7 +119,7 @@ class FinanceCurrency2Builder
     }
 
     /**
-     * Initializes a new finance currency 2 object.
+     * Initializes a new Finance Currency 2 object.
      */
     public function build(): FinanceCurrency2
     {

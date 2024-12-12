@@ -31,7 +31,7 @@ class BudleDetailsRequestBuilder
     }
 
     /**
-     * Initializes a new budle details request Builder object.
+     * Initializes a new Budle Details Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class BudleDetailsRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -48,7 +50,9 @@ class BudleDetailsRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -57,7 +61,9 @@ class BudleDetailsRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param string|null $value
      */
     public function payerId(?string $value): self
     {
@@ -66,7 +72,9 @@ class BudleDetailsRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -75,7 +83,9 @@ class BudleDetailsRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -84,7 +94,9 @@ class BudleDetailsRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -93,7 +105,9 @@ class BudleDetailsRequestBuilder
     }
 
     /**
-     * Sets bundle id field.
+     * Sets Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function bundleId(?string $value): self
     {
@@ -102,7 +116,7 @@ class BudleDetailsRequestBuilder
     }
 
     /**
-     * Initializes a new budle details request object.
+     * Initializes a new Budle Details Request object.
      */
     public function build(): BudleDetailsRequest
     {

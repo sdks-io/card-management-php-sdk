@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\CardDetail;
 use ShellCardManagementAPIsLib\Models\OrderCardRequest;
 
 /**
@@ -31,7 +32,7 @@ class OrderCardRequestBuilder
     }
 
     /**
-     * Initializes a new order card request Builder object.
+     * Initializes a new Order Card Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class OrderCardRequestBuilder
     }
 
     /**
-     * Sets card details field.
+     * Sets Card Details field.
+     *
+     * @param CardDetail[]|null $value
      */
     public function cardDetails(?array $value): self
     {
@@ -48,7 +51,7 @@ class OrderCardRequestBuilder
     }
 
     /**
-     * Initializes a new order card request object.
+     * Initializes a new Order Card Request object.
      */
     public function build(): OrderCardRequest
     {

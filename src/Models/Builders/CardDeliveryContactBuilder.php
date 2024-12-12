@@ -31,7 +31,7 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Initializes a new card delivery contact Builder object.
+     * Initializes a new Card Delivery Contact Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery contact title field.
+     * Sets Delivery Contact Title field.
+     *
+     * @param string|null $value
      */
     public function deliveryContactTitle(?string $value): self
     {
@@ -48,7 +50,7 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery contact title field.
+     * Unsets Delivery Contact Title field.
      */
     public function unsetDeliveryContactTitle(): self
     {
@@ -57,7 +59,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery contact name field.
+     * Sets Delivery Contact Name field.
+     *
+     * @param string|null $value
      */
     public function deliveryContactName(?string $value): self
     {
@@ -66,7 +70,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery company name field.
+     * Sets Delivery Company Name field.
+     *
+     * @param string|null $value
      */
     public function deliveryCompanyName(?string $value): self
     {
@@ -75,7 +81,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery address line 1 field.
+     * Sets Delivery Address Line 1 field.
+     *
+     * @param string|null $value
      */
     public function deliveryAddressLine1(?string $value): self
     {
@@ -84,7 +92,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery address line 2 field.
+     * Sets Delivery Address Line 2 field.
+     *
+     * @param string|null $value
      */
     public function deliveryAddressLine2(?string $value): self
     {
@@ -93,7 +103,7 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery address line 2 field.
+     * Unsets Delivery Address Line 2 field.
      */
     public function unsetDeliveryAddressLine2(): self
     {
@@ -102,7 +112,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery address line 3 field.
+     * Sets Delivery Address Line 3 field.
+     *
+     * @param string|null $value
      */
     public function deliveryAddressLine3(?string $value): self
     {
@@ -111,7 +123,7 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery address line 3 field.
+     * Unsets Delivery Address Line 3 field.
      */
     public function unsetDeliveryAddressLine3(): self
     {
@@ -120,7 +132,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery zip code field.
+     * Sets Delivery Zip Code field.
+     *
+     * @param string|null $value
      */
     public function deliveryZipCode(?string $value): self
     {
@@ -129,7 +143,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery city field.
+     * Sets Delivery City field.
+     *
+     * @param string|null $value
      */
     public function deliveryCity(?string $value): self
     {
@@ -138,7 +154,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery region id field.
+     * Sets Delivery Region Id field.
+     *
+     * @param int|null $value
      */
     public function deliveryRegionId(?int $value): self
     {
@@ -147,7 +165,7 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery region id field.
+     * Unsets Delivery Region Id field.
      */
     public function unsetDeliveryRegionId(): self
     {
@@ -156,7 +174,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery region field.
+     * Sets Delivery Region field.
+     *
+     * @param string|null $value
      */
     public function deliveryRegion(?string $value): self
     {
@@ -165,7 +185,7 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Unsets delivery region field.
+     * Unsets Delivery Region field.
      */
     public function unsetDeliveryRegion(): self
     {
@@ -174,7 +194,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets delivery country field.
+     * Sets Delivery Country field.
+     *
+     * @param string|null $value
      */
     public function deliveryCountry(?string $value): self
     {
@@ -183,7 +205,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets phone number field.
+     * Sets Phone Number field.
+     *
+     * @param string|null $value
      */
     public function phoneNumber(?string $value): self
     {
@@ -192,7 +216,7 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Unsets phone number field.
+     * Unsets Phone Number field.
      */
     public function unsetPhoneNumber(): self
     {
@@ -201,7 +225,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets email address field.
+     * Sets Email Address field.
+     *
+     * @param string|null $value
      */
     public function emailAddress(?string $value): self
     {
@@ -210,7 +236,7 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Unsets email address field.
+     * Unsets Email Address field.
      */
     public function unsetEmailAddress(): self
     {
@@ -219,7 +245,9 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Sets save for card reissue field.
+     * Sets Save For Card Reissue field.
+     *
+     * @param bool|null $value
      */
     public function saveForCardReissue(?bool $value): self
     {
@@ -228,7 +256,7 @@ class CardDeliveryContactBuilder
     }
 
     /**
-     * Initializes a new card delivery contact object.
+     * Initializes a new Card Delivery Contact object.
      */
     public function build(): CardDeliveryContact
     {

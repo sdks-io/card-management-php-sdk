@@ -31,7 +31,7 @@ class AccountAccessBuilder
     }
 
     /**
-     * Initializes a new account access Builder object.
+     * Initializes a new Account Access Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class AccountAccessBuilder
     }
 
     /**
-     * Sets colco id field.
+     * Sets Colco Id field.
+     *
+     * @param int|null $value
      */
     public function colcoId(?int $value): self
     {
@@ -48,7 +50,7 @@ class AccountAccessBuilder
     }
 
     /**
-     * Unsets colco id field.
+     * Unsets Colco Id field.
      */
     public function unsetColcoId(): self
     {
@@ -57,7 +59,9 @@ class AccountAccessBuilder
     }
 
     /**
-     * Sets colco code field.
+     * Sets Colco Code field.
+     *
+     * @param int|null $value
      */
     public function colcoCode(?int $value): self
     {
@@ -66,7 +70,7 @@ class AccountAccessBuilder
     }
 
     /**
-     * Unsets colco code field.
+     * Unsets Colco Code field.
      */
     public function unsetColcoCode(): self
     {
@@ -75,7 +79,9 @@ class AccountAccessBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -84,7 +90,7 @@ class AccountAccessBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -93,7 +99,9 @@ class AccountAccessBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -102,7 +110,7 @@ class AccountAccessBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -111,7 +119,9 @@ class AccountAccessBuilder
     }
 
     /**
-     * Sets payer name field.
+     * Sets Payer Name field.
+     *
+     * @param string|null $value
      */
     public function payerName(?string $value): self
     {
@@ -120,7 +130,7 @@ class AccountAccessBuilder
     }
 
     /**
-     * Unsets payer name field.
+     * Unsets Payer Name field.
      */
     public function unsetPayerName(): self
     {
@@ -129,7 +139,9 @@ class AccountAccessBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -138,7 +150,7 @@ class AccountAccessBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -147,7 +159,9 @@ class AccountAccessBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -156,7 +170,9 @@ class AccountAccessBuilder
     }
 
     /**
-     * Sets account name field.
+     * Sets Account Name field.
+     *
+     * @param string|null $value
      */
     public function accountName(?string $value): self
     {
@@ -165,7 +181,7 @@ class AccountAccessBuilder
     }
 
     /**
-     * Unsets account name field.
+     * Unsets Account Name field.
      */
     public function unsetAccountName(): self
     {
@@ -174,7 +190,7 @@ class AccountAccessBuilder
     }
 
     /**
-     * Initializes a new account access object.
+     * Initializes a new Account Access object.
      */
     public function build(): AccountAccess
     {

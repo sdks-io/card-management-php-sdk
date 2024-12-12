@@ -31,7 +31,7 @@ class SearchCardBuilder
     }
 
     /**
-     * Initializes a new search card Builder object.
+     * Initializes a new Search Card Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class SearchCardBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -48,7 +50,7 @@ class SearchCardBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -57,7 +59,9 @@ class SearchCardBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -66,7 +70,7 @@ class SearchCardBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -75,7 +79,9 @@ class SearchCardBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param float|null $value
      */
     public function pANID(?float $value): self
     {
@@ -84,7 +90,7 @@ class SearchCardBuilder
     }
 
     /**
-     * Initializes a new search card object.
+     * Initializes a new Search Card object.
      */
     public function build(): SearchCard
     {

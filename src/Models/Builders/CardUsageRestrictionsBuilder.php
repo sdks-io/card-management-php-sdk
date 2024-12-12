@@ -31,7 +31,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Initializes a new card usage restrictions Builder object.
+     * Initializes a new Card Usage Restrictions Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets level field.
+     * Sets Level field.
+     *
+     * @param string|null $value
      */
     public function level(?string $value): self
     {
@@ -48,7 +50,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets level field.
+     * Unsets Level field.
      */
     public function unsetLevel(): self
     {
@@ -57,7 +59,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets daily spend limit field.
+     * Sets Daily Spend Limit field.
+     *
+     * @param float|null $value
      */
     public function dailySpendLimit(?float $value): self
     {
@@ -66,7 +70,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets daily spend limit field.
+     * Unsets Daily Spend Limit field.
      */
     public function unsetDailySpendLimit(): self
     {
@@ -75,7 +79,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets weekly spend limit field.
+     * Sets Weekly Spend Limit field.
+     *
+     * @param float|null $value
      */
     public function weeklySpendLimit(?float $value): self
     {
@@ -84,7 +90,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets weekly spend limit field.
+     * Unsets Weekly Spend Limit field.
      */
     public function unsetWeeklySpendLimit(): self
     {
@@ -93,7 +99,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets monthly spend limit field.
+     * Sets Monthly Spend Limit field.
+     *
+     * @param float|null $value
      */
     public function monthlySpendLimit(?float $value): self
     {
@@ -102,7 +110,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets monthly spend limit field.
+     * Unsets Monthly Spend Limit field.
      */
     public function unsetMonthlySpendLimit(): self
     {
@@ -111,7 +119,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets annual spend limit field.
+     * Sets Annual Spend Limit field.
+     *
+     * @param float|null $value
      */
     public function annualSpendLimit(?float $value): self
     {
@@ -120,7 +130,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets annual spend limit field.
+     * Unsets Annual Spend Limit field.
      */
     public function unsetAnnualSpendLimit(): self
     {
@@ -129,7 +139,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets life time spend limit field.
+     * Sets Life Time Spend Limit field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeSpendLimit(?float $value): self
     {
@@ -138,7 +150,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets life time spend limit field.
+     * Unsets Life Time Spend Limit field.
      */
     public function unsetLifeTimeSpendLimit(): self
     {
@@ -147,7 +159,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets daily volume limit field.
+     * Sets Daily Volume Limit field.
+     *
+     * @param float|null $value
      */
     public function dailyVolumeLimit(?float $value): self
     {
@@ -156,7 +170,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets daily volume limit field.
+     * Unsets Daily Volume Limit field.
      */
     public function unsetDailyVolumeLimit(): self
     {
@@ -165,7 +179,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets weekly volume limit field.
+     * Sets Weekly Volume Limit field.
+     *
+     * @param float|null $value
      */
     public function weeklyVolumeLimit(?float $value): self
     {
@@ -174,7 +190,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets weekly volume limit field.
+     * Unsets Weekly Volume Limit field.
      */
     public function unsetWeeklyVolumeLimit(): self
     {
@@ -183,7 +199,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets monthly volume limit field.
+     * Sets Monthly Volume Limit field.
+     *
+     * @param float|null $value
      */
     public function monthlyVolumeLimit(?float $value): self
     {
@@ -192,7 +210,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets monthly volume limit field.
+     * Unsets Monthly Volume Limit field.
      */
     public function unsetMonthlyVolumeLimit(): self
     {
@@ -201,7 +219,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets annual volume limit field.
+     * Sets Annual Volume Limit field.
+     *
+     * @param float|null $value
      */
     public function annualVolumeLimit(?float $value): self
     {
@@ -210,7 +230,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets annual volume limit field.
+     * Unsets Annual Volume Limit field.
      */
     public function unsetAnnualVolumeLimit(): self
     {
@@ -219,7 +239,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets life time volume limit field.
+     * Sets Life Time Volume Limit field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeVolumeLimit(?float $value): self
     {
@@ -228,7 +250,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets life time volume limit field.
+     * Unsets Life Time Volume Limit field.
      */
     public function unsetLifeTimeVolumeLimit(): self
     {
@@ -237,7 +259,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets transaction spend limit field.
+     * Sets Transaction Spend Limit field.
+     *
+     * @param float|null $value
      */
     public function transactionSpendLimit(?float $value): self
     {
@@ -246,7 +270,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets transaction spend limit field.
+     * Unsets Transaction Spend Limit field.
      */
     public function unsetTransactionSpendLimit(): self
     {
@@ -255,7 +279,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets transaction volume limit field.
+     * Sets Transaction Volume Limit field.
+     *
+     * @param float|null $value
      */
     public function transactionVolumeLimit(?float $value): self
     {
@@ -264,7 +290,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets transaction volume limit field.
+     * Unsets Transaction Volume Limit field.
      */
     public function unsetTransactionVolumeLimit(): self
     {
@@ -273,7 +299,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets daily transaction count field.
+     * Sets Daily Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function dailyTransactionCount(?float $value): self
     {
@@ -282,7 +310,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets daily transaction count field.
+     * Unsets Daily Transaction Count field.
      */
     public function unsetDailyTransactionCount(): self
     {
@@ -291,7 +319,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets weekly transaction count field.
+     * Sets Weekly Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function weeklyTransactionCount(?float $value): self
     {
@@ -300,7 +330,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets weekly transaction count field.
+     * Unsets Weekly Transaction Count field.
      */
     public function unsetWeeklyTransactionCount(): self
     {
@@ -309,7 +339,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets monthly transaction count field.
+     * Sets Monthly Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function monthlyTransactionCount(?float $value): self
     {
@@ -318,7 +350,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets monthly transaction count field.
+     * Unsets Monthly Transaction Count field.
      */
     public function unsetMonthlyTransactionCount(): self
     {
@@ -327,7 +359,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets annual transaction count field.
+     * Sets Annual Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function annualTransactionCount(?float $value): self
     {
@@ -336,7 +370,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets annual transaction count field.
+     * Unsets Annual Transaction Count field.
      */
     public function unsetAnnualTransactionCount(): self
     {
@@ -345,7 +379,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets life time transaction count field.
+     * Sets Life Time Transaction Count field.
+     *
+     * @param float|null $value
      */
     public function lifeTimeTransactionCount(?float $value): self
     {
@@ -354,7 +390,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Unsets life time transaction count field.
+     * Unsets Life Time Transaction Count field.
      */
     public function unsetLifeTimeTransactionCount(): self
     {
@@ -363,7 +399,9 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Sets is velocity ceiling field.
+     * Sets Is Velocity Ceiling field.
+     *
+     * @param bool|null $value
      */
     public function isVelocityCeiling(?bool $value): self
     {
@@ -372,7 +410,7 @@ class CardUsageRestrictionsBuilder
     }
 
     /**
-     * Initializes a new card usage restrictions object.
+     * Initializes a new Card Usage Restrictions object.
      */
     public function build(): CardUsageRestrictions
     {

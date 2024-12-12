@@ -31,7 +31,7 @@ class UpdateMPayRegStatusResponseBuilder
     }
 
     /**
-     * Initializes a new update mpay reg status response Builder object.
+     * Initializes a new Update M Pay Reg Status Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class UpdateMPayRegStatusResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -48,7 +50,9 @@ class UpdateMPayRegStatusResponseBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -57,7 +61,7 @@ class UpdateMPayRegStatusResponseBuilder
     }
 
     /**
-     * Initializes a new update mpay reg status response object.
+     * Initializes a new Update M Pay Reg Status Response object.
      */
     public function build(): UpdateMPayRegStatusResponse
     {

@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AutoRenewCardRequest;
+use ShellCardManagementAPIsLib\Models\AutoRenewCardRequestAutoRenewCardsItems;
 
 /**
  * Builder for model AutoRenewCardRequest
@@ -31,7 +32,7 @@ class AutoRenewCardRequestBuilder
     }
 
     /**
-     * Initializes a new auto renew card request Builder object.
+     * Initializes a new Auto Renew Card Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class AutoRenewCardRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -48,7 +51,9 @@ class AutoRenewCardRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -57,7 +62,9 @@ class AutoRenewCardRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -66,7 +73,9 @@ class AutoRenewCardRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -75,7 +84,9 @@ class AutoRenewCardRequestBuilder
     }
 
     /**
-     * Sets auto renew cards field.
+     * Sets Auto Renew Cards field.
+     *
+     * @param AutoRenewCardRequestAutoRenewCardsItems[]|null $value
      */
     public function autoRenewCards(?array $value): self
     {
@@ -84,7 +95,7 @@ class AutoRenewCardRequestBuilder
     }
 
     /**
-     * Initializes a new auto renew card request object.
+     * Initializes a new Auto Renew Card Request object.
      */
     public function build(): AutoRenewCardRequest
     {

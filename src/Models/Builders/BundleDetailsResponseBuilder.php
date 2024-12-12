@@ -33,7 +33,7 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Initializes a new bundle details response Builder object.
+     * Initializes a new Bundle Details Response Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +41,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -50,7 +52,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -59,7 +63,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -68,7 +74,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -77,7 +85,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets bundle id field.
+     * Sets Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function bundleId(?string $value): self
     {
@@ -86,7 +96,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets external bundle id field.
+     * Sets External Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function externalBundleId(?string $value): self
     {
@@ -95,7 +107,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets description field.
+     * Sets Description field.
+     *
+     * @param string|null $value
      */
     public function description(?string $value): self
     {
@@ -104,7 +118,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets pans field.
+     * Sets Pans field.
+     *
+     * @param string[]|null $value
      */
     public function pans(?array $value): self
     {
@@ -113,7 +129,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets restriction currency code field.
+     * Sets Restriction Currency Code field.
+     *
+     * @param string|null $value
      */
     public function restrictionCurrencyCode(?string $value): self
     {
@@ -122,7 +140,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets restriction currency symbol field.
+     * Sets Restriction Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function restrictionCurrencySymbol(?string $value): self
     {
@@ -131,7 +151,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets restrictions field.
+     * Sets Restrictions field.
+     *
+     * @param BundledRestrictionsList|null $value
      */
     public function restrictions(?BundledRestrictionsList $value): self
     {
@@ -140,7 +162,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -149,7 +173,9 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -158,7 +184,7 @@ class BundleDetailsResponseBuilder
     }
 
     /**
-     * Initializes a new bundle details response object.
+     * Initializes a new Bundle Details Response object.
      */
     public function build(): BundleDetailsResponse
     {

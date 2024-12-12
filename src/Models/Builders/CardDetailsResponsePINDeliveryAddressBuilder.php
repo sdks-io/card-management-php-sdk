@@ -31,7 +31,15 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Initializes a new card details response pindelivery address Builder object.
+     * Initializes a new Card Details Response PIN Delivery Address Builder object.
+     *
+     * @param string $companyName
+     * @param int $addressId
+     * @param string $addressLine1
+     * @param string $zipCode
+     * @param int $countryId
+     * @param string $countryISOCode
+     * @param string $country
      */
     public static function init(
         string $companyName,
@@ -54,7 +62,9 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Sets contact fore name field.
+     * Sets Contact Fore Name field.
+     *
+     * @param string|null $value
      */
     public function contactForeName(?string $value): self
     {
@@ -63,7 +73,7 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Unsets contact fore name field.
+     * Unsets Contact Fore Name field.
      */
     public function unsetContactForeName(): self
     {
@@ -72,7 +82,9 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Sets contact middle name field.
+     * Sets Contact Middle Name field.
+     *
+     * @param string|null $value
      */
     public function contactMiddleName(?string $value): self
     {
@@ -81,7 +93,7 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Unsets contact middle name field.
+     * Unsets Contact Middle Name field.
      */
     public function unsetContactMiddleName(): self
     {
@@ -90,7 +102,9 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Sets contact last name field.
+     * Sets Contact Last Name field.
+     *
+     * @param string|null $value
      */
     public function contactLastName(?string $value): self
     {
@@ -99,7 +113,7 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Unsets contact last name field.
+     * Unsets Contact Last Name field.
      */
     public function unsetContactLastName(): self
     {
@@ -108,7 +122,9 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Sets contact title field.
+     * Sets Contact Title field.
+     *
+     * @param string|null $value
      */
     public function contactTitle(?string $value): self
     {
@@ -117,7 +133,7 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Unsets contact title field.
+     * Unsets Contact Title field.
      */
     public function unsetContactTitle(): self
     {
@@ -126,7 +142,9 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Sets address line 2 field.
+     * Sets Address Line 2 field.
+     *
+     * @param string|null $value
      */
     public function addressLine2(?string $value): self
     {
@@ -135,7 +153,9 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Sets address line 3 field.
+     * Sets Address Line 3 field.
+     *
+     * @param string|null $value
      */
     public function addressLine3(?string $value): self
     {
@@ -144,7 +164,9 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Sets city field.
+     * Sets City field.
+     *
+     * @param string|null $value
      */
     public function city(?string $value): self
     {
@@ -153,7 +175,9 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Sets region id field.
+     * Sets Region Id field.
+     *
+     * @param int|null $value
      */
     public function regionId(?int $value): self
     {
@@ -162,7 +186,7 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Unsets region id field.
+     * Unsets Region Id field.
      */
     public function unsetRegionId(): self
     {
@@ -171,7 +195,9 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Sets region field.
+     * Sets Region field.
+     *
+     * @param string|null $value
      */
     public function region(?string $value): self
     {
@@ -180,7 +206,7 @@ class CardDetailsResponsePINDeliveryAddressBuilder
     }
 
     /**
-     * Initializes a new card details response pindelivery address object.
+     * Initializes a new Card Details Response PIN Delivery Address object.
      */
     public function build(): CardDetailsResponsePINDeliveryAddress
     {

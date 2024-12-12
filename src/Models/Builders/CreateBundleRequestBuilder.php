@@ -31,7 +31,7 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Initializes a new create bundle request Builder object.
+     * Initializes a new Create Bundle Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -48,7 +50,7 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -57,7 +59,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -66,7 +70,7 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -75,7 +79,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -84,7 +90,7 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -93,7 +99,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -102,7 +110,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -111,7 +121,7 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -120,7 +130,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -129,7 +141,7 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -138,7 +150,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets external bundle id field.
+     * Sets External Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function externalBundleId(?string $value): self
     {
@@ -147,7 +161,7 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Unsets external bundle id field.
+     * Unsets External Bundle Id field.
      */
     public function unsetExternalBundleId(): self
     {
@@ -156,7 +170,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets description field.
+     * Sets Description field.
+     *
+     * @param string|null $value
      */
     public function description(?string $value): self
     {
@@ -165,7 +181,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets cards field.
+     * Sets Cards field.
+     *
+     * @param string[]|null $value
      */
     public function cards(?array $value): self
     {
@@ -174,7 +192,9 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Sets restrictions field.
+     * Sets Restrictions field.
+     *
+     * @param array|null $value
      */
     public function restrictions(?array $value): self
     {
@@ -183,7 +203,7 @@ class CreateBundleRequestBuilder
     }
 
     /**
-     * Initializes a new create bundle request object.
+     * Initializes a new Create Bundle Request object.
      */
     public function build(): CreateBundleRequest
     {

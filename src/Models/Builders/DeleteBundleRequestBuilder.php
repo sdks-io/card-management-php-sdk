@@ -31,7 +31,9 @@ class DeleteBundleRequestBuilder
     }
 
     /**
-     * Initializes a new delete bundle request Builder object.
+     * Initializes a new Delete Bundle Request Builder object.
+     *
+     * @param string $bundleId
      */
     public static function init(string $bundleId): self
     {
@@ -39,7 +41,9 @@ class DeleteBundleRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -48,7 +52,9 @@ class DeleteBundleRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -57,7 +63,9 @@ class DeleteBundleRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -66,7 +74,9 @@ class DeleteBundleRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -75,7 +85,9 @@ class DeleteBundleRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -84,7 +96,9 @@ class DeleteBundleRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -93,7 +107,7 @@ class DeleteBundleRequestBuilder
     }
 
     /**
-     * Initializes a new delete bundle request object.
+     * Initializes a new Delete Bundle Request object.
      */
     public function build(): DeleteBundleRequest
     {

@@ -31,7 +31,11 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Initializes a new pindeliver to Builder object.
+     * Initializes a new PIN Deliver To Builder object.
+     *
+     * @param string $companyName
+     * @param string $addressLine
+     * @param string $city
      */
     public static function init(string $companyName, string $addressLine, string $city): self
     {
@@ -39,7 +43,9 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Sets contact name field.
+     * Sets Contact Name field.
+     *
+     * @param string|null $value
      */
     public function contactName(?string $value): self
     {
@@ -48,7 +54,7 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Unsets contact name field.
+     * Unsets Contact Name field.
      */
     public function unsetContactName(): self
     {
@@ -57,7 +63,9 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Sets contact title field.
+     * Sets Contact Title field.
+     *
+     * @param string|null $value
      */
     public function contactTitle(?string $value): self
     {
@@ -66,7 +74,7 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Unsets contact title field.
+     * Unsets Contact Title field.
      */
     public function unsetContactTitle(): self
     {
@@ -75,7 +83,9 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Sets zip code field.
+     * Sets Zip Code field.
+     *
+     * @param string|null $value
      */
     public function zipCode(?string $value): self
     {
@@ -84,7 +94,9 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Sets region id field.
+     * Sets Region ID field.
+     *
+     * @param int|null $value
      */
     public function regionID(?int $value): self
     {
@@ -93,7 +105,7 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Unsets region id field.
+     * Unsets Region ID field.
      */
     public function unsetRegionID(): self
     {
@@ -102,7 +114,9 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Sets country id field.
+     * Sets Country ID field.
+     *
+     * @param int|null $value
      */
     public function countryID(?int $value): self
     {
@@ -111,7 +125,7 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Unsets country id field.
+     * Unsets Country ID field.
      */
     public function unsetCountryID(): self
     {
@@ -120,7 +134,9 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Sets phone number field.
+     * Sets Phone Number field.
+     *
+     * @param string|null $value
      */
     public function phoneNumber(?string $value): self
     {
@@ -129,7 +145,7 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Unsets phone number field.
+     * Unsets Phone Number field.
      */
     public function unsetPhoneNumber(): self
     {
@@ -138,7 +154,9 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Sets email address field.
+     * Sets Email Address field.
+     *
+     * @param string|null $value
      */
     public function emailAddress(?string $value): self
     {
@@ -147,7 +165,7 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Unsets email address field.
+     * Unsets Email Address field.
      */
     public function unsetEmailAddress(): self
     {
@@ -156,7 +174,9 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Sets save pinreminder field.
+     * Sets Save PIN Reminder field.
+     *
+     * @param bool|null $value
      */
     public function savePINReminder(?bool $value): self
     {
@@ -165,7 +185,7 @@ class PINDeliverToBuilder
     }
 
     /**
-     * Initializes a new pindeliver to object.
+     * Initializes a new PIN Deliver To object.
      */
     public function build(): PINDeliverTo
     {

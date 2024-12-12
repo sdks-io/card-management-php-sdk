@@ -12,6 +12,8 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AccountResponseAccountsItems;
+use ShellCardManagementAPIsLib\Models\CustomerContract;
+use ShellCardManagementAPIsLib\Models\InvoiceDistributionMethod;
 
 /**
  * Builder for model AccountResponseAccountsItems
@@ -31,7 +33,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Initializes a new account response accounts items Builder object.
+     * Initializes a new Account Response Accounts Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +41,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets account full name field.
+     * Sets Account Full Name field.
+     *
+     * @param string|null $value
      */
     public function accountFullName(?string $value): self
     {
@@ -48,7 +52,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets account full name field.
+     * Unsets Account Full Name field.
      */
     public function unsetAccountFullName(): self
     {
@@ -57,7 +61,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -66,7 +72,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -75,7 +81,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -84,7 +92,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -93,7 +101,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets account short name field.
+     * Sets Account Short Name field.
+     *
+     * @param string|null $value
      */
     public function accountShortName(?string $value): self
     {
@@ -102,7 +112,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets account short name field.
+     * Unsets Account Short Name field.
      */
     public function unsetAccountShortName(): self
     {
@@ -111,7 +121,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets best of indicator field.
+     * Sets Best Of Indicator field.
+     *
+     * @param bool|null $value
      */
     public function bestOfIndicator(?bool $value): self
     {
@@ -120,7 +132,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets billing frequency type field.
+     * Sets Billing Frequency Type field.
+     *
+     * @param string|null $value
      */
     public function billingFrequencyType(?string $value): self
     {
@@ -129,7 +143,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets billing frequency type field.
+     * Unsets Billing Frequency Type field.
      */
     public function unsetBillingFrequencyType(): self
     {
@@ -138,7 +152,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets billing frequency type id field.
+     * Sets Billing Frequency Type Id field.
+     *
+     * @param int|null $value
      */
     public function billingFrequencyTypeId(?int $value): self
     {
@@ -147,7 +163,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets billing frequency type id field.
+     * Unsets Billing Frequency Type Id field.
      */
     public function unsetBillingFrequencyTypeId(): self
     {
@@ -156,7 +172,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets billing run frequency field.
+     * Sets Billing Run Frequency field.
+     *
+     * @param string|null $value
      */
     public function billingRunFrequency(?string $value): self
     {
@@ -165,7 +183,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets billing run frequency field.
+     * Unsets Billing Run Frequency field.
      */
     public function unsetBillingRunFrequency(): self
     {
@@ -174,7 +192,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets billing run frequency type id field.
+     * Sets Billing Run Frequency Type Id field.
+     *
+     * @param int|null $value
      */
     public function billingRunFrequencyTypeId(?int $value): self
     {
@@ -183,7 +203,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets billing run frequency type id field.
+     * Unsets Billing Run Frequency Type Id field.
      */
     public function unsetBillingRunFrequencyTypeId(): self
     {
@@ -192,7 +212,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets col co country code field.
+     * Sets Col Co Country Code field.
+     *
+     * @param string|null $value
      */
     public function colCoCountryCode(?string $value): self
     {
@@ -201,7 +223,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets col co country code field.
+     * Unsets Col Co Country Code field.
      */
     public function unsetColCoCountryCode(): self
     {
@@ -210,7 +232,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets currency code field.
+     * Sets Currency Code field.
+     *
+     * @param string|null $value
      */
     public function currencyCode(?string $value): self
     {
@@ -219,7 +243,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets currency code field.
+     * Unsets Currency Code field.
      */
     public function unsetCurrencyCode(): self
     {
@@ -228,7 +252,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets currency symbol field.
+     * Sets Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function currencySymbol(?string $value): self
     {
@@ -237,7 +263,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets currency symbol field.
+     * Unsets Currency Symbol field.
      */
     public function unsetCurrencySymbol(): self
     {
@@ -246,7 +272,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets day 1 run field.
+     * Sets Day 1 Run field.
+     *
+     * @param int|null $value
      */
     public function day1Run(?int $value): self
     {
@@ -255,7 +283,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets day 1 run field.
+     * Unsets Day 1 Run field.
      */
     public function unsetDay1Run(): self
     {
@@ -264,7 +292,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets day 2 run field.
+     * Sets Day 2 Run field.
+     *
+     * @param int|null $value
      */
     public function day2Run(?int $value): self
     {
@@ -273,7 +303,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets day 2 run field.
+     * Unsets Day 2 Run field.
      */
     public function unsetDay2Run(): self
     {
@@ -282,7 +312,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets day 3 run field.
+     * Sets Day 3 Run field.
+     *
+     * @param int|null $value
      */
     public function day3Run(?int $value): self
     {
@@ -291,7 +323,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets day 3 run field.
+     * Unsets Day 3 Run field.
      */
     public function unsetDay3Run(): self
     {
@@ -300,7 +332,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets day 4 run field.
+     * Sets Day 4 Run field.
+     *
+     * @param int|null $value
      */
     public function day4Run(?int $value): self
     {
@@ -309,7 +343,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets day 4 run field.
+     * Unsets Day 4 Run field.
      */
     public function unsetDay4Run(): self
     {
@@ -318,7 +352,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets frequency type field.
+     * Sets Frequency Type field.
+     *
+     * @param string|null $value
      */
     public function frequencyType(?string $value): self
     {
@@ -327,7 +363,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets frequency type field.
+     * Unsets Frequency Type field.
      */
     public function unsetFrequencyType(): self
     {
@@ -336,7 +372,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets gross amount field.
+     * Sets Gross Amount field.
+     *
+     * @param float|null $value
      */
     public function grossAmount(?float $value): self
     {
@@ -345,7 +383,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets gross amount field.
+     * Unsets Gross Amount field.
      */
     public function unsetGrossAmount(): self
     {
@@ -354,7 +392,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets international poslanguage code field.
+     * Sets International POS Language Code field.
+     *
+     * @param string|null $value
      */
     public function internationalPOSLanguageCode(?string $value): self
     {
@@ -363,7 +403,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets international poslanguage code field.
+     * Unsets International POS Language Code field.
      */
     public function unsetInternationalPOSLanguageCode(): self
     {
@@ -372,7 +412,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets international poslanguage id field.
+     * Sets International POS Language ID field.
+     *
+     * @param int|null $value
      */
     public function internationalPOSLanguageID(?int $value): self
     {
@@ -381,7 +423,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets international poslanguage id field.
+     * Unsets International POS Language ID field.
      */
     public function unsetInternationalPOSLanguageID(): self
     {
@@ -390,7 +432,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets invoice account id field.
+     * Sets Invoice Account ID field.
+     *
+     * @param int|null $value
      */
     public function invoiceAccountID(?int $value): self
     {
@@ -399,7 +443,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets invoice account id field.
+     * Unsets Invoice Account ID field.
      */
     public function unsetInvoiceAccountID(): self
     {
@@ -408,7 +452,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets invoice account number field.
+     * Sets Invoice Account Number field.
+     *
+     * @param string|null $value
      */
     public function invoiceAccountNumber(?string $value): self
     {
@@ -417,7 +463,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets invoice account number field.
+     * Unsets Invoice Account Number field.
      */
     public function unsetInvoiceAccountNumber(): self
     {
@@ -426,7 +472,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets invoice account short name field.
+     * Sets Invoice Account Short Name field.
+     *
+     * @param string|null $value
      */
     public function invoiceAccountShortName(?string $value): self
     {
@@ -435,7 +483,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets invoice account short name field.
+     * Unsets Invoice Account Short Name field.
      */
     public function unsetInvoiceAccountShortName(): self
     {
@@ -444,7 +492,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets invoice distribution methods field.
+     * Sets Invoice Distribution Methods field.
+     *
+     * @param InvoiceDistributionMethod[]|null $value
      */
     public function invoiceDistributionMethods(?array $value): self
     {
@@ -453,7 +503,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets is international field.
+     * Sets Is International field.
+     *
+     * @param bool|null $value
      */
     public function isInternational(?bool $value): self
     {
@@ -462,7 +514,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets is international field.
+     * Unsets Is International field.
      */
     public function unsetIsInternational(): self
     {
@@ -471,7 +523,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets is invoice point field.
+     * Sets Is Invoice Point field.
+     *
+     * @param bool|null $value
      */
     public function isInvoicePoint(?bool $value): self
     {
@@ -480,7 +534,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets is invoice point field.
+     * Unsets Is Invoice Point field.
      */
     public function unsetIsInvoicePoint(): self
     {
@@ -489,7 +543,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets last modified date field.
+     * Sets Last Modified Date field.
+     *
+     * @param string|null $value
      */
     public function lastModifiedDate(?string $value): self
     {
@@ -498,7 +554,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets last modified date field.
+     * Unsets Last Modified Date field.
      */
     public function unsetLastModifiedDate(): self
     {
@@ -507,7 +563,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets local currency code field.
+     * Sets Local Currency Code field.
+     *
+     * @param string|null $value
      */
     public function localCurrencyCode(?string $value): self
     {
@@ -516,7 +574,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets local currency code field.
+     * Unsets Local Currency Code field.
      */
     public function unsetLocalCurrencyCode(): self
     {
@@ -525,7 +583,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets local currency symbol field.
+     * Sets Local Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function localCurrencySymbol(?string $value): self
     {
@@ -534,7 +594,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets local currency symbol field.
+     * Unsets Local Currency Symbol field.
      */
     public function unsetLocalCurrencySymbol(): self
     {
@@ -543,7 +603,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets local poslanguage code field.
+     * Sets Local POS Language Code field.
+     *
+     * @param string|null $value
      */
     public function localPOSLanguageCode(?string $value): self
     {
@@ -552,7 +614,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets local poslanguage code field.
+     * Unsets Local POS Language Code field.
      */
     public function unsetLocalPOSLanguageCode(): self
     {
@@ -561,7 +623,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets local poslanguage id field.
+     * Sets Local POS Language ID field.
+     *
+     * @param int|null $value
      */
     public function localPOSLanguageID(?int $value): self
     {
@@ -570,7 +634,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets local poslanguage id field.
+     * Unsets Local POS Language ID field.
      */
     public function unsetLocalPOSLanguageID(): self
     {
@@ -579,7 +643,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets net amount field.
+     * Sets Net Amount field.
+     *
+     * @param float|null $value
      */
     public function netAmount(?float $value): self
     {
@@ -588,7 +654,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets net amount field.
+     * Unsets Net Amount field.
      */
     public function unsetNetAmount(): self
     {
@@ -597,7 +663,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets outstanding balance field.
+     * Sets Outstanding Balance field.
+     *
+     * @param float|null $value
      */
     public function outstandingBalance(?float $value): self
     {
@@ -606,7 +674,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets outstanding balance field.
+     * Unsets Outstanding Balance field.
      */
     public function unsetOutstandingBalance(): self
     {
@@ -615,7 +683,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets paid amount field.
+     * Sets Paid Amount field.
+     *
+     * @param float|null $value
      */
     public function paidAmount(?float $value): self
     {
@@ -624,7 +694,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets paid amount field.
+     * Unsets Paid Amount field.
      */
     public function unsetPaidAmount(): self
     {
@@ -633,7 +703,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -642,7 +714,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets status field.
+     * Unsets Status field.
      */
     public function unsetStatus(): self
     {
@@ -651,7 +723,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets status reason field.
+     * Sets Status Reason field.
+     *
+     * @param string|null $value
      */
     public function statusReason(?string $value): self
     {
@@ -660,7 +734,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets status reason field.
+     * Unsets Status Reason field.
      */
     public function unsetStatusReason(): self
     {
@@ -669,7 +743,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total active card groups field.
+     * Sets Total Active Card Groups field.
+     *
+     * @param int|null $value
      */
     public function totalActiveCardGroups(?int $value): self
     {
@@ -678,7 +754,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total active card groups field.
+     * Unsets Total Active Card Groups field.
      */
     public function unsetTotalActiveCardGroups(): self
     {
@@ -687,7 +763,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total active cards field.
+     * Sets Total Active Cards field.
+     *
+     * @param int|null $value
      */
     public function totalActiveCards(?int $value): self
     {
@@ -696,7 +774,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total active cards field.
+     * Unsets Total Active Cards field.
      */
     public function unsetTotalActiveCards(): self
     {
@@ -705,7 +783,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total blocked cards field.
+     * Sets Total Blocked Cards field.
+     *
+     * @param int|null $value
      */
     public function totalBlockedCards(?int $value): self
     {
@@ -714,7 +794,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total blocked cards field.
+     * Unsets Total Blocked Cards field.
      */
     public function unsetTotalBlockedCards(): self
     {
@@ -723,7 +803,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total cancelled cards field.
+     * Sets Total Cancelled Cards field.
+     *
+     * @param int|null $value
      */
     public function totalCancelledCards(?int $value): self
     {
@@ -732,7 +814,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total cancelled cards field.
+     * Unsets Total Cancelled Cards field.
      */
     public function unsetTotalCancelledCards(): self
     {
@@ -741,7 +823,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total cards field.
+     * Sets Total Cards field.
+     *
+     * @param int|null $value
      */
     public function totalCards(?int $value): self
     {
@@ -750,7 +834,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total cards field.
+     * Unsets Total Cards field.
      */
     public function unsetTotalCards(): self
     {
@@ -759,7 +843,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total expired cards field.
+     * Sets Total Expired Cards field.
+     *
+     * @param int|null $value
      */
     public function totalExpiredCards(?int $value): self
     {
@@ -768,7 +854,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total expired cards field.
+     * Unsets Total Expired Cards field.
      */
     public function unsetTotalExpiredCards(): self
     {
@@ -777,7 +863,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total fraud cards field.
+     * Sets Total Fraud Cards field.
+     *
+     * @param int|null $value
      */
     public function totalFraudCards(?int $value): self
     {
@@ -786,7 +874,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total fraud cards field.
+     * Unsets Total Fraud Cards field.
      */
     public function unsetTotalFraudCards(): self
     {
@@ -795,7 +883,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total new cards field.
+     * Sets Total New Cards field.
+     *
+     * @param int|null $value
      */
     public function totalNewCards(?int $value): self
     {
@@ -804,7 +894,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total new cards field.
+     * Unsets Total New Cards field.
      */
     public function unsetTotalNewCards(): self
     {
@@ -813,7 +903,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total renewal pending cards field.
+     * Sets Total Renewal Pending Cards field.
+     *
+     * @param int|null $value
      */
     public function totalRenewalPendingCards(?int $value): self
     {
@@ -822,7 +914,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total renewal pending cards field.
+     * Unsets Total Renewal Pending Cards field.
      */
     public function unsetTotalRenewalPendingCards(): self
     {
@@ -831,7 +923,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total replaced cards field.
+     * Sets Total Replaced Cards field.
+     *
+     * @param int|null $value
      */
     public function totalReplacedCards(?int $value): self
     {
@@ -840,7 +934,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total replaced cards field.
+     * Unsets Total Replaced Cards field.
      */
     public function unsetTotalReplacedCards(): self
     {
@@ -849,7 +943,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total temporary block cards by customer field.
+     * Sets Total Temporary Block Cards By Customer field.
+     *
+     * @param int|null $value
      */
     public function totalTemporaryBlockCardsByCustomer(?int $value): self
     {
@@ -858,7 +954,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total temporary block cards by customer field.
+     * Unsets Total Temporary Block Cards By Customer field.
      */
     public function unsetTotalTemporaryBlockCardsByCustomer(): self
     {
@@ -867,7 +963,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets total temporary block cards by shell field.
+     * Sets Total Temporary Block Cards By Shell field.
+     *
+     * @param int|null $value
      */
     public function totalTemporaryBlockCardsByShell(?int $value): self
     {
@@ -876,7 +974,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets total temporary block cards by shell field.
+     * Unsets Total Temporary Block Cards By Shell field.
      */
     public function unsetTotalTemporaryBlockCardsByShell(): self
     {
@@ -885,7 +983,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets vatamount field.
+     * Sets VAT Amount field.
+     *
+     * @param float|null $value
      */
     public function vATAmount(?float $value): self
     {
@@ -894,7 +994,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets vatamount field.
+     * Unsets VAT Amount field.
      */
     public function unsetVATAmount(): self
     {
@@ -903,7 +1003,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets is partner card field.
+     * Sets Is Partner Card field.
+     *
+     * @param int|null $value
      */
     public function isPartnerCard(?int $value): self
     {
@@ -912,7 +1014,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets is partner card field.
+     * Unsets Is Partner Card field.
      */
     public function unsetIsPartnerCard(): self
     {
@@ -921,7 +1023,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets tolls customer id field.
+     * Sets Tolls Customer Id field.
+     *
+     * @param string|null $value
      */
     public function tollsCustomerId(?string $value): self
     {
@@ -930,7 +1034,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets tolls customer id field.
+     * Unsets Tolls Customer Id field.
      */
     public function unsetTollsCustomerId(): self
     {
@@ -939,7 +1043,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets tolls colco country type id field.
+     * Sets Tolls Colco Country Type Id field.
+     *
+     * @param string|null $value
      */
     public function tollsColcoCountryTypeId(?string $value): self
     {
@@ -948,7 +1054,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets tolls colco country type id field.
+     * Unsets Tolls Colco Country Type Id field.
      */
     public function unsetTollsColcoCountryTypeId(): self
     {
@@ -957,7 +1063,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets contracts field.
+     * Sets Contracts field.
+     *
+     * @param CustomerContract[]|null $value
      */
     public function contracts(?array $value): self
     {
@@ -966,7 +1074,9 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Sets is consortium member field.
+     * Sets Is Consortium Member field.
+     *
+     * @param string|null $value
      */
     public function isConsortiumMember(?string $value): self
     {
@@ -975,7 +1085,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Unsets is consortium member field.
+     * Unsets Is Consortium Member field.
      */
     public function unsetIsConsortiumMember(): self
     {
@@ -984,7 +1094,7 @@ class AccountResponseAccountsItemsBuilder
     }
 
     /**
-     * Initializes a new account response accounts items object.
+     * Initializes a new Account Response Accounts Items object.
      */
     public function build(): AccountResponseAccountsItems
     {

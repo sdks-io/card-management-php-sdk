@@ -33,7 +33,7 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Initializes a new bundle restriction update Builder object.
+     * Initializes a new Bundle Restriction Update Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +41,9 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Sets reset day time restriction field.
+     * Sets Reset Day Time Restriction field.
+     *
+     * @param bool|null $value
      */
     public function resetDayTimeRestriction(?bool $value): self
     {
@@ -50,7 +52,7 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Unsets reset day time restriction field.
+     * Unsets Reset Day Time Restriction field.
      */
     public function unsetResetDayTimeRestriction(): self
     {
@@ -59,7 +61,9 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Sets reset location restriction field.
+     * Sets Reset Location Restriction field.
+     *
+     * @param bool|null $value
      */
     public function resetLocationRestriction(?bool $value): self
     {
@@ -68,7 +72,7 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Unsets reset location restriction field.
+     * Unsets Reset Location Restriction field.
      */
     public function unsetResetLocationRestriction(): self
     {
@@ -77,7 +81,9 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Sets reset product restriction field.
+     * Sets Reset Product Restriction field.
+     *
+     * @param bool|null $value
      */
     public function resetProductRestriction(?bool $value): self
     {
@@ -86,7 +92,7 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Unsets reset product restriction field.
+     * Unsets Reset Product Restriction field.
      */
     public function unsetResetProductRestriction(): self
     {
@@ -95,7 +101,9 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Sets usage restrictions field.
+     * Sets Usage Restrictions field.
+     *
+     * @param array|null $value
      */
     public function usageRestrictions(?array $value): self
     {
@@ -104,7 +112,9 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Sets day time restriction profile id field.
+     * Sets Day Time Restriction Profile Id field.
+     *
+     * @param string|null $value
      */
     public function dayTimeRestrictionProfileId(?string $value): self
     {
@@ -113,7 +123,7 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Unsets day time restriction profile id field.
+     * Unsets Day Time Restriction Profile Id field.
      */
     public function unsetDayTimeRestrictionProfileId(): self
     {
@@ -122,7 +132,9 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Sets day time restrictions field.
+     * Sets Day Time Restrictions field.
+     *
+     * @param CardDayTimeRestrictions|null $value
      */
     public function dayTimeRestrictions(?CardDayTimeRestrictions $value): self
     {
@@ -131,7 +143,9 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Sets product restrictions field.
+     * Sets Product Restrictions field.
+     *
+     * @param array|null $value
      */
     public function productRestrictions(?array $value): self
     {
@@ -140,7 +154,9 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Sets location restriction profile id field.
+     * Sets Location Restriction Profile Id field.
+     *
+     * @param string|null $value
      */
     public function locationRestrictionProfileId(?string $value): self
     {
@@ -149,7 +165,9 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Sets location restrictions field.
+     * Sets Location Restrictions field.
+     *
+     * @param LocationRestriction|null $value
      */
     public function locationRestrictions(?LocationRestriction $value): self
     {
@@ -158,7 +176,7 @@ class BundleRestrictionUpdateBuilder
     }
 
     /**
-     * Initializes a new bundle restriction update object.
+     * Initializes a new Bundle Restriction Update object.
      */
     public function build(): BundleRestrictionUpdate
     {

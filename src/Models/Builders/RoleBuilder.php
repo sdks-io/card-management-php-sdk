@@ -31,7 +31,7 @@ class RoleBuilder
     }
 
     /**
-     * Initializes a new role Builder object.
+     * Initializes a new Role Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class RoleBuilder
     }
 
     /**
-     * Sets role name field.
+     * Sets Role Name field.
+     *
+     * @param string|null $value
      */
     public function roleName(?string $value): self
     {
@@ -48,7 +50,9 @@ class RoleBuilder
     }
 
     /**
-     * Sets is customer admin field.
+     * Sets Is Customer Admin field.
+     *
+     * @param bool|null $value
      */
     public function isCustomerAdmin(?bool $value): self
     {
@@ -57,7 +61,9 @@ class RoleBuilder
     }
 
     /**
-     * Sets is customer user field.
+     * Sets Is Customer User field.
+     *
+     * @param bool|null $value
      */
     public function isCustomerUser(?bool $value): self
     {
@@ -66,7 +72,9 @@ class RoleBuilder
     }
 
     /**
-     * Sets is shell admin field.
+     * Sets Is Shell Admin field.
+     *
+     * @param bool|null $value
      */
     public function isShellAdmin(?bool $value): self
     {
@@ -75,7 +83,9 @@ class RoleBuilder
     }
 
     /**
-     * Sets is service account field.
+     * Sets Is Service Account field.
+     *
+     * @param bool|null $value
      */
     public function isServiceAccount(?bool $value): self
     {
@@ -84,7 +94,9 @@ class RoleBuilder
     }
 
     /**
-     * Sets is user admin field.
+     * Sets Is User Admin field.
+     *
+     * @param bool|null $value
      */
     public function isUserAdmin(?bool $value): self
     {
@@ -93,7 +105,7 @@ class RoleBuilder
     }
 
     /**
-     * Initializes a new role object.
+     * Initializes a new Role object.
      */
     public function build(): Role
     {

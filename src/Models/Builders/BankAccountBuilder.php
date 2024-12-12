@@ -31,7 +31,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Initializes a new bank account Builder object.
+     * Initializes a new Bank Account Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -48,7 +50,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -57,7 +59,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets bank name field.
+     * Sets Bank Name field.
+     *
+     * @param string|null $value
      */
     public function bankName(?string $value): self
     {
@@ -66,7 +70,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets bank name field.
+     * Unsets Bank Name field.
      */
     public function unsetBankName(): self
     {
@@ -75,7 +79,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets account name field.
+     * Sets Account Name field.
+     *
+     * @param string|null $value
      */
     public function accountName(?string $value): self
     {
@@ -84,7 +90,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets account name field.
+     * Unsets Account Name field.
      */
     public function unsetAccountName(): self
     {
@@ -93,7 +99,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets date effective field.
+     * Sets Date Effective field.
+     *
+     * @param string|null $value
      */
     public function dateEffective(?string $value): self
     {
@@ -102,7 +110,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets date effective field.
+     * Unsets Date Effective field.
      */
     public function unsetDateEffective(): self
     {
@@ -111,7 +119,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets date terminated field.
+     * Sets Date Terminated field.
+     *
+     * @param string|null $value
      */
     public function dateTerminated(?string $value): self
     {
@@ -120,7 +130,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets date terminated field.
+     * Unsets Date Terminated field.
      */
     public function unsetDateTerminated(): self
     {
@@ -129,7 +139,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets iban field.
+     * Sets IBAN field.
+     *
+     * @param string|null $value
      */
     public function iBAN(?string $value): self
     {
@@ -138,7 +150,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets iban field.
+     * Unsets IBAN field.
      */
     public function unsetIBAN(): self
     {
@@ -147,7 +159,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets currency code field.
+     * Sets Currency Code field.
+     *
+     * @param string|null $value
      */
     public function currencyCode(?string $value): self
     {
@@ -156,7 +170,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets currency code field.
+     * Unsets Currency Code field.
      */
     public function unsetCurrencyCode(): self
     {
@@ -165,7 +179,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets currency symbol field.
+     * Sets Currency Symbol field.
+     *
+     * @param string|null $value
      */
     public function currencySymbol(?string $value): self
     {
@@ -174,7 +190,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets currency symbol field.
+     * Unsets Currency Symbol field.
      */
     public function unsetCurrencySymbol(): self
     {
@@ -183,7 +199,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets country isocode field.
+     * Sets Country ISO Code field.
+     *
+     * @param string|null $value
      */
     public function countryISOCode(?string $value): self
     {
@@ -192,7 +210,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets country isocode field.
+     * Unsets Country ISO Code field.
      */
     public function unsetCountryISOCode(): self
     {
@@ -201,7 +219,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets country field.
+     * Sets Country field.
+     *
+     * @param string|null $value
      */
     public function country(?string $value): self
     {
@@ -210,7 +230,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets country field.
+     * Unsets Country field.
      */
     public function unsetCountry(): self
     {
@@ -219,7 +239,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets sort code field.
+     * Sets Sort Code field.
+     *
+     * @param string|null $value
      */
     public function sortCode(?string $value): self
     {
@@ -228,7 +250,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets sort code field.
+     * Unsets Sort Code field.
      */
     public function unsetSortCode(): self
     {
@@ -237,7 +259,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets swift code field.
+     * Sets Swift Code field.
+     *
+     * @param string|null $value
      */
     public function swiftCode(?string $value): self
     {
@@ -246,7 +270,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets swift code field.
+     * Unsets Swift Code field.
      */
     public function unsetSwiftCode(): self
     {
@@ -255,7 +279,9 @@ class BankAccountBuilder
     }
 
     /**
-     * Sets bank type field.
+     * Sets Bank Type field.
+     *
+     * @param string|null $value
      */
     public function bankType(?string $value): self
     {
@@ -264,7 +290,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Unsets bank type field.
+     * Unsets Bank Type field.
      */
     public function unsetBankType(): self
     {
@@ -273,7 +299,7 @@ class BankAccountBuilder
     }
 
     /**
-     * Initializes a new bank account object.
+     * Initializes a new Bank Account object.
      */
     public function build(): BankAccount
     {

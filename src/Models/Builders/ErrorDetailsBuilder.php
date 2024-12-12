@@ -31,7 +31,7 @@ class ErrorDetailsBuilder
     }
 
     /**
-     * Initializes a new error details Builder object.
+     * Initializes a new Error Details Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class ErrorDetailsBuilder
     }
 
     /**
-     * Sets code field.
+     * Sets Code field.
+     *
+     * @param string|null $value
      */
     public function code(?string $value): self
     {
@@ -48,7 +50,9 @@ class ErrorDetailsBuilder
     }
 
     /**
-     * Sets title field.
+     * Sets Title field.
+     *
+     * @param string|null $value
      */
     public function title(?string $value): self
     {
@@ -57,7 +61,9 @@ class ErrorDetailsBuilder
     }
 
     /**
-     * Sets detail field.
+     * Sets Detail field.
+     *
+     * @param string|null $value
      */
     public function detail(?string $value): self
     {
@@ -66,7 +72,9 @@ class ErrorDetailsBuilder
     }
 
     /**
-     * Sets additional info field.
+     * Sets Additional Info field.
+     *
+     * @param array|null $value
      */
     public function additionalInfo(?array $value): self
     {
@@ -75,7 +83,7 @@ class ErrorDetailsBuilder
     }
 
     /**
-     * Initializes a new error details object.
+     * Initializes a new Error Details object.
      */
     public function build(): ErrorDetails
     {

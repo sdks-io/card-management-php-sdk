@@ -13,6 +13,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\Restriction;
+use ShellCardManagementAPIsLib\Models\RestrictionCardList;
 use ShellCardManagementAPIsLib\Models\SearchCardRestrictionRes;
 
 /**
@@ -33,7 +34,7 @@ class SearchCardRestrictionResBuilder
     }
 
     /**
-     * Initializes a new search card restriction res Builder object.
+     * Initializes a new Search Card Restriction Res Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +42,9 @@ class SearchCardRestrictionResBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -50,7 +53,7 @@ class SearchCardRestrictionResBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -60,6 +63,8 @@ class SearchCardRestrictionResBuilder
 
     /**
      * Sets cards field.
+     *
+     * @param RestrictionCardList[]|null $value
      */
     public function cards(?array $value): self
     {
@@ -68,7 +73,9 @@ class SearchCardRestrictionResBuilder
     }
 
     /**
-     * Sets restrictions field.
+     * Sets Restrictions field.
+     *
+     * @param Restriction|null $value
      */
     public function restrictions(?Restriction $value): self
     {
@@ -77,7 +84,9 @@ class SearchCardRestrictionResBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -86,7 +95,7 @@ class SearchCardRestrictionResBuilder
     }
 
     /**
-     * Initializes a new search card restriction res object.
+     * Initializes a new Search Card Restriction Res object.
      */
     public function build(): SearchCardRestrictionRes
     {

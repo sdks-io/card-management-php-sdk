@@ -31,7 +31,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Initializes a new summary response Builder object.
+     * Initializes a new Summary Response Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets active cards field.
+     * Sets Active Cards field.
+     *
+     * @param int|null $value
      */
     public function activeCards(?int $value): self
     {
@@ -48,7 +50,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets active cards field.
+     * Unsets Active Cards field.
      */
     public function unsetActiveCards(): self
     {
@@ -57,7 +59,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets blocked cards field.
+     * Sets Blocked Cards field.
+     *
+     * @param int|null $value
      */
     public function blockedCards(?int $value): self
     {
@@ -66,7 +70,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets blocked cards field.
+     * Unsets Blocked Cards field.
      */
     public function unsetBlockedCards(): self
     {
@@ -75,7 +79,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets cancelled cards field.
+     * Sets Cancelled Cards field.
+     *
+     * @param int|null $value
      */
     public function cancelledCards(?int $value): self
     {
@@ -84,7 +90,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets cancelled cards field.
+     * Unsets Cancelled Cards field.
      */
     public function unsetCancelledCards(): self
     {
@@ -93,7 +99,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets expired cards field.
+     * Sets Expired Cards field.
+     *
+     * @param int|null $value
      */
     public function expiredCards(?int $value): self
     {
@@ -102,7 +110,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets expired cards field.
+     * Unsets Expired Cards field.
      */
     public function unsetExpiredCards(): self
     {
@@ -111,7 +119,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets expiring cards field.
+     * Sets Expiring Cards field.
+     *
+     * @param int|null $value
      */
     public function expiringCards(?int $value): self
     {
@@ -120,7 +130,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets expiring cards field.
+     * Unsets Expiring Cards field.
      */
     public function unsetExpiringCards(): self
     {
@@ -129,7 +139,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets fraud cards field.
+     * Sets Fraud Cards field.
+     *
+     * @param int|null $value
      */
     public function fraudCards(?int $value): self
     {
@@ -138,7 +150,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets fraud cards field.
+     * Unsets Fraud Cards field.
      */
     public function unsetFraudCards(): self
     {
@@ -147,7 +159,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets new cards field.
+     * Sets New Cards field.
+     *
+     * @param int|null $value
      */
     public function newCards(?int $value): self
     {
@@ -156,7 +170,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets new cards field.
+     * Unsets New Cards field.
      */
     public function unsetNewCards(): self
     {
@@ -165,7 +179,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets renewal pending cards field.
+     * Sets Renewal Pending Cards field.
+     *
+     * @param int|null $value
      */
     public function renewalPendingCards(?int $value): self
     {
@@ -174,7 +190,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets renewal pending cards field.
+     * Unsets Renewal Pending Cards field.
      */
     public function unsetRenewalPendingCards(): self
     {
@@ -183,7 +199,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets replaced cards field.
+     * Sets Replaced Cards field.
+     *
+     * @param int|null $value
      */
     public function replacedCards(?int $value): self
     {
@@ -192,7 +210,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets replaced cards field.
+     * Unsets Replaced Cards field.
      */
     public function unsetReplacedCards(): self
     {
@@ -201,7 +219,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets temporary block by customer field.
+     * Sets Temporary Block By Customer field.
+     *
+     * @param int|null $value
      */
     public function temporaryBlockByCustomer(?int $value): self
     {
@@ -210,7 +230,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets temporary block by customer field.
+     * Unsets Temporary Block By Customer field.
      */
     public function unsetTemporaryBlockByCustomer(): self
     {
@@ -219,7 +239,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets temporary block by shell field.
+     * Sets Temporary Block By Shell field.
+     *
+     * @param int|null $value
      */
     public function temporaryBlockByShell(?int $value): self
     {
@@ -228,7 +250,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets temporary block by shell field.
+     * Unsets Temporary Block By Shell field.
      */
     public function unsetTemporaryBlockByShell(): self
     {
@@ -237,7 +259,9 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Sets total cards field.
+     * Sets Total Cards field.
+     *
+     * @param int|null $value
      */
     public function totalCards(?int $value): self
     {
@@ -246,7 +270,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Unsets total cards field.
+     * Unsets Total Cards field.
      */
     public function unsetTotalCards(): self
     {
@@ -255,7 +279,7 @@ class SummaryResponseBuilder
     }
 
     /**
-     * Initializes a new summary response object.
+     * Initializes a new Summary Response object.
      */
     public function build(): SummaryResponse
     {

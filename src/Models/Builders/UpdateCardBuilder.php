@@ -32,7 +32,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Initializes a new update card Builder object.
+     * Initializes a new Update Card Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets caller field.
+     * Sets Caller field.
+     *
+     * @param string|null $value
      */
     public function caller(?string $value): self
     {
@@ -49,7 +51,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets caller field.
+     * Unsets Caller field.
      */
     public function unsetCaller(): self
     {
@@ -58,7 +60,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets is replacement chargeable field.
+     * Sets Is Replacement Chargeable field.
+     *
+     * @param bool|null $value
      */
     public function isReplacementChargeable(?bool $value): self
     {
@@ -67,7 +71,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets notify caller field.
+     * Sets Notify Caller field.
+     *
+     * @param bool|null $value
      */
     public function notifyCaller(?bool $value): self
     {
@@ -76,7 +82,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets notify caller on sync field.
+     * Sets Notify Caller On Sync field.
+     *
+     * @param bool|null $value
      */
     public function notifyCallerOnSync(?bool $value): self
     {
@@ -85,7 +93,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets order card replacement field.
+     * Sets Order Card Replacement field.
+     *
+     * @param bool|null $value
      */
     public function orderCardReplacement(?bool $value): self
     {
@@ -94,7 +104,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets card settings field.
+     * Sets Card Settings field.
+     *
+     * @param CardSettings|null $value
      */
     public function cardSettings(?CardSettings $value): self
     {
@@ -103,52 +115,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets reason id field.
-     */
-    public function reasonId(?int $value): self
-    {
-        $this->instance->setReasonId($value);
-        return $this;
-    }
-
-    /**
-     * Sets reason text field.
-     */
-    public function reasonText(?string $value): self
-    {
-        $this->instance->setReasonText($value);
-        return $this;
-    }
-
-    /**
-     * Unsets reason text field.
-     */
-    public function unsetReasonText(): self
-    {
-        $this->instance->unsetReasonText();
-        return $this;
-    }
-
-    /**
-     * Sets target status field.
-     */
-    public function targetStatus(?int $value): self
-    {
-        $this->instance->setTargetStatus($value);
-        return $this;
-    }
-
-    /**
-     * Unsets target status field.
-     */
-    public function unsetTargetStatus(): self
-    {
-        $this->instance->unsetTargetStatus();
-        return $this;
-    }
-
-    /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -157,7 +126,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -166,7 +135,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -175,7 +146,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -184,7 +155,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets card expiry date field.
+     * Sets Card Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function cardExpiryDate(?string $value): self
     {
@@ -193,7 +166,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets card expiry date field.
+     * Unsets Card Expiry Date field.
      */
     public function unsetCardExpiryDate(): self
     {
@@ -202,7 +175,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -211,7 +186,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -220,7 +195,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -229,7 +206,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -238,7 +215,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -247,7 +226,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -256,7 +235,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -265,7 +246,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -274,7 +255,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param float|null $value
      */
     public function pANID(?float $value): self
     {
@@ -283,7 +266,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets panid field.
+     * Unsets PANID field.
      */
     public function unsetPANID(): self
     {
@@ -292,7 +275,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -301,7 +286,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -310,7 +295,9 @@ class UpdateCardBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -319,7 +306,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -328,7 +315,7 @@ class UpdateCardBuilder
     }
 
     /**
-     * Initializes a new update card object.
+     * Initializes a new Update Card object.
      */
     public function build(): UpdateCard
     {

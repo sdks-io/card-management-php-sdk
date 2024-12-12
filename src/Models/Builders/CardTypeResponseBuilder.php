@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardTypeResponse;
+use ShellCardManagementAPIsLib\Models\CardTypeResponseCustomerCardTypesItems;
 use ShellCardManagementAPIsLib\Models\CardTypeResponseError;
 
 /**
@@ -32,7 +33,7 @@ class CardTypeResponseBuilder
     }
 
     /**
-     * Initializes a new card type response Builder object.
+     * Initializes a new Card Type Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +41,9 @@ class CardTypeResponseBuilder
     }
 
     /**
-     * Sets customer card types field.
+     * Sets Customer Card Types field.
+     *
+     * @param CardTypeResponseCustomerCardTypesItems[]|null $value
      */
     public function customerCardTypes(?array $value): self
     {
@@ -49,7 +52,9 @@ class CardTypeResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param CardTypeResponseError|null $value
      */
     public function error(?CardTypeResponseError $value): self
     {
@@ -58,7 +63,9 @@ class CardTypeResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -67,7 +74,7 @@ class CardTypeResponseBuilder
     }
 
     /**
-     * Initializes a new card type response object.
+     * Initializes a new Card Type Response object.
      */
     public function build(): CardTypeResponse
     {

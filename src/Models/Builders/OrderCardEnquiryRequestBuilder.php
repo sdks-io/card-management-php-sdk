@@ -32,7 +32,7 @@ class OrderCardEnquiryRequestBuilder
     }
 
     /**
-     * Initializes a new order card enquiry request Builder object.
+     * Initializes a new Order Card Enquiry Request Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class OrderCardEnquiryRequestBuilder
     }
 
     /**
-     * Sets filters field.
+     * Sets Filters field.
+     *
+     * @param Filters2|null $value
      */
     public function filters(?Filters2 $value): self
     {
@@ -49,7 +51,7 @@ class OrderCardEnquiryRequestBuilder
     }
 
     /**
-     * Initializes a new order card enquiry request object.
+     * Initializes a new Order Card Enquiry Request object.
      */
     public function build(): OrderCardEnquiryRequest
     {

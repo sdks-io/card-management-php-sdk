@@ -121,9 +121,7 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Returns P ANID.
      * Card PAN ID.
-     *
      * Optional if CardId is given, else mandatory.
-     *
      * Note: PANID is ignored if CardId is given.
      */
     public function getPANID(): ?float
@@ -134,9 +132,7 @@ class AutoRenewCardRequestAutoRenewCardsItems implements \JsonSerializable
     /**
      * Sets P ANID.
      * Card PAN ID.
-     *
      * Optional if CardId is given, else mandatory.
-     *
      * Note: PANID is ignored if CardId is given.
      *
      * @maps PANID

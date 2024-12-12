@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\UpdateMPayRegStatusRequest;
+use ShellCardManagementAPIsLib\Models\UpdateMPayRegStatusRequestMPayRequestsItems;
 
 /**
  * Builder for model UpdateMPayRegStatusRequest
@@ -31,7 +32,7 @@ class UpdateMPayRegStatusRequestBuilder
     }
 
     /**
-     * Initializes a new update mpay reg status request Builder object.
+     * Initializes a new Update M Pay Reg Status Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class UpdateMPayRegStatusRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -48,7 +51,9 @@ class UpdateMPayRegStatusRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -57,7 +62,9 @@ class UpdateMPayRegStatusRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -66,7 +73,9 @@ class UpdateMPayRegStatusRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -75,7 +84,9 @@ class UpdateMPayRegStatusRequestBuilder
     }
 
     /**
-     * Sets mpay requests field.
+     * Sets M Pay Requests field.
+     *
+     * @param UpdateMPayRegStatusRequestMPayRequestsItems[]|null $value
      */
     public function mPayRequests(?array $value): self
     {
@@ -84,7 +95,7 @@ class UpdateMPayRegStatusRequestBuilder
     }
 
     /**
-     * Initializes a new update mpay reg status request object.
+     * Initializes a new Update M Pay Reg Status Request object.
      */
     public function build(): UpdateMPayRegStatusRequest
     {

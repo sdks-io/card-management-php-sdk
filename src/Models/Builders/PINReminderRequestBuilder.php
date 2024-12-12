@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\PINReminderCardDetails;
 use ShellCardManagementAPIsLib\Models\PINReminderRequest;
 
 /**
@@ -31,7 +32,7 @@ class PINReminderRequestBuilder
     }
 
     /**
-     * Initializes a new pinreminder request Builder object.
+     * Initializes a new PIN Reminder Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class PINReminderRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -48,7 +51,9 @@ class PINReminderRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -57,7 +62,9 @@ class PINReminderRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -66,7 +73,9 @@ class PINReminderRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -75,7 +84,9 @@ class PINReminderRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -84,7 +95,9 @@ class PINReminderRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -93,7 +106,9 @@ class PINReminderRequestBuilder
     }
 
     /**
-     * Sets pinreminder card details field.
+     * Sets PIN Reminder Card Details field.
+     *
+     * @param PINReminderCardDetails[]|null $value
      */
     public function pINReminderCardDetails(?array $value): self
     {
@@ -102,7 +117,7 @@ class PINReminderRequestBuilder
     }
 
     /**
-     * Initializes a new pinreminder request object.
+     * Initializes a new PIN Reminder Request object.
      */
     public function build(): PINReminderRequest
     {

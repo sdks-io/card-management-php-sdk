@@ -31,7 +31,7 @@ class CreateCardGroupResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Initializes a new create card group response error cards items Builder object.
+     * Initializes a new Create Card Group Response Error Cards Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CreateCardGroupResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -48,7 +50,9 @@ class CreateCardGroupResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -57,7 +61,9 @@ class CreateCardGroupResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets error code field.
+     * Sets Error Code field.
+     *
+     * @param string|null $value
      */
     public function errorCode(?string $value): self
     {
@@ -66,7 +72,9 @@ class CreateCardGroupResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Sets error description field.
+     * Sets Error Description field.
+     *
+     * @param string|null $value
      */
     public function errorDescription(?string $value): self
     {
@@ -75,7 +83,7 @@ class CreateCardGroupResponseErrorCardsItemsBuilder
     }
 
     /**
-     * Initializes a new create card group response error cards items object.
+     * Initializes a new Create Card Group Response Error Cards Items object.
      */
     public function build(): CreateCardGroupResponseErrorCardsItems
     {

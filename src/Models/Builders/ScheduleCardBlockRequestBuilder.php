@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\ScheduleCardBlockCardsItems;
 use ShellCardManagementAPIsLib\Models\ScheduleCardBlockRequest;
 
 /**
@@ -31,7 +32,7 @@ class ScheduleCardBlockRequestBuilder
     }
 
     /**
-     * Initializes a new schedule card block request Builder object.
+     * Initializes a new Schedule Card Block Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class ScheduleCardBlockRequestBuilder
     }
 
     /**
-     * Sets is time supported field.
+     * Sets Is Time Supported field.
+     *
+     * @param bool|null $value
      */
     public function isTimeSupported(?bool $value): self
     {
@@ -48,7 +51,9 @@ class ScheduleCardBlockRequestBuilder
     }
 
     /**
-     * Sets schedule card block cards field.
+     * Sets Schedule Card Block Cards field.
+     *
+     * @param ScheduleCardBlockCardsItems[]|null $value
      */
     public function scheduleCardBlockCards(?array $value): self
     {
@@ -57,7 +62,7 @@ class ScheduleCardBlockRequestBuilder
     }
 
     /**
-     * Initializes a new schedule card block request object.
+     * Initializes a new Schedule Card Block Request object.
      */
     public function build(): ScheduleCardBlockRequest
     {

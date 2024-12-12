@@ -31,7 +31,7 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Initializes a new card move response successful requests items Builder object.
+     * Initializes a new Card Move Response Successful Requests Items Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -48,7 +50,7 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -57,7 +59,9 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -66,7 +70,7 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -75,7 +79,9 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -84,7 +90,7 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -93,7 +99,9 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -102,7 +110,7 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -111,7 +119,9 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Sets move card reference field.
+     * Sets Move Card Reference field.
+     *
+     * @param int|null $value
      */
     public function moveCardReference(?int $value): self
     {
@@ -120,7 +130,7 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Unsets move card reference field.
+     * Unsets Move Card Reference field.
      */
     public function unsetMoveCardReference(): self
     {
@@ -129,7 +139,7 @@ class CardMoveResponseSuccessfulRequestsItemsBuilder
     }
 
     /**
-     * Initializes a new card move response successful requests items object.
+     * Initializes a new Card Move Response Successful Requests Items object.
      */
     public function build(): CardMoveResponseSuccessfulRequestsItems
     {

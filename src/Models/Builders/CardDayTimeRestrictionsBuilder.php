@@ -31,7 +31,7 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Initializes a new card day time restrictions Builder object.
+     * Initializes a new Card Day Time Restrictions Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets level field.
+     * Sets Level field.
+     *
+     * @param string|null $value
      */
     public function level(?string $value): self
     {
@@ -48,7 +50,7 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Unsets level field.
+     * Unsets Level field.
      */
     public function unsetLevel(): self
     {
@@ -57,7 +59,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets monday field.
+     * Sets Monday field.
+     *
+     * @param bool|null $value
      */
     public function monday(?bool $value): self
     {
@@ -66,7 +70,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets tuesday field.
+     * Sets Tuesday field.
+     *
+     * @param bool|null $value
      */
     public function tuesday(?bool $value): self
     {
@@ -75,7 +81,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets wednesday field.
+     * Sets Wednesday field.
+     *
+     * @param bool|null $value
      */
     public function wednesday(?bool $value): self
     {
@@ -84,7 +92,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets thursday field.
+     * Sets Thursday field.
+     *
+     * @param bool|null $value
      */
     public function thursday(?bool $value): self
     {
@@ -93,7 +103,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets friday field.
+     * Sets Friday field.
+     *
+     * @param bool|null $value
      */
     public function friday(?bool $value): self
     {
@@ -102,7 +114,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets saturday field.
+     * Sets Saturday field.
+     *
+     * @param bool|null $value
      */
     public function saturday(?bool $value): self
     {
@@ -111,7 +125,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets sunday field.
+     * Sets Sunday field.
+     *
+     * @param bool|null $value
      */
     public function sunday(?bool $value): self
     {
@@ -120,7 +136,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets time from field.
+     * Sets Time From field.
+     *
+     * @param string|null $value
      */
     public function timeFrom(?string $value): self
     {
@@ -129,7 +147,7 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Unsets time from field.
+     * Unsets Time From field.
      */
     public function unsetTimeFrom(): self
     {
@@ -138,7 +156,9 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Sets time to field.
+     * Sets Time To field.
+     *
+     * @param string|null $value
      */
     public function timeTo(?string $value): self
     {
@@ -147,7 +167,7 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Unsets time to field.
+     * Unsets Time To field.
      */
     public function unsetTimeTo(): self
     {
@@ -156,7 +176,7 @@ class CardDayTimeRestrictionsBuilder
     }
 
     /**
-     * Initializes a new card day time restrictions object.
+     * Initializes a new Card Day Time Restrictions object.
      */
     public function build(): CardDayTimeRestrictions
     {

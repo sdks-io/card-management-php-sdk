@@ -32,7 +32,7 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Initializes a new account restriction response Builder object.
+     * Initializes a new Account Restriction Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -49,7 +51,7 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -58,7 +60,9 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -67,7 +71,9 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -76,7 +82,9 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Sets usage restriction status field.
+     * Sets Usage Restriction Status field.
+     *
+     * @param string|null $value
      */
     public function usageRestrictionStatus(?string $value): self
     {
@@ -85,7 +93,9 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Sets usage restriction description field.
+     * Sets Usage Restriction Description field.
+     *
+     * @param string|null $value
      */
     public function usageRestrictionDescription(?string $value): self
     {
@@ -94,7 +104,9 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -103,7 +115,7 @@ class AccountRestrictionResponseBuilder
     }
 
     /**
-     * Initializes a new account restriction response object.
+     * Initializes a new Account Restriction Response object.
      */
     public function build(): AccountRestrictionResponse
     {

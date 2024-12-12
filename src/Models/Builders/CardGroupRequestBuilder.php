@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\Accounts;
 use ShellCardManagementAPIsLib\Models\CardGroupRequest;
 
 /**
@@ -31,7 +32,7 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Initializes a new card group request Builder object.
+     * Initializes a new Card Group Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -48,7 +51,7 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -57,7 +60,9 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -66,7 +71,7 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -75,7 +80,9 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -84,7 +91,7 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -93,7 +100,9 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -102,7 +111,7 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -111,7 +120,9 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets account field.
+     * Sets Account field.
+     *
+     * @param Accounts[]|null $value
      */
     public function account(?array $value): self
     {
@@ -120,7 +131,9 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -129,7 +142,7 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Unsets card group name field.
+     * Unsets Card Group Name field.
      */
     public function unsetCardGroupName(): self
     {
@@ -138,7 +151,9 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets status field.
+     * Sets Status field.
+     *
+     * @param string|null $value
      */
     public function status(?string $value): self
     {
@@ -147,7 +162,7 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Unsets status field.
+     * Unsets Status field.
      */
     public function unsetStatus(): self
     {
@@ -156,7 +171,9 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets current page field.
+     * Sets Current Page field.
+     *
+     * @param int|null $value
      */
     public function currentPage(?int $value): self
     {
@@ -165,7 +182,9 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets page size field.
+     * Sets Page Size field.
+     *
+     * @param int|null $value
      */
     public function pageSize(?int $value): self
     {
@@ -174,7 +193,7 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Initializes a new card group request object.
+     * Initializes a new Card Group Request object.
      */
     public function build(): CardGroupRequest
     {

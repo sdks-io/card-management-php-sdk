@@ -31,7 +31,7 @@ class PINAdviceTypesBuilder
     }
 
     /**
-     * Initializes a new pinadvice types Builder object.
+     * Initializes a new PIN Advice Types Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class PINAdviceTypesBuilder
     }
 
     /**
-     * Sets pinadvice type id field.
+     * Sets PIN Advice Type ID field.
+     *
+     * @param int|null $value
      */
     public function pINAdviceTypeID(?int $value): self
     {
@@ -48,7 +50,7 @@ class PINAdviceTypesBuilder
     }
 
     /**
-     * Unsets pinadvice type id field.
+     * Unsets PIN Advice Type ID field.
      */
     public function unsetPINAdviceTypeID(): self
     {
@@ -57,7 +59,9 @@ class PINAdviceTypesBuilder
     }
 
     /**
-     * Sets is card order option field.
+     * Sets Is Card Order Option field.
+     *
+     * @param bool|null $value
      */
     public function isCardOrderOption(?bool $value): self
     {
@@ -66,7 +70,9 @@ class PINAdviceTypesBuilder
     }
 
     /**
-     * Sets is pinreminder option field.
+     * Sets Is PIN Reminder Option field.
+     *
+     * @param bool|null $value
      */
     public function isPINReminderOption(?bool $value): self
     {
@@ -75,7 +81,7 @@ class PINAdviceTypesBuilder
     }
 
     /**
-     * Initializes a new pinadvice types object.
+     * Initializes a new PIN Advice Types object.
      */
     public function build(): PINAdviceTypes
     {

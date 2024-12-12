@@ -33,7 +33,7 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Initializes a new summaryofbundle response Builder object.
+     * Initializes a new Summaryofbundle Response Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +41,9 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -50,7 +52,7 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Unsets request id field.
+     * Unsets Request Id field.
      */
     public function unsetRequestId(): self
     {
@@ -59,7 +61,9 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -68,7 +72,9 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -77,7 +83,9 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -86,7 +94,9 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -95,7 +105,9 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Sets count of cards not in bundle field.
+     * Sets Count Of Cards Not In Bundle field.
+     *
+     * @param int|null $value
      */
     public function countOfCardsNotInBundle(?int $value): self
     {
@@ -104,7 +116,9 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Sets card bundles field.
+     * Sets Card Bundles field.
+     *
+     * @param CardBundle|null $value
      */
     public function cardBundles(?CardBundle $value): self
     {
@@ -113,7 +127,9 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -122,7 +138,7 @@ class SummaryofbundleResponseBuilder
     }
 
     /**
-     * Initializes a new summaryofbundle response object.
+     * Initializes a new Summaryofbundle Response object.
      */
     public function build(): SummaryofbundleResponse
     {

@@ -32,7 +32,7 @@ class SearchCardRequestBuilder
     }
 
     /**
-     * Initializes a new search card request Builder object.
+     * Initializes a new Search Card Request Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +40,9 @@ class SearchCardRequestBuilder
     }
 
     /**
-     * Sets filters field.
+     * Sets Filters field.
+     *
+     * @param Filters|null $value
      */
     public function filters(?Filters $value): self
     {
@@ -49,7 +51,9 @@ class SearchCardRequestBuilder
     }
 
     /**
-     * Sets page size field.
+     * Sets Page Size field.
+     *
+     * @param string|null $value
      */
     public function pageSize(?string $value): self
     {
@@ -58,7 +62,9 @@ class SearchCardRequestBuilder
     }
 
     /**
-     * Sets page field.
+     * Sets Page field.
+     *
+     * @param string|null $value
      */
     public function page(?string $value): self
     {
@@ -67,7 +73,7 @@ class SearchCardRequestBuilder
     }
 
     /**
-     * Initializes a new search card request object.
+     * Initializes a new Search Card Request object.
      */
     public function build(): SearchCardRequest
     {

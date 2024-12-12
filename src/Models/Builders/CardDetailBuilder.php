@@ -33,7 +33,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Initializes a new card detail Builder object.
+     * Initializes a new Card Detail Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +41,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -50,7 +52,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -59,7 +61,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -68,7 +72,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -77,7 +81,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -86,7 +92,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -95,7 +101,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -104,7 +112,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -113,7 +121,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -122,7 +132,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -131,7 +141,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -140,7 +152,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -149,7 +161,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets card type id field.
+     * Sets Card Type Id field.
+     *
+     * @param int|null $value
      */
     public function cardTypeId(?int $value): self
     {
@@ -158,7 +172,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets card type id field.
+     * Unsets Card Type Id field.
      */
     public function unsetCardTypeId(): self
     {
@@ -167,7 +181,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets token type id field.
+     * Sets Token Type Id field.
+     *
+     * @param int|null $value
      */
     public function tokenTypeId(?int $value): self
     {
@@ -176,7 +192,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets token type id field.
+     * Unsets Token Type Id field.
      */
     public function unsetTokenTypeId(): self
     {
@@ -185,7 +201,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets emboss text field.
+     * Sets Emboss Text field.
+     *
+     * @param string|null $value
      */
     public function embossText(?string $value): self
     {
@@ -194,7 +212,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets emboss text field.
+     * Unsets Emboss Text field.
      */
     public function unsetEmbossText(): self
     {
@@ -203,7 +221,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets vrn field.
+     * Sets VRN field.
+     *
+     * @param string|null $value
      */
     public function vRN(?string $value): self
     {
@@ -212,7 +232,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets vrn field.
+     * Unsets VRN field.
      */
     public function unsetVRN(): self
     {
@@ -221,7 +241,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets driver name field.
+     * Sets Driver Name field.
+     *
+     * @param string|null $value
      */
     public function driverName(?string $value): self
     {
@@ -230,7 +252,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets driver name field.
+     * Unsets Driver Name field.
      */
     public function unsetDriverName(): self
     {
@@ -239,7 +261,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets odometer input required field.
+     * Sets Odometer Input Required field.
+     *
+     * @param bool|null $value
      */
     public function odometerInputRequired(?bool $value): self
     {
@@ -248,7 +272,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets fleet id input required field.
+     * Sets Fleet Id Input Required field.
+     *
+     * @param bool|null $value
      */
     public function fleetIdInputRequired(?bool $value): self
     {
@@ -257,7 +283,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets purchase category id field.
+     * Sets Purchase Category Id field.
+     *
+     * @param int|null $value
      */
     public function purchaseCategoryId(?int $value): self
     {
@@ -266,7 +294,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets purchase category id field.
+     * Unsets Purchase Category Id field.
      */
     public function unsetPurchaseCategoryId(): self
     {
@@ -275,7 +303,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets self selected encrypted pin field.
+     * Sets Self Selected Encrypted PIN field.
+     *
+     * @param string|null $value
      */
     public function selfSelectedEncryptedPIN(?string $value): self
     {
@@ -284,7 +314,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets self selected pinkey id field.
+     * Sets Self Selected PIN Key ID field.
+     *
+     * @param string|null $value
      */
     public function selfSelectedPINKeyID(?string $value): self
     {
@@ -293,7 +325,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets self selected pinkey id field.
+     * Unsets Self Selected PIN Key ID field.
      */
     public function unsetSelfSelectedPINKeyID(): self
     {
@@ -302,7 +334,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets self selected pinsession key field.
+     * Sets Self Selected PIN Session Key field.
+     *
+     * @param string|null $value
      */
     public function selfSelectedPINSessionKey(?string $value): self
     {
@@ -311,7 +345,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets self selected pinsession key field.
+     * Unsets Self Selected PIN Session Key field.
      */
     public function unsetSelfSelectedPINSessionKey(): self
     {
@@ -320,7 +354,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets card group id field.
+     * Sets Card Group Id field.
+     *
+     * @param int|null $value
      */
     public function cardGroupId(?int $value): self
     {
@@ -329,7 +365,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets card group id field.
+     * Unsets Card Group Id field.
      */
     public function unsetCardGroupId(): self
     {
@@ -338,7 +374,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -347,7 +385,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets card group name field.
+     * Unsets Card Group Name field.
      */
     public function unsetCardGroupName(): self
     {
@@ -356,7 +394,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets is new card group field.
+     * Sets Is New Card Group field.
+     *
+     * @param bool|null $value
      */
     public function isNewCardGroup(?bool $value): self
     {
@@ -365,7 +405,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets emboss card group field.
+     * Sets Emboss Card Group field.
+     *
+     * @param bool|null $value
      */
     public function embossCardGroup(?bool $value): self
     {
@@ -374,7 +416,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets card delivery type field.
+     * Sets Card Delivery Type field.
+     *
+     * @param int|null $value
      */
     public function cardDeliveryType(?int $value): self
     {
@@ -383,7 +427,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets card contact field.
+     * Sets Card Contact field.
+     *
+     * @param CardContact|null $value
      */
     public function cardContact(?CardContact $value): self
     {
@@ -392,7 +438,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets pindelivery address type field.
+     * Sets PIN Delivery Address Type field.
+     *
+     * @param int|null $value
      */
     public function pINDeliveryAddressType(?int $value): self
     {
@@ -401,7 +449,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets pindelivery address type field.
+     * Unsets PIN Delivery Address Type field.
      */
     public function unsetPINDeliveryAddressType(): self
     {
@@ -410,7 +458,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets pinadvice type field.
+     * Sets PIN Advice Type field.
+     *
+     * @param int|null $value
      */
     public function pINAdviceType(?int $value): self
     {
@@ -419,7 +469,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets pincontact field.
+     * Sets PIN Contact field.
+     *
+     * @param PINContact|null $value
      */
     public function pINContact(?PINContact $value): self
     {
@@ -428,7 +480,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets notify caller field.
+     * Sets Notify Caller field.
+     *
+     * @param bool|null $value
      */
     public function notifyCaller(?bool $value): self
     {
@@ -437,7 +491,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets caller field.
+     * Sets Caller field.
+     *
+     * @param string|null $value
      */
     public function caller(?string $value): self
     {
@@ -446,7 +502,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets caller field.
+     * Unsets Caller field.
      */
     public function unsetCaller(): self
     {
@@ -455,7 +511,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets notify caller on sync field.
+     * Sets Notify Caller On Sync field.
+     *
+     * @param bool|null $value
      */
     public function notifyCallerOnSync(?bool $value): self
     {
@@ -464,7 +522,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets validate fleet id field.
+     * Sets Validate Fleet Id field.
+     *
+     * @param bool|null $value
      */
     public function validateFleetId(?bool $value): self
     {
@@ -473,7 +533,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets fleet option field.
+     * Sets Fleet Option field.
+     *
+     * @param string|null $value
      */
     public function fleetOption(?string $value): self
     {
@@ -482,7 +544,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets fleet option field.
+     * Unsets Fleet Option field.
      */
     public function unsetFleetOption(): self
     {
@@ -491,7 +553,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets bundle id field.
+     * Sets Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function bundleId(?string $value): self
     {
@@ -500,7 +564,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets bundle id field.
+     * Unsets Bundle Id field.
      */
     public function unsetBundleId(): self
     {
@@ -509,7 +573,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets usage restriction action field.
+     * Sets Usage Restriction Action field.
+     *
+     * @param string|null $value
      */
     public function usageRestrictionAction(?string $value): self
     {
@@ -518,7 +584,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets usage restriction action field.
+     * Unsets Usage Restriction Action field.
      */
     public function unsetUsageRestrictionAction(): self
     {
@@ -527,7 +593,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets product restriction action field.
+     * Sets Product Restriction Action field.
+     *
+     * @param string|null $value
      */
     public function productRestrictionAction(?string $value): self
     {
@@ -536,7 +604,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets product restriction action field.
+     * Unsets Product Restriction Action field.
      */
     public function unsetProductRestrictionAction(): self
     {
@@ -545,7 +613,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets products field.
+     * Sets Products field.
+     *
+     * @param string[]|null $value
      */
     public function products(?array $value): self
     {
@@ -554,7 +624,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets product groups field.
+     * Sets Product Groups field.
+     *
+     * @param string[]|null $value
      */
     public function productGroups(?array $value): self
     {
@@ -563,7 +635,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets expiry date field.
+     * Sets Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function expiryDate(?string $value): self
     {
@@ -572,7 +646,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets expiry date field.
+     * Unsets Expiry Date field.
      */
     public function unsetExpiryDate(): self
     {
@@ -581,7 +655,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets client reference id field.
+     * Sets Client Reference Id field.
+     *
+     * @param string|null $value
      */
     public function clientReferenceId(?string $value): self
     {
@@ -590,7 +666,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Unsets client reference id field.
+     * Unsets Client Reference Id field.
      */
     public function unsetClientReferenceId(): self
     {
@@ -599,7 +675,9 @@ class CardDetailBuilder
     }
 
     /**
-     * Sets auto renew field.
+     * Sets Auto Renew field.
+     *
+     * @param int|null $value
      */
     public function autoRenew(?int $value): self
     {
@@ -608,7 +686,7 @@ class CardDetailBuilder
     }
 
     /**
-     * Initializes a new card detail object.
+     * Initializes a new Card Detail object.
      */
     public function build(): CardDetail
     {

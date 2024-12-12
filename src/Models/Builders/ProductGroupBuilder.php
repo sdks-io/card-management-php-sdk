@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\ProductAllOf0;
 use ShellCardManagementAPIsLib\Models\ProductGroup;
 
 /**
@@ -31,7 +32,7 @@ class ProductGroupBuilder
     }
 
     /**
-     * Initializes a new product group Builder object.
+     * Initializes a new Product Group Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class ProductGroupBuilder
     }
 
     /**
-     * Sets reference id field.
+     * Sets Reference Id field.
+     *
+     * @param int|null $value
      */
     public function referenceId(?int $value): self
     {
@@ -48,7 +51,9 @@ class ProductGroupBuilder
     }
 
     /**
-     * Sets product group id field.
+     * Sets Product Group Id field.
+     *
+     * @param string|null $value
      */
     public function productGroupId(?string $value): self
     {
@@ -57,7 +62,9 @@ class ProductGroupBuilder
     }
 
     /**
-     * Sets name field.
+     * Sets Name field.
+     *
+     * @param string|null $value
      */
     public function name(?string $value): self
     {
@@ -66,7 +73,9 @@ class ProductGroupBuilder
     }
 
     /**
-     * Sets is default field.
+     * Sets Is Default field.
+     *
+     * @param bool|null $value
      */
     public function isDefault(?bool $value): self
     {
@@ -75,7 +84,9 @@ class ProductGroupBuilder
     }
 
     /**
-     * Sets is fuel type field.
+     * Sets Is Fuel Type field.
+     *
+     * @param bool|null $value
      */
     public function isFuelType(?bool $value): self
     {
@@ -84,7 +95,9 @@ class ProductGroupBuilder
     }
 
     /**
-     * Sets products field.
+     * Sets Products field.
+     *
+     * @param ProductAllOf0[]|null $value
      */
     public function products(?array $value): self
     {
@@ -93,7 +106,7 @@ class ProductGroupBuilder
     }
 
     /**
-     * Initializes a new product group object.
+     * Initializes a new Product Group object.
      */
     public function build(): ProductGroup
     {

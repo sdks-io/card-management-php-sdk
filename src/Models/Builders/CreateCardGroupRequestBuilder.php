@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CreateCardGroupRequest;
+use ShellCardManagementAPIsLib\Models\CreateCardGroupRequestCardsItems;
 
 /**
  * Builder for model CreateCardGroupRequest
@@ -31,7 +32,7 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Initializes a new create card group request Builder object.
+     * Initializes a new Create Card Group Request Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +40,9 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -48,7 +51,9 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -57,7 +62,9 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -66,7 +73,9 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -75,7 +84,9 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -84,7 +95,9 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -93,7 +106,9 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Sets print on card field.
+     * Sets Print On Card field.
+     *
+     * @param bool|null $value
      */
     public function printOnCard(?bool $value): self
     {
@@ -102,7 +117,9 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Sets card group name field.
+     * Sets Card Group Name field.
+     *
+     * @param string|null $value
      */
     public function cardGroupName(?string $value): self
     {
@@ -111,7 +128,7 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Unsets card group name field.
+     * Unsets Card Group Name field.
      */
     public function unsetCardGroupName(): self
     {
@@ -120,7 +137,9 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Sets cards field.
+     * Sets Cards field.
+     *
+     * @param CreateCardGroupRequestCardsItems[]|null $value
      */
     public function cards(?array $value): self
     {
@@ -129,7 +148,7 @@ class CreateCardGroupRequestBuilder
     }
 
     /**
-     * Initializes a new create card group request object.
+     * Initializes a new Create Card Group Request object.
      */
     public function build(): CreateCardGroupRequest
     {

@@ -31,7 +31,7 @@ class ErrorStatusBuilder
     }
 
     /**
-     * Initializes a new error status Builder object.
+     * Initializes a new Error Status Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class ErrorStatusBuilder
     }
 
     /**
-     * Sets code field.
+     * Sets Code field.
+     *
+     * @param string|null $value
      */
     public function code(?string $value): self
     {
@@ -48,7 +50,9 @@ class ErrorStatusBuilder
     }
 
     /**
-     * Sets description field.
+     * Sets Description field.
+     *
+     * @param string|null $value
      */
     public function description(?string $value): self
     {
@@ -57,7 +61,7 @@ class ErrorStatusBuilder
     }
 
     /**
-     * Initializes a new error status object.
+     * Initializes a new Error Status object.
      */
     public function build(): ErrorStatus
     {

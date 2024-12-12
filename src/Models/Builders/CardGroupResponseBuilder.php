@@ -12,6 +12,7 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CardGroupResponse;
+use ShellCardManagementAPIsLib\Models\CardGroupResponseCardGroupsItems;
 use ShellCardManagementAPIsLib\Models\ErrorStatus;
 
 /**
@@ -32,7 +33,7 @@ class CardGroupResponseBuilder
     }
 
     /**
-     * Initializes a new card group response Builder object.
+     * Initializes a new Card Group Response Builder object.
      */
     public static function init(): self
     {
@@ -40,7 +41,9 @@ class CardGroupResponseBuilder
     }
 
     /**
-     * Sets card groups field.
+     * Sets Card Groups field.
+     *
+     * @param CardGroupResponseCardGroupsItems[]|null $value
      */
     public function cardGroups(?array $value): self
     {
@@ -49,7 +52,9 @@ class CardGroupResponseBuilder
     }
 
     /**
-     * Sets current page field.
+     * Sets Current Page field.
+     *
+     * @param int|null $value
      */
     public function currentPage(?int $value): self
     {
@@ -58,7 +63,9 @@ class CardGroupResponseBuilder
     }
 
     /**
-     * Sets row count field.
+     * Sets Row Count field.
+     *
+     * @param int|null $value
      */
     public function rowCount(?int $value): self
     {
@@ -67,7 +74,9 @@ class CardGroupResponseBuilder
     }
 
     /**
-     * Sets total pages field.
+     * Sets Total Pages field.
+     *
+     * @param int|null $value
      */
     public function totalPages(?int $value): self
     {
@@ -76,7 +85,9 @@ class CardGroupResponseBuilder
     }
 
     /**
-     * Sets error field.
+     * Sets Error field.
+     *
+     * @param ErrorStatus|null $value
      */
     public function error(?ErrorStatus $value): self
     {
@@ -85,7 +96,9 @@ class CardGroupResponseBuilder
     }
 
     /**
-     * Sets request id field.
+     * Sets Request Id field.
+     *
+     * @param string|null $value
      */
     public function requestId(?string $value): self
     {
@@ -94,7 +107,7 @@ class CardGroupResponseBuilder
     }
 
     /**
-     * Initializes a new card group response object.
+     * Initializes a new Card Group Response object.
      */
     public function build(): CardGroupResponse
     {

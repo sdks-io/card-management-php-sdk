@@ -31,7 +31,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Initializes a new submitted card Builder object.
+     * Initializes a new Submitted Card Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets replacement card reference field.
+     * Sets Replacement Card Reference field.
+     *
+     * @param int|null $value
      */
     public function replacementCardReference(?int $value): self
     {
@@ -48,7 +50,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets replacement card reference field.
+     * Unsets Replacement Card Reference field.
      */
     public function unsetReplacementCardReference(): self
     {
@@ -57,7 +59,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets update card reference field.
+     * Sets Update Card Reference field.
+     *
+     * @param int|null $value
      */
     public function updateCardReference(?int $value): self
     {
@@ -66,7 +70,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets update card reference field.
+     * Unsets Update Card Reference field.
      */
     public function unsetUpdateCardReference(): self
     {
@@ -75,7 +79,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets account id field.
+     * Sets Account Id field.
+     *
+     * @param int|null $value
      */
     public function accountId(?int $value): self
     {
@@ -84,7 +90,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets account id field.
+     * Unsets Account Id field.
      */
     public function unsetAccountId(): self
     {
@@ -93,7 +99,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets account number field.
+     * Sets Account Number field.
+     *
+     * @param string|null $value
      */
     public function accountNumber(?string $value): self
     {
@@ -102,7 +110,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets account number field.
+     * Unsets Account Number field.
      */
     public function unsetAccountNumber(): self
     {
@@ -111,7 +119,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets card expiry date field.
+     * Sets Card Expiry Date field.
+     *
+     * @param string|null $value
      */
     public function cardExpiryDate(?string $value): self
     {
@@ -120,7 +130,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets card expiry date field.
+     * Unsets Card Expiry Date field.
      */
     public function unsetCardExpiryDate(): self
     {
@@ -129,7 +139,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets card id field.
+     * Sets Card Id field.
+     *
+     * @param int|null $value
      */
     public function cardId(?int $value): self
     {
@@ -138,7 +150,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets card id field.
+     * Unsets Card Id field.
      */
     public function unsetCardId(): self
     {
@@ -147,7 +159,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -156,7 +170,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -165,7 +179,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -174,7 +190,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -183,7 +199,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets pan field.
+     * Sets PAN field.
+     *
+     * @param string|null $value
      */
     public function pAN(?string $value): self
     {
@@ -192,7 +210,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets pan field.
+     * Unsets PAN field.
      */
     public function unsetPAN(): self
     {
@@ -201,7 +219,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets panid field.
+     * Sets PANID field.
+     *
+     * @param float|null $value
      */
     public function pANID(?float $value): self
     {
@@ -210,7 +230,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets panid field.
+     * Unsets PANID field.
      */
     public function unsetPANID(): self
     {
@@ -219,7 +239,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets masked pan field.
+     * Sets Masked PAN field.
+     *
+     * @param string|null $value
      */
     public function maskedPAN(?string $value): self
     {
@@ -228,7 +250,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets masked pan field.
+     * Unsets Masked PAN field.
      */
     public function unsetMaskedPAN(): self
     {
@@ -237,7 +259,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -246,7 +270,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -255,7 +279,9 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -264,7 +290,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Unsets payer number field.
+     * Unsets Payer Number field.
      */
     public function unsetPayerNumber(): self
     {
@@ -273,7 +299,7 @@ class SubmittedCardBuilder
     }
 
     /**
-     * Initializes a new submitted card object.
+     * Initializes a new Submitted Card object.
      */
     public function build(): SubmittedCard
     {

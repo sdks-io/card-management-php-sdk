@@ -33,7 +33,7 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Initializes a new search card restriction req Builder object.
+     * Initializes a new Search Card Restriction Req Builder object.
      */
     public static function init(): self
     {
@@ -41,7 +41,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets col co id field.
+     * Sets Col Co Id field.
+     *
+     * @param int|null $value
      */
     public function colCoId(?int $value): self
     {
@@ -50,7 +52,7 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Unsets col co id field.
+     * Unsets Col Co Id field.
      */
     public function unsetColCoId(): self
     {
@@ -59,7 +61,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets col co code field.
+     * Sets Col Co Code field.
+     *
+     * @param int|null $value
      */
     public function colCoCode(?int $value): self
     {
@@ -68,7 +72,7 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Unsets col co code field.
+     * Unsets Col Co Code field.
      */
     public function unsetColCoCode(): self
     {
@@ -77,7 +81,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets payer id field.
+     * Sets Payer Id field.
+     *
+     * @param int|null $value
      */
     public function payerId(?int $value): self
     {
@@ -86,7 +92,7 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Unsets payer id field.
+     * Unsets Payer Id field.
      */
     public function unsetPayerId(): self
     {
@@ -95,7 +101,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets payer number field.
+     * Sets Payer Number field.
+     *
+     * @param string|null $value
      */
     public function payerNumber(?string $value): self
     {
@@ -104,7 +112,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets accounts field.
+     * Sets Accounts field.
+     *
+     * @param Accounts|null $value
      */
     public function accounts(?Accounts $value): self
     {
@@ -113,7 +123,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets bundle id field.
+     * Sets Bundle Id field.
+     *
+     * @param string|null $value
      */
     public function bundleId(?string $value): self
     {
@@ -122,7 +134,7 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Unsets bundle id field.
+     * Unsets Bundle Id field.
      */
     public function unsetBundleId(): self
     {
@@ -131,7 +143,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets cards field.
+     * Sets Cards field.
+     *
+     * @param SearchCardRestriction|null $value
      */
     public function cards(?SearchCardRestriction $value): self
     {
@@ -140,7 +154,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets include location restrictions field.
+     * Sets Include Location Restrictions field.
+     *
+     * @param bool|null $value
      */
     public function includeLocationRestrictions(?bool $value): self
     {
@@ -149,7 +165,7 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Unsets include location restrictions field.
+     * Unsets Include Location Restrictions field.
      */
     public function unsetIncludeLocationRestrictions(): self
     {
@@ -158,7 +174,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets include bundle details field.
+     * Sets Include Bundle Details field.
+     *
+     * @param bool|null $value
      */
     public function includeBundleDetails(?bool $value): self
     {
@@ -167,7 +185,7 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Unsets include bundle details field.
+     * Unsets Include Bundle Details field.
      */
     public function unsetIncludeBundleDetails(): self
     {
@@ -176,7 +194,9 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Sets include inherited limits field.
+     * Sets Include Inherited Limits field.
+     *
+     * @param bool|null $value
      */
     public function includeInheritedLimits(?bool $value): self
     {
@@ -185,7 +205,7 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Unsets include inherited limits field.
+     * Unsets Include Inherited Limits field.
      */
     public function unsetIncludeInheritedLimits(): self
     {
@@ -194,7 +214,7 @@ class SearchCardRestrictionReqBuilder
     }
 
     /**
-     * Initializes a new search card restriction req object.
+     * Initializes a new Search Card Restriction Req object.
      */
     public function build(): SearchCardRestrictionReq
     {

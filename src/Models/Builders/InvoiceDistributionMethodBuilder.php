@@ -31,7 +31,7 @@ class InvoiceDistributionMethodBuilder
     }
 
     /**
-     * Initializes a new invoice distribution method Builder object.
+     * Initializes a new Invoice Distribution Method Builder object.
      */
     public static function init(): self
     {
@@ -39,7 +39,9 @@ class InvoiceDistributionMethodBuilder
     }
 
     /**
-     * Sets is primary field.
+     * Sets Is Primary field.
+     *
+     * @param bool|null $value
      */
     public function isPrimary(?bool $value): self
     {
@@ -48,7 +50,9 @@ class InvoiceDistributionMethodBuilder
     }
 
     /**
-     * Sets frequency type field.
+     * Sets Frequency Type field.
+     *
+     * @param string|null $value
      */
     public function frequencyType(?string $value): self
     {
@@ -57,7 +61,7 @@ class InvoiceDistributionMethodBuilder
     }
 
     /**
-     * Unsets frequency type field.
+     * Unsets Frequency Type field.
      */
     public function unsetFrequencyType(): self
     {
@@ -66,7 +70,9 @@ class InvoiceDistributionMethodBuilder
     }
 
     /**
-     * Sets distribution method field.
+     * Sets Distribution Method field.
+     *
+     * @param string|null $value
      */
     public function distributionMethod(?string $value): self
     {
@@ -75,7 +81,7 @@ class InvoiceDistributionMethodBuilder
     }
 
     /**
-     * Unsets distribution method field.
+     * Unsets Distribution Method field.
      */
     public function unsetDistributionMethod(): self
     {
@@ -84,7 +90,9 @@ class InvoiceDistributionMethodBuilder
     }
 
     /**
-     * Sets output type field.
+     * Sets Output Type field.
+     *
+     * @param string|null $value
      */
     public function outputType(?string $value): self
     {
@@ -93,7 +101,7 @@ class InvoiceDistributionMethodBuilder
     }
 
     /**
-     * Unsets output type field.
+     * Unsets Output Type field.
      */
     public function unsetOutputType(): self
     {
@@ -102,7 +110,7 @@ class InvoiceDistributionMethodBuilder
     }
 
     /**
-     * Initializes a new invoice distribution method object.
+     * Initializes a new Invoice Distribution Method object.
      */
     public function build(): InvoiceDistributionMethod
     {
