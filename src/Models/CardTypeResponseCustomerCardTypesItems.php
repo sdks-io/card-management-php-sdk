@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
@@ -1156,6 +1157,55 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     public function unsetColCoCurrencySymbol(): void
     {
         $this->colCoCurrencySymbol = [];
+    }
+
+    /**
+     * Converts the CardTypeResponseCustomerCardTypesItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardTypeResponseCustomerCardTypesItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardTypeResponseCustomerCardTypesItems',
+            [
+                'canHavePIN' => $this->canHavePIN,
+                'cardTypeId' => $this->getCardTypeId(),
+                'cardTypeName' => $this->getCardTypeName(),
+                'colCoCurrencyCode' => $this->getColCoCurrencyCode(),
+                'customerCardTypeId' => $this->getCustomerCardTypeId(),
+                'dayTimeRestrictions' => $this->dayTimeRestrictions,
+                'defaultPurchaseCategoryId' => $this->getDefaultPurchaseCategoryId(),
+                'embossAccountName' => $this->getEmbossAccountName(),
+                'expiryPeriod' => $this->getExpiryPeriod(),
+                'isCRT' => $this->isCRT,
+                'isFleet' => $this->isFleet,
+                'isInternational' => $this->isInternational,
+                'isNational' => $this->isNational,
+                'isPartnerSitesIncluded' => $this->isPartnerSitesIncluded,
+                'isShellSitesOnly' => $this->isShellSitesOnly,
+                'isVirtual' => $this->isVirtual,
+                'isVisibleToCustomers' => $this->isVisibleToCustomers,
+                'isActive' => $this->isActive,
+                'isCardAvailableForDownload' => $this->isCardAvailableForDownload,
+                'isCardVisibleToCustomers' => $this->isCardVisibleToCustomers,
+                'pANLength' => $this->getPANLength(),
+                'purchaseCategories' => $this->getPurchaseCategories(),
+                'tokenTypeId' => $this->getTokenTypeId(),
+                'tokenTypeName' => $this->getTokenTypeName(),
+                'usageRestrictions' => $this->usageRestrictions,
+                'eMVContactless' => $this->eMVContactless,
+                'rFID' => $this->rFID,
+                'pINChangeSupported' => $this->pINChangeSupported,
+                'requirePIN' => $this->requirePIN,
+                'offlinePIN' => $this->offlinePIN,
+                'isDefault' => $this->isDefault,
+                'applicationsToShowNPIITokens' => $this->applicationsToShowNPIITokens,
+                'mediumTypeID' => $this->getMediumTypeID(),
+                'mediumType' => $this->getMediumType(),
+                'colCoCurrencySymbol' => $this->getColCoCurrencySymbol()
+            ]
+        );
     }
 
     /**

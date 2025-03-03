@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PurchaseCategoryResponse implements \JsonSerializable
@@ -62,6 +63,19 @@ class PurchaseCategoryResponse implements \JsonSerializable
     public function setError(?ErrorStatus $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the PurchaseCategoryResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the PurchaseCategoryResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PurchaseCategoryResponse',
+            ['purchaseCategories' => $this->purchaseCategories, 'error' => $this->error]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class AuditResponseAuditsItems implements \JsonSerializable
@@ -1420,6 +1421,51 @@ class AuditResponseAuditsItems implements \JsonSerializable
     public function unsetUserDisplayName(): void
     {
         $this->userDisplayName = [];
+    }
+
+    /**
+     * Converts the AuditResponseAuditsItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the AuditResponseAuditsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'AuditResponseAuditsItems',
+            [
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'additionalInformation1' => $this->getAdditionalInformation1(),
+                'additionalInformation2' => $this->getAdditionalInformation2(),
+                'additionalInformation3' => $this->getAdditionalInformation3(),
+                'additionalInformation4' => $this->getAdditionalInformation4(),
+                'additionalInformation5' => $this->getAdditionalInformation5(),
+                'additionalInformation6' => $this->getAdditionalInformation6(),
+                'additionalInformation7' => $this->getAdditionalInformation7(),
+                'additionalInformation8' => $this->getAdditionalInformation8(),
+                'additionalInformation9' => $this->getAdditionalInformation9(),
+                'cardGroupId' => $this->getCardGroupId(),
+                'cardGroupName' => $this->getCardGroupName(),
+                'cardId' => $this->getCardId(),
+                'colCoCode' => $this->getColCoCode(),
+                'colCoId' => $this->getColCoId(),
+                'errorCode' => $this->errorCode,
+                'errorString' => $this->getErrorString(),
+                'globalRequestID' => $this->getGlobalRequestID(),
+                'pAN' => $this->getPAN(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'processedOn' => $this->getProcessedOn(),
+                'requestedBy' => $this->getRequestedBy(),
+                'requestedOperation' => $this->getRequestedOperation(),
+                'requestReference' => $this->getRequestReference(),
+                'requestType' => $this->getRequestType(),
+                'status' => $this->getStatus(),
+                'submittedOn' => $this->getSubmittedOn(),
+                'subRequestReference' => $this->getSubRequestReference(),
+                'userDisplayName' => $this->getUserDisplayName()
+            ]
+        );
     }
 
     /**

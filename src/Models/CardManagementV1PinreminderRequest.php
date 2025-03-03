@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardManagementV1PinreminderRequest implements \JsonSerializable
@@ -209,6 +210,27 @@ class CardManagementV1PinreminderRequest implements \JsonSerializable
     public function setPINReminderCardDetails(?array $pINReminderCardDetails): void
     {
         $this->pINReminderCardDetails = $pINReminderCardDetails;
+    }
+
+    /**
+     * Converts the CardManagementV1PinreminderRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardManagementV1PinreminderRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardManagementV1PinreminderRequest',
+            [
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'colCoCode' => $this->colCoCode,
+                'colCoId' => $this->colCoId,
+                'payerId' => $this->payerId,
+                'payerNumber' => $this->payerNumber,
+                'pINReminderCardDetails' => $this->pINReminderCardDetails
+            ]
+        );
     }
 
     /**

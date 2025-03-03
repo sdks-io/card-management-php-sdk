@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CreateCardGroupResponseErrorCardsItems implements \JsonSerializable
@@ -112,6 +113,24 @@ class CreateCardGroupResponseErrorCardsItems implements \JsonSerializable
     public function setErrorDescription(?string $errorDescription): void
     {
         $this->errorDescription = $errorDescription;
+    }
+
+    /**
+     * Converts the CreateCardGroupResponseErrorCardsItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the CreateCardGroupResponseErrorCardsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CreateCardGroupResponseErrorCardsItems',
+            [
+                'cardId' => $this->cardId,
+                'pAN' => $this->pAN,
+                'errorCode' => $this->errorCode,
+                'errorDescription' => $this->errorDescription
+            ]
+        );
     }
 
     /**

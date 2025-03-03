@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class RestrictioncardsRes implements \JsonSerializable
@@ -384,6 +385,34 @@ class RestrictioncardsRes implements \JsonSerializable
     public function setValidationErrorDescription(?string $validationErrorDescription): void
     {
         $this->validationErrorDescription = $validationErrorDescription;
+    }
+
+    /**
+     * Converts the RestrictioncardsRes object to a human-readable string representation.
+     *
+     * @return string The string representation of the RestrictioncardsRes object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'RestrictioncardsRes',
+            [
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'cardId' => $this->cardId,
+                'pAN' => $this->pAN,
+                'usageRestrictionStatus' => $this->usageRestrictionStatus,
+                'usageRestrictionDescription' => $this->usageRestrictionDescription,
+                'dayTimeRestrictionStatus' => $this->dayTimeRestrictionStatus,
+                'dayTimeRestrictionDescription' => $this->dayTimeRestrictionDescription,
+                'productRestrictionStatus' => $this->productRestrictionStatus,
+                'productRestrictionDescription' => $this->productRestrictionDescription,
+                'locationRestrictionStatus' => $this->locationRestrictionStatus,
+                'locationRestrictionStatusDescription' => $this->locationRestrictionStatusDescription,
+                'validationErrorCode' => $this->validationErrorCode,
+                'validationErrorDescription' => $this->validationErrorDescription
+            ]
+        );
     }
 
     /**

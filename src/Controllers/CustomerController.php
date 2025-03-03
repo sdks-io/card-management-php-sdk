@@ -60,7 +60,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function loggedinuser(
+    public function loggedinUser(
         string $apikey,
         string $requestId,
         ?FleetmanagementV1UserLoggedinuserRequest $body = null
@@ -418,7 +418,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardgroups(string $apikey, string $requestId, ?CardGroupRequest $body = null): CardGroupResponse
+    public function cardGroups(string $apikey, string $requestId, ?CardGroupRequest $body = null): CardGroupResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/customer/cardgroups')
             ->auth('BasicAuth')
@@ -512,7 +512,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function auditreport(string $apikey, string $requestId, ?AuditRequest $body = null): AuditResponse
+    public function auditReport(string $apikey, string $requestId, ?AuditRequest $body = null): AuditResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/fleetmanagement/v1/customer/auditreport')
             ->auth('BasicAuth')
@@ -594,7 +594,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function createcardgroup(
+    public function createCardGroup(
         string $apikey,
         string $requestId,
         ?CreateCardGroupRequest $body = null
@@ -669,7 +669,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function updatecardgroup(
+    public function updateCardGroup(
         string $apikey,
         string $requestId,
         ?UpdateCardGroupRequest $body = null

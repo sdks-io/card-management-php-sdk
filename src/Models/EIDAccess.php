@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class EIDAccess implements \JsonSerializable
@@ -123,6 +124,23 @@ class EIDAccess implements \JsonSerializable
     public function unsetAccountGroupId(): void
     {
         $this->accountGroupId = [];
+    }
+
+    /**
+     * Converts the EIDAccess object to a human-readable string representation.
+     *
+     * @return string The string representation of the EIDAccess object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'EIDAccess',
+            [
+                'colCoId' => $this->getColCoId(),
+                'colCoCode' => $this->getColCoCode(),
+                'accountGroupId' => $this->getAccountGroupId()
+            ]
+        );
     }
 
     /**

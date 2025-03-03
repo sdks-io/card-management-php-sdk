@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PINDeliveryAddress implements \JsonSerializable
@@ -544,6 +545,36 @@ class PINDeliveryAddress implements \JsonSerializable
     public function setCountry(string $country): void
     {
         $this->country = $country;
+    }
+
+    /**
+     * Converts the PINDeliveryAddress object to a human-readable string representation.
+     *
+     * @return string The string representation of the PINDeliveryAddress object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PINDeliveryAddress',
+            [
+                'contactForeName' => $this->getContactForeName(),
+                'contactMiddleName' => $this->getContactMiddleName(),
+                'contactLastName' => $this->getContactLastName(),
+                'contactTitle' => $this->getContactTitle(),
+                'companyName' => $this->companyName,
+                'addressId' => $this->addressId,
+                'addressLine1' => $this->addressLine1,
+                'addressLine2' => $this->addressLine2,
+                'addressLine3' => $this->addressLine3,
+                'zipCode' => $this->zipCode,
+                'city' => $this->city,
+                'regionId' => $this->getRegionId(),
+                'region' => $this->region,
+                'countryId' => $this->countryId,
+                'countryISOCode' => $this->countryISOCode,
+                'country' => $this->country
+            ]
+        );
     }
 
     /**

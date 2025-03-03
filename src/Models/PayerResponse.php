@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PayerResponse implements \JsonSerializable
@@ -176,6 +177,26 @@ class PayerResponse implements \JsonSerializable
     public function setError(?ErrorStatus $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the PayerResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the PayerResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PayerResponse',
+            [
+                'requestId' => $this->getRequestId(),
+                'payers' => $this->payers,
+                'currentPage' => $this->currentPage,
+                'rowCount' => $this->rowCount,
+                'totalPages' => $this->totalPages,
+                'error' => $this->error
+            ]
+        );
     }
 
     /**

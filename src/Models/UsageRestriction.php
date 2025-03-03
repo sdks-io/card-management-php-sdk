@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -2341,6 +2342,99 @@ class UsageRestriction implements \JsonSerializable
     public function setLifeTimeTransactionThreshold(?float $lifeTimeTransactionThreshold): void
     {
         $this->lifeTimeTransactionThreshold = $lifeTimeTransactionThreshold;
+    }
+
+    /**
+     * Converts the UsageRestriction object to a human-readable string representation.
+     *
+     * @return string The string representation of the UsageRestriction object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'UsageRestriction',
+            [
+                'level' => $this->level,
+                'dailySpend' => $this->dailySpend,
+                'dailySpendAccumulated' => $this->dailySpendAccumulated,
+                'dailySpendBalance' => $this->dailySpendBalance,
+                'dailySpendOverride' => $this->dailySpendOverride,
+                'dailySpendThreshold' => $this->dailySpendThreshold,
+                'weeklySpend' => $this->weeklySpend,
+                'weeklySpendAccumulated' => $this->weeklySpendAccumulated,
+                'weeklySpendBalance' => $this->weeklySpendBalance,
+                'weeklySpendOverride' => $this->weeklySpendOverride,
+                'weeklySpendThreshold' => $this->weeklySpendThreshold,
+                'monthlySpend' => $this->monthlySpend,
+                'monthlySpendAccumulated' => $this->monthlySpendAccumulated,
+                'monthlySpendBalance' => $this->monthlySpendBalance,
+                'monthlySpendOverride' => $this->monthlySpendOverride,
+                'perTransactionSpend' => $this->perTransactionSpend,
+                'perTransactionSpendOverride' => $this->perTransactionSpendOverride,
+                'annualSpend' => $this->annualSpend,
+                'annualSpendAccumulated' => $this->annualSpendAccumulated,
+                'annualSpendBalance' => $this->annualSpendBalance,
+                'annualSpendOverride' => $this->annualSpendOverride,
+                'annualSpendThreshold' => $this->annualSpendThreshold,
+                'lifeTimeSpend' => $this->lifeTimeSpend,
+                'lifeTimeSpendAccumulated' => $this->lifeTimeSpendAccumulated,
+                'lifeTimeSpendBalance' => $this->lifeTimeSpendBalance,
+                'lifeTimeSpendOverride' => $this->lifeTimeSpendOverride,
+                'lifeTimeSpendThreshold' => $this->lifeTimeSpendThreshold,
+                'dailyVolume' => $this->dailyVolume,
+                'dailyVolumeAccumulated' => $this->dailyVolumeAccumulated,
+                'dailyVolumeBalance' => $this->dailyVolumeBalance,
+                'dailyVolumeOverride' => $this->dailyVolumeOverride,
+                'dailyVolumeThreshold' => $this->dailyVolumeThreshold,
+                'weeklyVolume' => $this->weeklyVolume,
+                'weeklyVolumeAccumulated' => $this->weeklyVolumeAccumulated,
+                'weeklyVolumeBalance' => $this->weeklyVolumeBalance,
+                'weeklyVolumeOverride' => $this->weeklyVolumeOverride,
+                'weeklyVolumeThreshold' => $this->weeklyVolumeThreshold,
+                'monthlyVolume' => $this->monthlyVolume,
+                'monthlyVolumeAccumulated' => $this->monthlyVolumeAccumulated,
+                'monthlyVolumeBalance' => $this->monthlyVolumeBalance,
+                'monthlyVolumeOverride' => $this->monthlyVolumeOverride,
+                'monthlyVolumeThreshold' => $this->monthlyVolumeThreshold,
+                'perTransactionVolume' => $this->perTransactionVolume,
+                'perTransactionVolumeOverride' => $this->perTransactionVolumeOverride,
+                'annualVolume' => $this->annualVolume,
+                'annualVolumeAccumulated' => $this->annualVolumeAccumulated,
+                'annualVolumeBalance' => $this->annualVolumeBalance,
+                'annualVolumeOverride' => $this->annualVolumeOverride,
+                'annualVolumeThreshold' => $this->annualVolumeThreshold,
+                'lifeTimeVolume' => $this->lifeTimeVolume,
+                'lifeTimeVolumeAccumulated' => $this->lifeTimeVolumeAccumulated,
+                'lifeTimeVolumeBalance' => $this->lifeTimeVolumeBalance,
+                'lifeTimeVolumeOverride' => $this->lifeTimeVolumeOverride,
+                'lifeTimeVolumeThreshold' => $this->lifeTimeVolumeThreshold,
+                'dailyTransactionCount' => $this->dailyTransactionCount,
+                'dailyTransactionAccumulated' => $this->dailyTransactionAccumulated,
+                'dailyTransactionBalance' => $this->dailyTransactionBalance,
+                'dailyTransactionOverride' => $this->dailyTransactionOverride,
+                'dailyTransactionThreshold' => $this->dailyTransactionThreshold,
+                'weeklyTransactionCount' => $this->weeklyTransactionCount,
+                'weeklyTransactionAccumulated' => $this->weeklyTransactionAccumulated,
+                'weeklyTransactionBalance' => $this->weeklyTransactionBalance,
+                'weeklyTransactionOverride' => $this->weeklyTransactionOverride,
+                'weeklyTransactionThreshold' => $this->weeklyTransactionThreshold,
+                'monthlyTransactionCount' => $this->monthlyTransactionCount,
+                'monthlyTransactionAccumulated' => $this->monthlyTransactionAccumulated,
+                'monthlyTransactionBalance' => $this->monthlyTransactionBalance,
+                'monthlyTransactionOverride' => $this->monthlyTransactionOverride,
+                'monthlyTransactionThreshold' => $this->monthlyTransactionThreshold,
+                'annualTransactionCount' => $this->annualTransactionCount,
+                'annualTransactionAccumulated' => $this->annualTransactionAccumulated,
+                'annualTransactionBalance' => $this->annualTransactionBalance,
+                'annualTransactionOverride' => $this->annualTransactionOverride,
+                'annualTransactionThreshold' => $this->annualTransactionThreshold,
+                'lifeTimeTransactionCount' => $this->lifeTimeTransactionCount,
+                'lifeTimeTransactionAccumulated' => $this->lifeTimeTransactionAccumulated,
+                'lifeTimeTransactionBalance' => $this->lifeTimeTransactionBalance,
+                'lifeTimeTransactionOverride' => $this->lifeTimeTransactionOverride,
+                'lifeTimeTransactionThreshold' => $this->lifeTimeTransactionThreshold
+            ]
+        );
     }
 
     /**

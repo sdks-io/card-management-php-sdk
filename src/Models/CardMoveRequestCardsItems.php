@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardMoveRequestCardsItems implements \JsonSerializable
@@ -104,6 +105,24 @@ class CardMoveRequestCardsItems implements \JsonSerializable
     public function setCardId(?int $cardId): void
     {
         $this->cardId = $cardId;
+    }
+
+    /**
+     * Converts the CardMoveRequestCardsItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardMoveRequestCardsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardMoveRequestCardsItems',
+            [
+                'accountNumber' => $this->accountNumber,
+                'accountId' => $this->accountId,
+                'pAN' => $this->pAN,
+                'cardId' => $this->cardId
+            ]
+        );
     }
 
     /**

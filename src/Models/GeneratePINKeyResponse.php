@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class GeneratePINKeyResponse implements \JsonSerializable
@@ -60,6 +61,16 @@ class GeneratePINKeyResponse implements \JsonSerializable
     public function setValue(?string $value): void
     {
         $this->value = $value;
+    }
+
+    /**
+     * Converts the GeneratePINKeyResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the GeneratePINKeyResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('GeneratePINKeyResponse', ['uid' => $this->uid, 'value' => $this->value]);
     }
 
     /**

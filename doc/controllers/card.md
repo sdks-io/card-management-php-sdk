@@ -12,24 +12,24 @@ $cardController = $client->getCardController();
 
 ## Methods
 
-* [Searchcard](../../doc/controllers/card.md#searchcard)
-* [Cardsummary](../../doc/controllers/card.md#cardsummary)
-* [Cardordercard](../../doc/controllers/card.md#cardordercard)
-* [Cardordercardenquiry](../../doc/controllers/card.md#cardordercardenquiry)
-* [Cardcancel](../../doc/controllers/card.md#cardcancel)
-* [Cardupdatestatus](../../doc/controllers/card.md#cardupdatestatus)
+* [Search Card](../../doc/controllers/card.md#search-card)
+* [Card Summary](../../doc/controllers/card.md#card-summary)
+* [Order Card](../../doc/controllers/card.md#order-card)
+* [Order Card Enquiry](../../doc/controllers/card.md#order-card-enquiry)
+* [Card Cancel](../../doc/controllers/card.md#card-cancel)
+* [Card Update Status](../../doc/controllers/card.md#card-update-status)
 * [Purchase Category](../../doc/controllers/card.md#purchase-category)
-* [Carddetails](../../doc/controllers/card.md#carddetails)
+* [Card Details](../../doc/controllers/card.md#card-details)
 * [Card Move](../../doc/controllers/card.md#card-move)
-* [Cardpinreminder](../../doc/controllers/card.md#cardpinreminder)
+* [Card Pin Reminder](../../doc/controllers/card.md#card-pin-reminder)
 * [Schedule Card Block](../../doc/controllers/card.md#schedule-card-block)
-* [Autorenew](../../doc/controllers/card.md#autorenew)
-* [Updatemobilepaymentregistrationstatus](../../doc/controllers/card.md#updatemobilepaymentregistrationstatus)
-* [Getkey](../../doc/controllers/card.md#getkey)
-* [Deliveryaddressupdate](../../doc/controllers/card.md#deliveryaddressupdate)
+* [Auto Renew](../../doc/controllers/card.md#auto-renew)
+* [Update Mobile Payment Registration Status](../../doc/controllers/card.md#update-mobile-payment-registration-status)
+* [Get Key](../../doc/controllers/card.md#get-key)
+* [Delivery Address Update](../../doc/controllers/card.md#delivery-address-update)
 
 
-# Searchcard
+# Search Card
 
 This API allows to search for Shell Cards in the Shell Card Platform. It provides flexible search criteria and supports paging.
 
@@ -72,7 +72,7 @@ This API allows to search for Shell Cards in the Shell Card Platform. It provide
 * Search cards by excluding card bundle Id
 
 ```php
-function searchcard(string $requestId, ?SearchCardRequest $body = null): CardSearchResponse
+function searchCard(string $requestId, ?SearchCardRequest $body = null): CardSearchResponse
 ```
 
 ## Parameters
@@ -169,7 +169,7 @@ $body = SearchCardRequestBuilder::init()
     ->page('1')
     ->build();
 
-$result = $cardController->searchcard(
+$result = $cardController->searchCard(
     $requestId,
     $body
 );
@@ -262,7 +262,7 @@ $result = $cardController->searchcard(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
-# Cardsummary
+# Card Summary
 
 This API allows to search for fuel cards in the Shell Card Platform and returns a high-level summary count. It provides flexible search criteria.
 
@@ -282,7 +282,7 @@ This API allows to search for fuel cards in the Shell Card Platform and returns 
 * Search cards by included/excluded list of cards
 
 ```php
-function cardsummary(string $requestId, ?CardSummaryRequest $body = null): CardSummaryResponse
+function cardSummary(string $requestId, ?CardSummaryRequest $body = null): CardSummaryResponse
 ```
 
 ## Parameters
@@ -370,7 +370,7 @@ $body = CardSummaryRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->cardsummary(
+$result = $cardController->cardSummary(
     $requestId,
     $body
 );
@@ -412,7 +412,7 @@ $result = $cardController->cardsummary(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectException`](../../doc/models/error-object-exception.md) |
 
 
-# Cardordercard
+# Order Card
 
 This API allows ordering one or more fuel cards (up to 50). If the API call succeeds, the API will return a reference number and queue the request for asynchronous processing.
 
@@ -450,7 +450,7 @@ This API allows ordering one or more fuel cards (up to 50). If the API call succ
 * Individual reference numbers (**OrderCardReference**) for each new card
 
 ```php
-function cardordercard(string $requestId, ?CardManagementV1OrdercardRequest $body = null): OrderCardResponse
+function orderCard(string $requestId, ?CardManagementV1OrdercardRequest $body = null): OrderCardResponse
 ```
 
 ## Parameters
@@ -560,7 +560,7 @@ $body = CardManagementV1OrdercardRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->cardordercard(
+$result = $cardController->orderCard(
     $requestId,
     $body
 );
@@ -593,7 +593,7 @@ $result = $cardController->cardordercard(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Cardordercardenquiry
+# Order Card Enquiry
 
 This API retrieves the card order status from the Shell Card Platform based on the given reference numbers.
 
@@ -612,10 +612,7 @@ This API retrieves the card order status from the Shell Card Platform based on t
     * Get order status by Card Reference (individual card reference belonging to an order reference)
 
 ```php
-function cardordercardenquiry(
-    string $requestId,
-    ?OrderCardEnquiryRequest $body = null
-): OrderCardEnquiryResponse
+function orderCardEnquiry(string $requestId, ?OrderCardEnquiryRequest $body = null): OrderCardEnquiryResponse
 ```
 
 ## Parameters
@@ -653,7 +650,7 @@ $body = OrderCardEnquiryRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->cardordercardenquiry(
+$result = $cardController->orderCardEnquiry(
     $requestId,
     $body
 );
@@ -719,7 +716,7 @@ $result = $cardController->cardordercardenquiry(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Cardcancel
+# Card Cancel
 
 This API allows cancelling one or multiple cards (up to 500) within a single API call. This API allows updating of
 the card to the following status-
@@ -755,7 +752,7 @@ A permanent block (cancelled) request for the card will be queued in Shell Card 
 When a card is requested to be Blocked permanently (cancelled) for which a request has already been submitted to report as Damaged and the damaged card active period is not yet completed, the damaged card request will be marked as superseded and the new Block (cancelled) request will be processed.
 
 ```php
-function cardcancel(string $requestId, ?CardManagementV1CancelRequest $body = null): CancelCardResponse
+function cardCancel(string $requestId, ?CardManagementV1CancelRequest $body = null): CancelCardResponse
 ```
 
 ## Parameters
@@ -838,7 +835,7 @@ $body = CardManagementV1CancelRequestBuilder::init(
     ->reasonText('Lost')
     ->build();
 
-$result = $cardController->cardcancel(
+$result = $cardController->cardCancel(
     $requestId,
     $body
 );
@@ -881,7 +878,7 @@ $result = $cardController->cardcancel(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Cardupdatestatus
+# Card Update Status
 
 This API allows updating of the card status for one or more cards (up to 500) within a single API call.  If the API call succeeds, the API will return a reference number and queue the request for asynchronous processing.
 
@@ -930,7 +927,7 @@ This API allows updating of the card status for one or more cards (up to 500) wi
   * If during the damage card active period another request is made to set the card to Temporarily Blocked or Blocked permanently (cancelled), then the damaged card request will be marked as superseded and the new Temporary Block or Block (cancelled) will be processed.
 
 ```php
-function cardupdatestatus(
+function cardUpdateStatus(
     string $requestId,
     ?CardManagementV1UpdatestatusRequest $body = null
 ): UpdateCardStatusResponse
@@ -1019,7 +1016,7 @@ $body = CardManagementV1UpdatestatusRequestBuilder::init(
     ->reasonText('Unblock')
     ->build();
 
-$result = $cardController->cardupdatestatus(
+$result = $cardController->cardUpdateStatus(
     $requestId,
     $body
 );
@@ -1168,7 +1165,7 @@ $result = $cardController->purchaseCategory(
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Carddetails
+# Card Details
 
 This API allows to fetch details of a single fuel card from the Shell Card Platform. If a **CardId** request parameter is provided, this will return a single card.  If a **PAN** request parameter is provided, this may result in multiple fuel cards matching the search criteria. The card details of the most recently issued card will be returned.
 
@@ -1177,7 +1174,7 @@ This API allows to fetch details of a single fuel card from the Shell Card Platf
 * Get card by card id or PAN
 
 ```php
-function carddetails(string $apikey, string $requestId, ?CardDetailsRequest $body = null): CardDetailsResponse
+function cardDetails(string $apikey, string $requestId, ?CardDetailsRequest $body = null): CardDetailsResponse
 ```
 
 ## Parameters
@@ -1219,7 +1216,7 @@ $body = CardDetailsRequestBuilder::init()
     ->includeScheduledCardBlocks(false)
     ->build();
 
-$result = $cardController->carddetails(
+$result = $cardController->cardDetails(
     $apikey,
     $requestId,
     $body
@@ -1490,7 +1487,7 @@ $result = $cardController->cardMove(
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Cardpinreminder
+# Card Pin Reminder
 
 This API allows requesting a PIN reminder for a fuel card. If the API call succeeds, the API will return a reference number and queue the request for asynchronous processing.
 
@@ -1517,7 +1514,7 @@ This API allows requesting a PIN reminder for a fuel card. If the API call succe
 * A PIN reminder request has not been successfully processed in the last 48 hours for the card
 
 ```php
-function cardpinreminder(
+function cardPinReminder(
     string $requestId,
     ?CardManagementV1PinreminderRequest $body = null
 ): PINReminderResponse
@@ -1573,7 +1570,7 @@ $body = CardManagementV1PinreminderRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->cardpinreminder(
+$result = $cardController->cardPinReminder(
     $requestId,
     $body
 );
@@ -1723,7 +1720,7 @@ $result = $cardController->scheduleCardBlock(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Autorenew
+# Auto Renew
 
 This API allows to update the reissue indicator of a single card. If the API call succeeds, the API will return a reference number for tracking purposes and queue the request for asynchronous processing.
 
@@ -1746,7 +1743,7 @@ This API allows to update the reissue indicator of a single card. If the API cal
 * Providing a **PAN** request paramter may result in multiple fuel cards being located in the Shell Card Platform. The card details of the most recently issued card will be considered.
 
 ```php
-function autorenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoRenewCardResponse
+function autoRenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoRenewCardResponse
 ```
 
 ## Parameters
@@ -1785,7 +1782,7 @@ $body = AutoRenewCardRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->autorenew(
+$result = $cardController->autoRenew(
     $requestId,
     $body
 );
@@ -1819,7 +1816,7 @@ $result = $cardController->autorenew(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Updatemobilepaymentregistrationstatus
+# Update Mobile Payment Registration Status
 
 This operation allows  update the approval status of Mobile Payment Registration requests requiring for Fleet Manager approval.
 If the approval status is:
@@ -1828,7 +1825,7 @@ If the approval status is:
 * “Rejected” then status will be updated to “CI” (Failed) with appropriate error message.
 
 ```php
-function updatemobilepaymentregistrationstatus(
+function updateMobilePaymentRegistrationStatus(
     string $requestId,
     ?UpdateMPayRegStatusRequest $body = null
 ): UpdateMPayRegStatusResponse
@@ -1868,7 +1865,7 @@ $body = UpdateMPayRegStatusRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->updatemobilepaymentregistrationstatus(
+$result = $cardController->updateMobilePaymentRegistrationStatus(
     $requestId,
     $body
 );
@@ -1894,12 +1891,12 @@ $result = $cardController->updatemobilepaymentregistrationstatus(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | `ApiException` |
 
 
-# Getkey
+# Get Key
 
 Get a new public key that will be used to encrypt data for selected PIN process when ordering new Shell Card. This encrypted data is used for further processing.
 
 ```php
-function getkey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
+function getKey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
 ```
 
 ## Parameters
@@ -1918,7 +1915,7 @@ function getkey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
 ```php
 $requestId = 'RequestId8';
 
-$result = $cardController->getkey($requestId);
+$result = $cardController->getKey($requestId);
 ```
 
 ## Example Response *(as JSON)*
@@ -1941,7 +1938,7 @@ $result = $cardController->getkey($requestId);
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Deliveryaddressupdate
+# Delivery Address Update
 
 This API allows users to update the card’s delivery addresses (card delivery address used for card re-issue and PIN delivery address used when PIN reminder is requested)
 
@@ -1950,7 +1947,7 @@ This API allows users to update the card’s delivery addresses (card delivery a
 * card delivery address update
 
 ```php
-function deliveryaddressupdate(
+function deliveryAddressUpdate(
     string $apikey,
     ?DeliveryAddressUpdateRequest $body = null
 ): DeliveryAddressUpdateResponse
@@ -2007,7 +2004,7 @@ $body = DeliveryAddressUpdateRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->deliveryaddressupdate(
+$result = $cardController->deliveryAddressUpdate(
     $apikey,
     $body
 );

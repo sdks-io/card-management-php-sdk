@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CreateCardGroupResponse implements \JsonSerializable
@@ -180,6 +181,26 @@ class CreateCardGroupResponse implements \JsonSerializable
     public function setRequestId(?string $requestId): void
     {
         $this->requestId = $requestId;
+    }
+
+    /**
+     * Converts the CreateCardGroupResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the CreateCardGroupResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CreateCardGroupResponse',
+            [
+                'mainReference' => $this->mainReference,
+                'newCardGroupReference' => $this->newCardGroupReference,
+                'successfulRequests' => $this->successfulRequests,
+                'errorCards' => $this->errorCards,
+                'error' => $this->error,
+                'requestId' => $this->requestId
+            ]
+        );
     }
 
     /**

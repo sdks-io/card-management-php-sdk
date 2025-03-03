@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -89,6 +90,19 @@ class CreateCardResponse implements \JsonSerializable
     public function unsetOrderCardReference(): void
     {
         $this->orderCardReference = [];
+    }
+
+    /**
+     * Converts the CreateCardResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the CreateCardResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CreateCardResponse',
+            ['driverAndVRN' => $this->getDriverAndVRN(), 'orderCardReference' => $this->getOrderCardReference()]
+        );
     }
 
     /**

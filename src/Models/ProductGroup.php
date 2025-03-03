@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class ProductGroup implements \JsonSerializable
@@ -176,6 +177,26 @@ class ProductGroup implements \JsonSerializable
     public function setProducts(?array $products): void
     {
         $this->products = $products;
+    }
+
+    /**
+     * Converts the ProductGroup object to a human-readable string representation.
+     *
+     * @return string The string representation of the ProductGroup object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'ProductGroup',
+            [
+                'referenceId' => $this->referenceId,
+                'productGroupId' => $this->productGroupId,
+                'name' => $this->name,
+                'isDefault' => $this->isDefault,
+                'isFuelType' => $this->isFuelType,
+                'products' => $this->products
+            ]
+        );
     }
 
     /**

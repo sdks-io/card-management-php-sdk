@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class SearchCardRequest implements \JsonSerializable
@@ -89,6 +90,19 @@ class SearchCardRequest implements \JsonSerializable
     public function setPage(?string $page): void
     {
         $this->page = $page;
+    }
+
+    /**
+     * Converts the SearchCardRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the SearchCardRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SearchCardRequest',
+            ['filters' => $this->filters, 'pageSize' => $this->pageSize, 'page' => $this->page]
+        );
     }
 
     /**

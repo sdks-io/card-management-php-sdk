@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class ProductAllOf0 implements \JsonSerializable
@@ -64,6 +65,19 @@ class ProductAllOf0 implements \JsonSerializable
     public function setDescription(?string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * Converts the ProductAllOf0 object to a human-readable string representation.
+     *
+     * @return string The string representation of the ProductAllOf0 object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'ProductAllOf0',
+            ['globalProductCode' => $this->globalProductCode, 'description' => $this->description]
+        );
     }
 
     /**

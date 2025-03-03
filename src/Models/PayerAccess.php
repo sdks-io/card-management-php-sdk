@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PayerAccess implements \JsonSerializable
@@ -357,6 +358,29 @@ class PayerAccess implements \JsonSerializable
     public function unsetPayerName(): void
     {
         $this->payerName = [];
+    }
+
+    /**
+     * Converts the PayerAccess object to a human-readable string representation.
+     *
+     * @return string The string representation of the PayerAccess object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PayerAccess',
+            [
+                'isDefault' => $this->isDefault,
+                'colcoId' => $this->getColcoId(),
+                'colcoCode' => $this->getColcoCode(),
+                'colCoCountryCode' => $this->getColCoCountryCode(),
+                'payerGroupId' => $this->getPayerGroupId(),
+                'payerGroup' => $this->getPayerGroup(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'payerName' => $this->getPayerName()
+            ]
+        );
     }
 
     /**

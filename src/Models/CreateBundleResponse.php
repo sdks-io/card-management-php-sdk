@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CreateBundleResponse implements \JsonSerializable
@@ -285,6 +286,31 @@ class CreateBundleResponse implements \JsonSerializable
     public function setError(?ErrorStatus $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the CreateBundleResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the CreateBundleResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CreateBundleResponse',
+            [
+                'requestId' => $this->getRequestId(),
+                'bundleCreationStatus' => $this->bundleCreationStatus,
+                'bundleId' => $this->bundleId,
+                'dayTimeRestrictionStatus' => $this->dayTimeRestrictionStatus,
+                'dayTimeRestrictionProfileId' => $this->dayTimeRestrictionProfileId,
+                'locationRestrictionStatus' => $this->locationRestrictionStatus,
+                'locationRestrictionProfileId' => $this->locationRestrictionProfileId,
+                'usageRestrictionStatus' => $this->usageRestrictionStatus,
+                'productRestrictionStatus' => $this->productRestrictionStatus,
+                'cards' => $this->cards,
+                'error' => $this->error
+            ]
+        );
     }
 
     /**

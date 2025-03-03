@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Exceptions;
 
+use ShellCardManagementAPIsLib\ApiHelper;
+
 class ErrorObjectException extends ApiException
 {
     /**
@@ -87,5 +89,19 @@ class ErrorObjectException extends ApiException
     public function setErrors(?array $errors): void
     {
         $this->errors = $errors;
+    }
+
+    /**
+     * Converts the ErrorObjectException object to a human-readable string representation.
+     *
+     * @return string The string representation of the ErrorObjectException object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'ErrorObjectException',
+            ['requestId' => $this->requestId, 'status' => $this->status, 'errors' => $this->errors],
+            parent::__toString()
+        );
     }
 }

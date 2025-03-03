@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardMoveResponseSuccessfulRequestsItems implements \JsonSerializable
@@ -182,6 +183,26 @@ class CardMoveResponseSuccessfulRequestsItems implements \JsonSerializable
     public function unsetMoveCardReference(): void
     {
         $this->moveCardReference = [];
+    }
+
+    /**
+     * Converts the CardMoveResponseSuccessfulRequestsItems object to a human-readable string
+     * representation.
+     *
+     * @return string The string representation of the CardMoveResponseSuccessfulRequestsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardMoveResponseSuccessfulRequestsItems',
+            [
+                'accountNumber' => $this->getAccountNumber(),
+                'accountId' => $this->getAccountId(),
+                'pAN' => $this->getPAN(),
+                'cardId' => $this->getCardId(),
+                'moveCardReference' => $this->getMoveCardReference()
+            ]
+        );
     }
 
     /**

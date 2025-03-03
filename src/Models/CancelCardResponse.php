@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CancelCardResponse implements \JsonSerializable
@@ -166,6 +167,26 @@ class CancelCardResponse implements \JsonSerializable
     public function setErrors(?array $errors): void
     {
         $this->errors = $errors;
+    }
+
+    /**
+     * Converts the CancelCardResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the CancelCardResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CancelCardResponse',
+            [
+                'requestId' => $this->requestId,
+                'mainReference' => $this->mainReference,
+                'orderReplacementReference' => $this->orderReplacementReference,
+                'status' => $this->status,
+                'data' => $this->data,
+                'errors' => $this->errors
+            ]
+        );
     }
 
     /**

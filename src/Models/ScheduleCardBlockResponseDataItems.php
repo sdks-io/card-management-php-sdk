@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class ScheduleCardBlockResponseDataItems implements \JsonSerializable
@@ -136,6 +137,24 @@ class ScheduleCardBlockResponseDataItems implements \JsonSerializable
     public function setReferenceId(?int $referenceId): void
     {
         $this->referenceId = $referenceId;
+    }
+
+    /**
+     * Converts the ScheduleCardBlockResponseDataItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the ScheduleCardBlockResponseDataItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'ScheduleCardBlockResponseDataItems',
+            [
+                'cardId' => $this->cardId,
+                'fromDate' => $this->fromDate,
+                'toDate' => $this->toDate,
+                'referenceId' => $this->referenceId
+            ]
+        );
     }
 
     /**

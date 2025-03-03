@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class UpdateCardGroupRequest implements \JsonSerializable
@@ -536,6 +537,36 @@ class UpdateCardGroupRequest implements \JsonSerializable
     public function setTargetCardGroupId(?int $targetCardGroupId): void
     {
         $this->targetCardGroupId = $targetCardGroupId;
+    }
+
+    /**
+     * Converts the UpdateCardGroupRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the UpdateCardGroupRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'UpdateCardGroupRequest',
+            [
+                'colCoCode' => $this->colCoCode,
+                'colCoId' => $this->colCoId,
+                'payerNumber' => $this->payerNumber,
+                'payerId' => $this->payerId,
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'cardGroupId' => $this->cardGroupId,
+                'cardGroupName' => $this->cardGroupName,
+                'printOnCard' => $this->printOnCard,
+                'cardTypeId' => $this->cardTypeId,
+                'terminateCardGroup' => $this->terminateCardGroup,
+                'moveCards' => $this->moveCards,
+                'targetAccountId' => $this->targetAccountId,
+                'targetAccountNumber' => $this->targetAccountNumber,
+                'targetNewCardGroupName' => $this->targetNewCardGroupName,
+                'targetCardGroupId' => $this->targetCardGroupId
+            ]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class SearchProductRestriction implements \JsonSerializable
@@ -66,6 +67,19 @@ class SearchProductRestriction implements \JsonSerializable
     public function setProductGroups(?array $productGroups): void
     {
         $this->productGroups = $productGroups;
+    }
+
+    /**
+     * Converts the SearchProductRestriction object to a human-readable string representation.
+     *
+     * @return string The string representation of the SearchProductRestriction object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SearchProductRestriction',
+            ['products' => $this->products, 'productGroups' => $this->productGroups]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardSummaryResponse implements \JsonSerializable
@@ -89,6 +90,19 @@ class CardSummaryResponse implements \JsonSerializable
     public function setData(?array $data): void
     {
         $this->data = $data;
+    }
+
+    /**
+     * Converts the CardSummaryResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardSummaryResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardSummaryResponse',
+            ['requestId' => $this->requestId, 'status' => $this->status, 'data' => $this->data]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class UpdateCardRenewalAddress2 implements \JsonSerializable
@@ -346,6 +347,30 @@ class UpdateCardRenewalAddress2 implements \JsonSerializable
     public function setPhoneNumber(?string $phoneNumber): void
     {
         $this->phoneNumber = $phoneNumber;
+    }
+
+    /**
+     * Converts the UpdateCardRenewalAddress2 object to a human-readable string representation.
+     *
+     * @return string The string representation of the UpdateCardRenewalAddress2 object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'UpdateCardRenewalAddress2',
+            [
+                'contactName' => $this->contactName,
+                'contactTitle' => $this->contactTitle,
+                'companyName' => $this->companyName,
+                'addressLine' => $this->addressLine,
+                'zipCode' => $this->zipCode,
+                'city' => $this->city,
+                'regionID' => $this->regionID,
+                'countryID' => $this->countryID,
+                'emailAddress' => $this->emailAddress,
+                'phoneNumber' => $this->phoneNumber
+            ]
+        );
     }
 
     /**

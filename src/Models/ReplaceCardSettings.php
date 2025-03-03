@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -1697,6 +1698,59 @@ class ReplaceCardSettings implements \JsonSerializable
     public function unsetExpiryDate(): void
     {
         $this->expiryDate = [];
+    }
+
+    /**
+     * Converts the ReplaceCardSettings object to a human-readable string representation.
+     *
+     * @return string The string representation of the ReplaceCardSettings object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'ReplaceCardSettings',
+            [
+                'selfSelectedEncryptedPIN' => $this->getSelfSelectedEncryptedPIN(),
+                'selfSelectedPINKeyID' => $this->getSelfSelectedPINKeyID(),
+                'selfSelectedPINSessionKey' => $this->getSelfSelectedPINSessionKey(),
+                'validateFleetId' => $this->validateFleetId,
+                'cardGroupId' => $this->getCardGroupId(),
+                'cardDeliveryType' => $this->cardDeliveryType,
+                'deliveryContactTitle' => $this->getDeliveryContactTitle(),
+                'deliveryContactName' => $this->getDeliveryContactName(),
+                'deliveryCompanyName' => $this->getDeliveryCompanyName(),
+                'deliveryAddressLine1' => $this->getDeliveryAddressLine1(),
+                'deliveryAddressLine2' => $this->getDeliveryAddressLine2(),
+                'deliveryAddressLine3' => $this->getDeliveryAddressLine3(),
+                'deliveryZipCode' => $this->getDeliveryZipCode(),
+                'deliveryCity' => $this->getDeliveryCity(),
+                'deliveryRegionId' => $this->getDeliveryRegionId(),
+                'deliveryRegion' => $this->getDeliveryRegion(),
+                'deliveryCountry' => $this->getDeliveryCountry(),
+                'deliveryCountryId' => $this->getDeliveryCountryId(),
+                'phoneNumber' => $this->phoneNumber,
+                'emailAddress' => $this->getEmailAddress(),
+                'pINDeliveryAddressType' => $this->getPINDeliveryAddressType(),
+                'pINAdviceType' => $this->getPINAdviceType(),
+                'pINDeliveryContactTitle' => $this->getPINDeliveryContactTitle(),
+                'pINDeliveryContactName' => $this->getPINDeliveryContactName(),
+                'pINDeliveryCompanyName' => $this->getPINDeliveryCompanyName(),
+                'pINDeliveryAddressLine1' => $this->getPINDeliveryAddressLine1(),
+                'pINDeliveryAddressLine2' => $this->getPINDeliveryAddressLine2(),
+                'pINDeliveryAddressLine3' => $this->getPINDeliveryAddressLine3(),
+                'pINDeliveryZipCode' => $this->getPINDeliveryZipCode(),
+                'pINDeliveryCity' => $this->getPINDeliveryCity(),
+                'pINDeliveryRegionId' => $this->getPINDeliveryRegionId(),
+                'pINDeliveryRegion' => $this->getPINDeliveryRegion(),
+                'pINDeliveryCountry' => $this->getPINDeliveryCountry(),
+                'pINDeliveryCountryId' => $this->getPINDeliveryCountryId(),
+                'pINPhoneNumber' => $this->getPINPhoneNumber(),
+                'pINEmailAddress' => $this->getPINEmailAddress(),
+                'saveForPINReminder' => $this->saveForPINReminder,
+                'saveForCardReissue' => $this->saveForCardReissue,
+                'expiryDate' => $this->getExpiryDate()
+            ]
+        );
     }
 
     /**

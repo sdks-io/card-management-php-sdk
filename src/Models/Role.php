@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class Role implements \JsonSerializable
@@ -166,6 +167,26 @@ class Role implements \JsonSerializable
     public function setIsUserAdmin(?bool $isUserAdmin): void
     {
         $this->isUserAdmin = $isUserAdmin;
+    }
+
+    /**
+     * Converts the Role object to a human-readable string representation.
+     *
+     * @return string The string representation of the Role object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'Role',
+            [
+                'roleName' => $this->roleName,
+                'isCustomerAdmin' => $this->isCustomerAdmin,
+                'isCustomerUser' => $this->isCustomerUser,
+                'isShellAdmin' => $this->isShellAdmin,
+                'isServiceAccount' => $this->isServiceAccount,
+                'isUserAdmin' => $this->isUserAdmin
+            ]
+        );
     }
 
     /**

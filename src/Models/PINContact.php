@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PINContact implements \JsonSerializable
@@ -615,6 +616,34 @@ class PINContact implements \JsonSerializable
     public function setSaveForPINReminder(?bool $saveForPINReminder): void
     {
         $this->saveForPINReminder = $saveForPINReminder;
+    }
+
+    /**
+     * Converts the PINContact object to a human-readable string representation.
+     *
+     * @return string The string representation of the PINContact object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PINContact',
+            [
+                'deliveryContactTitle' => $this->getDeliveryContactTitle(),
+                'deliveryContactName' => $this->getDeliveryContactName(),
+                'deliveryCompanyName' => $this->getDeliveryCompanyName(),
+                'deliveryAddressLine1' => $this->getDeliveryAddressLine1(),
+                'deliveryAddressLine2' => $this->getDeliveryAddressLine2(),
+                'deliveryAddressLine3' => $this->getDeliveryAddressLine3(),
+                'deliveryZipCode' => $this->getDeliveryZipCode(),
+                'deliveryCity' => $this->getDeliveryCity(),
+                'deliveryRegionId' => $this->getDeliveryRegionId(),
+                'deliveryRegion' => $this->getDeliveryRegion(),
+                'deliveryCountry' => $this->getDeliveryCountry(),
+                'phoneNumber' => $this->getPhoneNumber(),
+                'emailAddress' => $this->getEmailAddress(),
+                'saveForPINReminder' => $this->saveForPINReminder
+            ]
+        );
     }
 
     /**

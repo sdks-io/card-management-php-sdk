@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CreateCardGroupRequestCardsItems implements \JsonSerializable
@@ -120,6 +121,24 @@ class CreateCardGroupRequestCardsItems implements \JsonSerializable
     public function setPAN(?string $pAN): void
     {
         $this->pAN = $pAN;
+    }
+
+    /**
+     * Converts the CreateCardGroupRequestCardsItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the CreateCardGroupRequestCardsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CreateCardGroupRequestCardsItems',
+            [
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'cardId' => $this->cardId,
+                'pAN' => $this->pAN
+            ]
+        );
     }
 
     /**

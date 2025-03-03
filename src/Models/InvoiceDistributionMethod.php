@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class InvoiceDistributionMethod implements \JsonSerializable
@@ -190,6 +191,24 @@ class InvoiceDistributionMethod implements \JsonSerializable
     public function unsetOutputType(): void
     {
         $this->outputType = [];
+    }
+
+    /**
+     * Converts the InvoiceDistributionMethod object to a human-readable string representation.
+     *
+     * @return string The string representation of the InvoiceDistributionMethod object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'InvoiceDistributionMethod',
+            [
+                'isPrimary' => $this->isPrimary,
+                'frequencyType' => $this->getFrequencyType(),
+                'distributionMethod' => $this->getDistributionMethod(),
+                'outputType' => $this->getOutputType()
+            ]
+        );
     }
 
     /**

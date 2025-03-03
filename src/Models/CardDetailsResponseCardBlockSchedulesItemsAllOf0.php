@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardDetailsResponseCardBlockSchedulesItemsAllOf0 implements \JsonSerializable
@@ -62,6 +63,20 @@ class CardDetailsResponseCardBlockSchedulesItemsAllOf0 implements \JsonSerializa
     public function setToDate(?string $toDate): void
     {
         $this->toDate = $toDate;
+    }
+
+    /**
+     * Converts the CardDetailsResponseCardBlockSchedulesItemsAllOf0 object to a human-readable string
+     * representation.
+     *
+     * @return string The string representation of the CardDetailsResponseCardBlockSchedulesItemsAllOf0 object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardDetailsResponseCardBlockSchedulesItemsAllOf0',
+            ['fromDate' => $this->fromDate, 'toDate' => $this->toDate]
+        );
     }
 
     /**

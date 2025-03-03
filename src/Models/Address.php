@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class Address implements \JsonSerializable
@@ -456,6 +457,32 @@ class Address implements \JsonSerializable
     public function unsetFax(): void
     {
         $this->fax = [];
+    }
+
+    /**
+     * Converts the Address object to a human-readable string representation.
+     *
+     * @return string The string representation of the Address object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'Address',
+            [
+                'addressId' => $this->getAddressId(),
+                'addressLine1' => $this->getAddressLine1(),
+                'addressLine2' => $this->getAddressLine2(),
+                'addressLine3' => $this->getAddressLine3(),
+                'zipCode' => $this->getZipCode(),
+                'city' => $this->getCity(),
+                'regionId' => $this->getRegionId(),
+                'countryISOCode' => $this->getCountryISOCode(),
+                'country' => $this->getCountry(),
+                'telephone' => $this->getTelephone(),
+                'emailAddress' => $this->getEmailAddress(),
+                'fax' => $this->getFax()
+            ]
+        );
     }
 
     /**

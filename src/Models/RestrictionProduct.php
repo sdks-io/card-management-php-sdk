@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class RestrictionProduct implements \JsonSerializable
@@ -66,6 +67,19 @@ class RestrictionProduct implements \JsonSerializable
     public function setDescription(?string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * Converts the RestrictionProduct object to a human-readable string representation.
+     *
+     * @return string The string representation of the RestrictionProduct object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'RestrictionProduct',
+            ['globalProductCode' => $this->globalProductCode, 'description' => $this->description]
+        );
     }
 
     /**

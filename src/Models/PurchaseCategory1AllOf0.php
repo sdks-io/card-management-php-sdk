@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PurchaseCategory1AllOf0 implements \JsonSerializable
@@ -285,6 +286,27 @@ class PurchaseCategory1AllOf0 implements \JsonSerializable
     public function setDescription(?string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * Converts the PurchaseCategory1AllOf0 object to a human-readable string representation.
+     *
+     * @return string The string representation of the PurchaseCategory1AllOf0 object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PurchaseCategory1AllOf0',
+            [
+                'id' => $this->id,
+                'code' => $this->code,
+                'name' => $this->name,
+                'isVisible' => $this->isVisible,
+                'productGroups' => $this->productGroups,
+                'title' => $this->title,
+                'description' => $this->description
+            ]
+        );
     }
 
     /**

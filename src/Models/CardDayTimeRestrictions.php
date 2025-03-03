@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardDayTimeRestrictions implements \JsonSerializable
@@ -388,6 +389,30 @@ class CardDayTimeRestrictions implements \JsonSerializable
     public function unsetTimeTo(): void
     {
         $this->timeTo = [];
+    }
+
+    /**
+     * Converts the CardDayTimeRestrictions object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardDayTimeRestrictions object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardDayTimeRestrictions',
+            [
+                'level' => $this->getLevel(),
+                'monday' => $this->monday,
+                'tuesday' => $this->tuesday,
+                'wednesday' => $this->wednesday,
+                'thursday' => $this->thursday,
+                'friday' => $this->friday,
+                'saturday' => $this->saturday,
+                'sunday' => $this->sunday,
+                'timeFrom' => $this->getTimeFrom(),
+                'timeTo' => $this->getTimeTo()
+            ]
+        );
     }
 
     /**

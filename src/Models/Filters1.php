@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class Filters1 implements \JsonSerializable
@@ -1482,6 +1483,55 @@ class Filters1 implements \JsonSerializable
     public function setRequestId(?string $requestId): void
     {
         $this->requestId = $requestId;
+    }
+
+    /**
+     * Converts the Filters1 object to a human-readable string representation.
+     *
+     * @return string The string representation of the Filters1 object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'Filters1',
+            [
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'colCoCode' => $this->getColCoCode(),
+                'colCoCountryCode' => $this->getColCoCountryCode(),
+                'colCoId' => $this->getColCoId(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'cardGroupId' => $this->getCardGroupId(),
+                'cardGroupName' => $this->getCardGroupName(),
+                'cardStatus' => $this->cardStatus,
+                'expiringInDays' => $this->getExpiringInDays(),
+                'issuedAfter' => $this->getIssuedAfter(),
+                'pANEndsWith' => $this->getPANEndsWith(),
+                'driverName' => $this->driverName,
+                'vehicleRegistrationNumber' => $this->vehicleRegistrationNumber,
+                'includeCards' => $this->includeCards,
+                'excludeCards' => $this->excludeCards,
+                'excludeBundleId' => $this->getExcludeBundleId(),
+                'cardSegment' => $this->getCardSegment(),
+                'purchaseCategoryCode' => $this->getPurchaseCategoryCode(),
+                'cardTypeCode' => $this->getCardTypeCode(),
+                'excludePendingRenewalCards' => $this->excludePendingRenewalCards,
+                'excludeCancelledCards' => $this->excludeCancelledCards,
+                'excludeReplacedCards' => $this->excludeReplacedCards,
+                'excludeFraudCards' => $this->excludeFraudCards,
+                'excludeCardGroupId' => $this->getExcludeCardGroupId(),
+                'excludeCardGroupName' => $this->getExcludeCardGroupName(),
+                'creationDate' => $this->getCreationDate(),
+                'effectiveDate' => $this->getEffectiveDate(),
+                'network' => $this->getNetwork(),
+                'coverage' => $this->getCoverage(),
+                'expiryMonth' => $this->getExpiryMonth(),
+                'excludeOldCards' => $this->excludeOldCards,
+                'reissueSetting' => $this->getReissueSetting(),
+                'requestId' => $this->requestId
+            ]
+        );
     }
 
     /**

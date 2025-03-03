@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class DeliveryAddressUpdateRequest implements \JsonSerializable
@@ -209,6 +210,27 @@ class DeliveryAddressUpdateRequest implements \JsonSerializable
     public function setDeliveryAddressUpdates(?array $deliveryAddressUpdates): void
     {
         $this->deliveryAddressUpdates = $deliveryAddressUpdates;
+    }
+
+    /**
+     * Converts the DeliveryAddressUpdateRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the DeliveryAddressUpdateRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'DeliveryAddressUpdateRequest',
+            [
+                'colCoId' => $this->colCoId,
+                'colCoCode' => $this->colCoCode,
+                'payerId' => $this->payerId,
+                'payerNumber' => $this->payerNumber,
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'deliveryAddressUpdates' => $this->deliveryAddressUpdates
+            ]
+        );
     }
 
     /**

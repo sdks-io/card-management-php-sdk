@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -527,6 +528,34 @@ class CardDeliveryContact implements \JsonSerializable
     public function setSaveForCardReissue(?bool $saveForCardReissue): void
     {
         $this->saveForCardReissue = $saveForCardReissue;
+    }
+
+    /**
+     * Converts the CardDeliveryContact object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardDeliveryContact object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardDeliveryContact',
+            [
+                'deliveryContactTitle' => $this->getDeliveryContactTitle(),
+                'deliveryContactName' => $this->deliveryContactName,
+                'deliveryCompanyName' => $this->deliveryCompanyName,
+                'deliveryAddressLine1' => $this->deliveryAddressLine1,
+                'deliveryAddressLine2' => $this->getDeliveryAddressLine2(),
+                'deliveryAddressLine3' => $this->getDeliveryAddressLine3(),
+                'deliveryZipCode' => $this->deliveryZipCode,
+                'deliveryCity' => $this->deliveryCity,
+                'deliveryRegionId' => $this->getDeliveryRegionId(),
+                'deliveryRegion' => $this->getDeliveryRegion(),
+                'deliveryCountry' => $this->deliveryCountry,
+                'phoneNumber' => $this->getPhoneNumber(),
+                'emailAddress' => $this->getEmailAddress(),
+                'saveForCardReissue' => $this->saveForCardReissue
+            ]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -95,6 +96,19 @@ class CardBlockSchedule implements \JsonSerializable
     public function unsetToDate(): void
     {
         $this->toDate = [];
+    }
+
+    /**
+     * Converts the CardBlockSchedule object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardBlockSchedule object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardBlockSchedule',
+            ['fromDate' => $this->getFromDate(), 'toDate' => $this->getToDate()]
+        );
     }
 
     /**

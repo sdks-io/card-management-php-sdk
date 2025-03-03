@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -38,6 +39,16 @@ class DefaultError implements \JsonSerializable
     public function setFault(?Fault $fault): void
     {
         $this->fault = $fault;
+    }
+
+    /**
+     * Converts the DefaultError object to a human-readable string representation.
+     *
+     * @return string The string representation of the DefaultError object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('DefaultError', ['fault' => $this->fault]);
     }
 
     /**

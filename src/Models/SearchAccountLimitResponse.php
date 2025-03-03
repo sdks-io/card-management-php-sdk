@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class SearchAccountLimitResponse implements \JsonSerializable
@@ -205,6 +206,27 @@ class SearchAccountLimitResponse implements \JsonSerializable
     public function setError(?ErrorStatus $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the SearchAccountLimitResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the SearchAccountLimitResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SearchAccountLimitResponse',
+            [
+                'requestId' => $this->getRequestId(),
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'referenceProduct' => $this->referenceProduct,
+                'restrictionCondition' => $this->restrictionCondition,
+                'velocityLimits' => $this->velocityLimits,
+                'error' => $this->error
+            ]
+        );
     }
 
     /**

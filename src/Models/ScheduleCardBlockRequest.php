@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class ScheduleCardBlockRequest implements \JsonSerializable
@@ -72,6 +73,22 @@ class ScheduleCardBlockRequest implements \JsonSerializable
     public function setScheduleCardBlockCards(?array $scheduleCardBlockCards): void
     {
         $this->scheduleCardBlockCards = $scheduleCardBlockCards;
+    }
+
+    /**
+     * Converts the ScheduleCardBlockRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the ScheduleCardBlockRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'ScheduleCardBlockRequest',
+            [
+                'isTimeSupported' => $this->isTimeSupported,
+                'scheduleCardBlockCards' => $this->scheduleCardBlockCards
+            ]
+        );
     }
 
     /**

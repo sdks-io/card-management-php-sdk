@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CreateBundleRequest implements \JsonSerializable
@@ -426,6 +427,30 @@ class CreateBundleRequest implements \JsonSerializable
     public function setRestrictions(?array $restrictions): void
     {
         $this->restrictions = $restrictions;
+    }
+
+    /**
+     * Converts the CreateBundleRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CreateBundleRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CreateBundleRequest',
+            [
+                'colCoId' => $this->getColCoId(),
+                'colCoCode' => $this->getColCoCode(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->payerNumber,
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'externalBundleId' => $this->getExternalBundleId(),
+                'description' => $this->description,
+                'cards' => $this->cards,
+                'restrictions' => $this->restrictions
+            ]
+        );
     }
 
     /**

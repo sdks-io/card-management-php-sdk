@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
@@ -155,6 +156,26 @@ class UpdateMPayRegStatusRequestMPayRequestsItems implements \JsonSerializable
     public function setReason(?string $reason): void
     {
         $this->reason = $reason;
+    }
+
+    /**
+     * Converts the UpdateMPayRegStatusRequestMPayRequestsItems object to a human-readable string
+     * representation.
+     *
+     * @return string The string representation of the UpdateMPayRegStatusRequestMPayRequestsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'UpdateMPayRegStatusRequestMPayRequestsItems',
+            [
+                'globalRequestID' => $this->globalRequestID,
+                'status' => $this->status,
+                'approverUserID' => $this->approverUserID,
+                'approverUserDisplayName' => $this->approverUserDisplayName,
+                'reason' => $this->reason
+            ]
+        );
     }
 
     /**

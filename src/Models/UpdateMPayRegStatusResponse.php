@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class UpdateMPayRegStatusResponse implements \JsonSerializable
@@ -62,6 +63,19 @@ class UpdateMPayRegStatusResponse implements \JsonSerializable
     public function setStatus(?string $status): void
     {
         $this->status = $status;
+    }
+
+    /**
+     * Converts the UpdateMPayRegStatusResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the UpdateMPayRegStatusResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'UpdateMPayRegStatusResponse',
+            ['requestId' => $this->requestId, 'status' => $this->status]
+        );
     }
 
     /**

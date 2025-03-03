@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class SearchCardRestrictionReq implements \JsonSerializable
@@ -442,6 +443,30 @@ class SearchCardRestrictionReq implements \JsonSerializable
     public function unsetIncludeInheritedLimits(): void
     {
         $this->includeInheritedLimits = [];
+    }
+
+    /**
+     * Converts the SearchCardRestrictionReq object to a human-readable string representation.
+     *
+     * @return string The string representation of the SearchCardRestrictionReq object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SearchCardRestrictionReq',
+            [
+                'colCoId' => $this->getColCoId(),
+                'colCoCode' => $this->getColCoCode(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->payerNumber,
+                'accounts' => $this->accounts,
+                'bundleId' => $this->getBundleId(),
+                'cards' => $this->cards,
+                'includeLocationRestrictions' => $this->getIncludeLocationRestrictions(),
+                'includeBundleDetails' => $this->getIncludeBundleDetails(),
+                'includeInheritedLimits' => $this->getIncludeInheritedLimits()
+            ]
+        );
     }
 
     /**

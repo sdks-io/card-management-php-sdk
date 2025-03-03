@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardTypeResponseError implements \JsonSerializable
@@ -58,6 +59,19 @@ class CardTypeResponseError implements \JsonSerializable
     public function setDescription(?string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * Converts the CardTypeResponseError object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardTypeResponseError object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardTypeResponseError',
+            ['code' => $this->code, 'description' => $this->description]
+        );
     }
 
     /**

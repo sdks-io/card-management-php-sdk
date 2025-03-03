@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CreateCardGroupRequest implements \JsonSerializable
@@ -300,6 +301,29 @@ class CreateCardGroupRequest implements \JsonSerializable
     public function setCards(?array $cards): void
     {
         $this->cards = $cards;
+    }
+
+    /**
+     * Converts the CreateCardGroupRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CreateCardGroupRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CreateCardGroupRequest',
+            [
+                'colCoCode' => $this->colCoCode,
+                'colCoId' => $this->colCoId,
+                'payerNumber' => $this->payerNumber,
+                'payerId' => $this->payerId,
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'printOnCard' => $this->printOnCard,
+                'cardGroupName' => $this->getCardGroupName(),
+                'cards' => $this->cards
+            ]
+        );
     }
 
     /**

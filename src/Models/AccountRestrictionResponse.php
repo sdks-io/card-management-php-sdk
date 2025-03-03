@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class AccountRestrictionResponse implements \JsonSerializable
@@ -180,6 +181,26 @@ class AccountRestrictionResponse implements \JsonSerializable
     public function setError(?ErrorStatus $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the AccountRestrictionResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the AccountRestrictionResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'AccountRestrictionResponse',
+            [
+                'requestId' => $this->getRequestId(),
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'usageRestrictionStatus' => $this->usageRestrictionStatus,
+                'usageRestrictionDescription' => $this->usageRestrictionDescription,
+                'error' => $this->error
+            ]
+        );
     }
 
     /**

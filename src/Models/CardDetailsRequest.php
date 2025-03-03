@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardDetailsRequest implements \JsonSerializable
@@ -673,6 +674,37 @@ class CardDetailsRequest implements \JsonSerializable
     public function setIncludeScheduledCardBlocks(?bool $includeScheduledCardBlocks): void
     {
         $this->includeScheduledCardBlocks = $includeScheduledCardBlocks;
+    }
+
+    /**
+     * Converts the CardDetailsRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardDetailsRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardDetailsRequest',
+            [
+                'colCoCode' => $this->colCoCode,
+                'colCoId' => $this->getColCoId(),
+                'colCoCountryCode' => $this->getColCoCountryCode(),
+                'clientReferenceId' => $this->getClientReferenceId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'payerId' => $this->getPayerId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'accountId' => $this->getAccountId(),
+                'pAN' => $this->getPAN(),
+                'cardId' => $this->getCardId(),
+                'tokenTypeID' => $this->getTokenTypeID(),
+                'tokenTypeName' => $this->getTokenTypeName(),
+                'creationDate' => $this->getCreationDate(),
+                'effectiveDate' => $this->getEffectiveDate(),
+                'includeBundleDetails' => $this->includeBundleDetails,
+                'includeIntermediateStatus' => $this->includeIntermediateStatus,
+                'includeScheduledCardBlocks' => $this->includeScheduledCardBlocks
+            ]
+        );
     }
 
     /**

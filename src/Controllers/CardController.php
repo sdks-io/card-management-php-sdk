@@ -98,7 +98,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function searchcard(string $requestId, ?SearchCardRequest $body = null): CardSearchResponse
+    public function searchCard(string $requestId, ?SearchCardRequest $body = null): CardSearchResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/search')
             ->auth('BearerToken')
@@ -184,7 +184,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardsummary(string $requestId, ?CardSummaryRequest $body = null): CardSummaryResponse
+    public function cardSummary(string $requestId, ?CardSummaryRequest $body = null): CardSummaryResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/summary')
             ->auth('BearerToken')
@@ -297,7 +297,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardordercard(string $requestId, ?CardManagementV1OrdercardRequest $body = null): OrderCardResponse
+    public function orderCard(string $requestId, ?CardManagementV1OrdercardRequest $body = null): OrderCardResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/ordercard')
             ->auth('BearerToken')
@@ -365,7 +365,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardordercardenquiry(
+    public function orderCardEnquiry(
         string $requestId,
         ?OrderCardEnquiryRequest $body = null
     ): OrderCardEnquiryResponse {
@@ -486,7 +486,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardcancel(string $requestId, ?CardManagementV1CancelRequest $body = null): CancelCardResponse
+    public function cardCancel(string $requestId, ?CardManagementV1CancelRequest $body = null): CancelCardResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/cancel')
             ->auth('BearerToken')
@@ -639,7 +639,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardupdatestatus(
+    public function cardUpdateStatus(
         string $requestId,
         ?CardManagementV1UpdatestatusRequest $body = null
     ): UpdateCardStatusResponse {
@@ -770,7 +770,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function carddetails(
+    public function cardDetails(
         string $apikey,
         string $requestId,
         ?CardDetailsRequest $body = null
@@ -972,7 +972,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardpinreminder(
+    public function cardPinReminder(
         string $requestId,
         ?CardManagementV1PinreminderRequest $body = null
     ): PINReminderResponse {
@@ -1183,7 +1183,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function autorenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoRenewCardResponse
+    public function autoRenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoRenewCardResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/card-management/v1/autorenew')
             ->auth('BearerToken')
@@ -1241,7 +1241,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function updatemobilepaymentregistrationstatus(
+    public function updateMobilePaymentRegistrationStatus(
         string $requestId,
         ?UpdateMPayRegStatusRequest $body = null
     ): UpdateMPayRegStatusResponse {
@@ -1302,7 +1302,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function getkey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
+    public function getKey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::GET, '/pin-management/v1/generatepinkeys')
             ->auth('BearerToken')
@@ -1356,7 +1356,7 @@ class CardController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function deliveryaddressupdate(
+    public function deliveryAddressUpdate(
         string $apikey,
         ?DeliveryAddressUpdateRequest $body = null
     ): DeliveryAddressUpdateResponse {

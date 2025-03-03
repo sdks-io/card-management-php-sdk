@@ -523,7 +523,7 @@ class RestrictionController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function summaryofbundles(
+    public function summaryOfBundles(
         string $apikey,
         string $requestId,
         ?SummaryofbundlerRequest $body = null
@@ -732,7 +732,7 @@ class RestrictionController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function bundledetails(
+    public function bundleDetails(
         string $apikey,
         string $requestId,
         ?BudleDetailsRequest $body = null

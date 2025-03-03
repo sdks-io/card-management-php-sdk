@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CustomerDetailResponse implements \JsonSerializable
@@ -1066,6 +1067,49 @@ class CustomerDetailResponse implements \JsonSerializable
     public function setPINChangeAllowedFromFleetPIN(?bool $pINChangeAllowedFromFleetPIN): void
     {
         $this->pINChangeAllowedFromFleetPIN = $pINChangeAllowedFromFleetPIN;
+    }
+
+    /**
+     * Converts the CustomerDetailResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the CustomerDetailResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CustomerDetailResponse',
+            [
+                'accountId' => $this->getAccountId(),
+                'accountName' => $this->getAccountName(),
+                'accountNumber' => $this->getAccountNumber(),
+                'accountShortName' => $this->getAccountShortName(),
+                'accountTradingName' => $this->getAccountTradingName(),
+                'allowFleetIdInput' => $this->allowFleetIdInput,
+                'band' => $this->getBand(),
+                'billingAddress' => $this->billingAddress,
+                'cardGroupPosition' => $this->getCardGroupPosition(),
+                'correspondenceAddress' => $this->correspondenceAddress,
+                'deliveryAddresses' => $this->deliveryAddresses,
+                'fleetPin' => $this->fleetPin,
+                'fullName' => $this->getFullName(),
+                'invoiceCustomerId' => $this->getInvoiceCustomerId(),
+                'invoiceCustomerShortName' => $this->getInvoiceCustomerShortName(),
+                'isInvoicePoint' => $this->getIsInvoicePoint(),
+                'marketingSegmentation' => $this->getMarketingSegmentation(),
+                'vATNumber' => $this->getVATNumber(),
+                'payerId' => $this->getPayerId(),
+                'payerName' => $this->getPayerName(),
+                'payerNumber' => $this->getPayerNumber(),
+                'selfSelectedPin' => $this->getSelfSelectedPin(),
+                'status' => $this->getStatus(),
+                'defaultPINAdviceType' => $this->getDefaultPINAdviceType(),
+                'pINAdviceTypes' => $this->pINAdviceTypes,
+                'error' => $this->error,
+                'requestId' => $this->getRequestId(),
+                'pINChangeAllowedByCardholder' => $this->pINChangeAllowedByCardholder,
+                'pINChangeAllowedFromFleetPIN' => $this->pINChangeAllowedFromFleetPIN
+            ]
+        );
     }
 
     /**

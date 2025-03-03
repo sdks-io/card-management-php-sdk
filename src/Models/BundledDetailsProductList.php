@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class BundledDetailsProductList implements \JsonSerializable
@@ -221,6 +222,27 @@ class BundledDetailsProductList implements \JsonSerializable
     public function setNonFuelSets(?string $nonFuelSets): void
     {
         $this->nonFuelSets = $nonFuelSets;
+    }
+
+    /**
+     * Converts the BundledDetailsProductList object to a human-readable string representation.
+     *
+     * @return string The string representation of the BundledDetailsProductList object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'BundledDetailsProductList',
+            [
+                'purchaseCategoryId' => $this->purchaseCategoryId,
+                'purchaseCategoryCode' => $this->purchaseCategoryCode,
+                'products' => $this->products,
+                'productGroups' => $this->productGroups,
+                'fuelSetId' => $this->fuelSetId,
+                'fuelSetName' => $this->fuelSetName,
+                'nonFuelSets' => $this->nonFuelSets
+            ]
+        );
     }
 
     /**

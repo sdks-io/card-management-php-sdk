@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Exceptions;
 
+use ShellCardManagementAPIsLib\ApiHelper;
+
 class FleetmanagementV2RestrictionSearchcard401ErrorException extends ApiException
 {
     /**
@@ -33,5 +35,20 @@ class FleetmanagementV2RestrictionSearchcard401ErrorException extends ApiExcepti
     public function setFault(?\ShellCardManagementAPIsLib\Models\Fault $fault): void
     {
         $this->fault = $fault;
+    }
+
+    /**
+     * Converts the FleetmanagementV2RestrictionSearchcard401ErrorException object to a human-readable
+     * string representation.
+     *
+     * @return string The string representation of the FleetmanagementV2RestrictionSearchcard401ErrorException object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'FleetmanagementV2RestrictionSearchcard401ErrorException',
+            ['fault' => $this->fault],
+            parent::__toString()
+        );
     }
 }

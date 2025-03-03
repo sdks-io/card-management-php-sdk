@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PayerRequest implements \JsonSerializable
@@ -210,6 +211,26 @@ class PayerRequest implements \JsonSerializable
     public function setPageSize(?int $pageSize): void
     {
         $this->pageSize = $pageSize;
+    }
+
+    /**
+     * Converts the PayerRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the PayerRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PayerRequest',
+            [
+                'payers' => $this->payers,
+                'returnBasicDetailsOnly' => $this->returnBasicDetailsOnly,
+                'includeAddresses' => $this->includeAddresses,
+                'includeBonusParameters' => $this->includeBonusParameters,
+                'currentPage' => $this->currentPage,
+                'pageSize' => $this->pageSize
+            ]
+        );
     }
 
     /**

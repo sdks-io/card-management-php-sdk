@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class SearchAccountLimitRequest implements \JsonSerializable
@@ -297,6 +298,26 @@ class SearchAccountLimitRequest implements \JsonSerializable
     public function unsetAccountNumber(): void
     {
         $this->accountNumber = [];
+    }
+
+    /**
+     * Converts the SearchAccountLimitRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the SearchAccountLimitRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SearchAccountLimitRequest',
+            [
+                'colCoId' => $this->getColCoId(),
+                'colCoCode' => $this->getColCoCode(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber()
+            ]
+        );
     }
 
     /**

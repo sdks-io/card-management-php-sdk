@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class BankAccount implements \JsonSerializable
@@ -508,6 +509,33 @@ class BankAccount implements \JsonSerializable
     public function unsetBankType(): void
     {
         $this->bankType = [];
+    }
+
+    /**
+     * Converts the BankAccount object to a human-readable string representation.
+     *
+     * @return string The string representation of the BankAccount object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'BankAccount',
+            [
+                'accountNumber' => $this->getAccountNumber(),
+                'bankName' => $this->getBankName(),
+                'accountName' => $this->getAccountName(),
+                'dateEffective' => $this->getDateEffective(),
+                'dateTerminated' => $this->getDateTerminated(),
+                'iBAN' => $this->getIBAN(),
+                'currencyCode' => $this->getCurrencyCode(),
+                'currencySymbol' => $this->getCurrencySymbol(),
+                'countryISOCode' => $this->getCountryISOCode(),
+                'country' => $this->getCountry(),
+                'sortCode' => $this->getSortCode(),
+                'swiftCode' => $this->getSwiftCode(),
+                'bankType' => $this->getBankType()
+            ]
+        );
     }
 
     /**

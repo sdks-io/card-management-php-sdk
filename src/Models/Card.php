@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class Card implements \JsonSerializable
@@ -1973,6 +1974,73 @@ class Card implements \JsonSerializable
     public function unsetCardMediaCode(): void
     {
         $this->cardMediaCode = [];
+    }
+
+    /**
+     * Converts the Card object to a human-readable string representation.
+     *
+     * @return string The string representation of the Card object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'Card',
+            [
+                'accountId' => $this->getAccountId(),
+                'accountName' => $this->getAccountName(),
+                'accountNumber' => $this->getAccountNumber(),
+                'accountShortName' => $this->getAccountShortName(),
+                'bundleId' => $this->getBundleId(),
+                'cardBlockSchedules' => $this->cardBlockSchedules,
+                'cardGroupId' => $this->getCardGroupId(),
+                'cardGroupName' => $this->getCardGroupName(),
+                'cardId' => $this->getCardId(),
+                'cardTypeCode' => $this->getCardTypeCode(),
+                'cardTypeId' => $this->getCardTypeId(),
+                'cardTypeName' => $this->getCardTypeName(),
+                'colCoCountryCode' => $this->getColCoCountryCode(),
+                'creationDate' => $this->getCreationDate(),
+                'driverName' => $this->getDriverName(),
+                'effectiveDate' => $this->getEffectiveDate(),
+                'expiryDate' => $this->getExpiryDate(),
+                'fleetIdInput' => $this->fleetIdInput,
+                'isCRT' => $this->isCRT,
+                'isFleet' => $this->isFleet,
+                'isInternational' => $this->isInternational,
+                'isNational' => $this->isNational,
+                'isPartnerSitesIncluded' => $this->isPartnerSitesIncluded,
+                'isShellSitesOnly' => $this->isShellSitesOnly,
+                'issueDate' => $this->getIssueDate(),
+                'isSuperseded' => $this->isSuperseded,
+                'isVirtualCard' => $this->isVirtualCard,
+                'lastModifiedDate' => $this->getLastModifiedDate(),
+                'lastUsedDate' => $this->getLastUsedDate(),
+                'localCurrencyCode' => $this->getLocalCurrencyCode(),
+                'localCurrencySymbol' => $this->getLocalCurrencySymbol(),
+                'odometerInput' => $this->odometerInput,
+                'pAN' => $this->getPAN(),
+                'maskedPAN' => $this->maskedPAN,
+                'pANID' => $this->pANID,
+                'purchaseCategoryCode' => $this->getPurchaseCategoryCode(),
+                'purchaseCategoryId' => $this->getPurchaseCategoryId(),
+                'purchaseCategoryName' => $this->getPurchaseCategoryName(),
+                'reason' => $this->getReason(),
+                'reissueSetting' => $this->getReissueSetting(),
+                'statusDescription' => $this->getStatusDescription(),
+                'statusId' => $this->getStatusId(),
+                'tokenTypeID' => $this->getTokenTypeID(),
+                'tokenTypeName' => $this->tokenTypeName,
+                'vRN' => $this->getVRN(),
+                'clientReferenceId' => $this->getClientReferenceId(),
+                'isEMVContact' => $this->isEMVContact,
+                'isEMVContactless' => $this->isEMVContactless,
+                'isRFID' => $this->isRFID,
+                'rFIDUID' => $this->getRFIDUID(),
+                'eMAID' => $this->getEMAID(),
+                'eVPrintedNumber' => $this->getEVPrintedNumber(),
+                'cardMediaCode' => $this->getCardMediaCode()
+            ]
+        );
     }
 
     /**

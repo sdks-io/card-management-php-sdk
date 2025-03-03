@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class AccountRequest implements \JsonSerializable
@@ -656,6 +657,35 @@ class AccountRequest implements \JsonSerializable
     public function setStatusList(?array $statusList): void
     {
         $this->statusList = $statusList;
+    }
+
+    /**
+     * Converts the AccountRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the AccountRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'AccountRequest',
+            [
+                'status' => $this->getStatus(),
+                'includeCardSummary' => $this->includeCardSummary,
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'pageSize' => $this->getPageSize(),
+                'requestId' => $this->getRequestId(),
+                'colCoCode' => $this->getColCoCode(),
+                'colCoCountryCode' => $this->getColCoCountryCode(),
+                'currentPage' => $this->getCurrentPage(),
+                'invoicePointsOnly' => $this->getInvoicePointsOnly(),
+                'colCoId' => $this->getColCoId(),
+                'returnTollsCustomerId' => $this->returnTollsCustomerId,
+                'accounts' => $this->accounts,
+                'accountName' => $this->getAccountName(),
+                'statusList' => $this->statusList
+            ]
+        );
     }
 
     /**

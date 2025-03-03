@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class OrderCardEnquiryRequest implements \JsonSerializable
@@ -35,6 +36,16 @@ class OrderCardEnquiryRequest implements \JsonSerializable
     public function setFilters(?Filters2 $filters): void
     {
         $this->filters = $filters;
+    }
+
+    /**
+     * Converts the OrderCardEnquiryRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the OrderCardEnquiryRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('OrderCardEnquiryRequest', ['filters' => $this->filters]);
     }
 
     /**

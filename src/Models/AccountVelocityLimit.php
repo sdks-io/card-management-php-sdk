@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class AccountVelocityLimit implements \JsonSerializable
@@ -248,6 +249,28 @@ class AccountVelocityLimit implements \JsonSerializable
     public function setThreshold(?float $threshold): void
     {
         $this->threshold = $threshold;
+    }
+
+    /**
+     * Converts the AccountVelocityLimit object to a human-readable string representation.
+     *
+     * @return string The string representation of the AccountVelocityLimit object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'AccountVelocityLimit',
+            [
+                'type' => $this->type,
+                'period' => $this->period,
+                'limit' => $this->limit,
+                'accumulation' => $this->accumulation,
+                'balance' => $this->balance,
+                'override' => $this->override,
+                'productGroup' => $this->productGroup,
+                'threshold' => $this->threshold
+            ]
+        );
     }
 
     /**

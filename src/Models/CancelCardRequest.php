@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -228,6 +229,19 @@ class CancelCardRequest implements \JsonSerializable
     public function unsetReasonText(): void
     {
         $this->reasonText = [];
+    }
+
+    /**
+     * Converts the CancelCardRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CancelCardRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CancelCardRequest',
+            ['cards' => $this->cards, 'reasonId' => $this->getReasonId(), 'reasonText' => $this->getReasonText()]
+        );
     }
 
     /**

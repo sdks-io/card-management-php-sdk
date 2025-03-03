@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PINAdviceTypes implements \JsonSerializable
@@ -114,6 +115,23 @@ class PINAdviceTypes implements \JsonSerializable
     public function setIsPINReminderOption(?bool $isPINReminderOption): void
     {
         $this->isPINReminderOption = $isPINReminderOption;
+    }
+
+    /**
+     * Converts the PINAdviceTypes object to a human-readable string representation.
+     *
+     * @return string The string representation of the PINAdviceTypes object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PINAdviceTypes',
+            [
+                'pINAdviceTypeID' => $this->getPINAdviceTypeID(),
+                'isCardOrderOption' => $this->isCardOrderOption,
+                'isPINReminderOption' => $this->isPINReminderOption
+            ]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class NetworkRestriction implements \JsonSerializable
@@ -103,6 +104,19 @@ class NetworkRestriction implements \JsonSerializable
     public function setExclusive(?bool $exclusive): void
     {
         $this->exclusive = $exclusive;
+    }
+
+    /**
+     * Converts the NetworkRestriction object to a human-readable string representation.
+     *
+     * @return string The string representation of the NetworkRestriction object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'NetworkRestriction',
+            ['country' => $this->country, 'networks' => $this->networks, 'exclusive' => $this->exclusive]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class SummaryofbundlerRequest implements \JsonSerializable
@@ -342,6 +343,27 @@ class SummaryofbundlerRequest implements \JsonSerializable
     public function setBundleId(?array $bundleId): void
     {
         $this->bundleId = $bundleId;
+    }
+
+    /**
+     * Converts the SummaryofbundlerRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the SummaryofbundlerRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SummaryofbundlerRequest',
+            [
+                'colCoId' => $this->getColCoId(),
+                'colCoCode' => $this->getColCoCode(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'bundleId' => $this->bundleId
+            ]
+        );
     }
 
     /**

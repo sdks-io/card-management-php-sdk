@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class DeleteBundleRequest implements \JsonSerializable
@@ -254,6 +255,27 @@ class DeleteBundleRequest implements \JsonSerializable
     public function setBundleId(string $bundleId): void
     {
         $this->bundleId = $bundleId;
+    }
+
+    /**
+     * Converts the DeleteBundleRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the DeleteBundleRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'DeleteBundleRequest',
+            [
+                'colCoCode' => $this->colCoCode,
+                'colCoId' => $this->colCoId,
+                'payerNumber' => $this->payerNumber,
+                'payerId' => $this->payerId,
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'bundleId' => $this->bundleId
+            ]
+        );
     }
 
     /**

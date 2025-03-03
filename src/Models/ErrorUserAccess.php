@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class ErrorUserAccess implements \JsonSerializable
@@ -35,6 +36,16 @@ class ErrorUserAccess implements \JsonSerializable
     public function setError(?ErrorUserAccessError $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the ErrorUserAccess object to a human-readable string representation.
+     *
+     * @return string The string representation of the ErrorUserAccess object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('ErrorUserAccess', ['error' => $this->error]);
     }
 
     /**

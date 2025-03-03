@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class AutoRenewCardRequest implements \JsonSerializable
@@ -177,6 +178,25 @@ class AutoRenewCardRequest implements \JsonSerializable
     public function setAutoRenewCards(?array $autoRenewCards): void
     {
         $this->autoRenewCards = $autoRenewCards;
+    }
+
+    /**
+     * Converts the AutoRenewCardRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the AutoRenewCardRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'AutoRenewCardRequest',
+            [
+                'colCoId' => $this->colCoId,
+                'colCoCode' => $this->colCoCode,
+                'payerNumber' => $this->payerNumber,
+                'payerId' => $this->payerId,
+                'autoRenewCards' => $this->autoRenewCards
+            ]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class ErrorStatus implements \JsonSerializable
@@ -62,6 +63,16 @@ class ErrorStatus implements \JsonSerializable
     public function setDescription(?string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * Converts the ErrorStatus object to a human-readable string representation.
+     *
+     * @return string The string representation of the ErrorStatus object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('ErrorStatus', ['code' => $this->code, 'description' => $this->description]);
     }
 
     /**

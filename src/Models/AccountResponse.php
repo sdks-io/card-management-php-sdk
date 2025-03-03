@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class AccountResponse implements \JsonSerializable
@@ -164,6 +165,26 @@ class AccountResponse implements \JsonSerializable
     public function setRequestId(?string $requestId): void
     {
         $this->requestId = $requestId;
+    }
+
+    /**
+     * Converts the AccountResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the AccountResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'AccountResponse',
+            [
+                'accounts' => $this->accounts,
+                'currentPage' => $this->currentPage,
+                'rowCount' => $this->rowCount,
+                'totalPages' => $this->totalPages,
+                'error' => $this->error,
+                'requestId' => $this->requestId
+            ]
+        );
     }
 
     /**

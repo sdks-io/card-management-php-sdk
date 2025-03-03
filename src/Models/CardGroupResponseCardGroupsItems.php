@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardGroupResponseCardGroupsItems implements \JsonSerializable
@@ -841,6 +842,42 @@ class CardGroupResponseCardGroupsItems implements \JsonSerializable
     public function unsetTotalCards(): void
     {
         $this->totalCards = [];
+    }
+
+    /**
+     * Converts the CardGroupResponseCardGroupsItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardGroupResponseCardGroupsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardGroupResponseCardGroupsItems',
+            [
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'accountShortName' => $this->getAccountShortName(),
+                'activeCards' => $this->getActiveCards(),
+                'blockedCards' => $this->getBlockedCards(),
+                'cancelledCards' => $this->getCancelledCards(),
+                'cardDeliveryPoint' => $this->getCardDeliveryPoint(),
+                'cardGroupId' => $this->getCardGroupId(),
+                'cardGroupName' => $this->getCardGroupName(),
+                'cardTypeCode' => $this->getCardTypeCode(),
+                'cardTypeId' => $this->getCardTypeId(),
+                'cardTypeName' => $this->getCardTypeName(),
+                'expiredCards' => $this->getExpiredCards(),
+                'expiryDate' => $this->getExpiryDate(),
+                'printOnCard' => $this->getPrintOnCard(),
+                'renewalPendingCards' => $this->getRenewalPendingCards(),
+                'replacedCards' => $this->getReplacedCards(),
+                'status' => $this->getStatus(),
+                'temporaryBlockByCustomer' => $this->getTemporaryBlockByCustomer(),
+                'temporaryBlockByShell' => $this->getTemporaryBlockByShell(),
+                'terminatedDate' => $this->getTerminatedDate(),
+                'totalCards' => $this->getTotalCards()
+            ]
+        );
     }
 
     /**

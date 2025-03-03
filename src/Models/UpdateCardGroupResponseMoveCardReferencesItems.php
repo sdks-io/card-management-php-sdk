@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class UpdateCardGroupResponseMoveCardReferencesItems implements \JsonSerializable
@@ -129,6 +130,20 @@ class UpdateCardGroupResponseMoveCardReferencesItems implements \JsonSerializabl
     public function unsetReference(): void
     {
         $this->reference = [];
+    }
+
+    /**
+     * Converts the UpdateCardGroupResponseMoveCardReferencesItems object to a human-readable string
+     * representation.
+     *
+     * @return string The string representation of the UpdateCardGroupResponseMoveCardReferencesItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'UpdateCardGroupResponseMoveCardReferencesItems',
+            ['cardId' => $this->getCardId(), 'pAN' => $this->getPAN(), 'reference' => $this->getReference()]
+        );
     }
 
     /**

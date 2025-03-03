@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -131,6 +132,19 @@ class SearchCard implements \JsonSerializable
     public function setPANID(?float $pANID): void
     {
         $this->pANID = $pANID;
+    }
+
+    /**
+     * Converts the SearchCard object to a human-readable string representation.
+     *
+     * @return string The string representation of the SearchCard object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SearchCard',
+            ['cardId' => $this->getCardId(), 'pAN' => $this->getPAN(), 'pANID' => $this->pANID]
+        );
     }
 
     /**

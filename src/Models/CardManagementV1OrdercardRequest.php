@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardManagementV1OrdercardRequest implements \JsonSerializable
@@ -41,6 +42,16 @@ class CardManagementV1OrdercardRequest implements \JsonSerializable
     public function setCardDetails(?array $cardDetails): void
     {
         $this->cardDetails = $cardDetails;
+    }
+
+    /**
+     * Converts the CardManagementV1OrdercardRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardManagementV1OrdercardRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('CardManagementV1OrdercardRequest', ['cardDetails' => $this->cardDetails]);
     }
 
     /**

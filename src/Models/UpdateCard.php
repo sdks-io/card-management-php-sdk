@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -649,6 +650,36 @@ class UpdateCard implements \JsonSerializable
     public function unsetPayerNumber(): void
     {
         $this->payerNumber = [];
+    }
+
+    /**
+     * Converts the UpdateCard object to a human-readable string representation.
+     *
+     * @return string The string representation of the UpdateCard object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'UpdateCard',
+            [
+                'caller' => $this->getCaller(),
+                'isReplacementChargeable' => $this->isReplacementChargeable,
+                'notifyCaller' => $this->notifyCaller,
+                'notifyCallerOnSync' => $this->notifyCallerOnSync,
+                'orderCardReplacement' => $this->orderCardReplacement,
+                'cardSettings' => $this->cardSettings,
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'cardExpiryDate' => $this->getCardExpiryDate(),
+                'cardId' => $this->getCardId(),
+                'colCoCode' => $this->getColCoCode(),
+                'colCoId' => $this->getColCoId(),
+                'pAN' => $this->getPAN(),
+                'pANID' => $this->getPANID(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber()
+            ]
+        );
     }
 
     /**

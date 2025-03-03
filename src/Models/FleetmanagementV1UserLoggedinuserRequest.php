@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class FleetmanagementV1UserLoggedinuserRequest implements \JsonSerializable
@@ -202,6 +203,26 @@ class FleetmanagementV1UserLoggedinuserRequest implements \JsonSerializable
     public function unsetPayerNumber(): void
     {
         $this->payerNumber = [];
+    }
+
+    /**
+     * Converts the FleetmanagementV1UserLoggedinuserRequest object to a human-readable string
+     * representation.
+     *
+     * @return string The string representation of the FleetmanagementV1UserLoggedinuserRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'FleetmanagementV1UserLoggedinuserRequest',
+            [
+                'includePayerGroup' => $this->includePayerGroup,
+                'includeEIDDetails' => $this->includeEIDDetails,
+                'requestedAPIName' => $this->getRequestedAPIName(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber()
+            ]
+        );
     }
 
     /**

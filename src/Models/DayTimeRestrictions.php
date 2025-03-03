@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class DayTimeRestrictions implements \JsonSerializable
@@ -269,6 +270,29 @@ class DayTimeRestrictions implements \JsonSerializable
     public function setTimeTo(?string $timeTo): void
     {
         $this->timeTo = $timeTo;
+    }
+
+    /**
+     * Converts the DayTimeRestrictions object to a human-readable string representation.
+     *
+     * @return string The string representation of the DayTimeRestrictions object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'DayTimeRestrictions',
+            [
+                'monday' => $this->monday,
+                'tuesday' => $this->tuesday,
+                'wednesday' => $this->wednesday,
+                'thursday' => $this->thursday,
+                'friday' => $this->friday,
+                'saturday' => $this->saturday,
+                'sunday' => $this->sunday,
+                'timeFrom' => $this->timeFrom,
+                'timeTo' => $this->timeTo
+            ]
+        );
     }
 
     /**

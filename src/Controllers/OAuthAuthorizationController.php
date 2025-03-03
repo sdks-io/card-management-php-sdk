@@ -39,7 +39,7 @@ class OAuthAuthorizationController extends BaseController
         ?string $scope = null,
         ?array $fieldParameters = null
     ): OAuthToken {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/v1/oauth/token')
+        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/v2/oauth/token')
             ->server(Server::OAUTH_SERVER)
             ->parameters(
                 FormParam::init('grant_type', 'client_credentials'),

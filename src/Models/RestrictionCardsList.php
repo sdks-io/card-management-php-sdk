@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class RestrictionCardsList implements \JsonSerializable
@@ -429,6 +430,31 @@ class RestrictionCardsList implements \JsonSerializable
     public function setLocationRestrictions(?LocationRestriction $locationRestrictions): void
     {
         $this->locationRestrictions = $locationRestrictions;
+    }
+
+    /**
+     * Converts the RestrictionCardsList object to a human-readable string representation.
+     *
+     * @return string The string representation of the RestrictionCardsList object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'RestrictionCardsList',
+            [
+                'accountId' => $this->getAccountId(),
+                'cardId' => $this->getCardId(),
+                'pAN' => $this->getPAN(),
+                'resetUsageRestrictions' => $this->resetUsageRestrictions,
+                'resetDayTimeRestrictions' => $this->getResetDayTimeRestrictions(),
+                'resetProductRestrictions' => $this->getResetProductRestrictions(),
+                'resetLocationRestrictions' => $this->getResetLocationRestrictions(),
+                'usageRestrictions' => $this->usageRestrictions,
+                'dayTimeRestrictions' => $this->dayTimeRestrictions,
+                'productRestrictions' => $this->productRestrictions,
+                'locationRestrictions' => $this->locationRestrictions
+            ]
+        );
     }
 
     /**

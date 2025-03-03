@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardSearchResponse implements \JsonSerializable
@@ -213,6 +214,27 @@ class CardSearchResponse implements \JsonSerializable
     public function setTotalRecords(?int $totalRecords): void
     {
         $this->totalRecords = $totalRecords;
+    }
+
+    /**
+     * Converts the CardSearchResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardSearchResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardSearchResponse',
+            [
+                'requestId' => $this->getRequestId(),
+                'status' => $this->getStatus(),
+                'data' => $this->data,
+                'page' => $this->page,
+                'pageSize' => $this->pageSize,
+                'totalPages' => $this->totalPages,
+                'totalRecords' => $this->totalRecords
+            ]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -1502,6 +1503,57 @@ class OrderCardEnquiry implements \JsonSerializable
     public function unsetColCoId(): void
     {
         $this->colCoId = [];
+    }
+
+    /**
+     * Converts the OrderCardEnquiry object to a human-readable string representation.
+     *
+     * @return string The string representation of the OrderCardEnquiry object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'OrderCardEnquiry',
+            [
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'bCOReference' => $this->getBCOReference(),
+                'bCORowNumber' => $this->getBCORowNumber(),
+                'cardGroupId' => $this->getCardGroupId(),
+                'cardGroupName' => $this->getCardGroupName(),
+                'cardId' => $this->getCardId(),
+                'cardPAN' => $this->getCardPAN(),
+                'maskedPAN' => $this->getMaskedPAN(),
+                'pANID' => $this->getPANID(),
+                'cardTypeCode' => $this->getCardTypeCode(),
+                'cardTypeId' => $this->getCardTypeId(),
+                'cardTypeName' => $this->getCardTypeName(),
+                'driverName' => $this->getDriverName(),
+                'errorCode' => $this->getErrorCode(),
+                'errorDescription' => $this->getErrorDescription(),
+                'gatewaySyncErrorCode' => $this->getGatewaySyncErrorCode(),
+                'gatewaySyncErrorDescription' => $this->getGatewaySyncErrorDescription(),
+                'gatewaySyncStatus' => $this->getGatewaySyncStatus(),
+                'mainReference' => $this->mainReference,
+                'orderCardReference' => $this->orderCardReference,
+                'orderStatus' => $this->getOrderStatus(),
+                'payerId' => $this->payerId,
+                'payerNumber' => $this->getPayerNumber(),
+                'processedDate' => $this->getProcessedDate(),
+                'purchaseCategoryCode' => $this->getPurchaseCategoryCode(),
+                'purchaseCategoryId' => $this->getPurchaseCategoryId(),
+                'purchaseCategoryName' => $this->getPurchaseCategoryName(),
+                'submittedDate' => $this->getSubmittedDate(),
+                'syncProcessedDate' => $this->getSyncProcessedDate(),
+                'syncRequestedDate' => $this->getSyncRequestedDate(),
+                'vRN' => $this->getVRN(),
+                'orderRequestId' => $this->getOrderRequestId(),
+                'expiryDate' => $this->getExpiryDate(),
+                'clientReferenceId' => $this->getClientReferenceId(),
+                'statusDescription' => $this->getStatusDescription(),
+                'colCoId' => $this->getColCoId()
+            ]
+        );
     }
 
     /**

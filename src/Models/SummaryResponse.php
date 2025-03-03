@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -462,6 +463,32 @@ class SummaryResponse implements \JsonSerializable
     public function unsetTotalCards(): void
     {
         $this->totalCards = [];
+    }
+
+    /**
+     * Converts the SummaryResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the SummaryResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SummaryResponse',
+            [
+                'activeCards' => $this->getActiveCards(),
+                'blockedCards' => $this->getBlockedCards(),
+                'cancelledCards' => $this->getCancelledCards(),
+                'expiredCards' => $this->getExpiredCards(),
+                'expiringCards' => $this->getExpiringCards(),
+                'fraudCards' => $this->getFraudCards(),
+                'newCards' => $this->getNewCards(),
+                'renewalPendingCards' => $this->getRenewalPendingCards(),
+                'replacedCards' => $this->getReplacedCards(),
+                'temporaryBlockByCustomer' => $this->getTemporaryBlockByCustomer(),
+                'temporaryBlockByShell' => $this->getTemporaryBlockByShell(),
+                'totalCards' => $this->getTotalCards()
+            ]
+        );
     }
 
     /**

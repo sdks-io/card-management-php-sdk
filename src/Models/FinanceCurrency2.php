@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class FinanceCurrency2 implements \JsonSerializable
@@ -172,6 +173,24 @@ class FinanceCurrency2 implements \JsonSerializable
     public function unsetCreditLimitExchangeRate(): void
     {
         $this->creditLimitExchangeRate = [];
+    }
+
+    /**
+     * Converts the FinanceCurrency2 object to a human-readable string representation.
+     *
+     * @return string The string representation of the FinanceCurrency2 object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'FinanceCurrency2',
+            [
+                'currencyCode' => $this->getCurrencyCode(),
+                'currencySymbol' => $this->getCurrencySymbol(),
+                'invoiceExchangeRate' => $this->getInvoiceExchangeRate(),
+                'creditLimitExchangeRate' => $this->getCreditLimitExchangeRate()
+            ]
+        );
     }
 
     /**

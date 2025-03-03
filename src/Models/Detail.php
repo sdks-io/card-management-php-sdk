@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class Detail implements \JsonSerializable
@@ -37,6 +38,16 @@ class Detail implements \JsonSerializable
     public function setErrorcode(?string $errorcode): void
     {
         $this->errorcode = $errorcode;
+    }
+
+    /**
+     * Converts the Detail object to a human-readable string representation.
+     *
+     * @return string The string representation of the Detail object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('Detail', ['errorcode' => $this->errorcode]);
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class BundleCardRestrictionStatus implements \JsonSerializable
@@ -39,6 +40,16 @@ class BundleCardRestrictionStatus implements \JsonSerializable
     public function setPAN(?string $pAN): void
     {
         $this->pAN = $pAN;
+    }
+
+    /**
+     * Converts the BundleCardRestrictionStatus object to a human-readable string representation.
+     *
+     * @return string The string representation of the BundleCardRestrictionStatus object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('BundleCardRestrictionStatus', ['pAN' => $this->pAN]);
     }
 
     /**

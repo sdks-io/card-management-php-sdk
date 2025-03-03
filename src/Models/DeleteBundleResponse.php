@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class DeleteBundleResponse implements \JsonSerializable
@@ -60,6 +61,19 @@ class DeleteBundleResponse implements \JsonSerializable
     public function setError(?ErrorStatus $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the DeleteBundleResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the DeleteBundleResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'DeleteBundleResponse',
+            ['requestId' => $this->requestId, 'error' => $this->error]
+        );
     }
 
     /**

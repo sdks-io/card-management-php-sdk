@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class BundleDetailsResponse implements \JsonSerializable
@@ -349,6 +350,33 @@ class BundleDetailsResponse implements \JsonSerializable
     public function setRequestId(?string $requestId): void
     {
         $this->requestId = $requestId;
+    }
+
+    /**
+     * Converts the BundleDetailsResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the BundleDetailsResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'BundleDetailsResponse',
+            [
+                'payerId' => $this->payerId,
+                'payerNumber' => $this->payerNumber,
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'bundleId' => $this->bundleId,
+                'externalBundleId' => $this->externalBundleId,
+                'description' => $this->description,
+                'pans' => $this->pans,
+                'restrictionCurrencyCode' => $this->restrictionCurrencyCode,
+                'restrictionCurrencySymbol' => $this->restrictionCurrencySymbol,
+                'restrictions' => $this->restrictions,
+                'error' => $this->error,
+                'requestId' => $this->requestId
+            ]
+        );
     }
 
     /**

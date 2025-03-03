@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class BundleRestriction implements \JsonSerializable
@@ -226,6 +227,26 @@ class BundleRestriction implements \JsonSerializable
     public function setLocationRestrictions(?LocationRestriction $locationRestrictions): void
     {
         $this->locationRestrictions = $locationRestrictions;
+    }
+
+    /**
+     * Converts the BundleRestriction object to a human-readable string representation.
+     *
+     * @return string The string representation of the BundleRestriction object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'BundleRestriction',
+            [
+                'dayTimeRestrictionAction' => $this->getDayTimeRestrictionAction(),
+                'locationRestrictionAction' => $this->getLocationRestrictionAction(),
+                'usageRestrictions' => $this->usageRestrictions,
+                'dayTimeRestrictions' => $this->dayTimeRestrictions,
+                'productRestrictions' => $this->productRestrictions,
+                'locationRestrictions' => $this->locationRestrictions
+            ]
+        );
     }
 
     /**

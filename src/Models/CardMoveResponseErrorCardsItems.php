@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardMoveResponseErrorCardsItems implements \JsonSerializable
@@ -216,6 +217,26 @@ class CardMoveResponseErrorCardsItems implements \JsonSerializable
     public function unsetValidationErrorDescription(): void
     {
         $this->validationErrorDescription = [];
+    }
+
+    /**
+     * Converts the CardMoveResponseErrorCardsItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardMoveResponseErrorCardsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardMoveResponseErrorCardsItems',
+            [
+                'accountNumber' => $this->getAccountNumber(),
+                'accountId' => $this->getAccountId(),
+                'pAN' => $this->getPAN(),
+                'cardId' => $this->getCardId(),
+                'validationErrorCode' => $this->getValidationErrorCode(),
+                'validationErrorDescription' => $this->getValidationErrorDescription()
+            ]
+        );
     }
 
     /**

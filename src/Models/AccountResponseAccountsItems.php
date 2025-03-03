@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class AccountResponseAccountsItems implements \JsonSerializable
@@ -2089,6 +2090,74 @@ class AccountResponseAccountsItems implements \JsonSerializable
     public function unsetIsConsortiumMember(): void
     {
         $this->isConsortiumMember = [];
+    }
+
+    /**
+     * Converts the AccountResponseAccountsItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the AccountResponseAccountsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'AccountResponseAccountsItems',
+            [
+                'accountFullName' => $this->getAccountFullName(),
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'accountShortName' => $this->getAccountShortName(),
+                'bestOfIndicator' => $this->bestOfIndicator,
+                'billingFrequencyType' => $this->getBillingFrequencyType(),
+                'billingFrequencyTypeId' => $this->getBillingFrequencyTypeId(),
+                'billingRunFrequency' => $this->getBillingRunFrequency(),
+                'billingRunFrequencyTypeId' => $this->getBillingRunFrequencyTypeId(),
+                'colCoCountryCode' => $this->getColCoCountryCode(),
+                'currencyCode' => $this->getCurrencyCode(),
+                'currencySymbol' => $this->getCurrencySymbol(),
+                'day1Run' => $this->getDay1Run(),
+                'day2Run' => $this->getDay2Run(),
+                'day3Run' => $this->getDay3Run(),
+                'day4Run' => $this->getDay4Run(),
+                'frequencyType' => $this->getFrequencyType(),
+                'grossAmount' => $this->getGrossAmount(),
+                'internationalPOSLanguageCode' => $this->getInternationalPOSLanguageCode(),
+                'internationalPOSLanguageID' => $this->getInternationalPOSLanguageID(),
+                'invoiceAccountID' => $this->getInvoiceAccountID(),
+                'invoiceAccountNumber' => $this->getInvoiceAccountNumber(),
+                'invoiceAccountShortName' => $this->getInvoiceAccountShortName(),
+                'invoiceDistributionMethods' => $this->invoiceDistributionMethods,
+                'isInternational' => $this->getIsInternational(),
+                'isInvoicePoint' => $this->getIsInvoicePoint(),
+                'lastModifiedDate' => $this->getLastModifiedDate(),
+                'localCurrencyCode' => $this->getLocalCurrencyCode(),
+                'localCurrencySymbol' => $this->getLocalCurrencySymbol(),
+                'localPOSLanguageCode' => $this->getLocalPOSLanguageCode(),
+                'localPOSLanguageID' => $this->getLocalPOSLanguageID(),
+                'netAmount' => $this->getNetAmount(),
+                'outstandingBalance' => $this->getOutstandingBalance(),
+                'paidAmount' => $this->getPaidAmount(),
+                'status' => $this->getStatus(),
+                'statusReason' => $this->getStatusReason(),
+                'totalActiveCardGroups' => $this->getTotalActiveCardGroups(),
+                'totalActiveCards' => $this->getTotalActiveCards(),
+                'totalBlockedCards' => $this->getTotalBlockedCards(),
+                'totalCancelledCards' => $this->getTotalCancelledCards(),
+                'totalCards' => $this->getTotalCards(),
+                'totalExpiredCards' => $this->getTotalExpiredCards(),
+                'totalFraudCards' => $this->getTotalFraudCards(),
+                'totalNewCards' => $this->getTotalNewCards(),
+                'totalRenewalPendingCards' => $this->getTotalRenewalPendingCards(),
+                'totalReplacedCards' => $this->getTotalReplacedCards(),
+                'totalTemporaryBlockCardsByCustomer' => $this->getTotalTemporaryBlockCardsByCustomer(),
+                'totalTemporaryBlockCardsByShell' => $this->getTotalTemporaryBlockCardsByShell(),
+                'vATAmount' => $this->getVATAmount(),
+                'isPartnerCard' => $this->getIsPartnerCard(),
+                'tollsCustomerId' => $this->getTollsCustomerId(),
+                'tollsColcoCountryTypeId' => $this->getTollsColcoCountryTypeId(),
+                'contracts' => $this->contracts,
+                'isConsortiumMember' => $this->getIsConsortiumMember()
+            ]
+        );
     }
 
     /**

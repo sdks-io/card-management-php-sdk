@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class DeliveryAddresses implements \JsonSerializable
@@ -727,6 +728,39 @@ class DeliveryAddresses implements \JsonSerializable
     public function unsetAddressType(): void
     {
         $this->addressType = [];
+    }
+
+    /**
+     * Converts the DeliveryAddresses object to a human-readable string representation.
+     *
+     * @return string The string representation of the DeliveryAddresses object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'DeliveryAddresses',
+            [
+                'addressId' => $this->getAddressId(),
+                'addressLine1' => $this->getAddressLine1(),
+                'addressLine2' => $this->getAddressLine2(),
+                'addressLine3' => $this->getAddressLine3(),
+                'city' => $this->getCity(),
+                'companyName' => $this->getCompanyName(),
+                'contactForeName' => $this->getContactForeName(),
+                'contactLastName' => $this->getContactLastName(),
+                'contactMiddleName' => $this->getContactMiddleName(),
+                'contactTitle' => $this->getContactTitle(),
+                'country' => $this->getCountry(),
+                'countryId' => $this->getCountryId(),
+                'countryISOCode' => $this->getCountryISOCode(),
+                'fax' => $this->getFax(),
+                'region' => $this->getRegion(),
+                'regionId' => $this->getRegionId(),
+                'telephone' => $this->getTelephone(),
+                'zipCode' => $this->getZipCode(),
+                'addressType' => $this->getAddressType()
+            ]
+        );
     }
 
     /**

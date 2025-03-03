@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class LoggedInUserResponse implements \JsonSerializable
@@ -909,6 +910,45 @@ class LoggedInUserResponse implements \JsonSerializable
     public function setRequestId(?string $requestId): void
     {
         $this->requestId = $requestId;
+    }
+
+    /**
+     * Converts the LoggedInUserResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the LoggedInUserResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'LoggedInUserResponse',
+            [
+                'userName' => $this->getUserName(),
+                'displayName' => $this->getDisplayName(),
+                'idMSSOID' => $this->getIdMSSOID(),
+                'preferredLanguage' => $this->getPreferredLanguage(),
+                'isSuperAdmin' => $this->isSuperAdmin,
+                'dateFormat' => $this->getDateFormat(),
+                'timeFormat' => $this->getTimeFormat(),
+                'weekBegins' => $this->getWeekBegins(),
+                'displayWeek' => $this->displayWeek,
+                'cSVSeparator' => $this->getCSVSeparator(),
+                'decimalSeparator' => $this->getDecimalSeparator(),
+                'reportFormat' => $this->getReportFormat(),
+                'hasAPIAccess' => $this->hasAPIAccess,
+                'roles' => $this->roles,
+                'payers' => $this->payers,
+                'accounts' => $this->accounts,
+                'collectingCompanies' => $this->collectingCompanies,
+                'eIDAccessDetails' => $this->eIDAccessDetails,
+                'userClassificationBySystem' => $this->getUserClassificationBySystem(),
+                'userClassificationByShell' => $this->getUserClassificationByShell(),
+                'payerCount' => $this->getPayerCount(),
+                'accountCount' => $this->getAccountCount(),
+                'cardCount' => $this->getCardCount(),
+                'error' => $this->error,
+                'requestId' => $this->requestId
+            ]
+        );
     }
 
     /**

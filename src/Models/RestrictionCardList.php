@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class RestrictionCardList implements \JsonSerializable
@@ -1105,6 +1106,55 @@ class RestrictionCardList implements \JsonSerializable
     public function setMediumType(?string $mediumType): void
     {
         $this->mediumType = $mediumType;
+    }
+
+    /**
+     * Converts the RestrictionCardList object to a human-readable string representation.
+     *
+     * @return string The string representation of the RestrictionCardList object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'RestrictionCardList',
+            [
+                'cardId' => $this->cardId,
+                'pAN' => $this->pAN,
+                'expiryDate' => $this->expiryDate,
+                'statusId' => $this->statusId,
+                'statusDescription' => $this->statusDescription,
+                'driverName' => $this->driverName,
+                'vRN' => $this->vRN,
+                'issueDate' => $this->issueDate,
+                'issueNumber' => $this->issueNumber,
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'accountName' => $this->accountName,
+                'accountShortName' => $this->accountShortName,
+                'currencyCode' => $this->currencyCode,
+                'colCoCurrencyCode' => $this->colCoCurrencyCode,
+                'colCoCurrencySymbol' => $this->colCoCurrencySymbol,
+                'restrictionCurrencyCode' => $this->restrictionCurrencyCode,
+                'restrictionCurrencySymbol' => $this->restrictionCurrencySymbol,
+                'purchaseCategoryId' => $this->purchaseCategoryId,
+                'purchaseCategoryCode' => $this->purchaseCategoryCode,
+                'purchaseCategoryName' => $this->purchaseCategoryName,
+                'isSuperseded' => $this->isSuperseded,
+                'isVirtualCard' => $this->isVirtualCard,
+                'isNational' => $this->isNational,
+                'isInternational' => $this->isInternational,
+                'isCRT' => $this->isCRT,
+                'isFleet' => $this->isFleet,
+                'isShellSitesOnly' => $this->isShellSitesOnly,
+                'isPartnerSitesIncluded' => $this->isPartnerSitesIncluded,
+                'cardTypeId' => $this->cardTypeId,
+                'cardTypeCode' => $this->cardTypeCode,
+                'cardTypeName' => $this->cardTypeName,
+                'bundleId' => $this->bundleId,
+                'mediumTypeID' => $this->mediumTypeID,
+                'mediumType' => $this->mediumType
+            ]
+        );
     }
 
     /**

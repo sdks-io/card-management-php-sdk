@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class SearchCardRestriction implements \JsonSerializable
@@ -110,6 +111,19 @@ class SearchCardRestriction implements \JsonSerializable
     public function unsetPAN(): void
     {
         $this->pAN = [];
+    }
+
+    /**
+     * Converts the SearchCardRestriction object to a human-readable string representation.
+     *
+     * @return string The string representation of the SearchCardRestriction object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SearchCardRestriction',
+            ['cardId' => $this->getCardId(), 'pAN' => $this->getPAN()]
+        );
     }
 
     /**

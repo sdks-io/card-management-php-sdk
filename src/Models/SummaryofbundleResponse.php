@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class SummaryofbundleResponse implements \JsonSerializable
@@ -224,6 +225,28 @@ class SummaryofbundleResponse implements \JsonSerializable
     public function setError(?ErrorStatus $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the SummaryofbundleResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the SummaryofbundleResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SummaryofbundleResponse',
+            [
+                'requestId' => $this->getRequestId(),
+                'payerId' => $this->payerId,
+                'payerNumber' => $this->payerNumber,
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'countOfCardsNotInBundle' => $this->countOfCardsNotInBundle,
+                'cardBundles' => $this->cardBundles,
+                'error' => $this->error
+            ]
+        );
     }
 
     /**

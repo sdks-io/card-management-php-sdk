@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class ColCoAccess implements \JsonSerializable
@@ -166,6 +167,24 @@ class ColCoAccess implements \JsonSerializable
     public function unsetIssuingCountryNumber(): void
     {
         $this->issuingCountryNumber = [];
+    }
+
+    /**
+     * Converts the ColCoAccess object to a human-readable string representation.
+     *
+     * @return string The string representation of the ColCoAccess object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'ColCoAccess',
+            [
+                'colCoId' => $this->getColCoId(),
+                'colCoCode' => $this->getColCoCode(),
+                'colCoCountryName' => $this->getColCoCountryName(),
+                'issuingCountryNumber' => $this->getIssuingCountryNumber()
+            ]
+        );
     }
 
     /**

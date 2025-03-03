@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardSummaryRequest implements \JsonSerializable
@@ -35,6 +36,16 @@ class CardSummaryRequest implements \JsonSerializable
     public function setFilters(?Filters1 $filters): void
     {
         $this->filters = $filters;
+    }
+
+    /**
+     * Converts the CardSummaryRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardSummaryRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('CardSummaryRequest', ['filters' => $this->filters]);
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardBundle implements \JsonSerializable
@@ -112,6 +113,24 @@ class CardBundle implements \JsonSerializable
     public function setTotalCards(?int $totalCards): void
     {
         $this->totalCards = $totalCards;
+    }
+
+    /**
+     * Converts the CardBundle object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardBundle object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardBundle',
+            [
+                'bundleId' => $this->bundleId,
+                'externalBundleId' => $this->externalBundleId,
+                'description' => $this->description,
+                'totalCards' => $this->totalCards
+            ]
+        );
     }
 
     /**

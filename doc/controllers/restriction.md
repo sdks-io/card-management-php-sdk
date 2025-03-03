@@ -17,10 +17,10 @@ $restrictionController = $client->getRestrictionController();
 * [Create Bundle](../../doc/controllers/restriction.md#create-bundle)
 * [Update Bundle](../../doc/controllers/restriction.md#update-bundle)
 * [Delete Bundle](../../doc/controllers/restriction.md#delete-bundle)
-* [Summaryofbundles](../../doc/controllers/restriction.md#summaryofbundles)
+* [Summary of Bundles](../../doc/controllers/restriction.md#summary-of-bundles)
 * [Restriction Account](../../doc/controllers/restriction.md#restriction-account)
 * [Search Account Limit](../../doc/controllers/restriction.md#search-account-limit)
-* [Bundledetails](../../doc/controllers/restriction.md#bundledetails)
+* [Bundle Details](../../doc/controllers/restriction.md#bundle-details)
 
 
 # Search Card Restriction
@@ -752,7 +752,7 @@ $result = $restrictionController->deleteBundle(
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Summaryofbundles
+# Summary of Bundles
 
 This API allows clients to get a summary of card bundles associated with Payer/Account. This API will return the basic bundle details including card and restriction details. Optionally the API will also include a count of cards that are not associated with the bundle but returned by the search criteria.
 
@@ -763,7 +763,7 @@ Note - to include count of cards of an account that are not associated with any 
 * Get summary of bundles by list of bundle Ids
 
 ```php
-function summaryofbundles(
+function summaryOfBundles(
     string $apikey,
     string $requestId,
     ?SummaryofbundlerRequest $body = null
@@ -791,7 +791,7 @@ $requestId = 'RequestId8';
 
 $body = SummaryofbundlerRequestBuilder::init()->build();
 
-$result = $restrictionController->summaryofbundles(
+$result = $restrictionController->summaryOfBundles(
     $apikey,
     $requestId,
     $body
@@ -946,12 +946,12 @@ $result = $restrictionController->searchAccountLimit(
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Bundledetails
+# Bundle Details
 
 This API allows to get the details of a specific card bundle. It returns the bundle basic details along with the cards in the bundle and restrictions applied on them.
 
 ```php
-function bundledetails(
+function bundleDetails(
     string $apikey,
     string $requestId,
     ?BudleDetailsRequest $body = null
@@ -984,7 +984,7 @@ $body = BudleDetailsRequestBuilder::init()
     ->bundleId('1060')
     ->build();
 
-$result = $restrictionController->bundledetails(
+$result = $restrictionController->bundleDetails(
     $apikey,
     $requestId,
     $body

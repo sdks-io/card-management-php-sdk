@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardTypeResponse implements \JsonSerializable
@@ -87,6 +88,23 @@ class CardTypeResponse implements \JsonSerializable
     public function setRequestId(?string $requestId): void
     {
         $this->requestId = $requestId;
+    }
+
+    /**
+     * Converts the CardTypeResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardTypeResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardTypeResponse',
+            [
+                'customerCardTypes' => $this->customerCardTypes,
+                'error' => $this->error,
+                'requestId' => $this->requestId
+            ]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -77,6 +78,19 @@ class CardDetailsResponseNonFuelSetsItems implements \JsonSerializable
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * Converts the CardDetailsResponseNonFuelSetsItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardDetailsResponseNonFuelSetsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardDetailsResponseNonFuelSetsItems',
+            ['productRestrictionId' => $this->productRestrictionId, 'description' => $this->description]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class Filters2 implements \JsonSerializable
@@ -343,6 +344,15 @@ class Filters2 implements \JsonSerializable
 
     /**
      * Returns Reference Type.
+     * Type of the reference number provided.<br />
+     * Mandatory if ReferenceNumber is provided. Else optional.<br />
+     * Allowed Values:<br />
+     * 1=Main Reference(Main Order Reference Number returned in the output of Card/OrderCard service. <br
+     * />
+     * 2=Order Card Reference (Reference number for each individual card in the order submitted via
+     * Card/OrderCard service. <br />
+     * 3=Bulk Order Card Reference (Reference number returned in the response of bulkcardinterface
+     * /UploadOrderCardTemplate. )
      */
     public function getReferenceType(): ?int
     {
@@ -351,6 +361,15 @@ class Filters2 implements \JsonSerializable
 
     /**
      * Sets Reference Type.
+     * Type of the reference number provided.<br />
+     * Mandatory if ReferenceNumber is provided. Else optional.<br />
+     * Allowed Values:<br />
+     * 1=Main Reference(Main Order Reference Number returned in the output of Card/OrderCard service. <br
+     * />
+     * 2=Order Card Reference (Reference number for each individual card in the order submitted via
+     * Card/OrderCard service. <br />
+     * 3=Bulk Order Card Reference (Reference number returned in the response of bulkcardinterface
+     * /UploadOrderCardTemplate. )
      *
      * @maps ReferenceType
      * @factory \ShellCardManagementAPIsLib\Models\OrderCardEnquiryReqReferenceTypeEnum::checkValue
@@ -493,6 +512,32 @@ class Filters2 implements \JsonSerializable
     public function unsetOrderRequestId(): void
     {
         $this->orderRequestId = [];
+    }
+
+    /**
+     * Converts the Filters2 object to a human-readable string representation.
+     *
+     * @return string The string representation of the Filters2 object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'Filters2',
+            [
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'colCoCode' => $this->getColCoCode(),
+                'colCoId' => $this->getColCoId(),
+                'colCoCountryCode' => $this->getColCoCountryCode(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'referenceNumber' => $this->referenceNumber,
+                'referenceType' => $this->referenceType,
+                'fromDate' => $this->getFromDate(),
+                'toDate' => $this->getToDate(),
+                'orderRequestId' => $this->getOrderRequestId()
+            ]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardTypeRequest implements \JsonSerializable
@@ -316,6 +317,28 @@ class CardTypeRequest implements \JsonSerializable
     public function setIncludePurchaseCategories(?bool $includePurchaseCategories): void
     {
         $this->includePurchaseCategories = $includePurchaseCategories;
+    }
+
+    /**
+     * Converts the CardTypeRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardTypeRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardTypeRequest',
+            [
+                'colCoId' => $this->getColCoId(),
+                'colCoCode' => $this->getColCoCode(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'includeUsageRestrictions' => $this->includeUsageRestrictions,
+                'includePurchaseCategories' => $this->includePurchaseCategories
+            ]
+        );
     }
 
     /**

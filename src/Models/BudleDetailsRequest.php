@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class BudleDetailsRequest implements \JsonSerializable
@@ -241,6 +242,27 @@ class BudleDetailsRequest implements \JsonSerializable
     public function setBundleId(?string $bundleId): void
     {
         $this->bundleId = $bundleId;
+    }
+
+    /**
+     * Converts the BudleDetailsRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the BudleDetailsRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'BudleDetailsRequest',
+            [
+                'colCoId' => $this->colCoId,
+                'colCoCode' => $this->colCoCode,
+                'payerId' => $this->payerId,
+                'payerNumber' => $this->payerNumber,
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'bundleId' => $this->bundleId
+            ]
+        );
     }
 
     /**

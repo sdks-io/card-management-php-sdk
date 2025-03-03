@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PayerDetails implements \JsonSerializable
@@ -3875,6 +3876,125 @@ class PayerDetails implements \JsonSerializable
     public function setContracts(?array $contracts): void
     {
         $this->contracts = $contracts;
+    }
+
+    /**
+     * Converts the PayerDetails object to a human-readable string representation.
+     *
+     * @return string The string representation of the PayerDetails object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PayerDetails',
+            [
+                'colCoId' => $this->getColCoId(),
+                'colCoCode' => $this->getColCoCode(),
+                'countryCode' => $this->getCountryCode(),
+                'country' => $this->getCountry(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'payerFullName' => $this->getPayerFullName(),
+                'payerShortName' => $this->getPayerShortName(),
+                'payerGroupId' => $this->getPayerGroupId(),
+                'amountDue' => $this->getAmountDue(),
+                'amountOverdue' => $this->getAmountOverdue(),
+                'amountNotOverdue' => $this->getAmountNotOverdue(),
+                'outstandingBalance' => $this->getOutstandingBalance(),
+                'unallocatedPayment' => $this->getUnallocatedPayment(),
+                'sOACurrencyCode' => $this->getSOACurrencyCode(),
+                'sOACurrencySymbol' => $this->getSOACurrencySymbol(),
+                'sOACreditLimitCurrencyCode' => $this->getSOACreditLimitCurrencyCode(),
+                'sOACreditLimitCurrencySymbol' => $this->getSOACreditLimitCurrencySymbol(),
+                'lastPaymentCurrencyCode' => $this->getLastPaymentCurrencyCode(),
+                'lastPaymentCurrencySymbol' => $this->getLastPaymentCurrencySymbol(),
+                'lastPaymentAmount' => $this->getLastPaymentAmount(),
+                'lastPaymentDate' => $this->getLastPaymentDate(),
+                'sOALastPaymentAmount' => $this->getSOALastPaymentAmount(),
+                'sOALastPaymentDate' => $this->getSOALastPaymentDate(),
+                'currencyCode' => $this->getCurrencyCode(),
+                'currencySymbol' => $this->getCurrencySymbol(),
+                'colCoCountryCode' => $this->getColCoCountryCode(),
+                'localCurrencyCode' => $this->getLocalCurrencyCode(),
+                'localCurrencySymbol' => $this->getLocalCurrencySymbol(),
+                'localCurrencyExchangeRate' => $this->getLocalCurrencyExchangeRate(),
+                'localCurrencyExchangeRateSoA' => $this->getLocalCurrencyExchangeRateSoA(),
+                'billingFrequencyTypeId' => $this->getBillingFrequencyTypeId(),
+                'billingFrequencyType' => $this->getBillingFrequencyType(),
+                'billingRunFrequencyTypeId' => $this->getBillingRunFrequencyTypeId(),
+                'billingRunFrequnecy' => $this->getBillingRunFrequnecy(),
+                'day1Run' => $this->getDay1Run(),
+                'day2Run' => $this->getDay2Run(),
+                'day3Run' => $this->getDay3Run(),
+                'day4Run' => $this->getDay4Run(),
+                'invoiceDistributionMethods' => $this->invoiceDistributionMethods,
+                'outputType' => $this->getOutputType(),
+                'invoiceAccountID' => $this->getInvoiceAccountID(),
+                'invoiceAccountNumber' => $this->getInvoiceAccountNumber(),
+                'invoiceAccountShortName' => $this->getInvoiceAccountShortName(),
+                'bestOfIndicator' => $this->bestOfIndicator,
+                'isInternational' => $this->isInternational,
+                'totalAccounts' => $this->getTotalAccounts(),
+                'totalActiveAccounts' => $this->getTotalActiveAccounts(),
+                'totalCards' => $this->getTotalCards(),
+                'totalActiveCards' => $this->getTotalActiveCards(),
+                'totalBlockedCards' => $this->getTotalBlockedCards(),
+                'totalCancelledCards' => $this->getTotalCancelledCards(),
+                'totalExpiredCards' => $this->getTotalExpiredCards(),
+                'totalRenewalPendingCards' => $this->getTotalRenewalPendingCards(),
+                'totalReplacedCards' => $this->getTotalReplacedCards(),
+                'totalTemporaryBlockCardsByCustomer' => $this->getTotalTemporaryBlockCardsByCustomer(),
+                'totalTemporaryBlockCardsByShell' => $this->getTotalTemporaryBlockCardsByShell(),
+                'totalNewCards' => $this->getTotalNewCards(),
+                'totalFraudCards' => $this->getTotalFraudCards(),
+                'totalBlockedAccounts' => $this->getTotalBlockedAccounts(),
+                'totalCancelledAccounts' => $this->getTotalCancelledAccounts(),
+                'payerTradingName' => $this->getPayerTradingName(),
+                'status' => $this->status,
+                'billingLanguage' => $this->getBillingLanguage(),
+                'legalEntity' => $this->getLegalEntity(),
+                'dateEstablished' => $this->getDateEstablished(),
+                'customerClassification' => $this->getCustomerClassification(),
+                'industryClass' => $this->getIndustryClass(),
+                'marketingSegmentation' => $this->getMarketingSegmentation(),
+                'lineOfBusiness' => $this->getLineOfBusiness(),
+                'printCreditLimit' => $this->printCreditLimit,
+                'cardGroupType' => $this->getCardGroupType(),
+                'renewCards' => $this->renewCards,
+                'allowSelectPIN' => $this->allowSelectPIN,
+                'useFleetPIN' => $this->useFleetPIN,
+                'vATRegNumber' => $this->getVATRegNumber(),
+                'vATRegNumber2' => $this->vATRegNumber2,
+                'registrationNumber' => $this->getRegistrationNumber(),
+                'registrationNumber2' => $this->getRegistrationNumber2(),
+                'salesLedgerBalance' => $this->getSalesLedgerBalance(),
+                'exposure' => $this->getExposure(),
+                'outstandingDebt' => $this->getOutstandingDebt(),
+                'availableCredit' => $this->getAvailableCredit(),
+                'band' => $this->getBand(),
+                'globalCustomerReferenceId' => $this->getGlobalCustomerReferenceId(),
+                'creditLimit' => $this->getCreditLimit(),
+                'creditLimitInCustomerCurrency' => $this->getCreditLimitInCustomerCurrency(),
+                'billingCurrencyCode' => $this->getBillingCurrencyCode(),
+                'billingCurrencySymbol' => $this->getBillingCurrencySymbol(),
+                'paymentMethod' => $this->getPaymentMethod(),
+                'paymentTerms' => $this->getPaymentTerms(),
+                'temporaryCreditLimitIncrease' => $this->getTemporaryCreditLimitIncrease(),
+                'temporaryCreditLimitIncreaseInCustomerCurrency' => $this->getTemporaryCreditLimitIncreaseInCustomerCurrency(),
+                'temporaryCreditLimitExpiryDate' => $this->getTemporaryCreditLimitExpiryDate(),
+                'payerBankAccount' => $this->payerBankAccount,
+                'cardDeliveryAddress' => $this->cardDeliveryAddress,
+                'correspondanceAddress' => $this->correspondanceAddress,
+                'billingAddress' => $this->billingAddress,
+                'hasActiveVolBasedPricing' => $this->hasActiveVolBasedPricing,
+                'hasActiveVolBasedBonus' => $this->hasActiveVolBasedBonus,
+                'hasActiveVolBasedAssociationBonus' => $this->hasActiveVolBasedAssociationBonus,
+                'financeCurrency' => $this->financeCurrency,
+                'tollsCustomerId' => $this->getTollsCustomerId(),
+                'tollsColcoCountryTypeId' => $this->getTollsColcoCountryTypeId(),
+                'contracts' => $this->contracts
+            ]
+        );
     }
 
     /**

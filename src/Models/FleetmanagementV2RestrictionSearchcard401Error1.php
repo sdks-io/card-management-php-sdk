@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class FleetmanagementV2RestrictionSearchcard401Error1 implements \JsonSerializable
@@ -35,6 +36,17 @@ class FleetmanagementV2RestrictionSearchcard401Error1 implements \JsonSerializab
     public function setFault(?Fault $fault): void
     {
         $this->fault = $fault;
+    }
+
+    /**
+     * Converts the FleetmanagementV2RestrictionSearchcard401Error1 object to a human-readable string
+     * representation.
+     *
+     * @return string The string representation of the FleetmanagementV2RestrictionSearchcard401Error1 object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('FleetmanagementV2RestrictionSearchcard401Error1', ['fault' => $this->fault]);
     }
 
     /**

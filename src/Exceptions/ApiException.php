@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Exceptions;
 
 use CoreInterfaces\Sdk\ExceptionInterface;
+use ShellCardManagementAPIsLib\ApiHelper;
 use ShellCardManagementAPIsLib\Http\HttpResponse;
 use ShellCardManagementAPIsLib\Http\HttpRequest;
 
@@ -67,5 +68,21 @@ class ApiException extends \Exception implements ExceptionInterface
     public function hasResponse(): bool
     {
         return !\is_null($this->response);
+    }
+
+    /**
+     * Converts the ApiException object to a human-readable string representation.
+     *
+     * @return string The string representation of the ApiException object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'ApiException',
+            [
+                'statusCode' => $this->getCode(),
+                'message' => $this->getMessage()
+            ]
+        );
     }
 }

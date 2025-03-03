@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class AuditResponse implements \JsonSerializable
@@ -164,6 +165,26 @@ class AuditResponse implements \JsonSerializable
     public function setRequestId(?string $requestId): void
     {
         $this->requestId = $requestId;
+    }
+
+    /**
+     * Converts the AuditResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the AuditResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'AuditResponse',
+            [
+                'audits' => $this->audits,
+                'currentPage' => $this->currentPage,
+                'rowCount' => $this->rowCount,
+                'totalPages' => $this->totalPages,
+                'error' => $this->error,
+                'requestId' => $this->requestId
+            ]
+        );
     }
 
     /**

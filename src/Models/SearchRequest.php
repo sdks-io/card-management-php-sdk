@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -1785,6 +1786,63 @@ class SearchRequest implements \JsonSerializable
     public function setRequestId(?string $requestId): void
     {
         $this->requestId = $requestId;
+    }
+
+    /**
+     * Converts the SearchRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the SearchRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SearchRequest',
+            [
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'cardGroupId' => $this->getCardGroupId(),
+                'cardGroupName' => $this->getCardGroupName(),
+                'cardSegment' => $this->getCardSegment(),
+                'cardStatus' => $this->cardStatus,
+                'cardTypeCode' => $this->getCardTypeCode(),
+                'colCoCode' => $this->getColCoCode(),
+                'colCoCountryCode' => $this->getColCoCountryCode(),
+                'colCoId' => $this->getColCoId(),
+                'coverage' => $this->getCoverage(),
+                'creationDate' => $this->getCreationDate(),
+                'driverName' => $this->driverName,
+                'effectiveDate' => $this->getEffectiveDate(),
+                'excludeBundleId' => $this->getExcludeBundleId(),
+                'excludeCancelledCards' => $this->excludeCancelledCards,
+                'excludeCardGroupId' => $this->getExcludeCardGroupId(),
+                'excludeCardGroupName' => $this->getExcludeCardGroupName(),
+                'excludeCards' => $this->excludeCards,
+                'excludeFraudCards' => $this->excludeFraudCards,
+                'excludePendingRenewalCards' => $this->excludePendingRenewalCards,
+                'excludeReplacedCards' => $this->excludeReplacedCards,
+                'expiringInDays' => $this->getExpiringInDays(),
+                'expiryMonth' => $this->getExpiryMonth(),
+                'includeBundleDetails' => $this->includeBundleDetails,
+                'includeCards' => $this->includeCards,
+                'includeIntermediateStatus' => $this->includeIntermediateStatus,
+                'issuedAfter' => $this->getIssuedAfter(),
+                'network' => $this->getNetwork(),
+                'pANEndsWith' => $this->getPANEndsWith(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'purchaseCategoryCode' => $this->getPurchaseCategoryCode(),
+                'sortOrder' => $this->getSortOrder(),
+                'includeScheduledCardBlocks' => $this->includeScheduledCardBlocks,
+                'tokenTypeID' => $this->getTokenTypeID(),
+                'tokenTypeName' => $this->getTokenTypeName(),
+                'vehicleRegistrationNumber' => $this->vehicleRegistrationNumber,
+                'excludeOldCards' => $this->excludeOldCards,
+                'excludeExpiringCards' => $this->excludeExpiringCards,
+                'clientReferenceId' => $this->getClientReferenceId(),
+                'reissueSetting' => $this->getReissueSetting(),
+                'requestId' => $this->requestId
+            ]
+        );
     }
 
     /**

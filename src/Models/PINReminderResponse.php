@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PINReminderResponse implements \JsonSerializable
@@ -114,6 +115,24 @@ class PINReminderResponse implements \JsonSerializable
     public function setData(?array $data): void
     {
         $this->data = $data;
+    }
+
+    /**
+     * Converts the PINReminderResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the PINReminderResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PINReminderResponse',
+            [
+                'requestId' => $this->requestId,
+                'mainReference' => $this->mainReference,
+                'status' => $this->status,
+                'data' => $this->data
+            ]
+        );
     }
 
     /**

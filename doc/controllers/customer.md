@@ -12,25 +12,25 @@ $customerController = $client->getCustomerController();
 
 ## Methods
 
-* [Loggedinuser](../../doc/controllers/customer.md#loggedinuser)
+* [Loggedin User](../../doc/controllers/customer.md#loggedin-user)
 * [Payers](../../doc/controllers/customer.md#payers)
 * [Customer](../../doc/controllers/customer.md#customer)
 * [Accounts](../../doc/controllers/customer.md#accounts)
 * [Card Type](../../doc/controllers/customer.md#card-type)
-* [Cardgroups](../../doc/controllers/customer.md#cardgroups)
-* [Auditreport](../../doc/controllers/customer.md#auditreport)
-* [Createcardgroup](../../doc/controllers/customer.md#createcardgroup)
-* [Updatecardgroup](../../doc/controllers/customer.md#updatecardgroup)
+* [Card Groups](../../doc/controllers/customer.md#card-groups)
+* [Audit Report](../../doc/controllers/customer.md#audit-report)
+* [Create Card Group](../../doc/controllers/customer.md#create-card-group)
+* [Update Card Group](../../doc/controllers/customer.md#update-card-group)
 
 
-# Loggedinuser
+# Loggedin User
 
 This API allows querying the user data of the logged in user.</br>
 This API will return the user access details such as payers and/or accounts. </br>
 This API will also validate that logged in user has access to the requested API, on failure it will return HasAPIAccess flag as false in response.</br>
 
 ```php
-function loggedinuser(
+function loggedinUser(
     string $apikey,
     string $requestId,
     ?FleetmanagementV1UserLoggedinuserRequest $body = null
@@ -64,7 +64,7 @@ $body = FleetmanagementV1UserLoggedinuserRequestBuilder::init()
     ->payerNumber('GB00123456')
     ->build();
 
-$result = $customerController->loggedinuser(
+$result = $customerController->loggedinUser(
     $apikey,
     $requestId,
     $body
@@ -891,7 +891,7 @@ $result = $customerController->cardType(
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Cardgroups
+# Card Groups
 
 This operation allows querying the card group details . It provides flexible search criteria and supports paging.\
 
@@ -902,7 +902,7 @@ When the card group type is configured as ‘Horizontal’ in cards platform, th
 Accounts with cancelled status will not be considered for cardgroups search for the configured (E.g., SFH) set of client apps.
 
 ```php
-function cardgroups(string $apikey, string $requestId, ?CardGroupRequest $body = null): CardGroupResponse
+function cardGroups(string $apikey, string $requestId, ?CardGroupRequest $body = null): CardGroupResponse
 ```
 
 ## Parameters
@@ -943,7 +943,7 @@ $body = CardGroupRequestBuilder::init()
     ->pageSize(1)
     ->build();
 
-$result = $customerController->cardgroups(
+$result = $customerController->cardGroups(
     $apikey,
     $requestId,
     $body
@@ -1002,7 +1002,7 @@ $result = $customerController->cardgroups(
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Auditreport
+# Audit Report
 
 This operation allows users to fetch audit data of account or card operations performed by users of a given customer
 The audit data includes details of below API operations
@@ -1025,7 +1025,7 @@ The audit data includes details of below API operations
 * Delivery Address Update.
 
 ```php
-function auditreport(string $apikey, string $requestId, ?AuditRequest $body = null): AuditResponse
+function auditReport(string $apikey, string $requestId, ?AuditRequest $body = null): AuditResponse
 ```
 
 ## Parameters
@@ -1073,7 +1073,7 @@ $body = AuditRequestBuilder::init()
     ->toDate('20240202')
     ->build();
 
-$result = $customerController->auditreport(
+$result = $customerController->auditReport(
     $apikey,
     $requestId,
     $body
@@ -1141,7 +1141,7 @@ $result = $customerController->auditreport(
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Createcardgroup
+# Create Card Group
 
 This API allows creating a new Card Group in the Shell Cards Platform. It will
 also allow moving of cards (up to 500 cards) into the newly created
@@ -1157,7 +1157,7 @@ card-group.
   successfully
 
 ```php
-function createcardgroup(
+function createCardGroup(
     string $apikey,
     string $requestId,
     ?CreateCardGroupRequest $body = null
@@ -1204,7 +1204,7 @@ $body = CreateCardGroupRequestBuilder::init()
     )
     ->build();
 
-$result = $customerController->createcardgroup(
+$result = $customerController->createCardGroup(
     $apikey,
     $requestId,
     $body
@@ -1250,7 +1250,7 @@ $result = $customerController->createcardgroup(
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Updatecardgroup
+# Update Card Group
 
 This API allows updating or removing a Card Group in the Shell Cards Platform.
 
@@ -1260,7 +1260,7 @@ The request for updating or removing of the card group, creationg of a new card 
 validations.
 
 ```php
-function updatecardgroup(
+function updateCardGroup(
     string $apikey,
     string $requestId,
     ?UpdateCardGroupRequest $body = null
@@ -1305,7 +1305,7 @@ $body = UpdateCardGroupRequestBuilder::init()
     ->targetCardGroupId(3456)
     ->build();
 
-$result = $customerController->updatecardgroup(
+$result = $customerController->updateCardGroup(
     $apikey,
     $requestId,
     $body

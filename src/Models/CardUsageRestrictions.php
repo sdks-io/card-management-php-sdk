@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardUsageRestrictions implements \JsonSerializable
@@ -729,6 +730,39 @@ class CardUsageRestrictions implements \JsonSerializable
     public function setIsVelocityCeiling(?bool $isVelocityCeiling): void
     {
         $this->isVelocityCeiling = $isVelocityCeiling;
+    }
+
+    /**
+     * Converts the CardUsageRestrictions object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardUsageRestrictions object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardUsageRestrictions',
+            [
+                'level' => $this->getLevel(),
+                'dailySpendLimit' => $this->getDailySpendLimit(),
+                'weeklySpendLimit' => $this->getWeeklySpendLimit(),
+                'monthlySpendLimit' => $this->getMonthlySpendLimit(),
+                'annualSpendLimit' => $this->getAnnualSpendLimit(),
+                'lifeTimeSpendLimit' => $this->getLifeTimeSpendLimit(),
+                'dailyVolumeLimit' => $this->getDailyVolumeLimit(),
+                'weeklyVolumeLimit' => $this->getWeeklyVolumeLimit(),
+                'monthlyVolumeLimit' => $this->getMonthlyVolumeLimit(),
+                'annualVolumeLimit' => $this->getAnnualVolumeLimit(),
+                'lifeTimeVolumeLimit' => $this->getLifeTimeVolumeLimit(),
+                'transactionSpendLimit' => $this->getTransactionSpendLimit(),
+                'transactionVolumeLimit' => $this->getTransactionVolumeLimit(),
+                'dailyTransactionCount' => $this->getDailyTransactionCount(),
+                'weeklyTransactionCount' => $this->getWeeklyTransactionCount(),
+                'monthlyTransactionCount' => $this->getMonthlyTransactionCount(),
+                'annualTransactionCount' => $this->getAnnualTransactionCount(),
+                'lifeTimeTransactionCount' => $this->getLifeTimeTransactionCount(),
+                'isVelocityCeiling' => $this->isVelocityCeiling
+            ]
+        );
     }
 
     /**

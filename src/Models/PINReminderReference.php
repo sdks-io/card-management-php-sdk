@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -194,6 +195,25 @@ class PINReminderReference implements \JsonSerializable
     public function setReferenceId(?int $referenceId): void
     {
         $this->referenceId = $referenceId;
+    }
+
+    /**
+     * Converts the PINReminderReference object to a human-readable string representation.
+     *
+     * @return string The string representation of the PINReminderReference object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PINReminderReference',
+            [
+                'cardId' => $this->getCardId(),
+                'pANID' => $this->getPANID(),
+                'pAN' => $this->getPAN(),
+                'cardExpiryDate' => $this->getCardExpiryDate(),
+                'referenceId' => $this->referenceId
+            ]
+        );
     }
 
     /**

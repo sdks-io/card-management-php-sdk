@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardManagementV1UpdatestatusRequest implements \JsonSerializable
@@ -250,6 +251,24 @@ class CardManagementV1UpdatestatusRequest implements \JsonSerializable
     public function setTargetStatus(string $targetStatus): void
     {
         $this->targetStatus = $targetStatus;
+    }
+
+    /**
+     * Converts the CardManagementV1UpdatestatusRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardManagementV1UpdatestatusRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardManagementV1UpdatestatusRequest',
+            [
+                'cards' => $this->cards,
+                'reasonId' => $this->getReasonId(),
+                'reasonText' => $this->getReasonText(),
+                'targetStatus' => $this->targetStatus
+            ]
+        );
     }
 
     /**

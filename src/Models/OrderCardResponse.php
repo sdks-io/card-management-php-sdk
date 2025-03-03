@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class OrderCardResponse implements \JsonSerializable
@@ -114,6 +115,24 @@ class OrderCardResponse implements \JsonSerializable
     public function setMainReference(?int $mainReference): void
     {
         $this->mainReference = $mainReference;
+    }
+
+    /**
+     * Converts the OrderCardResponse object to a human-readable string representation.
+     *
+     * @return string The string representation of the OrderCardResponse object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'OrderCardResponse',
+            [
+                'requestId' => $this->requestId,
+                'status' => $this->status,
+                'data' => $this->data,
+                'mainReference' => $this->mainReference
+            ]
+        );
     }
 
     /**

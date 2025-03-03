@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class Accounts implements \JsonSerializable
@@ -92,6 +93,19 @@ class Accounts implements \JsonSerializable
     public function unsetAccountNumber(): void
     {
         $this->accountNumber = [];
+    }
+
+    /**
+     * Converts the Accounts object to a human-readable string representation.
+     *
+     * @return string The string representation of the Accounts object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'Accounts',
+            ['accountId' => $this->getAccountId(), 'accountNumber' => $this->getAccountNumber()]
+        );
     }
 
     /**

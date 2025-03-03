@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class ScheduleCardBlockCardsItems implements \JsonSerializable
@@ -586,6 +587,35 @@ class ScheduleCardBlockCardsItems implements \JsonSerializable
     public function setNotifyCaller(?bool $notifyCaller): void
     {
         $this->notifyCaller = $notifyCaller;
+    }
+
+    /**
+     * Converts the ScheduleCardBlockCardsItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the ScheduleCardBlockCardsItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'ScheduleCardBlockCardsItems',
+            [
+                'colCoCode' => $this->colCoCode,
+                'colCoId' => $this->colCoId,
+                'accountId' => $this->accountId,
+                'accountNumber' => $this->accountNumber,
+                'payerId' => $this->payerId,
+                'payerNumber' => $this->payerNumber,
+                'cardId' => $this->cardId,
+                'pAN' => $this->pAN,
+                'pANID' => $this->pANID,
+                'cardExpiryDate' => $this->cardExpiryDate,
+                'action' => $this->action,
+                'fromDate' => $this->fromDate,
+                'toDate' => $this->toDate,
+                'caller' => $this->getCaller(),
+                'notifyCaller' => $this->notifyCaller
+            ]
+        );
     }
 
     /**

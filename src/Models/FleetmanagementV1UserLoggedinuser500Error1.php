@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class FleetmanagementV1UserLoggedinuser500Error1 implements \JsonSerializable
@@ -35,6 +36,17 @@ class FleetmanagementV1UserLoggedinuser500Error1 implements \JsonSerializable
     public function setFault(?Fault $fault): void
     {
         $this->fault = $fault;
+    }
+
+    /**
+     * Converts the FleetmanagementV1UserLoggedinuser500Error1 object to a human-readable string
+     * representation.
+     *
+     * @return string The string representation of the FleetmanagementV1UserLoggedinuser500Error1 object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('FleetmanagementV1UserLoggedinuser500Error1', ['fault' => $this->fault]);
     }
 
     /**

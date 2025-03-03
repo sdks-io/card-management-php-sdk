@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CustomerContract implements \JsonSerializable
@@ -86,6 +87,19 @@ class CustomerContract implements \JsonSerializable
     public function unsetPartnerName(): void
     {
         $this->partnerName = [];
+    }
+
+    /**
+     * Converts the CustomerContract object to a human-readable string representation.
+     *
+     * @return string The string representation of the CustomerContract object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CustomerContract',
+            ['partnerId' => $this->getPartnerId(), 'partnerName' => $this->getPartnerName()]
+        );
     }
 
     /**

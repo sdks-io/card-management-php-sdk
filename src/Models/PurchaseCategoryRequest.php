@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PurchaseCategoryRequest implements \JsonSerializable
@@ -228,6 +229,26 @@ class PurchaseCategoryRequest implements \JsonSerializable
     public function setLanguageCode(?string $languageCode): void
     {
         $this->languageCode = $languageCode;
+    }
+
+    /**
+     * Converts the PurchaseCategoryRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the PurchaseCategoryRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PurchaseCategoryRequest',
+            [
+                'requestId' => $this->requestId,
+                'colCoCode' => $this->getColCoCode(),
+                'colCoId' => $this->getColCoId(),
+                'cardTypeId' => $this->getCardTypeId(),
+                'purchaseCategoryId' => $this->purchaseCategoryId,
+                'languageCode' => $this->languageCode
+            ]
+        );
     }
 
     /**

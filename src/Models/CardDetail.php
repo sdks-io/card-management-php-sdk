@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -1708,6 +1709,12 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Returns Auto Renew.
+     * Whether to reissue card automatically when nearing the expiry.
+     *
+     * Allowed values: -
+     * 1.    As per card type setting (Default).
+     * 2.    Card will be Reissued when nearing its expiry date.
+     * 3.    Card will not be Reissued.
      */
     public function getAutoRenew(): ?int
     {
@@ -1716,6 +1723,12 @@ class CardDetail implements \JsonSerializable
 
     /**
      * Sets Auto Renew.
+     * Whether to reissue card automatically when nearing the expiry.
+     *
+     * Allowed values: -
+     * 1.    As per card type setting (Default).
+     * 2.    Card will be Reissued when nearing its expiry date.
+     * 3.    Card will not be Reissued.
      *
      * @maps AutoRenew
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailAutoRenewEnum::checkValue
@@ -1723,6 +1736,59 @@ class CardDetail implements \JsonSerializable
     public function setAutoRenew(?int $autoRenew): void
     {
         $this->autoRenew = $autoRenew;
+    }
+
+    /**
+     * Converts the CardDetail object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardDetail object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardDetail',
+            [
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'colCoCode' => $this->getColCoCode(),
+                'colCoId' => $this->getColCoId(),
+                'cardTypeId' => $this->getCardTypeId(),
+                'tokenTypeId' => $this->getTokenTypeId(),
+                'embossText' => $this->getEmbossText(),
+                'vRN' => $this->getVRN(),
+                'driverName' => $this->getDriverName(),
+                'odometerInputRequired' => $this->odometerInputRequired,
+                'fleetIdInputRequired' => $this->fleetIdInputRequired,
+                'purchaseCategoryId' => $this->getPurchaseCategoryId(),
+                'selfSelectedEncryptedPIN' => $this->selfSelectedEncryptedPIN,
+                'selfSelectedPINKeyID' => $this->getSelfSelectedPINKeyID(),
+                'selfSelectedPINSessionKey' => $this->getSelfSelectedPINSessionKey(),
+                'cardGroupId' => $this->getCardGroupId(),
+                'cardGroupName' => $this->getCardGroupName(),
+                'isNewCardGroup' => $this->isNewCardGroup,
+                'embossCardGroup' => $this->embossCardGroup,
+                'cardDeliveryType' => $this->cardDeliveryType,
+                'cardContact' => $this->cardContact,
+                'pINDeliveryAddressType' => $this->getPINDeliveryAddressType(),
+                'pINAdviceType' => $this->pINAdviceType,
+                'pINContact' => $this->pINContact,
+                'notifyCaller' => $this->notifyCaller,
+                'caller' => $this->getCaller(),
+                'notifyCallerOnSync' => $this->notifyCallerOnSync,
+                'validateFleetId' => $this->validateFleetId,
+                'fleetOption' => $this->getFleetOption(),
+                'bundleId' => $this->getBundleId(),
+                'usageRestrictionAction' => $this->getUsageRestrictionAction(),
+                'productRestrictionAction' => $this->getProductRestrictionAction(),
+                'products' => $this->products,
+                'productGroups' => $this->productGroups,
+                'expiryDate' => $this->getExpiryDate(),
+                'clientReferenceId' => $this->getClientReferenceId(),
+                'autoRenew' => $this->autoRenew
+            ]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class PartnerSiteRestriction implements \JsonSerializable
@@ -144,6 +145,24 @@ class PartnerSiteRestriction implements \JsonSerializable
     public function setExclusive(?bool $exclusive): void
     {
         $this->exclusive = $exclusive;
+    }
+
+    /**
+     * Converts the PartnerSiteRestriction object to a human-readable string representation.
+     *
+     * @return string The string representation of the PartnerSiteRestriction object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'PartnerSiteRestriction',
+            [
+                'networkCode' => $this->networkCode,
+                'sites' => $this->sites,
+                'siteGroups' => $this->siteGroups,
+                'exclusive' => $this->exclusive
+            ]
+        );
     }
 
     /**

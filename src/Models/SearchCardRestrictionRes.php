@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class SearchCardRestrictionRes implements \JsonSerializable
@@ -122,6 +123,24 @@ class SearchCardRestrictionRes implements \JsonSerializable
     public function setError(?ErrorStatus $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the SearchCardRestrictionRes object to a human-readable string representation.
+     *
+     * @return string The string representation of the SearchCardRestrictionRes object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SearchCardRestrictionRes',
+            [
+                'requestId' => $this->getRequestId(),
+                'cards' => $this->cards,
+                'restrictions' => $this->restrictions,
+                'error' => $this->error
+            ]
+        );
     }
 
     /**

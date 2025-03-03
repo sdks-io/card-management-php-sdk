@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class AutoRenewCardResponseDataItems implements \JsonSerializable
@@ -123,6 +124,23 @@ class AutoRenewCardResponseDataItems implements \JsonSerializable
     public function unsetPANID(): void
     {
         $this->pANID = [];
+    }
+
+    /**
+     * Converts the AutoRenewCardResponseDataItems object to a human-readable string representation.
+     *
+     * @return string The string representation of the AutoRenewCardResponseDataItems object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'AutoRenewCardResponseDataItems',
+            [
+                'autoRenewReferenceId' => $this->getAutoRenewReferenceId(),
+                'cardIdAndPAN' => $this->getCardIdAndPAN(),
+                'pANID' => $this->getPANID()
+            ]
+        );
     }
 
     /**

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -40,6 +41,16 @@ class DefaultErrorFaultDetail implements \JsonSerializable
     public function setErrorcode(?string $errorcode): void
     {
         $this->errorcode = $errorcode;
+    }
+
+    /**
+     * Converts the DefaultErrorFaultDetail object to a human-readable string representation.
+     *
+     * @return string The string representation of the DefaultErrorFaultDetail object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify('DefaultErrorFaultDetail', ['errorcode' => $this->errorcode]);
     }
 
     /**

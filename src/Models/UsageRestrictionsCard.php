@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class UsageRestrictionsCard implements \JsonSerializable
@@ -712,6 +713,37 @@ class UsageRestrictionsCard implements \JsonSerializable
     public function unsetLifeTimeTransactionCount(): void
     {
         $this->lifeTimeTransactionCount = [];
+    }
+
+    /**
+     * Converts the UsageRestrictionsCard object to a human-readable string representation.
+     *
+     * @return string The string representation of the UsageRestrictionsCard object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'UsageRestrictionsCard',
+            [
+                'dailySpend' => $this->getDailySpend(),
+                'weeklySpend' => $this->getWeeklySpend(),
+                'monthlySpend' => $this->getMonthlySpend(),
+                'perTransactionSpend' => $this->getPerTransactionSpend(),
+                'annualSpend' => $this->getAnnualSpend(),
+                'lifeTimeSpend' => $this->getLifeTimeSpend(),
+                'dailyVolume' => $this->getDailyVolume(),
+                'weeklyVolume' => $this->getWeeklyVolume(),
+                'monthlyVolume' => $this->getMonthlyVolume(),
+                'perTransactionVolume' => $this->perTransactionVolume,
+                'annualVolume' => $this->getAnnualVolume(),
+                'lifeTimeVolume' => $this->lifeTimeVolume,
+                'dailyTransactionCount' => $this->getDailyTransactionCount(),
+                'weeklyTransactionCount' => $this->getWeeklyTransactionCount(),
+                'monthlyTransactionCount' => $this->getMonthlyTransactionCount(),
+                'annualTransactionCount' => $this->getAnnualTransactionCount(),
+                'lifeTimeTransactionCount' => $this->getLifeTimeTransactionCount()
+            ]
+        );
     }
 
     /**

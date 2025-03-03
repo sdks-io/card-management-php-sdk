@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 /**
@@ -530,6 +531,33 @@ class SubmittedCard implements \JsonSerializable
     public function unsetPayerNumber(): void
     {
         $this->payerNumber = [];
+    }
+
+    /**
+     * Converts the SubmittedCard object to a human-readable string representation.
+     *
+     * @return string The string representation of the SubmittedCard object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'SubmittedCard',
+            [
+                'replacementCardReference' => $this->getReplacementCardReference(),
+                'updateCardReference' => $this->getUpdateCardReference(),
+                'accountId' => $this->getAccountId(),
+                'accountNumber' => $this->getAccountNumber(),
+                'cardExpiryDate' => $this->getCardExpiryDate(),
+                'cardId' => $this->getCardId(),
+                'colCoCode' => $this->getColCoCode(),
+                'colCoId' => $this->getColCoId(),
+                'pAN' => $this->getPAN(),
+                'pANID' => $this->getPANID(),
+                'maskedPAN' => $this->getMaskedPAN(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber()
+            ]
+        );
     }
 
     /**

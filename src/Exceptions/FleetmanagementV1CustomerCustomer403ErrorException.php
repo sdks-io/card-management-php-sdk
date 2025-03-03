@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Exceptions;
 
+use ShellCardManagementAPIsLib\ApiHelper;
+
 class FleetmanagementV1CustomerCustomer403ErrorException extends ApiException
 {
     /**
@@ -33,5 +35,20 @@ class FleetmanagementV1CustomerCustomer403ErrorException extends ApiException
     public function setError(?\ShellCardManagementAPIsLib\Models\ErrorUserAccessError $error): void
     {
         $this->error = $error;
+    }
+
+    /**
+     * Converts the FleetmanagementV1CustomerCustomer403ErrorException object to a human-readable string
+     * representation.
+     *
+     * @return string The string representation of the FleetmanagementV1CustomerCustomer403ErrorException object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'FleetmanagementV1CustomerCustomer403ErrorException',
+            ['error' => $this->error],
+            parent::__toString()
+        );
     }
 }

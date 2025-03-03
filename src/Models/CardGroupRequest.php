@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace ShellCardManagementAPIsLib\Models;
 
+use ShellCardManagementAPIsLib\ApiHelper;
 use stdClass;
 
 class CardGroupRequest implements \JsonSerializable
@@ -432,6 +433,29 @@ class CardGroupRequest implements \JsonSerializable
     public function setPageSize(?int $pageSize): void
     {
         $this->pageSize = $pageSize;
+    }
+
+    /**
+     * Converts the CardGroupRequest object to a human-readable string representation.
+     *
+     * @return string The string representation of the CardGroupRequest object.
+     */
+    public function __toString(): string
+    {
+        return ApiHelper::stringify(
+            'CardGroupRequest',
+            [
+                'colCoId' => $this->getColCoId(),
+                'colCoCode' => $this->getColCoCode(),
+                'payerId' => $this->getPayerId(),
+                'payerNumber' => $this->getPayerNumber(),
+                'account' => $this->account,
+                'cardGroupName' => $this->getCardGroupName(),
+                'status' => $this->getStatus(),
+                'currentPage' => $this->currentPage,
+                'pageSize' => $this->pageSize
+            ]
+        );
     }
 
     /**
