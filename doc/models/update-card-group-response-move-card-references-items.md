@@ -17,9 +17,9 @@
 
 ```json
 {
-  "CardId": 2,
-  "PAN": "PAN4",
-  "Reference": 44
+  "CardId": 123456,
+  "PAN": "7002097550439850717",
+  "Reference": 123456
 }
 ```
 

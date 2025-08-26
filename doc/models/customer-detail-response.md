@@ -34,8 +34,6 @@
 | `status` | `?string` | Optional | Payer current status id and description<br>e.g. (Id – Description):<br>1-Active<br>2-Requested from UTA<br>3-Awaiting embossing<br>4-Manufactured<br>5-Awaiting despatch | getStatus(): ?string | setStatus(?string status): void |
 | `defaultPINAdviceType` | `?int` | Optional | Default PIN AdviceType of the customer.<br>Possible Values:<br><br>1. Paper<br>2. Email<br>3. SMS<br>4. None | getDefaultPINAdviceType(): ?int | setDefaultPINAdviceType(?int defaultPINAdviceType): void |
 | `pINAdviceTypes` | [`?(PINAdviceTypes[])`](../../doc/models/pin-advice-types.md) | Optional | - | getPINAdviceTypes(): ?array | setPINAdviceTypes(?array pINAdviceTypes): void |
-| `error` | [`?ErrorStatus`](../../doc/models/error-status.md) | Optional | - | getError(): ?ErrorStatus | setError(?ErrorStatus error): void |
-| `requestId` | `?string` | Optional | API Request id | getRequestId(): ?string | setRequestId(?string requestId): void |
 | `pINChangeAllowedByCardholder` | `?bool` | Optional | PIN change allowed for card holder or not. | getPINChangeAllowedByCardholder(): ?bool | setPINChangeAllowedByCardholder(?bool pINChangeAllowedByCardholder): void |
 | `pINChangeAllowedFromFleetPIN` | `?bool` | Optional | PIN change allowed from fleetpin or not. | getPINChangeAllowedFromFleetPIN(): ?bool | setPINChangeAllowedFromFleetPIN(?bool pINChangeAllowedFromFleetPIN): void |
 
@@ -58,8 +56,7 @@
   "PayerName": "5.11.3 DE",
   "PayerNumber": "DE00001067",
   "Status": "1 - Active",
-  "DefaultPINAdviceType": 1,
-  "RequestId": "908358e3-03ca-4aef-93b2-37586b859171"
+  "DefaultPINAdviceType": 1
 }
 ```
 

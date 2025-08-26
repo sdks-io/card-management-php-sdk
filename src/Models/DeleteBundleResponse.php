@@ -21,13 +21,13 @@ class DeleteBundleResponse implements \JsonSerializable
     private $requestId;
 
     /**
-     * @var ErrorStatus|null
+     * @var string|null
      */
-    private $error;
+    private $status;
 
     /**
      * Returns Request Id.
-     * API Request Id
+     * Unique identifier for the request. This will be played back in the response from the request.
      */
     public function getRequestId(): ?string
     {
@@ -36,7 +36,7 @@ class DeleteBundleResponse implements \JsonSerializable
 
     /**
      * Sets Request Id.
-     * API Request Id
+     * Unique identifier for the request. This will be played back in the response from the request.
      *
      * @maps RequestId
      */
@@ -46,21 +46,23 @@ class DeleteBundleResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
+     * Returns Status.
+     * Status of the request
      */
-    public function getError(): ?ErrorStatus
+    public function getStatus(): ?string
     {
-        return $this->error;
+        return $this->status;
     }
 
     /**
-     * Sets Error.
+     * Sets Status.
+     * Status of the request
      *
-     * @maps Error
+     * @maps Status
      */
-    public function setError(?ErrorStatus $error): void
+    public function setStatus(?string $status): void
     {
-        $this->error = $error;
+        $this->status = $status;
     }
 
     /**
@@ -72,7 +74,7 @@ class DeleteBundleResponse implements \JsonSerializable
     {
         return ApiHelper::stringify(
             'DeleteBundleResponse',
-            ['requestId' => $this->requestId, 'error' => $this->error]
+            ['requestId' => $this->requestId, 'status' => $this->status]
         );
     }
 
@@ -91,8 +93,8 @@ class DeleteBundleResponse implements \JsonSerializable
         if (isset($this->requestId)) {
             $json['RequestId'] = $this->requestId;
         }
-        if (isset($this->error)) {
-            $json['Error']     = $this->error;
+        if (isset($this->status)) {
+            $json['Status']    = $this->status;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

@@ -14,7 +14,6 @@ use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AccountAccess;
 use ShellCardManagementAPIsLib\Models\ColCoAccess;
 use ShellCardManagementAPIsLib\Models\EIDAccess;
-use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\LoggedInUserResponse;
 use ShellCardManagementAPIsLib\Models\PayerAccess;
 use ShellCardManagementAPIsLib\Models\Role;
@@ -429,28 +428,6 @@ class LoggedInUserResponseBuilder
     public function unsetCardCount(): self
     {
         $this->instance->unsetCardCount();
-        return $this;
-    }
-
-    /**
-     * Sets Error field.
-     *
-     * @param ErrorStatus|null $value
-     */
-    public function error(?ErrorStatus $value): self
-    {
-        $this->instance->setError($value);
-        return $this;
-    }
-
-    /**
-     * Sets Request Id field.
-     *
-     * @param string|null $value
-     */
-    public function requestId(?string $value): self
-    {
-        $this->instance->setRequestId($value);
         return $this;
     }
 

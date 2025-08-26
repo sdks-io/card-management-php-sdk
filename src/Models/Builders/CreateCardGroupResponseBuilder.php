@@ -14,7 +14,6 @@ use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\CreateCardGroupResponse;
 use ShellCardManagementAPIsLib\Models\CreateCardGroupResponseErrorCardsItems;
 use ShellCardManagementAPIsLib\Models\CreateCardGroupResponseSuccessfulRequestsItems;
-use ShellCardManagementAPIsLib\Models\ErrorStatus;
 
 /**
  * Builder for model CreateCardGroupResponse
@@ -82,28 +81,6 @@ class CreateCardGroupResponseBuilder
     public function errorCards(?array $value): self
     {
         $this->instance->setErrorCards($value);
-        return $this;
-    }
-
-    /**
-     * Sets Error field.
-     *
-     * @param ErrorStatus|null $value
-     */
-    public function error(?ErrorStatus $value): self
-    {
-        $this->instance->setError($value);
-        return $this;
-    }
-
-    /**
-     * Sets Request Id field.
-     *
-     * @param string|null $value
-     */
-    public function requestId(?string $value): self
-    {
-        $this->instance->setRequestId($value);
         return $this;
     }
 

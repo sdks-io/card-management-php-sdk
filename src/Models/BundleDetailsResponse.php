@@ -71,16 +71,6 @@ class BundleDetailsResponse implements \JsonSerializable
     private $restrictions;
 
     /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
-     * @var string|null
-     */
-    private $requestId;
-
-    /**
      * Returns Payer Id.
      * Payer Id of the bundles and cards.
      * Example: 123456
@@ -315,44 +305,6 @@ class BundleDetailsResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
-     * Returns Request Id.
-     * API Request Id
-     */
-    public function getRequestId(): ?string
-    {
-        return $this->requestId;
-    }
-
-    /**
-     * Sets Request Id.
-     * API Request Id
-     *
-     * @maps RequestId
-     */
-    public function setRequestId(?string $requestId): void
-    {
-        $this->requestId = $requestId;
-    }
-
-    /**
      * Converts the BundleDetailsResponse object to a human-readable string representation.
      *
      * @return string The string representation of the BundleDetailsResponse object.
@@ -372,9 +324,7 @@ class BundleDetailsResponse implements \JsonSerializable
                 'pans' => $this->pans,
                 'restrictionCurrencyCode' => $this->restrictionCurrencyCode,
                 'restrictionCurrencySymbol' => $this->restrictionCurrencySymbol,
-                'restrictions' => $this->restrictions,
-                'error' => $this->error,
-                'requestId' => $this->requestId
+                'restrictions' => $this->restrictions
             ]
         );
     }
@@ -423,12 +373,6 @@ class BundleDetailsResponse implements \JsonSerializable
         }
         if (isset($this->restrictions)) {
             $json['Restrictions']              = $this->restrictions;
-        }
-        if (isset($this->error)) {
-            $json['Error']                     = $this->error;
-        }
-        if (isset($this->requestId)) {
-            $json['RequestId']                 = $this->requestId;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

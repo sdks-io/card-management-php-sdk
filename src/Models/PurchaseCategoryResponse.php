@@ -21,11 +21,6 @@ class PurchaseCategoryResponse implements \JsonSerializable
     private $purchaseCategories;
 
     /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
      * Returns Purchase Categories.
      *
      * @return PurchaseCategory1AllOf0[]|null
@@ -48,24 +43,6 @@ class PurchaseCategoryResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
      * Converts the PurchaseCategoryResponse object to a human-readable string representation.
      *
      * @return string The string representation of the PurchaseCategoryResponse object.
@@ -74,7 +51,7 @@ class PurchaseCategoryResponse implements \JsonSerializable
     {
         return ApiHelper::stringify(
             'PurchaseCategoryResponse',
-            ['purchaseCategories' => $this->purchaseCategories, 'error' => $this->error]
+            ['purchaseCategories' => $this->purchaseCategories]
         );
     }
 
@@ -92,9 +69,6 @@ class PurchaseCategoryResponse implements \JsonSerializable
         $json = [];
         if (isset($this->purchaseCategories)) {
             $json['PurchaseCategories'] = $this->purchaseCategories;
-        }
-        if (isset($this->error)) {
-            $json['Error']              = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

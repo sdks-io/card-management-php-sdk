@@ -84,28 +84,6 @@ class PayerRequestBuilder
     }
 
     /**
-     * Sets Current Page field.
-     *
-     * @param int|null $value
-     */
-    public function currentPage(?int $value): self
-    {
-        $this->instance->setCurrentPage($value);
-        return $this;
-    }
-
-    /**
-     * Sets Page Size field.
-     *
-     * @param int|null $value
-     */
-    public function pageSize(?int $value): self
-    {
-        $this->instance->setPageSize($value);
-        return $this;
-    }
-
-    /**
      * Initializes a new Payer Request object.
      */
     public function build(): PayerRequest

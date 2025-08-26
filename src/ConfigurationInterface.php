@@ -11,10 +11,8 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib;
 
 use CoreInterfaces\Http\HttpConfigurations;
-use ShellCardManagementAPIsLib\Authentication\BasicAuthCredentials;
-use ShellCardManagementAPIsLib\Authentication\BasicAuthCredentialsBuilder;
-use ShellCardManagementAPIsLib\Authentication\BearerTokenCredentials;
-use ShellCardManagementAPIsLib\Authentication\BearerTokenCredentialsBuilder;
+use ShellCardManagementAPIsLib\Authentication\ClientCredentialsAuthCredentialsBuilder;
+use ShellCardManagementAPIsLib\Proxy\ProxyConfigurationBuilder;
 
 /**
  * An interface for all configuration parameters required by the SDK.
@@ -27,24 +25,19 @@ interface ConfigurationInterface extends HttpConfigurations
     public function getEnvironment(): string;
 
     /**
-     * Get the credentials to use with BasicAuth
+     * Get the credentials to use with ClientCredentialsAuth
      */
-    public function getBasicAuthCredentials(): BasicAuthCredentials;
+    public function getClientCredentialsAuth(): ClientCredentialsAuth;
 
     /**
-     * Get the credentials builder instance to update credentials for BasicAuth
+     * Get the credentials builder instance to update credentials for ClientCredentialsAuth
      */
-    public function getBasicAuthCredentialsBuilder(): ?BasicAuthCredentialsBuilder;
+    public function getClientCredentialsAuthCredentialsBuilder(): ?ClientCredentialsAuthCredentialsBuilder;
 
     /**
-     * Get the credentials to use with BearerToken
+     * Represents the proxy configurations for API calls.
      */
-    public function getBearerTokenCredentials(): BearerTokenCredentials;
-
-    /**
-     * Get the credentials builder instance to update credentials for BearerToken
-     */
-    public function getBearerTokenCredentialsBuilder(): ?BearerTokenCredentialsBuilder;
+    public function getProxyConfigurationBuilder(): ProxyConfigurationBuilder;
 
     /**
      * Get the base uri for a given server in the current environment.

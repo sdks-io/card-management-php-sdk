@@ -16,9 +16,9 @@
 | `resetDayTimeRestrictions` | `?bool` | Optional | True/False.<br>If true, the Day/Time restrictions applied on the card will be deleted. Else, the card restrictions will be updated with the day/time restrictions provided in the API. | getResetDayTimeRestrictions(): ?bool | setResetDayTimeRestrictions(?bool resetDayTimeRestrictions): void |
 | `resetProductRestrictions` | `?bool` | Optional | True/False.<br>If true, Default fuel/non-fuel sets configured at the purchase category level will be applied to the card. Else, the card will be applied with product restrictions provided in the API. | getResetProductRestrictions(): ?bool | setResetProductRestrictions(?bool resetProductRestrictions): void |
 | `resetLocationRestrictions` | `?bool` | Optional | True/False.<br>If true, the location restrictions applied on the card will be deleted. Else, the card restrictions will be updated with the location restrictions provided in the API. | getResetLocationRestrictions(): ?bool | setResetLocationRestrictions(?bool resetLocationRestrictions): void |
-| `usageRestrictions` | `?array` | Optional | - | getUsageRestrictions(): ?array | setUsageRestrictions(?array usageRestrictions): void |
+| `usageRestrictions` | [`?UsageRestrictionsCard`](../../doc/models/usage-restrictions-card.md) | Optional | - | getUsageRestrictions(): ?UsageRestrictionsCard | setUsageRestrictions(?UsageRestrictionsCard usageRestrictions): void |
 | `dayTimeRestrictions` | [`?DayTimeRestrictions`](../../doc/models/day-time-restrictions.md) | Optional | - | getDayTimeRestrictions(): ?DayTimeRestrictions | setDayTimeRestrictions(?DayTimeRestrictions dayTimeRestrictions): void |
-| `productRestrictions` | `?array` | Optional | - | getProductRestrictions(): ?array | setProductRestrictions(?array productRestrictions): void |
+| `productRestrictions` | [`?ProductRestrictionCard`](../../doc/models/product-restriction-card.md) | Optional | - | getProductRestrictions(): ?ProductRestrictionCard | setProductRestrictions(?ProductRestrictionCard productRestrictions): void |
 | `locationRestrictions` | [`?LocationRestriction`](../../doc/models/location-restriction.md) | Optional | - | getLocationRestrictions(): ?LocationRestriction | setLocationRestrictions(?LocationRestriction locationRestrictions): void |
 
 ## Example (as JSON)

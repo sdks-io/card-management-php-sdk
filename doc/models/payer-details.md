@@ -53,8 +53,8 @@
 | `invoiceAccountID` | `?int` | Optional | The Account ID of the account on which the invoice is generated. | getInvoiceAccountID(): ?int | setInvoiceAccountID(?int invoiceAccountID): void |
 | `invoiceAccountNumber` | `?string` | Optional | The Account Number of the account on which the invoice is generated. | getInvoiceAccountNumber(): ?string | setInvoiceAccountNumber(?string invoiceAccountNumber): void |
 | `invoiceAccountShortName` | `?string` | Optional | The Account Short Name of the account on which the invoice is generated. | getInvoiceAccountShortName(): ?string | setInvoiceAccountShortName(?string invoiceAccountShortName): void |
-| `bestOfIndicator` | `?bool` | Optional | Best of Indicator of the Pricing customer/account configured.<br>**Default**: `false` | getBestOfIndicator(): ?bool | setBestOfIndicator(?bool bestOfIndicator): void |
-| `isInternational` | `?bool` | Optional | Whether the account is international.<br>**Default**: `false` | getIsInternational(): ?bool | setIsInternational(?bool isInternational): void |
+| `bestOfIndicator` | `?bool` | Optional | Best of Indicator of the Pricing customer/account configured.<br><br>**Default**: `false` | getBestOfIndicator(): ?bool | setBestOfIndicator(?bool bestOfIndicator): void |
+| `isInternational` | `?bool` | Optional | Whether the account is international.<br><br>**Default**: `false` | getIsInternational(): ?bool | setIsInternational(?bool isInternational): void |
 | `totalAccounts` | `?int` | Optional | Total number of accounts under the payer. | getTotalAccounts(): ?int | setTotalAccounts(?int totalAccounts): void |
 | `totalActiveAccounts` | `?int` | Optional | Total number of active accounts under the payer. | getTotalActiveAccounts(): ?int | setTotalActiveAccounts(?int totalActiveAccounts): void |
 | `totalCards` | `?int` | Optional | Total number of cards under the payer. | getTotalCards(): ?int | setTotalCards(?int totalCards): void |
@@ -79,10 +79,10 @@
 | `industryClass` | `?string` | Optional | Payer/Company Industry class id and description | getIndustryClass(): ?string | setIndustryClass(?string industryClass): void |
 | `marketingSegmentation` | `?string` | Optional | Marketing Segmentation id and description | getMarketingSegmentation(): ?string | setMarketingSegmentation(?string marketingSegmentation): void |
 | `lineOfBusiness` | `?string` | Optional | Payer/Company Line of Business Id and Description | getLineOfBusiness(): ?string | setLineOfBusiness(?string lineOfBusiness): void |
-| `printCreditLimit` | `?bool` | Optional | Is Credit Limit printed on the statement of account: True/False<br>If True Credit Limit is printed on invoice/SOA<br>**Default**: `false` | getPrintCreditLimit(): ?bool | setPrintCreditLimit(?bool printCreditLimit): void |
+| `printCreditLimit` | `?bool` | Optional | Is Credit Limit printed on the statement of account: True/False<br>If True Credit Limit is printed on invoice/SOA<br><br>**Default**: `false` | getPrintCreditLimit(): ?bool | setPrintCreditLimit(?bool printCreditLimit): void |
 | `cardGroupType` | `?string` | Optional | Card Group Type configured for Payer<br>e.g. (Id – Description):<br>1-Horizontal only<br>2-Vertical only<br>3-Both | getCardGroupType(): ?string | setCardGroupType(?string cardGroupType): void |
-| `renewCards` | `?bool` | Optional | If set to True cards will be automatically renewed on expiry<br>**Default**: `false` | getRenewCards(): ?bool | setRenewCards(?bool renewCards): void |
-| `allowSelectPIN` | `?bool` | Optional | If set to True then Self Select PIN is allowed for Payer<br>**Default**: `false` | getAllowSelectPIN(): ?bool | setAllowSelectPIN(?bool allowSelectPIN): void |
+| `renewCards` | `?bool` | Optional | If set to True cards will be automatically renewed on expiry<br><br>**Default**: `false` | getRenewCards(): ?bool | setRenewCards(?bool renewCards): void |
+| `allowSelectPIN` | `?bool` | Optional | If set to True then Self Select PIN is allowed for Payer<br><br>**Default**: `false` | getAllowSelectPIN(): ?bool | setAllowSelectPIN(?bool allowSelectPIN): void |
 | `useFleetPIN` | `?bool` | Optional | If set to True then Fleet PIN is applied for the cards directly under payer | getUseFleetPIN(): ?bool | setUseFleetPIN(?bool useFleetPIN): void |
 | `vATRegNumber` | `?string` | Optional | Payer/Company VAT registration number. | getVATRegNumber(): ?string | setVATRegNumber(?string vATRegNumber): void |
 | `vATRegNumber2` | `?string` | Optional | Payer/Company VAT registration number 2. | getVATRegNumber2(): ?string | setVATRegNumber2(?string vATRegNumber2): void |

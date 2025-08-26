@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\PurchaseCategory1AllOf0;
 use ShellCardManagementAPIsLib\Models\PurchaseCategoryResponse;
 
@@ -48,17 +47,6 @@ class PurchaseCategoryResponseBuilder
     public function purchaseCategories(?array $value): self
     {
         $this->instance->setPurchaseCategories($value);
-        return $this;
-    }
-
-    /**
-     * Sets Error field.
-     *
-     * @param ErrorStatus|null $value
-     */
-    public function error(?ErrorStatus $value): self
-    {
-        $this->instance->setError($value);
         return $this;
     }
 

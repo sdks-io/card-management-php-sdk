@@ -12,7 +12,6 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\AccountVelocityLimit;
-use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\SearchAccountLimitResponse;
 
 /**
@@ -112,17 +111,6 @@ class SearchAccountLimitResponseBuilder
     public function velocityLimits(?array $value): self
     {
         $this->instance->setVelocityLimits($value);
-        return $this;
-    }
-
-    /**
-     * Sets Error field.
-     *
-     * @param ErrorStatus|null $value
-     */
-    public function error(?ErrorStatus $value): self
-    {
-        $this->instance->setError($value);
         return $this;
     }
 

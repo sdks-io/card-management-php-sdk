@@ -186,6 +186,9 @@ class PINReminderCardDetails implements \JsonSerializable
      * 2.    Email
      *
      * 3.    SMS
+     *
+     * 4.    None
+     * Note: - Paper delivery not applicable for selfselctedPIN type and FleetPIN enabled Accounts
      */
     public function getPINAdviceType(): int
     {
@@ -203,6 +206,9 @@ class PINReminderCardDetails implements \JsonSerializable
      * 2.    Email
      *
      * 3.    SMS
+     *
+     * 4.    None
+     * Note: - Paper delivery not applicable for selfselctedPIN type and FleetPIN enabled Accounts
      *
      * @required
      * @maps PINAdviceType
@@ -223,7 +229,7 @@ class PINReminderCardDetails implements \JsonSerializable
      * 4.    Use new specific contact for PIN Reminder only
      *
      *
-     * Note: - PINContactType “3” is only allowed for Paper delivery
+     * Note: - PINContactType “1,2,3” is only allowed for Paper delivery
      */
     public function getPINContactType(): ?int
     {
@@ -241,7 +247,7 @@ class PINReminderCardDetails implements \JsonSerializable
      * 4.    Use new specific contact for PIN Reminder only
      *
      *
-     * Note: - PINContactType “3” is only allowed for Paper delivery
+     * Note: - PINContactType “1,2,3” is only allowed for Paper delivery
      *
      * @maps PINContactType
      */

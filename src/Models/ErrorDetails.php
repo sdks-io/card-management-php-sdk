@@ -31,7 +31,7 @@ class ErrorDetails implements \JsonSerializable
     private $detail;
 
     /**
-     * @var array|null
+     * @var array<string,string|null>|null
      */
     private $additionalInfo;
 
@@ -98,6 +98,8 @@ class ErrorDetails implements \JsonSerializable
     /**
      * Returns Additional Info.
      * Applicable when more details related to error to be returned
+     *
+     * @return array<string,string|null>|null
      */
     public function getAdditionalInfo(): ?array
     {
@@ -109,6 +111,8 @@ class ErrorDetails implements \JsonSerializable
      * Applicable when more details related to error to be returned
      *
      * @maps AdditionalInfo
+     *
+     * @param array<string,string|null>|null $additionalInfo
      */
     public function setAdditionalInfo(?array $additionalInfo): void
     {

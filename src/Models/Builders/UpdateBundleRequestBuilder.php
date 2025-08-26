@@ -84,9 +84,9 @@ class UpdateBundleRequestBuilder
     /**
      * Sets Payer Id field.
      *
-     * @param string|null $value
+     * @param int|null $value
      */
-    public function payerId(?string $value): self
+    public function payerId(?int $value): self
     {
         $this->instance->setPayerId($value);
         return $this;

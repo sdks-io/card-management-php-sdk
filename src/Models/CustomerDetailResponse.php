@@ -141,16 +141,6 @@ class CustomerDetailResponse implements \JsonSerializable
     private $pINAdviceTypes;
 
     /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
-     * @var array
-     */
-    private $requestId = [];
-
-    /**
      * @var bool|null
      */
     private $pINChangeAllowedByCardholder;
@@ -980,56 +970,6 @@ class CustomerDetailResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
-     * Returns Request Id.
-     * API Request id
-     */
-    public function getRequestId(): ?string
-    {
-        if (count($this->requestId) == 0) {
-            return null;
-        }
-        return $this->requestId['value'];
-    }
-
-    /**
-     * Sets Request Id.
-     * API Request id
-     *
-     * @maps RequestId
-     */
-    public function setRequestId(?string $requestId): void
-    {
-        $this->requestId['value'] = $requestId;
-    }
-
-    /**
-     * Unsets Request Id.
-     * API Request id
-     */
-    public function unsetRequestId(): void
-    {
-        $this->requestId = [];
-    }
-
-    /**
      * Returns P in Change Allowed by Cardholder.
      * PIN change allowed for card holder or not.
      */
@@ -1104,8 +1044,6 @@ class CustomerDetailResponse implements \JsonSerializable
                 'status' => $this->getStatus(),
                 'defaultPINAdviceType' => $this->getDefaultPINAdviceType(),
                 'pINAdviceTypes' => $this->pINAdviceTypes,
-                'error' => $this->error,
-                'requestId' => $this->getRequestId(),
                 'pINChangeAllowedByCardholder' => $this->pINChangeAllowedByCardholder,
                 'pINChangeAllowedFromFleetPIN' => $this->pINChangeAllowedFromFleetPIN
             ]
@@ -1198,12 +1136,6 @@ class CustomerDetailResponse implements \JsonSerializable
         }
         if (isset($this->pINAdviceTypes)) {
             $json['PINAdviceTypes']               = $this->pINAdviceTypes;
-        }
-        if (isset($this->error)) {
-            $json['Error']                        = $this->error;
-        }
-        if (!empty($this->requestId)) {
-            $json['RequestId']                    = $this->requestId['value'];
         }
         if (isset($this->pINChangeAllowedByCardholder)) {
             $json['PINChangeAllowedByCardholder'] = $this->pINChangeAllowedByCardholder;

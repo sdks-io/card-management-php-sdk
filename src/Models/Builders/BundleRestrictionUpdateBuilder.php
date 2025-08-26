@@ -14,6 +14,8 @@ use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\BundleRestrictionUpdate;
 use ShellCardManagementAPIsLib\Models\CardDayTimeRestrictions;
 use ShellCardManagementAPIsLib\Models\LocationRestriction;
+use ShellCardManagementAPIsLib\Models\ProductRestrictionCard;
+use ShellCardManagementAPIsLib\Models\UsageRestrictionsCard;
 
 /**
  * Builder for model BundleRestrictionUpdate
@@ -103,9 +105,9 @@ class BundleRestrictionUpdateBuilder
     /**
      * Sets Usage Restrictions field.
      *
-     * @param array|null $value
+     * @param UsageRestrictionsCard|null $value
      */
-    public function usageRestrictions(?array $value): self
+    public function usageRestrictions(?UsageRestrictionsCard $value): self
     {
         $this->instance->setUsageRestrictions($value);
         return $this;
@@ -145,9 +147,9 @@ class BundleRestrictionUpdateBuilder
     /**
      * Sets Product Restrictions field.
      *
-     * @param array|null $value
+     * @param ProductRestrictionCard|null $value
      */
-    public function productRestrictions(?array $value): self
+    public function productRestrictions(?ProductRestrictionCard $value): self
     {
         $this->instance->setProductRestrictions($value);
         return $this;

@@ -1344,7 +1344,7 @@ class OrderCardEnquiry implements \JsonSerializable
      * If the Order Card request is still not processed, i.e. PAN is not yet issued, this field will be
      * null or empty.
      * For a Card Order with a custom Expiry Date passed in the request, this value will be returned after
-     * it is updated successfully in GFN by the background process.
+     * it is updated successfully.
      */
     public function getExpiryDate(): ?string
     {
@@ -1363,7 +1363,7 @@ class OrderCardEnquiry implements \JsonSerializable
      * If the Order Card request is still not processed, i.e. PAN is not yet issued, this field will be
      * null or empty.
      * For a Card Order with a custom Expiry Date passed in the request, this value will be returned after
-     * it is updated successfully in GFN by the background process.
+     * it is updated successfully.
      *
      * @maps ExpiryDate
      */
@@ -1381,7 +1381,7 @@ class OrderCardEnquiry implements \JsonSerializable
      * If the Order Card request is still not processed, i.e. PAN is not yet issued, this field will be
      * null or empty.
      * For a Card Order with a custom Expiry Date passed in the request, this value will be returned after
-     * it is updated successfully in GFN by the background process.
+     * it is updated successfully.
      */
     public function unsetExpiryDate(): void
     {

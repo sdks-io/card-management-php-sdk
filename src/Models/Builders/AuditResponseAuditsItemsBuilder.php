@@ -650,6 +650,46 @@ class AuditResponseAuditsItemsBuilder
     }
 
     /**
+     * Sets PANID field.
+     *
+     * @param string|null $value
+     */
+    public function pANID(?string $value): self
+    {
+        $this->instance->setPANID($value);
+        return $this;
+    }
+
+    /**
+     * Unsets PANID field.
+     */
+    public function unsetPANID(): self
+    {
+        $this->instance->unsetPANID();
+        return $this;
+    }
+
+    /**
+     * Sets Masked PAN field.
+     *
+     * @param string|null $value
+     */
+    public function maskedPAN(?string $value): self
+    {
+        $this->instance->setMaskedPAN($value);
+        return $this;
+    }
+
+    /**
+     * Unsets Masked PAN field.
+     */
+    public function unsetMaskedPAN(): self
+    {
+        $this->instance->unsetMaskedPAN();
+        return $this;
+    }
+
+    /**
      * Initializes a new Audit Response Audits Items object.
      */
     public function build(): AuditResponseAuditsItems

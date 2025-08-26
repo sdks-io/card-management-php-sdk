@@ -61,7 +61,7 @@ class CreateBundleRequest implements \JsonSerializable
     private $cards;
 
     /**
-     * @var array|null
+     * @var BundleRestriction|null
      */
     private $restrictions;
 
@@ -414,7 +414,7 @@ class CreateBundleRequest implements \JsonSerializable
     /**
      * Returns Restrictions.
      */
-    public function getRestrictions(): ?array
+    public function getRestrictions(): ?BundleRestriction
     {
         return $this->restrictions;
     }
@@ -424,7 +424,7 @@ class CreateBundleRequest implements \JsonSerializable
      *
      * @maps Restrictions
      */
-    public function setRestrictions(?array $restrictions): void
+    public function setRestrictions(?BundleRestriction $restrictions): void
     {
         $this->restrictions = $restrictions;
     }

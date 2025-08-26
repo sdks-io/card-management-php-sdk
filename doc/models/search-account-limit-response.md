@@ -15,7 +15,6 @@
 | `referenceProduct` | `?string` | Optional | 3 digit Shell global fuel product code, if already set up.<br>Example: 021 | getReferenceProduct(): ?string | setReferenceProduct(?string referenceProduct): void |
 | `restrictionCondition` | `?string` | Optional | The restriction condition code.<br>Example: DECLINE_ALERT | getRestrictionCondition(): ?string | setRestrictionCondition(?string restrictionCondition): void |
 | `velocityLimits` | [`?(AccountVelocityLimit[])`](../../doc/models/account-velocity-limit.md) | Optional | - | getVelocityLimits(): ?array | setVelocityLimits(?array velocityLimits): void |
-| `error` | [`?ErrorStatus`](../../doc/models/error-status.md) | Optional | - | getError(): ?ErrorStatus | setError(?ErrorStatus error): void |
 
 ## Example (as JSON)
 

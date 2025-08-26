@@ -171,28 +171,6 @@ class CardGroupRequestBuilder
     }
 
     /**
-     * Sets Current Page field.
-     *
-     * @param int|null $value
-     */
-    public function currentPage(?int $value): self
-    {
-        $this->instance->setCurrentPage($value);
-        return $this;
-    }
-
-    /**
-     * Sets Page Size field.
-     *
-     * @param int|null $value
-     */
-    public function pageSize(?int $value): self
-    {
-        $this->instance->setPageSize($value);
-        return $this;
-    }
-
-    /**
      * Initializes a new Card Group Request object.
      */
     public function build(): CardGroupRequest

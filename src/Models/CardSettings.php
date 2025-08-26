@@ -998,6 +998,7 @@ class CardSettings implements \JsonSerializable
      * 2.    Email<br />
      * 3.    SMS<br />
      * 4.    None
+     * Note: Paper delivery not applicable for selfselctedPIN type and FleetPIN enabled Accounts
      */
     public function getPINAdviceType(): ?int
     {
@@ -1016,6 +1017,7 @@ class CardSettings implements \JsonSerializable
      * 2.    Email<br />
      * 3.    SMS<br />
      * 4.    None
+     * Note: Paper delivery not applicable for selfselctedPIN type and FleetPIN enabled Accounts
      *
      * @maps PINAdviceType
      */
@@ -1033,6 +1035,7 @@ class CardSettings implements \JsonSerializable
      * 2.    Email<br />
      * 3.    SMS<br />
      * 4.    None
+     * Note: Paper delivery not applicable for selfselctedPIN type and FleetPIN enabled Accounts
      */
     public function unsetPINAdviceType(): void
     {

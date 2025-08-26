@@ -188,8 +188,8 @@ class PurchaseCategory1AllOf0 implements \JsonSerializable
      *
      * 8.    Premium and LNG
      *
-     * Note: Purchase Category name (GFN) is returned when Title does not exist for the given language Code
-     * and default language code (en-GB).
+     * Note: Purchase Category name is returned when Title does not exist for the given language Code and
+     * default language code (en-GB).
      */
     public function getTitle(): ?string
     {
@@ -216,8 +216,8 @@ class PurchaseCategory1AllOf0 implements \JsonSerializable
      *
      * 8.    Premium and LNG
      *
-     * Note: Purchase Category name (GFN) is returned when Title does not exist for the given language Code
-     * and default language code (en-GB).
+     * Note: Purchase Category name is returned when Title does not exist for the given language Code and
+     * default language code (en-GB).
      *
      * @maps Title
      */
@@ -248,8 +248,8 @@ class PurchaseCategory1AllOf0 implements \JsonSerializable
      *
      * 3 - No Restriction + LNG
      *
-     * Note: Purchase Category name (GFN) is returned when Title does not exist for the given language Code
-     * and default language code (en-GB).
+     * Note: Purchase Category name is returned when Title does not exist for the given language Code and
+     * default language code (en-GB).
      */
     public function getDescription(): ?string
     {
@@ -278,8 +278,8 @@ class PurchaseCategory1AllOf0 implements \JsonSerializable
      *
      * 3 - No Restriction + LNG
      *
-     * Note: Purchase Category name (GFN) is returned when Title does not exist for the given language Code
-     * and default language code (en-GB).
+     * Note: Purchase Category name is returned when Title does not exist for the given language Code and
+     * default language code (en-GB).
      *
      * @maps Description
      */

@@ -131,16 +131,6 @@ class LoggedInUserResponse implements \JsonSerializable
     private $cardCount = [];
 
     /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
-     * @var string|null
-     */
-    private $requestId;
-
-    /**
      * Returns User Name.
      * Logged in User Identifier
      */
@@ -439,8 +429,7 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Returns Decimal Separator.
      * Preferred Decimal separator configured for the logged in user
-     * Note: - Colco default value (configured at Microservices) is returned when the user is not provided
-     * or does not exist.
+     * Note: - Colco default value returned when the user is not provided or does not exist.
      */
     public function getDecimalSeparator(): ?string
     {
@@ -453,8 +442,7 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Sets Decimal Separator.
      * Preferred Decimal separator configured for the logged in user
-     * Note: - Colco default value (configured at Microservices) is returned when the user is not provided
-     * or does not exist.
+     * Note: - Colco default value returned when the user is not provided or does not exist.
      *
      * @maps DecimalSeparator
      */
@@ -466,8 +454,7 @@ class LoggedInUserResponse implements \JsonSerializable
     /**
      * Unsets Decimal Separator.
      * Preferred Decimal separator configured for the logged in user
-     * Note: - Colco default value (configured at Microservices) is returned when the user is not provided
-     * or does not exist.
+     * Note: - Colco default value returned when the user is not provided or does not exist.
      */
     public function unsetDecimalSeparator(): void
     {
@@ -875,44 +862,6 @@ class LoggedInUserResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
-     * Returns Request Id.
-     * Request Id of the API call
-     */
-    public function getRequestId(): ?string
-    {
-        return $this->requestId;
-    }
-
-    /**
-     * Sets Request Id.
-     * Request Id of the API call
-     *
-     * @maps RequestId
-     */
-    public function setRequestId(?string $requestId): void
-    {
-        $this->requestId = $requestId;
-    }
-
-    /**
      * Converts the LoggedInUserResponse object to a human-readable string representation.
      *
      * @return string The string representation of the LoggedInUserResponse object.
@@ -944,9 +893,7 @@ class LoggedInUserResponse implements \JsonSerializable
                 'userClassificationByShell' => $this->getUserClassificationByShell(),
                 'payerCount' => $this->getPayerCount(),
                 'accountCount' => $this->getAccountCount(),
-                'cardCount' => $this->getCardCount(),
-                'error' => $this->error,
-                'requestId' => $this->requestId
+                'cardCount' => $this->getCardCount()
             ]
         );
     }
@@ -1031,12 +978,6 @@ class LoggedInUserResponse implements \JsonSerializable
         }
         if (!empty($this->cardCount)) {
             $json['CardCount']                  = $this->cardCount['value'];
-        }
-        if (isset($this->error)) {
-            $json['Error']                      = $this->error;
-        }
-        if (isset($this->requestId)) {
-            $json['RequestId']                  = $this->requestId;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

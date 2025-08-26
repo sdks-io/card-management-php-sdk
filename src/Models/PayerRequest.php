@@ -36,16 +36,6 @@ class PayerRequest implements \JsonSerializable
     private $includeBonusParameters = false;
 
     /**
-     * @var int|null
-     */
-    private $currentPage;
-
-    /**
-     * @var int|null
-     */
-    private $pageSize;
-
-    /**
      * Returns Payers.
      * List of Payer entity.
      * Optional.
@@ -146,74 +136,6 @@ class PayerRequest implements \JsonSerializable
     }
 
     /**
-     * Returns Current Page.
-     * Page Number
-     */
-    public function getCurrentPage(): ?int
-    {
-        return $this->currentPage;
-    }
-
-    /**
-     * Sets Current Page.
-     * Page Number
-     *
-     * @maps CurrentPage
-     */
-    public function setCurrentPage(?int $currentPage): void
-    {
-        $this->currentPage = $currentPage;
-    }
-
-    /**
-     * Returns Page Size.
-     * Page Size – Number of records to show on a page
-     *
-     *
-     *
-     * Default value 50
-     *
-     * Return 250 rows only in the response if -1 is supplied as page size.
-     *
-     *
-     *
-     * Note:
-     *
-     * •    Max page size is 250, if the user provided value is more than 250 then it will throw error.
-     *
-     * •    This value is configurable.
-     */
-    public function getPageSize(): ?int
-    {
-        return $this->pageSize;
-    }
-
-    /**
-     * Sets Page Size.
-     * Page Size – Number of records to show on a page
-     *
-     *
-     *
-     * Default value 50
-     *
-     * Return 250 rows only in the response if -1 is supplied as page size.
-     *
-     *
-     *
-     * Note:
-     *
-     * •    Max page size is 250, if the user provided value is more than 250 then it will throw error.
-     *
-     * •    This value is configurable.
-     *
-     * @maps PageSize
-     */
-    public function setPageSize(?int $pageSize): void
-    {
-        $this->pageSize = $pageSize;
-    }
-
-    /**
      * Converts the PayerRequest object to a human-readable string representation.
      *
      * @return string The string representation of the PayerRequest object.
@@ -226,9 +148,7 @@ class PayerRequest implements \JsonSerializable
                 'payers' => $this->payers,
                 'returnBasicDetailsOnly' => $this->returnBasicDetailsOnly,
                 'includeAddresses' => $this->includeAddresses,
-                'includeBonusParameters' => $this->includeBonusParameters,
-                'currentPage' => $this->currentPage,
-                'pageSize' => $this->pageSize
+                'includeBonusParameters' => $this->includeBonusParameters
             ]
         );
     }
@@ -256,12 +176,6 @@ class PayerRequest implements \JsonSerializable
         }
         if (isset($this->includeBonusParameters)) {
             $json['IncludeBonusParameters'] = $this->includeBonusParameters;
-        }
-        if (isset($this->currentPage)) {
-            $json['CurrentPage']            = $this->currentPage;
-        }
-        if (isset($this->pageSize)) {
-            $json['PageSize']               = $this->pageSize;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

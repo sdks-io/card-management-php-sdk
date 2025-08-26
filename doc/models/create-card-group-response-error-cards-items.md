@@ -18,10 +18,10 @@
 
 ```json
 {
-  "CardId": 66,
-  "PAN": "PAN2",
-  "ErrorCode": "ErrorCode6",
-  "ErrorDescription": "ErrorDescription2"
+  "CardId": 1234,
+  "PAN": "7002097550439850718",
+  "ErrorCode": "E0001",
+  "ErrorDescription": "Card is not active"
 }
 ```
 

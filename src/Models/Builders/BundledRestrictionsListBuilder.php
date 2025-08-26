@@ -15,6 +15,7 @@ use ShellCardManagementAPIsLib\Models\BundledDetailsProductList;
 use ShellCardManagementAPIsLib\Models\BundledRestrictionsList;
 use ShellCardManagementAPIsLib\Models\DayTimeRestrictions;
 use ShellCardManagementAPIsLib\Models\LocationRestriction;
+use ShellCardManagementAPIsLib\Models\UsageRestrictionsCard;
 
 /**
  * Builder for model BundledRestrictionsList
@@ -44,9 +45,9 @@ class BundledRestrictionsListBuilder
     /**
      * Sets Usage Restrictions field.
      *
-     * @param array|null $value
+     * @param UsageRestrictionsCard|null $value
      */
-    public function usageRestrictions(?array $value): self
+    public function usageRestrictions(?UsageRestrictionsCard $value): self
     {
         $this->instance->setUsageRestrictions($value);
         return $this;

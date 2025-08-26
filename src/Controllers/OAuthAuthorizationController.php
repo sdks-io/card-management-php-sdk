@@ -34,7 +34,7 @@ class OAuthAuthorizationController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function requestTokenBearerToken(
+    public function requestToken(
         string $authorization,
         ?string $scope = null,
         ?array $fieldParameters = null

@@ -16,11 +16,6 @@ use stdClass;
 class CreateBundleResponse implements \JsonSerializable
 {
     /**
-     * @var array
-     */
-    private $requestId = [];
-
-    /**
      * @var ErrorStatus|null
      */
     private $bundleCreationStatus;
@@ -61,46 +56,14 @@ class CreateBundleResponse implements \JsonSerializable
     private $productRestrictionStatus;
 
     /**
-     * @var BundleCardRestrictionStatus|null
+     * @var string|null
+     */
+    private $productRestrictionProfileId;
+
+    /**
+     * @var BundleCardRestrictionStatus[]|null
      */
     private $cards;
-
-    /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
-     * Returns Request Id.
-     * Request Id of the API call
-     */
-    public function getRequestId(): ?string
-    {
-        if (count($this->requestId) == 0) {
-            return null;
-        }
-        return $this->requestId['value'];
-    }
-
-    /**
-     * Sets Request Id.
-     * Request Id of the API call
-     *
-     * @maps RequestId
-     */
-    public function setRequestId(?string $requestId): void
-    {
-        $this->requestId['value'] = $requestId;
-    }
-
-    /**
-     * Unsets Request Id.
-     * Request Id of the API call
-     */
-    public function unsetRequestId(): void
-    {
-        $this->requestId = [];
-    }
 
     /**
      * Returns Bundle Creation Status.
@@ -253,9 +216,31 @@ class CreateBundleResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Cards.
+     * Returns Product Restriction Profile Id.
+     * Identifier of the product restriction profile created
      */
-    public function getCards(): ?BundleCardRestrictionStatus
+    public function getProductRestrictionProfileId(): ?string
+    {
+        return $this->productRestrictionProfileId;
+    }
+
+    /**
+     * Sets Product Restriction Profile Id.
+     * Identifier of the product restriction profile created
+     *
+     * @maps ProductRestrictionProfileId
+     */
+    public function setProductRestrictionProfileId(?string $productRestrictionProfileId): void
+    {
+        $this->productRestrictionProfileId = $productRestrictionProfileId;
+    }
+
+    /**
+     * Returns Cards.
+     *
+     * @return BundleCardRestrictionStatus[]|null
+     */
+    public function getCards(): ?array
     {
         return $this->cards;
     }
@@ -264,28 +249,12 @@ class CreateBundleResponse implements \JsonSerializable
      * Sets Cards.
      *
      * @maps Cards
+     *
+     * @param BundleCardRestrictionStatus[]|null $cards
      */
-    public function setCards(?BundleCardRestrictionStatus $cards): void
+    public function setCards(?array $cards): void
     {
         $this->cards = $cards;
-    }
-
-    /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
     }
 
     /**
@@ -298,7 +267,6 @@ class CreateBundleResponse implements \JsonSerializable
         return ApiHelper::stringify(
             'CreateBundleResponse',
             [
-                'requestId' => $this->getRequestId(),
                 'bundleCreationStatus' => $this->bundleCreationStatus,
                 'bundleId' => $this->bundleId,
                 'dayTimeRestrictionStatus' => $this->dayTimeRestrictionStatus,
@@ -307,8 +275,8 @@ class CreateBundleResponse implements \JsonSerializable
                 'locationRestrictionProfileId' => $this->locationRestrictionProfileId,
                 'usageRestrictionStatus' => $this->usageRestrictionStatus,
                 'productRestrictionStatus' => $this->productRestrictionStatus,
-                'cards' => $this->cards,
-                'error' => $this->error
+                'productRestrictionProfileId' => $this->productRestrictionProfileId,
+                'cards' => $this->cards
             ]
         );
     }
@@ -325,9 +293,6 @@ class CreateBundleResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (!empty($this->requestId)) {
-            $json['RequestId']                    = $this->requestId['value'];
-        }
         if (isset($this->bundleCreationStatus)) {
             $json['BundleCreationStatus']         = $this->bundleCreationStatus;
         }
@@ -352,11 +317,11 @@ class CreateBundleResponse implements \JsonSerializable
         if (isset($this->productRestrictionStatus)) {
             $json['ProductRestrictionStatus']     = $this->productRestrictionStatus;
         }
+        if (isset($this->productRestrictionProfileId)) {
+            $json['ProductRestrictionProfileId']  = $this->productRestrictionProfileId;
+        }
         if (isset($this->cards)) {
             $json['Cards']                        = $this->cards;
-        }
-        if (isset($this->error)) {
-            $json['Error']                        = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

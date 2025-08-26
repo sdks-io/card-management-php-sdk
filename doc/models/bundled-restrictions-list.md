@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `usageRestrictions` | `?array` | Optional | - | getUsageRestrictions(): ?array | setUsageRestrictions(?array usageRestrictions): void |
+| `usageRestrictions` | [`?UsageRestrictionsCard`](../../doc/models/usage-restrictions-card.md) | Optional | - | getUsageRestrictions(): ?UsageRestrictionsCard | setUsageRestrictions(?UsageRestrictionsCard usageRestrictions): void |
 | `dayTimeRestrictions` | [`?DayTimeRestrictions`](../../doc/models/day-time-restrictions.md) | Optional | - | getDayTimeRestrictions(): ?DayTimeRestrictions | setDayTimeRestrictions(?DayTimeRestrictions dayTimeRestrictions): void |
 | `productRestrictions` | [`?BundledDetailsProductList`](../../doc/models/bundled-details-product-list.md) | Optional | - | getProductRestrictions(): ?BundledDetailsProductList | setProductRestrictions(?BundledDetailsProductList productRestrictions): void |
 | `locationRestrictions` | [`?LocationRestriction`](../../doc/models/location-restriction.md) | Optional | - | getLocationRestrictions(): ?LocationRestriction | setLocationRestrictions(?LocationRestriction locationRestrictions): void |
@@ -19,8 +19,11 @@
 ```json
 {
   "UsageRestrictions": {
-    "key1": "val1",
-    "key2": "val2"
+    "DailySpend": 7.72,
+    "WeeklySpend": 10.22,
+    "MonthlySpend": 48.66,
+    "PerTransactionSpend": 17.28,
+    "AnnualSpend": 223.08
   },
   "DayTimeRestrictions": {
     "Monday": false,

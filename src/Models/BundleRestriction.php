@@ -26,9 +26,9 @@ class BundleRestriction implements \JsonSerializable
     private $locationRestrictionAction = [];
 
     /**
-     * @var array|null
+     * @var array
      */
-    private $usageRestrictions;
+    private $productRestrictionAction = [];
 
     /**
      * @var DayTimeRestrictions|null
@@ -36,7 +36,7 @@ class BundleRestriction implements \JsonSerializable
     private $dayTimeRestrictions;
 
     /**
-     * @var array|null
+     * @var ProductRestrictionCard|null
      */
     private $productRestrictions;
 
@@ -44,6 +44,11 @@ class BundleRestriction implements \JsonSerializable
      * @var LocationRestriction|null
      */
     private $locationRestrictions;
+
+    /**
+     * @var UsageRestrictionsCard|null
+     */
+    private $usageRestrictions;
 
     /**
      * Returns Day Time Restriction Action.
@@ -158,21 +163,59 @@ class BundleRestriction implements \JsonSerializable
     }
 
     /**
-     * Returns Usage Restrictions.
+     * Returns Product Restriction Action.
+     * The value indicates what actions to be performed with respect to Product restriction.
+     *
+     * Mandatory
+     *
+     * Allowed values –
+     *
+     * •    Add: Apply the given restriction on the bundle.
+     *
+     * •    Default: No Product restriction will be applied on the bundle in Gateway.
      */
-    public function getUsageRestrictions(): ?array
+    public function getProductRestrictionAction(): ?string
     {
-        return $this->usageRestrictions;
+        if (count($this->productRestrictionAction) == 0) {
+            return null;
+        }
+        return $this->productRestrictionAction['value'];
     }
 
     /**
-     * Sets Usage Restrictions.
+     * Sets Product Restriction Action.
+     * The value indicates what actions to be performed with respect to Product restriction.
      *
-     * @maps UsageRestrictions
+     * Mandatory
+     *
+     * Allowed values –
+     *
+     * •    Add: Apply the given restriction on the bundle.
+     *
+     * •    Default: No Product restriction will be applied on the bundle in Gateway.
+     *
+     * @maps ProductRestrictionAction
      */
-    public function setUsageRestrictions(?array $usageRestrictions): void
+    public function setProductRestrictionAction(?string $productRestrictionAction): void
     {
-        $this->usageRestrictions = $usageRestrictions;
+        $this->productRestrictionAction['value'] = $productRestrictionAction;
+    }
+
+    /**
+     * Unsets Product Restriction Action.
+     * The value indicates what actions to be performed with respect to Product restriction.
+     *
+     * Mandatory
+     *
+     * Allowed values –
+     *
+     * •    Add: Apply the given restriction on the bundle.
+     *
+     * •    Default: No Product restriction will be applied on the bundle in Gateway.
+     */
+    public function unsetProductRestrictionAction(): void
+    {
+        $this->productRestrictionAction = [];
     }
 
     /**
@@ -196,7 +239,7 @@ class BundleRestriction implements \JsonSerializable
     /**
      * Returns Product Restrictions.
      */
-    public function getProductRestrictions(): ?array
+    public function getProductRestrictions(): ?ProductRestrictionCard
     {
         return $this->productRestrictions;
     }
@@ -206,7 +249,7 @@ class BundleRestriction implements \JsonSerializable
      *
      * @maps ProductRestrictions
      */
-    public function setProductRestrictions(?array $productRestrictions): void
+    public function setProductRestrictions(?ProductRestrictionCard $productRestrictions): void
     {
         $this->productRestrictions = $productRestrictions;
     }
@@ -230,6 +273,24 @@ class BundleRestriction implements \JsonSerializable
     }
 
     /**
+     * Returns Usage Restrictions.
+     */
+    public function getUsageRestrictions(): ?UsageRestrictionsCard
+    {
+        return $this->usageRestrictions;
+    }
+
+    /**
+     * Sets Usage Restrictions.
+     *
+     * @maps UsageRestrictions
+     */
+    public function setUsageRestrictions(?UsageRestrictionsCard $usageRestrictions): void
+    {
+        $this->usageRestrictions = $usageRestrictions;
+    }
+
+    /**
      * Converts the BundleRestriction object to a human-readable string representation.
      *
      * @return string The string representation of the BundleRestriction object.
@@ -241,10 +302,11 @@ class BundleRestriction implements \JsonSerializable
             [
                 'dayTimeRestrictionAction' => $this->getDayTimeRestrictionAction(),
                 'locationRestrictionAction' => $this->getLocationRestrictionAction(),
-                'usageRestrictions' => $this->usageRestrictions,
+                'productRestrictionAction' => $this->getProductRestrictionAction(),
                 'dayTimeRestrictions' => $this->dayTimeRestrictions,
                 'productRestrictions' => $this->productRestrictions,
-                'locationRestrictions' => $this->locationRestrictions
+                'locationRestrictions' => $this->locationRestrictions,
+                'usageRestrictions' => $this->usageRestrictions
             ]
         );
     }
@@ -267,8 +329,8 @@ class BundleRestriction implements \JsonSerializable
         if (!empty($this->locationRestrictionAction)) {
             $json['LocationRestrictionAction'] = $this->locationRestrictionAction['value'];
         }
-        if (isset($this->usageRestrictions)) {
-            $json['UsageRestrictions']         = $this->usageRestrictions;
+        if (!empty($this->productRestrictionAction)) {
+            $json['ProductRestrictionAction']  = $this->productRestrictionAction['value'];
         }
         if (isset($this->dayTimeRestrictions)) {
             $json['DayTimeRestrictions']       = $this->dayTimeRestrictions;
@@ -278,6 +340,9 @@ class BundleRestriction implements \JsonSerializable
         }
         if (isset($this->locationRestrictions)) {
             $json['LocationRestrictions']      = $this->locationRestrictions;
+        }
+        if (isset($this->usageRestrictions)) {
+            $json['UsageRestrictions']         = $this->usageRestrictions;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

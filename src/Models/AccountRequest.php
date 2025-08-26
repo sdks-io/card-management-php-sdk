@@ -475,7 +475,7 @@ class AccountRequest implements \JsonSerializable
 
     /**
      * Returns Col Co Id.
-     * Collecting Company Id (in GFN) of the selected payer.
+     * Collecting Company Id  of the selected payer.
      *
      * Optional if ColCoCode or ColCoCountryCode  is passed else Mandatory.
      */
@@ -489,7 +489,7 @@ class AccountRequest implements \JsonSerializable
 
     /**
      * Sets Col Co Id.
-     * Collecting Company Id (in GFN) of the selected payer.
+     * Collecting Company Id  of the selected payer.
      *
      * Optional if ColCoCode or ColCoCountryCode  is passed else Mandatory.
      *
@@ -502,7 +502,7 @@ class AccountRequest implements \JsonSerializable
 
     /**
      * Unsets Col Co Id.
-     * Collecting Company Id (in GFN) of the selected payer.
+     * Collecting Company Id  of the selected payer.
      *
      * Optional if ColCoCode or ColCoCountryCode  is passed else Mandatory.
      */

@@ -16,19 +16,29 @@ use stdClass;
 class AuditResponse implements \JsonSerializable
 {
     /**
-     * @var AuditResponseAuditsItems[]|null
+     * @var string|null
      */
-    private $audits;
+    private $requestId;
+
+    /**
+     * @var string|null
+     */
+    private $status;
+
+    /**
+     * @var AuditArrayElements[]|null
+     */
+    private $data;
 
     /**
      * @var int|null
      */
-    private $currentPage;
+    private $page;
 
     /**
      * @var int|null
      */
-    private $rowCount;
+    private $totalRecords;
 
     /**
      * @var int|null
@@ -36,81 +46,121 @@ class AuditResponse implements \JsonSerializable
     private $totalPages;
 
     /**
-     * @var ErrorStatus|null
+     * @var int|null
      */
-    private $error;
+    private $pageSize;
 
     /**
-     * @var string|null
+     * @var Warning[]|null
      */
-    private $requestId;
+    private $warnings;
 
     /**
-     * Returns Audits.
-     *
-     * @return AuditResponseAuditsItems[]|null
+     * Returns Request Id.
+     * Unique identifier for the request. This will be played back in the response from the request.
      */
-    public function getAudits(): ?array
+    public function getRequestId(): ?string
     {
-        return $this->audits;
+        return $this->requestId;
     }
 
     /**
-     * Sets Audits.
+     * Sets Request Id.
+     * Unique identifier for the request. This will be played back in the response from the request.
      *
-     * @maps Audits
-     *
-     * @param AuditResponseAuditsItems[]|null $audits
+     * @maps RequestId
      */
-    public function setAudits(?array $audits): void
+    public function setRequestId(?string $requestId): void
     {
-        $this->audits = $audits;
+        $this->requestId = $requestId;
     }
 
     /**
-     * Returns Current Page.
+     * Returns Status.
+     * Status of the request
+     */
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    /**
+     * Sets Status.
+     * Status of the request
+     *
+     * @maps Status
+     */
+    public function setStatus(?string $status): void
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * Returns Data.
+     *
+     * @return AuditArrayElements[]|null
+     */
+    public function getData(): ?array
+    {
+        return $this->data;
+    }
+
+    /**
+     * Sets Data.
+     *
+     * @maps Data
+     *
+     * @param AuditArrayElements[]|null $data
+     */
+    public function setData(?array $data): void
+    {
+        $this->data = $data;
+    }
+
+    /**
+     * Returns Page.
      * Current Page
      */
-    public function getCurrentPage(): ?int
+    public function getPage(): ?int
     {
-        return $this->currentPage;
+        return $this->page;
     }
 
     /**
-     * Sets Current Page.
+     * Sets Page.
      * Current Page
      *
-     * @maps CurrentPage
+     * @maps Page
      */
-    public function setCurrentPage(?int $currentPage): void
+    public function setPage(?int $page): void
     {
-        $this->currentPage = $currentPage;
+        $this->page = $page;
     }
 
     /**
-     * Returns Row Count.
+     * Returns Total Records.
      * Total row count matched for the given input criteria
      */
-    public function getRowCount(): ?int
+    public function getTotalRecords(): ?int
     {
-        return $this->rowCount;
+        return $this->totalRecords;
     }
 
     /**
-     * Sets Row Count.
+     * Sets Total Records.
      * Total row count matched for the given input criteria
      *
-     * @maps RowCount
+     * @maps TotalRecords
      */
-    public function setRowCount(?int $rowCount): void
+    public function setTotalRecords(?int $totalRecords): void
     {
-        $this->rowCount = $rowCount;
+        $this->totalRecords = $totalRecords;
     }
 
     /**
      * Returns Total Pages.
      * Calculated page count based on page size from the incoming API request and total number of rows
-     * matched for the given input criteria
+     * matched for the given input criteria. Return 1 if the page size is -1 as all records are returned.
      */
     public function getTotalPages(): ?int
     {
@@ -120,7 +170,7 @@ class AuditResponse implements \JsonSerializable
     /**
      * Sets Total Pages.
      * Calculated page count based on page size from the incoming API request and total number of rows
-     * matched for the given input criteria
+     * matched for the given input criteria. Return 1 if the page size is -1 as all records are returned.
      *
      * @maps TotalPages
      */
@@ -130,41 +180,59 @@ class AuditResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
+     * Returns Page Size.
+     * Page Size – Number of records to show on current page.
      */
-    public function getError(): ?ErrorStatus
+    public function getPageSize(): ?int
     {
-        return $this->error;
+        return $this->pageSize;
     }
 
     /**
-     * Sets Error.
+     * Sets Page Size.
+     * Page Size – Number of records to show on current page.
      *
-     * @maps Error
+     * @maps PageSize
      */
-    public function setError(?ErrorStatus $error): void
+    public function setPageSize(?int $pageSize): void
     {
-        $this->error = $error;
+        $this->pageSize = $pageSize;
     }
 
     /**
-     * Returns Request Id.
-     * API RequestId
-     */
-    public function getRequestId(): ?string
-    {
-        return $this->requestId;
-    }
-
-    /**
-     * Sets Request Id.
-     * API RequestId
+     * Returns Warnings.
+     * A list of Warning entity.
      *
-     * @maps RequestId
+     * This entity will hold the details of the scheduled System Outages of any dependent applications of
+     * this service.
+     *
+     * Note: If there is no scheduled outage information available, in the configuration in AMS, for this
+     * service, this parameter won’t be present in output.
+     *
+     * @return Warning[]|null
      */
-    public function setRequestId(?string $requestId): void
+    public function getWarnings(): ?array
     {
-        $this->requestId = $requestId;
+        return $this->warnings;
+    }
+
+    /**
+     * Sets Warnings.
+     * A list of Warning entity.
+     *
+     * This entity will hold the details of the scheduled System Outages of any dependent applications of
+     * this service.
+     *
+     * Note: If there is no scheduled outage information available, in the configuration in AMS, for this
+     * service, this parameter won’t be present in output.
+     *
+     * @maps Warnings
+     *
+     * @param Warning[]|null $warnings
+     */
+    public function setWarnings(?array $warnings): void
+    {
+        $this->warnings = $warnings;
     }
 
     /**
@@ -177,12 +245,14 @@ class AuditResponse implements \JsonSerializable
         return ApiHelper::stringify(
             'AuditResponse',
             [
-                'audits' => $this->audits,
-                'currentPage' => $this->currentPage,
-                'rowCount' => $this->rowCount,
+                'requestId' => $this->requestId,
+                'status' => $this->status,
+                'data' => $this->data,
+                'page' => $this->page,
+                'totalRecords' => $this->totalRecords,
                 'totalPages' => $this->totalPages,
-                'error' => $this->error,
-                'requestId' => $this->requestId
+                'pageSize' => $this->pageSize,
+                'warnings' => $this->warnings
             ]
         );
     }
@@ -199,23 +269,29 @@ class AuditResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->audits)) {
-            $json['Audits']      = $this->audits;
+        if (isset($this->requestId)) {
+            $json['RequestId']    = $this->requestId;
         }
-        if (isset($this->currentPage)) {
-            $json['CurrentPage'] = $this->currentPage;
+        if (isset($this->status)) {
+            $json['Status']       = $this->status;
         }
-        if (isset($this->rowCount)) {
-            $json['RowCount']    = $this->rowCount;
+        if (isset($this->data)) {
+            $json['Data']         = $this->data;
+        }
+        if (isset($this->page)) {
+            $json['Page']         = $this->page;
+        }
+        if (isset($this->totalRecords)) {
+            $json['TotalRecords'] = $this->totalRecords;
         }
         if (isset($this->totalPages)) {
-            $json['TotalPages']  = $this->totalPages;
+            $json['TotalPages']   = $this->totalPages;
         }
-        if (isset($this->error)) {
-            $json['Error']       = $this->error;
+        if (isset($this->pageSize)) {
+            $json['PageSize']     = $this->pageSize;
         }
-        if (isset($this->requestId)) {
-            $json['RequestId']   = $this->requestId;
+        if (isset($this->warnings)) {
+            $json['Warnings']     = $this->warnings;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

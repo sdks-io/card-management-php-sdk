@@ -36,16 +36,6 @@ class UpdateCardGroupResponse implements \JsonSerializable
     private $moveCardReferences;
 
     /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
-     * @var string|null
-     */
-    private $requestId;
-
-    /**
      * Returns Main Reference.
      * Reference number for tracking the overall request.
      * The value will be null when the validation fails.
@@ -148,44 +138,6 @@ class UpdateCardGroupResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
-     * Returns Request Id.
-     * API Request ID
-     */
-    public function getRequestId(): ?string
-    {
-        return $this->requestId;
-    }
-
-    /**
-     * Sets Request Id.
-     * API Request ID
-     *
-     * @maps RequestId
-     */
-    public function setRequestId(?string $requestId): void
-    {
-        $this->requestId = $requestId;
-    }
-
-    /**
      * Converts the UpdateCardGroupResponse object to a human-readable string representation.
      *
      * @return string The string representation of the UpdateCardGroupResponse object.
@@ -198,9 +150,7 @@ class UpdateCardGroupResponse implements \JsonSerializable
                 'mainReference' => $this->mainReference,
                 'updateCardGroupReference' => $this->updateCardGroupReference,
                 'newCardGroupReference' => $this->newCardGroupReference,
-                'moveCardReferences' => $this->moveCardReferences,
-                'error' => $this->error,
-                'requestId' => $this->requestId
+                'moveCardReferences' => $this->moveCardReferences
             ]
         );
     }
@@ -228,12 +178,6 @@ class UpdateCardGroupResponse implements \JsonSerializable
         }
         if (isset($this->moveCardReferences)) {
             $json['MoveCardReferences']       = $this->moveCardReferences;
-        }
-        if (isset($this->error)) {
-            $json['Error']                    = $this->error;
-        }
-        if (isset($this->requestId)) {
-            $json['RequestId']                = $this->requestId;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

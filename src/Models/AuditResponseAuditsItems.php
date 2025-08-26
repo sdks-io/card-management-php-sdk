@@ -171,6 +171,16 @@ class AuditResponseAuditsItems implements \JsonSerializable
     private $userDisplayName = [];
 
     /**
+     * @var array
+     */
+    private $pANID = [];
+
+    /**
+     * @var array
+     */
+    private $maskedPAN = [];
+
+    /**
      * Returns Account Id.
      * Account id of the customer.
      * It will be the source account id in case of “Fund Transfer
@@ -775,8 +785,7 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Returns P AN.
      * PAN in the request.
-     * If Mask PAN is enabled at Microservices configuration then all digits of the PAN, except the last 6
-     * digits, will be masked.
+     * If Mask PAN is enabled then all digits of the PAN, except the last 6 digits, will be masked.
      */
     public function getPAN(): ?string
     {
@@ -789,8 +798,7 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Sets P AN.
      * PAN in the request.
-     * If Mask PAN is enabled at Microservices configuration then all digits of the PAN, except the last 6
-     * digits, will be masked.
+     * If Mask PAN is enabled then all digits of the PAN, except the last 6 digits, will be masked.
      *
      * @maps PAN
      */
@@ -802,8 +810,7 @@ class AuditResponseAuditsItems implements \JsonSerializable
     /**
      * Unsets P AN.
      * PAN in the request.
-     * If Mask PAN is enabled at Microservices configuration then all digits of the PAN, except the last 6
-     * digits, will be masked.
+     * If Mask PAN is enabled then all digits of the PAN, except the last 6 digits, will be masked.
      */
     public function unsetPAN(): void
     {
@@ -1424,6 +1431,76 @@ class AuditResponseAuditsItems implements \JsonSerializable
     }
 
     /**
+     * Returns P ANID.
+     * PAN ID of the card.
+     * This will be null when the PAN is not available in the request.
+     */
+    public function getPANID(): ?string
+    {
+        if (count($this->pANID) == 0) {
+            return null;
+        }
+        return $this->pANID['value'];
+    }
+
+    /**
+     * Sets P ANID.
+     * PAN ID of the card.
+     * This will be null when the PAN is not available in the request.
+     *
+     * @maps PANID
+     */
+    public function setPANID(?string $pANID): void
+    {
+        $this->pANID['value'] = $pANID;
+    }
+
+    /**
+     * Unsets P ANID.
+     * PAN ID of the card.
+     * This will be null when the PAN is not available in the request.
+     */
+    public function unsetPANID(): void
+    {
+        $this->pANID = [];
+    }
+
+    /**
+     * Returns Masked PAN.
+     * Masked PAN of the card.
+     * This will be null when the Masked PAN is not available in the request.
+     */
+    public function getMaskedPAN(): ?string
+    {
+        if (count($this->maskedPAN) == 0) {
+            return null;
+        }
+        return $this->maskedPAN['value'];
+    }
+
+    /**
+     * Sets Masked PAN.
+     * Masked PAN of the card.
+     * This will be null when the Masked PAN is not available in the request.
+     *
+     * @maps MaskedPAN
+     */
+    public function setMaskedPAN(?string $maskedPAN): void
+    {
+        $this->maskedPAN['value'] = $maskedPAN;
+    }
+
+    /**
+     * Unsets Masked PAN.
+     * Masked PAN of the card.
+     * This will be null when the Masked PAN is not available in the request.
+     */
+    public function unsetMaskedPAN(): void
+    {
+        $this->maskedPAN = [];
+    }
+
+    /**
      * Converts the AuditResponseAuditsItems object to a human-readable string representation.
      *
      * @return string The string representation of the AuditResponseAuditsItems object.
@@ -1463,7 +1540,9 @@ class AuditResponseAuditsItems implements \JsonSerializable
                 'status' => $this->getStatus(),
                 'submittedOn' => $this->getSubmittedOn(),
                 'subRequestReference' => $this->getSubRequestReference(),
-                'userDisplayName' => $this->getUserDisplayName()
+                'userDisplayName' => $this->getUserDisplayName(),
+                'pANID' => $this->getPANID(),
+                'maskedPAN' => $this->getMaskedPAN()
             ]
         );
     }
@@ -1572,6 +1651,12 @@ class AuditResponseAuditsItems implements \JsonSerializable
         }
         if (!empty($this->userDisplayName)) {
             $json['UserDisplayName']        = $this->userDisplayName['value'];
+        }
+        if (!empty($this->pANID)) {
+            $json['PANID']                  = $this->pANID['value'];
+        }
+        if (!empty($this->maskedPAN)) {
+            $json['MaskedPAN']              = $this->maskedPAN['value'];
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

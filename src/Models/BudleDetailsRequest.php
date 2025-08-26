@@ -26,7 +26,7 @@ class BudleDetailsRequest implements \JsonSerializable
     private $colCoCode;
 
     /**
-     * @var string|null
+     * @var int|null
      */
     private $payerId;
 
@@ -130,7 +130,7 @@ class BudleDetailsRequest implements \JsonSerializable
      * Optional if PayerNumber is passed else Mandatory
      * Example: 123456
      */
-    public function getPayerId(): ?string
+    public function getPayerId(): ?int
     {
         return $this->payerId;
     }
@@ -143,7 +143,7 @@ class BudleDetailsRequest implements \JsonSerializable
      *
      * @maps PayerId
      */
-    public function setPayerId(?string $payerId): void
+    public function setPayerId(?int $payerId): void
     {
         $this->payerId = $payerId;
     }

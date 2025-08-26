@@ -9,18 +9,15 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `requestId` | `?string` | Optional | API Request Id | getRequestId(): ?string | setRequestId(?string requestId): void |
-| `error` | [`?ErrorStatus`](../../doc/models/error-status.md) | Optional | - | getError(): ?ErrorStatus | setError(?ErrorStatus error): void |
+| `requestId` | `?string` | Optional | Unique identifier for the request. This will be played back in the response from the request. | getRequestId(): ?string | setRequestId(?string requestId): void |
+| `status` | `?string` | Optional | Status of the request | getStatus(): ?string | setStatus(?string status): void |
 
 ## Example (as JSON)
 
 ```json
 {
-  "RequestId": "RequestId4",
-  "Error": {
-    "Code": "Code4",
-    "Description": "Description2"
-  }
+  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
+  "Status": "SUCCESS"
 }
 ```
 

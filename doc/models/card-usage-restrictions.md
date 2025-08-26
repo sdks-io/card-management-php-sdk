@@ -18,7 +18,7 @@
 | `dailyVolumeLimit` | `?float` | Optional | Maximum volume of fuel that can be bought on the card in a day. | getDailyVolumeLimit(): ?float | setDailyVolumeLimit(?float dailyVolumeLimit): void |
 | `weeklyVolumeLimit` | `?float` | Optional | Maximum volume of fuel that can be bought on the card in a week. | getWeeklyVolumeLimit(): ?float | setWeeklyVolumeLimit(?float weeklyVolumeLimit): void |
 | `monthlyVolumeLimit` | `?float` | Optional | Maximum volume of fuel that can be bought on the card in a month. | getMonthlyVolumeLimit(): ?float | setMonthlyVolumeLimit(?float monthlyVolumeLimit): void |
-| `annualVolumeLimit` | `?float` | Optional | Maximum volume of fuel that can be bought on the card in a year.<br>**Default**: `0` | getAnnualVolumeLimit(): ?float | setAnnualVolumeLimit(?float annualVolumeLimit): void |
+| `annualVolumeLimit` | `?float` | Optional | Maximum volume of fuel that can be bought on the card in a year.<br><br>**Default**: `0` | getAnnualVolumeLimit(): ?float | setAnnualVolumeLimit(?float annualVolumeLimit): void |
 | `lifeTimeVolumeLimit` | `?float` | Optional | Maximum volume of fuel that can be bought on the card in the card’s life time. | getLifeTimeVolumeLimit(): ?float | setLifeTimeVolumeLimit(?float lifeTimeVolumeLimit): void |
 | `transactionSpendLimit` | `?float` | Optional | Maximum amount that can be spend on the card in a transaction. | getTransactionSpendLimit(): ?float | setTransactionSpendLimit(?float transactionSpendLimit): void |
 | `transactionVolumeLimit` | `?float` | Optional | Maximum volume of fuel that can be bought on the card in a transaction. | getTransactionVolumeLimit(): ?float | setTransactionVolumeLimit(?float transactionVolumeLimit): void |

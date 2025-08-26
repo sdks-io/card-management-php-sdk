@@ -16,11 +16,6 @@ use stdClass;
 class UpdateBundleResponse implements \JsonSerializable
 {
     /**
-     * @var array
-     */
-    private $requestId = [];
-
-    /**
      * @var ErrorStatus|null
      */
     private $requestActionStatus;
@@ -44,43 +39,6 @@ class UpdateBundleResponse implements \JsonSerializable
      * @var ErrorStatus|null
      */
     private $usageRestrictionStatus;
-
-    /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
-     * Returns Request Id.
-     * Request Id of the API call
-     */
-    public function getRequestId(): ?string
-    {
-        if (count($this->requestId) == 0) {
-            return null;
-        }
-        return $this->requestId['value'];
-    }
-
-    /**
-     * Sets Request Id.
-     * Request Id of the API call
-     *
-     * @maps RequestId
-     */
-    public function setRequestId(?string $requestId): void
-    {
-        $this->requestId['value'] = $requestId;
-    }
-
-    /**
-     * Unsets Request Id.
-     * Request Id of the API call
-     */
-    public function unsetRequestId(): void
-    {
-        $this->requestId = [];
-    }
 
     /**
      * Returns Request Action Status.
@@ -173,24 +131,6 @@ class UpdateBundleResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
      * Converts the UpdateBundleResponse object to a human-readable string representation.
      *
      * @return string The string representation of the UpdateBundleResponse object.
@@ -200,13 +140,11 @@ class UpdateBundleResponse implements \JsonSerializable
         return ApiHelper::stringify(
             'UpdateBundleResponse',
             [
-                'requestId' => $this->getRequestId(),
                 'requestActionStatus' => $this->requestActionStatus,
                 'dayTimeRestrictionStatus' => $this->dayTimeRestrictionStatus,
                 'locationRestrictionStatus' => $this->locationRestrictionStatus,
                 'productRestrictionStatus' => $this->productRestrictionStatus,
-                'usageRestrictionStatus' => $this->usageRestrictionStatus,
-                'error' => $this->error
+                'usageRestrictionStatus' => $this->usageRestrictionStatus
             ]
         );
     }
@@ -223,9 +161,6 @@ class UpdateBundleResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (!empty($this->requestId)) {
-            $json['RequestId']                 = $this->requestId['value'];
-        }
         if (isset($this->requestActionStatus)) {
             $json['RequestActionStatus']       = $this->requestActionStatus;
         }
@@ -240,9 +175,6 @@ class UpdateBundleResponse implements \JsonSerializable
         }
         if (isset($this->usageRestrictionStatus)) {
             $json['UsageRestrictionStatus']    = $this->usageRestrictionStatus;
-        }
-        if (isset($this->error)) {
-            $json['Error']                     = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

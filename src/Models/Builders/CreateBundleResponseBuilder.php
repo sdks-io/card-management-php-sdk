@@ -41,26 +41,6 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets Request Id field.
-     *
-     * @param string|null $value
-     */
-    public function requestId(?string $value): self
-    {
-        $this->instance->setRequestId($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Request Id field.
-     */
-    public function unsetRequestId(): self
-    {
-        $this->instance->unsetRequestId();
-        return $this;
-    }
-
-    /**
      * Sets Bundle Creation Status field.
      *
      * @param ErrorStatus|null $value
@@ -149,24 +129,24 @@ class CreateBundleResponseBuilder
     }
 
     /**
-     * Sets Cards field.
+     * Sets Product Restriction Profile Id field.
      *
-     * @param BundleCardRestrictionStatus|null $value
+     * @param string|null $value
      */
-    public function cards(?BundleCardRestrictionStatus $value): self
+    public function productRestrictionProfileId(?string $value): self
     {
-        $this->instance->setCards($value);
+        $this->instance->setProductRestrictionProfileId($value);
         return $this;
     }
 
     /**
-     * Sets Error field.
+     * Sets Cards field.
      *
-     * @param ErrorStatus|null $value
+     * @param BundleCardRestrictionStatus[]|null $value
      */
-    public function error(?ErrorStatus $value): self
+    public function cards(?array $value): self
     {
-        $this->instance->setError($value);
+        $this->instance->setCards($value);
         return $this;
     }
 

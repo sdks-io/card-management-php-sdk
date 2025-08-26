@@ -14,7 +14,6 @@ use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\Address;
 use ShellCardManagementAPIsLib\Models\CustomerDetailResponse;
 use ShellCardManagementAPIsLib\Models\DeliveryAddresses;
-use ShellCardManagementAPIsLib\Models\ErrorStatus;
 use ShellCardManagementAPIsLib\Models\PINAdviceTypes;
 
 /**
@@ -485,37 +484,6 @@ class CustomerDetailResponseBuilder
     public function pINAdviceTypes(?array $value): self
     {
         $this->instance->setPINAdviceTypes($value);
-        return $this;
-    }
-
-    /**
-     * Sets Error field.
-     *
-     * @param ErrorStatus|null $value
-     */
-    public function error(?ErrorStatus $value): self
-    {
-        $this->instance->setError($value);
-        return $this;
-    }
-
-    /**
-     * Sets Request Id field.
-     *
-     * @param string|null $value
-     */
-    public function requestId(?string $value): self
-    {
-        $this->instance->setRequestId($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Request Id field.
-     */
-    public function unsetRequestId(): self
-    {
-        $this->instance->unsetRequestId();
         return $this;
     }
 

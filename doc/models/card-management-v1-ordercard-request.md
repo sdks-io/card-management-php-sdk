@@ -22,8 +22,8 @@
       "AccountId": 36,
       "AccountNumber": "AccountNumber4",
       "ColCoCode": 198,
-      "CardDeliveryType": 222,
-      "PINAdviceType": 70
+      "CardDeliveryType": 2,
+      "PINAdviceType": 4
     }
   ]
 }

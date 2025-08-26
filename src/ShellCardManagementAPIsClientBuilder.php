@@ -12,8 +12,8 @@ namespace ShellCardManagementAPIsLib;
 
 use Core\Types\Sdk\CoreCallback;
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Authentication\BasicAuthCredentialsBuilder;
-use ShellCardManagementAPIsLib\Authentication\BearerTokenCredentialsBuilder;
+use ShellCardManagementAPIsLib\Authentication\ClientCredentialsAuthCredentialsBuilder;
+use ShellCardManagementAPIsLib\Proxy\ProxyConfigurationBuilder;
 
 class ShellCardManagementAPIsClientBuilder
 {
@@ -109,15 +109,10 @@ class ShellCardManagementAPIsClientBuilder
         return $this;
     }
 
-    public function basicAuthCredentials(BasicAuthCredentialsBuilder $basicAuth): self
-    {
-        $this->config = array_merge($this->config, $basicAuth->getConfiguration());
-        return $this;
-    }
-
-    public function bearerTokenCredentials(BearerTokenCredentialsBuilder $bearerToken): self
-    {
-        $this->config = array_merge($this->config, $bearerToken->getConfiguration());
+    public function clientCredentialsAuthCredentials(
+        ClientCredentialsAuthCredentialsBuilder $clientCredentialsAuth
+    ): self {
+        $this->config = array_merge($this->config, $clientCredentialsAuth->getConfiguration());
         return $this;
     }
 
@@ -127,6 +122,12 @@ class ShellCardManagementAPIsClientBuilder
             return $this;
         }
         $this->config['httpCallback'] = $httpCallback;
+        return $this;
+    }
+
+    public function proxyConfiguration(ProxyConfigurationBuilder $proxyConfiguration): self
+    {
+        $this->config['proxyConfiguration'] = $proxyConfiguration->getConfiguration();
         return $this;
     }
 

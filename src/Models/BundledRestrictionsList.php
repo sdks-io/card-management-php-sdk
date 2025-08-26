@@ -16,7 +16,7 @@ use stdClass;
 class BundledRestrictionsList implements \JsonSerializable
 {
     /**
-     * @var array|null
+     * @var UsageRestrictionsCard|null
      */
     private $usageRestrictions;
 
@@ -38,7 +38,7 @@ class BundledRestrictionsList implements \JsonSerializable
     /**
      * Returns Usage Restrictions.
      */
-    public function getUsageRestrictions(): ?array
+    public function getUsageRestrictions(): ?UsageRestrictionsCard
     {
         return $this->usageRestrictions;
     }
@@ -48,7 +48,7 @@ class BundledRestrictionsList implements \JsonSerializable
      *
      * @maps UsageRestrictions
      */
-    public function setUsageRestrictions(?array $usageRestrictions): void
+    public function setUsageRestrictions(?UsageRestrictionsCard $usageRestrictions): void
     {
         $this->usageRestrictions = $usageRestrictions;
     }

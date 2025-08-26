@@ -36,16 +36,6 @@ class CreateCardGroupResponse implements \JsonSerializable
     private $errorCards;
 
     /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
-     * @var string|null
-     */
-    private $requestId;
-
-    /**
      * Returns Main Reference.
      * Reference number for tracking the execution of the requests – new Card Group creation and to move
      * the cards to the new card group.
@@ -146,44 +136,6 @@ class CreateCardGroupResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
-     * Returns Request Id.
-     * API Request Id
-     */
-    public function getRequestId(): ?string
-    {
-        return $this->requestId;
-    }
-
-    /**
-     * Sets Request Id.
-     * API Request Id
-     *
-     * @maps RequestId
-     */
-    public function setRequestId(?string $requestId): void
-    {
-        $this->requestId = $requestId;
-    }
-
-    /**
      * Converts the CreateCardGroupResponse object to a human-readable string representation.
      *
      * @return string The string representation of the CreateCardGroupResponse object.
@@ -196,9 +148,7 @@ class CreateCardGroupResponse implements \JsonSerializable
                 'mainReference' => $this->mainReference,
                 'newCardGroupReference' => $this->newCardGroupReference,
                 'successfulRequests' => $this->successfulRequests,
-                'errorCards' => $this->errorCards,
-                'error' => $this->error,
-                'requestId' => $this->requestId
+                'errorCards' => $this->errorCards
             ]
         );
     }
@@ -226,12 +176,6 @@ class CreateCardGroupResponse implements \JsonSerializable
         }
         if (isset($this->errorCards)) {
             $json['ErrorCards']            = $this->errorCards;
-        }
-        if (isset($this->error)) {
-            $json['Error']                 = $this->error;
-        }
-        if (isset($this->requestId)) {
-            $json['RequestId']             = $this->requestId;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

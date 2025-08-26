@@ -74,7 +74,7 @@ class ErrorDetailsBuilder
     /**
      * Sets Additional Info field.
      *
-     * @param array|null $value
+     * @param array<string,string|null>|null $value
      */
     public function additionalInfo(?array $value): self
     {

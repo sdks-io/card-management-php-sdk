@@ -199,7 +199,7 @@ class UpdateBundleRequest implements \JsonSerializable
      * Either PayerId or PayerNumber or both must be passed.
      * Example: 123456
      */
-    public function getPayerId(): ?string
+    public function getPayerId(): ?int
     {
         if (count($this->payerId) == 0) {
             return null;
@@ -215,7 +215,7 @@ class UpdateBundleRequest implements \JsonSerializable
      *
      * @maps PayerId
      */
-    public function setPayerId(?string $payerId): void
+    public function setPayerId(?int $payerId): void
     {
         $this->payerId['value'] = $payerId;
     }

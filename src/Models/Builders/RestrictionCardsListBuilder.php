@@ -13,7 +13,9 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\DayTimeRestrictions;
 use ShellCardManagementAPIsLib\Models\LocationRestriction;
+use ShellCardManagementAPIsLib\Models\ProductRestrictionCard;
 use ShellCardManagementAPIsLib\Models\RestrictionCardsList;
+use ShellCardManagementAPIsLib\Models\UsageRestrictionsCard;
 
 /**
  * Builder for model RestrictionCardsList
@@ -174,9 +176,9 @@ class RestrictionCardsListBuilder
     /**
      * Sets Usage Restrictions field.
      *
-     * @param array|null $value
+     * @param UsageRestrictionsCard|null $value
      */
-    public function usageRestrictions(?array $value): self
+    public function usageRestrictions(?UsageRestrictionsCard $value): self
     {
         $this->instance->setUsageRestrictions($value);
         return $this;
@@ -196,9 +198,9 @@ class RestrictionCardsListBuilder
     /**
      * Sets Product Restrictions field.
      *
-     * @param array|null $value
+     * @param ProductRestrictionCard|null $value
      */
-    public function productRestrictions(?array $value): self
+    public function productRestrictions(?ProductRestrictionCard $value): self
     {
         $this->instance->setProductRestrictions($value);
         return $this;

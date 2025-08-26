@@ -11,9 +11,9 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\AuditArrayElements;
 use ShellCardManagementAPIsLib\Models\AuditResponse;
-use ShellCardManagementAPIsLib\Models\AuditResponseAuditsItems;
-use ShellCardManagementAPIsLib\Models\ErrorStatus;
+use ShellCardManagementAPIsLib\Models\Warning;
 
 /**
  * Builder for model AuditResponse
@@ -41,35 +41,57 @@ class AuditResponseBuilder
     }
 
     /**
-     * Sets Audits field.
+     * Sets Request Id field.
      *
-     * @param AuditResponseAuditsItems[]|null $value
+     * @param string|null $value
      */
-    public function audits(?array $value): self
+    public function requestId(?string $value): self
     {
-        $this->instance->setAudits($value);
+        $this->instance->setRequestId($value);
         return $this;
     }
 
     /**
-     * Sets Current Page field.
+     * Sets Status field.
      *
-     * @param int|null $value
+     * @param string|null $value
      */
-    public function currentPage(?int $value): self
+    public function status(?string $value): self
     {
-        $this->instance->setCurrentPage($value);
+        $this->instance->setStatus($value);
         return $this;
     }
 
     /**
-     * Sets Row Count field.
+     * Sets Data field.
+     *
+     * @param AuditArrayElements[]|null $value
+     */
+    public function data(?array $value): self
+    {
+        $this->instance->setData($value);
+        return $this;
+    }
+
+    /**
+     * Sets Page field.
      *
      * @param int|null $value
      */
-    public function rowCount(?int $value): self
+    public function page(?int $value): self
     {
-        $this->instance->setRowCount($value);
+        $this->instance->setPage($value);
+        return $this;
+    }
+
+    /**
+     * Sets Total Records field.
+     *
+     * @param int|null $value
+     */
+    public function totalRecords(?int $value): self
+    {
+        $this->instance->setTotalRecords($value);
         return $this;
     }
 
@@ -85,24 +107,24 @@ class AuditResponseBuilder
     }
 
     /**
-     * Sets Error field.
+     * Sets Page Size field.
      *
-     * @param ErrorStatus|null $value
+     * @param int|null $value
      */
-    public function error(?ErrorStatus $value): self
+    public function pageSize(?int $value): self
     {
-        $this->instance->setError($value);
+        $this->instance->setPageSize($value);
         return $this;
     }
 
     /**
-     * Sets Request Id field.
+     * Sets Warnings field.
      *
-     * @param string|null $value
+     * @param Warning[]|null $value
      */
-    public function requestId(?string $value): self
+    public function warnings(?array $value): self
     {
-        $this->instance->setRequestId($value);
+        $this->instance->setWarnings($value);
         return $this;
     }
 

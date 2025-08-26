@@ -51,16 +51,6 @@ class CardGroupRequest implements \JsonSerializable
     private $status = [];
 
     /**
-     * @var int|null
-     */
-    private $currentPage;
-
-    /**
-     * @var int|null
-     */
-    private $pageSize;
-
-    /**
      * Returns Col Co Id.
      * Collecting Company Id of the selected payer.
      *
@@ -386,56 +376,6 @@ class CardGroupRequest implements \JsonSerializable
     }
 
     /**
-     * Returns Current Page.
-     * Page Number (as shown to the users)
-     * Optional
-     * Default value 1
-     */
-    public function getCurrentPage(): ?int
-    {
-        return $this->currentPage;
-    }
-
-    /**
-     * Sets Current Page.
-     * Page Number (as shown to the users)
-     * Optional
-     * Default value 1
-     *
-     * @maps CurrentPage
-     */
-    public function setCurrentPage(?int $currentPage): void
-    {
-        $this->currentPage = $currentPage;
-    }
-
-    /**
-     * Returns Page Size.
-     * Page Size – Number of records to show on a page.
-     * Optional
-     * Default value 50.
-     * Return all rows if -1 is supplied as page size.
-     */
-    public function getPageSize(): ?int
-    {
-        return $this->pageSize;
-    }
-
-    /**
-     * Sets Page Size.
-     * Page Size – Number of records to show on a page.
-     * Optional
-     * Default value 50.
-     * Return all rows if -1 is supplied as page size.
-     *
-     * @maps PageSize
-     */
-    public function setPageSize(?int $pageSize): void
-    {
-        $this->pageSize = $pageSize;
-    }
-
-    /**
      * Converts the CardGroupRequest object to a human-readable string representation.
      *
      * @return string The string representation of the CardGroupRequest object.
@@ -451,9 +391,7 @@ class CardGroupRequest implements \JsonSerializable
                 'payerNumber' => $this->getPayerNumber(),
                 'account' => $this->account,
                 'cardGroupName' => $this->getCardGroupName(),
-                'status' => $this->getStatus(),
-                'currentPage' => $this->currentPage,
-                'pageSize' => $this->pageSize
+                'status' => $this->getStatus()
             ]
         );
     }
@@ -490,12 +428,6 @@ class CardGroupRequest implements \JsonSerializable
         }
         if (!empty($this->status)) {
             $json['Status']        = $this->status['value'];
-        }
-        if (isset($this->currentPage)) {
-            $json['CurrentPage']   = $this->currentPage;
-        }
-        if (isset($this->pageSize)) {
-            $json['PageSize']      = $this->pageSize;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

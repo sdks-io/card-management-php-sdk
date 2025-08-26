@@ -35,15 +35,18 @@ class ConfigurationDefaults
 
     public const ENVIRONMENT = Environment::SIT;
 
-    public const USERNAME = '';
-
-    public const PASSWORD = '';
-
     public const O_AUTH_CLIENT_ID = '';
 
     public const O_AUTH_CLIENT_SECRET = '';
 
     public const O_AUTH_TOKEN = null;
+
+    public const PROXY_CONFIGURATION = [
+        'port' => 0,
+        'tunnel' => false,
+        'address' => '',
+        'auth' => ['user' => '', 'pass' => '', 'method' => CURLAUTH_BASIC]
+    ];
 
     public const BEARER_TOKEN_CLOCK_SKEW = 0;
 
@@ -61,13 +64,12 @@ class ConfigurationDefaults
         'httpStatusCodesToRetry' => self::HTTP_STATUS_CODES_TO_RETRY,
         'httpMethodsToRetry' => self::HTTP_METHODS_TO_RETRY,
         'environment' => self::ENVIRONMENT,
-        'username' => self::USERNAME,
-        'password' => self::PASSWORD,
         'oAuthClientId' => self::O_AUTH_CLIENT_ID,
         'oAuthClientSecret' => self::O_AUTH_CLIENT_SECRET,
         'oAuthToken' => self::O_AUTH_TOKEN,
         'BearerToken-ClockSkew' => self::BEARER_TOKEN_CLOCK_SKEW,
         'BearerToken-TokenProvider' => null,
-        'BearerToken-OnTokenUpdate' => null
+        'BearerToken-OnTokenUpdate' => null,
+        'proxyConfiguration' => self::PROXY_CONFIGURATION
     ];
 }

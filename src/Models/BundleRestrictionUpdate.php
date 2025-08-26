@@ -31,7 +31,7 @@ class BundleRestrictionUpdate implements \JsonSerializable
     private $resetProductRestriction = [];
 
     /**
-     * @var array|null
+     * @var UsageRestrictionsCard|null
      */
     private $usageRestrictions;
 
@@ -46,7 +46,7 @@ class BundleRestrictionUpdate implements \JsonSerializable
     private $dayTimeRestrictions;
 
     /**
-     * @var array|null
+     * @var ProductRestrictionCard|null
      */
     private $productRestrictions;
 
@@ -186,7 +186,7 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Returns Usage Restrictions.
      */
-    public function getUsageRestrictions(): ?array
+    public function getUsageRestrictions(): ?UsageRestrictionsCard
     {
         return $this->usageRestrictions;
     }
@@ -196,7 +196,7 @@ class BundleRestrictionUpdate implements \JsonSerializable
      *
      * @maps UsageRestrictions
      */
-    public function setUsageRestrictions(?array $usageRestrictions): void
+    public function setUsageRestrictions(?UsageRestrictionsCard $usageRestrictions): void
     {
         $this->usageRestrictions = $usageRestrictions;
     }
@@ -257,7 +257,7 @@ class BundleRestrictionUpdate implements \JsonSerializable
     /**
      * Returns Product Restrictions.
      */
-    public function getProductRestrictions(): ?array
+    public function getProductRestrictions(): ?ProductRestrictionCard
     {
         return $this->productRestrictions;
     }
@@ -267,7 +267,7 @@ class BundleRestrictionUpdate implements \JsonSerializable
      *
      * @maps ProductRestrictions
      */
-    public function setProductRestrictions(?array $productRestrictions): void
+    public function setProductRestrictions(?ProductRestrictionCard $productRestrictions): void
     {
         $this->productRestrictions = $productRestrictions;
     }

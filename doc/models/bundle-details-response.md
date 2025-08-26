@@ -20,8 +20,6 @@
 | `restrictionCurrencyCode` | `?string` | Optional | ISO currency code of the country.<br>Example: GBP | getRestrictionCurrencyCode(): ?string | setRestrictionCurrencyCode(?string restrictionCurrencyCode): void |
 | `restrictionCurrencySymbol` | `?string` | Optional | Currency symbol of the country.<br>Example: £, $ | getRestrictionCurrencySymbol(): ?string | setRestrictionCurrencySymbol(?string restrictionCurrencySymbol): void |
 | `restrictions` | [`?BundledRestrictionsList`](../../doc/models/bundled-restrictions-list.md) | Optional | - | getRestrictions(): ?BundledRestrictionsList | setRestrictions(?BundledRestrictionsList restrictions): void |
-| `error` | [`?ErrorStatus`](../../doc/models/error-status.md) | Optional | - | getError(): ?ErrorStatus | setError(?ErrorStatus error): void |
-| `requestId` | `?string` | Optional | API Request Id | getRequestId(): ?string | setRequestId(?string requestId): void |
 
 ## Example (as JSON)
 

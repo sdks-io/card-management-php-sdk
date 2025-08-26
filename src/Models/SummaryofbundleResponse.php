@@ -16,11 +16,6 @@ use stdClass;
 class SummaryofbundleResponse implements \JsonSerializable
 {
     /**
-     * @var array
-     */
-    private $requestId = [];
-
-    /**
      * @var int|null
      */
     private $payerId;
@@ -49,43 +44,6 @@ class SummaryofbundleResponse implements \JsonSerializable
      * @var CardBundle|null
      */
     private $cardBundles;
-
-    /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
-     * Returns Request Id.
-     * Request Id of the API call
-     */
-    public function getRequestId(): ?string
-    {
-        if (count($this->requestId) == 0) {
-            return null;
-        }
-        return $this->requestId['value'];
-    }
-
-    /**
-     * Sets Request Id.
-     * Request Id of the API call
-     *
-     * @maps RequestId
-     */
-    public function setRequestId(?string $requestId): void
-    {
-        $this->requestId['value'] = $requestId;
-    }
-
-    /**
-     * Unsets Request Id.
-     * Request Id of the API call
-     */
-    public function unsetRequestId(): void
-    {
-        $this->requestId = [];
-    }
 
     /**
      * Returns Payer Id.
@@ -210,24 +168,6 @@ class SummaryofbundleResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
      * Converts the SummaryofbundleResponse object to a human-readable string representation.
      *
      * @return string The string representation of the SummaryofbundleResponse object.
@@ -237,14 +177,12 @@ class SummaryofbundleResponse implements \JsonSerializable
         return ApiHelper::stringify(
             'SummaryofbundleResponse',
             [
-                'requestId' => $this->getRequestId(),
                 'payerId' => $this->payerId,
                 'payerNumber' => $this->payerNumber,
                 'accountId' => $this->accountId,
                 'accountNumber' => $this->accountNumber,
                 'countOfCardsNotInBundle' => $this->countOfCardsNotInBundle,
-                'cardBundles' => $this->cardBundles,
-                'error' => $this->error
+                'cardBundles' => $this->cardBundles
             ]
         );
     }
@@ -261,9 +199,6 @@ class SummaryofbundleResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (!empty($this->requestId)) {
-            $json['RequestId']               = $this->requestId['value'];
-        }
         if (isset($this->payerId)) {
             $json['PayerId']                 = $this->payerId;
         }
@@ -281,9 +216,6 @@ class SummaryofbundleResponse implements \JsonSerializable
         }
         if (isset($this->cardBundles)) {
             $json['CardBundles']             = $this->cardBundles;
-        }
-        if (isset($this->error)) {
-            $json['Error']                   = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

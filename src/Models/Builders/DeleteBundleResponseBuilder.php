@@ -12,7 +12,6 @@ namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
 use ShellCardManagementAPIsLib\Models\DeleteBundleResponse;
-use ShellCardManagementAPIsLib\Models\ErrorStatus;
 
 /**
  * Builder for model DeleteBundleResponse
@@ -51,13 +50,13 @@ class DeleteBundleResponseBuilder
     }
 
     /**
-     * Sets Error field.
+     * Sets Status field.
      *
-     * @param ErrorStatus|null $value
+     * @param string|null $value
      */
-    public function error(?ErrorStatus $value): self
+    public function status(?string $value): self
     {
-        $this->instance->setError($value);
+        $this->instance->setStatus($value);
         return $this;
     }
 

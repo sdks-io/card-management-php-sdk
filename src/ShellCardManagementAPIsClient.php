@@ -12,16 +12,13 @@ namespace ShellCardManagementAPIsLib;
 
 use Core\ClientBuilder;
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Authentication\BasicAuthCredentials;
-use ShellCardManagementAPIsLib\Authentication\BasicAuthCredentialsBuilder;
-use ShellCardManagementAPIsLib\Authentication\BasicAuthManager;
-use ShellCardManagementAPIsLib\Authentication\BearerTokenCredentials;
-use ShellCardManagementAPIsLib\Authentication\BearerTokenCredentialsBuilder;
-use ShellCardManagementAPIsLib\Authentication\BearerTokenManager;
+use ShellCardManagementAPIsLib\Authentication\ClientCredentialsAuthCredentialsBuilder;
+use ShellCardManagementAPIsLib\Authentication\ClientCredentialsAuthManager;
 use ShellCardManagementAPIsLib\Controllers\CardController;
 use ShellCardManagementAPIsLib\Controllers\CustomerController;
 use ShellCardManagementAPIsLib\Controllers\OAuthAuthorizationController;
 use ShellCardManagementAPIsLib\Controllers\RestrictionController;
+use ShellCardManagementAPIsLib\Proxy\ProxyConfigurationBuilder;
 use ShellCardManagementAPIsLib\Utils\CompatibilityConverter;
 use Unirest\Configuration;
 use Unirest\HttpClient;
@@ -36,9 +33,9 @@ class ShellCardManagementAPIsClient implements ConfigurationInterface
 
     private $oAuthAuthorization;
 
-    private $basicAuthManager;
+    private $clientCredentialsAuthManager;
 
-    private $bearerTokenManager;
+    private $proxyConfiguration;
 
     private $config;
 
@@ -53,17 +50,19 @@ class ShellCardManagementAPIsClient implements ConfigurationInterface
     public function __construct(array $config = [])
     {
         $this->config = array_merge(ConfigurationDefaults::_ALL, CoreHelper::clone($config));
-        $this->basicAuthManager = new BasicAuthManager($this->config);
-        $this->bearerTokenManager = new BearerTokenManager($this->config);
-        $this->client = ClientBuilder::init(new HttpClient(Configuration::init($this)))
+        $this->clientCredentialsAuthManager = new ClientCredentialsAuthManager($this->config);
+        $this->proxyConfiguration = $this->config['proxyConfiguration'] ?? ConfigurationDefaults::PROXY_CONFIGURATION;
+        $this->client = ClientBuilder::init(
+            new HttpClient(Configuration::init($this)->proxyConfiguration($this->proxyConfiguration))
+        )
             ->converter(new CompatibilityConverter())
             ->jsonHelper(ApiHelper::getJsonHelper())
             ->apiCallback($this->config['httpCallback'] ?? null)
             ->userAgent('APIMATIC 3.0')
             ->serverUrls(self::ENVIRONMENT_MAP[$this->getEnvironment()], Server::SHELL)
-            ->authManagers(['BasicAuth' => $this->basicAuthManager, 'BearerToken' => $this->bearerTokenManager])
+            ->authManagers(['BearerToken' => $this->clientCredentialsAuthManager])
             ->build();
-        $this->bearerTokenManager->setClient($this->client);
+        $this->clientCredentialsAuthManager->setClient($this->client);
     }
 
     /**
@@ -84,16 +83,12 @@ class ShellCardManagementAPIsClient implements ConfigurationInterface
             ->httpStatusCodesToRetry($this->getHttpStatusCodesToRetry())
             ->httpMethodsToRetry($this->getHttpMethodsToRetry())
             ->environment($this->getEnvironment())
-            ->httpCallback($this->config['httpCallback'] ?? null);
+            ->httpCallback($this->config['httpCallback'] ?? null)
+            ->proxyConfiguration($this->getProxyConfigurationBuilder());
 
-        $basicAuth = $this->getBasicAuthCredentialsBuilder();
-        if ($basicAuth != null) {
-            $builder->basicAuthCredentials($basicAuth);
-        }
-
-        $bearerToken = $this->getBearerTokenCredentialsBuilder();
-        if ($bearerToken != null) {
-            $builder->bearerTokenCredentials($bearerToken);
+        $clientCredentialsAuth = $this->getClientCredentialsAuthCredentialsBuilder();
+        if ($clientCredentialsAuth != null) {
+            $builder->clientCredentialsAuthCredentials($clientCredentialsAuth);
         }
         return $builder;
     }
@@ -148,39 +143,35 @@ class ShellCardManagementAPIsClient implements ConfigurationInterface
         return $this->config['environment'] ?? ConfigurationDefaults::ENVIRONMENT;
     }
 
-    public function getBasicAuthCredentials(): BasicAuthCredentials
+    public function getClientCredentialsAuth(): ClientCredentialsAuth
     {
-        return $this->basicAuthManager;
+        return $this->clientCredentialsAuthManager;
     }
 
-    public function getBasicAuthCredentialsBuilder(): ?BasicAuthCredentialsBuilder
-    {
-        if (empty($this->basicAuthManager->getUsername()) && empty($this->basicAuthManager->getPassword())) {
-            return null;
-        }
-        return BasicAuthCredentialsBuilder::init(
-            $this->basicAuthManager->getUsername(),
-            $this->basicAuthManager->getPassword()
-        );
-    }
-
-    public function getBearerTokenCredentials(): BearerTokenCredentials
-    {
-        return $this->bearerTokenManager;
-    }
-
-    public function getBearerTokenCredentialsBuilder(): ?BearerTokenCredentialsBuilder
+    public function getClientCredentialsAuthCredentialsBuilder(): ?ClientCredentialsAuthCredentialsBuilder
     {
         if (
-            empty($this->bearerTokenManager->getOAuthClientId()) &&
-            empty($this->bearerTokenManager->getOAuthClientSecret())
+            empty($this->clientCredentialsAuthManager->getOAuthClientId()) &&
+            empty($this->clientCredentialsAuthManager->getOAuthClientSecret())
         ) {
             return null;
         }
-        return BearerTokenCredentialsBuilder::init(
-            $this->bearerTokenManager->getOAuthClientId(),
-            $this->bearerTokenManager->getOAuthClientSecret()
-        )->oAuthToken($this->bearerTokenManager->getOAuthToken());
+        return ClientCredentialsAuthCredentialsBuilder::init(
+            $this->clientCredentialsAuthManager->getOAuthClientId(),
+            $this->clientCredentialsAuthManager->getOAuthClientSecret()
+        )->oAuthToken($this->clientCredentialsAuthManager->getOAuthToken());
+    }
+
+    /**
+     * Get the proxy configuration builder
+     */
+    public function getProxyConfigurationBuilder(): ProxyConfigurationBuilder
+    {
+        return ProxyConfigurationBuilder::init($this->proxyConfiguration['address'])
+            ->port($this->proxyConfiguration['port'])
+            ->tunnel($this->proxyConfiguration['tunnel'])
+            ->auth($this->proxyConfiguration['auth']['user'], $this->proxyConfiguration['auth']['pass'])
+            ->authMethod($this->proxyConfiguration['auth']['method']);
     }
 
     /**

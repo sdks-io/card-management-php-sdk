@@ -162,17 +162,6 @@ class AuditRequestBuilder
     }
 
     /**
-     * Sets Page Size field.
-     *
-     * @param int|null $value
-     */
-    public function pageSize(?int $value): self
-    {
-        $this->instance->setPageSize($value);
-        return $this;
-    }
-
-    /**
      * Sets Requested Operation field.
      *
      * @param string[]|null $value
@@ -220,26 +209,6 @@ class AuditRequestBuilder
     public function unsetSearchText(): self
     {
         $this->instance->unsetSearchText();
-        return $this;
-    }
-
-    /**
-     * Sets Current Page field.
-     *
-     * @param int|null $value
-     */
-    public function currentPage(?int $value): self
-    {
-        $this->instance->setCurrentPage($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Current Page field.
-     */
-    public function unsetCurrentPage(): self
-    {
-        $this->instance->unsetCurrentPage();
         return $this;
     }
 

@@ -30,11 +30,22 @@
 
 ```json
 {
-  "ColCoCode": 210,
-  "ColCoId": 196,
-  "PayerNumber": "PayerNumber0",
-  "PayerId": 244,
-  "AccountId": 48
+  "ColCoCode": 86,
+  "ColCoId": 1,
+  "PayerNumber": "GB00123456",
+  "PayerId": 123456,
+  "AccountId": 123456,
+  "AccountNumber": "GB00123456",
+  "CardGroupId": 1234,
+  "CardGroupName": "test",
+  "PrintOnCard": true,
+  "CardTypeId": 123,
+  "TerminateCardGroup": true,
+  "MoveCards": true,
+  "TargetAccountId": 123456,
+  "TargetAccountNumber": "GB00123452",
+  "TargetNewCardGroupName": "test1",
+  "TargetCardGroupId": 1232
 }
 ```
 

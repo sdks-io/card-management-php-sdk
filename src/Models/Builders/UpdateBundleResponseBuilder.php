@@ -40,26 +40,6 @@ class UpdateBundleResponseBuilder
     }
 
     /**
-     * Sets Request Id field.
-     *
-     * @param string|null $value
-     */
-    public function requestId(?string $value): self
-    {
-        $this->instance->setRequestId($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Request Id field.
-     */
-    public function unsetRequestId(): self
-    {
-        $this->instance->unsetRequestId();
-        return $this;
-    }
-
-    /**
      * Sets Request Action Status field.
      *
      * @param ErrorStatus|null $value
@@ -111,17 +91,6 @@ class UpdateBundleResponseBuilder
     public function usageRestrictionStatus(?ErrorStatus $value): self
     {
         $this->instance->setUsageRestrictionStatus($value);
-        return $this;
-    }
-
-    /**
-     * Sets Error field.
-     *
-     * @param ErrorStatus|null $value
-     */
-    public function error(?ErrorStatus $value): self
-    {
-        $this->instance->setError($value);
         return $this;
     }
 

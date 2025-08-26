@@ -47,7 +47,7 @@ class CustomerDetailRequest implements \JsonSerializable
 
     /**
      * Returns Col Co Id.
-     * Collecting Company Id (in GFN) of the selected payer.
+     * Collecting Company Id of the selected payer.
      *
      * Optional if ColCoCode is passed else Mandatory.
      *
@@ -67,7 +67,7 @@ class CustomerDetailRequest implements \JsonSerializable
 
     /**
      * Sets Col Co Id.
-     * Collecting Company Id (in GFN) of the selected payer.
+     * Collecting Company Id of the selected payer.
      *
      * Optional if ColCoCode is passed else Mandatory.
      *
@@ -86,7 +86,7 @@ class CustomerDetailRequest implements \JsonSerializable
 
     /**
      * Unsets Col Co Id.
-     * Collecting Company Id (in GFN) of the selected payer.
+     * Collecting Company Id of the selected payer.
      *
      * Optional if ColCoCode is passed else Mandatory.
      *
@@ -202,7 +202,7 @@ class CustomerDetailRequest implements \JsonSerializable
      * Returns Payer Number.
      * Payer Number of the selected payer.
      * Optional if PayerId is passed else Mandatory
-     * Example: GB000000123
+     * Example: DE00001067
      */
     public function getPayerNumber(): ?string
     {
@@ -216,7 +216,7 @@ class CustomerDetailRequest implements \JsonSerializable
      * Sets Payer Number.
      * Payer Number of the selected payer.
      * Optional if PayerId is passed else Mandatory
-     * Example: GB000000123
+     * Example: DE00001067
      *
      * @maps PayerNumber
      */
@@ -229,7 +229,7 @@ class CustomerDetailRequest implements \JsonSerializable
      * Unsets Payer Number.
      * Payer Number of the selected payer.
      * Optional if PayerId is passed else Mandatory
-     * Example: GB000000123
+     * Example: DE00001067
      */
     public function unsetPayerNumber(): void
     {

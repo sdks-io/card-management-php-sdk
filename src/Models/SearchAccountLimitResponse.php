@@ -46,11 +46,6 @@ class SearchAccountLimitResponse implements \JsonSerializable
     private $velocityLimits;
 
     /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
      * Returns Request Id.
      * Request Id of the API call
      */
@@ -191,24 +186,6 @@ class SearchAccountLimitResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
      * Converts the SearchAccountLimitResponse object to a human-readable string representation.
      *
      * @return string The string representation of the SearchAccountLimitResponse object.
@@ -223,8 +200,7 @@ class SearchAccountLimitResponse implements \JsonSerializable
                 'accountNumber' => $this->accountNumber,
                 'referenceProduct' => $this->referenceProduct,
                 'restrictionCondition' => $this->restrictionCondition,
-                'velocityLimits' => $this->velocityLimits,
-                'error' => $this->error
+                'velocityLimits' => $this->velocityLimits
             ]
         );
     }
@@ -258,9 +234,6 @@ class SearchAccountLimitResponse implements \JsonSerializable
         }
         if (isset($this->velocityLimits)) {
             $json['VelocityLimits']       = $this->velocityLimits;
-        }
-        if (isset($this->error)) {
-            $json['Error']                = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

@@ -16,11 +16,6 @@ use stdClass;
 class AccountRestrictionResponse implements \JsonSerializable
 {
     /**
-     * @var array
-     */
-    private $requestId = [];
-
-    /**
      * @var int|null
      */
     private $accountId;
@@ -39,43 +34,6 @@ class AccountRestrictionResponse implements \JsonSerializable
      * @var string|null
      */
     private $usageRestrictionDescription;
-
-    /**
-     * @var ErrorStatus|null
-     */
-    private $error;
-
-    /**
-     * Returns Request Id.
-     * Request Id of the API call
-     */
-    public function getRequestId(): ?string
-    {
-        if (count($this->requestId) == 0) {
-            return null;
-        }
-        return $this->requestId['value'];
-    }
-
-    /**
-     * Sets Request Id.
-     * Request Id of the API call
-     *
-     * @maps RequestId
-     */
-    public function setRequestId(?string $requestId): void
-    {
-        $this->requestId['value'] = $requestId;
-    }
-
-    /**
-     * Unsets Request Id.
-     * Request Id of the API call
-     */
-    public function unsetRequestId(): void
-    {
-        $this->requestId = [];
-    }
 
     /**
      * Returns Account Id.
@@ -166,24 +124,6 @@ class AccountRestrictionResponse implements \JsonSerializable
     }
 
     /**
-     * Returns Error.
-     */
-    public function getError(): ?ErrorStatus
-    {
-        return $this->error;
-    }
-
-    /**
-     * Sets Error.
-     *
-     * @maps Error
-     */
-    public function setError(?ErrorStatus $error): void
-    {
-        $this->error = $error;
-    }
-
-    /**
      * Converts the AccountRestrictionResponse object to a human-readable string representation.
      *
      * @return string The string representation of the AccountRestrictionResponse object.
@@ -193,12 +133,10 @@ class AccountRestrictionResponse implements \JsonSerializable
         return ApiHelper::stringify(
             'AccountRestrictionResponse',
             [
-                'requestId' => $this->getRequestId(),
                 'accountId' => $this->accountId,
                 'accountNumber' => $this->accountNumber,
                 'usageRestrictionStatus' => $this->usageRestrictionStatus,
-                'usageRestrictionDescription' => $this->usageRestrictionDescription,
-                'error' => $this->error
+                'usageRestrictionDescription' => $this->usageRestrictionDescription
             ]
         );
     }
@@ -215,9 +153,6 @@ class AccountRestrictionResponse implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (!empty($this->requestId)) {
-            $json['RequestId']                   = $this->requestId['value'];
-        }
         if (isset($this->accountId)) {
             $json['AccountId']                   = $this->accountId;
         }
@@ -229,9 +164,6 @@ class AccountRestrictionResponse implements \JsonSerializable
         }
         if (isset($this->usageRestrictionDescription)) {
             $json['UsageRestrictionDescription'] = $this->usageRestrictionDescription;
-        }
-        if (isset($this->error)) {
-            $json['Error']                       = $this->error;
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

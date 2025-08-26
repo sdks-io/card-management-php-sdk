@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
+use ShellCardManagementAPIsLib\Models\BundleRestriction;
 use ShellCardManagementAPIsLib\Models\CreateBundleRequest;
 
 /**
@@ -194,9 +195,9 @@ class CreateBundleRequestBuilder
     /**
      * Sets Restrictions field.
      *
-     * @param array|null $value
+     * @param BundleRestriction|null $value
      */
-    public function restrictions(?array $value): self
+    public function restrictions(?BundleRestriction $value): self
     {
         $this->instance->setRestrictions($value);
         return $this;

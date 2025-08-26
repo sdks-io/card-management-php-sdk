@@ -10,7 +10,6 @@
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `purchaseCategories` | [`?(PurchaseCategory1AllOf0[])`](../../doc/models/purchase-category-1-all-of-0.md) | Optional | - | getPurchaseCategories(): ?array | setPurchaseCategories(?array purchaseCategories): void |
-| `error` | [`?ErrorStatus`](../../doc/models/error-status.md) | Optional | - | getError(): ?ErrorStatus | setError(?ErrorStatus error): void |
 
 ## Example (as JSON)
 
@@ -68,11 +67,7 @@
       "Title": "Title4",
       "Description": "Description0"
     }
-  ],
-  "Error": {
-    "Code": "Code4",
-    "Description": "Description2"
-  }
+  ]
 }
 ```
 
