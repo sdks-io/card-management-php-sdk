@@ -11,9 +11,8 @@ declare(strict_types=1);
 namespace ShellCardManagementAPIsLib\Models\Builders;
 
 use Core\Utils\CoreHelper;
-use ShellCardManagementAPIsLib\Models\CardDayTimeRestrictions;
 use ShellCardManagementAPIsLib\Models\CardTypeResponseCustomerCardTypesItems;
-use ShellCardManagementAPIsLib\Models\CardUsageRestrictions;
+use ShellCardManagementAPIsLib\Models\CartTypeAccount;
 use ShellCardManagementAPIsLib\Models\PurchaseCategories;
 
 /**
@@ -42,17 +41,6 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets Can Have PIN field.
-     *
-     * @param bool|null $value
-     */
-    public function canHavePIN(?bool $value): self
-    {
-        $this->instance->setCanHavePIN($value);
-        return $this;
-    }
-
-    /**
      * Sets Card Type Id field.
      *
      * @param int|null $value
@@ -64,11 +52,13 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets Card Type Id field.
+     * Sets Token Type Id field.
+     *
+     * @param int|null $value
      */
-    public function unsetCardTypeId(): self
+    public function tokenTypeId(?int $value): self
     {
-        $this->instance->unsetCardTypeId();
+        $this->instance->setTokenTypeId($value);
         return $this;
     }
 
@@ -84,102 +74,24 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets Card Type Name field.
-     */
-    public function unsetCardTypeName(): self
-    {
-        $this->instance->unsetCardTypeName();
-        return $this;
-    }
-
-    /**
-     * Sets Col Co Currency Code field.
+     * Sets Token Type Name field.
      *
      * @param string|null $value
      */
-    public function colCoCurrencyCode(?string $value): self
+    public function tokenTypeName(?string $value): self
     {
-        $this->instance->setColCoCurrencyCode($value);
+        $this->instance->setTokenTypeName($value);
         return $this;
     }
 
     /**
-     * Unsets Col Co Currency Code field.
-     */
-    public function unsetColCoCurrencyCode(): self
-    {
-        $this->instance->unsetColCoCurrencyCode();
-        return $this;
-    }
-
-    /**
-     * Sets Customer Card Type Id field.
+     * Sets PAN Length field.
      *
      * @param int|null $value
      */
-    public function customerCardTypeId(?int $value): self
+    public function pANLength(?int $value): self
     {
-        $this->instance->setCustomerCardTypeId($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Customer Card Type Id field.
-     */
-    public function unsetCustomerCardTypeId(): self
-    {
-        $this->instance->unsetCustomerCardTypeId();
-        return $this;
-    }
-
-    /**
-     * Sets Day Time Restrictions field.
-     *
-     * @param CardDayTimeRestrictions|null $value
-     */
-    public function dayTimeRestrictions(?CardDayTimeRestrictions $value): self
-    {
-        $this->instance->setDayTimeRestrictions($value);
-        return $this;
-    }
-
-    /**
-     * Sets Default Purchase Category Id field.
-     *
-     * @param int|null $value
-     */
-    public function defaultPurchaseCategoryId(?int $value): self
-    {
-        $this->instance->setDefaultPurchaseCategoryId($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Default Purchase Category Id field.
-     */
-    public function unsetDefaultPurchaseCategoryId(): self
-    {
-        $this->instance->unsetDefaultPurchaseCategoryId();
-        return $this;
-    }
-
-    /**
-     * Sets Emboss Account Name field.
-     *
-     * @param string|null $value
-     */
-    public function embossAccountName(?string $value): self
-    {
-        $this->instance->setEmbossAccountName($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Emboss Account Name field.
-     */
-    public function unsetEmbossAccountName(): self
-    {
-        $this->instance->unsetEmbossAccountName();
+        $this->instance->setPANLength($value);
         return $this;
     }
 
@@ -195,11 +107,24 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Unsets Expiry Period field.
+     * Sets Is National field.
+     *
+     * @param bool|null $value
      */
-    public function unsetExpiryPeriod(): self
+    public function isNational(?bool $value): self
     {
-        $this->instance->unsetExpiryPeriod();
+        $this->instance->setIsNational($value);
+        return $this;
+    }
+
+    /**
+     * Sets Is International field.
+     *
+     * @param bool|null $value
+     */
+    public function isInternational(?bool $value): self
+    {
+        $this->instance->setIsInternational($value);
         return $this;
     }
 
@@ -226,24 +151,13 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets Is International field.
+     * Sets Is Shell Sites Only field.
      *
      * @param bool|null $value
      */
-    public function isInternational(?bool $value): self
+    public function isShellSitesOnly(?bool $value): self
     {
-        $this->instance->setIsInternational($value);
-        return $this;
-    }
-
-    /**
-     * Sets Is National field.
-     *
-     * @param bool|null $value
-     */
-    public function isNational(?bool $value): self
-    {
-        $this->instance->setIsNational($value);
+        $this->instance->setIsShellSitesOnly($value);
         return $this;
     }
 
@@ -259,13 +173,13 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets Is Shell Sites Only field.
+     * Sets Can Have PIN field.
      *
      * @param bool|null $value
      */
-    public function isShellSitesOnly(?bool $value): self
+    public function canHavePIN(?bool $value): self
     {
-        $this->instance->setIsShellSitesOnly($value);
+        $this->instance->setCanHavePIN($value);
         return $this;
     }
 
@@ -277,17 +191,6 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     public function isVirtual(?bool $value): self
     {
         $this->instance->setIsVirtual($value);
-        return $this;
-    }
-
-    /**
-     * Sets Is Visible To Customers field.
-     *
-     * @param bool|null $value
-     */
-    public function isVisibleToCustomers(?bool $value): self
-    {
-        $this->instance->setIsVisibleToCustomers($value);
         return $this;
     }
 
@@ -314,33 +217,166 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     }
 
     /**
-     * Sets Is Card Visible To Customers field.
+     * Unsets Is Card Available For Download field.
+     */
+    public function unsetIsCardAvailableForDownload(): self
+    {
+        $this->instance->unsetIsCardAvailableForDownload();
+        return $this;
+    }
+
+    /**
+     * Sets Col Co Currency Code field.
+     *
+     * @param string|null $value
+     */
+    public function colCoCurrencyCode(?string $value): self
+    {
+        $this->instance->setColCoCurrencyCode($value);
+        return $this;
+    }
+
+    /**
+     * Sets Col Co Currency Symbol field.
+     *
+     * @param string|null $value
+     */
+    public function colCoCurrencySymbol(?string $value): self
+    {
+        $this->instance->setColCoCurrencySymbol($value);
+        return $this;
+    }
+
+    /**
+     * Sets EMV Contactless field.
      *
      * @param bool|null $value
      */
-    public function isCardVisibleToCustomers(?bool $value): self
+    public function eMVContactless(?bool $value): self
     {
-        $this->instance->setIsCardVisibleToCustomers($value);
+        $this->instance->setEMVContactless($value);
         return $this;
     }
 
     /**
-     * Sets PAN Length field.
+     * Unsets EMV Contactless field.
+     */
+    public function unsetEMVContactless(): self
+    {
+        $this->instance->unsetEMVContactless();
+        return $this;
+    }
+
+    /**
+     * Sets RFID field.
+     *
+     * @param bool|null $value
+     */
+    public function rFID(?bool $value): self
+    {
+        $this->instance->setRFID($value);
+        return $this;
+    }
+
+    /**
+     * Unsets RFID field.
+     */
+    public function unsetRFID(): self
+    {
+        $this->instance->unsetRFID();
+        return $this;
+    }
+
+    /**
+     * Sets PIN Change Supported field.
+     *
+     * @param bool|null $value
+     */
+    public function pINChangeSupported(?bool $value): self
+    {
+        $this->instance->setPINChangeSupported($value);
+        return $this;
+    }
+
+    /**
+     * Unsets PIN Change Supported field.
+     */
+    public function unsetPINChangeSupported(): self
+    {
+        $this->instance->unsetPINChangeSupported();
+        return $this;
+    }
+
+    /**
+     * Sets Require PIN field.
+     *
+     * @param bool|null $value
+     */
+    public function requirePIN(?bool $value): self
+    {
+        $this->instance->setRequirePIN($value);
+        return $this;
+    }
+
+    /**
+     * Unsets Require PIN field.
+     */
+    public function unsetRequirePIN(): self
+    {
+        $this->instance->unsetRequirePIN();
+        return $this;
+    }
+
+    /**
+     * Sets Offline PIN field.
+     *
+     * @param bool|null $value
+     */
+    public function offlinePIN(?bool $value): self
+    {
+        $this->instance->setOfflinePIN($value);
+        return $this;
+    }
+
+    /**
+     * Unsets Offline PIN field.
+     */
+    public function unsetOfflinePIN(): self
+    {
+        $this->instance->unsetOfflinePIN();
+        return $this;
+    }
+
+    /**
+     * Sets Medium Type ID field.
      *
      * @param int|null $value
      */
-    public function pANLength(?int $value): self
+    public function mediumTypeID(?int $value): self
     {
-        $this->instance->setPANLength($value);
+        $this->instance->setMediumTypeID($value);
         return $this;
     }
 
     /**
-     * Unsets PAN Length field.
+     * Sets Medium Type field.
+     *
+     * @param string|null $value
      */
-    public function unsetPANLength(): self
+    public function mediumType(?string $value): self
     {
-        $this->instance->unsetPANLength();
+        $this->instance->setMediumType($value);
+        return $this;
+    }
+
+    /**
+     * Sets Cart Type Accounts field.
+     *
+     * @param CartTypeAccount[]|null $value
+     */
+    public function cartTypeAccounts(?array $value): self
+    {
+        $this->instance->setCartTypeAccounts($value);
         return $this;
     }
 
@@ -361,194 +397,6 @@ class CardTypeResponseCustomerCardTypesItemsBuilder
     public function unsetPurchaseCategories(): self
     {
         $this->instance->unsetPurchaseCategories();
-        return $this;
-    }
-
-    /**
-     * Sets Token Type Id field.
-     *
-     * @param int|null $value
-     */
-    public function tokenTypeId(?int $value): self
-    {
-        $this->instance->setTokenTypeId($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Token Type Id field.
-     */
-    public function unsetTokenTypeId(): self
-    {
-        $this->instance->unsetTokenTypeId();
-        return $this;
-    }
-
-    /**
-     * Sets Token Type Name field.
-     *
-     * @param string|null $value
-     */
-    public function tokenTypeName(?string $value): self
-    {
-        $this->instance->setTokenTypeName($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Token Type Name field.
-     */
-    public function unsetTokenTypeName(): self
-    {
-        $this->instance->unsetTokenTypeName();
-        return $this;
-    }
-
-    /**
-     * Sets Usage Restrictions field.
-     *
-     * @param CardUsageRestrictions|null $value
-     */
-    public function usageRestrictions(?CardUsageRestrictions $value): self
-    {
-        $this->instance->setUsageRestrictions($value);
-        return $this;
-    }
-
-    /**
-     * Sets EMV Contactless field.
-     *
-     * @param bool|null $value
-     */
-    public function eMVContactless(?bool $value): self
-    {
-        $this->instance->setEMVContactless($value);
-        return $this;
-    }
-
-    /**
-     * Sets RFID field.
-     *
-     * @param bool|null $value
-     */
-    public function rFID(?bool $value): self
-    {
-        $this->instance->setRFID($value);
-        return $this;
-    }
-
-    /**
-     * Sets PIN Change Supported field.
-     *
-     * @param bool|null $value
-     */
-    public function pINChangeSupported(?bool $value): self
-    {
-        $this->instance->setPINChangeSupported($value);
-        return $this;
-    }
-
-    /**
-     * Sets Require PIN field.
-     *
-     * @param bool|null $value
-     */
-    public function requirePIN(?bool $value): self
-    {
-        $this->instance->setRequirePIN($value);
-        return $this;
-    }
-
-    /**
-     * Sets Offline PIN field.
-     *
-     * @param bool|null $value
-     */
-    public function offlinePIN(?bool $value): self
-    {
-        $this->instance->setOfflinePIN($value);
-        return $this;
-    }
-
-    /**
-     * Sets Is Default field.
-     *
-     * @param bool|null $value
-     */
-    public function isDefault(?bool $value): self
-    {
-        $this->instance->setIsDefault($value);
-        return $this;
-    }
-
-    /**
-     * Sets Applications To Show NPII Tokens field.
-     *
-     * @param bool|null $value
-     */
-    public function applicationsToShowNPIITokens(?bool $value): self
-    {
-        $this->instance->setApplicationsToShowNPIITokens($value);
-        return $this;
-    }
-
-    /**
-     * Sets Medium Type ID field.
-     *
-     * @param int|null $value
-     */
-    public function mediumTypeID(?int $value): self
-    {
-        $this->instance->setMediumTypeID($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Medium Type ID field.
-     */
-    public function unsetMediumTypeID(): self
-    {
-        $this->instance->unsetMediumTypeID();
-        return $this;
-    }
-
-    /**
-     * Sets Medium Type field.
-     *
-     * @param string|null $value
-     */
-    public function mediumType(?string $value): self
-    {
-        $this->instance->setMediumType($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Medium Type field.
-     */
-    public function unsetMediumType(): self
-    {
-        $this->instance->unsetMediumType();
-        return $this;
-    }
-
-    /**
-     * Sets Col Co Currency Symbol field.
-     *
-     * @param string|null $value
-     */
-    public function colCoCurrencySymbol(?string $value): self
-    {
-        $this->instance->setColCoCurrencySymbol($value);
-        return $this;
-    }
-
-    /**
-     * Unsets Col Co Currency Symbol field.
-     */
-    public function unsetColCoCurrencySymbol(): self
-    {
-        $this->instance->unsetColCoCurrencySymbol();
         return $this;
     }
 

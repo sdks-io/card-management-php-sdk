@@ -46,7 +46,7 @@ class SearchCardRestrictionReq implements \JsonSerializable
     private $bundleId = [];
 
     /**
-     * @var SearchCardRestriction|null
+     * @var SearchCardRestriction[]|null
      */
     private $cards;
 
@@ -300,8 +300,10 @@ class SearchCardRestrictionReq implements \JsonSerializable
 
     /**
      * Returns Cards.
+     *
+     * @return SearchCardRestriction[]|null
      */
-    public function getCards(): ?SearchCardRestriction
+    public function getCards(): ?array
     {
         return $this->cards;
     }
@@ -310,8 +312,10 @@ class SearchCardRestrictionReq implements \JsonSerializable
      * Sets Cards.
      *
      * @maps Cards
+     *
+     * @param SearchCardRestriction[]|null $cards
      */
-    public function setCards(?SearchCardRestriction $cards): void
+    public function setCards(?array $cards): void
     {
         $this->cards = $cards;
     }

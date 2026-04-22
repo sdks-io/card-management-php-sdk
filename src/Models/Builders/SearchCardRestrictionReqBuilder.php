@@ -145,9 +145,9 @@ class SearchCardRestrictionReqBuilder
     /**
      * Sets Cards field.
      *
-     * @param SearchCardRestriction|null $value
+     * @param SearchCardRestriction[]|null $value
      */
-    public function cards(?SearchCardRestriction $value): self
+    public function cards(?array $value): self
     {
         $this->instance->setCards($value);
         return $this;

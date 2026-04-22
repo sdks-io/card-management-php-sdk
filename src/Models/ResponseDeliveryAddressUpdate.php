@@ -70,7 +70,6 @@ class ResponseDeliveryAddressUpdate implements \JsonSerializable
 
     /**
      * Returns Status.
-     * Indicates overall status of the request
      */
     public function getStatus(): string
     {
@@ -79,7 +78,6 @@ class ResponseDeliveryAddressUpdate implements \JsonSerializable
 
     /**
      * Sets Status.
-     * Indicates overall status of the request
      *
      * @required
      * @maps Status

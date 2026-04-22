@@ -21,11 +21,11 @@
   "Status": "SUCCESS",
   "Data": [
     {
-      "CanHavePIN": false,
       "CardTypeId": 236,
+      "TokenTypeId": 168,
       "CardTypeName": "CardTypeName6",
-      "ColCoCurrencyCode": "ColCoCurrencyCode0",
-      "CustomerCardTypeId": 50
+      "TokenTypeName": "TokenTypeName8",
+      "PANLength": 32
     }
   ]
 }

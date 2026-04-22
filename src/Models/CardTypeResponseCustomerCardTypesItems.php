@@ -16,49 +16,44 @@ use stdClass;
 class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
 {
     /**
+     * @var int|null
+     */
+    private $cardTypeId;
+
+    /**
+     * @var int|null
+     */
+    private $tokenTypeId;
+
+    /**
+     * @var string|null
+     */
+    private $cardTypeName;
+
+    /**
+     * @var string|null
+     */
+    private $tokenTypeName;
+
+    /**
+     * @var int|null
+     */
+    private $pANLength;
+
+    /**
+     * @var int|null
+     */
+    private $expiryPeriod;
+
+    /**
      * @var bool|null
      */
-    private $canHavePIN;
+    private $isNational;
 
     /**
-     * @var array
+     * @var bool|null
      */
-    private $cardTypeId = [];
-
-    /**
-     * @var array
-     */
-    private $cardTypeName = [];
-
-    /**
-     * @var array
-     */
-    private $colCoCurrencyCode = [];
-
-    /**
-     * @var array
-     */
-    private $customerCardTypeId = [];
-
-    /**
-     * @var CardDayTimeRestrictions|null
-     */
-    private $dayTimeRestrictions;
-
-    /**
-     * @var array
-     */
-    private $defaultPurchaseCategoryId = [];
-
-    /**
-     * @var array
-     */
-    private $embossAccountName = [];
-
-    /**
-     * @var array
-     */
-    private $expiryPeriod = [];
+    private $isInternational;
 
     /**
      * @var bool|null
@@ -73,12 +68,7 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     /**
      * @var bool|null
      */
-    private $isInternational;
-
-    /**
-     * @var bool|null
-     */
-    private $isNational;
+    private $isShellSitesOnly;
 
     /**
      * @var bool|null
@@ -88,7 +78,7 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     /**
      * @var bool|null
      */
-    private $isShellSitesOnly;
+    private $canHavePIN;
 
     /**
      * @var bool|null
@@ -98,27 +88,62 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     /**
      * @var bool|null
      */
-    private $isVisibleToCustomers;
-
-    /**
-     * @var bool|null
-     */
     private $isActive;
-
-    /**
-     * @var bool|null
-     */
-    private $isCardAvailableForDownload;
-
-    /**
-     * @var bool|null
-     */
-    private $isCardVisibleToCustomers;
 
     /**
      * @var array
      */
-    private $pANLength = [];
+    private $isCardAvailableForDownload = [];
+
+    /**
+     * @var string|null
+     */
+    private $colCoCurrencyCode;
+
+    /**
+     * @var string|null
+     */
+    private $colCoCurrencySymbol;
+
+    /**
+     * @var array
+     */
+    private $eMVContactless = [];
+
+    /**
+     * @var array
+     */
+    private $rFID = [];
+
+    /**
+     * @var array
+     */
+    private $pINChangeSupported = [];
+
+    /**
+     * @var array
+     */
+    private $requirePIN = [];
+
+    /**
+     * @var array
+     */
+    private $offlinePIN = [];
+
+    /**
+     * @var int|null
+     */
+    private $mediumTypeID;
+
+    /**
+     * @var string|null
+     */
+    private $mediumType;
+
+    /**
+     * @var CartTypeAccount[]|null
+     */
+    private $cartTypeAccounts;
 
     /**
      * @var array
@@ -126,120 +151,43 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     private $purchaseCategories = [];
 
     /**
-     * @var array
-     */
-    private $tokenTypeId = [];
-
-    /**
-     * @var array
-     */
-    private $tokenTypeName = [];
-
-    /**
-     * @var CardUsageRestrictions|null
-     */
-    private $usageRestrictions;
-
-    /**
-     * @var bool|null
-     */
-    private $eMVContactless;
-
-    /**
-     * @var bool|null
-     */
-    private $rFID;
-
-    /**
-     * @var bool|null
-     */
-    private $pINChangeSupported;
-
-    /**
-     * @var bool|null
-     */
-    private $requirePIN;
-
-    /**
-     * @var bool|null
-     */
-    private $offlinePIN;
-
-    /**
-     * @var bool|null
-     */
-    private $isDefault;
-
-    /**
-     * @var bool|null
-     */
-    private $applicationsToShowNPIITokens;
-
-    /**
-     * @var array
-     */
-    private $mediumTypeID = [];
-
-    /**
-     * @var array
-     */
-    private $mediumType = [];
-
-    /**
-     * @var array
-     */
-    private $colCoCurrencySymbol = [];
-
-    /**
-     * Returns Can Have PIN.
-     * True/False – Whether the cards of this card type can have PIN.
-     */
-    public function getCanHavePIN(): ?bool
-    {
-        return $this->canHavePIN;
-    }
-
-    /**
-     * Sets Can Have PIN.
-     * True/False – Whether the cards of this card type can have PIN.
-     *
-     * @maps CanHavePIN
-     */
-    public function setCanHavePIN(?bool $canHavePIN): void
-    {
-        $this->canHavePIN = $canHavePIN;
-    }
-
-    /**
      * Returns Card Type Id.
-     * Card Type Id
+     * Card Type Id in Cards Platform.
      */
     public function getCardTypeId(): ?int
     {
-        if (count($this->cardTypeId) == 0) {
-            return null;
-        }
-        return $this->cardTypeId['value'];
+        return $this->cardTypeId;
     }
 
     /**
      * Sets Card Type Id.
-     * Card Type Id
+     * Card Type Id in Cards Platform.
      *
      * @maps CardTypeId
      */
     public function setCardTypeId(?int $cardTypeId): void
     {
-        $this->cardTypeId['value'] = $cardTypeId;
+        $this->cardTypeId = $cardTypeId;
     }
 
     /**
-     * Unsets Card Type Id.
-     * Card Type Id
+     * Returns Token Type Id.
+     * Token type identifier.
      */
-    public function unsetCardTypeId(): void
+    public function getTokenTypeId(): ?int
     {
-        $this->cardTypeId = [];
+        return $this->tokenTypeId;
+    }
+
+    /**
+     * Sets Token Type Id.
+     * Token type identifier.
+     *
+     * @maps TokenTypeId
+     */
+    public function setTokenTypeId(?int $tokenTypeId): void
+    {
+        $this->tokenTypeId = $tokenTypeId;
     }
 
     /**
@@ -248,10 +196,7 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
      */
     public function getCardTypeName(): ?string
     {
-        if (count($this->cardTypeName) == 0) {
-            return null;
-        }
-        return $this->cardTypeName['value'];
+        return $this->cardTypeName;
     }
 
     /**
@@ -262,162 +207,47 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
      */
     public function setCardTypeName(?string $cardTypeName): void
     {
-        $this->cardTypeName['value'] = $cardTypeName;
+        $this->cardTypeName = $cardTypeName;
     }
 
     /**
-     * Unsets Card Type Name.
-     * Card Type Name.
+     * Returns Token Type Name.
+     * Token Type Name.
      */
-    public function unsetCardTypeName(): void
+    public function getTokenTypeName(): ?string
     {
-        $this->cardTypeName = [];
+        return $this->tokenTypeName;
     }
 
     /**
-     * Returns Col Co Currency Code.
-     * ISO currency code of the country.
-     */
-    public function getColCoCurrencyCode(): ?string
-    {
-        if (count($this->colCoCurrencyCode) == 0) {
-            return null;
-        }
-        return $this->colCoCurrencyCode['value'];
-    }
-
-    /**
-     * Sets Col Co Currency Code.
-     * ISO currency code of the country.
+     * Sets Token Type Name.
+     * Token Type Name.
      *
-     * @maps ColCoCurrencyCode
+     * @maps TokenTypeName
      */
-    public function setColCoCurrencyCode(?string $colCoCurrencyCode): void
+    public function setTokenTypeName(?string $tokenTypeName): void
     {
-        $this->colCoCurrencyCode['value'] = $colCoCurrencyCode;
+        $this->tokenTypeName = $tokenTypeName;
     }
 
     /**
-     * Unsets Col Co Currency Code.
-     * ISO currency code of the country.
+     * Returns P an Length.
+     * PAN Length.
      */
-    public function unsetColCoCurrencyCode(): void
+    public function getPANLength(): ?int
     {
-        $this->colCoCurrencyCode = [];
+        return $this->pANLength;
     }
 
     /**
-     * Returns Customer Card Type Id.
-     * Customer Card Type Id
-     */
-    public function getCustomerCardTypeId(): ?int
-    {
-        if (count($this->customerCardTypeId) == 0) {
-            return null;
-        }
-        return $this->customerCardTypeId['value'];
-    }
-
-    /**
-     * Sets Customer Card Type Id.
-     * Customer Card Type Id
+     * Sets P an Length.
+     * PAN Length.
      *
-     * @maps CustomerCardTypeId
+     * @maps PANLength
      */
-    public function setCustomerCardTypeId(?int $customerCardTypeId): void
+    public function setPANLength(?int $pANLength): void
     {
-        $this->customerCardTypeId['value'] = $customerCardTypeId;
-    }
-
-    /**
-     * Unsets Customer Card Type Id.
-     * Customer Card Type Id
-     */
-    public function unsetCustomerCardTypeId(): void
-    {
-        $this->customerCardTypeId = [];
-    }
-
-    /**
-     * Returns Day Time Restrictions.
-     */
-    public function getDayTimeRestrictions(): ?CardDayTimeRestrictions
-    {
-        return $this->dayTimeRestrictions;
-    }
-
-    /**
-     * Sets Day Time Restrictions.
-     *
-     * @maps DayTimeRestrictions
-     */
-    public function setDayTimeRestrictions(?CardDayTimeRestrictions $dayTimeRestrictions): void
-    {
-        $this->dayTimeRestrictions = $dayTimeRestrictions;
-    }
-
-    /**
-     * Returns Default Purchase Category Id.
-     * Default Purchase category of the card type.
-     */
-    public function getDefaultPurchaseCategoryId(): ?int
-    {
-        if (count($this->defaultPurchaseCategoryId) == 0) {
-            return null;
-        }
-        return $this->defaultPurchaseCategoryId['value'];
-    }
-
-    /**
-     * Sets Default Purchase Category Id.
-     * Default Purchase category of the card type.
-     *
-     * @maps DefaultPurchaseCategoryId
-     */
-    public function setDefaultPurchaseCategoryId(?int $defaultPurchaseCategoryId): void
-    {
-        $this->defaultPurchaseCategoryId['value'] = $defaultPurchaseCategoryId;
-    }
-
-    /**
-     * Unsets Default Purchase Category Id.
-     * Default Purchase category of the card type.
-     */
-    public function unsetDefaultPurchaseCategoryId(): void
-    {
-        $this->defaultPurchaseCategoryId = [];
-    }
-
-    /**
-     * Returns Emboss Account Name.
-     * Default Name to be embossed on the card
-     */
-    public function getEmbossAccountName(): ?string
-    {
-        if (count($this->embossAccountName) == 0) {
-            return null;
-        }
-        return $this->embossAccountName['value'];
-    }
-
-    /**
-     * Sets Emboss Account Name.
-     * Default Name to be embossed on the card
-     *
-     * @maps EmbossAccountName
-     */
-    public function setEmbossAccountName(?string $embossAccountName): void
-    {
-        $this->embossAccountName['value'] = $embossAccountName;
-    }
-
-    /**
-     * Unsets Emboss Account Name.
-     * Default Name to be embossed on the card
-     */
-    public function unsetEmbossAccountName(): void
-    {
-        $this->embossAccountName = [];
+        $this->pANLength = $pANLength;
     }
 
     /**
@@ -426,10 +256,7 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
      */
     public function getExpiryPeriod(): ?int
     {
-        if (count($this->expiryPeriod) == 0) {
-            return null;
-        }
-        return $this->expiryPeriod['value'];
+        return $this->expiryPeriod;
     }
 
     /**
@@ -440,16 +267,47 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
      */
     public function setExpiryPeriod(?int $expiryPeriod): void
     {
-        $this->expiryPeriod['value'] = $expiryPeriod;
+        $this->expiryPeriod = $expiryPeriod;
     }
 
     /**
-     * Unsets Expiry Period.
-     * Default Expiry period.
+     * Returns Is National.
+     * True/False – Whether it is a National Card type or not.
      */
-    public function unsetExpiryPeriod(): void
+    public function getIsNational(): ?bool
     {
-        $this->expiryPeriod = [];
+        return $this->isNational;
+    }
+
+    /**
+     * Sets Is National.
+     * True/False – Whether it is a National Card type or not.
+     *
+     * @maps IsNational
+     */
+    public function setIsNational(?bool $isNational): void
+    {
+        $this->isNational = $isNational;
+    }
+
+    /**
+     * Returns Is International.
+     * True/False – Whether it is an International Card type or not.
+     */
+    public function getIsInternational(): ?bool
+    {
+        return $this->isInternational;
+    }
+
+    /**
+     * Sets Is International.
+     * True/False – Whether it is an International Card type or not.
+     *
+     * @maps IsInternational
+     */
+    public function setIsInternational(?bool $isInternational): void
+    {
+        $this->isInternational = $isInternational;
     }
 
     /**
@@ -493,43 +351,23 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     }
 
     /**
-     * Returns Is International.
-     * True/False – Whether it is an International Card type or not.
+     * Returns Is Shell Sites Only.
+     * True/False – Whether it is only allowed in Shell Stations or not.
      */
-    public function getIsInternational(): ?bool
+    public function getIsShellSitesOnly(): ?bool
     {
-        return $this->isInternational;
+        return $this->isShellSitesOnly;
     }
 
     /**
-     * Sets Is International.
-     * True/False – Whether it is an International Card type or not.
+     * Sets Is Shell Sites Only.
+     * True/False – Whether it is only allowed in Shell Stations or not.
      *
-     * @maps IsInternational
+     * @maps IsShellSitesOnly
      */
-    public function setIsInternational(?bool $isInternational): void
+    public function setIsShellSitesOnly(?bool $isShellSitesOnly): void
     {
-        $this->isInternational = $isInternational;
-    }
-
-    /**
-     * Returns Is National.
-     * True/False – Whether it is a National Card type or not.
-     */
-    public function getIsNational(): ?bool
-    {
-        return $this->isNational;
-    }
-
-    /**
-     * Sets Is National.
-     * True/False – Whether it is a National Card type or not.
-     *
-     * @maps IsNational
-     */
-    public function setIsNational(?bool $isNational): void
-    {
-        $this->isNational = $isNational;
+        $this->isShellSitesOnly = $isShellSitesOnly;
     }
 
     /**
@@ -553,23 +391,23 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     }
 
     /**
-     * Returns Is Shell Sites Only.
-     * True/False – Whether it is only allowed in Shell Stations or not.
+     * Returns Can Have PIN.
+     * True/False – Whether the cards of this card type can have PIN.
      */
-    public function getIsShellSitesOnly(): ?bool
+    public function getCanHavePIN(): ?bool
     {
-        return $this->isShellSitesOnly;
+        return $this->canHavePIN;
     }
 
     /**
-     * Sets Is Shell Sites Only.
-     * True/False – Whether it is only allowed in Shell Stations or not.
+     * Sets Can Have PIN.
+     * True/False – Whether the cards of this card type can have PIN.
      *
-     * @maps IsShellSitesOnly
+     * @maps CanHavePIN
      */
-    public function setIsShellSitesOnly(?bool $isShellSitesOnly): void
+    public function setCanHavePIN(?bool $canHavePIN): void
     {
-        $this->isShellSitesOnly = $isShellSitesOnly;
+        $this->canHavePIN = $canHavePIN;
     }
 
     /**
@@ -590,26 +428,6 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     public function setIsVirtual(?bool $isVirtual): void
     {
         $this->isVirtual = $isVirtual;
-    }
-
-    /**
-     * Returns Is Visible to Customers.
-     * True/False – Whether this card type is visible in SFH for card ordering.
-     */
-    public function getIsVisibleToCustomers(): ?bool
-    {
-        return $this->isVisibleToCustomers;
-    }
-
-    /**
-     * Sets Is Visible to Customers.
-     * True/False – Whether this card type is visible in SFH for card ordering.
-     *
-     * @maps IsVisibleToCustomers
-     */
-    public function setIsVisibleToCustomers(?bool $isVisibleToCustomers): void
-    {
-        $this->isVisibleToCustomers = $isVisibleToCustomers;
     }
 
     /**
@@ -634,70 +452,306 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
 
     /**
      * Returns Is Card Available for Download.
+     * Whether card type is available for download.
      */
     public function getIsCardAvailableForDownload(): ?bool
     {
-        return $this->isCardAvailableForDownload;
+        if (count($this->isCardAvailableForDownload) == 0) {
+            return null;
+        }
+        return $this->isCardAvailableForDownload['value'];
     }
 
     /**
      * Sets Is Card Available for Download.
+     * Whether card type is available for download.
      *
      * @maps IsCardAvailableForDownload
      */
     public function setIsCardAvailableForDownload(?bool $isCardAvailableForDownload): void
     {
-        $this->isCardAvailableForDownload = $isCardAvailableForDownload;
+        $this->isCardAvailableForDownload['value'] = $isCardAvailableForDownload;
     }
 
     /**
-     * Returns Is Card Visible to Customers.
+     * Unsets Is Card Available for Download.
+     * Whether card type is available for download.
      */
-    public function getIsCardVisibleToCustomers(): ?bool
+    public function unsetIsCardAvailableForDownload(): void
     {
-        return $this->isCardVisibleToCustomers;
+        $this->isCardAvailableForDownload = [];
     }
 
     /**
-     * Sets Is Card Visible to Customers.
+     * Returns Col Co Currency Code.
+     * ISO currency code of the country.
+     */
+    public function getColCoCurrencyCode(): ?string
+    {
+        return $this->colCoCurrencyCode;
+    }
+
+    /**
+     * Sets Col Co Currency Code.
+     * ISO currency code of the country.
      *
-     * @maps IsCardVisibleToCustomers
+     * @maps ColCoCurrencyCode
      */
-    public function setIsCardVisibleToCustomers(?bool $isCardVisibleToCustomers): void
+    public function setColCoCurrencyCode(?string $colCoCurrencyCode): void
     {
-        $this->isCardVisibleToCustomers = $isCardVisibleToCustomers;
+        $this->colCoCurrencyCode = $colCoCurrencyCode;
     }
 
     /**
-     * Returns P an Length.
-     * PAN Length
+     * Returns Col Co Currency Symbol.
+     * Currency symbol of the country.
      */
-    public function getPANLength(): ?int
+    public function getColCoCurrencySymbol(): ?string
     {
-        if (count($this->pANLength) == 0) {
+        return $this->colCoCurrencySymbol;
+    }
+
+    /**
+     * Sets Col Co Currency Symbol.
+     * Currency symbol of the country.
+     *
+     * @maps ColCoCurrencySymbol
+     */
+    public function setColCoCurrencySymbol(?string $colCoCurrencySymbol): void
+    {
+        $this->colCoCurrencySymbol = $colCoCurrencySymbol;
+    }
+
+    /**
+     * Returns E MV Contactless.
+     * Is Europay, MasterCard, and Visa Contactless enabled or not.
+     */
+    public function getEMVContactless(): ?bool
+    {
+        if (count($this->eMVContactless) == 0) {
             return null;
         }
-        return $this->pANLength['value'];
+        return $this->eMVContactless['value'];
     }
 
     /**
-     * Sets P an Length.
-     * PAN Length
+     * Sets E MV Contactless.
+     * Is Europay, MasterCard, and Visa Contactless enabled or not.
      *
-     * @maps PANLength
+     * @maps EMVContactless
      */
-    public function setPANLength(?int $pANLength): void
+    public function setEMVContactless(?bool $eMVContactless): void
     {
-        $this->pANLength['value'] = $pANLength;
+        $this->eMVContactless['value'] = $eMVContactless;
     }
 
     /**
-     * Unsets P an Length.
-     * PAN Length
+     * Unsets E MV Contactless.
+     * Is Europay, MasterCard, and Visa Contactless enabled or not.
      */
-    public function unsetPANLength(): void
+    public function unsetEMVContactless(): void
     {
-        $this->pANLength = [];
+        $this->eMVContactless = [];
+    }
+
+    /**
+     * Returns R FID.
+     * Whether the card type is enabled for RFID (Radio Frequency Identification)
+     */
+    public function getRFID(): ?bool
+    {
+        if (count($this->rFID) == 0) {
+            return null;
+        }
+        return $this->rFID['value'];
+    }
+
+    /**
+     * Sets R FID.
+     * Whether the card type is enabled for RFID (Radio Frequency Identification)
+     *
+     * @maps RFID
+     */
+    public function setRFID(?bool $rFID): void
+    {
+        $this->rFID['value'] = $rFID;
+    }
+
+    /**
+     * Unsets R FID.
+     * Whether the card type is enabled for RFID (Radio Frequency Identification)
+     */
+    public function unsetRFID(): void
+    {
+        $this->rFID = [];
+    }
+
+    /**
+     * Returns P in Change Supported.
+     * PIN change supported or not.
+     */
+    public function getPINChangeSupported(): ?bool
+    {
+        if (count($this->pINChangeSupported) == 0) {
+            return null;
+        }
+        return $this->pINChangeSupported['value'];
+    }
+
+    /**
+     * Sets P in Change Supported.
+     * PIN change supported or not.
+     *
+     * @maps PINChangeSupported
+     */
+    public function setPINChangeSupported(?bool $pINChangeSupported): void
+    {
+        $this->pINChangeSupported['value'] = $pINChangeSupported;
+    }
+
+    /**
+     * Unsets P in Change Supported.
+     * PIN change supported or not.
+     */
+    public function unsetPINChangeSupported(): void
+    {
+        $this->pINChangeSupported = [];
+    }
+
+    /**
+     * Returns Require PIN.
+     * Whether a PIN is mandatory for the cards of this card type.
+     */
+    public function getRequirePIN(): ?bool
+    {
+        if (count($this->requirePIN) == 0) {
+            return null;
+        }
+        return $this->requirePIN['value'];
+    }
+
+    /**
+     * Sets Require PIN.
+     * Whether a PIN is mandatory for the cards of this card type.
+     *
+     * @maps RequirePIN
+     */
+    public function setRequirePIN(?bool $requirePIN): void
+    {
+        $this->requirePIN['value'] = $requirePIN;
+    }
+
+    /**
+     * Unsets Require PIN.
+     * Whether a PIN is mandatory for the cards of this card type.
+     */
+    public function unsetRequirePIN(): void
+    {
+        $this->requirePIN = [];
+    }
+
+    /**
+     * Returns Offline PIN.
+     * Whether offline PIN is enabled or not.
+     */
+    public function getOfflinePIN(): ?bool
+    {
+        if (count($this->offlinePIN) == 0) {
+            return null;
+        }
+        return $this->offlinePIN['value'];
+    }
+
+    /**
+     * Sets Offline PIN.
+     * Whether offline PIN is enabled or not.
+     *
+     * @maps OfflinePIN
+     */
+    public function setOfflinePIN(?bool $offlinePIN): void
+    {
+        $this->offlinePIN['value'] = $offlinePIN;
+    }
+
+    /**
+     * Unsets Offline PIN.
+     * Whether offline PIN is enabled or not.
+     */
+    public function unsetOfflinePIN(): void
+    {
+        $this->offlinePIN = [];
+    }
+
+    /**
+     * Returns Medium Type ID.
+     * Id of the medium type identifier. <br><br> Full list below - <br> 1 - Fuel Card <br> 2 - Fuel Card
+     * with EV <br> 3 - EV only  <br> 4 - Fuel Card and Key Fob <br> 5 - Key Fob <br> 6 - Virtual Card <br>
+     * 7 - NPII Token <br> 8 – Smartpay Token
+     */
+    public function getMediumTypeID(): ?int
+    {
+        return $this->mediumTypeID;
+    }
+
+    /**
+     * Sets Medium Type ID.
+     * Id of the medium type identifier. <br><br> Full list below - <br> 1 - Fuel Card <br> 2 - Fuel Card
+     * with EV <br> 3 - EV only  <br> 4 - Fuel Card and Key Fob <br> 5 - Key Fob <br> 6 - Virtual Card <br>
+     * 7 - NPII Token <br> 8 – Smartpay Token
+     *
+     * @maps MediumTypeID
+     */
+    public function setMediumTypeID(?int $mediumTypeID): void
+    {
+        $this->mediumTypeID = $mediumTypeID;
+    }
+
+    /**
+     * Returns Medium Type.
+     * Name of the medium type identifier. <br><br> Full list below - <br> 1 - Fuel Card <br> 2 - Fuel Card
+     * with EV <br> 3 - EV only  <br> 4 - Fuel Card and Key Fob <br> 5 - Key Fob <br> 6 - Virtual Card <br>
+     * 7 - NPII Token <br> 8 – Smartpay Token
+     */
+    public function getMediumType(): ?string
+    {
+        return $this->mediumType;
+    }
+
+    /**
+     * Sets Medium Type.
+     * Name of the medium type identifier. <br><br> Full list below - <br> 1 - Fuel Card <br> 2 - Fuel Card
+     * with EV <br> 3 - EV only  <br> 4 - Fuel Card and Key Fob <br> 5 - Key Fob <br> 6 - Virtual Card <br>
+     * 7 - NPII Token <br> 8 – Smartpay Token
+     *
+     * @maps MediumType
+     */
+    public function setMediumType(?string $mediumType): void
+    {
+        $this->mediumType = $mediumType;
+    }
+
+    /**
+     * Returns Cart Type Accounts.
+     * List of accounts.
+     *
+     * @return CartTypeAccount[]|null
+     */
+    public function getCartTypeAccounts(): ?array
+    {
+        return $this->cartTypeAccounts;
+    }
+
+    /**
+     * Sets Cart Type Accounts.
+     * List of accounts.
+     *
+     * @maps CartTypeAccounts
+     *
+     * @param CartTypeAccount[]|null $cartTypeAccounts
+     */
+    public function setCartTypeAccounts(?array $cartTypeAccounts): void
+    {
+        $this->cartTypeAccounts = $cartTypeAccounts;
     }
 
     /**
@@ -734,432 +788,6 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     }
 
     /**
-     * Returns Token Type Id.
-     * Token type identifier.
-     */
-    public function getTokenTypeId(): ?int
-    {
-        if (count($this->tokenTypeId) == 0) {
-            return null;
-        }
-        return $this->tokenTypeId['value'];
-    }
-
-    /**
-     * Sets Token Type Id.
-     * Token type identifier.
-     *
-     * @maps TokenTypeId
-     */
-    public function setTokenTypeId(?int $tokenTypeId): void
-    {
-        $this->tokenTypeId['value'] = $tokenTypeId;
-    }
-
-    /**
-     * Unsets Token Type Id.
-     * Token type identifier.
-     */
-    public function unsetTokenTypeId(): void
-    {
-        $this->tokenTypeId = [];
-    }
-
-    /**
-     * Returns Token Type Name.
-     * Token Type Name.
-     */
-    public function getTokenTypeName(): ?string
-    {
-        if (count($this->tokenTypeName) == 0) {
-            return null;
-        }
-        return $this->tokenTypeName['value'];
-    }
-
-    /**
-     * Sets Token Type Name.
-     * Token Type Name.
-     *
-     * @maps TokenTypeName
-     */
-    public function setTokenTypeName(?string $tokenTypeName): void
-    {
-        $this->tokenTypeName['value'] = $tokenTypeName;
-    }
-
-    /**
-     * Unsets Token Type Name.
-     * Token Type Name.
-     */
-    public function unsetTokenTypeName(): void
-    {
-        $this->tokenTypeName = [];
-    }
-
-    /**
-     * Returns Usage Restrictions.
-     */
-    public function getUsageRestrictions(): ?CardUsageRestrictions
-    {
-        return $this->usageRestrictions;
-    }
-
-    /**
-     * Sets Usage Restrictions.
-     *
-     * @maps UsageRestrictions
-     */
-    public function setUsageRestrictions(?CardUsageRestrictions $usageRestrictions): void
-    {
-        $this->usageRestrictions = $usageRestrictions;
-    }
-
-    /**
-     * Returns E MV Contactless.
-     * Is Europay, MasterCard, and Visa Contactless enabled or not.
-     */
-    public function getEMVContactless(): ?bool
-    {
-        return $this->eMVContactless;
-    }
-
-    /**
-     * Sets E MV Contactless.
-     * Is Europay, MasterCard, and Visa Contactless enabled or not.
-     *
-     * @maps EMVContactless
-     */
-    public function setEMVContactless(?bool $eMVContactless): void
-    {
-        $this->eMVContactless = $eMVContactless;
-    }
-
-    /**
-     * Returns R FID.
-     * Whether the card type is enabled for RFID (Radio Frequency Identification)
-     */
-    public function getRFID(): ?bool
-    {
-        return $this->rFID;
-    }
-
-    /**
-     * Sets R FID.
-     * Whether the card type is enabled for RFID (Radio Frequency Identification)
-     *
-     * @maps RFID
-     */
-    public function setRFID(?bool $rFID): void
-    {
-        $this->rFID = $rFID;
-    }
-
-    /**
-     * Returns P in Change Supported.
-     * PIN change supported or not.
-     */
-    public function getPINChangeSupported(): ?bool
-    {
-        return $this->pINChangeSupported;
-    }
-
-    /**
-     * Sets P in Change Supported.
-     * PIN change supported or not.
-     *
-     * @maps PINChangeSupported
-     */
-    public function setPINChangeSupported(?bool $pINChangeSupported): void
-    {
-        $this->pINChangeSupported = $pINChangeSupported;
-    }
-
-    /**
-     * Returns Require PIN.
-     * Whether a PIN is mandatory for the cards of this card type.
-     */
-    public function getRequirePIN(): ?bool
-    {
-        return $this->requirePIN;
-    }
-
-    /**
-     * Sets Require PIN.
-     * Whether a PIN is mandatory for the cards of this card type.
-     *
-     * @maps RequirePIN
-     */
-    public function setRequirePIN(?bool $requirePIN): void
-    {
-        $this->requirePIN = $requirePIN;
-    }
-
-    /**
-     * Returns Offline PIN.
-     * Whether offline PIN is enabled or not.
-     */
-    public function getOfflinePIN(): ?bool
-    {
-        return $this->offlinePIN;
-    }
-
-    /**
-     * Sets Offline PIN.
-     * Whether offline PIN is enabled or not.
-     *
-     * @maps OfflinePIN
-     */
-    public function setOfflinePIN(?bool $offlinePIN): void
-    {
-        $this->offlinePIN = $offlinePIN;
-    }
-
-    /**
-     * Returns Is Default.
-     * Whether card type is default or not.
-     */
-    public function getIsDefault(): ?bool
-    {
-        return $this->isDefault;
-    }
-
-    /**
-     * Sets Is Default.
-     * Whether card type is default or not.
-     *
-     * @maps IsDefault
-     */
-    public function setIsDefault(?bool $isDefault): void
-    {
-        $this->isDefault = $isDefault;
-    }
-
-    /**
-     * Returns Applications to Show NPII Tokens.
-     * True/False
-     *
-     * Note: ApplicationsToShowNPIITokens will be set as ‘True’ when the accessing application API key
-     * exists in the “ApplicationsToShowNPIITokens” card type configuration else “False”.
-     */
-    public function getApplicationsToShowNPIITokens(): ?bool
-    {
-        return $this->applicationsToShowNPIITokens;
-    }
-
-    /**
-     * Sets Applications to Show NPII Tokens.
-     * True/False
-     *
-     * Note: ApplicationsToShowNPIITokens will be set as ‘True’ when the accessing application API key
-     * exists in the “ApplicationsToShowNPIITokens” card type configuration else “False”.
-     *
-     * @maps ApplicationsToShowNPIITokens
-     */
-    public function setApplicationsToShowNPIITokens(?bool $applicationsToShowNPIITokens): void
-    {
-        $this->applicationsToShowNPIITokens = $applicationsToShowNPIITokens;
-    }
-
-    /**
-     * Returns Medium Type ID.
-     * Id of the medium type identifier.
-     * Example: 1,2,4
-     *
-     *
-     * Full list below:
-     * 1 - Fuel Card
-     * 2 - Fuel Card with EV
-     * 3 - EV only
-     * 4 - Fuel Card and Key Fob
-     * 5 - Key Fob
-     * 6 - Virtual Card
-     * 7 - NPII Token
-     * 8 – Smartpay Token
-     */
-    public function getMediumTypeID(): ?int
-    {
-        if (count($this->mediumTypeID) == 0) {
-            return null;
-        }
-        return $this->mediumTypeID['value'];
-    }
-
-    /**
-     * Sets Medium Type ID.
-     * Id of the medium type identifier.
-     * Example: 1,2,4
-     *
-     *
-     * Full list below:
-     * 1 - Fuel Card
-     * 2 - Fuel Card with EV
-     * 3 - EV only
-     * 4 - Fuel Card and Key Fob
-     * 5 - Key Fob
-     * 6 - Virtual Card
-     * 7 - NPII Token
-     * 8 – Smartpay Token
-     *
-     * @maps MediumTypeID
-     */
-    public function setMediumTypeID(?int $mediumTypeID): void
-    {
-        $this->mediumTypeID['value'] = $mediumTypeID;
-    }
-
-    /**
-     * Unsets Medium Type ID.
-     * Id of the medium type identifier.
-     * Example: 1,2,4
-     *
-     *
-     * Full list below:
-     * 1 - Fuel Card
-     * 2 - Fuel Card with EV
-     * 3 - EV only
-     * 4 - Fuel Card and Key Fob
-     * 5 - Key Fob
-     * 6 - Virtual Card
-     * 7 - NPII Token
-     * 8 – Smartpay Token
-     */
-    public function unsetMediumTypeID(): void
-    {
-        $this->mediumTypeID = [];
-    }
-
-    /**
-     * Returns Medium Type.
-     * Name of the medium type identifier.
-     *
-     * Example: Fuel Card, Fuel Card with EV, Key Fob
-     *
-     *
-     *
-     * Full list below:
-     *
-     * 1 - Fuel Card
-     *
-     * 2 - Fuel Card with EV
-     *
-     * 3 - EV only
-     *
-     * 4 - Fuel Card and Key Fob
-     *
-     * 5 - Key Fob
-     *
-     * 6 - Virtual Card
-     *
-     * 7 - NPII Token
-     *
-     * 8 - Smartpay Token
-     */
-    public function getMediumType(): ?string
-    {
-        if (count($this->mediumType) == 0) {
-            return null;
-        }
-        return $this->mediumType['value'];
-    }
-
-    /**
-     * Sets Medium Type.
-     * Name of the medium type identifier.
-     *
-     * Example: Fuel Card, Fuel Card with EV, Key Fob
-     *
-     *
-     *
-     * Full list below:
-     *
-     * 1 - Fuel Card
-     *
-     * 2 - Fuel Card with EV
-     *
-     * 3 - EV only
-     *
-     * 4 - Fuel Card and Key Fob
-     *
-     * 5 - Key Fob
-     *
-     * 6 - Virtual Card
-     *
-     * 7 - NPII Token
-     *
-     * 8 - Smartpay Token
-     *
-     * @maps MediumType
-     */
-    public function setMediumType(?string $mediumType): void
-    {
-        $this->mediumType['value'] = $mediumType;
-    }
-
-    /**
-     * Unsets Medium Type.
-     * Name of the medium type identifier.
-     *
-     * Example: Fuel Card, Fuel Card with EV, Key Fob
-     *
-     *
-     *
-     * Full list below:
-     *
-     * 1 - Fuel Card
-     *
-     * 2 - Fuel Card with EV
-     *
-     * 3 - EV only
-     *
-     * 4 - Fuel Card and Key Fob
-     *
-     * 5 - Key Fob
-     *
-     * 6 - Virtual Card
-     *
-     * 7 - NPII Token
-     *
-     * 8 - Smartpay Token
-     */
-    public function unsetMediumType(): void
-    {
-        $this->mediumType = [];
-    }
-
-    /**
-     * Returns Col Co Currency Symbol.
-     * Currency symbol of the country.
-     */
-    public function getColCoCurrencySymbol(): ?string
-    {
-        if (count($this->colCoCurrencySymbol) == 0) {
-            return null;
-        }
-        return $this->colCoCurrencySymbol['value'];
-    }
-
-    /**
-     * Sets Col Co Currency Symbol.
-     * Currency symbol of the country.
-     *
-     * @maps ColCoCurrencySymbol
-     */
-    public function setColCoCurrencySymbol(?string $colCoCurrencySymbol): void
-    {
-        $this->colCoCurrencySymbol['value'] = $colCoCurrencySymbol;
-    }
-
-    /**
-     * Unsets Col Co Currency Symbol.
-     * Currency symbol of the country.
-     */
-    public function unsetColCoCurrencySymbol(): void
-    {
-        $this->colCoCurrencySymbol = [];
-    }
-
-    /**
      * Converts the CardTypeResponseCustomerCardTypesItems object to a human-readable string representation.
      *
      * @return string The string representation of the CardTypeResponseCustomerCardTypesItems object.
@@ -1169,41 +797,33 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
         return ApiHelper::stringify(
             'CardTypeResponseCustomerCardTypesItems',
             [
-                'canHavePIN' => $this->canHavePIN,
-                'cardTypeId' => $this->getCardTypeId(),
-                'cardTypeName' => $this->getCardTypeName(),
-                'colCoCurrencyCode' => $this->getColCoCurrencyCode(),
-                'customerCardTypeId' => $this->getCustomerCardTypeId(),
-                'dayTimeRestrictions' => $this->dayTimeRestrictions,
-                'defaultPurchaseCategoryId' => $this->getDefaultPurchaseCategoryId(),
-                'embossAccountName' => $this->getEmbossAccountName(),
-                'expiryPeriod' => $this->getExpiryPeriod(),
+                'cardTypeId' => $this->cardTypeId,
+                'tokenTypeId' => $this->tokenTypeId,
+                'cardTypeName' => $this->cardTypeName,
+                'tokenTypeName' => $this->tokenTypeName,
+                'pANLength' => $this->pANLength,
+                'expiryPeriod' => $this->expiryPeriod,
+                'isNational' => $this->isNational,
+                'isInternational' => $this->isInternational,
                 'isCRT' => $this->isCRT,
                 'isFleet' => $this->isFleet,
-                'isInternational' => $this->isInternational,
-                'isNational' => $this->isNational,
-                'isPartnerSitesIncluded' => $this->isPartnerSitesIncluded,
                 'isShellSitesOnly' => $this->isShellSitesOnly,
+                'isPartnerSitesIncluded' => $this->isPartnerSitesIncluded,
+                'canHavePIN' => $this->canHavePIN,
                 'isVirtual' => $this->isVirtual,
-                'isVisibleToCustomers' => $this->isVisibleToCustomers,
                 'isActive' => $this->isActive,
-                'isCardAvailableForDownload' => $this->isCardAvailableForDownload,
-                'isCardVisibleToCustomers' => $this->isCardVisibleToCustomers,
-                'pANLength' => $this->getPANLength(),
-                'purchaseCategories' => $this->getPurchaseCategories(),
-                'tokenTypeId' => $this->getTokenTypeId(),
-                'tokenTypeName' => $this->getTokenTypeName(),
-                'usageRestrictions' => $this->usageRestrictions,
-                'eMVContactless' => $this->eMVContactless,
-                'rFID' => $this->rFID,
-                'pINChangeSupported' => $this->pINChangeSupported,
-                'requirePIN' => $this->requirePIN,
-                'offlinePIN' => $this->offlinePIN,
-                'isDefault' => $this->isDefault,
-                'applicationsToShowNPIITokens' => $this->applicationsToShowNPIITokens,
-                'mediumTypeID' => $this->getMediumTypeID(),
-                'mediumType' => $this->getMediumType(),
-                'colCoCurrencySymbol' => $this->getColCoCurrencySymbol()
+                'isCardAvailableForDownload' => $this->getIsCardAvailableForDownload(),
+                'colCoCurrencyCode' => $this->colCoCurrencyCode,
+                'colCoCurrencySymbol' => $this->colCoCurrencySymbol,
+                'eMVContactless' => $this->getEMVContactless(),
+                'rFID' => $this->getRFID(),
+                'pINChangeSupported' => $this->getPINChangeSupported(),
+                'requirePIN' => $this->getRequirePIN(),
+                'offlinePIN' => $this->getOfflinePIN(),
+                'mediumTypeID' => $this->mediumTypeID,
+                'mediumType' => $this->mediumType,
+                'cartTypeAccounts' => $this->cartTypeAccounts,
+                'purchaseCategories' => $this->getPurchaseCategories()
             ]
         );
     }
@@ -1220,110 +840,86 @@ class CardTypeResponseCustomerCardTypesItems implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (isset($this->canHavePIN)) {
-            $json['CanHavePIN']                   = $this->canHavePIN;
+        if (isset($this->cardTypeId)) {
+            $json['CardTypeId']                 = $this->cardTypeId;
         }
-        if (!empty($this->cardTypeId)) {
-            $json['CardTypeId']                   = $this->cardTypeId['value'];
+        if (isset($this->tokenTypeId)) {
+            $json['TokenTypeId']                = $this->tokenTypeId;
         }
-        if (!empty($this->cardTypeName)) {
-            $json['CardTypeName']                 = $this->cardTypeName['value'];
+        if (isset($this->cardTypeName)) {
+            $json['CardTypeName']               = $this->cardTypeName;
         }
-        if (!empty($this->colCoCurrencyCode)) {
-            $json['ColCoCurrencyCode']            = $this->colCoCurrencyCode['value'];
+        if (isset($this->tokenTypeName)) {
+            $json['TokenTypeName']              = $this->tokenTypeName;
         }
-        if (!empty($this->customerCardTypeId)) {
-            $json['CustomerCardTypeId']           = $this->customerCardTypeId['value'];
+        if (isset($this->pANLength)) {
+            $json['PANLength']                  = $this->pANLength;
         }
-        if (isset($this->dayTimeRestrictions)) {
-            $json['DayTimeRestrictions']          = $this->dayTimeRestrictions;
-        }
-        if (!empty($this->defaultPurchaseCategoryId)) {
-            $json['DefaultPurchaseCategoryId']    = $this->defaultPurchaseCategoryId['value'];
-        }
-        if (!empty($this->embossAccountName)) {
-            $json['EmbossAccountName']            = $this->embossAccountName['value'];
-        }
-        if (!empty($this->expiryPeriod)) {
-            $json['ExpiryPeriod']                 = $this->expiryPeriod['value'];
-        }
-        if (isset($this->isCRT)) {
-            $json['IsCRT']                        = $this->isCRT;
-        }
-        if (isset($this->isFleet)) {
-            $json['IsFleet']                      = $this->isFleet;
-        }
-        if (isset($this->isInternational)) {
-            $json['IsInternational']              = $this->isInternational;
+        if (isset($this->expiryPeriod)) {
+            $json['ExpiryPeriod']               = $this->expiryPeriod;
         }
         if (isset($this->isNational)) {
-            $json['IsNational']                   = $this->isNational;
+            $json['IsNational']                 = $this->isNational;
         }
-        if (isset($this->isPartnerSitesIncluded)) {
-            $json['IsPartnerSitesIncluded']       = $this->isPartnerSitesIncluded;
+        if (isset($this->isInternational)) {
+            $json['IsInternational']            = $this->isInternational;
+        }
+        if (isset($this->isCRT)) {
+            $json['IsCRT']                      = $this->isCRT;
+        }
+        if (isset($this->isFleet)) {
+            $json['IsFleet']                    = $this->isFleet;
         }
         if (isset($this->isShellSitesOnly)) {
-            $json['IsShellSitesOnly']             = $this->isShellSitesOnly;
+            $json['IsShellSitesOnly']           = $this->isShellSitesOnly;
+        }
+        if (isset($this->isPartnerSitesIncluded)) {
+            $json['IsPartnerSitesIncluded']     = $this->isPartnerSitesIncluded;
+        }
+        if (isset($this->canHavePIN)) {
+            $json['CanHavePIN']                 = $this->canHavePIN;
         }
         if (isset($this->isVirtual)) {
-            $json['IsVirtual']                    = $this->isVirtual;
-        }
-        if (isset($this->isVisibleToCustomers)) {
-            $json['IsVisibleToCustomers']         = $this->isVisibleToCustomers;
+            $json['IsVirtual']                  = $this->isVirtual;
         }
         if (isset($this->isActive)) {
-            $json['IsActive']                     = $this->isActive;
+            $json['IsActive']                   = $this->isActive;
         }
-        if (isset($this->isCardAvailableForDownload)) {
-            $json['IsCardAvailableForDownload']   = $this->isCardAvailableForDownload;
+        if (!empty($this->isCardAvailableForDownload)) {
+            $json['IsCardAvailableForDownload'] = $this->isCardAvailableForDownload['value'];
         }
-        if (isset($this->isCardVisibleToCustomers)) {
-            $json['IsCardVisibleToCustomers']     = $this->isCardVisibleToCustomers;
+        if (isset($this->colCoCurrencyCode)) {
+            $json['ColCoCurrencyCode']          = $this->colCoCurrencyCode;
         }
-        if (!empty($this->pANLength)) {
-            $json['PANLength']                    = $this->pANLength['value'];
+        if (isset($this->colCoCurrencySymbol)) {
+            $json['ColCoCurrencySymbol']        = $this->colCoCurrencySymbol;
+        }
+        if (!empty($this->eMVContactless)) {
+            $json['EMVContactless']             = $this->eMVContactless['value'];
+        }
+        if (!empty($this->rFID)) {
+            $json['RFID']                       = $this->rFID['value'];
+        }
+        if (!empty($this->pINChangeSupported)) {
+            $json['PINChangeSupported']         = $this->pINChangeSupported['value'];
+        }
+        if (!empty($this->requirePIN)) {
+            $json['RequirePIN']                 = $this->requirePIN['value'];
+        }
+        if (!empty($this->offlinePIN)) {
+            $json['OfflinePIN']                 = $this->offlinePIN['value'];
+        }
+        if (isset($this->mediumTypeID)) {
+            $json['MediumTypeID']               = $this->mediumTypeID;
+        }
+        if (isset($this->mediumType)) {
+            $json['MediumType']                 = $this->mediumType;
+        }
+        if (isset($this->cartTypeAccounts)) {
+            $json['CartTypeAccounts']           = $this->cartTypeAccounts;
         }
         if (!empty($this->purchaseCategories)) {
-            $json['PurchaseCategories']           = $this->purchaseCategories['value'];
-        }
-        if (!empty($this->tokenTypeId)) {
-            $json['TokenTypeId']                  = $this->tokenTypeId['value'];
-        }
-        if (!empty($this->tokenTypeName)) {
-            $json['TokenTypeName']                = $this->tokenTypeName['value'];
-        }
-        if (isset($this->usageRestrictions)) {
-            $json['UsageRestrictions']            = $this->usageRestrictions;
-        }
-        if (isset($this->eMVContactless)) {
-            $json['EMVContactless']               = $this->eMVContactless;
-        }
-        if (isset($this->rFID)) {
-            $json['RFID']                         = $this->rFID;
-        }
-        if (isset($this->pINChangeSupported)) {
-            $json['PINChangeSupported']           = $this->pINChangeSupported;
-        }
-        if (isset($this->requirePIN)) {
-            $json['RequirePIN']                   = $this->requirePIN;
-        }
-        if (isset($this->offlinePIN)) {
-            $json['OfflinePIN']                   = $this->offlinePIN;
-        }
-        if (isset($this->isDefault)) {
-            $json['IsDefault']                    = $this->isDefault;
-        }
-        if (isset($this->applicationsToShowNPIITokens)) {
-            $json['ApplicationsToShowNPIITokens'] = $this->applicationsToShowNPIITokens;
-        }
-        if (!empty($this->mediumTypeID)) {
-            $json['MediumTypeID']                 = $this->mediumTypeID['value'];
-        }
-        if (!empty($this->mediumType)) {
-            $json['MediumType']                   = $this->mediumType['value'];
-        }
-        if (!empty($this->colCoCurrencySymbol)) {
-            $json['ColCoCurrencySymbol']          = $this->colCoCurrencySymbol['value'];
+            $json['PurchaseCategories']         = $this->purchaseCategories['value'];
         }
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;

@@ -12,25 +12,25 @@ $customerController = $client->getCustomerController();
 
 ## Methods
 
-* [User-Loggedinuser](../../doc/controllers/customer.md#user-loggedinuser)
-* [Customerpayers](../../doc/controllers/customer.md#customerpayers)
-* [Customerdetail](../../doc/controllers/customer.md#customerdetail)
-* [Post-Card-Accounts](../../doc/controllers/customer.md#post-card-accounts)
-* [Customercardtypev](../../doc/controllers/customer.md#customercardtypev)
-* [Cardgroups](../../doc/controllers/customer.md#cardgroups)
+* [Loggedin User](../../doc/controllers/customer.md#loggedin-user)
+* [Customer Payers](../../doc/controllers/customer.md#customer-payers)
+* [Customer Detail](../../doc/controllers/customer.md#customer-detail)
+* [Post Card Accounts](../../doc/controllers/customer.md#post-card-accounts)
+* [Customer Card Type](../../doc/controllers/customer.md#customer-card-type)
+* [Card Groups](../../doc/controllers/customer.md#card-groups)
 * [Audit Report](../../doc/controllers/customer.md#audit-report)
-* [Customercreatecardgroup](../../doc/controllers/customer.md#customercreatecardgroup)
-* [Customerupdatecardgroup](../../doc/controllers/customer.md#customerupdatecardgroup)
+* [Customer Create Card Group](../../doc/controllers/customer.md#customer-create-card-group)
+* [Customer Update Card Group](../../doc/controllers/customer.md#customer-update-card-group)
 
 
-# User-Loggedinuser
+# Loggedin User
 
 This operation allows querying the user data of the logged in user.
 This operation should be called only after successful authentication of the end user in client application. This operation will return the user access details such as payers and/or accounts.
 This operation will also validate that logged in user has access to the requested operation, on failure it will return HasAPIAccess flag as false in the response.
 
 ```php
-function userLoggedinuser(string $requestId, LoggedInUserReq $body): LoggedInUserRes
+function loggedinUser(string $requestId, LoggedInUserReq $body): LoggedInUserRes
 ```
 
 ## Parameters
@@ -51,10 +51,20 @@ $requestId = 'RequestId8';
 
 $body = LoggedInUserReqBuilder::init()->build();
 
-$result = $customerController->userLoggedinuser(
-    $requestId,
-    $body
-);
+$customerController = $client->getCustomerController();
+
+try {
+    $result = $customerController->loggedinUser(
+        $requestId,
+        $body
+    );
+    echo 'LoggedInUserRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -68,7 +78,7 @@ $result = $customerController->userLoggedinuser(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectErrorException`](../../doc/models/error-object-error-exception.md) |
 
 
-# Customerpayers
+# Customer Payers
 
 This API allows querying the payer accounts details from the Shell Cards
 Platform. It provides flexible search criteria for searching payer
@@ -83,7 +93,7 @@ data queried from each ColCo when payers passed in the input are from
 multiple ColCos.
 
 ```php
-function customerpayers(string $requestId, PayerReq $body): PayerRes
+function customerPayers(string $requestId, PayerReq $body): PayerRes
 ```
 
 ## Parameters
@@ -107,10 +117,20 @@ $body = PayerReqBuilder::init()
     ->pageSize(100)
     ->build();
 
-$result = $customerController->customerpayers(
-    $requestId,
-    $body
-);
+$customerController = $client->getCustomerController();
+
+try {
+    $result = $customerController->customerPayers(
+        $requestId,
+        $body
+    );
+    echo 'PayerRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -124,12 +144,12 @@ $result = $customerController->customerpayers(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectErrorException`](../../doc/models/error-object-error-exception.md) |
 
 
-# Customerdetail
+# Customer Detail
 
 This API allows querying the card delivery addresses of a given account from the Shell Cards Platform. Only active delivery addresses will be returned.
 
 ```php
-function customerdetail(string $requestId, CustomerReq $body): CustomerRes
+function customerDetail(string $requestId, CustomerReq $body): CustomerRes
 ```
 
 ## Parameters
@@ -150,10 +170,20 @@ $requestId = 'RequestId8';
 
 $body = CustomerReqBuilder::init()->build();
 
-$result = $customerController->customerdetail(
-    $requestId,
-    $body
-);
+$customerController = $client->getCustomerController();
+
+try {
+    $result = $customerController->customerDetail(
+        $requestId,
+        $body
+    );
+    echo 'CustomerRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -167,7 +197,7 @@ $result = $customerController->customerdetail(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectErrorException`](../../doc/models/error-object-error-exception.md) |
 
 
-# Post-Card-Accounts
+# Post Card Accounts
 
 This API allows querying the customer account details from the Shell Cards Platform. It provides a flexible search criterion and supports pagination.
 
@@ -196,10 +226,20 @@ $body = AccountReqBuilder::init()
     ->pageSize(100)
     ->build();
 
-$result = $customerController->postCardAccounts(
-    $requestId,
-    $body
-);
+$customerController = $client->getCustomerController();
+
+try {
+    $result = $customerController->postCardAccounts(
+        $requestId,
+        $body
+    );
+    echo 'AccountRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -213,14 +253,14 @@ $result = $customerController->postCardAccounts(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectErrorException`](../../doc/models/error-object-error-exception.md) |
 
 
-# Customercardtypev
+# Customer Card Type
 
 This API provides allows querying the active card types that are associated to the given account.
 
 The API returns the card type configurations, purchase categories associated with the card type and the card type restriction limits.
 
 ```php
-function customercardtypev(string $requestId, CardTypeReq $body): CardTypeRes
+function customerCardType(string $requestId, CardTypeReq $body): CardTypeRes
 ```
 
 ## Parameters
@@ -241,10 +281,20 @@ $requestId = 'RequestId8';
 
 $body = CardTypeReqBuilder::init()->build();
 
-$result = $customerController->customercardtypev(
-    $requestId,
-    $body
-);
+$customerController = $client->getCustomerController();
+
+try {
+    $result = $customerController->customerCardType(
+        $requestId,
+        $body
+    );
+    echo 'CardTypeRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -258,7 +308,7 @@ $result = $customerController->customercardtypev(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectErrorException`](../../doc/models/error-object-error-exception.md) |
 
 
-# Cardgroups
+# Card Groups
 
 This API allows querying the card group details from the Shell Cards
 Platform. It provides flexible search criteria and supports paging.
@@ -272,7 +322,7 @@ When the account is not passed in the input and card group type is configured as
 configured directly under the payer.
 
 ```php
-function cardgroups(string $requestId, CardGroupReq $body): CardGroupRes
+function cardGroups(string $requestId, CardGroupReq $body): CardGroupRes
 ```
 
 ## Parameters
@@ -296,10 +346,20 @@ $body = CardGroupReqBuilder::init()
     ->pageSize(100)
     ->build();
 
-$result = $customerController->cardgroups(
-    $requestId,
-    $body
-);
+$customerController = $client->getCustomerController();
+
+try {
+    $result = $customerController->cardGroups(
+        $requestId,
+        $body
+    );
+    echo 'CardGroupRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -360,10 +420,20 @@ $body = AuditReqBuilder::init()
     ->pageSize(100)
     ->build();
 
-$result = $customerController->auditReport(
-    $requestId,
-    $body
-);
+$customerController = $client->getCustomerController();
+
+try {
+    $result = $customerController->auditReport(
+        $requestId,
+        $body
+    );
+    echo 'AuditResponse:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -377,7 +447,7 @@ $result = $customerController->auditReport(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectErrorException`](../../doc/models/error-object-error-exception.md) |
 
 
-# Customercreatecardgroup
+# Customer Create Card Group
 
 This API allows creating a new Card Group in the Shell Cards Platform. It will
 also allow moving of cards (up to 500 cards) into the newly created
@@ -396,7 +466,7 @@ passing the below validations
   successfully
 
 ```php
-function customercreatecardgroup(string $requestId, CreateCardGroupRequest $body): CreateCardGroupRes
+function customerCreateCardGroup(string $requestId, CreateCardGroupRequest $body): CreateCardGroupRes
 ```
 
 ## Parameters
@@ -425,10 +495,20 @@ $body = CreateCardGroupRequestBuilder::init()
     ->printOnCard(true)
     ->build();
 
-$result = $customerController->customercreatecardgroup(
-    $requestId,
-    $body
-);
+$customerController = $client->getCustomerController();
+
+try {
+    $result = $customerController->customerCreateCardGroup(
+        $requestId,
+        $body
+    );
+    echo 'CreateCardGroupRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -442,7 +522,7 @@ $result = $customerController->customercreatecardgroup(
 | 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectErrorException`](../../doc/models/error-object-error-exception.md) |
 
 
-# Customerupdatecardgroup
+# Customer Update Card Group
 
 This API allows updating or removing a Card Group in the Shell Cards
 Platform.
@@ -453,7 +533,7 @@ The request for updating or removing of the card group, creationg of a new card 
 validations.
 
 ```php
-function customerupdatecardgroup(string $requestId, UpdateCardGroupRequest $body): UpdateCardGroupRes
+function customerUpdateCardGroup(string $requestId, UpdateCardGroupRequest $body): UpdateCardGroupRes
 ```
 
 ## Parameters
@@ -491,10 +571,20 @@ $body = UpdateCardGroupRequestBuilder::init()
     ->targetCardGroupId(1232)
     ->build();
 
-$result = $customerController->customerupdatecardgroup(
-    $requestId,
-    $body
-);
+$customerController = $client->getCustomerController();
+
+try {
+    $result = $customerController->customerUpdateCardGroup(
+        $requestId,
+        $body
+    );
+    echo 'UpdateCardGroupRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors

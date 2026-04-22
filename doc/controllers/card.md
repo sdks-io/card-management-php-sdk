@@ -26,7 +26,7 @@ $cardController = $client->getCardController();
 * [Auto Renew](../../doc/controllers/card.md#auto-renew)
 * [Update Mobile Payment Registration Status](../../doc/controllers/card.md#update-mobile-payment-registration-status)
 * [Get Key](../../doc/controllers/card.md#get-key)
-* [Deliveryaddressupdate V2](../../doc/controllers/card.md#deliveryaddressupdate-v2)
+* [Delivery Address Update V2](../../doc/controllers/card.md#delivery-address-update-v2)
 
 
 # Search Card
@@ -169,10 +169,20 @@ $body = SearchCardRequestBuilder::init()
     ->page('1')
     ->build();
 
-$result = $cardController->searchCard(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->searchCard(
+        $requestId,
+        $body
+    );
+    echo 'CardSearchResponse:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -370,10 +380,20 @@ $body = CardSummaryRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->cardSummary(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->cardSummary(
+        $requestId,
+        $body
+    );
+    echo 'CardSummaryResponse:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -560,10 +580,18 @@ $body = CardManagementV1OrdercardRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->orderCard(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->orderCard(
+        $requestId,
+        $body
+    );
+    echo 'OrderCardResponse:';
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -650,10 +678,18 @@ $body = OrderCardEnquiryRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->orderCardEnquiry(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->orderCardEnquiry(
+        $requestId,
+        $body
+    );
+    echo 'OrderCardEnquiryResponse:';
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -835,10 +871,20 @@ $body = CardManagementV1CancelRequestBuilder::init(
     ->reasonText('Lost')
     ->build();
 
-$result = $cardController->cardCancel(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->cardCancel(
+        $requestId,
+        $body
+    );
+    echo 'CancelCardResponse:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -1016,10 +1062,18 @@ $body = CardManagementV1UpdatestatusRequestBuilder::init(
     ->reasonText('Unblock')
     ->build();
 
-$result = $cardController->cardUpdateStatus(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->cardUpdateStatus(
+        $requestId,
+        $body
+    );
+    echo 'UpdateCardStatusResponse:';
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -1090,7 +1144,17 @@ function purchaseCategory(string $requestId, ?PurchaseCategoryReq $body = null):
 ```php
 $requestId = 'RequestId8';
 
-$result = $cardController->purchaseCategory($requestId);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->purchaseCategory($requestId);
+    echo 'PurchaseCategoryRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -1143,10 +1207,20 @@ $body = CardDetailsReqBuilder::init()
     )
     ->build();
 
-$result = $cardController->cardDetails(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->cardDetails(
+        $requestId,
+        $body
+    );
+    echo 'CardDetailsResponse:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -1360,10 +1434,20 @@ $body = CardMoveRequestBuilder::init()
     ->targetNewCardGroupName('DEMORE1')
     ->build();
 
-$result = $cardController->cardMove(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->cardMove(
+        $requestId,
+        $body
+    );
+    echo 'CardMoveRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -1479,10 +1563,20 @@ $body = CardManagementV1PinreminderRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->cardPinReminder(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->cardPinReminder(
+        $requestId,
+        $body
+    );
+    echo 'PINReminderResponse:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -1594,10 +1688,18 @@ $body = ScheduleCardBlockRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->scheduleCardBlock(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->scheduleCardBlock(
+        $requestId,
+        $body
+    );
+    echo 'ScheduleCardBlockResponse:';
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -1691,10 +1793,18 @@ $body = AutoRenewCardRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->autoRenew(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->autoRenew(
+        $requestId,
+        $body
+    );
+    echo 'AutoRenewCardResponse:';
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -1774,10 +1884,20 @@ $body = UpdateMPayRegStatusRequestBuilder::init()
     )
     ->build();
 
-$result = $cardController->updateMobilePaymentRegistrationStatus(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->updateMobilePaymentRegistrationStatus(
+        $requestId,
+        $body
+    );
+    echo 'UpdateMPayRegStatusResponse:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -1824,7 +1944,15 @@ function getKey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
 ```php
 $requestId = 'RequestId8';
 
-$result = $cardController->getKey($requestId);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->getKey($requestId);
+    echo 'GeneratePINKeyResponse:';
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -1847,7 +1975,7 @@ $result = $cardController->getKey($requestId);
 | 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `ApiException` |
 
 
-# Deliveryaddressupdate V2
+# Delivery Address Update V2
 
 This API allows users to update the card’s delivery addresses (card delivery address used for card re-issue and PIN delivery address used when PIN reminder is requested)
 
@@ -1856,7 +1984,7 @@ This API allows users to update the card’s delivery addresses (card delivery a
 * card delivery address update
 
 ```php
-function deliveryaddressupdateV2(
+function deliveryAddressUpdateV2(
     string $requestId,
     DeliveryAddressUpdateRequest $body
 ): ResponseDeliveryAddressUpdate
@@ -1887,10 +2015,20 @@ $body = DeliveryAddressUpdateRequestBuilder::init()
     ->accountNumber('GB000000124')
     ->build();
 
-$result = $cardController->deliveryaddressupdateV2(
-    $requestId,
-    $body
-);
+$cardController = $client->getCardController();
+
+try {
+    $result = $cardController->deliveryAddressUpdateV2(
+        $requestId,
+        $body
+    );
+    echo 'ResponseDeliveryAddressUpdate:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors

@@ -52,7 +52,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function userLoggedinuser(string $requestId, LoggedInUserReq $body): LoggedInUserRes
+    public function loggedinUser(string $requestId, LoggedInUserReq $body): LoggedInUserRes
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/user-management/v1/loggedinuser')
             ->auth('BearerToken')
@@ -66,17 +66,17 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -84,16 +84,16 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -124,7 +124,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function customerpayers(string $requestId, PayerReq $body): PayerRes
+    public function customerPayers(string $requestId, PayerReq $body): PayerRes
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/customer-management/v1/payers')
             ->auth('BearerToken')
@@ -138,17 +138,17 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -156,16 +156,16 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -187,7 +187,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function customerdetail(string $requestId, CustomerReq $body): CustomerRes
+    public function customerDetail(string $requestId, CustomerReq $body): CustomerRes
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/customer-management/v1/customer')
             ->auth('BearerToken')
@@ -201,17 +201,17 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -219,16 +219,16 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -263,17 +263,17 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -281,16 +281,16 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -314,9 +314,9 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function customercardtypev(string $requestId, CardTypeReq $body): CardTypeRes
+    public function customerCardType(string $requestId, CardTypeReq $body): CardTypeRes
     {
-        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/customer-management/v1/cardtype')
+        $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/customer-management/v2/cardtype')
             ->auth('BearerToken')
             ->parameters(
                 HeaderParam::init('RequestId', $requestId),
@@ -328,17 +328,17 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -346,16 +346,16 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -385,7 +385,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function cardgroups(string $requestId, CardGroupReq $body): CardGroupRes
+    public function cardGroups(string $requestId, CardGroupReq $body): CardGroupRes
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/customer-management/v1/cardgroups')
             ->auth('BearerToken')
@@ -399,17 +399,17 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -417,16 +417,16 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -497,17 +497,17 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -515,16 +515,16 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -559,7 +559,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function customercreatecardgroup(string $requestId, CreateCardGroupRequest $body): CreateCardGroupRes
+    public function customerCreateCardGroup(string $requestId, CreateCardGroupRequest $body): CreateCardGroupRes
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/customer-management/v1/createcardgroup')
             ->auth('BearerToken')
@@ -573,17 +573,17 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -591,16 +591,16 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -629,7 +629,7 @@ class CustomerController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function customerupdatecardgroup(string $requestId, UpdateCardGroupRequest $body): UpdateCardGroupRes
+    public function customerUpdateCardGroup(string $requestId, UpdateCardGroupRequest $body): UpdateCardGroupRes
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::POST, '/customer-management/v1/updatecardgroup')
             ->auth('BearerToken')
@@ -643,17 +643,17 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '400',
                 ErrorType::init(
-                    "The server cannot or will not process the request due to something that is" .
-                    " perceived to be a client error (e.g., malformed request syntax, invalid re" .
-                    "quest message framing, or deceptive request routing).\n",
+                    'The server cannot or will not process the request due to something that is' .
+                    ' perceived to be a client error (e.g., malformed request syntax, invalid re' .
+                    'quest message framing, or deceptive request routing).',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '401',
                 ErrorType::init(
-                    "The request has not been applied because it lacks valid  authentication cr" .
-                    "edentials for the target resource.\n",
+                    'The request has not been applied because it lacks valid  authentication cr' .
+                    'edentials for the target resource.',
                     ErrorObjectErrorException::class
                 )
             )
@@ -661,16 +661,16 @@ class CustomerController extends BaseController
             ->throwErrorOn(
                 '404',
                 ErrorType::init(
-                    "The origin server did not find a current representation  for the target re" .
-                    "source or is not willing to disclose  that one exists.\n",
+                    'The origin server did not find a current representation  for the target re' .
+                    'source or is not willing to disclose  that one exists.',
                     ErrorObjectErrorException::class
                 )
             )
             ->throwErrorOn(
                 '500',
                 ErrorType::init(
-                    "The server encountered an unexpected condition that  prevented it from ful" .
-                    "filling the request.\n",
+                    'The server encountered an unexpected condition that  prevented it from ful' .
+                    'filling the request.',
                     ErrorObjectErrorException::class
                 )
             )

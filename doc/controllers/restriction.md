@@ -56,7 +56,17 @@ function searchCardRestriction(
 ```php
 $requestId = 'RequestId8';
 
-$result = $restrictionController->searchCardRestriction($requestId);
+$restrictionController = $client->getRestrictionController();
+
+try {
+    $result = $restrictionController->searchCardRestriction($requestId);
+    echo 'SearchCardRestrictionRes1:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -111,7 +121,17 @@ function applyRestriction(string $requestId, ?CardRestrictionReq $body = null): 
 ```php
 $requestId = 'RequestId8';
 
-$result = $restrictionController->applyRestriction($requestId);
+$restrictionController = $client->getRestrictionController();
+
+try {
+    $result = $restrictionController->applyRestriction($requestId);
+    echo 'CardRestrictionRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -194,7 +214,17 @@ function createBundle(string $requestId, ?CreateBundleRequest $body = null): Cre
 ```php
 $requestId = 'RequestId8';
 
-$result = $restrictionController->createBundle($requestId);
+$restrictionController = $client->getRestrictionController();
+
+try {
+    $result = $restrictionController->createBundle($requestId);
+    echo 'CreateBundleRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -254,7 +284,17 @@ function updateBundle(string $requestId, ?UpdateBundleRequest $body = null): Upd
 ```php
 $requestId = 'RequestId8';
 
-$result = $restrictionController->updateBundle($requestId);
+$restrictionController = $client->getRestrictionController();
+
+try {
+    $result = $restrictionController->updateBundle($requestId);
+    echo 'UpdateBundleRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -314,10 +354,20 @@ $body = DeleteBundleRequestBuilder::init(
     ->accountNumber('PH50000844')
     ->build();
 
-$result = $restrictionController->deleteBundle(
-    $requestId,
-    $body
-);
+$restrictionController = $client->getRestrictionController();
+
+try {
+    $result = $restrictionController->deleteBundle(
+        $requestId,
+        $body
+    );
+    echo 'DeleteBundleResponse:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Errors
@@ -363,10 +413,20 @@ $requestId = 'RequestId8';
 
 $body = SummaryofbundlerRequestBuilder::init()->build();
 
-$result = $restrictionController->summaryOfBundles(
-    $requestId,
-    $body
-);
+$restrictionController = $client->getRestrictionController();
+
+try {
+    $result = $restrictionController->summaryOfBundles(
+        $requestId,
+        $body
+    );
+    echo 'SummaryofbundleRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -435,7 +495,17 @@ function restrictionAccount(string $requestId, ?AccountRestrictionRequest $body 
 ```php
 $requestId = 'RequestId8';
 
-$result = $restrictionController->restrictionAccount($requestId);
+$restrictionController = $client->getRestrictionController();
+
+try {
+    $result = $restrictionController->restrictionAccount($requestId);
+    echo 'AccountRestrictionRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -496,10 +566,20 @@ $body = SearchAccountLimitRequestBuilder::init()
     ->accountId(1232)
     ->build();
 
-$result = $restrictionController->searchAccountLimit(
-    $requestId,
-    $body
-);
+$restrictionController = $client->getRestrictionController();
+
+try {
+    $result = $restrictionController->searchAccountLimit(
+        $requestId,
+        $body
+    );
+    echo 'SearchAccountLimitRes:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*
@@ -580,7 +660,17 @@ function bundleDetails(string $requestId, ?BudleDetailsReq $body = null): Bundle
 ```php
 $requestId = 'RequestId8';
 
-$result = $restrictionController->bundleDetails($requestId);
+$restrictionController = $client->getRestrictionController();
+
+try {
+    $result = $restrictionController->bundleDetails($requestId);
+    echo 'BundleDetails:';
+    var_dump($result);
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
+}
 ```
 
 ## Example Response *(as JSON)*

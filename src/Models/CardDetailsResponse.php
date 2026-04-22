@@ -649,7 +649,6 @@ class CardDetailsResponse implements \JsonSerializable
     /**
      * Returns P AN.
      * Card PAN
-     *
      * **PAN attribute will be deprecated so use PANID instead**
      */
     public function getPAN(): ?string
@@ -663,7 +662,6 @@ class CardDetailsResponse implements \JsonSerializable
     /**
      * Sets P AN.
      * Card PAN
-     *
      * **PAN attribute will be deprecated so use PANID instead**
      *
      * @maps PAN
@@ -676,7 +674,6 @@ class CardDetailsResponse implements \JsonSerializable
     /**
      * Unsets P AN.
      * Card PAN
-     *
      * **PAN attribute will be deprecated so use PANID instead**
      */
     public function unsetPAN(): void
@@ -686,6 +683,31 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Returns Status Id.
+     * Possible Id’s and description:
+     * * 1  Active
+     * * 7  Blocked Card
+     * * 8  Expired
+     * * 9  Cancelled
+     * * 10  New
+     * * 23  Pending Renewal
+     * * 31  Replaced
+     * * 41  Temporary Block (Customer)
+     * * 42  Temporary Block (Shell)
+     * * 43  Fraud
+     * * 101 Active (Block in progress) *
+     * * 102 Blocked Card (Unblock in progress) *
+     * * 103 Active (Cancel in progress) *
+     * * 104 Active (Marked as damaged) *
+     * * 105 New (Cancel as damaged) *
+     * * 106 Active(Scheduled for block) ”#
+     * * 107 Blocked Card(Scheduled for unblock)*#
+     * * 108 Blocked Card (Cancel in progress) *
+     * > Note:
+     * •  Items marked with * are intermediate statuses  to indicate that there are pending requests in
+     * progress. , The response can contain these intermediate statuses only if the
+     * IncludeIntermediateStatus flag is true.
+     * •  The placeholder “<Shell Card Platform Status>” in the items marked with # will be replaced with
+     * the Shell Card Platform status description. E.g., “Active (Scheduled for block)”
      */
     public function getStatusId(): ?int
     {
@@ -694,6 +716,31 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Sets Status Id.
+     * Possible Id’s and description:
+     * * 1  Active
+     * * 7  Blocked Card
+     * * 8  Expired
+     * * 9  Cancelled
+     * * 10  New
+     * * 23  Pending Renewal
+     * * 31  Replaced
+     * * 41  Temporary Block (Customer)
+     * * 42  Temporary Block (Shell)
+     * * 43  Fraud
+     * * 101 Active (Block in progress) *
+     * * 102 Blocked Card (Unblock in progress) *
+     * * 103 Active (Cancel in progress) *
+     * * 104 Active (Marked as damaged) *
+     * * 105 New (Cancel as damaged) *
+     * * 106 Active(Scheduled for block) ”#
+     * * 107 Blocked Card(Scheduled for unblock)*#
+     * * 108 Blocked Card (Cancel in progress) *
+     * > Note:
+     * •  Items marked with * are intermediate statuses  to indicate that there are pending requests in
+     * progress. , The response can contain these intermediate statuses only if the
+     * IncludeIntermediateStatus flag is true.
+     * •  The placeholder “<Shell Card Platform Status>” in the items marked with # will be replaced with
+     * the Shell Card Platform status description. E.g., “Active (Scheduled for block)”
      *
      * @maps StatusId
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailsResponseStatusIdEnum::checkValue
@@ -813,6 +860,9 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Returns P in Type.
+     * PIN type:
+     * * `Card` - Card PIN
+     * * `Fleet` - Fleet PIN
      */
     public function getPINType(): ?string
     {
@@ -821,6 +871,9 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Sets P in Type.
+     * PIN type:
+     * * `Card` - Card PIN
+     * * `Fleet` - Fleet PIN
      *
      * @maps PINType
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailsResponsePINTypeEnum::checkValue
@@ -970,6 +1023,38 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Returns International POS Language ID.
+     * POS language identifier. Language Id:
+     * * `1` - German
+     * * `2` - French
+     * * `3` - Bulgarian
+     * * `4` - Croatian
+     * * `5` - Czech
+     * * `6` - Danish
+     * * `7` - Finnish
+     * * `8` - English
+     * * `9` - Greek
+     * * `10` - Chinese
+     * * `11` - Hungarian
+     * * `12` - Italian
+     * * `13` - Luxembourgish
+     * * `14` - Malay
+     * * `15` - Dutch
+     * * `16` - Norwegian, Bokmal
+     * * `17` - Urdu
+     * * `18` - Polish
+     * * `19` - Portuguese
+     * * `20` - Romanian
+     * * `21` - Russian
+     * * `22` - Slovak
+     * * `23` - Slovenian
+     * * `24` - Spanish
+     * * `25` - Swedish
+     * * `26` - Turkish
+     * * `27` - Thai
+     * * `28` - Filipino
+     * * `29` - Estonian
+     * * `30` - Latvian
+     * * `31` - Lithuanian
      */
     public function getInternationalPOSLanguageID(): ?int
     {
@@ -978,6 +1063,38 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Sets International POS Language ID.
+     * POS language identifier. Language Id:
+     * * `1` - German
+     * * `2` - French
+     * * `3` - Bulgarian
+     * * `4` - Croatian
+     * * `5` - Czech
+     * * `6` - Danish
+     * * `7` - Finnish
+     * * `8` - English
+     * * `9` - Greek
+     * * `10` - Chinese
+     * * `11` - Hungarian
+     * * `12` - Italian
+     * * `13` - Luxembourgish
+     * * `14` - Malay
+     * * `15` - Dutch
+     * * `16` - Norwegian, Bokmal
+     * * `17` - Urdu
+     * * `18` - Polish
+     * * `19` - Portuguese
+     * * `20` - Romanian
+     * * `21` - Russian
+     * * `22` - Slovak
+     * * `23` - Slovenian
+     * * `24` - Spanish
+     * * `25` - Swedish
+     * * `26` - Turkish
+     * * `27` - Thai
+     * * `28` - Filipino
+     * * `29` - Estonian
+     * * `30` - Latvian
+     * * `31` - Lithuanian
      *
      * @maps InternationalPOSLanguageID
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailsResponseInternationalPOSLanguageIDEnum::checkValue
@@ -989,6 +1106,38 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Returns International POS Language Code.
+     * POS language code. Language code:
+     * * `deu` - German
+     * * `fra` - French
+     * * `bul` - Bulgarian
+     * * `hrv` - Croatian
+     * * `ces` - Czech
+     * * `dan` - Danish
+     * * `fin` - Finnish
+     * * `eng` - English
+     * * `ell` - Greek
+     * * `zho` - Chinese
+     * * `hun` - Hungarian
+     * * `ita` - Italian
+     * * `ltz` - Luxembourgish
+     * * `msa` - Malay
+     * * `nld` - Dutch
+     * * `nob` - Norwegian, Bokmal
+     * * `urd` - Urdu
+     * * `pol` - Polish
+     * * `por` - Portuguese
+     * * `ron` - Romanian
+     * * `rus` - Russian
+     * * `slk` - Slovak
+     * * `slv` - Slovenian
+     * * `spa` - Spanish
+     * * `swe` - Swedish
+     * * `tur` - Turkish
+     * * `tha` - Thai
+     * * `fil` - Filipino
+     * * `est` - Estonian
+     * * `lav` - Latvian
+     * * `lit` - Lithuanian
      */
     public function getInternationalPOSLanguageCode(): ?string
     {
@@ -997,6 +1146,38 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Sets International POS Language Code.
+     * POS language code. Language code:
+     * * `deu` - German
+     * * `fra` - French
+     * * `bul` - Bulgarian
+     * * `hrv` - Croatian
+     * * `ces` - Czech
+     * * `dan` - Danish
+     * * `fin` - Finnish
+     * * `eng` - English
+     * * `ell` - Greek
+     * * `zho` - Chinese
+     * * `hun` - Hungarian
+     * * `ita` - Italian
+     * * `ltz` - Luxembourgish
+     * * `msa` - Malay
+     * * `nld` - Dutch
+     * * `nob` - Norwegian, Bokmal
+     * * `urd` - Urdu
+     * * `pol` - Polish
+     * * `por` - Portuguese
+     * * `ron` - Romanian
+     * * `rus` - Russian
+     * * `slk` - Slovak
+     * * `slv` - Slovenian
+     * * `spa` - Spanish
+     * * `swe` - Swedish
+     * * `tur` - Turkish
+     * * `tha` - Thai
+     * * `fil` - Filipino
+     * * `est` - Estonian
+     * * `lav` - Latvian
+     * * `lit` - Lithuanian
      *
      * @maps InternationalPOSLanguageCode
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailsResponseInternationalPOSLanguageCodeEnum::checkValue
@@ -1008,6 +1189,38 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Returns Local POS Language ID.
+     * POS language identifier. Language Id:
+     * * `1` - German
+     * * `2` - French
+     * * `3` - Bulgarian
+     * * `4` - Croatian
+     * * `5` - Czech
+     * * `6` - Danish
+     * * `7` - Finnish
+     * * `8` - English
+     * * `9` - Greek
+     * * `10` - Chinese
+     * * `11` - Hungarian
+     * * `12` - Italian
+     * * `13` - Luxembourgish
+     * * `14` - Malay
+     * * `15` - Dutch
+     * * `16` - Norwegian, Bokmal
+     * * `17` - Urdu
+     * * `18` - Polish
+     * * `19` - Portuguese
+     * * `20` - Romanian
+     * * `21` - Russian
+     * * `22` - Slovak
+     * * `23` - Slovenian
+     * * `24` - Spanish
+     * * `25` - Swedish
+     * * `26` - Turkish
+     * * `27` - Thai
+     * * `28` - Filipino
+     * * `29` - Estonian
+     * * `30` - Latvian
+     * * `31` - Lithuanian
      */
     public function getLocalPOSLanguageID(): ?int
     {
@@ -1016,6 +1229,38 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Sets Local POS Language ID.
+     * POS language identifier. Language Id:
+     * * `1` - German
+     * * `2` - French
+     * * `3` - Bulgarian
+     * * `4` - Croatian
+     * * `5` - Czech
+     * * `6` - Danish
+     * * `7` - Finnish
+     * * `8` - English
+     * * `9` - Greek
+     * * `10` - Chinese
+     * * `11` - Hungarian
+     * * `12` - Italian
+     * * `13` - Luxembourgish
+     * * `14` - Malay
+     * * `15` - Dutch
+     * * `16` - Norwegian, Bokmal
+     * * `17` - Urdu
+     * * `18` - Polish
+     * * `19` - Portuguese
+     * * `20` - Romanian
+     * * `21` - Russian
+     * * `22` - Slovak
+     * * `23` - Slovenian
+     * * `24` - Spanish
+     * * `25` - Swedish
+     * * `26` - Turkish
+     * * `27` - Thai
+     * * `28` - Filipino
+     * * `29` - Estonian
+     * * `30` - Latvian
+     * * `31` - Lithuanian
      *
      * @maps LocalPOSLanguageID
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailsResponseInternationalPOSLanguageIDEnum::checkValue
@@ -1027,6 +1272,38 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Returns Local POS Language Code.
+     * POS language code. Language code:
+     * * `deu` - German
+     * * `fra` - French
+     * * `bul` - Bulgarian
+     * * `hrv` - Croatian
+     * * `ces` - Czech
+     * * `dan` - Danish
+     * * `fin` - Finnish
+     * * `eng` - English
+     * * `ell` - Greek
+     * * `zho` - Chinese
+     * * `hun` - Hungarian
+     * * `ita` - Italian
+     * * `ltz` - Luxembourgish
+     * * `msa` - Malay
+     * * `nld` - Dutch
+     * * `nob` - Norwegian, Bokmal
+     * * `urd` - Urdu
+     * * `pol` - Polish
+     * * `por` - Portuguese
+     * * `ron` - Romanian
+     * * `rus` - Russian
+     * * `slk` - Slovak
+     * * `slv` - Slovenian
+     * * `spa` - Spanish
+     * * `swe` - Swedish
+     * * `tur` - Turkish
+     * * `tha` - Thai
+     * * `fil` - Filipino
+     * * `est` - Estonian
+     * * `lav` - Latvian
+     * * `lit` - Lithuanian
      */
     public function getLocalPOSLanguageCode(): ?string
     {
@@ -1035,6 +1312,38 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Sets Local POS Language Code.
+     * POS language code. Language code:
+     * * `deu` - German
+     * * `fra` - French
+     * * `bul` - Bulgarian
+     * * `hrv` - Croatian
+     * * `ces` - Czech
+     * * `dan` - Danish
+     * * `fin` - Finnish
+     * * `eng` - English
+     * * `ell` - Greek
+     * * `zho` - Chinese
+     * * `hun` - Hungarian
+     * * `ita` - Italian
+     * * `ltz` - Luxembourgish
+     * * `msa` - Malay
+     * * `nld` - Dutch
+     * * `nob` - Norwegian, Bokmal
+     * * `urd` - Urdu
+     * * `pol` - Polish
+     * * `por` - Portuguese
+     * * `ron` - Romanian
+     * * `rus` - Russian
+     * * `slk` - Slovak
+     * * `slv` - Slovenian
+     * * `spa` - Spanish
+     * * `swe` - Swedish
+     * * `tur` - Turkish
+     * * `tha` - Thai
+     * * `fil` - Filipino
+     * * `est` - Estonian
+     * * `lav` - Latvian
+     * * `lit` - Lithuanian
      *
      * @maps LocalPOSLanguageCode
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailsResponseInternationalPOSLanguageCodeEnum::checkValue
@@ -1972,6 +2281,9 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Returns Renewed Card Reissue Setting.
+     * Reissue setting of the renewed new card. Reissue Setting:
+     * * `True` - Card will be sent to production
+     * * `False` - Parent Card is Dormant or the Card is not to be produced
      */
     public function getRenewedCardReissueSetting(): ?string
     {
@@ -1980,6 +2292,9 @@ class CardDetailsResponse implements \JsonSerializable
 
     /**
      * Sets Renewed Card Reissue Setting.
+     * Reissue setting of the renewed new card. Reissue Setting:
+     * * `True` - Card will be sent to production
+     * * `False` - Parent Card is Dormant or the Card is not to be produced
      *
      * @maps RenewedCardReissueSetting
      * @factory \ShellCardManagementAPIsLib\Models\CardDetailsResponseRenewedCardReissueSettingEnum::checkValue
