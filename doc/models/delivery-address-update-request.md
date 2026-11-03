@@ -17,16 +17,18 @@
 | `accountNumber` | `?string` | Optional | Account Number of the customer.<br>Optional if AccountId is passed, else mandatory.<br>This input is a search criterion, if given. | getAccountNumber(): ?string | setAccountNumber(?string accountNumber): void |
 | `deliveryAddressUpdates` | [`?(DeliveryAddressUpdate[])`](../../doc/models/delivery-address-update.md) | Optional | - | getDeliveryAddressUpdates(): ?array | setDeliveryAddressUpdates(?array deliveryAddressUpdates): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 5,
-  "ColCoCode": 5,
-  "PayerId": 123456,
-  "PayerNumber": "GB000000123",
-  "AccountId": 12356,
-  "AccountNumber": "GB000000124"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\DeliveryAddressUpdateRequestBuilder;
+
+$deliveryAddressUpdateRequest = DeliveryAddressUpdateRequestBuilder::init()
+    ->colCoId(5)
+    ->colCoCode(5)
+    ->payerId(123456)
+    ->payerNumber('GB000000123')
+    ->accountId(12356)
+    ->accountNumber('GB000000124')
+    ->build();
 ```
 

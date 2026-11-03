@@ -18,15 +18,17 @@
 | `resetUsageRestrictions` | `?bool` | Optional | True/False.<br>If true, the usage restrictions applied on the account will be removed.<br>Optional<br>Default: False | getResetUsageRestrictions(): ?bool | setResetUsageRestrictions(?bool resetUsageRestrictions): void |
 | `usageRestrictions` | [`?UsageRestrictionsCard`](../../doc/models/usage-restrictions-card.md) | Optional | - | getUsageRestrictions(): ?UsageRestrictionsCard | setUsageRestrictions(?UsageRestrictionsCard usageRestrictions): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 138,
-  "ColCoCode": 152,
-  "PayerId": 186,
-  "PayerNumber": "PayerNumber8",
-  "AccountId": 246
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AccountRestrictionRequestBuilder;
+
+$accountRestrictionRequest = AccountRestrictionRequestBuilder::init()
+    ->colCoId(16)
+    ->colCoCode(30)
+    ->payerId(64)
+    ->payerNumber('PayerNumber2')
+    ->accountId(124)
+    ->build();
 ```
 

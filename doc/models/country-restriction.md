@@ -12,16 +12,20 @@
 | `countries` | `?(string[])` | Optional | A list of ISO 3166-1 Numeric-3 country codes.<br>Example: 826 for United Kingdom. | getCountries(): ?array | setCountries(?array countries): void |
 | `exclusive` | `?bool` | Optional | Flag indicates whether the profile is inclusive or exclusive.<br>Example: False - (inclusive), i.e. the “Countries” property lists the countries where the transactions will be allowed.<br>True - (exclusive), i.e. the “Countries” property lists the countries where the transactions will be declined. | getExclusive(): ?bool | setExclusive(?bool exclusive): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Countries": [
-    "Countries9",
-    "Countries0",
-    "Countries1"
-  ],
-  "Exclusive": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CountryRestrictionBuilder;
+
+$countryRestriction = CountryRestrictionBuilder::init()
+    ->countries(
+        [
+            'Countries5',
+            'Countries6',
+            'Countries7'
+        ]
+    )
+    ->exclusive(false)
+    ->build();
 ```
 

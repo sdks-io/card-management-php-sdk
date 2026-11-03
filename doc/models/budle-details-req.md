@@ -11,17 +11,22 @@
 |  --- | --- | --- | --- | --- | --- |
 | `filters` | [`?BudleDetailsRequest`](../../doc/models/budle-details-request.md) | Optional | - | getFilters(): ?BudleDetailsRequest | setFilters(?BudleDetailsRequest filters): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Filters": {
-    "ColCoId": 0,
-    "ColCoCode": 14,
-    "PayerId": 48,
-    "PayerNumber": "PayerNumber0",
-    "AccountId": 108
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\BudleDetailsReqBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\BudleDetailsRequestBuilder;
+
+$budleDetailsReq = BudleDetailsReqBuilder::init()
+    ->filters(
+        BudleDetailsRequestBuilder::init()
+            ->colCoId(0)
+            ->colCoCode(14)
+            ->payerId(48)
+            ->payerNumber('PayerNumber0')
+            ->accountId(108)
+            ->build()
+    )
+    ->build();
 ```
 

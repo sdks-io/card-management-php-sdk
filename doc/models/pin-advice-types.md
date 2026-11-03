@@ -13,13 +13,15 @@
 | `isCardOrderOption` | `?bool` | Optional | Whether the PIN advice type is available for card ordering | getIsCardOrderOption(): ?bool | setIsCardOrderOption(?bool isCardOrderOption): void |
 | `isPINReminderOption` | `?bool` | Optional | Whether the PIN advice type is available for PIN Reminder | getIsPINReminderOption(): ?bool | setIsPINReminderOption(?bool isPINReminderOption): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PINAdviceTypeID": 1,
-  "IsCardOrderOption": false,
-  "IsPINReminderOption": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PINAdviceTypesBuilder;
+
+$pINAdviceTypes = PINAdviceTypesBuilder::init()
+    ->pINAdviceTypeID(1)
+    ->isCardOrderOption(false)
+    ->isPINReminderOption(false)
+    ->build();
 ```
 

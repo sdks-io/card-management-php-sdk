@@ -45,15 +45,17 @@
 | `mediumTypeID` | `?int` | Optional | Id of the medium type identifier.<br>Example: 1,2,4<br>Full list below:<br>1 - Fuel Card<br>2 - Fuel Card with EV<br>4 - Fuel Card and Key fob Card<br>5 - Key fob<br>6 - Virtual Card<br>7 - NPII Token<br>8 – Smartpay | getMediumTypeID(): ?int | setMediumTypeID(?int mediumTypeID): void |
 | `mediumType` | `?string` | Optional | Name of the medium type identifier.<br><br>Example: Fuel Card, Fuel Card with EV, Key fob  <br>Full list below:<br>1 - Fuel Card<br>2 - Fuel Card with EV<br>4 - Fuel Card and Key fob Card<br>5 - Key fob<br>6 - Virtual Card<br>7 - NPII Token<br>8 - Smartpay | getMediumType(): ?string | setMediumType(?string mediumType): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardId": 110,
-  "PAN": "PAN8",
-  "ExpiryDate": "ExpiryDate8",
-  "StatusId": 178,
-  "StatusDescription": "StatusDescription4"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\RestrictionCardListBuilder;
+
+$restrictionCardList = RestrictionCardListBuilder::init()
+    ->cardId(0)
+    ->pAN('PAN6')
+    ->expiryDate('ExpiryDate6')
+    ->statusId(224)
+    ->statusDescription('StatusDescription2')
+    ->build();
 ```
 

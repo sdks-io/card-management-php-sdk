@@ -12,12 +12,14 @@
 | `globalProductCode` | `?string` | Required | The productCode returned by the Gateway API.<br>Example: 021 | getGlobalProductCode(): ?string | setGlobalProductCode(?string globalProductCode): void |
 | `description` | `?string` | Required | The description returned by the Gateway API. | getDescription(): ?string | setDescription(?string description): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "GlobalProductCode": "021",
-  "Description": "High Performance Diesel"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\ProductAllOf0Builder;
+
+$productAllOf0 = ProductAllOf0Builder::init()
+    ->globalProductCode('021')
+    ->description('High Performance Diesel')
+    ->build();
 ```
 

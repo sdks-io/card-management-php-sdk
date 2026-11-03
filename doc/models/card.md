@@ -63,15 +63,17 @@
 | `eVPrintedNumber` | `?string` | Optional | EV Printed Number | getEVPrintedNumber(): ?string | setEVPrintedNumber(?string eVPrintedNumber): void |
 | `cardMediaCode` | `?string` | Optional | Card Media Code. | getCardMediaCode(): ?string | setCardMediaCode(?string cardMediaCode): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 140,
-  "AccountName": "AccountName0",
-  "AccountNumber": "AccountNumber4",
-  "AccountShortName": "AccountShortName6",
-  "BundleId": "BundleId2"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardBuilder;
+
+$card = CardBuilder::init()
+    ->accountId(152)
+    ->accountName('AccountName6')
+    ->accountNumber('AccountNumber0')
+    ->accountShortName('AccountShortName2')
+    ->bundleId('BundleId8')
+    ->build();
 ```
 

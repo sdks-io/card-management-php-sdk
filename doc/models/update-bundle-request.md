@@ -21,22 +21,26 @@
 | `usageRestrictionAction` | `?string` | Required | The value indicates what actions to be performed with respect to usage restrictions on the list of cards being added or removed.<br>Mandatory for Add / Remove request action. Ignored for Update action.<br>Allowed values:<br>•    Update<br>•    None | getUsageRestrictionAction(): ?string | setUsageRestrictionAction(?string usageRestrictionAction): void |
 | `restrictions` | [`?BundleRestrictionUpdate`](../../doc/models/bundle-restriction-update.md) | Optional | - | getRestrictions(): ?BundleRestrictionUpdate | setRestrictions(?BundleRestrictionUpdate restrictions): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 26,
-  "ColCoCode": 40,
-  "PayerId": 74,
-  "PayerNumber": "PayerNumber4",
-  "AccountId": 134,
-  "BundleId": "BundleId4",
-  "RequestAction": "RequestAction4",
-  "Cards": [
-    "Cards5",
-    "Cards6"
-  ],
-  "UsageRestrictionAction": "UsageRestrictionAction6"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateBundleRequestBuilder;
+
+$updateBundleRequest = UpdateBundleRequestBuilder::init(
+    [
+        'Cards1',
+        'Cards0',
+        'Cards9'
+    ]
+)
+    ->colCoId(70)
+    ->colCoCode(84)
+    ->payerId(118)
+    ->payerNumber('PayerNumber0')
+    ->accountId(178)
+    ->bundleId('BundleId0')
+    ->requestAction('RequestAction8')
+    ->usageRestrictionAction('UsageRestrictionAction0')
+    ->build();
 ```
 

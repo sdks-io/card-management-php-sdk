@@ -13,35 +13,40 @@
 | `status` | `?string` | Optional | Status of the request | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(SummaryofbundleResponse[])`](../../doc/models/summaryofbundle-response.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Data": [
-    {
-      "PayerId": 2,
-      "PayerNumber": "PayerNumber6",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "CountOfCardsNotInBundle": 122
-    },
-    {
-      "PayerId": 2,
-      "PayerNumber": "PayerNumber6",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "CountOfCardsNotInBundle": 122
-    },
-    {
-      "PayerId": 2,
-      "PayerNumber": "PayerNumber6",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "CountOfCardsNotInBundle": 122
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SummaryofbundleResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\SummaryofbundleResponseBuilder;
+
+$summaryofbundleRes = SummaryofbundleResBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            SummaryofbundleResponseBuilder::init()
+                ->payerId(2)
+                ->payerNumber('PayerNumber6')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->countOfCardsNotInBundle(122)
+                ->build(),
+            SummaryofbundleResponseBuilder::init()
+                ->payerId(2)
+                ->payerNumber('PayerNumber6')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->countOfCardsNotInBundle(122)
+                ->build(),
+            SummaryofbundleResponseBuilder::init()
+                ->payerId(2)
+                ->payerNumber('PayerNumber6')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->countOfCardsNotInBundle(122)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

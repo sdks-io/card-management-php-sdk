@@ -16,30 +16,28 @@
 | `orderReplacementReference` | `?int` | Optional | Order replacement reference number for tracking the execution of the order replacement cards request. <br/>Note: Reference will be empty for status 9006 and 9012 i.e., request for all the cards failed or if there were no order replacement requested in the input. | getOrderReplacementReference(): ?int | setOrderReplacementReference(?int orderReplacementReference): void |
 | `errors` | [`?(ErrorDetails[])`](../../doc/models/error-details.md) | Optional | - | getErrors(): ?array | setErrors(?array errors): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId0",
-  "Status": "Status6",
-  "Data": [
-    {
-      "ReplacementCardReference": 84,
-      "UpdateCardReference": 178,
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "CardExpiryDate": "CardExpiryDate6"
-    },
-    {
-      "ReplacementCardReference": 84,
-      "UpdateCardReference": 178,
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "CardExpiryDate": "CardExpiryDate6"
-    }
-  ],
-  "MainReference": 164,
-  "OrderReplacementReference": 210
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateCardStatusResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\SubmittedCardBuilder;
+
+$updateCardStatusResponse = UpdateCardStatusResponseBuilder::init()
+    ->requestId('RequestId6')
+    ->status('Status2')
+    ->data(
+        [
+            SubmittedCardBuilder::init()
+                ->replacementCardReference(84)
+                ->updateCardReference(178)
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->cardExpiryDate('CardExpiryDate6')
+                ->build()
+        ]
+    )
+    ->mainReference(8)
+    ->orderReplacementReference(38)
+    ->build();
 ```
 

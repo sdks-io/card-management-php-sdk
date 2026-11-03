@@ -12,12 +12,14 @@
 | `requestId` | `?string` | Optional | API Request Id | getRequestId(): ?string | setRequestId(?string requestId): void |
 | `status` | `?string` | Optional | API Response Status | getStatus(): ?string | setStatus(?string status): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId2",
-  "Status": "Status8"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateMPayRegStatusResponseBuilder;
+
+$updateMPayRegStatusResponse = UpdateMPayRegStatusResponseBuilder::init()
+    ->requestId('RequestId2')
+    ->status('Status8')
+    ->build();
 ```
 

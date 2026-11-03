@@ -15,21 +15,26 @@
 | `payerNumber` | `?string` | Optional | Payer Number of the selected payer.<br>Optional if PayerId is passed else Mandatory<br>Example: GB000000123 | getPayerNumber(): ?string | setPayerNumber(?string payerNumber): void |
 | `cards` | [`?RestrictionCardsList`](../../doc/models/restriction-cards-list.md) | Optional | - | getCards(): ?RestrictionCardsList | setCards(?RestrictionCardsList cards): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 188,
-  "ColCoCode": 202,
-  "PayerId": 236,
-  "PayerNumber": "PayerNumber8",
-  "Cards": {
-    "AccountId": 184,
-    "CardId": 90,
-    "PAN": "PAN0",
-    "ResetUsageRestrictions": false,
-    "ResetDayTimeRestrictions": false
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardRestrictionReqBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\RestrictionCardsListBuilder;
+
+$cardRestrictionReq = CardRestrictionReqBuilder::init()
+    ->colCoId(210)
+    ->colCoCode(224)
+    ->payerId(2)
+    ->payerNumber('PayerNumber0')
+    ->cards(
+        RestrictionCardsListBuilder::init()
+            ->accountId(184)
+            ->cardId(90)
+            ->pAN('PAN0')
+            ->resetUsageRestrictions(false)
+            ->resetDayTimeRestrictions(false)
+            ->build()
+    )
+    ->build();
 ```
 

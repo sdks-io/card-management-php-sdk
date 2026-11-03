@@ -17,23 +17,26 @@
 | `fuelSetName` | `?string` | Optional | Fuel set name that is allowed to be purchased with the card | getFuelSetName(): ?string | setFuelSetName(?string fuelSetName): void |
 | `nonFuelSets` | `?string` | Optional | Non-Fuel set name that is allowed to be purchased with the card | getNonFuelSets(): ?string | setNonFuelSets(?string nonFuelSets): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PurchaseCategoryId": 162,
-  "PurchaseCategoryCode": "PurchaseCategoryCode6",
-  "Products": [
-    "Products2",
-    "Products3",
-    "Products4"
-  ],
-  "ProductGroups": [
-    "ProductGroups5",
-    "ProductGroups6",
-    "ProductGroups7"
-  ],
-  "FuelSetId": "FuelSetId8"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\BundledDetailsProductListBuilder;
+
+$bundledDetailsProductList = BundledDetailsProductListBuilder::init()
+    ->purchaseCategoryId(34)
+    ->purchaseCategoryCode('PurchaseCategoryCode6')
+    ->products(
+        [
+            'Products2'
+        ]
+    )
+    ->productGroups(
+        [
+            'ProductGroups5',
+            'ProductGroups6'
+        ]
+    )
+    ->fuelSetId('FuelSetId8')
+    ->build();
 ```
 

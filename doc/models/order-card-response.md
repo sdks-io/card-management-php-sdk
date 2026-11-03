@@ -14,19 +14,32 @@
 | `data` | [`?(CreateCardResponse[])`](../../doc/models/create-card-response.md) | Optional | - | getData(): ?array | setData(?array data): void |
 | `mainReference` | `?int` | Optional | Main order reference number for tracking. | getMainReference(): ?int | setMainReference(?int mainReference): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId2",
-  "Status": "Status8",
-  "Data": [
-    {
-      "DriverAndVRN": "DriverAndVRN6",
-      "OrderCardReference": 86
-    }
-  ],
-  "MainReference": 110
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\OrderCardResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CreateCardResponseBuilder;
+
+$orderCardResponse = OrderCardResponseBuilder::init()
+    ->requestId('RequestId8')
+    ->status('Status8')
+    ->data(
+        [
+            CreateCardResponseBuilder::init()
+                ->driverAndVRN('DriverAndVRN6')
+                ->orderCardReference(86)
+                ->build(),
+            CreateCardResponseBuilder::init()
+                ->driverAndVRN('DriverAndVRN6')
+                ->orderCardReference(86)
+                ->build(),
+            CreateCardResponseBuilder::init()
+                ->driverAndVRN('DriverAndVRN6')
+                ->orderCardReference(86)
+                ->build()
+        ]
+    )
+    ->mainReference(150)
+    ->build();
 ```
 

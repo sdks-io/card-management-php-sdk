@@ -11,17 +11,22 @@
 |  --- | --- | --- | --- | --- | --- |
 | `filters` | [`?CardDetailsRequest`](../../doc/models/card-details-request.md) | Optional | - | getFilters(): ?CardDetailsRequest | setFilters(?CardDetailsRequest filters): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Filters": {
-    "ColCoCode": 14,
-    "ColCoId": 0,
-    "ColCoCountryCode": "ColCoCountryCode8",
-    "ClientReferenceId": "ClientReferenceId0",
-    "PayerNumber": "PayerNumber0"
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardDetailsReqBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CardDetailsRequestBuilder;
+
+$cardDetailsReq = CardDetailsReqBuilder::init()
+    ->filters(
+        CardDetailsRequestBuilder::init()
+            ->colCoCode(14)
+            ->colCoId(0)
+            ->colCoCountryCode('ColCoCountryCode8')
+            ->clientReferenceId('ClientReferenceId0')
+            ->payerNumber('PayerNumber0')
+            ->build()
+    )
+    ->build();
 ```
 

@@ -17,3 +17,11 @@ Reissue setting of the renewed new card. Reissue Setting:
 | `TRUE` |
 | `FALSE` |
 
+## Example
+
+```php
+use ShellCardManagementAPIsLib\Models\CardDetailsResponseRenewedCardReissueSettingEnum;
+
+$cardDetailsResponseRenewedCardReissueSetting = CardDetailsResponseRenewedCardReissueSettingEnum::TRUE;
+```
+

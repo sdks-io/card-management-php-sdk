@@ -22,22 +22,24 @@
 | `emailAddress` | `?string` | Optional | Email address of the address contact | getEmailAddress(): ?string | setEmailAddress(?string emailAddress): void |
 | `fax` | `?string` | Optional | Fax number of the address contact | getFax(): ?string | setFax(?string fax): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AddressId": 1,
-  "AddressLine1": "test street",
-  "AddressLine2": "Address line2",
-  "AddressLine3": "AddressLine3",
-  "ZipCode": "667 78",
-  "City": "LUMPUR",
-  "RegionId": 1234,
-  "CountryISOCode": "CZ",
-  "Country": "Germany",
-  "Telephone": "3245872364823",
-  "EmailAddress": "testmail@gmail.com",
-  "Fax": "3245872364823"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AddressBuilder;
+
+$address = AddressBuilder::init()
+    ->addressId(1)
+    ->addressLine1('test street')
+    ->addressLine2('Address line2')
+    ->addressLine3('AddressLine3')
+    ->zipCode('667 78')
+    ->city('LUMPUR')
+    ->regionId(1234)
+    ->countryISOCode('CZ')
+    ->country('Germany')
+    ->telephone('3245872364823')
+    ->emailAddress('testmail@gmail.com')
+    ->fax('3245872364823')
+    ->build();
 ```
 

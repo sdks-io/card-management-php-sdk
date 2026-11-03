@@ -14,20 +14,25 @@
 | `siteGroups` | `?(string[])` | Optional | A list of site group ids in this country which is either restricted or allowed. | getSiteGroups(): ?array | setSiteGroups(?array siteGroups): void |
 | `exclusive` | `?bool` | Optional | Flag indicates whether the profile is inclusive or exclusive.<br>Example: False - (inclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites & site groups where the transaction will be allowed.<br>True - (exclusive), i.e. the “Sites” & “SiteGroups” properties lists the sites and site groups where the transactions will be declined. | getExclusive(): ?bool | setExclusive(?bool exclusive): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Country": "Country2",
-  "Sites": [
-    "Sites5"
-  ],
-  "SiteGroups": [
-    "SiteGroups5",
-    "SiteGroups6",
-    "SiteGroups7"
-  ],
-  "Exclusive": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\ShellSiteRestrictionBuilder;
+
+$shellSiteRestriction = ShellSiteRestrictionBuilder::init()
+    ->country('Country6')
+    ->sites(
+        [
+            'Sites7',
+            'Sites6'
+        ]
+    )
+    ->siteGroups(
+        [
+            'SiteGroups9'
+        ]
+    )
+    ->exclusive(false)
+    ->build();
 ```
 

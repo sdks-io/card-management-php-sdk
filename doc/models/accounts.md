@@ -12,12 +12,14 @@
 | `accountId` | `?int` | Optional | Account Id of the customer.<br>Optional, if AccountNumber is passed, else mandatory. | getAccountId(): ?int | setAccountId(?int accountId): void |
 | `accountNumber` | `?string` | Optional | Account Number of the customer.<br>Optional, if AccountId is passed, else mandatory. | getAccountNumber(): ?string | setAccountNumber(?string accountNumber): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 3453,
-  "AccountNumber": "GB000000124"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AccountsBuilder;
+
+$accounts = AccountsBuilder::init()
+    ->accountId(3453)
+    ->accountNumber('GB000000124')
+    ->build();
 ```
 

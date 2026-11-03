@@ -13,19 +13,24 @@
 | `page` | `?int` | Optional | Page Number (as shown to the users)<br><br>**Default**: `1` | getPage(): ?int | setPage(?int page): void |
 | `pageSize` | `?int` | Optional | Page Size – Number of records to show on a page.<br><br>**Default**: `50` | getPageSize(): ?int | setPageSize(?int pageSize): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Page": 1,
-  "PageSize": 100,
-  "Filters": {
-    "Status": "Status6",
-    "PayerNumber": "PayerNumber0",
-    "PayerId": 48,
-    "AccountNumber": "AccountNumber2",
-    "ColCoCode": 14
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AuditReqBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\AuditRequestBuilder;
+
+$auditReq = AuditReqBuilder::init()
+    ->filters(
+        AuditRequestBuilder::init()
+            ->status('Status6')
+            ->payerNumber('PayerNumber0')
+            ->payerId(48)
+            ->accountNumber('AccountNumber2')
+            ->colCoCode(14)
+            ->build()
+    )
+    ->page(1)
+    ->pageSize(100)
+    ->build();
 ```
 

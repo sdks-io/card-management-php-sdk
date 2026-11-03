@@ -19,15 +19,17 @@
 | `timeFrom` | `?string` | Optional | Card could be used from this time in a day.<br>Format: HH:mm (24-hour format)<br>Note:<br><br>1. Clients to convert this to appropriate DateTime or TimeSpan type.<br>   “00:00” is the lowest time value and “23:59” is the highest time value. | getTimeFrom(): ?string | setTimeFrom(?string timeFrom): void |
 | `timeTo` | `?string` | Optional | Card could be used up to this time in a day.<br>Format: HH:mm (24-hour format)<br>Note:<br><br>1. Clients to convert this to appropriate DateTime or TimeSpan type.<br>   “00:00” is the lowest time value and “23:59” is the highest time value. | getTimeTo(): ?string | setTimeTo(?string timeTo): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Monday": false,
-  "Tuesday": false,
-  "Wednesday": false,
-  "Thursday": false,
-  "Friday": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\DayTimeRestrictionsBuilder;
+
+$dayTimeRestrictions = DayTimeRestrictionsBuilder::init()
+    ->monday(false)
+    ->tuesday(false)
+    ->wednesday(false)
+    ->thursday(false)
+    ->friday(false)
+    ->build();
 ```
 

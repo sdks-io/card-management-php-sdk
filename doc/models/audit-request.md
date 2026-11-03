@@ -22,20 +22,22 @@
 | `fromDate` | `?string` | Optional | To search for requests submitted from this date.<br>Optional<br>Maximum of X days duration allowed per search. The X value is configurable and initially set to 180 days.<br>Format: yyyyMMdd<br>Example: 20200101<br>If FromDate is not provided and ToDate is provided, then FromDate will be considered as 30 days less than ToDate. However, when both FromDate and ToDate is not provided then last 30 days will be considered for filtering. | getFromDate(): ?string | setFromDate(?string fromDate): void |
 | `toDate` | `?string` | Optional | To search for requests submitted until this date.<br>Optional<br>Format: yyyyMMdd<br>Example: 20200130<br>If ToDate is not provided and FromDate is provided, then ToDate will be considered as current date or 30 days from FromDate, whichever is earlier. However, when both FromDate and ToDate is not provided then last 30 days will be considered for filtering. | getToDate(): ?string | setToDate(?string toDate): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Status": "All",
-  "PayerNumber": "BE00000113",
-  "PayerId": 123,
-  "AccountNumber": "BE00000113",
-  "ColCoCode": 9,
-  "ColCoId": 9,
-  "SortOrder": "1",
-  "SearchText": "orde",
-  "FromDate": "20240101",
-  "ToDate": "20240202"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AuditRequestBuilder;
+
+$auditRequest = AuditRequestBuilder::init()
+    ->status('All')
+    ->payerNumber('BE00000113')
+    ->payerId(123)
+    ->accountNumber('BE00000113')
+    ->colCoCode(9)
+    ->colCoId(9)
+    ->sortOrder('1')
+    ->searchText('orde')
+    ->fromDate('20240101')
+    ->toDate('20240202')
+    ->build();
 ```
 

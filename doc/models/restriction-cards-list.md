@@ -21,15 +21,17 @@
 | `productRestrictions` | [`?ProductRestrictionCard`](../../doc/models/product-restriction-card.md) | Optional | - | getProductRestrictions(): ?ProductRestrictionCard | setProductRestrictions(?ProductRestrictionCard productRestrictions): void |
 | `locationRestrictions` | [`?LocationRestriction`](../../doc/models/location-restriction.md) | Optional | - | getLocationRestrictions(): ?LocationRestriction | setLocationRestrictions(?LocationRestriction locationRestrictions): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 84,
-  "CardId": 246,
-  "PAN": "PAN8",
-  "ResetUsageRestrictions": false,
-  "ResetDayTimeRestrictions": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\RestrictionCardsListBuilder;
+
+$restrictionCardsList = RestrictionCardsListBuilder::init()
+    ->accountId(30)
+    ->cardId(192)
+    ->pAN('PAN8')
+    ->resetUsageRestrictions(false)
+    ->resetDayTimeRestrictions(false)
+    ->build();
 ```
 

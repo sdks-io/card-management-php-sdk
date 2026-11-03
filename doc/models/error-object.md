@@ -13,44 +13,43 @@
 | `status` | `?string` | Optional | Indicates overall status of the request. Allowed values: SUCCES, FAILED, PARTIAL_SUCCESS | getStatus(): ?string | setStatus(?string status): void |
 | `errors` | [`?(ErrorDetails[])`](../../doc/models/error-details.md) | Optional | - | getErrors(): ?array | setErrors(?array errors): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId0",
-  "Status": "Status6",
-  "Errors": [
-    {
-      "Code": "Code4",
-      "Title": "Title6",
-      "Detail": "Detail6",
-      "AdditionalInfo": {
-        "key0": "AdditionalInfo0",
-        "key1": "AdditionalInfo1",
-        "key2": "AdditionalInfo2"
-      }
-    },
-    {
-      "Code": "Code4",
-      "Title": "Title6",
-      "Detail": "Detail6",
-      "AdditionalInfo": {
-        "key0": "AdditionalInfo0",
-        "key1": "AdditionalInfo1",
-        "key2": "AdditionalInfo2"
-      }
-    },
-    {
-      "Code": "Code4",
-      "Title": "Title6",
-      "Detail": "Detail6",
-      "AdditionalInfo": {
-        "key0": "AdditionalInfo0",
-        "key1": "AdditionalInfo1",
-        "key2": "AdditionalInfo2"
-      }
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\ErrorObjectBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\ErrorDetailsBuilder;
+
+$errorObject = ErrorObjectBuilder::init()
+    ->requestId('RequestId4')
+    ->status('Status0')
+    ->errors(
+        [
+            ErrorDetailsBuilder::init()
+                ->code('Code4')
+                ->title('Title6')
+                ->detail('Detail6')
+                ->additionalInfo(
+                    [
+                        'key0' => 'AdditionalInfo0',
+                        'key1' => 'AdditionalInfo1',
+                        'key2' => 'AdditionalInfo2'
+                    ]
+                )
+                ->build(),
+            ErrorDetailsBuilder::init()
+                ->code('Code4')
+                ->title('Title6')
+                ->detail('Detail6')
+                ->additionalInfo(
+                    [
+                        'key0' => 'AdditionalInfo0',
+                        'key1' => 'AdditionalInfo1',
+                        'key2' => 'AdditionalInfo2'
+                    ]
+                )
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

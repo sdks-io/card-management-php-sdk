@@ -11,17 +11,22 @@
 |  --- | --- | --- | --- | --- | --- |
 | `filters` | [`?PurchaseCategoryRequest`](../../doc/models/purchase-category-request.md) | Optional | - | getFilters(): ?PurchaseCategoryRequest | setFilters(?PurchaseCategoryRequest filters): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Filters": {
-    "RequestId": "RequestId0",
-    "ColCoCode": 14,
-    "ColCoId": 0,
-    "CardTypeId": 190,
-    "PurchaseCategoryId": 140
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategoryReqBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategoryRequestBuilder;
+
+$purchaseCategoryReq = PurchaseCategoryReqBuilder::init()
+    ->filters(
+        PurchaseCategoryRequestBuilder::init()
+            ->requestId('RequestId0')
+            ->colCoCode(14)
+            ->colCoId(0)
+            ->cardTypeId(190)
+            ->purchaseCategoryId(140)
+            ->build()
+    )
+    ->build();
 ```
 

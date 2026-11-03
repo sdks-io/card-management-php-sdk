@@ -15,15 +15,17 @@
 | `payerId` | `?int` | Optional | Payer id of the customer.</br><br>Optional.</br><br>This input is a search criterion.</br><br>Note: If PayerId or PayerNumber is provided in the input, the given payer will be available in the output if the user has access to the given payer. | getPayerId(): ?int | setPayerId(?int payerId): void |
 | `payerNumber` | `?string` | Optional | PayerNumber of the customer.</br><br>Optional</br><br>This input is a search criterion.</br><br>Note: If Payerid or PayerNumber is provided in the input, the given payer will be available in the output if the user has access to the given payer. | getPayerNumber(): ?string | setPayerNumber(?string payerNumber): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "IncludePayerGroup": false,
-  "IncludeEIDDetails": false,
-  "RequestedAPIName": "Name of the API",
-  "PayerId": 123456,
-  "PayerNumber": "GB00123456"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\FleetmanagementV1UserLoggedinuserRequestBuilder;
+
+$fleetmanagementV1UserLoggedinuserRequest = FleetmanagementV1UserLoggedinuserRequestBuilder::init()
+    ->includePayerGroup(false)
+    ->includeEIDDetails(false)
+    ->requestedAPIName('Name of the API')
+    ->payerId(123456)
+    ->payerNumber('GB00123456')
+    ->build();
 ```
 

@@ -20,3 +20,11 @@ Allowed Values:<br />
 | `ENUM_2` |
 | `ENUM_3` |
 
+## Example
+
+```php
+use ShellCardManagementAPIsLib\Models\OrderCardEnquiryReqReferenceTypeEnum;
+
+$orderCardEnquiryReqReferenceType = OrderCardEnquiryReqReferenceTypeEnum::ENUM_1;
+```
+

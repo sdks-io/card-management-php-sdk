@@ -14,16 +14,20 @@
 | `detail` | `?string` | Optional | Detailed inforamtion about the error | getDetail(): ?string | setDetail(?string detail): void |
 | `additionalInfo` | `?array<string,?string>` | Optional | Applicable when more details related to error to be returned | getAdditionalInfo(): ?array | setAdditionalInfo(?array additionalInfo): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Code": "Code2",
-  "Title": "Title8",
-  "Detail": "Detail4",
-  "AdditionalInfo": {
-    "key0": "AdditionalInfo2"
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\ErrorDetailsBuilder;
+
+$errorDetails = ErrorDetailsBuilder::init()
+    ->code('Code6')
+    ->title('Title4')
+    ->detail('Detail8')
+    ->additionalInfo(
+        [
+            'key0' => 'AdditionalInfo8'
+        ]
+    )
+    ->build();
 ```
 

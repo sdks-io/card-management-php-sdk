@@ -26,26 +26,28 @@
 | `targetNewCardGroupName` | `?string` | Optional | Name of the new card group if the cards in the existing card-group have to be moved to a new card-group.<br><br>Mandatory when MoveCards parameter is True and TargetCardGroupId is null.<br><br>Minimum length: 1 (Configurable)<br>Maximum length: 30 (Configurable) | getTargetNewCardGroupName(): ?string | setTargetNewCardGroupName(?string targetNewCardGroupName): void |
 | `targetCardGroupId` | `?int` | Optional | ID of the card group if the cards in the existing card-group have to be moved to another existing card-group.<br>Mandatory when MoveCards parameter is True and TargetNewCardGroupName is null.<br>If the value is “-1” then the cards will be moved out of the current CardGroup. | getTargetCardGroupId(): ?int | setTargetCardGroupId(?int targetCardGroupId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoCode": 86,
-  "ColCoId": 1,
-  "PayerNumber": "GB00123456",
-  "PayerId": 123456,
-  "AccountId": 123456,
-  "AccountNumber": "GB00123456",
-  "CardGroupId": 1234,
-  "CardGroupName": "test",
-  "PrintOnCard": true,
-  "CardTypeId": 123,
-  "TerminateCardGroup": true,
-  "MoveCards": true,
-  "TargetAccountId": 123456,
-  "TargetAccountNumber": "GB00123452",
-  "TargetNewCardGroupName": "test1",
-  "TargetCardGroupId": 1232
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateCardGroupRequestBuilder;
+
+$updateCardGroupRequest = UpdateCardGroupRequestBuilder::init()
+    ->colCoCode(86)
+    ->colCoId(1)
+    ->payerNumber('GB00123456')
+    ->payerId(123456)
+    ->accountId(123456)
+    ->accountNumber('GB00123456')
+    ->cardGroupId(1234)
+    ->cardGroupName('test')
+    ->printOnCard(true)
+    ->cardTypeId(123)
+    ->terminateCardGroup(true)
+    ->moveCards(true)
+    ->targetAccountId(123456)
+    ->targetAccountNumber('GB00123452')
+    ->targetNewCardGroupName('test1')
+    ->targetCardGroupId(1232)
+    ->build();
 ```
 

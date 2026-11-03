@@ -14,14 +14,16 @@
 | `cardId` | `?int` | Optional | Card Id of the card.<br>Optional if PAN is passed, else Mandatory. | getCardId(): ?int | setCardId(?int cardId): void |
 | `pAN` | `?string` | Optional | PAN of the card.<br>Optional if CardId is passed, else Mandatory. | getPAN(): ?string | setPAN(?string pAN): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 123456,
-  "AccountNumber": "GB99215176",
-  "CardId": 123456,
-  "PAN": "7002097550439850717"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CreateCardGroupRequestCardsItemsBuilder;
+
+$createCardGroupRequestCardsItems = CreateCardGroupRequestCardsItemsBuilder::init()
+    ->accountId(123456)
+    ->accountNumber('GB99215176')
+    ->cardId(123456)
+    ->pAN('7002097550439850717')
+    ->build();
 ```
 

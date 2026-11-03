@@ -15,30 +15,43 @@
 | `productRestrictionStatus` | [`?ErrorStatus`](../../doc/models/error-status.md) | Optional | - | getProductRestrictionStatus(): ?ErrorStatus | setProductRestrictionStatus(?ErrorStatus productRestrictionStatus): void |
 | `usageRestrictionStatus` | [`?ErrorStatus`](../../doc/models/error-status.md) | Optional | - | getUsageRestrictionStatus(): ?ErrorStatus | setUsageRestrictionStatus(?ErrorStatus usageRestrictionStatus): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestActionStatus": {
-    "Code": "Code6",
-    "Description": "Description0"
-  },
-  "DayTimeRestrictionStatus": {
-    "Code": "Code4",
-    "Description": "Description2"
-  },
-  "LocationRestrictionStatus": {
-    "Code": "Code6",
-    "Description": "Description0"
-  },
-  "ProductRestrictionStatus": {
-    "Code": "Code8",
-    "Description": "Description8"
-  },
-  "UsageRestrictionStatus": {
-    "Code": "Code4",
-    "Description": "Description8"
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateBundleResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\ErrorStatusBuilder;
+
+$updateBundleResponse = UpdateBundleResponseBuilder::init()
+    ->requestActionStatus(
+        ErrorStatusBuilder::init()
+            ->code('Code6')
+            ->description('Description0')
+            ->build()
+    )
+    ->dayTimeRestrictionStatus(
+        ErrorStatusBuilder::init()
+            ->code('Code4')
+            ->description('Description2')
+            ->build()
+    )
+    ->locationRestrictionStatus(
+        ErrorStatusBuilder::init()
+            ->code('Code6')
+            ->description('Description0')
+            ->build()
+    )
+    ->productRestrictionStatus(
+        ErrorStatusBuilder::init()
+            ->code('Code8')
+            ->description('Description8')
+            ->build()
+    )
+    ->usageRestrictionStatus(
+        ErrorStatusBuilder::init()
+            ->code('Code4')
+            ->description('Description8')
+            ->build()
+    )
+    ->build();
 ```
 

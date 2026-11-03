@@ -28,15 +28,17 @@ Request entity object for UpdateCardRequest  list
 | `payerId` | `?int` | Optional | Payer id of the customer.<br /><br>Optional if PayerNumber is passed, else Mandatory. | getPayerId(): ?int | setPayerId(?int payerId): void |
 | `payerNumber` | `?string` | Optional | PayerNumber of the customer.<br /><br>Optional if PayerId is passed, else Mandatory. | getPayerNumber(): ?string | setPayerNumber(?string payerNumber): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Caller": "Caller6",
-  "IsReplacementChargeable": false,
-  "NotifyCaller": false,
-  "NotifyCallerOnSync": false,
-  "OrderCardReplacement": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateCardBuilder;
+
+$updateCard = UpdateCardBuilder::init()
+    ->caller('Caller8')
+    ->isReplacementChargeable(false)
+    ->notifyCaller(false)
+    ->notifyCallerOnSync(false)
+    ->orderCardReplacement(false)
+    ->build();
 ```
 

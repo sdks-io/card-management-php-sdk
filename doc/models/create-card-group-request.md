@@ -19,17 +19,19 @@
 | `cardGroupName` | `?string` | Optional | - | getCardGroupName(): ?string | setCardGroupName(?string cardGroupName): void |
 | `cards` | [`?(CreateCardGroupRequestCardsItems[])`](../../doc/models/create-card-group-request-cards-items.md) | Optional | List of cards to be moved to the new card group. This list is optional – no card will be moved to the new card group when the list is empty.<br>The fields of Card entity are described in the below rows.<br>The maximum number of cards allowed to be moved in a request is 500 (configurable). The whole request including the card group creation will be rejected when the limit is exceeded. | getCards(): ?array | setCards(?array cards): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoCode": 86,
-  "ColCoId": 1,
-  "PayerNumber": "GB00123456",
-  "PayerId": 123456,
-  "AccountId": 123456,
-  "AccountNumber": "GB00123456",
-  "PrintOnCard": true
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CreateCardGroupRequestBuilder;
+
+$createCardGroupRequest = CreateCardGroupRequestBuilder::init()
+    ->colCoCode(86)
+    ->colCoId(1)
+    ->payerNumber('GB00123456')
+    ->payerId(123456)
+    ->accountId(123456)
+    ->accountNumber('GB00123456')
+    ->printOnCard(true)
+    ->build();
 ```
 

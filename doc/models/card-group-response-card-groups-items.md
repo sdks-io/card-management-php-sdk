@@ -32,30 +32,32 @@
 | `terminatedDate` | `?string` | Optional | Terminated Date.<br>Format: yyyyMMdd<br>Note: Clients to convert this to appropriate Date Time type. | getTerminatedDate(): ?string | setTerminatedDate(?string terminatedDate): void |
 | `totalCards` | `?int` | Optional | Total number of cards for the given search criteria | getTotalCards(): ?int | setTotalCards(?int totalCards): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 1229,
-  "AccountNumber": "CZ00000929",
-  "AccountShortName": "Dominica South1",
-  "ActiveCards": 0,
-  "BlockedCards": 1,
-  "CancelledCards": 0,
-  "CardGroupId": 1234,
-  "CardGroupName": "1234T",
-  "CardTypeCode": "0123",
-  "CardTypeId": 123,
-  "CardTypeName": "test",
-  "ExpiredCards": 0,
-  "ExpiryDate": "20231231",
-  "RenewalPendingCards": 5,
-  "ReplacedCards": 0,
-  "Status": "TERMINATED",
-  "TemporaryBlockByCustomer": 0,
-  "TemporaryBlockByShell": 0,
-  "TerminatedDate": "20210712",
-  "TotalCards": 10
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardGroupResponseCardGroupsItemsBuilder;
+
+$cardGroupResponseCardGroupsItems = CardGroupResponseCardGroupsItemsBuilder::init()
+    ->accountId(1229)
+    ->accountNumber('CZ00000929')
+    ->accountShortName('Dominica South1')
+    ->activeCards(0)
+    ->blockedCards(1)
+    ->cancelledCards(0)
+    ->cardGroupId(1234)
+    ->cardGroupName('1234T')
+    ->cardTypeCode('0123')
+    ->cardTypeId(123)
+    ->cardTypeName('test')
+    ->expiredCards(0)
+    ->expiryDate('20231231')
+    ->renewalPendingCards(5)
+    ->replacedCards(0)
+    ->status('TERMINATED')
+    ->temporaryBlockByCustomer(0)
+    ->temporaryBlockByShell(0)
+    ->terminatedDate('20210712')
+    ->totalCards(10)
+    ->build();
 ```
 

@@ -13,13 +13,15 @@
 | `colCoCode` | `?int` | Optional | Collecting company Code | getColCoCode(): ?int | setColCoCode(?int colCoCode): void |
 | `accountGroupId` | `?string` | Optional | Identifier for the EID account group configured for the user. | getAccountGroupId(): ?string | setAccountGroupId(?string accountGroupId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": "14",
-  "ColCoCode": 14,
-  "AccountGroupId": "345"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\EIDAccessBuilder;
+
+$eIDAccess = EIDAccessBuilder::init()
+    ->colCoId('14')
+    ->colCoCode(14)
+    ->accountGroupId('345')
+    ->build();
 ```
 

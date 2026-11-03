@@ -21,3 +21,11 @@ Allowed values: -
 | `ENUM_2` |
 | `ENUM_3` |
 
+## Example
+
+```php
+use ShellCardManagementAPIsLib\Models\CardDetailAutoRenewEnum;
+
+$cardDetailAutoRenew = CardDetailAutoRenewEnum::ENUM_1;
+```
+

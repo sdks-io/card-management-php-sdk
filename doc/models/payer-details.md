@@ -115,102 +115,104 @@
 | `tollsColcoCountryTypeId` | `?string` | Optional | String    Colco country type id in e-TM system<br>This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty. | getTollsColcoCountryTypeId(): ?string | setTollsColcoCountryTypeId(?string tollsColcoCountryTypeId): void |
 | `contracts` | [`?(CustomerContract[])`](../../doc/models/customer-contract.md) | Optional | - | getContracts(): ?array | setContracts(?array contracts): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 14,
-  "ColCoCode": 14,
-  "CountryCode": "DE",
-  "Country": "Germany",
-  "PayerId": 12345,
-  "PayerNumber": "DE000000123",
-  "PayerFullName": "ABC Company",
-  "PayerShortName": "ABC",
-  "PayerGroupId": 456,
-  "AmountDue": 1500,
-  "AmountOverdue": 450,
-  "AmountNotOverdue": 4546.76,
-  "OutstandingBalance": 456,
-  "UnallocatedPayment": 123,
-  "SOACurrencyCode": "EUR",
-  "SOACurrencySymbol": "€",
-  "SOACreditLimitCurrencyCode": "EUR",
-  "SOACreditLimitCurrencySymbol": "€",
-  "LastPaymentCurrencyCode": "EUR",
-  "LastPaymentCurrencySymbol": "€",
-  "LastPaymentAmount": 5465,
-  "LastPaymentDate": "20230405",
-  "SOALastPaymentAmount": 45443,
-  "SOALastPaymentDate": "20230805",
-  "CurrencyCode": "EUR",
-  "CurrencySymbol": "€",
-  "ColCoCountryCode": "DE",
-  "LocalCurrencyCode": "EUR",
-  "LocalCurrencySymbol": "€",
-  "LocalCurrencyExchangeRate": 1.45,
-  "LocalCurrencyExchangeRate_SoA": 1.2,
-  "BillingFrequencyTypeId": 1,
-  "BillingFrequencyType": "weekly",
-  "BillingRunFrequencyTypeId": 1,
-  "BillingRunFrequnecy": "weekly",
-  "Day1Run": 0,
-  "Day2Run": 0,
-  "Day3Run": 0,
-  "Day4Run": 0,
-  "OutputType": "PDF",
-  "InvoiceAccountID": 12345,
-  "InvoiceAccountNumber": "1234567",
-  "InvoiceAccountShortName": "Test Account",
-  "BestOfIndicator": false,
-  "IsInternational": false,
-  "TotalAccounts": 5,
-  "TotalActiveAccounts": 4,
-  "TotalCards": 567,
-  "TotalActiveCards": 560,
-  "TotalBlockedCards": 6,
-  "TotalCancelledCards": 0,
-  "TotalExpiredCards": 1,
-  "TotalRenewalPendingCards": 0,
-  "TotalReplacedCards": 0,
-  "TotalTemporaryBlockCardsByCustomer": 0,
-  "TotalTemporaryBlockCardsByShell": 0,
-  "TotalNewCards": 0,
-  "TotalBlockedAccounts": 0,
-  "TotalCancelledAccounts": 0,
-  "PayerTradingName": "ABC Company",
-  "Status": "Active",
-  "BillingLanguage": "1-German",
-  "LegalEntity": "20-Unlimited Corporation",
-  "DateEstablished": "19880504",
-  "CustomerClassification": "3-10049 Domestic",
-  "IndustryClass": "4-Growing of sugar cane",
-  "MarketingSegmentation": "1-National CRT",
-  "LineOfBusiness": "1-CRT",
-  "PrintCreditLimit": false,
-  "CardGroupType": "1-Horizontal only",
-  "RenewCards": false,
-  "AllowSelectPIN": false,
-  "VATRegNumber": "4534545",
-  "VATRegNumber2": "45345545",
-  "RegistrationNumber": "453543",
-  "RegistrationNumber2": "35435",
-  "SalesLedgerBalance": 0,
-  "Exposure": 0,
-  "OutstandingDebt": 0,
-  "AvailableCredit": 0,
-  "Band": "Gold",
-  "GlobalCustomerReferenceId": "1234",
-  "CreditLimit": 3434,
-  "BillingCurrencyCode": "EUR",
-  "BillingCurrencySymbol": "€",
-  "PaymentMethod": "Incoming - Bank Transfer",
-  "PaymentTerms": "0 days after invoice",
-  "TemporaryCreditLimitIncrease": 0,
-  "TemporaryCreditLimitIncreaseInCustomerCurrency": 0,
-  "TemporaryCreditLimitExpiryDate": "20230504",
-  "TollsCustomerId": "2332",
-  "TollsColcoCountryTypeId": "33"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PayerDetailsBuilder;
+
+$payerDetails = PayerDetailsBuilder::init()
+    ->colCoId(14)
+    ->colCoCode(14)
+    ->countryCode('DE')
+    ->country('Germany')
+    ->payerId(12345)
+    ->payerNumber('DE000000123')
+    ->payerFullName('ABC Company')
+    ->payerShortName('ABC')
+    ->payerGroupId(456)
+    ->amountDue(1500)
+    ->amountOverdue(450)
+    ->amountNotOverdue(4546.76)
+    ->outstandingBalance(456)
+    ->unallocatedPayment(123)
+    ->sOACurrencyCode('EUR')
+    ->sOACurrencySymbol('€')
+    ->sOACreditLimitCurrencyCode('EUR')
+    ->sOACreditLimitCurrencySymbol('€')
+    ->lastPaymentCurrencyCode('EUR')
+    ->lastPaymentCurrencySymbol('€')
+    ->lastPaymentAmount(5465)
+    ->lastPaymentDate('20230405')
+    ->sOALastPaymentAmount(45443)
+    ->sOALastPaymentDate('20230805')
+    ->currencyCode('EUR')
+    ->currencySymbol('€')
+    ->colCoCountryCode('DE')
+    ->localCurrencyCode('EUR')
+    ->localCurrencySymbol('€')
+    ->localCurrencyExchangeRate(1.45)
+    ->localCurrencyExchangeRateSoA(1.2)
+    ->billingFrequencyTypeId(1)
+    ->billingFrequencyType('weekly')
+    ->billingRunFrequencyTypeId(1)
+    ->billingRunFrequnecy('weekly')
+    ->day1Run(0)
+    ->day2Run(0)
+    ->day3Run(0)
+    ->day4Run(0)
+    ->outputType('PDF')
+    ->invoiceAccountID(12345)
+    ->invoiceAccountNumber('1234567')
+    ->invoiceAccountShortName('Test Account')
+    ->bestOfIndicator(false)
+    ->isInternational(false)
+    ->totalAccounts(5)
+    ->totalActiveAccounts(4)
+    ->totalCards(567)
+    ->totalActiveCards(560)
+    ->totalBlockedCards(6)
+    ->totalCancelledCards(0)
+    ->totalExpiredCards(1)
+    ->totalRenewalPendingCards(0)
+    ->totalReplacedCards(0)
+    ->totalTemporaryBlockCardsByCustomer(0)
+    ->totalTemporaryBlockCardsByShell(0)
+    ->totalNewCards(0)
+    ->totalBlockedAccounts(0)
+    ->totalCancelledAccounts(0)
+    ->payerTradingName('ABC Company')
+    ->status('Active')
+    ->billingLanguage('1-German')
+    ->legalEntity('20-Unlimited Corporation')
+    ->dateEstablished('19880504')
+    ->customerClassification('3-10049 Domestic')
+    ->industryClass('4-Growing of sugar cane')
+    ->marketingSegmentation('1-National CRT')
+    ->lineOfBusiness('1-CRT')
+    ->printCreditLimit(false)
+    ->cardGroupType('1-Horizontal only')
+    ->renewCards(false)
+    ->allowSelectPIN(false)
+    ->vATRegNumber('4534545')
+    ->vATRegNumber2('45345545')
+    ->registrationNumber('453543')
+    ->registrationNumber2('35435')
+    ->salesLedgerBalance(0)
+    ->exposure(0)
+    ->outstandingDebt(0)
+    ->availableCredit(0)
+    ->band('Gold')
+    ->globalCustomerReferenceId('1234')
+    ->creditLimit(3434)
+    ->billingCurrencyCode('EUR')
+    ->billingCurrencySymbol('€')
+    ->paymentMethod('Incoming - Bank Transfer')
+    ->paymentTerms('0 days after invoice')
+    ->temporaryCreditLimitIncrease(0)
+    ->temporaryCreditLimitIncreaseInCustomerCurrency(0)
+    ->temporaryCreditLimitExpiryDate('20230504')
+    ->tollsCustomerId('2332')
+    ->tollsColcoCountryTypeId('33')
+    ->build();
 ```
 

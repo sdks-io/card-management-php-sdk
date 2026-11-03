@@ -20,26 +20,35 @@
 | `productRestrictionProfileId` | `?string` | Optional | Identifier of the product restriction profile created | getProductRestrictionProfileId(): ?string | setProductRestrictionProfileId(?string productRestrictionProfileId): void |
 | `cards` | [`?(BundleCardRestrictionStatus[])`](../../doc/models/bundle-card-restriction-status.md) | Optional | - | getCards(): ?array | setCards(?array cards): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "BundleId": "1",
-  "DayTimeRestrictionProfileId": "2",
-  "LocationRestrictionProfileId": "3",
-  "ProductRestrictionProfileId": "4",
-  "BundleCreationStatus": {
-    "Code": "Code8",
-    "Description": "Description8"
-  },
-  "DayTimeRestrictionStatus": {
-    "Code": "Code4",
-    "Description": "Description2"
-  },
-  "LocationRestrictionStatus": {
-    "Code": "Code6",
-    "Description": "Description0"
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CreateBundleResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\ErrorStatusBuilder;
+
+$createBundleResponse = CreateBundleResponseBuilder::init()
+    ->bundleCreationStatus(
+        ErrorStatusBuilder::init()
+            ->code('Code8')
+            ->description('Description8')
+            ->build()
+    )
+    ->bundleId('1')
+    ->dayTimeRestrictionStatus(
+        ErrorStatusBuilder::init()
+            ->code('Code4')
+            ->description('Description2')
+            ->build()
+    )
+    ->dayTimeRestrictionProfileId('2')
+    ->locationRestrictionStatus(
+        ErrorStatusBuilder::init()
+            ->code('Code6')
+            ->description('Description0')
+            ->build()
+    )
+    ->locationRestrictionProfileId('3')
+    ->productRestrictionProfileId('4')
+    ->build();
 ```
 

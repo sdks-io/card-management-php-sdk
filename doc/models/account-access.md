@@ -18,18 +18,20 @@
 | `accountNumber` | `?string` | Optional | Account Number to which the user has access | getAccountNumber(): ?string | setAccountNumber(?string accountNumber): void |
 | `accountName` | `?string` | Optional | Name of the Account to which the user has access | getAccountName(): ?string | setAccountName(?string accountName): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColcoId": 14,
-  "ColcoCode": 14,
-  "PayerId": 854,
-  "PayerNumber": "DE26688504",
-  "PayerName": "TK MobilPlus",
-  "AccountId": 435,
-  "AccountNumber": "DE26688504",
-  "AccountName": "TK Sub Account"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AccountAccessBuilder;
+
+$accountAccess = AccountAccessBuilder::init()
+    ->colcoId(14)
+    ->colcoCode(14)
+    ->payerId(854)
+    ->payerNumber('DE26688504')
+    ->payerName('TK MobilPlus')
+    ->accountId(435)
+    ->accountNumber('DE26688504')
+    ->accountName('TK Sub Account')
+    ->build();
 ```
 

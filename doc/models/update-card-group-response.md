@@ -14,25 +14,35 @@
 | `newCardGroupReference` | `?int` | Optional | Reference number for tracking the execution of new card group creation in the case when the cards in the terminating card-group have to be moved to a new card-group.<br>Reference number will be null when the validations fail or new card-group creation is not requested. | getNewCardGroupReference(): ?int | setNewCardGroupReference(?int newCardGroupReference): void |
 | `moveCardReferences` | [`?(UpdateCardGroupResponseMoveCardReferencesItems[])`](../../doc/models/update-card-group-response-move-card-references-items.md) | Optional | List of cards submitted successfully for processing the move to the target card-group or to change card-group to null.<br>This list will be empty when the validations fail or there are no cards in the card-group that is getting terminated or MoveCards in the request object is false | getMoveCardReferences(): ?array | setMoveCardReferences(?array moveCardReferences): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "MainReference": 1234,
-  "UpdateCardGroupReference": 1234,
-  "NewCardGroupReference": 1234,
-  "MoveCardReferences": [
-    {
-      "CardId": 234,
-      "PAN": "PAN6",
-      "Reference": 188
-    },
-    {
-      "CardId": 234,
-      "PAN": "PAN6",
-      "Reference": 188
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateCardGroupResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\UpdateCardGroupResponseMoveCardReferencesItemsBuilder;
+
+$updateCardGroupResponse = UpdateCardGroupResponseBuilder::init()
+    ->mainReference(1234)
+    ->updateCardGroupReference(1234)
+    ->newCardGroupReference(1234)
+    ->moveCardReferences(
+        [
+            UpdateCardGroupResponseMoveCardReferencesItemsBuilder::init()
+                ->cardId(234)
+                ->pAN('PAN6')
+                ->reference(188)
+                ->build(),
+            UpdateCardGroupResponseMoveCardReferencesItemsBuilder::init()
+                ->cardId(234)
+                ->pAN('PAN6')
+                ->reference(188)
+                ->build(),
+            UpdateCardGroupResponseMoveCardReferencesItemsBuilder::init()
+                ->cardId(234)
+                ->pAN('PAN6')
+                ->reference(188)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

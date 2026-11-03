@@ -27,15 +27,17 @@
 | `includeIntermediateStatus` | `?bool` | Optional | A flag which indicates if the response can contain intermediate statuses | getIncludeIntermediateStatus(): ?bool | setIncludeIntermediateStatus(?bool includeIntermediateStatus): void |
 | `includeScheduledCardBlocks` | `?bool` | Optional | A flag which indicates if the response can contain scheduled card blocks details | getIncludeScheduledCardBlocks(): ?bool | setIncludeScheduledCardBlocks(?bool includeScheduledCardBlocks): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoCode": 154,
-  "ColCoId": 140,
-  "ColCoCountryCode": "ColCoCountryCode6",
-  "ClientReferenceId": "ClientReferenceId2",
-  "PayerNumber": "PayerNumber8"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardDetailsRequestBuilder;
+
+$cardDetailsRequest = CardDetailsRequestBuilder::init()
+    ->colCoCode(250)
+    ->colCoId(236)
+    ->colCoCountryCode('ColCoCountryCode4')
+    ->clientReferenceId('ClientReferenceId4')
+    ->payerNumber('PayerNumber6')
+    ->build();
 ```
 

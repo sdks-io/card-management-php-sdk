@@ -17,26 +17,31 @@
 | `cardGroupName` | `?string` | Optional | Card Group Name<br>Optional.<br>Minimum of 2 characters should be provided else not considered.<br>CardGroups those have the entered value at any part | getCardGroupName(): ?string | setCardGroupName(?string cardGroupName): void |
 | `status` | `?string` | Optional | Card Group Status<br>Mandatory<br>Allowed values:<br>•    ALL<br>•    TERMINATED<br>•    ACTIVE | getStatus(): ?string | setStatus(?string status): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 14,
-  "ColCoCode": 14,
-  "PayerId": 123,
-  "PayerNumber": "GB00123456",
-  "CardGroupName": "test",
-  "Status": "ALL",
-  "Account": [
-    {
-      "AccountId": 66,
-      "AccountNumber": "AccountNumber2"
-    },
-    {
-      "AccountId": 66,
-      "AccountNumber": "AccountNumber2"
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardGroupRequestBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\AccountsBuilder;
+
+$cardGroupRequest = CardGroupRequestBuilder::init()
+    ->colCoId(14)
+    ->colCoCode(14)
+    ->payerId(123)
+    ->payerNumber('GB00123456')
+    ->account(
+        [
+            AccountsBuilder::init()
+                ->accountId(66)
+                ->accountNumber('AccountNumber2')
+                ->build(),
+            AccountsBuilder::init()
+                ->accountId(66)
+                ->accountNumber('AccountNumber2')
+                ->build()
+        ]
+    )
+    ->cardGroupName('test')
+    ->status('ALL')
+    ->build();
 ```
 

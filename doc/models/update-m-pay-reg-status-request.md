@@ -15,37 +15,35 @@
 | `payerNumber` | `?string` | Optional | Payer Number (Ex: GB000000123) of the selected payer.<br>Optional if PayerId is passed else Mandatory | getPayerNumber(): ?string | setPayerNumber(?string payerNumber): void |
 | `mPayRequests` | [`?(UpdateMPayRegStatusRequestMPayRequestsItems[])`](../../doc/models/update-m-pay-reg-status-request-m-pay-requests-items.md) | Optional | List of MPay Request to be updated for Fleet Manager approval status.<br>Mandatory<br>Maximum number of requests that can be submitted are 50 | getMPayRequests(): ?array | setMPayRequests(?array mPayRequests): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 38,
-  "ColCoCode": 52,
-  "PayerId": 86,
-  "PayerNumber": "PayerNumber8",
-  "MPayRequests": [
-    {
-      "GlobalRequestID": "GlobalRequestID6",
-      "Status": "Status6",
-      "ApproverUserID": "ApproverUserID8",
-      "ApproverUserDisplayName": "ApproverUserDisplayName2",
-      "Reason": "Reason0"
-    },
-    {
-      "GlobalRequestID": "GlobalRequestID6",
-      "Status": "Status6",
-      "ApproverUserID": "ApproverUserID8",
-      "ApproverUserDisplayName": "ApproverUserDisplayName2",
-      "Reason": "Reason0"
-    },
-    {
-      "GlobalRequestID": "GlobalRequestID6",
-      "Status": "Status6",
-      "ApproverUserID": "ApproverUserID8",
-      "ApproverUserDisplayName": "ApproverUserDisplayName2",
-      "Reason": "Reason0"
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateMPayRegStatusRequestBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\UpdateMPayRegStatusRequestMPayRequestsItemsBuilder;
+
+$updateMPayRegStatusRequest = UpdateMPayRegStatusRequestBuilder::init()
+    ->colCoId(12)
+    ->colCoCode(26)
+    ->payerId(60)
+    ->payerNumber('PayerNumber6')
+    ->mPayRequests(
+        [
+            UpdateMPayRegStatusRequestMPayRequestsItemsBuilder::init()
+                ->globalRequestID('GlobalRequestID6')
+                ->status('Status6')
+                ->approverUserID('ApproverUserID8')
+                ->approverUserDisplayName('ApproverUserDisplayName2')
+                ->reason('Reason0')
+                ->build(),
+            UpdateMPayRegStatusRequestMPayRequestsItemsBuilder::init()
+                ->globalRequestID('GlobalRequestID6')
+                ->status('Status6')
+                ->approverUserID('ApproverUserID8')
+                ->approverUserDisplayName('ApproverUserDisplayName2')
+                ->reason('Reason0')
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

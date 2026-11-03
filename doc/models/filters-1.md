@@ -45,21 +45,25 @@
 | `reissueSetting` | `?string` | Optional | Default Value: All<br /><br>Optional<br /><br>This option is used to filter the list of cards with ‘ReissueSetting’.<br /><br>If ‘True’, the API will return cards with ReIssueSetting value is true.<br /><br>If ‘False’, the API will return cards with ReIsssueSetting value is false.<br /><br>If ‘ALL’, API will return cards with ReIssueSetting value True &amp; False both.<br /><br>Allowed Values:<br /><br><br>1. All<br /><br>2. True<br /><br>3. False | getReissueSetting(): ?string | setReissueSetting(?string reissueSetting): void |
 | `requestId` | `?string` | Required | - | getRequestId(): ?string | setRequestId(?string requestId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 38,
-  "AccountNumber": "AccountNumber0",
-  "ColCoCode": 200,
-  "ColCoCountryCode": "ColCoCountryCode6",
-  "ColCoId": 186,
-  "CardStatus": [
-    "CardStatus9",
-    "CardStatus8",
-    "CardStatus7"
-  ],
-  "RequestId": "RequestId8"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\Filters1Builder;
+
+$filters1 = Filters1Builder::init()
+    ->accountId(110)
+    ->accountNumber('AccountNumber4')
+    ->colCoCode(16)
+    ->colCoCountryCode('ColCoCountryCode0')
+    ->colCoId(2)
+    ->cardStatus(
+        [
+            'CardStatus5',
+            'CardStatus4',
+            'CardStatus3'
+        ]
+    )
+    ->requestId('RequestId2')
+    ->build();
 ```
 

@@ -14,14 +14,16 @@
 | `description` | `?string` | Optional | DescriptionCard Bundle Description. | getDescription(): ?string | setDescription(?string description): void |
 | `totalCards` | `?int` | Optional | No of Card PAN added to the card bundle. | getTotalCards(): ?int | setTotalCards(?int totalCards): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "BundleId": "BundleId4",
-  "ExternalBundleId": "ExternalBundleId0",
-  "Description": "Description4",
-  "TotalCards": 126
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardBundleBuilder;
+
+$cardBundle = CardBundleBuilder::init()
+    ->bundleId('BundleId0')
+    ->externalBundleId('ExternalBundleId6')
+    ->description('Description2')
+    ->totalCards(116)
+    ->build();
 ```
 

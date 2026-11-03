@@ -77,7 +77,9 @@ POS language code. Language code:
 
 ## Example
 
-```
-eng
+```php
+use ShellCardManagementAPIsLib\Models\CardDetailsResponseInternationalPOSLanguageCodeEnum;
+
+$cardDetailsResponseInternationalPOSLanguageCode = CardDetailsResponseInternationalPOSLanguageCodeEnum::BUL;
 ```
 

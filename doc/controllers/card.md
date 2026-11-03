@@ -75,6 +75,10 @@ This API allows to search for Shell Cards in the Shell Card Platform. It provide
 function searchCard(string $requestId, ?SearchCardRequest $body = null): CardSearchResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -83,6 +87,8 @@ function searchCard(string $requestId, ?SearchCardRequest $body = null): CardSea
 | `body` | [`?SearchCardRequest`](../../doc/models/search-card-request.md) | Body, Optional | requestbody |
 
 ## Response Type
+
+**200**: List of fuel cards. The http status code 200 and the Error.Code '0000' in the response body would indicate the API call is successful. The http status code 200 with Error Code other than '0000' in the response body would indicate there is a failure in the API call.
 
 [`CardSearchResponse`](../../doc/models/card-search-response.md)
 
@@ -295,6 +301,10 @@ This API allows to search for fuel cards in the Shell Card Platform and returns 
 function cardSummary(string $requestId, ?CardSummaryRequest $body = null): CardSummaryResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -303,6 +313,8 @@ function cardSummary(string $requestId, ?CardSummaryRequest $body = null): CardS
 | `body` | [`?CardSummaryRequest`](../../doc/models/card-summary-request.md) | Body, Optional | summary request body |
 
 ## Response Type
+
+**200**: Summary count of fuel cards. The http status code 200 and the Error.Code "0000" in the response body would indicate the API call is successful. The http status code 200 with Error Code other than "0000" in the response body would indicate there is a failure in the API call.
 
 [`CardSummaryResponse`](../../doc/models/card-summary-response.md)
 
@@ -473,6 +485,10 @@ This API allows ordering one or more fuel cards (up to 50). If the API call succ
 function orderCard(string $requestId, ?CardManagementV1OrdercardRequest $body = null): OrderCardResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -481,6 +497,8 @@ function orderCard(string $requestId, ?CardManagementV1OrdercardRequest $body = 
 | `body` | [`?CardManagementV1OrdercardRequest`](../../doc/models/card-management-v1-ordercard-request.md) | Body, Optional | Order card request body |
 
 ## Response Type
+
+**200**: Fuel card order reference details. The http status code 200 and the Error.Code "0000" in the response body would indicate the API call is successful. The http status code 200 with Error Code other than "0000" in the response body would indicate there is a failure in the API call.
 
 [`OrderCardResponse`](../../doc/models/order-card-response.md)
 
@@ -643,6 +661,10 @@ This API retrieves the card order status from the Shell Card Platform based on t
 function orderCardEnquiry(string $requestId, ?OrderCardEnquiryRequest $body = null): OrderCardEnquiryResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -651,6 +673,8 @@ function orderCardEnquiry(string $requestId, ?OrderCardEnquiryRequest $body = nu
 | `body` | [`?OrderCardEnquiryRequest`](../../doc/models/order-card-enquiry-request.md) | Body, Optional | Order Card Enquiry request body |
 
 ## Response Type
+
+**200**: List of fuel cards. The http status code 200 and the Error.Code '0000' in the response body would indicate the API call is successful. The http status code 200 with Error Code other than '0000' in the response body would indicate there is a failure in the API call.
 
 [`OrderCardEnquiryResponse`](../../doc/models/order-card-enquiry-response.md)
 
@@ -791,6 +815,10 @@ When a card is requested to be Blocked permanently (cancelled) for which a reque
 function cardCancel(string $requestId, ?CardManagementV1CancelRequest $body = null): CancelCardResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -799,6 +827,8 @@ function cardCancel(string $requestId, ?CardManagementV1CancelRequest $body = nu
 | `body` | [`?CardManagementV1CancelRequest`](../../doc/models/card-management-v1-cancel-request.md) | Body, Optional | Update status request body |
 
 ## Response Type
+
+**200**: Cancel cards response. The http status code 200 and the Error.Code '0000' in the response body would indicate the API call is successful. The http status code 200 with Error Code other than '0000' in the response body would indicate there is a failure in the API call.
 
 [`CancelCardResponse`](../../doc/models/cancel-card-response.md)
 
@@ -979,6 +1009,10 @@ function cardUpdateStatus(
 ): UpdateCardStatusResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -987,6 +1021,8 @@ function cardUpdateStatus(
 | `body` | [`?CardManagementV1UpdatestatusRequest`](../../doc/models/card-management-v1-updatestatus-request.md) | Body, Optional | Update status request body |
 
 ## Response Type
+
+**200**: Update cards status response.The http status code 200 and the Error.Code '0000' in the response body would indicate the API call is successful. The http status code 200 with Error Code other than '0000' in the response body would indicate there is a failure in the API call.
 
 [`UpdateCardStatusResponse`](../../doc/models/update-card-status-response.md)
 
@@ -1128,6 +1164,10 @@ It will also include the below data associated with each of the purchase categor
 function purchaseCategory(string $requestId, ?PurchaseCategoryReq $body = null): PurchaseCategoryRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -1136,6 +1176,8 @@ function purchaseCategory(string $requestId, ?PurchaseCategoryReq $body = null):
 | `body` | [`?PurchaseCategoryReq`](../../doc/models/purchase-category-req.md) | Body, Optional | PurchaseCategory request body |
 
 ## Response Type
+
+**200**: The http status code 200 and the Error.Code "0000" in the response body would indicate the API call is successful. The http status code 200 with Error Code other than "0000" in the response body would indicate there is a failure in the API call.
 
 [`PurchaseCategoryRes`](../../doc/models/purchase-category-res.md)
 
@@ -1180,6 +1222,10 @@ This API allows to fetch details of a single fuel card from the Shell Card Platf
 function cardDetails(string $requestId, CardDetailsReq $body): CardDetailsResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -1188,6 +1234,8 @@ function cardDetails(string $requestId, CardDetailsReq $body): CardDetailsRespon
 | `body` | [`CardDetailsReq`](../../doc/models/card-details-req.md) | Body, Required | Card Details request body |
 
 ## Response Type
+
+**200**: card details response. The http status code 200 and the Error.Code '0000' in the response body would indicate the API call is successful. The http status code 200 with Error Code other than '0000' in the response body would indicate there is a failure in the API call.
 
 [`CardDetailsResponse`](../../doc/models/card-details-response.md)
 
@@ -1402,6 +1450,10 @@ This API allows to move one or more fuel cards (up to 500) across card groups wi
 function cardMove(string $requestId, CardMoveRequest $body): CardMoveRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -1410,6 +1462,8 @@ function cardMove(string $requestId, CardMoveRequest $body): CardMoveRes
 | `body` | [`CardMoveRequest`](../../doc/models/card-move-request.md) | Body, Required | schedulecardblock request body |
 
 ## Response Type
+
+**200**: schedulecardblock response. The http status code 200 and the Error.Code '0000' in the response body would indicate the API call is successful. The http status code 200 with Error Code other than '0000' in the response body would indicate there is a failure in the API call.
 
 [`CardMoveRes`](../../doc/models/card-move-res.md)
 
@@ -1513,6 +1567,10 @@ function cardPinReminder(
 ): PINReminderResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -1521,6 +1579,8 @@ function cardPinReminder(
 | `body` | [`?CardManagementV1PinreminderRequest`](../../doc/models/card-management-v1-pinreminder-request.md) | Body, Optional | PIN reminder request body |
 
 ## Response Type
+
+**200**: OK
 
 [`PINReminderResponse`](../../doc/models/pin-reminder-response.md)
 
@@ -1646,6 +1706,10 @@ This API allows scheduling Card Block / Unblock requests for one or multiple car
 function scheduleCardBlock(string $requestId, ?ScheduleCardBlockRequest $body = null): ScheduleCardBlockResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -1654,6 +1718,8 @@ function scheduleCardBlock(string $requestId, ?ScheduleCardBlockRequest $body = 
 | `body` | [`?ScheduleCardBlockRequest`](../../doc/models/schedule-card-block-request.md) | Body, Optional | request body |
 
 ## Response Type
+
+**200**: List of fuel cards. The http status code 200 and the Error.Code '0000' in the response body would indicate the API call is successful. The http status code 200 with Error Code other than '0000' in the response body would indicate there is a failure in the API call.
 
 [`ScheduleCardBlockResponse`](../../doc/models/schedule-card-block-response.md)
 
@@ -1757,6 +1823,10 @@ This API allows to update the reissue indicator of a single card. If the API cal
 function autoRenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoRenewCardResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -1765,6 +1835,8 @@ function autoRenew(string $requestId, ?AutoRenewCardRequest $body = null): AutoR
 | `body` | [`?AutoRenewCardRequest`](../../doc/models/auto-renew-card-request.md) | Body, Optional | Auto renew request body |
 
 ## Response Type
+
+**200**: Auto renew response.The http status code 200 and the Error.Code '0000' in the response body would indicate the API call is successful. The http status code 200 with Error Code other than '0000' in the response body would indicate there is a failure in the API call.
 
 [`AutoRenewCardResponse`](../../doc/models/auto-renew-card-response.md)
 
@@ -1850,6 +1922,10 @@ function updateMobilePaymentRegistrationStatus(
 ): UpdateMPayRegStatusResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -1858,6 +1934,8 @@ function updateMobilePaymentRegistrationStatus(
 | `body` | [`?UpdateMPayRegStatusRequest`](../../doc/models/update-m-pay-reg-status-request.md) | Body, Optional | Request body |
 
 ## Response Type
+
+**200**: OK
 
 [`UpdateMPayRegStatusResponse`](../../doc/models/update-m-pay-reg-status-response.md)
 
@@ -1928,6 +2006,10 @@ Get a new public key that will be used to encrypt data for selected PIN process 
 function getKey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -1936,6 +2018,8 @@ function getKey(string $requestId, ?bool $fleet = null): GeneratePINKeyResponse
 | `fleet` | `?bool` | Query, Optional | If the public key will be used a long time for multiple files this parameter will be true. If the parameter is true then public Key will be valid for 90 days. If the parameter is false then the key will be valid for one time. default value will be false. |
 
 ## Response Type
+
+**200**: OK
 
 [`GeneratePINKeyResponse`](../../doc/models/generate-pin-key-response.md)
 
@@ -1990,6 +2074,10 @@ function deliveryAddressUpdateV2(
 ): ResponseDeliveryAddressUpdate
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -1998,6 +2086,8 @@ function deliveryAddressUpdateV2(
 | `body` | [`DeliveryAddressUpdateRequest`](../../doc/models/delivery-address-update-request.md) | Body, Required | Delivery Address update request body |
 
 ## Response Type
+
+**200**: Delivery Address update response. The http status code 200 and the Error.Code '0000' in the response body would indicate the API call is successful. The http status code 200 with Error Code other than '0000' in the response body would indicate there is a failure in the API call.
 
 [`ResponseDeliveryAddressUpdate`](../../doc/models/response-delivery-address-update.md)
 

@@ -17,26 +17,33 @@ List of cards for delivery address update. Maximum number of cards that can be p
 | `useCustomerDefaultAddress` | `bool` | Required | Whether to use the default delivery address configured at customer (or card group) level as the delivery address for this card.<br>Mandatory<br>Note: If value is false then ‘UpdateCardRenewalAddress’ is mandatory. If value set to ‘True’ then<br>‘UpdateCardRenewalAddress’ may be null/empty. It will be ignored if provided. | getUseCustomerDefaultAddress(): bool | setUseCustomerDefaultAddress(bool useCustomerDefaultAddress): void |
 | `updateCardRenewalAddress` | [`?UpdateCardRenewalAddress2`](../../doc/models/update-card-renewal-address-2.md) | Optional | - | getUpdateCardRenewalAddress(): ?UpdateCardRenewalAddress2 | setUpdateCardRenewalAddress(?UpdateCardRenewalAddress2 updateCardRenewalAddress): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardId": 123,
-  "PAN": "7002051006629889654",
-  "CardExpiryDate": "20170930",
-  "UseCustomerDefaultAddress": false,
-  "UpdateCardRenewalAddress": {
-    "ContactName": "ContactName2",
-    "ContactTitle": "ContactTitle8",
-    "CompanyName": "CompanyName4",
-    "AddressLine": "AddressLine8",
-    "ZipCode": "ZipCode6",
-    "City": "City2",
-    "RegionID": 56,
-    "CountryID": 186,
-    "EmailAddress": "EmailAddress0",
-    "PhoneNumber": "PhoneNumber6"
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\DeliveryAddressUpdateBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\UpdateCardRenewalAddress2Builder;
+
+$deliveryAddressUpdate = DeliveryAddressUpdateBuilder::init(
+    false
+)
+    ->cardId(123)
+    ->pAN('7002051006629889654')
+    ->cardExpiryDate('20170930')
+    ->updateCardRenewalAddress(
+        UpdateCardRenewalAddress2Builder::init(
+            'ContactName2',
+            'CompanyName4',
+            'AddressLine8',
+            'ZipCode6',
+            186
+        )
+            ->contactTitle('ContactTitle8')
+            ->city('City2')
+            ->regionID(56)
+            ->emailAddress('EmailAddress0')
+            ->phoneNumber('PhoneNumber6')
+            ->build()
+    )
+    ->build();
 ```
 

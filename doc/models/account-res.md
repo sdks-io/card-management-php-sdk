@@ -18,32 +18,30 @@
 | `pageSize` | `?int` | Optional | Page Size – Number of records to show on current page. | getPageSize(): ?int | setPageSize(?int pageSize): void |
 | `warnings` | [`?(Warning[])`](../../doc/models/warning.md) | Optional | A list of Warning entity.<br>This entity will hold the details of the scheduled System Outages of any dependent applications of this service.<br>Note: If there is no scheduled outage information available, in the configuration in AMS, for this service, this parameter won’t be present in output. | getWarnings(): ?array | setWarnings(?array warnings): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Page": 1,
-  "TotalRecords": 100,
-  "TotalPages": 100,
-  "PageSize": 100,
-  "Data": [
-    {
-      "AccountFullName": "AccountFullName6",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "AccountShortName": "AccountShortName0",
-      "BestOfIndicator": false
-    },
-    {
-      "AccountFullName": "AccountFullName6",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "AccountShortName": "AccountShortName0",
-      "BestOfIndicator": false
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AccountResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\AccountResponseAccountsItemsBuilder;
+
+$accountRes = AccountResBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            AccountResponseAccountsItemsBuilder::init()
+                ->accountFullName('AccountFullName6')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->accountShortName('AccountShortName0')
+                ->bestOfIndicator(false)
+                ->build()
+        ]
+    )
+    ->page(1)
+    ->totalRecords(100)
+    ->totalPages(100)
+    ->pageSize(100)
+    ->build();
 ```
 

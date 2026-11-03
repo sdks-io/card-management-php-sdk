@@ -19,7 +19,9 @@ PIN type:
 
 ## Example
 
-```
-Card
+```php
+use ShellCardManagementAPIsLib\Models\CardDetailsResponsePINTypeEnum;
+
+$cardDetailsResponsePINType = CardDetailsResponsePINTypeEnum::CARD;
 ```
 

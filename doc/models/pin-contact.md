@@ -24,15 +24,17 @@
 | `emailAddress` | `?string` | Optional | Email address for to send email of the PIN in case PINAdviceType is Email.<br /><br>Mandatory if PINAdviceType is email else optional.<br /><br>Max field length: 90. <br/>Note:Based on the international standard that there can be Max Length 64 before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88 (Minimum of 2)<br><br>**Constraints**: *Maximum Length*: `90` | getEmailAddress(): ?string | setEmailAddress(?string emailAddress): void |
 | `saveForPINReminder` | `?bool` | Optional | The given address will be used for sending PIN reminders in future when requested.<br /><br>Only allowed for paper delivery<br /><br>Optional | getSaveForPINReminder(): ?bool | setSaveForPINReminder(?bool saveForPINReminder): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "DeliveryContactTitle": "DeliveryContactTitle2",
-  "DeliveryContactName": "DeliveryContactName2",
-  "DeliveryCompanyName": "DeliveryCompanyName4",
-  "DeliveryAddressLine1": "DeliveryAddressLine16",
-  "DeliveryAddressLine2": "DeliveryAddressLine28"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PINContactBuilder;
+
+$pINContact = PINContactBuilder::init()
+    ->deliveryContactTitle('DeliveryContactTitle2')
+    ->deliveryContactName('DeliveryContactName8')
+    ->deliveryCompanyName('DeliveryCompanyName6')
+    ->deliveryAddressLine1('DeliveryAddressLine16')
+    ->deliveryAddressLine2('DeliveryAddressLine28')
+    ->build();
 ```
 

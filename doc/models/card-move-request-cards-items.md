@@ -14,14 +14,16 @@
 | `pAN` | `?string` | Optional | - | getPAN(): ?string | setPAN(?string pAN): void |
 | `cardId` | `?int` | Optional | - | getCardId(): ?int | setCardId(?int cardId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountNumber": "AccountNumber6",
-  "AccountId": 174,
-  "PAN": "PAN8",
-  "CardId": 80
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardMoveRequestCardsItemsBuilder;
+
+$cardMoveRequestCardsItems = CardMoveRequestCardsItemsBuilder::init()
+    ->accountNumber('AccountNumber2')
+    ->accountId(62)
+    ->pAN('PAN4')
+    ->cardId(224)
+    ->build();
 ```
 

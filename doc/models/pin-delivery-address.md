@@ -26,25 +26,28 @@
 | `countryISOCode` | `string` | Required | The ISO code of the country. Mandatory if IsNewDeliveryAddress and OrderReplacement are passed. If the option to clear personal details is set in the Shell Card Platform, then this value will be cleared from the record after processing the request . | getCountryISOCode(): string | setCountryISOCode(string countryISOCode): void |
 | `country` | `string` | Required | Country name. | getCountry(): string | setCountry(string country): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ContactForeName": "ROBERT",
-  "ContactMiddleName": "M",
-  "ContactLastName": "Langdon",
-  "ContactTitle": "Mr.",
-  "CompanyName": "PARKLEY Philippines",
-  "AddressId": 1768,
-  "AddressLine1": "No 345, 1st cross,",
-  "AddressLine2": "10th avenue",
-  "AddressLine3": "makati city",
-  "ZipCode": "1630",
-  "City": "manila",
-  "Region": "EU",
-  "CountryId": 1,
-  "CountryISOCode": "PH",
-  "Country": "Philippines"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PINDeliveryAddressBuilder;
+
+$pINDeliveryAddress = PINDeliveryAddressBuilder::init(
+    'PARKLEY Philippines',
+    1768,
+    'No 345, 1st cross,',
+    '1630',
+    1,
+    'PH',
+    'Philippines'
+)
+    ->contactForeName('ROBERT')
+    ->contactMiddleName('M')
+    ->contactLastName('Langdon')
+    ->contactTitle('Mr.')
+    ->addressLine2('10th avenue')
+    ->addressLine3('makati city')
+    ->city('manila')
+    ->region('EU')
+    ->build();
 ```
 

@@ -14,14 +14,16 @@
 | `toDate` | `?string` | Optional | Effective end date & time of Block / Unblock as updated in the intermediate queue table.<br><br>Format: yyyyMMdd HH:mm<br>Eg: 20230512 14:30 | getToDate(): ?string | setToDate(?string toDate): void |
 | `referenceId` | `?int` | Optional | Effective end date & time of Block / Unblock as updated in the intermediate queue table.<br><br>Format: yyyyMMdd HH:mm<br>Eg: 20230512 14:30 | getReferenceId(): ?int | setReferenceId(?int referenceId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardId": 86,
-  "FromDate": "FromDate8",
-  "ToDate": "ToDate8",
-  "ReferenceId": 10
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\ScheduleCardBlockResponseDataItemsBuilder;
+
+$scheduleCardBlockResponseDataItems = ScheduleCardBlockResponseDataItemsBuilder::init()
+    ->cardId(148)
+    ->fromDate('FromDate8')
+    ->toDate('ToDate8')
+    ->referenceId(72)
+    ->build();
 ```
 

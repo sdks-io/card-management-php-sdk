@@ -15,3 +15,11 @@ Indicates overall status of the request
 | `FAILED` |
 | `PARTIAL_SUCCESS` |
 
+## Example
+
+```php
+use ShellCardManagementAPIsLib\Models\DeliveryAddressUpdateStatusEnum;
+
+$deliveryAddressUpdateStatus = DeliveryAddressUpdateStatusEnum::FAILED;
+```
+

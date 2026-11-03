@@ -22,16 +22,18 @@
 | `toDate` | `?string` | Optional | Card Order to Date/Time<br /><br>Optional<br /><br>Value should be with in last 7 days<br /><br>This field is ignored if ReferenceNumber is provided <br /><br>This field is optional when not provided and ReferenceNumber is null or empty then the value should be set to current date<br /><br>Format: yyyyMMdd | getToDate(): ?string | setToDate(?string toDate): void |
 | `orderRequestId` | `?string` | Optional | Client provided Unique Id of the original Order Card request, the status of which is enquired by this API | getOrderRequestId(): ?string | setOrderRequestId(?string orderRequestId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoCountryCode": "PH",
-  "OrderRequestId": "ed557f02-c7d7-4c01-b3e5-11bf",
-  "AccountId": 174,
-  "AccountNumber": "AccountNumber6",
-  "ColCoCode": 80,
-  "ColCoId": 66
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\Filters2Builder;
+
+$filters2 = Filters2Builder::init()
+    ->accountId(22)
+    ->accountNumber('AccountNumber4')
+    ->colCoCode(184)
+    ->colCoId(170)
+    ->colCoCountryCode('PH')
+    ->orderRequestId('ed557f02-c7d7-4c01-b3e5-11bf')
+    ->build();
 ```
 

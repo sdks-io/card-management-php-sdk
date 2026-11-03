@@ -14,33 +14,41 @@
 | `successfulRequests` | [`?(CreateCardGroupResponseSuccessfulRequestsItems[])`](../../doc/models/create-card-group-response-successful-requests-items.md) | Optional | List of cards validated and submitted successfully for processing. | getSuccessfulRequests(): ?array | setSuccessfulRequests(?array successfulRequests): void |
 | `errorCards` | [`?(CreateCardGroupResponseErrorCardsItems[])`](../../doc/models/create-card-group-response-error-cards-items.md) | Optional | List of cards that failed validation and not submitted for processing.<br>Entity: FailedCardReference<br>This list will be empty when the validations of new card group parameters fail. | getErrorCards(): ?array | setErrorCards(?array errorCards): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "MainReference": 12345,
-  "NewCardGroupReference": 1234,
-  "SuccessfulRequests": [
-    {
-      "CardId": 18,
-      "PAN": "PAN0",
-      "Reference": 228
-    }
-  ],
-  "ErrorCards": [
-    {
-      "CardId": 136,
-      "PAN": "PAN6",
-      "ErrorCode": "ErrorCode0",
-      "ErrorDescription": "ErrorDescription6"
-    },
-    {
-      "CardId": 136,
-      "PAN": "PAN6",
-      "ErrorCode": "ErrorCode0",
-      "ErrorDescription": "ErrorDescription6"
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CreateCardGroupResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CreateCardGroupResponseSuccessfulRequestsItemsBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CreateCardGroupResponseErrorCardsItemsBuilder;
+
+$createCardGroupResponse = CreateCardGroupResponseBuilder::init()
+    ->mainReference(12345)
+    ->newCardGroupReference(1234)
+    ->successfulRequests(
+        [
+            CreateCardGroupResponseSuccessfulRequestsItemsBuilder::init()
+                ->cardId(18)
+                ->pAN('PAN0')
+                ->reference(228)
+                ->build()
+        ]
+    )
+    ->errorCards(
+        [
+            CreateCardGroupResponseErrorCardsItemsBuilder::init()
+                ->cardId(136)
+                ->pAN('PAN6')
+                ->errorCode('ErrorCode0')
+                ->errorDescription('ErrorDescription6')
+                ->build(),
+            CreateCardGroupResponseErrorCardsItemsBuilder::init()
+                ->cardId(136)
+                ->pAN('PAN6')
+                ->errorCode('ErrorCode0')
+                ->errorDescription('ErrorDescription6')
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

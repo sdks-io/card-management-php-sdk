@@ -16,16 +16,18 @@
 | `payerName` | `?string` | Optional | Payer Name of the customer. | getPayerName(): ?string | setPayerName(?string payerName): void |
 | `payerGroupId` | `?int` | Optional | Payer Group identifier of the customer | getPayerGroupId(): ?int | setPayerGroupId(?int payerGroupId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 14,
-  "ColCoCode": 14,
-  "PayerId": 12345,
-  "PayerName": "ABC company",
-  "PayerGroupId": 456,
-  "PayerNumber": "PayerNumber0"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PayersBuilder;
+
+$payers = PayersBuilder::init()
+    ->colCoId(14)
+    ->colCoCode(14)
+    ->payerId(12345)
+    ->payerNumber('PayerNumber4')
+    ->payerName('ABC company')
+    ->payerGroupId(456)
+    ->build();
 ```
 

@@ -20,20 +20,23 @@
 | `emailAddress` | `?string` | Optional | Email Address<br><br>Max Length: 90<br>Note: -<br>Based on the international standard that there can be<br>•    Max Length 64 before the @ (the 'Local part’) =64(minimum of 1)<br>•    Max Lenth after the (the domain) = 88 (Minimum of 2) | getEmailAddress(): ?string | setEmailAddress(?string emailAddress): void |
 | `phoneNumber` | `?string` | Optional | Phone number<br>Optional<br>Max Length: 16 | getPhoneNumber(): ?string | setPhoneNumber(?string phoneNumber): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ContactName": "Jack",
-  "ContactTitle": "Mr",
-  "CompanyName": "Travel Transport",
-  "AddressLine": "Elm Street 11",
-  "ZipCode": "1023EA",
-  "City": "London",
-  "RegionID": 2,
-  "CountryID": 8,
-  "EmailAddress": "testmail@gmail.com",
-  "PhoneNumber": "+99999999999"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateCardRenewalAddress2Builder;
+
+$updateCardRenewalAddress2 = UpdateCardRenewalAddress2Builder::init(
+    'Jack',
+    'Travel Transport',
+    'Elm Street 11',
+    '1023EA',
+    8
+)
+    ->contactTitle('Mr')
+    ->city('London')
+    ->regionID(2)
+    ->emailAddress('testmail@gmail.com')
+    ->phoneNumber('+99999999999')
+    ->build();
 ```
 

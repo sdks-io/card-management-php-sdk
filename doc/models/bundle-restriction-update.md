@@ -19,21 +19,26 @@
 | `locationRestrictionProfileId` | `?string` | Optional | Identifier of the location restriction profile to be updated for the bundle in Gateway.<br>Optional | getLocationRestrictionProfileId(): ?string | setLocationRestrictionProfileId(?string locationRestrictionProfileId): void |
 | `locationRestrictions` | [`?LocationRestriction`](../../doc/models/location-restriction.md) | Optional | - | getLocationRestrictions(): ?LocationRestriction | setLocationRestrictions(?LocationRestriction locationRestrictions): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ResetDayTimeRestriction": false,
-  "ResetLocationRestriction": false,
-  "ResetProductRestriction": false,
-  "UsageRestrictions": {
-    "DailySpend": 7.72,
-    "WeeklySpend": 10.22,
-    "MonthlySpend": 48.66,
-    "PerTransactionSpend": 17.28,
-    "AnnualSpend": 223.08
-  },
-  "DayTimeRestrictionProfileId": "DayTimeRestrictionProfileId2"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\BundleRestrictionUpdateBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\UsageRestrictionsCardBuilder;
+
+$bundleRestrictionUpdate = BundleRestrictionUpdateBuilder::init()
+    ->resetDayTimeRestriction(false)
+    ->resetLocationRestriction(false)
+    ->resetProductRestriction(false)
+    ->usageRestrictions(
+        UsageRestrictionsCardBuilder::init()
+            ->dailySpend(7.72)
+            ->weeklySpend(10.22)
+            ->monthlySpend(48.66)
+            ->perTransactionSpend(17.28)
+            ->annualSpend(223.08)
+            ->build()
+    )
+    ->dayTimeRestrictionProfileId('DayTimeRestrictionProfileId2')
+    ->build();
 ```
 

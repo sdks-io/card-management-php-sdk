@@ -49,15 +49,17 @@ This entity models the data that is sent in the https
 | `statusDescription` | `?string` | Optional | Order status.<br /><br>Possible values<br /><br><br>Success<br /><br><br>Failed<br /><br><br>InProgress<br /> | getStatusDescription(): ?string | setStatusDescription(?string statusDescription): void |
 | `colCoId` | `?int` | Optional | Colcoid | getColCoId(): ?int | setColCoId(?int colCoId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 206,
-  "AccountNumber": "AccountNumber0",
-  "BCOReference": 154,
-  "BCORowNumber": 80,
-  "CardGroupId": 252
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\OrderCardEnquiryBuilder;
+
+$orderCardEnquiry = OrderCardEnquiryBuilder::init()
+    ->accountId(98)
+    ->accountNumber('AccountNumber6')
+    ->bCOReference(46)
+    ->bCORowNumber(228)
+    ->cardGroupId(144)
+    ->build();
 ```
 

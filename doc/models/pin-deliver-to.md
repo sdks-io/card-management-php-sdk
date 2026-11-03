@@ -21,19 +21,22 @@
 | `emailAddress` | `?string` | Optional | Cardholder email address for PIN delivery<br>Max Length : 90<br>Example: xxxxxx@example.com <br/>Note:Based on the international standard that there can be Max Length 64 before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the domain) = 88 (Minimum of 2) | getEmailAddress(): ?string | setEmailAddress(?string emailAddress): void |
 | `savePINReminder` | `?bool` | Optional | Save PIN Reminder<br>If SavePINReminder is true, the contact address will be saved database for PIN reminder.<br><br><br/>Only allowed for PIN Advice paper delivery. | getSavePINReminder(): ?bool | setSavePINReminder(?bool savePINReminder): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ContactName": "ContactName0",
-  "ContactTitle": "ContactTitle6",
-  "CompanyName": "CompanyName2",
-  "AddressLine": "AddressLine6",
-  "ZipCode": "ZipCode4",
-  "City": "City0",
-  "RegionID": 6,
-  "CountryID": 136,
-  "PhoneNumber": "PhoneNumber4"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PINDeliverToBuilder;
+
+$pINDeliverTo = PINDeliverToBuilder::init(
+    'CompanyName2',
+    'AddressLine6',
+    'City0'
+)
+    ->contactName('ContactName0')
+    ->contactTitle('ContactTitle6')
+    ->zipCode('ZipCode4')
+    ->regionID(98)
+    ->countryID(228)
+    ->phoneNumber('PhoneNumber4')
+    ->build();
 ```
 

@@ -15,15 +15,17 @@
 | `accountNumber` | `?string` | Optional | Account number | getAccountNumber(): ?string | setAccountNumber(?string accountNumber): void |
 | `referenceId` | `?int` | Optional | Individual delivery address update reference number for the delivery address update request. | getReferenceId(): ?int | setReferenceId(?int referenceId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardId": 12345,
-  "CardPAN": "7002051006629889654",
-  "AccountId": 12356,
-  "AccountNumber": "GB000000124",
-  "ReferenceId": 573567
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\DatumBuilder;
+
+$datum = DatumBuilder::init()
+    ->cardId(12345)
+    ->cardPAN('7002051006629889654')
+    ->accountId(12356)
+    ->accountNumber('GB000000124')
+    ->referenceId(573567)
+    ->build();
 ```
 

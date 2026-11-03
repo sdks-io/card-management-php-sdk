@@ -24,15 +24,17 @@
 | `validationErrorCode` | `?string` | Optional | Error code for validation failure. | getValidationErrorCode(): ?string | setValidationErrorCode(?string validationErrorCode): void |
 | `validationErrorDescription` | `?string` | Optional | Description of validation failure. | getValidationErrorDescription(): ?string | setValidationErrorDescription(?string validationErrorDescription): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 148,
-  "AccountNumber": "AccountNumber0",
-  "CardId": "CardId0",
-  "PAN": "PAN2",
-  "UsageRestrictionStatus": "UsageRestrictionStatus0"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\RestrictioncardsResBuilder;
+
+$restrictioncardsRes = RestrictioncardsResBuilder::init()
+    ->accountId(190)
+    ->accountNumber('AccountNumber8')
+    ->cardId('CardId8')
+    ->pAN('PAN0')
+    ->usageRestrictionStatus('UsageRestrictionStatus8')
+    ->build();
 ```
 

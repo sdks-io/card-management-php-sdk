@@ -49,16 +49,18 @@
 | `saveForCardReissue` | `?bool` | Optional | If this is specified, the contact address will be saved in cards platform for card reissue processing.<br /><br>Optional | getSaveForCardReissue(): ?bool | setSaveForCardReissue(?bool saveForCardReissue): void |
 | `expiryDate` | `?string` | Optional | Expiry Date for newly created card to be update in cards plot form.<br /><br>Optional <br /><br>Format: MMyy <br /><br>Eg:1221 <br /><br>If not apply the default Expiry Date.<br /><br>Note:<br /><br>There is a limit to the ExpiryDate which the user can choose for the Card.<br>If the user chooses a later ExpiryDate than the allowed value for the CardType of the OU,<br>the background service logs the respective error code and description<br><br>**Constraints**: *Maximum Length*: `4` | getExpiryDate(): ?string | setExpiryDate(?string expiryDate): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "SelfSelectedEncryptedPIN": "SelfSelectedEncryptedPIN8",
-  "SelfSelectedPINKeyID": "SelfSelectedPINKeyID2",
-  "SelfSelectedPINSessionKey": "SelfSelectedPINSessionKey4",
-  "ValidateFleetId": false,
-  "CardGroupId": 118,
-  "CardDeliveryType": 2
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardSettingsBuilder;
+
+$cardSettings = CardSettingsBuilder::init()
+    ->selfSelectedEncryptedPIN('SelfSelectedEncryptedPIN2')
+    ->selfSelectedPINKeyID('SelfSelectedPINKeyID2')
+    ->selfSelectedPINSessionKey('SelfSelectedPINSessionKey6')
+    ->validateFleetId(false)
+    ->cardGroupId(100)
+    ->cardDeliveryType(240)
+    ->build();
 ```
 

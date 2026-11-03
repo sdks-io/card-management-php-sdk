@@ -12,12 +12,14 @@
 | `cardId` | `?int` | Optional | Unique Card Id<br>Optional if PAN is given, else mandatory. | getCardId(): ?int | setCardId(?int cardId): void |
 | `pAN` | `?string` | Optional | Card PAN.<br>Optional if CardId is given, else mandatory.<br>Note: PAN is ignored if CardId is given.<br>Example: 7002051006629890645 | getPAN(): ?string | setPAN(?string pAN): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardId": 186,
-  "PAN": "PAN4"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SearchCardRestrictionBuilder;
+
+$searchCardRestriction = SearchCardRestrictionBuilder::init()
+    ->cardId(198)
+    ->pAN('PAN4')
+    ->build();
 ```
 

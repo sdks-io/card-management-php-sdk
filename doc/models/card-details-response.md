@@ -81,70 +81,75 @@
 | `error` | [`?ErrorStatus`](../../doc/models/error-status.md) | Optional | - | getError(): ?ErrorStatus | setError(?ErrorStatus error): void |
 | `requestId` | `?string` | Optional | API Request | getRequestId(): ?string | setRequestId(?string requestId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PayerId": 853,
-  "PayerNumber": "PH50000843",
-  "AccountId": 854,
-  "AccountNumber": "PH50000844",
-  "AccountShortName": "PARKLEY",
-  "ColCoCountryCode": "PH",
-  "LocalCurrencyCode": "EUR",
-  "LocalCurrencySymbol": "€",
-  "CardId": 125,
-  "PAN": "7002861007636000020",
-  "OdometerPrompt": true,
-  "FleetIdPrompt": true,
-  "PINType": "Card",
-  "HasPIN": true,
-  "IsSelfSelectedPIN": true,
-  "TemporaryBlockAllowed": true,
-  "UnblockAllowed": true,
-  "PermanentBlockAllowed": true,
-  "IssueNumber": 1,
-  "InternationalPOSLanguageID": 8,
-  "InternationalPOSLanguageCode": "eng",
-  "LocalPOSLanguageID": 8,
-  "LocalPOSLanguageCode": "eng",
-  "CardTypeCode": "7077861",
-  "CardTypeId": 1,
-  "CardTypeName": "Philippines CRT 7077861",
-  "TokenTypeId": 107,
-  "TokenTypeName": "PH FLE NAT SIN R1",
-  "IsChipCard": false,
-  "IsMagStripCard": true,
-  "IsVirtualCard": true,
-  "PurchaseCategoryCode": "6",
-  "PurchaseCategoryId": 54,
-  "PurchaseCategoryName": "2 - FuelSave and Lubricants",
-  "IsCRT": true,
-  "IsFleet": true,
-  "IsInternational": true,
-  "IsNational": true,
-  "IsPartnerSitesIncluded": true,
-  "IsShellSitesOnly": true,
-  "IssuedDate": "20181001",
-  "ExpiryDate": "20181031",
-  "LastUsedDate": "20181001 13:23:55",
-  "MisuseDate": "20181001 13:23:55",
-  "Temperature": "10-Warm",
-  "DriverName": "ROBERT",
-  "VRN": "MV65YLH",
-  "EmbossText": "PARKLEY",
-  "CardGroupId": 5,
-  "CardGroupName": "GROUP1",
-  "RenewalDate": "20181001",
-  "RenewedCardId": 1325,
-  "RenewedCardStatusId": 10,
-  "RenewedCardStatus": "New",
-  "RenewedCardExpiryDate": "20181031",
-  "RenewedCardIssueNumber": 2,
-  "CreationDate": "20181001",
-  "EffectiveDate": "20181001",
-  "LastModifiedDate": "20181001 13:23:55",
-  "RequestId": "ed557f02-c7d7-4c01-b3e5-11bf3239c8ed"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardDetailsResponseBuilder;
+use ShellCardManagementAPIsLib\Models\CardDetailsResponsePINTypeEnum;
+use ShellCardManagementAPIsLib\Models\CardDetailsResponseInternationalPOSLanguageIDEnum;
+use ShellCardManagementAPIsLib\Models\CardDetailsResponseInternationalPOSLanguageCodeEnum;
+
+$cardDetailsResponse = CardDetailsResponseBuilder::init()
+    ->payerId(853)
+    ->payerNumber('PH50000843')
+    ->accountId(854)
+    ->accountNumber('PH50000844')
+    ->accountShortName('PARKLEY')
+    ->colCoCountryCode('PH')
+    ->localCurrencyCode('EUR')
+    ->localCurrencySymbol('€')
+    ->cardId(125)
+    ->pAN('7002861007636000020')
+    ->odometerPrompt(true)
+    ->fleetIdPrompt(true)
+    ->pINType(CardDetailsResponsePINTypeEnum::CARD)
+    ->hasPIN(true)
+    ->isSelfSelectedPIN(true)
+    ->temporaryBlockAllowed(true)
+    ->unblockAllowed(true)
+    ->permanentBlockAllowed(true)
+    ->issueNumber(1)
+    ->internationalPOSLanguageID(CardDetailsResponseInternationalPOSLanguageIDEnum::ENUM_8)
+    ->internationalPOSLanguageCode(CardDetailsResponseInternationalPOSLanguageCodeEnum::ENG)
+    ->localPOSLanguageID(CardDetailsResponseInternationalPOSLanguageIDEnum::ENUM_8)
+    ->localPOSLanguageCode(CardDetailsResponseInternationalPOSLanguageCodeEnum::ENG)
+    ->cardTypeCode('7077861')
+    ->cardTypeId(1)
+    ->cardTypeName('Philippines CRT 7077861')
+    ->tokenTypeId(107)
+    ->tokenTypeName('PH FLE NAT SIN R1')
+    ->isChipCard(false)
+    ->isMagStripCard(true)
+    ->isVirtualCard(true)
+    ->purchaseCategoryCode('6')
+    ->purchaseCategoryId(54)
+    ->purchaseCategoryName('2 - FuelSave and Lubricants')
+    ->isCRT(true)
+    ->isFleet(true)
+    ->isInternational(true)
+    ->isNational(true)
+    ->isPartnerSitesIncluded(true)
+    ->isShellSitesOnly(true)
+    ->issuedDate('20181001')
+    ->expiryDate('20181031')
+    ->lastUsedDate('20181001 13:23:55')
+    ->misuseDate('20181001 13:23:55')
+    ->temperature('10-Warm')
+    ->driverName('ROBERT')
+    ->vRN('MV65YLH')
+    ->embossText('PARKLEY')
+    ->cardGroupId(5)
+    ->cardGroupName('GROUP1')
+    ->renewalDate('20181001')
+    ->renewedCardId(1325)
+    ->renewedCardStatusId(10)
+    ->renewedCardStatus('New')
+    ->renewedCardExpiryDate('20181031')
+    ->renewedCardIssueNumber(2)
+    ->creationDate('20181001')
+    ->effectiveDate('20181001')
+    ->lastModifiedDate('20181001 13:23:55')
+    ->requestId('ed557f02-c7d7-4c01-b3e5-11bf3239c8ed')
+    ->build();
 ```
 

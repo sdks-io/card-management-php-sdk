@@ -24,15 +24,17 @@ Encapsulates the details of a Summary response.
 | `temporaryBlockByShell` | `?int` | Optional | Total number of cards for the given search criteria that are temporarily blocked by Shell | getTemporaryBlockByShell(): ?int | setTemporaryBlockByShell(?int temporaryBlockByShell): void |
 | `totalCards` | `?int` | Optional | Total number of cards for the given search criteria | getTotalCards(): ?int | setTotalCards(?int totalCards): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ActiveCards": 142,
-  "BlockedCards": 238,
-  "CancelledCards": 240,
-  "ExpiredCards": 238,
-  "ExpiringCards": 4
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SummaryResponseBuilder;
+
+$summaryResponse = SummaryResponseBuilder::init()
+    ->activeCards(110)
+    ->blockedCards(14)
+    ->cancelledCards(244)
+    ->expiredCards(14)
+    ->expiringCards(8)
+    ->build();
 ```
 

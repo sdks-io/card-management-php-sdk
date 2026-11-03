@@ -14,21 +14,26 @@
 | `status` | `?string` | Optional | Overall Status of the API call | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(ScheduleCardBlockResponseDataItems[])`](../../doc/models/schedule-card-block-response-data-items.md) | Optional | List of SubmittedScheduleCardBlockCard entity. | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "MainReference": 98,
-  "RequestId": "RequestId4",
-  "Status": "Status2",
-  "Data": [
-    {
-      "CardId": 224,
-      "FromDate": "FromDate2",
-      "ToDate": "ToDate8",
-      "ReferenceId": 108
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\ScheduleCardBlockResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\ScheduleCardBlockResponseDataItemsBuilder;
+
+$scheduleCardBlockResponse = ScheduleCardBlockResponseBuilder::init()
+    ->mainReference(96)
+    ->requestId('RequestId2')
+    ->status('Status8')
+    ->data(
+        [
+            ScheduleCardBlockResponseDataItemsBuilder::init()
+                ->cardId(224)
+                ->fromDate('FromDate2')
+                ->toDate('ToDate8')
+                ->referenceId(108)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

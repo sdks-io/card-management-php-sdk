@@ -17,30 +17,42 @@
 | `totalPages` | `?int` | Optional | Specifies the total pages available in the result | getTotalPages(): ?int | setTotalPages(?int totalPages): void |
 | `totalRecords` | `?int` | Optional | Specifies the total pages available in the result | getTotalRecords(): ?int | setTotalRecords(?int totalRecords): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId6",
-  "Status": "Status2",
-  "Data": [
-    {
-      "AccountId": 62,
-      "AccountName": "AccountName4",
-      "AccountNumber": "AccountNumber8",
-      "AccountShortName": "AccountShortName0",
-      "BundleId": "BundleId6"
-    },
-    {
-      "AccountId": 62,
-      "AccountName": "AccountName4",
-      "AccountNumber": "AccountNumber8",
-      "AccountShortName": "AccountShortName0",
-      "BundleId": "BundleId6"
-    }
-  ],
-  "Page": 130,
-  "PageSize": 110
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardSearchResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CardBuilder;
+
+$cardSearchResponse = CardSearchResponseBuilder::init()
+    ->requestId('RequestId2')
+    ->status('Status8')
+    ->data(
+        [
+            CardBuilder::init()
+                ->accountId(62)
+                ->accountName('AccountName4')
+                ->accountNumber('AccountNumber8')
+                ->accountShortName('AccountShortName0')
+                ->bundleId('BundleId6')
+                ->build(),
+            CardBuilder::init()
+                ->accountId(62)
+                ->accountName('AccountName4')
+                ->accountNumber('AccountNumber8')
+                ->accountShortName('AccountShortName0')
+                ->bundleId('BundleId6')
+                ->build(),
+            CardBuilder::init()
+                ->accountId(62)
+                ->accountName('AccountName4')
+                ->accountNumber('AccountNumber8')
+                ->accountShortName('AccountShortName0')
+                ->bundleId('BundleId6')
+                ->build()
+        ]
+    )
+    ->page(148)
+    ->pageSize(128)
+    ->build();
 ```
 

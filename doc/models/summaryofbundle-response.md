@@ -16,15 +16,17 @@
 | `countOfCardsNotInBundle` | `?int` | Optional | Count of cards that are not part of the bundle in a given account. | getCountOfCardsNotInBundle(): ?int | setCountOfCardsNotInBundle(?int countOfCardsNotInBundle): void |
 | `cardBundles` | [`?CardBundle`](../../doc/models/card-bundle.md) | Optional | - | getCardBundles(): ?CardBundle | setCardBundles(?CardBundle cardBundles): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PayerId": 70,
-  "PayerNumber": "PayerNumber2",
-  "AccountId": 130,
-  "AccountNumber": "AccountNumber4",
-  "CountOfCardsNotInBundle": 190
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SummaryofbundleResponseBuilder;
+
+$summaryofbundleResponse = SummaryofbundleResponseBuilder::init()
+    ->payerId(138)
+    ->payerNumber('PayerNumber0')
+    ->accountId(198)
+    ->accountNumber('AccountNumber2')
+    ->countOfCardsNotInBundle(2)
+    ->build();
 ```
 

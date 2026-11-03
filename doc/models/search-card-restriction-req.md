@@ -20,18 +20,23 @@
 | `includeBundleDetails` | `?bool` | Optional | Default value is False,<br>When the value is True, API will return bundle Id associated with cards in the response, if available.<br>Note: Use ‘Null’ or ‘False’ for optimum performance. A delay in response is expected when set to ‘True’. | getIncludeBundleDetails(): ?bool | setIncludeBundleDetails(?bool includeBundleDetails): void |
 | `includeInheritedLimits` | `?bool` | Optional | Default value is True,<br>When True: service will return the inherited values for the usage limits (from card-program or account as available) when it is not overridden on the card. | getIncludeInheritedLimits(): ?bool | setIncludeInheritedLimits(?bool includeInheritedLimits): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 90,
-  "ColCoCode": 104,
-  "PayerId": 138,
-  "PayerNumber": "PayerNumber0",
-  "Accounts": {
-    "AccountId": 28,
-    "AccountNumber": "AccountNumber0"
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SearchCardRestrictionReqBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\AccountsBuilder;
+
+$searchCardRestrictionReq = SearchCardRestrictionReqBuilder::init()
+    ->colCoId(242)
+    ->colCoCode(0)
+    ->payerId(34)
+    ->payerNumber('PayerNumber8')
+    ->accounts(
+        AccountsBuilder::init()
+            ->accountId(28)
+            ->accountNumber('AccountNumber0')
+            ->build()
+    )
+    ->build();
 ```
 

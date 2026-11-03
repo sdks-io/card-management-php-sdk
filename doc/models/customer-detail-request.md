@@ -16,16 +16,18 @@
 | `accountId` | `?int` | Optional | Account ID of the customer.<br>Optional if AccountNumber is passed else Mandatory. | getAccountId(): ?int | setAccountId(?int accountId): void |
 | `accountNumber` | `?string` | Optional | Account Number of the customer.<br>Optional if AccountId is passed else Mandatory. | getAccountNumber(): ?string | setAccountNumber(?string accountNumber): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 14,
-  "ColCoCode": 14,
-  "PayerId": 12345,
-  "PayerNumber": "DE00001067",
-  "AccountNumber": "DE00001067",
-  "AccountId": 100
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CustomerDetailRequestBuilder;
+
+$customerDetailRequest = CustomerDetailRequestBuilder::init()
+    ->colCoId(14)
+    ->colCoCode(14)
+    ->payerId(12345)
+    ->payerNumber('DE00001067')
+    ->accountId(46)
+    ->accountNumber('DE00001067')
+    ->build();
 ```
 

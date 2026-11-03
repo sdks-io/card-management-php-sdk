@@ -11,21 +11,35 @@
 |  --- | --- | --- | --- | --- | --- |
 | `cardDetails` | [`?(CardDetail[])`](../../doc/models/card-detail.md) | Optional | List of CardOrder entity. The fields in this entity are described below. | getCardDetails(): ?array | setCardDetails(?array cardDetails): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardDetails": [
-    {
-      "PayerId": 232,
-      "PayerNumber": "PayerNumber2",
-      "AccountId": 36,
-      "AccountNumber": "AccountNumber4",
-      "ColCoCode": 198,
-      "CardDeliveryType": 2,
-      "PINAdviceType": 4
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardManagementV1OrdercardRequestBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CardDetailBuilder;
+
+$cardManagementV1OrdercardRequest = CardManagementV1OrdercardRequestBuilder::init()
+    ->cardDetails(
+        [
+            CardDetailBuilder::init()
+                ->payerId(232)
+                ->payerNumber('PayerNumber2')
+                ->accountId(36)
+                ->accountNumber('AccountNumber4')
+                ->colCoCode(198)
+                ->cardDeliveryType(2)
+                ->pINAdviceType(4)
+                ->build(),
+            CardDetailBuilder::init()
+                ->payerId(232)
+                ->payerNumber('PayerNumber2')
+                ->accountId(36)
+                ->accountNumber('AccountNumber4')
+                ->colCoCode(198)
+                ->cardDeliveryType(2)
+                ->pINAdviceType(4)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

@@ -14,14 +14,16 @@
 | `errorCode` | `?string` | Optional | Error code for validation failure. | getErrorCode(): ?string | setErrorCode(?string errorCode): void |
 | `errorDescription` | `?string` | Optional | Description of validation failure. | getErrorDescription(): ?string | setErrorDescription(?string errorDescription): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardId": 1234,
-  "PAN": "7002097550439850718",
-  "ErrorCode": "E0001",
-  "ErrorDescription": "Card is not active"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CreateCardGroupResponseErrorCardsItemsBuilder;
+
+$createCardGroupResponseErrorCardsItems = CreateCardGroupResponseErrorCardsItemsBuilder::init()
+    ->cardId(1234)
+    ->pAN('7002097550439850718')
+    ->errorCode('E0001')
+    ->errorDescription('Card is not active')
+    ->build();
 ```
 

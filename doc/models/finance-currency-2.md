@@ -14,14 +14,16 @@
 | `invoiceExchangeRate` | `?float` | Optional | Factor to be used for converting the amounts in invoice currency to finance widget currency. (If finance currency is same as invoice currency, then the value of this field will be “1” so that the value does not change) | getInvoiceExchangeRate(): ?float | setInvoiceExchangeRate(?float invoiceExchangeRate): void |
 | `creditLimitExchangeRate` | `?float` | Optional | Factor to be used for converting the amounts in credit limit currency to finance widget currency. (If finance currency is same as credit limit currency, then the value of this field will be “1” so that the value does not change) | getCreditLimitExchangeRate(): ?float | setCreditLimitExchangeRate(?float creditLimitExchangeRate): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CurrencyCode": "EUR",
-  "CurrencySymbol": "€",
-  "Invoice_ExchangeRate": 1.0,
-  "CreditLimit_ExchangeRate": 1.0
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\FinanceCurrency2Builder;
+
+$financeCurrency2 = FinanceCurrency2Builder::init()
+    ->currencyCode('EUR')
+    ->currencySymbol('€')
+    ->invoiceExchangeRate(1)
+    ->creditLimitExchangeRate(1)
+    ->build();
 ```
 

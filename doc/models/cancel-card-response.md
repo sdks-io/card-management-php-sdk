@@ -16,37 +16,35 @@
 | `data` | [`?(SubmittedCard[])`](../../doc/models/submitted-card.md) | Optional | - | getData(): ?array | setData(?array data): void |
 | `errors` | [`?(ErrorDetails[])`](../../doc/models/error-details.md) | Optional | - | getErrors(): ?array | setErrors(?array errors): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId2",
-  "MainReference": 166,
-  "OrderReplacementReference": 120,
-  "Status": "Status8",
-  "Data": [
-    {
-      "ReplacementCardReference": 84,
-      "UpdateCardReference": 178,
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "CardExpiryDate": "CardExpiryDate6"
-    },
-    {
-      "ReplacementCardReference": 84,
-      "UpdateCardReference": 178,
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "CardExpiryDate": "CardExpiryDate6"
-    },
-    {
-      "ReplacementCardReference": 84,
-      "UpdateCardReference": 178,
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "CardExpiryDate": "CardExpiryDate6"
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CancelCardResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\SubmittedCardBuilder;
+
+$cancelCardResponse = CancelCardResponseBuilder::init()
+    ->requestId('RequestId6')
+    ->mainReference(144)
+    ->orderReplacementReference(98)
+    ->status('Status0')
+    ->data(
+        [
+            SubmittedCardBuilder::init()
+                ->replacementCardReference(84)
+                ->updateCardReference(178)
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->cardExpiryDate('CardExpiryDate6')
+                ->build(),
+            SubmittedCardBuilder::init()
+                ->replacementCardReference(84)
+                ->updateCardReference(178)
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->cardExpiryDate('CardExpiryDate6')
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

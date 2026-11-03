@@ -16,15 +16,17 @@
 | `restrictionCondition` | `?string` | Optional | The restriction condition code.<br>Example: DECLINE_ALERT | getRestrictionCondition(): ?string | setRestrictionCondition(?string restrictionCondition): void |
 | `velocityLimits` | [`?(AccountVelocityLimit[])`](../../doc/models/account-velocity-limit.md) | Optional | - | getVelocityLimits(): ?array | setVelocityLimits(?array velocityLimits): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "2ace3991-5d03-4a68-ac68-ca9119b25101",
-  "AccountId": 114,
-  "AccountNumber": "AccountNumber2",
-  "ReferenceProduct": "ReferenceProduct2",
-  "RestrictionCondition": "RestrictionCondition0"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SearchAccountLimitResponseBuilder;
+
+$searchAccountLimitResponse = SearchAccountLimitResponseBuilder::init()
+    ->requestId('2ace3991-5d03-4a68-ac68-ca9119b25101')
+    ->accountId(198)
+    ->accountNumber('AccountNumber6')
+    ->referenceProduct('ReferenceProduct6')
+    ->restrictionCondition('RestrictionCondition4')
+    ->build();
 ```
 

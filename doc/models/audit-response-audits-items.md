@@ -43,43 +43,45 @@
 | `pANID` | `?string` | Optional | PAN ID of the card.<br>This will be null when the PAN is not available in the request. | getPANID(): ?string | setPANID(?string pANID): void |
 | `maskedPAN` | `?string` | Optional | Masked PAN of the card.<br>This will be null when the Masked PAN is not available in the request. | getMaskedPAN(): ?string | setMaskedPAN(?string maskedPAN): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 123,
-  "AccountNumber": "BE00000113",
-  "AdditionalInformation1": "922",
-  "AdditionalInformation2": "2016",
-  "AdditionalInformation3": "MERCEDES GLE KLASSE SEGM. L",
-  "AdditionalInformation4": "408135/3",
-  "AdditionalInformation5": "API TEST CUSTOMER 113",
-  "AdditionalInformation6": "408135/3",
-  "AdditionalInformation7": "null",
-  "AdditionalInformation8": "null",
-  "AdditionalInformation9": "null",
-  "CardGroupId": 123,
-  "CardGroupName": "test",
-  "CardId": 10594,
-  "ColCoCode": 9,
-  "ColCoId": 9,
-  "ErrorCode": "0000",
-  "ErrorString": "null",
-  "GlobalRequestID": "6f1473ea-7f68-4ccb-acee-4b5b997aad5a",
-  "PAN": "7002097550439850717",
-  "PayerId": 123,
-  "PayerNumber": "BE00000113",
-  "ProcessedOn": "20240201 14:30:26",
-  "RequestedBy": "EWyIv8LpjgW3LlKDDUo0VZMN6JKpqRc",
-  "RequestedOperation": "OrderCard",
-  "RequestReference": 519876,
-  "RequestType": "OrderCard",
-  "Status": "Success",
-  "SubmittedOn": "20240201 14:29:16",
-  "SubRequestReference": 720061,
-  "UserDisplayName": "Supriya-ThridPartyAgent",
-  "PANID": "70020975",
-  "MaskedPAN": "70020975******0717"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AuditResponseAuditsItemsBuilder;
+
+$auditResponseAuditsItems = AuditResponseAuditsItemsBuilder::init()
+    ->accountId(123)
+    ->accountNumber('BE00000113')
+    ->additionalInformation1('922')
+    ->additionalInformation2('2016')
+    ->additionalInformation3('MERCEDES GLE KLASSE SEGM. L')
+    ->additionalInformation4('408135/3')
+    ->additionalInformation5('API TEST CUSTOMER 113')
+    ->additionalInformation6('408135/3')
+    ->additionalInformation7('null')
+    ->additionalInformation8('null')
+    ->additionalInformation9('null')
+    ->cardGroupId(123)
+    ->cardGroupName('test')
+    ->cardId(10594)
+    ->colCoCode(9)
+    ->colCoId(9)
+    ->errorCode('0000')
+    ->errorString('null')
+    ->globalRequestID('6f1473ea-7f68-4ccb-acee-4b5b997aad5a')
+    ->pAN('7002097550439850717')
+    ->payerId(123)
+    ->payerNumber('BE00000113')
+    ->processedOn('20240201 14:30:26')
+    ->requestedBy('EWyIv8LpjgW3LlKDDUo0VZMN6JKpqRc')
+    ->requestedOperation('OrderCard')
+    ->requestReference(519876)
+    ->requestType('OrderCard')
+    ->status('Success')
+    ->submittedOn('20240201 14:29:16')
+    ->subRequestReference(720061)
+    ->userDisplayName('Supriya-ThridPartyAgent')
+    ->pANID('70020975')
+    ->maskedPAN('70020975******0717')
+    ->build();
 ```
 

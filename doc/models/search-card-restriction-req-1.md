@@ -11,20 +11,28 @@
 |  --- | --- | --- | --- | --- | --- |
 | `filters` | [`?SearchCardRestrictionReq`](../../doc/models/search-card-restriction-req.md) | Optional | - | getFilters(): ?SearchCardRestrictionReq | setFilters(?SearchCardRestrictionReq filters): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Filters": {
-    "ColCoId": 0,
-    "ColCoCode": 14,
-    "PayerId": 48,
-    "PayerNumber": "PayerNumber0",
-    "Accounts": {
-      "AccountId": 28,
-      "AccountNumber": "AccountNumber0"
-    }
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SearchCardRestrictionReq1Builder;
+use ShellCardManagementAPIsLib\Models\Builders\SearchCardRestrictionReqBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\AccountsBuilder;
+
+$searchCardRestrictionReq1 = SearchCardRestrictionReq1Builder::init()
+    ->filters(
+        SearchCardRestrictionReqBuilder::init()
+            ->colCoId(0)
+            ->colCoCode(14)
+            ->payerId(48)
+            ->payerNumber('PayerNumber0')
+            ->accounts(
+                AccountsBuilder::init()
+                    ->accountId(28)
+                    ->accountNumber('AccountNumber0')
+                    ->build()
+            )
+            ->build()
+    )
+    ->build();
 ```
 

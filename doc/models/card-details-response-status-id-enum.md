@@ -53,3 +53,11 @@ Possible Id’s and description:
 | `ENUM_107` |
 | `ENUM_108` |
 
+## Example
+
+```php
+use ShellCardManagementAPIsLib\Models\CardDetailsResponseStatusIdEnum;
+
+$cardDetailsResponseStatusId = CardDetailsResponseStatusIdEnum::ENUM_107;
+```
+

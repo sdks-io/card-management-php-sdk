@@ -16,16 +16,19 @@
 | `cardId` | `?int` | Optional | Card Id of the card.<br>Optional if PAN is passed, else Mandatory. | getCardId(): ?int | setCardId(?int cardId): void |
 | `reissueSetting` | `bool` | Required | Reissue setting of the card.<br>Values:<br>True – Card will be Reissued when nearing its expiry date<br>False – Card will not be Reissued<br>Mandatory | getReissueSetting(): bool | setReissueSetting(bool reissueSetting): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountNumber": "AccountNumber4",
-  "AccountId": 178,
-  "PAN": "PAN6",
-  "PANID": 75.4,
-  "CardId": 84,
-  "ReissueSetting": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AutoRenewCardRequestAutoRenewCardsItemsBuilder;
+
+$autoRenewCardRequestAutoRenewCardsItems = AutoRenewCardRequestAutoRenewCardsItemsBuilder::init(
+    false
+)
+    ->accountNumber('AccountNumber2')
+    ->accountId(166)
+    ->pAN('PAN4')
+    ->pANID(241.68)
+    ->cardId(72)
+    ->build();
 ```
 

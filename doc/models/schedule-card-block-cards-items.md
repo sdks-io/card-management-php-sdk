@@ -25,16 +25,19 @@
 | `caller` | `?string` | Optional | The caller to be notified with the status of the scheduled card block / unblock request.<br>Mandatory, if NotifyCaller is true.<br>Maximum field length: 20 | getCaller(): ?string | setCaller(?string caller): void |
 | `notifyCaller` | `?bool` | Optional | True/False.<br>Optional.<br>Default: False<br>If true, the caller would be notified back with the status as success or failure after the scheduled card block / unblock request is processed. | getNotifyCaller(): ?bool | setNotifyCaller(?bool notifyCaller): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoCode": 164,
-  "ColCoId": 150,
-  "AccountId": 2,
-  "AccountNumber": "AccountNumber6",
-  "PayerId": 198,
-  "Action": "Action2"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\ScheduleCardBlockCardsItemsBuilder;
+
+$scheduleCardBlockCardsItems = ScheduleCardBlockCardsItemsBuilder::init(
+    'Action8'
+)
+    ->colCoCode(94)
+    ->colCoId(80)
+    ->accountId(188)
+    ->accountNumber('AccountNumber2')
+    ->payerId(128)
+    ->build();
 ```
 

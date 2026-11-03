@@ -29,29 +29,31 @@
 | `zipCode` | `?string` | Optional | Delivery Zip code | getZipCode(): ?string | setZipCode(?string zipCode): void |
 | `addressType` | `?int` | Optional | Delivery address type.<br>Possible Values:<br>1 – Card and PIN delivery address<br>2 – Card delivery address<br>3 – PIN delivery address | getAddressType(): ?int | setAddressType(?int addressType): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AddressId": 1,
-  "AddressLine1": "AddressLine1",
-  "AddressLine2": "AddressLine2",
-  "AddressLine3": "AddressLine3",
-  "City": "germany",
-  "CompanyName": "5.11.3 DE",
-  "ContactForeName": "5.11.13 DE",
-  "ContactLastName": "SAM",
-  "ContactMiddleName": "SAM",
-  "ContactTitle": "Mr",
-  "Country": "Germany",
-  "CountryId": 9,
-  "CountryISOCode": "DE",
-  "Fax": "657875",
-  "Region": "Germany",
-  "RegionId": 133,
-  "Telephone": "78787786868",
-  "ZipCode": "E14 5HQ",
-  "AddressType": 1
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\DeliveryAddressesBuilder;
+
+$deliveryAddresses = DeliveryAddressesBuilder::init()
+    ->addressId(1)
+    ->addressLine1('AddressLine1')
+    ->addressLine2('AddressLine2')
+    ->addressLine3('AddressLine3')
+    ->city('germany')
+    ->companyName('5.11.3 DE')
+    ->contactForeName('5.11.13 DE')
+    ->contactLastName('SAM')
+    ->contactMiddleName('SAM')
+    ->contactTitle('Mr')
+    ->country('Germany')
+    ->countryId(9)
+    ->countryISOCode('DE')
+    ->fax('657875')
+    ->region('Germany')
+    ->regionId(133)
+    ->telephone('78787786868')
+    ->zipCode('E14 5HQ')
+    ->addressType(1)
+    ->build();
 ```
 

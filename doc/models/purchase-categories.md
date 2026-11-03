@@ -15,15 +15,17 @@
 | `isVisible` | `?bool` | Optional | If True then PurchaseCategory can be used while submitting new order cards requests.<br>If false this PurchaseCategory will not be used for Ordering Cards. | getIsVisible(): ?bool | setIsVisible(?bool isVisible): void |
 | `productGroups` | `?string` | Optional | List of Default product groups | getProductGroups(): ?string | setProductGroups(?string productGroups): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Id": 123,
-  "Code": "1",
-  "Name": "FuelSave only",
-  "ProductGroups": "19,1",
-  "IsVisible": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategoriesBuilder;
+
+$purchaseCategories = PurchaseCategoriesBuilder::init()
+    ->id(123)
+    ->code('1')
+    ->name('FuelSave only')
+    ->isVisible(false)
+    ->productGroups('19,1')
+    ->build();
 ```
 

@@ -12,12 +12,14 @@
 | `fromDate` | `?string` | Optional | Effective start date of Block / Unblock | getFromDate(): ?string | setFromDate(?string fromDate): void |
 | `toDate` | `?string` | Optional | Effective end date of Block / Unblock | getToDate(): ?string | setToDate(?string toDate): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "FromDate": "20210212",
-  "ToDate": "20210212"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardDetailsResponseCardBlockSchedulesItemsAllOf0Builder;
+
+$cardDetailsResponseCardBlockSchedulesItemsAllOf0 = CardDetailsResponseCardBlockSchedulesItemsAllOf0Builder::init()
+    ->fromDate('20210212')
+    ->toDate('20210212')
+    ->build();
 ```
 

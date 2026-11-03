@@ -18,16 +18,18 @@
 | `includeUsageRestrictions` | `?bool` | Optional | Include usage restrictions in the response.<br>Optional field– default value is False.<br>Possible values: True/False | getIncludeUsageRestrictions(): ?bool | setIncludeUsageRestrictions(?bool includeUsageRestrictions): void |
 | `includePurchaseCategories` | `?bool` | Optional | Include purchase categories in the response.<br>Optional field– default value is False.<br>Possible values: True/False | getIncludePurchaseCategories(): ?bool | setIncludePurchaseCategories(?bool includePurchaseCategories): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 14,
-  "ColCoCode": 14,
-  "PayerId": 2343,
-  "PayerNumber": "GB000000124",
-  "AccountId": 343,
-  "AccountNumber": "GB000000124"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardTypeRequestBuilder;
+
+$cardTypeRequest = CardTypeRequestBuilder::init()
+    ->colCoId(14)
+    ->colCoCode(14)
+    ->payerId(2343)
+    ->payerNumber('GB000000124')
+    ->accountId(343)
+    ->accountNumber('GB000000124')
+    ->build();
 ```
 

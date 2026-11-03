@@ -77,7 +77,9 @@ POS language identifier. Language Id:
 
 ## Example
 
-```
-8
+```php
+use ShellCardManagementAPIsLib\Models\CardDetailsResponseInternationalPOSLanguageIDEnum;
+
+$cardDetailsResponseInternationalPOSLanguageID = CardDetailsResponseInternationalPOSLanguageIDEnum::ENUM_8;
 ```
 

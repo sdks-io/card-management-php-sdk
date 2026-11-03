@@ -40,6 +40,10 @@ function searchCardRestriction(
 ): SearchCardRestrictionRes1
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -48,6 +52,8 @@ function searchCardRestriction(
 | `body` | [`?SearchCardRestrictionReq1`](../../doc/models/search-card-restriction-req-1.md) | Body, Optional | Restriction search card request body |
 
 ## Response Type
+
+**200**: OK
 
 [`SearchCardRestrictionRes1`](../../doc/models/search-card-restriction-res-1.md)
 
@@ -105,6 +111,10 @@ Usage restrictions for a card are lower than Customer Card Type level limits, if
 function applyRestriction(string $requestId, ?CardRestrictionReq $body = null): CardRestrictionRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -113,6 +123,8 @@ function applyRestriction(string $requestId, ?CardRestrictionReq $body = null): 
 | `body` | [`?CardRestrictionReq`](../../doc/models/card-restriction-req.md) | Body, Optional | Card Restriction request body |
 
 ## Response Type
+
+**200**: OK
 
 [`CardRestrictionRes`](../../doc/models/card-restriction-res.md)
 
@@ -198,6 +210,10 @@ The following are the key validation rules with the associated error codes for f
 function createBundle(string $requestId, ?CreateBundleRequest $body = null): CreateBundleRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -206,6 +222,8 @@ function createBundle(string $requestId, ?CreateBundleRequest $body = null): Cre
 | `body` | [`?CreateBundleRequest`](../../doc/models/create-bundle-request.md) | Body, Optional | CreateBundle request body |
 
 ## Response Type
+
+**200**: OK
 
 [`CreateBundleRes`](../../doc/models/create-bundle-res.md)
 
@@ -268,6 +286,10 @@ The following are the key validation rules with the associated error codes for f
 function updateBundle(string $requestId, ?UpdateBundleRequest $body = null): UpdateBundleRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -276,6 +298,8 @@ function updateBundle(string $requestId, ?UpdateBundleRequest $body = null): Upd
 | `body` | [`?UpdateBundleRequest`](../../doc/models/update-bundle-request.md) | Body, Optional | Update Bundle request body |
 
 ## Response Type
+
+**200**: OK
 
 [`UpdateBundleRes`](../../doc/models/update-bundle-res.md)
 
@@ -327,6 +351,10 @@ The following are the key validation rules with the associated error codes for f
 function deleteBundle(string $requestId, ?DeleteBundleRequest $body = null): DeleteBundleResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -335,6 +363,8 @@ function deleteBundle(string $requestId, ?DeleteBundleRequest $body = null): Del
 | `body` | [`?DeleteBundleRequest`](../../doc/models/delete-bundle-request.md) | Body, Optional | Update Bundle request body |
 
 ## Response Type
+
+**200**: OK
 
 [`DeleteBundleResponse`](../../doc/models/delete-bundle-response.md)
 
@@ -395,6 +425,10 @@ Note - to include count of cards of an account that are not associated with any 
 function summaryOfBundles(string $requestId, ?SummaryofbundlerRequest $body = null): SummaryofbundleRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -403,6 +437,8 @@ function summaryOfBundles(string $requestId, ?SummaryofbundlerRequest $body = nu
 | `body` | [`?SummaryofbundlerRequest`](../../doc/models/summaryofbundler-request.md) | Body, Optional | Summary of Bundle request body |
 
 ## Response Type
+
+**200**: OK
 
 [`SummaryofbundleRes`](../../doc/models/summaryofbundle-res.md)
 
@@ -479,6 +515,10 @@ Then validation rules applied for this API.
 function restrictionAccount(string $requestId, ?AccountRestrictionRequest $body = null): AccountRestrictionRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -487,6 +527,8 @@ function restrictionAccount(string $requestId, ?AccountRestrictionRequest $body 
 | `body` | [`?AccountRestrictionRequest`](../../doc/models/account-restriction-request.md) | Body, Optional | Account Restriction request body |
 
 ## Response Type
+
+**200**: OK
 
 [`AccountRestrictionRes`](../../doc/models/account-restriction-res.md)
 
@@ -544,6 +586,10 @@ This API will allow user to get account level limits for the given account. It r
 function searchAccountLimit(string $requestId, ?SearchAccountLimitRequest $body = null): SearchAccountLimitRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -552,6 +598,8 @@ function searchAccountLimit(string $requestId, ?SearchAccountLimitRequest $body 
 | `body` | [`?SearchAccountLimitRequest`](../../doc/models/search-account-limit-request.md) | Body, Optional | Search Account Limit RequestBody |
 
 ## Response Type
+
+**200**: OK
 
 [`SearchAccountLimitRes`](../../doc/models/search-account-limit-res.md)
 
@@ -644,6 +692,10 @@ This API allows to get the details of a specific card bundle. It returns the bun
 function bundleDetails(string $requestId, ?BudleDetailsReq $body = null): BundleDetails
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -652,6 +704,8 @@ function bundleDetails(string $requestId, ?BudleDetailsReq $body = null): Bundle
 | `body` | [`?BudleDetailsReq`](../../doc/models/budle-details-req.md) | Body, Optional | Bundle Details Request body |
 
 ## Response Type
+
+**200**: OK
 
 [`BundleDetails`](../../doc/models/bundle-details.md)
 

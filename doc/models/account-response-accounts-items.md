@@ -64,59 +64,61 @@
 | `contracts` | [`?(CustomerContract[])`](../../doc/models/customer-contract.md) | Optional | - | getContracts(): ?array | setContracts(?array contracts): void |
 | `isConsortiumMember` | `?string` | Optional | true | getIsConsortiumMember(): ?string | setIsConsortiumMember(?string isConsortiumMember): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountFullName": "CI TEST_Update20 New updated",
-  "AccountId": 123,
-  "AccountNumber": "DE00000008",
-  "AccountShortName": "CI TEST_Update20",
-  "BillingFrequencyType": "Monthly - 3rd",
-  "BillingFrequencyTypeId": 1,
-  "BillingRunFrequency": "Weekly - Monday",
-  "BillingRunFrequencyTypeId": 1,
-  "ColCoCountryCode": "14",
-  "CurrencyCode": "14",
-  "CurrencySymbol": "EUR",
-  "Day1Run": 1,
-  "Day2Run": 31,
-  "Day3Run": 2,
-  "Day4Run": 3,
-  "FrequencyType": "Daily",
-  "GrossAmount": 1232,
-  "InternationalPOSLanguageCode": "deu",
-  "InternationalPOSLanguageID": 1,
-  "InvoiceAccountID": 9,
-  "InvoiceAccountNumber": "DE00000008",
-  "InvoiceAccountShortName": "BCI TEST_Update20",
-  "LastModifiedDate": "20240131 11:12:34",
-  "LocalCurrencyCode": "EUR",
-  "LocalCurrencySymbol": "€",
-  "LocalPOSLanguageCode": "deu",
-  "LocalPOSLanguageID": 1,
-  "NetAmount": 3434,
-  "OutstandingBalance": 4354,
-  "PaidAmount": 4343,
-  "Status": "Blocked",
-  "StatusReason": "3 - Customer Request",
-  "TotalActiveCardGroups": 198,
-  "TotalActiveCards": 544,
-  "TotalBlockedCards": 121,
-  "TotalCancelledCards": 168,
-  "TotalCards": 10966,
-  "TotalExpiredCards": 1000,
-  "TotalFraudCards": 8,
-  "TotalNewCards": 2,
-  "TotalRenewalPendingCards": 0,
-  "TotalReplacedCards": 20,
-  "TotalTemporaryBlockCardsByCustomer": 9,
-  "TotalTemporaryBlockCardsByShell": 2,
-  "VATAmount": 2322,
-  "IsPartnerCard": 1,
-  "TollsCustomerId": "332",
-  "TollsColcoCountryTypeId": "14",
-  "BestOfIndicator": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AccountResponseAccountsItemsBuilder;
+
+$accountResponseAccountsItems = AccountResponseAccountsItemsBuilder::init()
+    ->accountFullName('CI TEST_Update20 New updated')
+    ->accountId(123)
+    ->accountNumber('DE00000008')
+    ->accountShortName('CI TEST_Update20')
+    ->bestOfIndicator(false)
+    ->billingFrequencyType('Monthly - 3rd')
+    ->billingFrequencyTypeId(1)
+    ->billingRunFrequency('Weekly - Monday')
+    ->billingRunFrequencyTypeId(1)
+    ->colCoCountryCode('14')
+    ->currencyCode('14')
+    ->currencySymbol('EUR')
+    ->day1Run(1)
+    ->day2Run(31)
+    ->day3Run(2)
+    ->day4Run(3)
+    ->frequencyType('Daily')
+    ->grossAmount(1232)
+    ->internationalPOSLanguageCode('deu')
+    ->internationalPOSLanguageID(1)
+    ->invoiceAccountID(9)
+    ->invoiceAccountNumber('DE00000008')
+    ->invoiceAccountShortName('BCI TEST_Update20')
+    ->lastModifiedDate('20240131 11:12:34')
+    ->localCurrencyCode('EUR')
+    ->localCurrencySymbol('€')
+    ->localPOSLanguageCode('deu')
+    ->localPOSLanguageID(1)
+    ->netAmount(3434)
+    ->outstandingBalance(4354)
+    ->paidAmount(4343)
+    ->status('Blocked')
+    ->statusReason('3 - Customer Request')
+    ->totalActiveCardGroups(198)
+    ->totalActiveCards(544)
+    ->totalBlockedCards(121)
+    ->totalCancelledCards(168)
+    ->totalCards(10966)
+    ->totalExpiredCards(1000)
+    ->totalFraudCards(8)
+    ->totalNewCards(2)
+    ->totalRenewalPendingCards(0)
+    ->totalReplacedCards(20)
+    ->totalTemporaryBlockCardsByCustomer(9)
+    ->totalTemporaryBlockCardsByShell(2)
+    ->vATAmount(2322)
+    ->isPartnerCard(1)
+    ->tollsCustomerId('332')
+    ->tollsColcoCountryTypeId('14')
+    ->build();
 ```
 

@@ -37,35 +37,37 @@
 | `cartTypeAccounts` | [`?(CartTypeAccount[])`](../../doc/models/cart-type-account.md) | Optional | List of accounts. | getCartTypeAccounts(): ?array | setCartTypeAccounts(?array cartTypeAccounts): void |
 | `purchaseCategories` | [`?(PurchaseCategories[])`](../../doc/models/purchase-categories.md) | Optional | - | getPurchaseCategories(): ?array | setPurchaseCategories(?array purchaseCategories): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardTypeId": 7077861,
-  "TokenTypeId": 1234,
-  "CardTypeName": "Philippines CRT",
-  "TokenTypeName": "PH FLE NAT SIN R1",
-  "PANLength": 12,
-  "ExpiryPeriod": 30,
-  "IsNational": true,
-  "IsInternational": true,
-  "IsCRT": true,
-  "IsFleet": true,
-  "IsShellSitesOnly": true,
-  "IsPartnerSitesIncluded": true,
-  "CanHavePIN": true,
-  "IsVirtual": true,
-  "IsActive": true,
-  "IsCardAvailableForDownload": true,
-  "ColCoCurrencyCode": "GBP",
-  "ColCoCurrencySymbol": "£",
-  "EMVContactless": true,
-  "RFID": true,
-  "PINChangeSupported": true,
-  "RequirePIN": true,
-  "OfflinePIN": true,
-  "MediumTypeID": 8,
-  "MediumType": "Smartpay Token"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardTypeResponseCustomerCardTypesItemsBuilder;
+
+$cardTypeResponseCustomerCardTypesItems = CardTypeResponseCustomerCardTypesItemsBuilder::init()
+    ->cardTypeId(7077861)
+    ->tokenTypeId(1234)
+    ->cardTypeName('Philippines CRT')
+    ->tokenTypeName('PH FLE NAT SIN R1')
+    ->pANLength(12)
+    ->expiryPeriod(30)
+    ->isNational(true)
+    ->isInternational(true)
+    ->isCRT(true)
+    ->isFleet(true)
+    ->isShellSitesOnly(true)
+    ->isPartnerSitesIncluded(true)
+    ->canHavePIN(true)
+    ->isVirtual(true)
+    ->isActive(true)
+    ->isCardAvailableForDownload(true)
+    ->colCoCurrencyCode('GBP')
+    ->colCoCurrencySymbol('£')
+    ->eMVContactless(true)
+    ->rFID(true)
+    ->pINChangeSupported(true)
+    ->requirePIN(true)
+    ->offlinePIN(true)
+    ->mediumTypeID(8)
+    ->mediumType('Smartpay Token')
+    ->build();
 ```
 

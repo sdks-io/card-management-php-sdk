@@ -15,15 +15,17 @@
 | `approverUserDisplayName` | `?string` | Optional | Approver’s display name<br>Mandatory when Status is Approved else optional. | getApproverUserDisplayName(): ?string | setApproverUserDisplayName(?string approverUserDisplayName): void |
 | `reason` | `?string` | Optional | Reason for Fleet Manager approval/rejection.<br>Optional | getReason(): ?string | setReason(?string reason): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "GlobalRequestID": "GlobalRequestID4",
-  "Status": "Status4",
-  "ApproverUserID": "ApproverUserID0",
-  "ApproverUserDisplayName": "ApproverUserDisplayName0",
-  "Reason": "Reason8"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UpdateMPayRegStatusRequestMPayRequestsItemsBuilder;
+
+$updateMPayRegStatusRequestMPayRequestsItems = UpdateMPayRegStatusRequestMPayRequestsItemsBuilder::init()
+    ->globalRequestID('GlobalRequestID2')
+    ->status('Status2')
+    ->approverUserID('ApproverUserID8')
+    ->approverUserDisplayName('ApproverUserDisplayName8')
+    ->reason('Reason6')
+    ->build();
 ```
 

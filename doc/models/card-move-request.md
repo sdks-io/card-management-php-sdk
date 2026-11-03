@@ -20,15 +20,17 @@
 | `targetCardGroupId` | `?int` | Optional | - | getTargetCardGroupId(): ?int | setTargetCardGroupId(?int targetCardGroupId): void |
 | `targetNewCardGroupName` | `?string` | Optional | - | getTargetNewCardGroupName(): ?string | setTargetNewCardGroupName(?string targetNewCardGroupName): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoCode": 166,
-  "ColCoId": 152,
-  "ColCoCountryCode": "ColCoCountryCode0",
-  "PayerNumber": "PayerNumber2",
-  "PayerId": 200
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardMoveRequestBuilder;
+
+$cardMoveRequest = CardMoveRequestBuilder::init()
+    ->colCoCode(244)
+    ->colCoId(230)
+    ->colCoCountryCode('ColCoCountryCode6')
+    ->payerNumber('PayerNumber8')
+    ->payerId(22)
+    ->build();
 ```
 

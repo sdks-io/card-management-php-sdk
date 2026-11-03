@@ -14,14 +14,16 @@
 | `distributionMethod` | `?string` | Optional | Invoice Distribution Method (Id-Description)<br>E.g.:<br>1-e-mail<br>2-Fax<br>3-Courier to Customer<br>4-Courier to Client<br>5-Print<br>6-FTP<br>7-SMS | getDistributionMethod(): ?string | setDistributionMethod(?string distributionMethod): void |
 | `outputType` | `?string` | Optional | Invoice output type (Id - Description) | getOutputType(): ?string | setOutputType(?string outputType): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "IsPrimary": true,
-  "FrequencyType": "weekly",
-  "DistributionMethod": "e-mail",
-  "OutputType": "1 - PDF"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\InvoiceDistributionMethodBuilder;
+
+$invoiceDistributionMethod = InvoiceDistributionMethodBuilder::init()
+    ->isPrimary(true)
+    ->frequencyType('weekly')
+    ->distributionMethod('e-mail')
+    ->outputType('1 - PDF')
+    ->build();
 ```
 

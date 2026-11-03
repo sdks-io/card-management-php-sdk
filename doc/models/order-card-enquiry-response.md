@@ -13,21 +13,26 @@
 | `status` | `?string` | Optional | - | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(OrderCardEnquiry[])`](../../doc/models/order-card-enquiry.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId8",
-  "Status": "Status4",
-  "Data": [
-    {
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "BCOReference": 10,
-      "BCORowNumber": 192,
-      "CardGroupId": 108
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\OrderCardEnquiryResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\OrderCardEnquiryBuilder;
+
+$orderCardEnquiryResponse = OrderCardEnquiryResponseBuilder::init()
+    ->requestId('RequestId2')
+    ->status('Status8')
+    ->data(
+        [
+            OrderCardEnquiryBuilder::init()
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->bCOReference(10)
+                ->bCORowNumber(192)
+                ->cardGroupId(108)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

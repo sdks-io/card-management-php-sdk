@@ -11,22 +11,29 @@
 |  --- | --- | --- | --- | --- | --- |
 | `filters` | [`?Filters1`](../../doc/models/filters-1.md) | Optional | - | getFilters(): ?Filters1 | setFilters(?Filters1 filters): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Filters": {
-    "AccountId": 108,
-    "AccountNumber": "AccountNumber2",
-    "ColCoCode": 14,
-    "ColCoCountryCode": "ColCoCountryCode8",
-    "ColCoId": 0,
-    "CardStatus": [
-      "CardStatus7",
-      "CardStatus8"
-    ],
-    "RequestId": "RequestId0"
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardSummaryRequestBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\Filters1Builder;
+
+$cardSummaryRequest = CardSummaryRequestBuilder::init()
+    ->filters(
+        Filters1Builder::init()
+            ->accountId(108)
+            ->accountNumber('AccountNumber2')
+            ->colCoCode(14)
+            ->colCoCountryCode('ColCoCountryCode8')
+            ->colCoId(0)
+            ->cardStatus(
+                [
+                    'CardStatus7',
+                    'CardStatus8'
+                ]
+            )
+            ->requestId('RequestId0')
+            ->build()
+    )
+    ->build();
 ```
 

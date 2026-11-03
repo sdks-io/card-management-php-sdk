@@ -51,17 +51,19 @@ Request entity object for CardDetail
 | `clientReferenceId` | `?string` | Optional | This is the Client Reference Id of card in the order which needs to be passed by the client.This will be playback in the ordercard enquiry<br /><br>Optional<br><br>**Constraints**: *Maximum Length*: `50` | getClientReferenceId(): ?string | setClientReferenceId(?string clientReferenceId): void |
 | `autoRenew` | [`?int(CardDetailAutoRenewEnum)`](../../doc/models/card-detail-auto-renew-enum.md) | Optional | Whether to reissue card automatically when nearing the expiry.<br><br>Allowed values: -<br><br>1. As per card type setting (Default).<br>2. Card will be Reissued when nearing its expiry date.<br>3. Card will not be Reissued. | getAutoRenew(): ?int | setAutoRenew(?int autoRenew): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PayerId": 90,
-  "PayerNumber": "PayerNumber8",
-  "AccountId": 150,
-  "AccountNumber": "AccountNumber0",
-  "ColCoCode": 56,
-  "CardDeliveryType": 2,
-  "PINAdviceType": 4
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardDetailBuilder;
+
+$cardDetail = CardDetailBuilder::init()
+    ->payerId(50)
+    ->payerNumber('PayerNumber2')
+    ->accountId(110)
+    ->accountNumber('AccountNumber4')
+    ->colCoCode(16)
+    ->cardDeliveryType(2)
+    ->pINAdviceType(4)
+    ->build();
 ```
 

@@ -17,29 +17,41 @@
 | `locationRestrictions` | [`?LocationRestriction`](../../doc/models/location-restriction.md) | Optional | - | getLocationRestrictions(): ?LocationRestriction | setLocationRestrictions(?LocationRestriction locationRestrictions): void |
 | `usageRestrictions` | [`?UsageRestrictionsCard`](../../doc/models/usage-restrictions-card.md) | Optional | - | getUsageRestrictions(): ?UsageRestrictionsCard | setUsageRestrictions(?UsageRestrictionsCard usageRestrictions): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "DayTimeRestrictionAction": "DayTimeRestrictionAction8",
-  "LocationRestrictionAction": "LocationRestrictionAction6",
-  "ProductRestrictionAction": "ProductRestrictionAction4",
-  "DayTimeRestrictions": {
-    "Monday": false,
-    "Tuesday": false,
-    "Wednesday": false,
-    "Thursday": false,
-    "Friday": false
-  },
-  "ProductRestrictions": {
-    "Products": [
-      "Products4"
-    ],
-    "ProductGroups": [
-      "ProductGroups3",
-      "ProductGroups4"
-    ]
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\BundleRestrictionBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\DayTimeRestrictionsBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\ProductRestrictionCardBuilder;
+
+$bundleRestriction = BundleRestrictionBuilder::init()
+    ->dayTimeRestrictionAction('DayTimeRestrictionAction8')
+    ->locationRestrictionAction('LocationRestrictionAction2')
+    ->productRestrictionAction('ProductRestrictionAction2')
+    ->dayTimeRestrictions(
+        DayTimeRestrictionsBuilder::init()
+            ->monday(false)
+            ->tuesday(false)
+            ->wednesday(false)
+            ->thursday(false)
+            ->friday(false)
+            ->build()
+    )
+    ->productRestrictions(
+        ProductRestrictionCardBuilder::init()
+            ->products(
+                [
+                    'Products4'
+                ]
+            )
+            ->productGroups(
+                [
+                    'ProductGroups3',
+                    'ProductGroups4'
+                ]
+            )
+            ->build()
+    )
+    ->build();
 ```
 

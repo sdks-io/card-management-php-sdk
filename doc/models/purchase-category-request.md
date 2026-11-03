@@ -16,16 +16,18 @@
 | `purchaseCategoryId` | `?int` | Optional | Purchase category Id<br>Optional.<br>Example: 123, 124, etc., | getPurchaseCategoryId(): ?int | setPurchaseCategoryId(?int purchaseCategoryId): void |
 | `languageCode` | `?string` | Optional | Language code for the Title and Description.<br>Language codes should be same as SFH supported language<br>Optional.<br>Default: en-GB<br>Example:<br>en-GB – English (UK)<br>nl-NL – Dutch (Netherlands) | getLanguageCode(): ?string | setLanguageCode(?string languageCode): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PurchaseCategoryId": 123,
-  "LanguageCode": "en-GB",
-  "RequestId": "RequestId6",
-  "ColCoCode": 30,
-  "ColCoId": 16,
-  "CardTypeId": 82
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategoryRequestBuilder;
+
+$purchaseCategoryRequest = PurchaseCategoryRequestBuilder::init()
+    ->requestId('RequestId8')
+    ->colCoCode(174)
+    ->colCoId(160)
+    ->cardTypeId(30)
+    ->purchaseCategoryId(123)
+    ->languageCode('en-GB')
+    ->build();
 ```
 

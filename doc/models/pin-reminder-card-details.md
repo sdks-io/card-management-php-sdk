@@ -19,16 +19,19 @@ Request entity object for PINReminderCardDetails
 | `pINContactType` | `?int` | Optional | PIN Contact Type.<br>Mandatory<br>Allowed Values:<br><br>1. Use PIN Delivery contact details stored previously for this card<br>2. Use Card Delivery contact details stored previously for this card<br>3. Use default PIN Delivery contact details stored for this customer<br>4. Use new specific contact for PIN Reminder only<br><br>Note: - PINContactType “1,2,3” is only allowed for Paper delivery<br><br>**Constraints**: `>= 1`, `<= 4` | getPINContactType(): ?int | setPINContactType(?int pINContactType): void |
 | `pINDeliverTo` | [`?PINDeliverTo`](../../doc/models/pin-deliver-to.md) | Optional | - | getPINDeliverTo(): ?PINDeliverTo | setPINDeliverTo(?PINDeliverTo pINDeliverTo): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardId": 104,
-  "PANID": 136,
-  "PAN": "PAN6",
-  "CardExpiryDate": "CardExpiryDate2",
-  "PINAdviceType": 3,
-  "PINContactType": 4
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PINReminderCardDetailsBuilder;
+
+$pINReminderCardDetails = PINReminderCardDetailsBuilder::init(
+    3
+)
+    ->cardId(84)
+    ->pANID(116)
+    ->pAN('PAN2')
+    ->cardExpiryDate('CardExpiryDate8')
+    ->pINContactType(4)
+    ->build();
 ```
 

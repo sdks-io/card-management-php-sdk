@@ -17,15 +17,17 @@ This class holds the PIN Reminder References
 | `cardExpiryDate` | `?string` | Optional | Expiry date of the card.<br>Mandatory if Either PAN or PANID is passed, else optional.<br>Format: yyyyMMdd | getCardExpiryDate(): ?string | setCardExpiryDate(?string cardExpiryDate): void |
 | `referenceId` | `?int` | Optional | Individual card pin reminder reference number for the Pin Reminder request. | getReferenceId(): ?int | setReferenceId(?int referenceId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CardId": 122,
-  "PANID": 154,
-  "PAN": 52,
-  "CardExpiryDate": "CardExpiryDate4",
-  "ReferenceId": 46
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PINReminderReferenceBuilder;
+
+$pINReminderReference = PINReminderReferenceBuilder::init()
+    ->cardId(226)
+    ->pANID(2)
+    ->pAN(156)
+    ->cardExpiryDate('CardExpiryDate6')
+    ->referenceId(106)
+    ->build();
 ```
 

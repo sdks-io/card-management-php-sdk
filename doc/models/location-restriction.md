@@ -14,77 +14,109 @@
 | `shellSiteRestrictions` | [`?(ShellSiteRestriction[])`](../../doc/models/shell-site-restriction.md) | Optional | - | getShellSiteRestrictions(): ?array | setShellSiteRestrictions(?array shellSiteRestrictions): void |
 | `partnerSiteRestrictions` | [`?(PartnerSiteRestriction[])`](../../doc/models/partner-site-restriction.md) | Optional | - | getPartnerSiteRestrictions(): ?array | setPartnerSiteRestrictions(?array partnerSiteRestrictions): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "CountryRestrictions": {
-    "Countries": [
-      "Countries7"
-    ],
-    "Exclusive": false
-  },
-  "NetworkRestrictions": [
-    {
-      "Country": "Country6",
-      "Networks": [
-        "Networks3",
-        "Networks4",
-        "Networks5"
-      ],
-      "Exclusive": false
-    },
-    {
-      "Country": "Country6",
-      "Networks": [
-        "Networks3",
-        "Networks4",
-        "Networks5"
-      ],
-      "Exclusive": false
-    }
-  ],
-  "ShellSiteRestrictions": [
-    {
-      "Country": "Country4",
-      "Sites": [
-        "Sites3",
-        "Sites4"
-      ],
-      "SiteGroups": [
-        "SiteGroups9",
-        "SiteGroups8",
-        "SiteGroups7"
-      ],
-      "Exclusive": false
-    },
-    {
-      "Country": "Country4",
-      "Sites": [
-        "Sites3",
-        "Sites4"
-      ],
-      "SiteGroups": [
-        "SiteGroups9",
-        "SiteGroups8",
-        "SiteGroups7"
-      ],
-      "Exclusive": false
-    }
-  ],
-  "PartnerSiteRestrictions": [
-    {
-      "NetworkCode": "NetworkCode2",
-      "Sites": [
-        "Sites3"
-      ],
-      "SiteGroups": [
-        "SiteGroups1",
-        "SiteGroups2"
-      ],
-      "Exclusive": false
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\LocationRestrictionBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CountryRestrictionBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\NetworkRestrictionBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\ShellSiteRestrictionBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\PartnerSiteRestrictionBuilder;
+
+$locationRestriction = LocationRestrictionBuilder::init()
+    ->countryRestrictions(
+        CountryRestrictionBuilder::init()
+            ->countries(
+                [
+                    'Countries7'
+                ]
+            )
+            ->exclusive(false)
+            ->build()
+    )
+    ->networkRestrictions(
+        [
+            NetworkRestrictionBuilder::init()
+                ->country('Country6')
+                ->networks(
+                    [
+                        'Networks3',
+                        'Networks4',
+                        'Networks5'
+                    ]
+                )
+                ->exclusive(false)
+                ->build(),
+            NetworkRestrictionBuilder::init()
+                ->country('Country6')
+                ->networks(
+                    [
+                        'Networks3',
+                        'Networks4',
+                        'Networks5'
+                    ]
+                )
+                ->exclusive(false)
+                ->build()
+        ]
+    )
+    ->shellSiteRestrictions(
+        [
+            ShellSiteRestrictionBuilder::init()
+                ->country('Country4')
+                ->sites(
+                    [
+                        'Sites3',
+                        'Sites4'
+                    ]
+                )
+                ->siteGroups(
+                    [
+                        'SiteGroups9',
+                        'SiteGroups8',
+                        'SiteGroups7'
+                    ]
+                )
+                ->exclusive(false)
+                ->build(),
+            ShellSiteRestrictionBuilder::init()
+                ->country('Country4')
+                ->sites(
+                    [
+                        'Sites3',
+                        'Sites4'
+                    ]
+                )
+                ->siteGroups(
+                    [
+                        'SiteGroups9',
+                        'SiteGroups8',
+                        'SiteGroups7'
+                    ]
+                )
+                ->exclusive(false)
+                ->build()
+        ]
+    )
+    ->partnerSiteRestrictions(
+        [
+            PartnerSiteRestrictionBuilder::init()
+                ->networkCode('NetworkCode2')
+                ->sites(
+                    [
+                        'Sites3'
+                    ]
+                )
+                ->siteGroups(
+                    [
+                        'SiteGroups1',
+                        'SiteGroups2'
+                    ]
+                )
+                ->exclusive(false)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

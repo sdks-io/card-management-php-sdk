@@ -14,14 +14,16 @@
 | `usageRestrictionStatus` | `?string` | Optional | Status of the card usage restriction submitted to Gateway. Based on the response from Gateway value will be set as either “Success” or “Failed”. | getUsageRestrictionStatus(): ?string | setUsageRestrictionStatus(?string usageRestrictionStatus): void |
 | `usageRestrictionDescription` | `?string` | Optional | Response for the usage restriction in case of an error. This field will have a value only when “UsageRestrictionStatus” is “Failed”. | getUsageRestrictionDescription(): ?string | setUsageRestrictionDescription(?string usageRestrictionDescription): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 130,
-  "AccountNumber": "AccountNumber8",
-  "UsageRestrictionStatus": "UsageRestrictionStatus8",
-  "UsageRestrictionDescription": "UsageRestrictionDescription2"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AccountRestrictionResponseBuilder;
+
+$accountRestrictionResponse = AccountRestrictionResponseBuilder::init()
+    ->accountId(148)
+    ->accountNumber('AccountNumber6')
+    ->usageRestrictionStatus('UsageRestrictionStatus6')
+    ->usageRestrictionDescription('UsageRestrictionDescription0')
+    ->build();
 ```
 

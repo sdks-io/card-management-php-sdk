@@ -15,24 +15,30 @@
 | `payerId` | `?int` | Optional | Payer Id  of the selected payer.<br>Optional if PayerNumber is passed else Mandatory | getPayerId(): ?int | setPayerId(?int payerId): void |
 | `autoRenewCards` | [`?(AutoRenewCardRequestAutoRenewCardsItems[])`](../../doc/models/auto-renew-card-request-auto-renew-cards-items.md) | Optional | - | getAutoRenewCards(): ?array | setAutoRenewCards(?array autoRenewCards): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 138,
-  "ColCoCode": 152,
-  "PayerNumber": "PayerNumber2",
-  "PayerId": 186,
-  "AutoRenewCards": [
-    {
-      "AccountNumber": "AccountNumber6",
-      "AccountId": 112,
-      "PAN": "PAN8",
-      "PANID": 223.22,
-      "CardId": 18,
-      "ReissueSetting": false
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AutoRenewCardRequestBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\AutoRenewCardRequestAutoRenewCardsItemsBuilder;
+
+$autoRenewCardRequest = AutoRenewCardRequestBuilder::init()
+    ->colCoId(14)
+    ->colCoCode(28)
+    ->payerNumber('PayerNumber4')
+    ->payerId(62)
+    ->autoRenewCards(
+        [
+            AutoRenewCardRequestAutoRenewCardsItemsBuilder::init(
+                false
+            )
+                ->accountNumber('AccountNumber6')
+                ->accountId(112)
+                ->pAN('PAN8')
+                ->pANID(223.22)
+                ->cardId(18)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

@@ -16,15 +16,17 @@
 | `accountId` | `?int` | Optional | Account ID of the customer.<br>Optional if AccountNumber is passed else Mandatory<br>Example: 123456 | getAccountId(): ?int | setAccountId(?int accountId): void |
 | `accountNumber` | `?string` | Optional | Account Number of the customer.<br>Optional if AccountId is passed else Mandatory<br>Example: GB000000123 | getAccountNumber(): ?string | setAccountNumber(?string accountNumber): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 30,
-  "ColCoCode": 44,
-  "PayerId": 78,
-  "PayerNumber": "PayerNumber0",
-  "AccountId": 138
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SearchAccountLimitRequestBuilder;
+
+$searchAccountLimitRequest = SearchAccountLimitRequestBuilder::init()
+    ->colCoId(218)
+    ->colCoCode(232)
+    ->payerId(10)
+    ->payerNumber('PayerNumber0')
+    ->accountId(70)
+    ->build();
 ```
 

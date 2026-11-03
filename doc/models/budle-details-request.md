@@ -17,15 +17,17 @@
 | `accountNumber` | `?string` | Optional | Account Number of the customer.<br>Optional if Account Id is passed else Mandatory<br>Example: GB000000123 | getAccountNumber(): ?string | setAccountNumber(?string accountNumber): void |
 | `bundleId` | `?string` | Optional | Bundle Id associated with account<br>Mandatory.<br>Example: 835662721 | getBundleId(): ?string | setBundleId(?string bundleId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 28,
-  "ColCoCode": 42,
-  "PayerId": 76,
-  "PayerNumber": "PayerNumber8",
-  "AccountId": 136
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\BudleDetailsRequestBuilder;
+
+$budleDetailsRequest = BudleDetailsRequestBuilder::init()
+    ->colCoId(112)
+    ->colCoCode(126)
+    ->payerId(160)
+    ->payerNumber('PayerNumber6')
+    ->accountId(220)
+    ->build();
 ```
 

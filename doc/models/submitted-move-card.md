@@ -15,15 +15,17 @@
 | `pAN` | `?string` | Optional | PAN of the card | getPAN(): ?string | setPAN(?string pAN): void |
 | `moveCardReference` | `?string` | Optional | Reference number for tracking of update status request of the specific card, | getMoveCardReference(): ?string | setMoveCardReference(?string moveCardReference): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": "AccountId2",
-  "AccountNumber": "AccountNumber6",
-  "CardId": "CardId6",
-  "PAN": "PAN8",
-  "MoveCardReference": "MoveCardReference8"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SubmittedMoveCardBuilder;
+
+$submittedMoveCard = SubmittedMoveCardBuilder::init()
+    ->accountId('AccountId0')
+    ->accountNumber('AccountNumber4')
+    ->cardId('CardId4')
+    ->pAN('PAN6')
+    ->moveCardReference('MoveCardReference6')
+    ->build();
 ```
 

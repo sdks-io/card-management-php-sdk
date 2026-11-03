@@ -14,22 +14,43 @@
 | `mainReference` | `?int` | Optional | Main reference number for tracking. | getMainReference(): ?int | setMainReference(?int mainReference): void |
 | `data` | [`?(Datum[])`](../../doc/models/datum.md) | Optional | List of Delivery address update entity. The fields of this entity are described below. | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "00001b3c-0000-0000-0000-000000000000",
-  "Status": "PARTIAL_SUCCESS",
-  "MainReference": 123455,
-  "Data": [
-    {
-      "CardId": 224,
-      "CardPAN": "CardPAN2",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "ReferenceId": 108
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\ResponseDeliveryAddressUpdateBuilder;
+use ShellCardManagementAPIsLib\Models\DeliveryAddressUpdateStatusEnum;
+use ShellCardManagementAPIsLib\Models\Builders\DatumBuilder;
+
+$responseDeliveryAddressUpdate = ResponseDeliveryAddressUpdateBuilder::init(
+    '00002098-0000-0000-0000-000000000000',
+    DeliveryAddressUpdateStatusEnum::FAILED
+)
+    ->mainReference(123455)
+    ->data(
+        [
+            DatumBuilder::init()
+                ->cardId(224)
+                ->cardPAN('CardPAN2')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->referenceId(108)
+                ->build(),
+            DatumBuilder::init()
+                ->cardId(224)
+                ->cardPAN('CardPAN2')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->referenceId(108)
+                ->build(),
+            DatumBuilder::init()
+                ->cardId(224)
+                ->cardPAN('CardPAN2')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->referenceId(108)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

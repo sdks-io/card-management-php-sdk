@@ -13,15 +13,21 @@
 | `networks` | `?(string[])` | Optional | A list of Gateway network codes, typically 7 or 10 digits.<br>Example: 0002003250 | getNetworks(): ?array | setNetworks(?array networks): void |
 | `exclusive` | `?bool` | Optional | Flag indicates whether the profile is inclusive or exclusive.<br>Example: False - (inclusive), i.e. the “Networks” property lists the networks in which the transaction will be allowed.<br>True - (exclusive), i.e. the “Networks” property lists the networks in which the transactions will be declined. | getExclusive(): ?bool | setExclusive(?bool exclusive): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Country": "Country8",
-  "Networks": [
-    "Networks5"
-  ],
-  "Exclusive": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\NetworkRestrictionBuilder;
+
+$networkRestriction = NetworkRestrictionBuilder::init()
+    ->country('Country8')
+    ->networks(
+        [
+            'Networks5',
+            'Networks6',
+            'Networks7'
+        ]
+    )
+    ->exclusive(false)
+    ->build();
 ```
 

@@ -13,77 +13,45 @@
 | `status` | `?string` | Optional | Status of the request | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(PurchaseCategoryResponse[])`](../../doc/models/purchase-category-response.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Data": [
-    {
-      "PurchaseCategories": [
-        {
-          "Id": 166,
-          "Code": "Code6",
-          "Name": "Name4",
-          "IsVisible": false,
-          "ProductGroups": [
-            {
-              "ReferenceId": 82,
-              "ProductGroupId": "ProductGroupId6",
-              "Name": "Name0",
-              "IsDefault": false,
-              "IsFuelType": false
-            }
-          ],
-          "Title": "Title4",
-          "Description": "Description0"
-        }
-      ]
-    },
-    {
-      "PurchaseCategories": [
-        {
-          "Id": 166,
-          "Code": "Code6",
-          "Name": "Name4",
-          "IsVisible": false,
-          "ProductGroups": [
-            {
-              "ReferenceId": 82,
-              "ProductGroupId": "ProductGroupId6",
-              "Name": "Name0",
-              "IsDefault": false,
-              "IsFuelType": false
-            }
-          ],
-          "Title": "Title4",
-          "Description": "Description0"
-        }
-      ]
-    },
-    {
-      "PurchaseCategories": [
-        {
-          "Id": 166,
-          "Code": "Code6",
-          "Name": "Name4",
-          "IsVisible": false,
-          "ProductGroups": [
-            {
-              "ReferenceId": 82,
-              "ProductGroupId": "ProductGroupId6",
-              "Name": "Name0",
-              "IsDefault": false,
-              "IsFuelType": false
-            }
-          ],
-          "Title": "Title4",
-          "Description": "Description0"
-        }
-      ]
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategoryResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategoryResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategory1AllOf0Builder;
+use ShellCardManagementAPIsLib\Models\Builders\ProductGroupBuilder;
+
+$purchaseCategoryRes = PurchaseCategoryResBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            PurchaseCategoryResponseBuilder::init()
+                ->purchaseCategories(
+                    [
+                        PurchaseCategory1AllOf0Builder::init(
+                            false,
+                            [
+                                ProductGroupBuilder::init()
+                                    ->referenceId(82)
+                                    ->productGroupId('ProductGroupId6')
+                                    ->name('Name0')
+                                    ->isDefault(false)
+                                    ->isFuelType(false)
+                                    ->build()
+                            ]
+                        )
+                            ->id(166)
+                            ->code('Code6')
+                            ->name('Name4')
+                            ->title('Title4')
+                            ->description('Description0')
+                            ->build()
+                    ]
+                )
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

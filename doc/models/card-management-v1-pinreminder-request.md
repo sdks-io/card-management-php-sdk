@@ -17,15 +17,17 @@
 | `payerNumber` | `?string` | Optional | Payer Number (Ex: GB000000123) of the selected payer.<br /><br>Optional if PayerId is passed else Mandatory | getPayerNumber(): ?string | setPayerNumber(?string payerNumber): void |
 | `pINReminderCardDetails` | [`?(PINReminderCardDetails[])`](../../doc/models/pin-reminder-card-details.md) | Optional | List of PINReminderCardDetails entity. The fields of this entity are described below. | getPINReminderCardDetails(): ?array | setPINReminderCardDetails(?array pINReminderCardDetails): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 18,
-  "AccountNumber": "AccountNumber6",
-  "ColCoCode": 180,
-  "ColCoId": 166,
-  "PayerId": 214
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardManagementV1PinreminderRequestBuilder;
+
+$cardManagementV1PinreminderRequest = CardManagementV1PinreminderRequestBuilder::init()
+    ->accountId(74)
+    ->accountNumber('AccountNumber8')
+    ->colCoCode(236)
+    ->colCoId(222)
+    ->payerId(14)
+    ->build();
 ```
 

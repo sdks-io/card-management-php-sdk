@@ -16,16 +16,18 @@
 | `isServiceAccount` | `?bool` | Optional | True/False.<br>True if the role is Service accounts, else false.<br><br>**Default**: `false` | getIsServiceAccount(): ?bool | setIsServiceAccount(?bool isServiceAccount): void |
 | `isUserAdmin` | `?bool` | Optional | True/False.<br>True, if the role allows user administration, else false.<br><br>**Default**: `true` | getIsUserAdmin(): ?bool | setIsUserAdmin(?bool isUserAdmin): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RoleName": "FleetManager",
-  "IsCustomerAdmin": true,
-  "IsCustomerUser": false,
-  "IsShellAdmin": false,
-  "IsServiceAccount": false,
-  "IsUserAdmin": true
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\RoleBuilder;
+
+$role = RoleBuilder::init()
+    ->roleName('FleetManager')
+    ->isCustomerAdmin(true)
+    ->isCustomerUser(false)
+    ->isShellAdmin(false)
+    ->isServiceAccount(false)
+    ->isUserAdmin(true)
+    ->build();
 ```
 

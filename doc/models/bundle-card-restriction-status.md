@@ -11,11 +11,13 @@
 |  --- | --- | --- | --- | --- | --- |
 | `pAN` | `?string` | Optional | Card PAN. | getPAN(): ?string | setPAN(?string pAN): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PAN": "7077117017500030015"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\BundleCardRestrictionStatusBuilder;
+
+$bundleCardRestrictionStatus = BundleCardRestrictionStatusBuilder::init()
+    ->pAN('7077117017500030015')
+    ->build();
 ```
 

@@ -21,15 +21,17 @@
 | `restrictionCurrencySymbol` | `?string` | Optional | Currency symbol of the country.<br>Example: £, $ | getRestrictionCurrencySymbol(): ?string | setRestrictionCurrencySymbol(?string restrictionCurrencySymbol): void |
 | `restrictions` | [`?BundledRestrictionsList`](../../doc/models/bundled-restrictions-list.md) | Optional | - | getRestrictions(): ?BundledRestrictionsList | setRestrictions(?BundledRestrictionsList restrictions): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PayerId": 172,
-  "PayerNumber": "PayerNumber4",
-  "AccountId": 232,
-  "AccountNumber": "AccountNumber6",
-  "BundleId": "BundleId4"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\BundleDetailsResponseBuilder;
+
+$bundleDetailsResponse = BundleDetailsResponseBuilder::init()
+    ->payerId(80)
+    ->payerNumber('PayerNumber4')
+    ->accountId(140)
+    ->accountNumber('AccountNumber6')
+    ->bundleId('BundleId4')
+    ->build();
 ```
 

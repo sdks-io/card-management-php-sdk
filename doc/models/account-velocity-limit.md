@@ -18,15 +18,17 @@
 | `productGroup` | `?string` | Optional | The reference group name for product differentiated velocities. This field cannot be used with Volume type velocity.<br>Example: RoadSvc<br>This is an optional output field. | getProductGroup(): ?string | setProductGroup(?string productGroup): void |
 | `threshold` | `?float` | Optional | The limit to trigger an alert if the balance after a transaction reaches it or below. 0 indicates no alerts will be sent. Not present if not set (issuer value threshold limit applies if available). Not present for COUNT type velocity.<br>Example: 50.55<br>This is an optional output field. | getThreshold(): ?float | setThreshold(?float threshold): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Type": "Type4",
-  "Period": "Period6",
-  "Limit": 90.78,
-  "Accumulation": 198.08,
-  "Balance": 132.24
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AccountVelocityLimitBuilder;
+
+$accountVelocityLimit = AccountVelocityLimitBuilder::init()
+    ->type('Type8')
+    ->period('Period0')
+    ->limit(10.52)
+    ->accumulation(117.82)
+    ->balance(51.98)
+    ->build();
 ```
 

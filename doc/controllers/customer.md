@@ -33,6 +33,10 @@ This operation will also validate that logged in user has access to the requeste
 function loggedinUser(string $requestId, LoggedInUserReq $body): LoggedInUserRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -41,6 +45,8 @@ function loggedinUser(string $requestId, LoggedInUserReq $body): LoggedInUserRes
 | `body` | [`LoggedInUserReq`](../../doc/models/logged-in-user-req.md) | Body, Required | - |
 
 ## Response Type
+
+**200**: OK
 
 [`LoggedInUserRes`](../../doc/models/logged-in-user-res.md)
 
@@ -96,6 +102,10 @@ multiple ColCos.
 function customerPayers(string $requestId, PayerReq $body): PayerRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -104,6 +114,8 @@ function customerPayers(string $requestId, PayerReq $body): PayerRes
 | `body` | [`PayerReq`](../../doc/models/payer-req.md) | Body, Required | - |
 
 ## Response Type
+
+**200**: OK
 
 [`PayerRes`](../../doc/models/payer-res.md)
 
@@ -152,6 +164,10 @@ This API allows querying the card delivery addresses of a given account from the
 function customerDetail(string $requestId, CustomerReq $body): CustomerRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -160,6 +176,8 @@ function customerDetail(string $requestId, CustomerReq $body): CustomerRes
 | `body` | [`CustomerReq`](../../doc/models/customer-req.md) | Body, Required | - |
 
 ## Response Type
+
+**200**: OK
 
 [`CustomerRes`](../../doc/models/customer-res.md)
 
@@ -205,6 +223,10 @@ This API allows querying the customer account details from the Shell Cards Platf
 function postCardAccounts(string $requestId, AccountReq $body): AccountRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -213,6 +235,8 @@ function postCardAccounts(string $requestId, AccountReq $body): AccountRes
 | `body` | [`AccountReq`](../../doc/models/account-req.md) | Body, Required | - |
 
 ## Response Type
+
+**200**: OK
 
 [`AccountRes`](../../doc/models/account-res.md)
 
@@ -263,6 +287,10 @@ The API returns the card type configurations, purchase categories associated wit
 function customerCardType(string $requestId, CardTypeReq $body): CardTypeRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -271,6 +299,8 @@ function customerCardType(string $requestId, CardTypeReq $body): CardTypeRes
 | `body` | [`CardTypeReq`](../../doc/models/card-type-req.md) | Body, Required | - |
 
 ## Response Type
+
+**200**: OK
 
 [`CardTypeRes`](../../doc/models/card-type-res.md)
 
@@ -325,6 +355,10 @@ configured directly under the payer.
 function cardGroups(string $requestId, CardGroupReq $body): CardGroupRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -333,6 +367,8 @@ function cardGroups(string $requestId, CardGroupReq $body): CardGroupRes
 | `body` | [`CardGroupReq`](../../doc/models/card-group-req.md) | Body, Required | - |
 
 ## Response Type
+
+**200**: OK
 
 [`CardGroupRes`](../../doc/models/card-group-res.md)
 
@@ -399,6 +435,10 @@ The audit data includes details of below API operations
 function auditReport(string $requestId, ?AuditReq $body = null): AuditResponse
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -407,6 +447,8 @@ function auditReport(string $requestId, ?AuditReq $body = null): AuditResponse
 | `body` | [`?AuditReq`](../../doc/models/audit-req.md) | Body, Optional | request body |
 
 ## Response Type
+
+**200**: The http status code 200 and the Error.Code "0000" in the response body would indicate the API call is successful. The http status code 200 with Error Code other than "0000" in the response body would indicate there is a failure in the API call.
 
 [`AuditResponse`](../../doc/models/audit-response.md)
 
@@ -469,6 +511,10 @@ passing the below validations
 function customerCreateCardGroup(string $requestId, CreateCardGroupRequest $body): CreateCardGroupRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -477,6 +523,8 @@ function customerCreateCardGroup(string $requestId, CreateCardGroupRequest $body
 | `body` | [`CreateCardGroupRequest`](../../doc/models/create-card-group-request.md) | Body, Required | - |
 
 ## Response Type
+
+**200**: OK
 
 [`CreateCardGroupRes`](../../doc/models/create-card-group-res.md)
 
@@ -536,6 +584,10 @@ validations.
 function customerUpdateCardGroup(string $requestId, UpdateCardGroupRequest $body): UpdateCardGroupRes
 ```
 
+## Authentication
+
+This endpoint requires [BearerToken](../../doc/auth/oauth-2-client-credentials-grant.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
@@ -544,6 +596,8 @@ function customerUpdateCardGroup(string $requestId, UpdateCardGroupRequest $body
 | `body` | [`UpdateCardGroupRequest`](../../doc/models/update-card-group-request.md) | Body, Required | - |
 
 ## Response Type
+
+**200**: OK
 
 [`UpdateCardGroupRes`](../../doc/models/update-card-group-res.md)
 

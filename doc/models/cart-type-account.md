@@ -19,17 +19,19 @@
 | `usageRestrictions` | [`?CardUsageRestrictions`](../../doc/models/card-usage-restrictions.md) | Optional | - | getUsageRestrictions(): ?CardUsageRestrictions | setUsageRestrictions(?CardUsageRestrictions usageRestrictions): void |
 | `dayTimeRestrictions` | [`?CardDayTimeRestrictions`](../../doc/models/card-day-time-restrictions.md) | Optional | - | getDayTimeRestrictions(): ?CardDayTimeRestrictions | setDayTimeRestrictions(?CardDayTimeRestrictions dayTimeRestrictions): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 1234,
-  "AccountNumber": "GB000000123",
-  "IsDefault": true,
-  "CustomerCardTypeId": 1,
-  "IsVisibleToCustomers": true,
-  "EmbossAccountName": "abcd1234",
-  "DefaultPurchaseCategoryId": 34
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CartTypeAccountBuilder;
+
+$cartTypeAccount = CartTypeAccountBuilder::init()
+    ->accountId(1234)
+    ->accountNumber('GB000000123')
+    ->isDefault(true)
+    ->customerCardTypeId(1)
+    ->isVisibleToCustomers(true)
+    ->embossAccountName('abcd1234')
+    ->defaultPurchaseCategoryId(34)
+    ->build();
 ```
 

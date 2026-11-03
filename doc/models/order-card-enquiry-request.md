@@ -11,17 +11,22 @@
 |  --- | --- | --- | --- | --- | --- |
 | `filters` | [`?Filters2`](../../doc/models/filters-2.md) | Optional | - | getFilters(): ?Filters2 | setFilters(?Filters2 filters): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Filters": {
-    "AccountId": 108,
-    "AccountNumber": "AccountNumber2",
-    "ColCoCode": 14,
-    "ColCoId": 0,
-    "ColCoCountryCode": "ColCoCountryCode8"
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\OrderCardEnquiryRequestBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\Filters2Builder;
+
+$orderCardEnquiryRequest = OrderCardEnquiryRequestBuilder::init()
+    ->filters(
+        Filters2Builder::init()
+            ->accountId(108)
+            ->accountNumber('AccountNumber2')
+            ->colCoCode(14)
+            ->colCoId(0)
+            ->colCoCountryCode('ColCoCountryCode8')
+            ->build()
+    )
+    ->build();
 ```
 

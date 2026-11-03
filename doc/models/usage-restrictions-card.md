@@ -27,15 +27,17 @@
 | `annualTransactionCount` | `?float` | Optional | Maximum number of transactions allowed per annum. | getAnnualTransactionCount(): ?float | setAnnualTransactionCount(?float annualTransactionCount): void |
 | `lifeTimeTransactionCount` | `?float` | Optional | Maximum number of transactions allowed in card’s lifetime.<br>Optional | getLifeTimeTransactionCount(): ?float | setLifeTimeTransactionCount(?float lifeTimeTransactionCount): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "DailySpend": 76.58,
-  "WeeklySpend": 181.92,
-  "MonthlySpend": 132.96,
-  "PerTransactionSpend": 101.58,
-  "AnnualSpend": 51.38
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\UsageRestrictionsCardBuilder;
+
+$usageRestrictionsCard = UsageRestrictionsCardBuilder::init()
+    ->dailySpend(26.76)
+    ->weeklySpend(29.26)
+    ->monthlySpend(29.62)
+    ->perTransactionSpend(254.24)
+    ->annualSpend(204.04)
+    ->build();
 ```
 

@@ -29,28 +29,30 @@
 | `lifeTimeTransactionCount` | `?float` | Optional | Maximum number of transactions allowed on the card in the card’s life time. | getLifeTimeTransactionCount(): ?float | setLifeTimeTransactionCount(?float lifeTimeTransactionCount): void |
 | `isVelocityCeiling` | `?bool` | Optional | IsVelocityCeiling flag<br>Note: When "True", the velocity defaults configured in MS DB will be considered as the Max Limits for velocity changes. When ‘false’ max allowed limits will be 999999999999 for Type “Count” and 9999999999.99 for Type ‘Value’. | getIsVelocityCeiling(): ?bool | setIsVelocityCeiling(?bool isVelocityCeiling): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Level": "OU",
-  "DailySpendLimit": 120.0,
-  "WeeklySpendLimit": 56.07,
-  "MonthlySpendLimit": 0.0,
-  "AnnualSpendLimit": 0.0,
-  "LifeTimeSpendLimit": 0,
-  "DailyVolumeLimit": 0,
-  "WeeklyVolumeLimit": 0,
-  "MonthlyVolumeLimit": 0,
-  "AnnualVolumeLimit": 0,
-  "LifeTimeVolumeLimit": 0,
-  "TransactionSpendLimit": 0,
-  "TransactionVolumeLimit": 0,
-  "DailyTransactionCount": 100,
-  "WeeklyTransactionCount": 100,
-  "MonthlyTransactionCount": 100,
-  "AnnualTransactionCount": 100,
-  "LifeTimeTransactionCount": 100
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardUsageRestrictionsBuilder;
+
+$cardUsageRestrictions = CardUsageRestrictionsBuilder::init()
+    ->level('OU')
+    ->dailySpendLimit(120)
+    ->weeklySpendLimit(56.07)
+    ->monthlySpendLimit(0)
+    ->annualSpendLimit(0)
+    ->lifeTimeSpendLimit(0)
+    ->dailyVolumeLimit(0)
+    ->weeklyVolumeLimit(0)
+    ->monthlyVolumeLimit(0)
+    ->annualVolumeLimit(0)
+    ->lifeTimeVolumeLimit(0)
+    ->transactionSpendLimit(0)
+    ->transactionVolumeLimit(0)
+    ->dailyTransactionCount(100)
+    ->weeklyTransactionCount(100)
+    ->monthlyTransactionCount(100)
+    ->annualTransactionCount(100)
+    ->lifeTimeTransactionCount(100)
+    ->build();
 ```
 

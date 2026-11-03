@@ -13,35 +13,33 @@
 | `status` | `?string` | Optional | Status of the request | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(SearchAccountLimitResponse[])`](../../doc/models/search-account-limit-response.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Data": [
-    {
-      "RequestId": "RequestId4",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "ReferenceProduct": "ReferenceProduct8",
-      "RestrictionCondition": "RestrictionCondition4"
-    },
-    {
-      "RequestId": "RequestId4",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "ReferenceProduct": "ReferenceProduct8",
-      "RestrictionCondition": "RestrictionCondition4"
-    },
-    {
-      "RequestId": "RequestId4",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "ReferenceProduct": "ReferenceProduct8",
-      "RestrictionCondition": "RestrictionCondition4"
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SearchAccountLimitResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\SearchAccountLimitResponseBuilder;
+
+$searchAccountLimitRes = SearchAccountLimitResBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            SearchAccountLimitResponseBuilder::init()
+                ->requestId('RequestId4')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->referenceProduct('ReferenceProduct8')
+                ->restrictionCondition('RestrictionCondition4')
+                ->build(),
+            SearchAccountLimitResponseBuilder::init()
+                ->requestId('RequestId4')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->referenceProduct('ReferenceProduct8')
+                ->restrictionCondition('RestrictionCondition4')
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

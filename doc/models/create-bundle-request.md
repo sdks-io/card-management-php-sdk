@@ -20,15 +20,17 @@
 | `cards` | `?(string[])` | Optional | List of Card PANs to be added in the bundle.<br>Mandatory.<br>Example: 7002051006629890645<br>When PAN matches with multiple cards, the restriction will be applied on the latest issued card. | getCards(): ?array | setCards(?array cards): void |
 | `restrictions` | [`?BundleRestriction`](../../doc/models/bundle-restriction.md) | Optional | - | getRestrictions(): ?BundleRestriction | setRestrictions(?BundleRestriction restrictions): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoId": 246,
-  "ColCoCode": 4,
-  "PayerId": 38,
-  "PayerNumber": "PayerNumber2",
-  "AccountId": 98
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CreateBundleRequestBuilder;
+
+$createBundleRequest = CreateBundleRequestBuilder::init()
+    ->colCoId(160)
+    ->colCoCode(174)
+    ->payerId(208)
+    ->payerNumber('PayerNumber8')
+    ->accountId(12)
+    ->build();
 ```
 

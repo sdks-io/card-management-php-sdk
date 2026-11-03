@@ -14,12 +14,14 @@ Product restriction
 | `productRestrictionId` | `int` | Required | product restriction identifier | getProductRestrictionId(): int | setProductRestrictionId(int productRestrictionId): void |
 | `description` | `string` | Required | product set description. | getDescription(): string | setDescription(string description): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ProductRestrictionId": 120,
-  "Description": "FS02: Diesel"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardDetailsResponseFuelSetsItemsBuilder;
+
+$cardDetailsResponseFuelSetsItems = CardDetailsResponseFuelSetsItemsBuilder::init(
+    120,
+    'FS02: Diesel'
+)->build();
 ```
 

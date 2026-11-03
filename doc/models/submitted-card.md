@@ -25,15 +25,17 @@ Response entity object for SubmittedCard list <br/>Note: This list will be empty
 | `payerId` | `?int` | Optional | Payer id of the customer.<br /><br>Optional if PayerNumber is passed, else Mandatory. | getPayerId(): ?int | setPayerId(?int payerId): void |
 | `payerNumber` | `?string` | Optional | PayerNumber of the customer.<br /><br>Optional if PayerId is passed, else Mandatory. | getPayerNumber(): ?string | setPayerNumber(?string payerNumber): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ReplacementCardReference": 234,
-  "UpdateCardReference": 140,
-  "AccountId": 124,
-  "AccountNumber": "AccountNumber8",
-  "CardExpiryDate": "CardExpiryDate6"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SubmittedCardBuilder;
+
+$submittedCard = SubmittedCardBuilder::init()
+    ->replacementCardReference(230)
+    ->updateCardReference(136)
+    ->accountId(120)
+    ->accountNumber('AccountNumber6')
+    ->cardExpiryDate('CardExpiryDate4')
+    ->build();
 ```
 

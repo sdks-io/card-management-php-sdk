@@ -17,25 +17,29 @@
 | `title` | `?string` | Optional | Purchase category Title by given language code.<br><br>1. Basic<br>2. Essentials<br>3. Extra<br>4. Premium<br>5. Basic and LNG<br>6. Essentials and LNG<br>7. Extra and LNG<br>8. Premium and LNG<br>   Note: Purchase Category name is returned when Title does not exist for the given language Code and default language code (en-GB). | getTitle(): ?string | setTitle(?string title): void |
 | `description` | `?string` | Optional | Purchase category description by given language code.<br>Example:<br>0 - Diesel Products and TMF<br>1 - All Fuel Products and TMF<br>2 - All Fuels Products, Car related items and TMF<br>3 - No Restriction<br>0 - Diesel Products + LNG and TMF<br>1 - All Fuel Products + LNG and TMF<br>2 - All Fuels Products + LNG, Car related items and TMF<br>3 - No Restriction + LNG<br>Note: Purchase Category name is returned when Title does not exist for the given language Code and default language code (en-GB). | getDescription(): ?string | setDescription(?string description): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Id": 0,
-  "Code": "93",
-  "Name": "0 - Diesel Products and TMF",
-  "IsVisible": true,
-  "ProductGroups": [
-    {
-      "ReferenceId": 123,
-      "ProductGroupId": "7",
-      "Name": "Automotive Gas Oil",
-      "IsDefault": false,
-      "IsFuelType": false
-    }
-  ],
-  "Title": "1.    Basic",
-  "Description": "0 - Diesel Products and TMF"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategory1AllOf0Builder;
+use ShellCardManagementAPIsLib\Models\Builders\ProductGroupBuilder;
+
+$purchaseCategory1AllOf0 = PurchaseCategory1AllOf0Builder::init(
+    true,
+    [
+        ProductGroupBuilder::init()
+            ->referenceId(123)
+            ->productGroupId('7')
+            ->name('Automotive Gas Oil')
+            ->isDefault(false)
+            ->isFuelType(false)
+            ->build()
+    ]
+)
+    ->id(0)
+    ->code('93')
+    ->name('0 - Diesel Products and TMF')
+    ->title('1.    Basic')
+    ->description('0 - Diesel Products and TMF')
+    ->build();
 ```
 

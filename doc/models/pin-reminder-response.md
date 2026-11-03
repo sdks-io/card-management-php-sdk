@@ -14,29 +14,41 @@
 | `status` | `?string` | Optional | Indicates overall status of the request. Allowed values: SUCCESS, FAILED | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(PINReminderReference[])`](../../doc/models/pin-reminder-reference.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId8",
-  "MainReference": 42,
-  "Status": "Status4",
-  "Data": [
-    {
-      "CardId": 224,
-      "PANID": 0,
-      "PAN": 154,
-      "CardExpiryDate": "CardExpiryDate6",
-      "ReferenceId": 108
-    },
-    {
-      "CardId": 224,
-      "PANID": 0,
-      "PAN": 154,
-      "CardExpiryDate": "CardExpiryDate6",
-      "ReferenceId": 108
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PINReminderResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\PINReminderReferenceBuilder;
+
+$pINReminderResponse = PINReminderResponseBuilder::init()
+    ->requestId('RequestId8')
+    ->mainReference(140)
+    ->status('Status4')
+    ->data(
+        [
+            PINReminderReferenceBuilder::init()
+                ->cardId(224)
+                ->pANID(0)
+                ->pAN(154)
+                ->cardExpiryDate('CardExpiryDate6')
+                ->referenceId(108)
+                ->build(),
+            PINReminderReferenceBuilder::init()
+                ->cardId(224)
+                ->pANID(0)
+                ->pAN(154)
+                ->cardExpiryDate('CardExpiryDate6')
+                ->referenceId(108)
+                ->build(),
+            PINReminderReferenceBuilder::init()
+                ->cardId(224)
+                ->pANID(0)
+                ->pAN(154)
+                ->cardExpiryDate('CardExpiryDate6')
+                ->referenceId(108)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

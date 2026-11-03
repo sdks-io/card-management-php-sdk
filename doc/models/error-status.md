@@ -12,12 +12,14 @@
 | `code` | `?string` | Optional | Error Code | getCode(): ?string | setCode(?string code): void |
 | `description` | `?string` | Optional | Error Description | getDescription(): ?string | setDescription(?string description): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Code": "0000",
-  "Description": "Success"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\ErrorStatusBuilder;
+
+$errorStatus = ErrorStatusBuilder::init()
+    ->code('0000')
+    ->description('Success')
+    ->build();
 ```
 

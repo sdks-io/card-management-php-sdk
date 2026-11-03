@@ -23,23 +23,25 @@
 | `swiftCode` | `?string` | Optional | Payer Bank Swift Code | getSwiftCode(): ?string | setSwiftCode(?string swiftCode): void |
 | `bankType` | `?string` | Optional | Bank Type Id and Description | getBankType(): ?string | setBankType(?string bankType): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountNumber": "45346346443",
-  "BankName": "swiss",
-  "AccountName": "ARIM SERVIS",
-  "DateEffective": "20200808",
-  "IBAN": "CZ6508000000192000145399",
-  "CurrencyCode": "EUR",
-  "CurrencySymbol": "€",
-  "CountryISOCode": "DE",
-  "Country": "Germany",
-  "SortCode": "0100",
-  "SwiftCode": "KOMBCZPPXXX",
-  "BankType": "1-Test",
-  "DateTerminated": "DateTerminated0"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\BankAccountBuilder;
+
+$bankAccount = BankAccountBuilder::init()
+    ->accountNumber('45346346443')
+    ->bankName('swiss')
+    ->accountName('ARIM SERVIS')
+    ->dateEffective('20200808')
+    ->dateTerminated('DateTerminated4')
+    ->iBAN('CZ6508000000192000145399')
+    ->currencyCode('EUR')
+    ->currencySymbol('€')
+    ->countryISOCode('DE')
+    ->country('Germany')
+    ->sortCode('0100')
+    ->swiftCode('KOMBCZPPXXX')
+    ->bankType('1-Test')
+    ->build();
 ```
 

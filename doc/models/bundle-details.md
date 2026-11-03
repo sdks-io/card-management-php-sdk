@@ -13,35 +13,33 @@
 | `status` | `?string` | Optional | Status of the request | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(BundleDetailsResponse[])`](../../doc/models/bundle-details-response.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Data": [
-    {
-      "PayerId": 2,
-      "PayerNumber": "PayerNumber6",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "BundleId": "BundleId6"
-    },
-    {
-      "PayerId": 2,
-      "PayerNumber": "PayerNumber6",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "BundleId": "BundleId6"
-    },
-    {
-      "PayerId": 2,
-      "PayerNumber": "PayerNumber6",
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "BundleId": "BundleId6"
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\BundleDetailsBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\BundleDetailsResponseBuilder;
+
+$bundleDetails = BundleDetailsBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            BundleDetailsResponseBuilder::init()
+                ->payerId(2)
+                ->payerNumber('PayerNumber6')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->bundleId('BundleId6')
+                ->build(),
+            BundleDetailsResponseBuilder::init()
+                ->payerId(2)
+                ->payerNumber('PayerNumber6')
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->bundleId('BundleId6')
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

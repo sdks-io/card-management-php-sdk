@@ -13,21 +13,40 @@
 | `status` | `?string` | Optional | Status of the request | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(CardTypeResponseCustomerCardTypesItems[])`](../../doc/models/card-type-response-customer-card-types-items.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Data": [
-    {
-      "CardTypeId": 236,
-      "TokenTypeId": 168,
-      "CardTypeName": "CardTypeName6",
-      "TokenTypeName": "TokenTypeName8",
-      "PANLength": 32
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardTypeResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CardTypeResponseCustomerCardTypesItemsBuilder;
+
+$cardTypeRes = CardTypeResBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            CardTypeResponseCustomerCardTypesItemsBuilder::init()
+                ->cardTypeId(236)
+                ->tokenTypeId(168)
+                ->cardTypeName('CardTypeName6')
+                ->tokenTypeName('TokenTypeName8')
+                ->pANLength(32)
+                ->build(),
+            CardTypeResponseCustomerCardTypesItemsBuilder::init()
+                ->cardTypeId(236)
+                ->tokenTypeId(168)
+                ->cardTypeName('CardTypeName6')
+                ->tokenTypeName('TokenTypeName8')
+                ->pANLength(32)
+                ->build(),
+            CardTypeResponseCustomerCardTypesItemsBuilder::init()
+                ->cardTypeId(236)
+                ->tokenTypeId(168)
+                ->cardTypeName('CardTypeName6')
+                ->tokenTypeName('TokenTypeName8')
+                ->pANLength(32)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

@@ -14,36 +14,41 @@
 | `status` | `?string` | Optional | API Request Overall status | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(SubmittedMoveCard[])`](../../doc/models/submitted-move-card.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId4",
-  "MainReference": 114,
-  "Status": "Status0",
-  "Data": [
-    {
-      "AccountId": "AccountId4",
-      "AccountNumber": "AccountNumber8",
-      "CardId": "CardId8",
-      "PAN": "PAN0",
-      "MoveCardReference": "MoveCardReference0"
-    },
-    {
-      "AccountId": "AccountId4",
-      "AccountNumber": "AccountNumber8",
-      "CardId": "CardId8",
-      "PAN": "PAN0",
-      "MoveCardReference": "MoveCardReference0"
-    },
-    {
-      "AccountId": "AccountId4",
-      "AccountNumber": "AccountNumber8",
-      "CardId": "CardId8",
-      "PAN": "PAN0",
-      "MoveCardReference": "MoveCardReference0"
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardMoveResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\SubmittedMoveCardBuilder;
+
+$cardMoveRes = CardMoveResBuilder::init()
+    ->requestId('RequestId0')
+    ->mainReference(240)
+    ->status('Status6')
+    ->data(
+        [
+            SubmittedMoveCardBuilder::init()
+                ->accountId('AccountId4')
+                ->accountNumber('AccountNumber8')
+                ->cardId('CardId8')
+                ->pAN('PAN0')
+                ->moveCardReference('MoveCardReference0')
+                ->build(),
+            SubmittedMoveCardBuilder::init()
+                ->accountId('AccountId4')
+                ->accountNumber('AccountNumber8')
+                ->cardId('CardId8')
+                ->pAN('PAN0')
+                ->moveCardReference('MoveCardReference0')
+                ->build(),
+            SubmittedMoveCardBuilder::init()
+                ->accountId('AccountId4')
+                ->accountNumber('AccountNumber8')
+                ->cardId('CardId8')
+                ->pAN('PAN0')
+                ->moveCardReference('MoveCardReference0')
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

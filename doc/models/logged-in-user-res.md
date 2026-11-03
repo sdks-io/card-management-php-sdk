@@ -13,35 +13,26 @@
 | `status` | `?string` | Optional | Status of the request | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(LoggedInUserResponse[])`](../../doc/models/logged-in-user-response.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Data": [
-    {
-      "UserName": "UserName0",
-      "DisplayName": "DisplayName2",
-      "IdMSSOID": "IdMSSOID8",
-      "PreferredLanguage": "PreferredLanguage0",
-      "IsSuperAdmin": false
-    },
-    {
-      "UserName": "UserName0",
-      "DisplayName": "DisplayName2",
-      "IdMSSOID": "IdMSSOID8",
-      "PreferredLanguage": "PreferredLanguage0",
-      "IsSuperAdmin": false
-    },
-    {
-      "UserName": "UserName0",
-      "DisplayName": "DisplayName2",
-      "IdMSSOID": "IdMSSOID8",
-      "PreferredLanguage": "PreferredLanguage0",
-      "IsSuperAdmin": false
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\LoggedInUserResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\LoggedInUserResponseBuilder;
+
+$loggedInUserRes = LoggedInUserResBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            LoggedInUserResponseBuilder::init()
+                ->userName('UserName0')
+                ->displayName('DisplayName2')
+                ->idMSSOID('IdMSSOID8')
+                ->preferredLanguage('PreferredLanguage0')
+                ->isSuperAdmin(false)
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

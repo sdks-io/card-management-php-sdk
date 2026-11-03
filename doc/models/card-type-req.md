@@ -11,17 +11,22 @@
 |  --- | --- | --- | --- | --- | --- |
 | `filters` | [`?CardTypeRequest`](../../doc/models/card-type-request.md) | Optional | - | getFilters(): ?CardTypeRequest | setFilters(?CardTypeRequest filters): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Filters": {
-    "ColCoId": 0,
-    "ColCoCode": 14,
-    "PayerId": 48,
-    "PayerNumber": "PayerNumber0",
-    "AccountId": 108
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardTypeReqBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CardTypeRequestBuilder;
+
+$cardTypeReq = CardTypeReqBuilder::init()
+    ->filters(
+        CardTypeRequestBuilder::init()
+            ->colCoId(0)
+            ->colCoCode(14)
+            ->payerId(48)
+            ->payerNumber('PayerNumber0')
+            ->accountId(108)
+            ->build()
+    )
+    ->build();
 ```
 

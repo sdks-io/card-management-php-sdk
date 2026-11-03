@@ -14,22 +14,34 @@
 | `includeAddresses` | `?bool` | Optional | Include address related fields on the response. Set this field to ‘False’ when Address fields are not required to get the result quicker.<br><br>**Default**: `false` | getIncludeAddresses(): ?bool | setIncludeAddresses(?bool includeAddresses): void |
 | `includeBonusParameters` | `?bool` | Optional | Include the Finance Currency, used for Finance Widget, in the response<br><br>**Default**: `false` | getIncludeBonusParameters(): ?bool | setIncludeBonusParameters(?bool includeBonusParameters): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ReturnBasicDetailsOnly": false,
-  "IncludeAddresses": false,
-  "IncludeBonusParameters": false,
-  "Payers": [
-    {
-      "ColCoId": 78,
-      "ColCoCode": 92,
-      "PayerId": 126,
-      "PayerNumber": "PayerNumber0",
-      "PayerName": "PayerName0"
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PayerRequestBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\PayersBuilder;
+
+$payerRequest = PayerRequestBuilder::init()
+    ->payers(
+        [
+            PayersBuilder::init()
+                ->colCoId(78)
+                ->colCoCode(92)
+                ->payerId(126)
+                ->payerNumber('PayerNumber0')
+                ->payerName('PayerName0')
+                ->build(),
+            PayersBuilder::init()
+                ->colCoId(78)
+                ->colCoCode(92)
+                ->payerId(126)
+                ->payerNumber('PayerNumber0')
+                ->payerName('PayerName0')
+                ->build()
+        ]
+    )
+    ->returnBasicDetailsOnly(false)
+    ->includeAddresses(false)
+    ->includeBonusParameters(false)
+    ->build();
 ```
 

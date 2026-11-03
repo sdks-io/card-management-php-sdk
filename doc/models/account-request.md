@@ -25,22 +25,24 @@
 | `accountName` | `?string` | Optional | Account Name of the customer.<br>Optional.<br>Minimum of 4 characters should be provided else not considered.<br>Accounts those have the entered value at any part of the Name will be returned. | getAccountName(): ?string | setAccountName(?string accountName): void |
 | `statusList` | `?(array<?string>)` | Optional | Account Statuses.<br>Optional<br>Multiple statuses are allowed to be included in the search criteria.<br>Allowed values:<br>•    ACTIVE<br>•    BLOCKED<br>•    CANCELLED<br>•    CREDITLOCK<br>•    DELINQUENCYLOCK | getStatusList(): ?array | setStatusList(?array statusList): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Status": "ALL",
-  "IncludeCardSummary": true,
-  "PayerId": 9,
-  "PayerNumber": "GB00000111",
-  "PageSize": 10,
-  "RequestId": "b9eb91b6-65d4-4196-f910-6b0846875e70",
-  "ColCoCode": 14,
-  "ColCoCountryCode": "14",
-  "CurrentPage": 1,
-  "InvoicePointsOnly": false,
-  "ColCoId": 14,
-  "AccountName": "test"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\AccountRequestBuilder;
+
+$accountRequest = AccountRequestBuilder::init()
+    ->status('ALL')
+    ->includeCardSummary(true)
+    ->payerId(9)
+    ->payerNumber('GB00000111')
+    ->pageSize(10)
+    ->requestId('b9eb91b6-65d4-4196-f910-6b0846875e70')
+    ->colCoCode(14)
+    ->colCoCountryCode('14')
+    ->currentPage(1)
+    ->invoicePointsOnly(false)
+    ->colCoId(14)
+    ->accountName('test')
+    ->build();
 ```
 

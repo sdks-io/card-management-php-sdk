@@ -14,12 +14,14 @@ Response entity object for CardBlockSchedule  list
 | `fromDate` | `?string` | Optional | Effective start date of Block / Unblock<br /><br>Format: yyyyMMdd | getFromDate(): ?string | setFromDate(?string fromDate): void |
 | `toDate` | `?string` | Optional | Effective end date of Block / Unblock<br /><br>Format: yyyyMMdd | getToDate(): ?string | setToDate(?string toDate): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "FromDate": "FromDate6",
-  "ToDate": "ToDate4"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardBlockScheduleBuilder;
+
+$cardBlockSchedule = CardBlockScheduleBuilder::init()
+    ->fromDate('FromDate0')
+    ->toDate('ToDate0')
+    ->build();
 ```
 

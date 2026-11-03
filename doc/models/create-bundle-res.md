@@ -13,46 +13,86 @@
 | `status` | `?string` | Optional | Status of the request | getStatus(): ?string | setStatus(?string status): void |
 | `data` | [`?(CreateBundleResponse[])`](../../doc/models/create-bundle-response.md) | Optional | - | getData(): ?array | setData(?array data): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Data": [
-    {
-      "BundleCreationStatus": {
-        "Code": "Code8",
-        "Description": "Description8"
-      },
-      "BundleId": "BundleId6",
-      "DayTimeRestrictionStatus": {
-        "Code": "Code4",
-        "Description": "Description2"
-      },
-      "DayTimeRestrictionProfileId": "DayTimeRestrictionProfileId4",
-      "LocationRestrictionStatus": {
-        "Code": "Code6",
-        "Description": "Description0"
-      }
-    },
-    {
-      "BundleCreationStatus": {
-        "Code": "Code8",
-        "Description": "Description8"
-      },
-      "BundleId": "BundleId6",
-      "DayTimeRestrictionStatus": {
-        "Code": "Code4",
-        "Description": "Description2"
-      },
-      "DayTimeRestrictionProfileId": "DayTimeRestrictionProfileId4",
-      "LocationRestrictionStatus": {
-        "Code": "Code6",
-        "Description": "Description0"
-      }
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CreateBundleResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\CreateBundleResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\ErrorStatusBuilder;
+
+$createBundleRes = CreateBundleResBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            CreateBundleResponseBuilder::init()
+                ->bundleCreationStatus(
+                    ErrorStatusBuilder::init()
+                        ->code('Code8')
+                        ->description('Description8')
+                        ->build()
+                )
+                ->bundleId('BundleId6')
+                ->dayTimeRestrictionStatus(
+                    ErrorStatusBuilder::init()
+                        ->code('Code4')
+                        ->description('Description2')
+                        ->build()
+                )
+                ->dayTimeRestrictionProfileId('DayTimeRestrictionProfileId4')
+                ->locationRestrictionStatus(
+                    ErrorStatusBuilder::init()
+                        ->code('Code6')
+                        ->description('Description0')
+                        ->build()
+                )
+                ->build(),
+            CreateBundleResponseBuilder::init()
+                ->bundleCreationStatus(
+                    ErrorStatusBuilder::init()
+                        ->code('Code8')
+                        ->description('Description8')
+                        ->build()
+                )
+                ->bundleId('BundleId6')
+                ->dayTimeRestrictionStatus(
+                    ErrorStatusBuilder::init()
+                        ->code('Code4')
+                        ->description('Description2')
+                        ->build()
+                )
+                ->dayTimeRestrictionProfileId('DayTimeRestrictionProfileId4')
+                ->locationRestrictionStatus(
+                    ErrorStatusBuilder::init()
+                        ->code('Code6')
+                        ->description('Description0')
+                        ->build()
+                )
+                ->build(),
+            CreateBundleResponseBuilder::init()
+                ->bundleCreationStatus(
+                    ErrorStatusBuilder::init()
+                        ->code('Code8')
+                        ->description('Description8')
+                        ->build()
+                )
+                ->bundleId('BundleId6')
+                ->dayTimeRestrictionStatus(
+                    ErrorStatusBuilder::init()
+                        ->code('Code4')
+                        ->description('Description2')
+                        ->build()
+                )
+                ->dayTimeRestrictionProfileId('DayTimeRestrictionProfileId4')
+                ->locationRestrictionStatus(
+                    ErrorStatusBuilder::init()
+                        ->code('Code6')
+                        ->description('Description0')
+                        ->build()
+                )
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

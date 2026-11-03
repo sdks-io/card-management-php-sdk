@@ -14,37 +14,64 @@
 | `data` | [`?(RestrictioncardsRes[])`](../../doc/models/restrictioncards-res.md) | Optional | - | getData(): ?array | setData(?array data): void |
 | `errors` | [`?ErrorObject`](../../doc/models/error-object.md) | Optional | - | getErrors(): ?ErrorObject | setErrors(?ErrorObject errors): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Data": [
-    {
-      "AccountId": 62,
-      "AccountNumber": "AccountNumber8",
-      "CardId": "CardId8",
-      "PAN": "PAN0",
-      "UsageRestrictionStatus": "UsageRestrictionStatus8"
-    }
-  ],
-  "Errors": {
-    "RequestId": "RequestId4",
-    "Status": "Status2",
-    "Errors": [
-      {
-        "Code": "Code4",
-        "Title": "Title6",
-        "Detail": "Detail6",
-        "AdditionalInfo": {
-          "key0": "AdditionalInfo0",
-          "key1": "AdditionalInfo1",
-          "key2": "AdditionalInfo2"
-        }
-      }
-    ]
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardRestrictionResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\RestrictioncardsResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\ErrorObjectBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\ErrorDetailsBuilder;
+
+$cardRestrictionRes = CardRestrictionResBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            RestrictioncardsResBuilder::init()
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->cardId('CardId8')
+                ->pAN('PAN0')
+                ->usageRestrictionStatus('UsageRestrictionStatus8')
+                ->build(),
+            RestrictioncardsResBuilder::init()
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->cardId('CardId8')
+                ->pAN('PAN0')
+                ->usageRestrictionStatus('UsageRestrictionStatus8')
+                ->build(),
+            RestrictioncardsResBuilder::init()
+                ->accountId(62)
+                ->accountNumber('AccountNumber8')
+                ->cardId('CardId8')
+                ->pAN('PAN0')
+                ->usageRestrictionStatus('UsageRestrictionStatus8')
+                ->build()
+        ]
+    )
+    ->errors(
+        ErrorObjectBuilder::init()
+            ->requestId('RequestId4')
+            ->status('Status2')
+            ->errors(
+                [
+                    ErrorDetailsBuilder::init()
+                        ->code('Code4')
+                        ->title('Title6')
+                        ->detail('Detail6')
+                        ->additionalInfo(
+                            [
+                                'key0' => 'AdditionalInfo0',
+                                'key1' => 'AdditionalInfo1',
+                                'key2' => 'AdditionalInfo2'
+                            ]
+                        )
+                        ->build()
+                ]
+            )
+            ->build()
+    )
+    ->build();
 ```
 

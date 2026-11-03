@@ -20,17 +20,19 @@
 | `timeFrom` | `?string` | Optional | The time in the day from when the transaction is allowed.<br>Format: HH:mm: ss<br>E.g., 21:00:00<br><br>Note:<br><br>1) The client application has to convert the value to the required date-time data type.<br>2) The value will be 00:00:00 when no restriction set for this field. | getTimeFrom(): ?string | setTimeFrom(?string timeFrom): void |
 | `timeTo` | `?string` | Optional | allowed.<br>Format: HH:mm: ss<br>E.g., 21:00:00<br><br>Note:<br><br>1) The client application has to convert the value to the required date-time data type.<br>2) The value will be 00:00:00 when no restriction set for this field. | getTimeTo(): ?string | setTimeTo(?string timeTo): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "Level": "OU= 24537",
-  "TimeFrom": "07:56:00",
-  "TimeTo": "08:19:09",
-  "Monday": false,
-  "Tuesday": false,
-  "Wednesday": false,
-  "Thursday": false
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CardDayTimeRestrictionsBuilder;
+
+$cardDayTimeRestrictions = CardDayTimeRestrictionsBuilder::init()
+    ->level('OU= 24537')
+    ->monday(false)
+    ->tuesday(false)
+    ->wednesday(false)
+    ->thursday(false)
+    ->timeFrom('07:56:00')
+    ->timeTo('08:19:09')
+    ->build();
 ```
 

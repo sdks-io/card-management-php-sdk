@@ -11,63 +11,54 @@
 |  --- | --- | --- | --- | --- | --- |
 | `purchaseCategories` | [`?(PurchaseCategory1AllOf0[])`](../../doc/models/purchase-category-1-all-of-0.md) | Optional | - | getPurchaseCategories(): ?array | setPurchaseCategories(?array purchaseCategories): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PurchaseCategories": [
-    {
-      "Id": 166,
-      "Code": "Code6",
-      "Name": "Name4",
-      "IsVisible": false,
-      "ProductGroups": [
-        {
-          "ReferenceId": 82,
-          "ProductGroupId": "ProductGroupId6",
-          "Name": "Name0",
-          "IsDefault": false,
-          "IsFuelType": false
-        }
-      ],
-      "Title": "Title4",
-      "Description": "Description0"
-    },
-    {
-      "Id": 166,
-      "Code": "Code6",
-      "Name": "Name4",
-      "IsVisible": false,
-      "ProductGroups": [
-        {
-          "ReferenceId": 82,
-          "ProductGroupId": "ProductGroupId6",
-          "Name": "Name0",
-          "IsDefault": false,
-          "IsFuelType": false
-        }
-      ],
-      "Title": "Title4",
-      "Description": "Description0"
-    },
-    {
-      "Id": 166,
-      "Code": "Code6",
-      "Name": "Name4",
-      "IsVisible": false,
-      "ProductGroups": [
-        {
-          "ReferenceId": 82,
-          "ProductGroupId": "ProductGroupId6",
-          "Name": "Name0",
-          "IsDefault": false,
-          "IsFuelType": false
-        }
-      ],
-      "Title": "Title4",
-      "Description": "Description0"
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategoryResponseBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\PurchaseCategory1AllOf0Builder;
+use ShellCardManagementAPIsLib\Models\Builders\ProductGroupBuilder;
+
+$purchaseCategoryResponse = PurchaseCategoryResponseBuilder::init()
+    ->purchaseCategories(
+        [
+            PurchaseCategory1AllOf0Builder::init(
+                false,
+                [
+                    ProductGroupBuilder::init()
+                        ->referenceId(82)
+                        ->productGroupId('ProductGroupId6')
+                        ->name('Name0')
+                        ->isDefault(false)
+                        ->isFuelType(false)
+                        ->build()
+                ]
+            )
+                ->id(166)
+                ->code('Code6')
+                ->name('Name4')
+                ->title('Title4')
+                ->description('Description0')
+                ->build(),
+            PurchaseCategory1AllOf0Builder::init(
+                false,
+                [
+                    ProductGroupBuilder::init()
+                        ->referenceId(82)
+                        ->productGroupId('ProductGroupId6')
+                        ->name('Name0')
+                        ->isDefault(false)
+                        ->isFuelType(false)
+                        ->build()
+                ]
+            )
+                ->id(166)
+                ->code('Code6')
+                ->name('Name4')
+                ->title('Title4')
+                ->description('Description0')
+                ->build()
+        ]
+    )
+    ->build();
 ```
 

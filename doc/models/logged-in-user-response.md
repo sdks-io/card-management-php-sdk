@@ -33,28 +33,30 @@
 | `accountCount` | `?int` | Optional | Count of accounts at the time when the user was created or last updated.<br>Note:<br>Count may vary based on customer operations hence it may not be an up to date value. | getAccountCount(): ?int | setAccountCount(?int accountCount): void |
 | `cardCount` | `?int` | Optional | Count of cards at the time when the user was created or last updated.<br>Note:<br>Count may vary based on customer operations hence it may not be an up to date value. | getCardCount(): ?int | setCardCount(?int cardCount): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "UserName": "D09PZ29h2eaBWi5Da8gcHsTRO10w8Qh9",
-  "DisplayName": "3rdParty test",
-  "IdMSSOID": "D09PZ29h2eaBWi5Da8gcHsTRO10w8Qh9",
-  "PreferredLanguage": "en-GB",
-  "IsSuperAdmin": false,
-  "DateFormat": "dd/MM/yy",
-  "TimeFormat": "hh:mm tt",
-  "WeekBegins": 1,
-  "DisplayWeek": true,
-  "CSVSeparator": ";",
-  "DecimalSeparator": "1,234,567.00",
-  "ReportFormat": "csv",
-  "HasAPIAccess": true,
-  "UserClassificationBySystem": "S",
-  "UserClassificationByShell": "S",
-  "PayerCount": 1,
-  "AccountCount": 1,
-  "CardCount": 15
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\LoggedInUserResponseBuilder;
+
+$loggedInUserResponse = LoggedInUserResponseBuilder::init()
+    ->userName('D09PZ29h2eaBWi5Da8gcHsTRO10w8Qh9')
+    ->displayName('3rdParty test')
+    ->idMSSOID('D09PZ29h2eaBWi5Da8gcHsTRO10w8Qh9')
+    ->preferredLanguage('en-GB')
+    ->isSuperAdmin(false)
+    ->dateFormat('dd/MM/yy')
+    ->timeFormat('hh:mm tt')
+    ->weekBegins(1)
+    ->displayWeek(true)
+    ->cSVSeparator(';')
+    ->decimalSeparator('1,234,567.00')
+    ->reportFormat('csv')
+    ->hasAPIAccess(true)
+    ->userClassificationBySystem('S')
+    ->userClassificationByShell('S')
+    ->payerCount(1)
+    ->accountCount(1)
+    ->cardCount(15)
+    ->build();
 ```
 

@@ -13,23 +13,29 @@
 | `pageSize` | `?string` | Optional | Page Size – Number of records to show on a page<br>Optional<br>Default value 50 | getPageSize(): ?string | setPageSize(?string pageSize): void |
 | `page` | `?string` | Optional | Page Number | getPage(): ?string | setPage(?string page): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "PageSize": "1",
-  "Page": "1",
-  "Filters": {
-    "AccountId": 108,
-    "AccountNumber": "AccountNumber2",
-    "CardGroupId": 154,
-    "CardGroupName": "CardGroupName4",
-    "CardSegment": "CardSegment4",
-    "CardStatus": [
-      "CardStatus7",
-      "CardStatus8"
-    ]
-  }
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\SearchCardRequestBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\FiltersBuilder;
+
+$searchCardRequest = SearchCardRequestBuilder::init()
+    ->filters(
+        FiltersBuilder::init(
+            [
+                'CardStatus7',
+                'CardStatus8'
+            ]
+        )
+            ->accountId(108)
+            ->accountNumber('AccountNumber2')
+            ->cardGroupId(154)
+            ->cardGroupName('CardGroupName4')
+            ->cardSegment('CardSegment4')
+            ->build()
+    )
+    ->pageSize('1')
+    ->page('1')
+    ->build();
 ```
 

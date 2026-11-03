@@ -17,16 +17,19 @@
 | `accountNumber` | `?string` | Optional | Account Number of the customer.<br>Either AccountId or AccountNumber or both must be passed.<br>Example: GB000000123 | getAccountNumber(): ?string | setAccountNumber(?string accountNumber): void |
 | `bundleId` | `string` | Required | Identifier of the card bundle in Gateway.<br>Mandatory | getBundleId(): string | setBundleId(string bundleId): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "ColCoCode": 218,
-  "ColCoId": 204,
-  "PayerNumber": "PayerNumber8",
-  "PayerId": 252,
-  "AccountId": 56,
-  "BundleId": "BundleId8"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\DeleteBundleRequestBuilder;
+
+$deleteBundleRequest = DeleteBundleRequestBuilder::init(
+    'BundleId2'
+)
+    ->colCoCode(128)
+    ->colCoId(114)
+    ->payerNumber('PayerNumber2')
+    ->payerId(162)
+    ->accountId(222)
+    ->build();
 ```
 

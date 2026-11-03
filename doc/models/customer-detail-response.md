@@ -37,26 +37,28 @@
 | `pINChangeAllowedByCardholder` | `?bool` | Optional | PIN change allowed for card holder or not. | getPINChangeAllowedByCardholder(): ?bool | setPINChangeAllowedByCardholder(?bool pINChangeAllowedByCardholder): void |
 | `pINChangeAllowedFromFleetPIN` | `?bool` | Optional | PIN change allowed from fleetpin or not. | getPINChangeAllowedFromFleetPIN(): ?bool | setPINChangeAllowedFromFleetPIN(?bool pINChangeAllowedFromFleetPIN): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "AccountId": 1227,
-  "AccountName": "5.11.3 DE",
-  "AccountNumber": "DE00001067",
-  "AccountShortName": "5.11.3 DE",
-  "AccountTradingName": "5.11.3 DE",
-  "Band": "2 - Gold",
-  "FullName": "5.11.3 DE",
-  "InvoiceCustomerId": 1227,
-  "InvoiceCustomerShortName": "5.11.3 DE",
-  "MarketingSegmentation": "4 - National/International Fleet/IKA",
-  "VATNumber": "PH6578900900",
-  "PayerId": 1227,
-  "PayerName": "5.11.3 DE",
-  "PayerNumber": "DE00001067",
-  "Status": "1 - Active",
-  "DefaultPINAdviceType": 1
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\CustomerDetailResponseBuilder;
+
+$customerDetailResponse = CustomerDetailResponseBuilder::init()
+    ->accountId(1227)
+    ->accountName('5.11.3 DE')
+    ->accountNumber('DE00001067')
+    ->accountShortName('5.11.3 DE')
+    ->accountTradingName('5.11.3 DE')
+    ->band('2 - Gold')
+    ->fullName('5.11.3 DE')
+    ->invoiceCustomerId(1227)
+    ->invoiceCustomerShortName('5.11.3 DE')
+    ->marketingSegmentation('4 - National/International Fleet/IKA')
+    ->vATNumber('PH6578900900')
+    ->payerId(1227)
+    ->payerName('5.11.3 DE')
+    ->payerNumber('DE00001067')
+    ->status('1 - Active')
+    ->defaultPINAdviceType(1)
+    ->build();
 ```
 

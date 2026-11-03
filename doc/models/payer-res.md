@@ -18,39 +18,37 @@
 | `pageSize` | `?int` | Optional | Page Size – Number of records to show on current page. | getPageSize(): ?int | setPageSize(?int pageSize): void |
 | `warnings` | [`?(Warning[])`](../../doc/models/warning.md) | Optional | A list of Warning entity.<br>This entity will hold the details of the scheduled System Outages of any dependent applications of this service.<br>Note: If there is no scheduled outage information available, in the configuration in AMS, for this service, this parameter won’t be present in output. | getWarnings(): ?array | setWarnings(?array warnings): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "0e6fb42a-51b0-43b2-f010-92f822657f6a",
-  "Status": "SUCCESS",
-  "Page": 1,
-  "TotalRecords": 100,
-  "TotalPages": 100,
-  "PageSize": 100,
-  "Data": [
-    {
-      "ColCoId": 210,
-      "ColCoCode": 224,
-      "CountryCode": "CountryCode6",
-      "Country": "Country8",
-      "PayerId": 2
-    },
-    {
-      "ColCoId": 210,
-      "ColCoCode": 224,
-      "CountryCode": "CountryCode6",
-      "Country": "Country8",
-      "PayerId": 2
-    },
-    {
-      "ColCoId": 210,
-      "ColCoCode": 224,
-      "CountryCode": "CountryCode6",
-      "Country": "Country8",
-      "PayerId": 2
-    }
-  ]
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PayerResBuilder;
+use ShellCardManagementAPIsLib\Models\Builders\PayerDetailsBuilder;
+
+$payerRes = PayerResBuilder::init()
+    ->requestId('0e6fb42a-51b0-43b2-f010-92f822657f6a')
+    ->status('SUCCESS')
+    ->data(
+        [
+            PayerDetailsBuilder::init()
+                ->colCoId(210)
+                ->colCoCode(224)
+                ->countryCode('CountryCode6')
+                ->country('Country8')
+                ->payerId(2)
+                ->build(),
+            PayerDetailsBuilder::init()
+                ->colCoId(210)
+                ->colCoCode(224)
+                ->countryCode('CountryCode6')
+                ->country('Country8')
+                ->payerId(2)
+                ->build()
+        ]
+    )
+    ->page(1)
+    ->totalRecords(100)
+    ->totalPages(100)
+    ->pageSize(100)
+    ->build();
 ```
 

@@ -19,19 +19,21 @@
 | `payerNumber` | `?string` | Optional | Payer Number to which the user has access<br>Example: GB000000123 | getPayerNumber(): ?string | setPayerNumber(?string payerNumber): void |
 | `payerName` | `?string` | Optional | Name of the Payer to which the user has access | getPayerName(): ?string | setPayerName(?string payerName): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "IsDefault": false,
-  "ColcoId": 14,
-  "ColcoCode": 14,
-  "ColCoCountryCode": "DE",
-  "PayerGroupId": 123,
-  "PayerGroup": "null",
-  "PayerId": 854,
-  "PayerNumber": "DE26688504",
-  "PayerName": "TK MobilPlus"
-}
+```php
+use ShellCardManagementAPIsLib\Models\Builders\PayerAccessBuilder;
+
+$payerAccess = PayerAccessBuilder::init()
+    ->isDefault(false)
+    ->colcoId(14)
+    ->colcoCode(14)
+    ->colCoCountryCode('DE')
+    ->payerGroupId(123)
+    ->payerGroup('null')
+    ->payerId(854)
+    ->payerNumber('DE26688504')
+    ->payerName('TK MobilPlus')
+    ->build();
 ```
 

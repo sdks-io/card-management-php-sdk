@@ -13,24 +13,15 @@
 | `status` | `?string` | Optional | Indicates overall status of the request. Allowed values: SUCCES, FAILED, PARTIAL_SUCCESS | getStatus(): ?string | setStatus(?string status): void |
 | `errors` | [`?(ErrorDetails[])`](../../doc/models/error-details.md) | Optional | - | getErrors(): ?array | setErrors(?array errors): void |
 
-## Example (as JSON)
+## Example
 
-```json
-{
-  "RequestId": "RequestId0",
-  "Status": "Status6",
-  "Errors": [
-    {
-      "Code": "Code4",
-      "Title": "Title6",
-      "Detail": "Detail6",
-      "AdditionalInfo": {
-        "key0": "AdditionalInfo0",
-        "key1": "AdditionalInfo1",
-        "key2": "AdditionalInfo2"
-      }
-    }
-  ]
+```php
+try {
+    // make the API call
+} catch (ErrorObjectErrorException $exp) {
+    echo 'Caught ErrorObjectErrorException:', $exp;
+} catch (ApiException $exp) {
+    echo 'Caught ApiException:', $exp;
 }
 ```
 
